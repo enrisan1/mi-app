@@ -1,18 +1,18 @@
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, setTasks }) {
+function TaskList({ tasks, allTasks, setTasks }) {
   return (
     <ul>
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <TaskItem
-          key={index}
+          key={task.id}
           task={task}
           onDelete={() => {
-            setTasks(tasks.filter((_, i) => i !== index));
+            setTasks(allTasks.filter((t) => t.id !== task.id));
           }}
           onToggle={() => {
-            const updatedTasks = tasks.map((t, i) => {
-              if (i === index) {
+            const updatedTasks = allTasks.map((t) => {
+              if (t.id === task.id) {
                 return {
                   ...t,
                   completed: !t.completed,

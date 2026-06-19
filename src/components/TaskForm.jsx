@@ -15,6 +15,7 @@ function TaskForm({ task, setTask, tasks, setTasks }) {
           setTasks([
             ...tasks,
             {
+              id: Date.now(),
               text: task,
               completed: false,
             },
