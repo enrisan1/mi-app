@@ -12,7 +12,14 @@ function TaskForm({ task, setTask, tasks, setTasks }) {
         onClick={() => {
           if (task.trim() === "") return;
 
-          setTasks([...tasks, task]);
+          setTasks([
+            ...tasks,
+            {
+              text: task,
+              completed: false,
+            },
+          ]);
+
           setTask("");
         }}
       >

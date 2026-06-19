@@ -1,7 +1,15 @@
-function TaskItem({ task, onDelete }) {
+function TaskItem({ task, onDelete, onToggle }) {
   return (
     <li>
-      {task}
+      <input type="checkbox" checked={task.completed} onChange={onToggle} />
+
+      <span
+        style={{
+          textDecoration: task.completed ? "line-through" : "none",
+        }}
+      >
+        {task.text}
+      </span>
 
       <button onClick={onDelete}>❌</button>
     </li>

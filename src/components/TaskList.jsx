@@ -10,6 +10,20 @@ function TaskList({ tasks, setTasks }) {
           onDelete={() => {
             setTasks(tasks.filter((_, i) => i !== index));
           }}
+          onToggle={() => {
+            const updatedTasks = tasks.map((t, i) => {
+              if (i === index) {
+                return {
+                  ...t,
+                  completed: !t.completed,
+                };
+              }
+
+              return t;
+            });
+
+            setTasks(updatedTasks);
+          }}
         />
       ))}
     </ul>
