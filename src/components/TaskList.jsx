@@ -24,6 +24,20 @@ function TaskList({ tasks, allTasks, setTasks }) {
 
             setTasks(updatedTasks);
           }}
+          onEdit={(newText) => {
+            const updatedTasks = allTasks.map((t) => {
+              if (t.id === task.id) {
+                return {
+                  ...t,
+                  text: newText,
+                };
+              }
+
+              return t;
+            });
+
+            setTasks(updatedTasks);
+          }}
         />
       ))}
     </ul>
