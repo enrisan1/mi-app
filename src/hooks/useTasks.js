@@ -1,19 +1,44 @@
-import { useState, useEffect } from "react";
+import { useReducer, useState, useEffect } from "react";
 function tasksReducer(state, action) {
   switch (action.type) {
     case "ADD_TASK":
       return [...state, action.payload];
+
+    case "DELETE_TASK":
+      return state.filter((task) => task.id !== action.payload);
+
+    case "TOGGLE_TASK":
+      return state.map((task) =>
+        task.id === action.payload
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task,
+      );
+
+    case "EDIT_TASK":
+      return state.map((task) =>
+        task.id === action.payload.id
+          ? {
+              ...task,
+              text: action.payload.newText,
+            }
+          : task,
+      );
+
+    case "CLEAR_COMPLETED":
+      return state.filter((task) => !task.completed);
 
     default:
       return state;
   }
 }
 export function useTasks() {
-  const [tasks, setTasks] = useState(() => {
+  const [tasks, dispatch] = useReducer(tasksReducer, [], () => {
     const stored = localStorage.getItem("tasks");
     return stored ? JSON.parse(stored) : [];
   });
-
   const [filter, setFilter] = useState("all");
 
   // Persistencia
@@ -29,31 +54,44 @@ export function useTasks() {
       completed: false,
     };
 
-    setTasks((prev) => [...prev, newTask]);
+    dispatch({
+      type: "ADD_TASK",
+      payload: newTask,
+    });
   };
 
   // Eliminar tarea
   const deleteTask = (id) => {
-    setTasks((prev) => prev.filter((t) => t.id !== id));
+    dispatch({
+      type: "DELETE_TASK",
+      payload: id,
+    });
   };
 
   // Toggle completado
   const toggleTask = (id) => {
-    setTasks((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)),
-    );
+    dispatch({
+      type: "TOGGLE_TASK",
+      payload: id,
+    });
   };
 
   // Editar tarea
   const editTask = (id, newText) => {
-    setTasks((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, text: newText } : t)),
-    );
+    dispatch({
+      type: "EDIT_TASK",
+      payload: {
+        id,
+        newText,
+      },
+    });
   };
 
   // Eliminar completadas
   const clearCompleted = () => {
-    setTasks((prev) => prev.filter((t) => !t.completed));
+    dispatch({
+      type: "CLEAR_COMPLETED",
+    });
   };
 
   // Contadores
