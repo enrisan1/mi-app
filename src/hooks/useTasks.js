@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
+function tasksReducer(state, action) {
+  switch (action.type) {
+    case "ADD_TASK":
+      return [...state, action.payload];
 
+    default:
+      return state;
+  }
+}
 export function useTasks() {
   const [tasks, setTasks] = useState(() => {
     const stored = localStorage.getItem("tasks");
