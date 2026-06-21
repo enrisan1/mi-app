@@ -1,43 +1,15 @@
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, allTasks, setTasks }) {
+function TaskList({ tasks, onDelete, onToggle, onEdit }) {
   return (
     <ul>
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
           task={task}
-          onDelete={() => {
-            setTasks(allTasks.filter((t) => t.id !== task.id));
-          }}
-          onToggle={() => {
-            const updatedTasks = allTasks.map((t) => {
-              if (t.id === task.id) {
-                return {
-                  ...t,
-                  completed: !t.completed,
-                };
-              }
-
-              return t;
-            });
-
-            setTasks(updatedTasks);
-          }}
-          onEdit={(newText) => {
-            const updatedTasks = allTasks.map((t) => {
-              if (t.id === task.id) {
-                return {
-                  ...t,
-                  text: newText,
-                };
-              }
-
-              return t;
-            });
-
-            setTasks(updatedTasks);
-          }}
+          onDelete={() => onDelete(task.id)}
+          onToggle={() => onToggle(task.id)}
+          onEdit={(text) => onEdit(task.id, text)}
         />
       ))}
     </ul>

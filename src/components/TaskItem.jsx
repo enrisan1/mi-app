@@ -5,7 +5,11 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
   const [editedText, setEditedText] = useState(task.text);
 
   const handleSave = () => {
-    onEdit(editedText);
+    const trimmed = editedText.trim();
+
+    if (!trimmed) return;
+
+    onEdit(trimmed);
     setIsEditing(false);
   };
 

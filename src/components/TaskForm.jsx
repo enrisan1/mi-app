@@ -1,32 +1,25 @@
-function TaskForm({ task, setTask, tasks, setTasks }) {
+import { useState } from "react";
+
+function TaskForm({ addTask }) {
+  const [text, setText] = useState("");
+
+  const handleAdd = () => {
+    if (text.trim() === "") return;
+
+    addTask(text);
+    setText("");
+  };
+
   return (
-    <>
+    <div>
       <input
-        type="text"
-        value={task}
-        onChange={(e) => setTask(e.target.value)}
+        value={text}
+        onChange={(e) => setText(e.target.value)}
         placeholder="Escribe una tarea"
       />
 
-      <button
-        onClick={() => {
-          if (task.trim() === "") return;
-
-          setTasks([
-            ...tasks,
-            {
-              id: Date.now(),
-              text: task,
-              completed: false,
-            },
-          ]);
-
-          setTask("");
-        }}
-      >
-        Añadir
-      </button>
-    </>
+      <button onClick={handleAdd}>Añadir</button>
+    </div>
   );
 }
 
