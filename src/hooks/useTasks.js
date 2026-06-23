@@ -100,11 +100,18 @@ export function useTasks() {
   const completedTasks = tasks.filter((t) => t.completed).length;
 
   // Filtro aplicado
-  const filteredTasks = (() => {
-    if (filter === "pending") return tasks.filter((t) => !t.completed);
-    if (filter === "completed") return tasks.filter((t) => t.completed);
-    return tasks;
-  })();
+  const filteredTasks = useMemo(() => {
+    switch (filter) {
+      case "pending":
+        return tasks.filter((t) => !t.completed);
+
+      case "completed":
+        return tasks.filter((t) => t.completed);
+
+      default:
+        return tasks;
+    }
+  }, [tasks, filter]);
 
   return {
     tasks,
