@@ -1,4 +1,4 @@
-import { useReducer, useState, useEffect } from "react";
+import { useState, useEffect, useReducer, useMemo, useCallback } from "react";
 function tasksReducer(state, action) {
   switch (action.type) {
     case "ADD_TASK":
@@ -22,7 +22,7 @@ function tasksReducer(state, action) {
         task.id === action.payload.id
           ? {
               ...task,
-              text: action.payload.newText,
+              text: action.payload.text,
             }
           : task,
       );
@@ -47,7 +47,7 @@ export function useTasks() {
   }, [tasks]);
 
   // Crear tarea
-  const addTask = (text) => {
+  const addTask = useCallback((text) => {
     const newTask = {
       id: Date.now(),
       text,
@@ -58,41 +58,38 @@ export function useTasks() {
       type: "ADD_TASK",
       payload: newTask,
     });
-  };
+  }, []);
 
   // Eliminar tarea
-  const deleteTask = (id) => {
+  const deleteTask = useCallback((id) => {
     dispatch({
       type: "DELETE_TASK",
       payload: id,
     });
-  };
+  }, []);
 
   // Toggle completado
-  const toggleTask = (id) => {
+  const toggleTask = useCallback((id) => {
     dispatch({
       type: "TOGGLE_TASK",
       payload: id,
     });
-  };
+  }, []);
 
   // Editar tarea
-  const editTask = (id, newText) => {
+  const editTask = useCallback((id, text) => {
     dispatch({
       type: "EDIT_TASK",
-      payload: {
-        id,
-        newText,
-      },
+      payload: { id, text },
     });
-  };
+  }, []);
 
   // Eliminar completadas
-  const clearCompleted = () => {
+  const clearCompleted = useCallback(() => {
     dispatch({
       type: "CLEAR_COMPLETED",
     });
-  };
+  }, []);
 
   // Contadores
   const totalTasks = tasks.length;

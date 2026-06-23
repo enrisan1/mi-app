@@ -9,13 +9,17 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
 
     if (!trimmed) return;
 
-    onEdit(trimmed);
+    onEdit(task.id, trimmed);
     setIsEditing(false);
   };
 
   return (
     <li>
-      <input type="checkbox" checked={task.completed} onChange={onToggle} />
+      <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onToggle(task.id)}
+      />
 
       {isEditing ? (
         <>
@@ -41,11 +45,13 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
 
           <button onClick={() => setIsEditing(true)}>✏️</button>
 
-          <button onClick={onDelete}>❌</button>
+          <button onClick={() => onDelete(task.id)}>❌</button>
         </>
       )}
     </li>
   );
 }
 
-export default TaskItem;
+import { memo } from "react";
+
+export default memo(TaskItem);
