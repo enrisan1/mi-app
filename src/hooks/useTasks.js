@@ -1,4 +1,5 @@
 import { useState, useEffect, useReducer, useMemo, useCallback } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 function tasksReducer(state, action) {
   switch (action.type) {
     case "ADD_TASK":
@@ -35,16 +36,15 @@ function tasksReducer(state, action) {
   }
 }
 export function useTasks() {
-  const [tasks, dispatch] = useReducer(tasksReducer, [], () => {
-    const stored = localStorage.getItem("tasks");
-    return stored ? JSON.parse(stored) : [];
-  });
+  const [storedTasks, setStoredTasks] = useLocalStorage("tasks", []);
+
+  const [tasks, dispatch] = useReducer(tasksReducer, storedTasks);
   const [filter, setFilter] = useState("all");
 
   // Persistencia
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+    setStoredTasks(tasks);
+  }, [tasks, setStoredTasks]);
 
   // Crear tarea
   const addTask = useCallback((text) => {
