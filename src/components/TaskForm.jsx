@@ -1,18 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function TaskForm({ addTask }) {
   const [text, setText] = useState("");
+  const inputRef = useRef(null);
 
   const handleAdd = () => {
     if (text.trim() === "") return;
 
     addTask(text);
     setText("");
+
+    inputRef.current?.focus();
   };
 
   return (
     <div>
       <input
+        ref={inputRef}
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Escribe una tarea"
