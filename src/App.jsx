@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import { useTasks } from "./hooks/useTasks";
+import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
   const {
@@ -18,13 +18,9 @@ function App() {
     completedTasks,
   } = useTasks();
 
-  useEffect(() => {
-    if (pendingTasks > 0) {
-      document.title = `(${pendingTasks}) ToDo App`;
-    } else {
-      document.title = "ToDo App";
-    }
-  }, [pendingTasks]);
+  const title = pendingTasks > 0 ? `(${pendingTasks}) ToDo App` : "ToDo App";
+
+  useDocumentTitle(title);
 
   return (
     <div>
