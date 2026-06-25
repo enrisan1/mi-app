@@ -1,12 +1,20 @@
+export const ACTIONS = {
+  ADD_TASK: "ADD_TASK",
+  DELETE_TASK: "DELETE_TASK",
+  TOGGLE_TASK: "TOGGLE_TASK",
+  EDIT_TASK: "EDIT_TASK",
+  CLEAR_COMPLETED: "CLEAR_COMPLETED",
+};
+
 export function tasksReducer(state, action) {
   switch (action.type) {
-    case "ADD_TASK":
+    case ACTIONS.ADD_TASK:
       return [...state, action.payload];
 
-    case "DELETE_TASK":
+    case ACTIONS.DELETE_TASK:
       return state.filter((task) => task.id !== action.payload);
 
-    case "TOGGLE_TASK":
+    case ACTIONS.TOGGLE_TASK:
       return state.map((task) =>
         task.id === action.payload
           ? {
@@ -16,7 +24,7 @@ export function tasksReducer(state, action) {
           : task,
       );
 
-    case "EDIT_TASK":
+    case ACTIONS.EDIT_TASK:
       return state.map((task) =>
         task.id === action.payload.id
           ? {
@@ -26,7 +34,7 @@ export function tasksReducer(state, action) {
           : task,
       );
 
-    case "CLEAR_COMPLETED":
+    case ACTIONS.CLEAR_COMPLETED:
       return state.filter((task) => !task.completed);
 
     default:
