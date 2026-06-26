@@ -59,4 +59,18 @@ describe("TaskForm", () => {
 
     expect(input).toHaveFocus();
   });
+
+  it("no añade una tarea vacía", () => {
+    const addTask = vi.fn();
+
+    render(<TaskForm addTask={addTask} />);
+
+    const button = screen.getByRole("button", {
+      name: /añadir/i,
+    });
+
+    fireEvent.click(button);
+
+    expect(addTask).not.toHaveBeenCalled();
+  });
 });

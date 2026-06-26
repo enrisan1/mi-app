@@ -104,3 +104,74 @@ it("elimina tareas completadas", () => {
   expect(newState).toHaveLength(1);
   expect(newState[0].id).toBe(2);
 });
+
+test("devuelve el mismo estado para una acción desconocida", () => {
+  const initialState = [
+    {
+      id: 1,
+      text: "Aprender React",
+      completed: false,
+    },
+  ];
+
+  const result = tasksReducer(initialState, {
+    type: "UNKNOWN_ACTION",
+  });
+
+  expect(result).toBe(initialState);
+});
+
+test("TOGGLE_TASK solo modifica la tarea indicada", () => {
+  const initialState = [
+    {
+      id: 1,
+      text: "React",
+      completed: false,
+    },
+    {
+      id: 2,
+      text: "Vitest",
+      completed: false,
+    },
+  ];
+
+  const result = tasksReducer(initialState, {
+    type: ACTIONS.TOGGLE_TASK,
+    payload: 1,
+  });
+
+  expect(result[0].completed).toBe(true);
+  expect(result[1].completed).toBe(false);
+
+  expect(result[0]).not.toBe(initialState[0]);
+  expect(result[1]).toBe(initialState[1]);
+});
+
+test("EDIT_TASK solo modifica la tarea indicada", () => {
+  const initialState = [
+    {
+      id: 1,
+      text: "React",
+      completed: false,
+    },
+    {
+      id: 2,
+      text: "Vitest",
+      completed: false,
+    },
+  ];
+
+  const result = tasksReducer(initialState, {
+    type: ACTIONS.EDIT_TASK,
+    payload: {
+      id: 1,
+      text: "React avanzado",
+    },
+  });
+
+  expect(result[0].text).toBe("React avanzado");
+  expect(result[1].text).toBe("Vitest");
+
+  expect(result[0]).not.toBe(initialState[0]);
+  expect(result[1]).toBe(initialState[1]);
+});
