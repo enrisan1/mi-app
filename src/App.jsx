@@ -1,10 +1,11 @@
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
-import { useTasks } from "./hooks/useTasks";
+import { useTasksContext } from "./context/TasksContext";
 import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
   const {
+    tasks,
     filteredTasks,
     filter,
     setFilter,
@@ -16,7 +17,7 @@ function App() {
     totalTasks,
     pendingTasks,
     completedTasks,
-  } = useTasks();
+  } = useTasksContext();
 
   const title = pendingTasks > 0 ? `(${pendingTasks}) ToDo App` : "ToDo App";
 
@@ -30,23 +31,19 @@ function App() {
         Total: {totalTasks} | Pendientes: {pendingTasks} | Completadas:{" "}
         {completedTasks}
       </p>
+      <TasksProvider>
+        <TaskForm />
 
-      <TaskForm addTask={addTask} />
+        <div>
+          <button onClick={() => setFilter("all")}>Todas</button>
+          <button onClick={() => setFilter("pending")}>Pendientes</button>
+          <button onClick={() => setFilter("completed")}>Completadas</button>
 
-      <div>
-        <button onClick={() => setFilter("all")}>Todas</button>
-        <button onClick={() => setFilter("pending")}>Pendientes</button>
-        <button onClick={() => setFilter("completed")}>Completadas</button>
+          <button onClick={clearCompleted}>Eliminar completadas</button>
+        </div>
 
-        <button onClick={clearCompleted}>Eliminar completadas</button>
-      </div>
-
-      <TaskList
-        tasks={filteredTasks}
-        onDelete={deleteTask}
-        onToggle={toggleTask}
-        onEdit={editTask}
-      />
+        <TaskList />
+      </TasksProvider>
     </div>
   );
 }

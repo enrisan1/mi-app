@@ -1,12 +1,16 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 import TaskForm from "../components/TaskForm";
+import { TasksProvider } from "../context/TasksContext";
+import { TasksContext } from "../context/TasksContext";
 
 describe("TaskForm", () => {
   it("añade una tarea", () => {
     const addTask = vi.fn();
 
-    render(<TaskForm addTask={addTask} />);
+    renderWithContext(<TaskForm />, {
+      addTask,
+    });
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
@@ -25,7 +29,9 @@ describe("TaskForm", () => {
   it("limpia el input después de añadir una tarea", () => {
     const addTask = vi.fn();
 
-    render(<TaskForm addTask={addTask} />);
+    renderWithContext(<TaskForm />, {
+      addTask,
+    });
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
@@ -44,7 +50,9 @@ describe("TaskForm", () => {
   it("devuelve el foco al input después de añadir una tarea", () => {
     const addTask = vi.fn();
 
-    render(<TaskForm addTask={addTask} />);
+    renderWithContext(<TaskForm />, {
+      addTask,
+    });
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
@@ -63,7 +71,9 @@ describe("TaskForm", () => {
   it("no añade una tarea vacía", () => {
     const addTask = vi.fn();
 
-    render(<TaskForm addTask={addTask} />);
+    renderWithContext(<TaskForm />, {
+      addTask,
+    });
 
     const button = screen.getByRole("button", {
       name: /añadir/i,
@@ -73,4 +83,10 @@ describe("TaskForm", () => {
 
     expect(addTask).not.toHaveBeenCalled();
   });
+
+  function renderWithContext(ui, value) {
+    return render(
+      <TasksContext.Provider value={value}>{ui}</TasksContext.Provider>,
+    );
+  }
 });

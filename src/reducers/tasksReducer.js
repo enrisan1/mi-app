@@ -17,10 +17,7 @@ export function tasksReducer(state, action) {
     case ACTIONS.TOGGLE_TASK:
       return state.map((task) =>
         task.id === action.payload
-          ? {
-              ...task,
-              completed: !task.completed,
-            }
+          ? { ...task, completed: !task.completed }
           : task,
       );
 

@@ -1,15 +1,23 @@
 import TaskItem from "./TaskItem";
+import { useTasksContext } from "../context/TasksContext";
 
-function TaskList({ tasks, onDelete, onToggle, onEdit }) {
+function TaskList() {
+  const {
+    filteredTasks,
+    deleteTask,
+    toggleTask,
+    editTask,
+  } = useTasksContext();
+
   return (
     <ul>
-      {tasks.map((task) => (
+      {filteredTasks.map((task) => (
         <TaskItem
           key={task.id}
           task={task}
-          onDelete={onDelete}
-          onToggle={onToggle}
-          onEdit={onEdit}
+          onDelete={deleteTask}
+          onToggle={toggleTask}
+          onEdit={editTask}
         />
       ))}
     </ul>
