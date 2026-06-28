@@ -1,23 +1,76 @@
-import { useEffect, useState } from "react";
+import { useSyncExternalStore, useState, useCallback } from "react";
 import { tasksStore } from "../../domain/tasks/tasksStore";
-import { getAllTasks } from "../../domain/tasks/tasksSelectors";
+import { ACTIONS } from "../../domain/tasks/tasksReducer";
+
+// snapshot
+const getSnapshot = () => tasksStore.getState();
+const subscribe = (listener) => tasksStore.subscribe(listener);
 
 export function useTasks() {
-  const [state, setState] = useState(tasksStore.getState());
+  const state = useSyncExternalStore(subscribe, getSnapshot);
 
-  useEffect(() => {
-    const unsubscribe = tasksStore.subscribe(setState);
-    return unsubscribe;
+  const [filter, setFilter] = useState("all");
+
+  const addTask = useCallback((text) => {
+    tasksStore.dispatch({
+      type: ACTIONS.ADD_TASK,
+      payload: {
+        id: crypto.randomUUID(),
+        text,
+        completed: false,
+      },
+    });
   }, []);
 
-  return {
-    tasks: getAllTasks(state),
-    addTask: (text) =>
-      import("../../application/tasks/addTask").then((m) => m.addTask(text)),
+  const deleteTask = useCallback((id) => {
+    tasksStore.dispatch({
+      type: ACTIONS.DELETE_TASK,
+      payload: id,
+    });
+  }, []);
 
-    toggleTask: (id) =>
-      import("../../application/tasks/toggleTask").then((m) =>
-        m.toggleTask(id),
-      ),
+  const toggleTask = useCallback((id) => {
+    tasksStore.dispatch({
+      type: ACTIONS.TOGGLE_TASK,
+      payload: id,
+    });
+  }, []);
+
+  const editTask = useCallback((id, text) => {
+    tasksStore.dispatch({
+      type: ACTIONS.EDIT_TASK,
+      payload: { id, text },
+    });
+  }, []);
+
+  const clearCompleted = useCallback(() => {
+    tasksStore.dispatch({
+      type: ACTIONS.CLEAR_COMPLETED,
+    });
+  }, []);
+
+  const filteredTasks = (() => {
+    switch (filter) {
+      case "completed":
+        return state.filter((t) => t.completed);
+      case "pending":
+        return state.filter((t) => !t.completed);
+      default:
+        return state;
+    }
+  })();
+
+  return {
+    tasks: state,
+    filteredTasks,
+
+    filter,
+    setFilter,
+
+    addTask,
+    deleteTask,
+    toggleTask,
+    editTask,
+    clearCompleted,
   };
 }

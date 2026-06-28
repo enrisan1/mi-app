@@ -175,3 +175,49 @@ test("EDIT_TASK solo modifica la tarea indicada", () => {
   expect(result[0]).not.toBe(initialState[0]);
   expect(result[1]).toBe(initialState[1]);
 });
+
+it("TOGGLE_TASK con id inexistente no modifica estado", () => {
+  const state = [{ id: 1, text: "A", completed: false }];
+
+  const result = tasksReducer(state, {
+    type: ACTIONS.TOGGLE_TASK,
+    payload: 999,
+  });
+
+  expect(result).toEqual(state);
+  expect(result).not.toBe(state);
+});
+
+it("EDIT_TASK con id inexistente no modifica estado", () => {
+  const state = [{ id: 1, text: "A", completed: false }];
+
+  const result = tasksReducer(state, {
+    type: ACTIONS.EDIT_TASK,
+    payload: { id: 999, text: "X" },
+  });
+
+  expect(result).toEqual(state);
+  expect(result).not.toBe(state);
+});
+
+it("CLEAR_COMPLETED elimina todo si todas están completadas", () => {
+  const state = [
+    { id: 1, text: "A", completed: true },
+    { id: 2, text: "B", completed: true },
+  ];
+
+  const result = tasksReducer(state, {
+    type: ACTIONS.CLEAR_COMPLETED,
+  });
+
+  expect(result).toHaveLength(0);
+});
+
+it("no rompe con estado vacío", () => {
+  expect(
+    tasksReducer([], {
+      type: ACTIONS.DELETE_TASK,
+      payload: 1,
+    }),
+  ).toEqual([]);
+});

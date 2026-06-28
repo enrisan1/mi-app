@@ -1,114 +1,50 @@
-import { tasksReducer, ACTIONS } from "./tasksReducer";
+import { tasksReducer } from "./tasksReducer";
 
-const STORAGE_KEY = "tasks";
-
-/**
- * 🔹 Estado global simple (fuera de React)
- */
 export function createTasksStore(initialState = []) {
   let state = initialState;
-
   const listeners = new Set();
 
-  function getState() {
-    return state;
-  }
+  const getState = () => state;
 
-  function subscribe(listener) {
+  const subscribe = (listener) => {
     listeners.add(listener);
     return () => listeners.delete(listener);
-  }
+  };
 
-  function notify() {
+  const notify = () => {
     listeners.forEach((l) => l(state));
-  }
+  };
 
-  function dispatch(action) {
-    state = tasksReducer(state, action);
+  const dispatch = (action) => {
+    const nextState = tasksReducer(state, action);
+    if (!Array.isArray(nextState)) return;
+
+    state = nextState;
     notify();
-  }
+  };
 
-  // =========================
-  // Persistence (opcional)
-  // =========================
-
-  function load() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      state = raw ? JSON.parse(raw) : [];
-    } catch {
-      state = [];
-    }
-  }
-
-  function save() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  }
-
-  function hydrateFromStorage() {
-    load();
+  // helper interno opcional
+  const setState = (newState) => {
+    state = newState;
     notify();
-  }
+  };
 
-  function persist() {
-    save();
-  }
+  // API para tests
+  const clear = () => {
+    setState([]);
+  };
 
-  // =========================
-  // API de dominio
-  // =========================
-
-  function addTask(text) {
-    dispatch({
-      type: ACTIONS.ADD_TASK,
-      payload: {
-        id: Date.now(),
-        text,
-        completed: false,
-      },
-    });
-    persist();
-  }
-
-  function deleteTask(id) {
-    dispatch({
-      type: ACTIONS.DELETE_TASK,
-      payload: id,
-    });
-    persist();
-  }
-
-  function toggleTask(id) {
-    dispatch({
-      type: ACTIONS.TOGGLE_TASK,
-      payload: id,
-    });
-    persist();
-  }
-
-  function editTask(id, text) {
-    dispatch({
-      type: ACTIONS.EDIT_TASK,
-      payload: { id, text },
-    });
-    persist();
-  }
-
-  function clearCompleted() {
-    dispatch({ type: ACTIONS.CLEAR_COMPLETED });
-    persist();
-  }
+  const hydrate = (data = []) => {
+    setState(Array.isArray(data) ? [...data] : []);
+  };
 
   return {
     getState,
     subscribe,
-
-    hydrateFromStorage,
-
-    addTask,
-    deleteTask,
-    toggleTask,
-    editTask,
-    clearCompleted,
+    dispatch,
+    clear,
+    hydrate,
   };
 }
+
+export const tasksStore = createTasksStore();

@@ -3,6 +3,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import TaskList from "../components/TaskList";
 import { TasksProvider } from "../context/TasksContext";
 import TaskForm from "../components/TaskForm";
+import { tasksStore } from "../domain/tasks/tasksStore";
 
 function renderWithProvider() {
   return render(
@@ -15,8 +16,10 @@ function renderWithProvider() {
 
 describe("TaskList (integration)", () => {
   beforeEach(() => {
+    tasksStore.clear();
     localStorage.clear();
   });
+
   it("muestra tareas reales añadidas al estado", () => {
     renderWithProvider();
 

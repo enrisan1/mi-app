@@ -1,10 +1,11 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { renderHook, act } from "@testing-library/react";
-import { useTasks } from "../hooks/useTasks";
-import { taskStorage } from "../storage/taskStorage";
+import { useTasks } from "../ui/hooks/useTasks";
+import { tasksStore } from "../domain/tasks/tasksStore";
 
 describe("useTasks (senior architecture)", () => {
   beforeEach(() => {
+    tasksStore.clear(); // 👈 reemplazo directo
     localStorage.clear();
     vi.clearAllMocks();
   });
