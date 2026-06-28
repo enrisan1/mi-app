@@ -1,31 +1,17 @@
-# ToDo App React
+# 🧠 ToDo App React
 
-## Versión actual
-
-v3.1-react-external-store
+> Aplicación de gestión de tareas construida para explorar la evolución de la arquitectura de estado en React, desde hooks básicos hasta un store externo con integración moderna.
 
 ---
 
-## Estado del proyecto
+## 📦 Versión actual
 
-- Store externo propio implementado
-- useSyncExternalStore integrado
-- 38 tests pasando
-- Arquitectura estable
+![Version](https://img.shields.io/badge/version-v3.1--react--external--store-blue)
 
----
+```text
+v3.2-context-api
+```
 
-## Stack
-
-- React
-- Vite
-- Vitest
-
----
-
-## Roadmap
-
-- v3.2 Context API
-- v3.3 Application Layer
-- v3.4 Repository Pattern
-- v4.0 TypeScript
+✔ v3.1 external store
+✔ v3.2 context API
+⬜ v3.3 application layer
