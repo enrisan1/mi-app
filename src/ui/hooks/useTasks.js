@@ -53,8 +53,10 @@ export function useTasks() {
     switch (filter) {
       case "completed":
         return state.filter((t) => t.completed);
+
       case "pending":
         return state.filter((t) => !t.completed);
+
       default:
         return state;
     }

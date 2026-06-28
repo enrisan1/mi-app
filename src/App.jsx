@@ -1,6 +1,6 @@
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
-import { useTasksContext } from "./context/TasksContext";
+import { useTasksContext } from "./ui/hooks/useTasksContext";
 import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
@@ -31,19 +31,18 @@ function App() {
         Total: {totalTasks} | Pendientes: {pendingTasks} | Completadas:{" "}
         {completedTasks}
       </p>
-      <TasksProvider>
-        <TaskForm />
 
-        <div>
-          <button onClick={() => setFilter("all")}>Todas</button>
-          <button onClick={() => setFilter("pending")}>Pendientes</button>
-          <button onClick={() => setFilter("completed")}>Completadas</button>
+      <TaskForm />
 
-          <button onClick={clearCompleted}>Eliminar completadas</button>
-        </div>
+      <div>
+        <button onClick={() => setFilter("all")}>Todas</button>
+        <button onClick={() => setFilter("pending")}>Pendientes</button>
+        <button onClick={() => setFilter("completed")}>Completadas</button>
 
-        <TaskList />
-      </TasksProvider>
+        <button onClick={clearCompleted}>Eliminar completadas</button>
+      </div>
+
+      <TaskList />
     </div>
   );
 }
