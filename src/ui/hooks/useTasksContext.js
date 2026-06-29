@@ -1,13 +1,6 @@
-import {
-  useContext,
-  useSyncExternalStore,
-  useState,
-  useCallback,
-  useMemo,
-} from "react";
+import { useContext, useSyncExternalStore, useState, useMemo } from "react";
 
-import { TasksContext } from "../ui/context/TasksContext";
-import { ACTIONS } from "../../domain/tasks/tasksReducer";
+import { TasksContext } from "../context/TasksContext";
 
 export function useTasksContext() {
   const { store, actions } = useContext(TasksContext);
@@ -15,38 +8,6 @@ export function useTasksContext() {
   const state = useSyncExternalStore(store.subscribe, store.getState);
 
   const [filter, setFilter] = useState("all");
-
-  const addTask = useCallback(
-    (text) => {
-      actions.addTask(text);
-    },
-    [actions],
-  );
-
-  const deleteTask = useCallback(
-    (id) => {
-      actions.deleteTask(id);
-    },
-    [actions],
-  );
-
-  const toggleTask = useCallback(
-    (id) => {
-      actions.toggleTask(id);
-    },
-    [actions],
-  );
-
-  const editTask = useCallback(
-    (id, text) => {
-      actions.editTask(id, text);
-    },
-    [actions],
-  );
-
-  const clearCompleted = useCallback(() => {
-    actions.clearCompleted();
-  }, [actions]);
 
   const filteredTasks = useMemo(() => {
     switch (filter) {
@@ -64,11 +25,13 @@ export function useTasksContext() {
     filteredTasks,
     filter,
     setFilter,
-    addTask,
-    deleteTask,
-    toggleTask,
-    editTask,
-    clearCompleted,
+
+    addTask: actions.addTask,
+    deleteTask: actions.deleteTask,
+    toggleTask: actions.toggleTask,
+    editTask: actions.editTask,
+    clearCompleted: actions.clearCompleted,
+
     totalTasks: state.length,
     pendingTasks: state.filter((t) => !t.completed).length,
     completedTasks: state.filter((t) => t.completed).length,

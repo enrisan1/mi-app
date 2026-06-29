@@ -5,14 +5,7 @@ import { useDocumentTitle } from "./hooks/useDocumentTitle";
 
 function App() {
   const {
-    tasks,
-    filteredTasks,
-    filter,
     setFilter,
-    addTask,
-    deleteTask,
-    toggleTask,
-    editTask,
     clearCompleted,
     totalTasks,
     pendingTasks,
