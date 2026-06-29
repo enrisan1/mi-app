@@ -1,13 +1,8 @@
 import TaskItem from "./TaskItem";
-import { useTasksContext } from "../context/TasksContext";
+import { useTasksContext } from "../hooks/useTasksContext";
 
 function TaskList() {
-  const {
-    filteredTasks,
-    deleteTask,
-    toggleTask,
-    editTask,
-  } = useTasksContext();
+  const { filteredTasks, deleteTask, toggleTask, editTask } = useTasksContext();
 
   return (
     <ul>

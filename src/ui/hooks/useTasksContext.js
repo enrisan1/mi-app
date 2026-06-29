@@ -6,7 +6,7 @@ import {
   useMemo,
 } from "react";
 
-import { TasksContext } from "../context/TasksContext";
+import { TasksContext } from "../ui/context/TasksContext";
 import { ACTIONS } from "../../domain/tasks/tasksReducer";
 
 export function useTasksContext() {

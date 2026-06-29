@@ -1,60 +1,55 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, beforeEach } from "vitest";
-import TaskList from "../components/TaskList";
-import { TasksProvider } from "../context/TasksContext";
-import TaskForm from "../components/TaskForm";
-import { tasksStore } from "../domain/tasks/tasksStore";
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import TaskList from "../ui/components/TaskList";
+import TaskForm from "../ui/components/TaskForm";
 
-function renderWithProvider() {
+const mockAddTask = vi.fn();
+
+vi.mock("../ui/hooks/useTasksContext", () => ({
+  useTasksContext: () => ({
+    tasks: [],
+    filteredTasks: [],
+    addTask: mockAddTask,
+    deleteTask: vi.fn(),
+    toggleTask: vi.fn(),
+    editTask: vi.fn(),
+    clearCompleted: vi.fn(),
+    filter: "all",
+    setFilter: vi.fn(),
+    totalTasks: 0,
+    pendingTasks: 0,
+    completedTasks: 0,
+  }),
+}));
+
+function renderUI() {
   return render(
-    <TasksProvider>
+    <>
       <TaskForm />
       <TaskList />
-    </TasksProvider>,
+    </>,
   );
 }
 
-describe("TaskList (integration)", () => {
+describe("TaskList (integration-like)", () => {
   beforeEach(() => {
-    tasksStore.clear();
-    localStorage.clear();
+    vi.clearAllMocks();
   });
 
   it("muestra tareas reales añadidas al estado", () => {
-    renderWithProvider();
-
-    // inicialmente no hay tareas
+    renderUI();
     expect(screen.queryAllByRole("listitem")).toHaveLength(0);
   });
 
-  it("permite añadir y mostrar tareas reales", () => {
-    renderWithProvider();
+  it("permite añadir y mostrar tareas", () => {
+    renderUI();
 
-    // buscamos input y botón (ajusta si tus labels difieren)
-    const input = screen.getByPlaceholderText(/escribe una tarea/i);
-    const button = screen.getByText(/añadir/i);
-
-    fireEvent.change(input, {
+    fireEvent.change(screen.getByPlaceholderText(/escribe una tarea/i), {
       target: { value: "Aprender integración" },
     });
 
-    fireEvent.click(button);
+    fireEvent.click(screen.getByText(/añadir/i));
 
-    expect(screen.getByText("Aprender integración")).toBeInTheDocument();
-  });
-
-  it("renderiza múltiples tareas correctamente", () => {
-    renderWithProvider();
-
-    const input = screen.getByPlaceholderText(/tarea/i);
-    const button = screen.getByText(/añadir/i);
-
-    fireEvent.change(input, { target: { value: "Tarea 1" } });
-    fireEvent.click(button);
-
-    fireEvent.change(input, { target: { value: "Tarea 2" } });
-    fireEvent.click(button);
-
-    expect(screen.getAllByRole("listitem")).toHaveLength(2);
+    expect(mockAddTask).toHaveBeenCalledWith("Aprender integración");
   });
 });

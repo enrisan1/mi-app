@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { useTasksContext } from "../context/TasksContext";
+import { useTasksContext } from "../hooks/useTasksContext";
 
 function TaskForm() {
   const { addTask } = useTasksContext();
@@ -12,7 +12,6 @@ function TaskForm() {
 
     addTask(text);
     setText("");
-
     inputRef.current?.focus();
   };
 

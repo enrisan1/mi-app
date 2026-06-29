@@ -1,5 +1,5 @@
-import TaskList from "./components/TaskList";
-import TaskForm from "./components/TaskForm";
+import TaskForm from "./ui/components/TaskForm";
+import TaskList from "./ui/components/TaskList";
 import { useTasksContext } from "./ui/hooks/useTasksContext";
 import { useDocumentTitle } from "./hooks/useDocumentTitle";
 

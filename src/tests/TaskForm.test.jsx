@@ -1,45 +1,49 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
-import TaskForm from "../components/TaskForm";
-import { TasksProvider } from "../context/TasksContext";
-import { TasksContext } from "../context/TasksContext";
+import { describe, it, expect, vi, beforeEach } from "vitest";
+import TaskForm from "../ui/components/TaskForm";
+
+const mockAddTask = vi.fn();
+
+vi.mock("../ui/hooks/useTasksContext", () => ({
+  useTasksContext: () => ({
+    addTask: mockAddTask,
+    deleteTask: vi.fn(),
+    toggleTask: vi.fn(),
+    editTask: vi.fn(),
+    clearCompleted: vi.fn(),
+    filter: "all",
+    setFilter: vi.fn(),
+  }),
+}));
+
+beforeEach(() => {
+  mockAddTask.mockClear();
+});
 
 describe("TaskForm", () => {
   it("añade una tarea", () => {
-    const addTask = vi.fn();
-
-    renderWithContext(<TaskForm />, {
-      addTask,
-    });
+    render(<TaskForm />);
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
 
     fireEvent.change(input, {
-      target: {
-        value: "Comprar leche",
-      },
+      target: { value: "Comprar leche" },
     });
 
     fireEvent.click(button);
 
-    expect(addTask).toHaveBeenCalledWith("Comprar leche");
+    expect(mockAddTask).toHaveBeenCalledWith("Comprar leche");
   });
 
   it("limpia el input después de añadir una tarea", () => {
-    const addTask = vi.fn();
-
-    renderWithContext(<TaskForm />, {
-      addTask,
-    });
+    render(<TaskForm />);
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
 
     fireEvent.change(input, {
-      target: {
-        value: "Leer documentación",
-      },
+      target: { value: "Leer documentación" },
     });
 
     fireEvent.click(button);
@@ -48,19 +52,13 @@ describe("TaskForm", () => {
   });
 
   it("devuelve el foco al input después de añadir una tarea", () => {
-    const addTask = vi.fn();
-
-    renderWithContext(<TaskForm />, {
-      addTask,
-    });
+    render(<TaskForm />);
 
     const input = screen.getByPlaceholderText("Escribe una tarea");
     const button = screen.getByText("Añadir");
 
     fireEvent.change(input, {
-      target: {
-        value: "Aprender testing",
-      },
+      target: { value: "Aprender testing" },
     });
 
     fireEvent.click(button);
@@ -69,24 +67,12 @@ describe("TaskForm", () => {
   });
 
   it("no añade una tarea vacía", () => {
-    const addTask = vi.fn();
+    render(<TaskForm />);
 
-    renderWithContext(<TaskForm />, {
-      addTask,
-    });
-
-    const button = screen.getByRole("button", {
-      name: /añadir/i,
-    });
+    const button = screen.getByRole("button", { name: /añadir/i });
 
     fireEvent.click(button);
 
-    expect(addTask).not.toHaveBeenCalled();
+    expect(mockAddTask).not.toHaveBeenCalled();
   });
-
-  function renderWithContext(ui, value) {
-    return render(
-      <TasksContext.Provider value={value}>{ui}</TasksContext.Provider>,
-    );
-  }
 });
