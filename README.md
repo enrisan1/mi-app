@@ -1,79 +1,131 @@
-# React Todo App
+# React Todo App — Frontend Architecture Lab
 
-> Una aplicación de gestión de tareas desarrollada con React cuyo objetivo principal ha sido explorar patrones de arquitectura frontend, gestión de estado y testing, más allá de implementar una simple lista de tareas.
+> Aplicación de gestión de tareas desarrollada con React 19 enfocada en arquitectura frontend, gestión de estado desacoplada y testing avanzado.
+
+![React Todo App Demo](docs/demo.gif)
 
 ---
 
 ## 📖 Descripción
 
-Este proyecto comenzó como una aplicación ToDo tradicional y evolucionó hasta convertirse en un laboratorio para experimentar con una arquitectura desacoplada inspirada en Redux y principios de Clean Architecture.
+Este proyecto comenzó como una aplicación ToDo tradicional y evolucionó hasta convertirse en un laboratorio práctico de arquitectura frontend.
 
-En lugar de utilizar librerías externas para la gestión del estado (como Redux Toolkit o Zustand), se implementó un **store propio**, junto con reducers, acciones y una capa de Context que conecta React con la lógica de negocio.
+El objetivo principal no ha sido únicamente crear una lista de tareas, sino aplicar conceptos utilizados en aplicaciones reales:
 
-El resultado es una aplicación mantenible, testeable y preparada para seguir creciendo.
+* separación de responsabilidades
+* gestión de estado predecible
+* desacoplamiento entre UI y lógica de negocio
+* persistencia de datos
+* testing automatizado
+
+La aplicación implementa un **store propio inspirado en Redux**, utilizando reducers, acciones y una capa de Context para conectar React con la lógica de dominio.
+
+El resultado es una aplicación mantenible, testeable y preparada para evolucionar.
 
 ---
 
 ## ✨ Funcionalidades
 
-- ➕ Crear tareas
-- ✏️ Editar tareas
-- ✅ Marcar tareas como completadas o pendientes
-- 🗑️ Eliminar tareas
-- 🔍 Filtrar tareas (Todas, Pendientes y Completadas)
-- 📊 Contadores automáticos
-- 🧹 Eliminar tareas completadas
-- 💾 Persistencia mediante Local Storage
+* ➕ Crear tareas
+* ✏️ Editar tareas
+* ✅ Marcar tareas como completadas o pendientes
+* 🗑️ Eliminar tareas
+* 🔍 Filtrar por:
+
+  * Todas
+  * Pendientes
+  * Completadas
+* 📊 Contadores dinámicos
+* 🧹 Eliminación de tareas completadas
+* 💾 Persistencia mediante Local Storage
 
 ---
 
-## 🛠️ Tecnologías
+## 🛠️ Tecnologías utilizadas
 
-| Tecnología              | Uso                                 |
-| ----------------------- | ----------------------------------- |
-| React 19                | Interfaz de usuario                 |
-| Vite                    | Bundler y entorno de desarrollo     |
-| JavaScript (ES Modules) | Lenguaje                            |
-| Context API             | Integración del estado con React    |
-| External Store          | Gestión global del estado           |
-| Reducer Pattern         | Actualización predecible del estado |
-| Vitest                  | Testing                             |
-| React Testing Library   | Pruebas de componentes              |
-| ESLint                  | Calidad del código                  |
+| Tecnología            | Uso                               |
+| --------------------- | --------------------------------- |
+| React 19              | Interfaz de usuario               |
+| Vite                  | Entorno de desarrollo y build     |
+| JavaScript ES Modules | Lenguaje principal                |
+| Context API           | Integración con React             |
+| External Store        | Gestión global del estado         |
+| Reducer Pattern       | Actualizaciones predecibles       |
+| Vitest                | Testing                           |
+| React Testing Library | Pruebas de componentes            |
+| ESLint                | Calidad y consistencia del código |
 
 ---
 
-## 🏛️ Arquitectura
+# 🏛️ Arquitectura
 
-La aplicación está organizada siguiendo una separación clara de responsabilidades.
+La aplicación sigue una arquitectura por capas inspirada en Redux y Clean Architecture.
 
 ```text
-UI Components
-      │
-      ▼
-Tasks Context
-      │
-      ▼
-External Store
-      │
-      ▼
-Reducer
-      │
-      ▼
-Application State
+                 UI Components
+                      │
+                      ▼
+              Tasks Context Layer
+                      │
+                      ▼
+              Application Actions
+                      │
+                      ▼
+              Domain Store
+                      │
+                      ▼
+                 Tasks Reducer
+                      │
+                      ▼
+               Application State
+                      │
+                      ▼
+              Infrastructure Storage
 ```
 
-Cada capa tiene una responsabilidad específica:
+Responsabilidades:
 
-- **UI** → Componentes React.
-- **Context** → Puente entre React y el Store.
-- **Store** → Mantiene el estado global.
-- **Reducer** → Actualiza el estado de forma pura.
-- **Actions** → Definen las operaciones del dominio.
+### UI
+
+Componentes React responsables únicamente de la representación:
+
+* TaskForm
+* TaskList
+* TaskItem
+
+### Context Layer
+
+Puente entre React y la lógica de aplicación.
+
+Proporciona:
+
+* estado
+* acciones
+* hooks personalizados
+
+### Application Layer
+
+Coordina operaciones relacionadas con tareas.
+
+### Domain Layer
+
+Contiene la lógica principal:
+
+* acciones
+* reducer
+* store
+* selectores
+
+### Infrastructure Layer
+
+Gestiona detalles externos:
+
+* Local Storage
+* persistencia de datos
 
 ---
 
-## 📂 Estructura del proyecto
+# 📂 Estructura del proyecto
 
 ```text
 src/
@@ -100,61 +152,68 @@ src/
 └── utils/
 ```
 
-La estructura está orientada a mantener separadas la lógica de negocio, la infraestructura y la interfaz de usuario.
+La estructura mantiene separadas la interfaz, la lógica de negocio y los servicios externos.
 
 ---
 
-## 🧪 Testing
+# 🧪 Testing
 
-El proyecto incorpora diferentes niveles de pruebas automatizadas.
+El proyecto cuenta con una suite completa de pruebas automatizadas.
 
-### Unit Tests
+Estado actual:
 
-- Reducer
-- Store
-- Casos de uso
-- Hooks
-- Utilidades
+```
+35 tests passing
+0 failing
+```
 
-### Component Tests
+Incluye:
 
-- TaskForm
-- TaskItem
-- TaskList
+## Unit Tests
 
-### Integration Tests
+* Reducer
+* Store
+* Acciones
+* Hooks
+* Utilidades
 
-- Flujo completo de creación de tareas
-- Edición
-- Eliminación
-- Filtrado
-- Persistencia
+## Component Tests
 
-Actualmente todos los tests se ejecutan correctamente.
+* TaskForm
+* TaskItem
+* TaskList
+
+## Integration Tests
+
+* Creación de tareas
+* Edición
+* Eliminación
+* Filtrado
+* Persistencia
 
 ---
 
-## 🚀 Instalación
+# 🚀 Instalación
 
-Clonar el repositorio
+Clonar el repositorio:
 
 ```bash
 git clone https://github.com/enrisan1/mi-app.git
 ```
 
-Entrar en el proyecto
+Entrar en el proyecto:
 
 ```bash
 cd mi-app
 ```
 
-Instalar dependencias
+Instalar dependencias:
 
 ```bash
 npm install
 ```
 
-Iniciar el servidor
+Ejecutar en desarrollo:
 
 ```bash
 npm run dev
@@ -162,31 +221,31 @@ npm run dev
 
 ---
 
-## 📜 Scripts disponibles
+# 📜 Scripts disponibles
 
 ```bash
 npm run dev
 ```
 
-Inicia el servidor de desarrollo.
+Servidor de desarrollo.
 
 ```bash
 npm run build
 ```
 
-Genera la versión de producción.
+Compilación para producción.
 
 ```bash
 npm run preview
 ```
 
-Previsualiza la aplicación compilada.
+Previsualización del build.
 
 ```bash
 npm run test
 ```
 
-Ejecuta la suite de pruebas.
+Ejecuta los tests.
 
 ```bash
 npm run lint
@@ -196,46 +255,47 @@ Analiza el código con ESLint.
 
 ---
 
-## 💡 Decisiones de diseño
+# 💡 Decisiones de diseño
 
-Durante el desarrollo se tomaron algunas decisiones arquitectónicas con fines de aprendizaje:
+Durante el desarrollo se tomaron decisiones orientadas a comprender la arquitectura interna de aplicaciones React:
 
-- No utilizar Redux Toolkit.
-- Implementar un Store propio inspirado en Redux.
-- Mantener reducers completamente puros.
-- Centralizar toda la lógica del dominio.
-- Desacoplar React de la lógica de negocio.
-- Facilitar el testing de cada capa de forma independiente.
-
----
-
-## 📚 Aprendizajes
-
-Este proyecto ha permitido profundizar en:
-
-- Gestión avanzada del estado.
-- Reducers y acciones.
-- Arquitectura por capas.
-- Separación de responsabilidades.
-- Testing de componentes y lógica de negocio.
-- Persistencia de datos.
-- Organización de proyectos React de tamaño medio.
+* Implementación de un store propio sin Redux Toolkit.
+* Uso de reducers puros.
+* Separación entre dominio y presentación.
+* Acciones centralizadas.
+* Estado externo conectado mediante `useSyncExternalStore`.
+* Testing independiente por capas.
 
 ---
 
-## 🔮 Mejoras futuras
+# 📚 Aprendizajes
 
-- Drag & Drop para reordenar tareas.
-- Categorías.
-- Prioridades.
-- Fechas de vencimiento.
-- Sincronización con API REST.
-- Autenticación de usuarios.
-- Tema oscuro.
-- Internacionalización.
+Este proyecto permitió profundizar en:
+
+* Arquitectura frontend moderna.
+* Gestión avanzada del estado.
+* Patrones Redux.
+* Context API.
+* Hooks personalizados.
+* Testing de componentes.
+* Persistencia local.
+* Organización de proyectos React escalables.
+
+---
+
+# 🔮 Próximas mejoras
+
+* Drag & Drop para ordenar tareas.
+* Categorías.
+* Prioridades.
+* Fechas límite.
+* Sincronización con API REST.
+* Autenticación.
+* Tema oscuro.
+* Internacionalización.
 
 ---
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo la licencia MIT.
+MIT License.
