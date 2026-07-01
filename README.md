@@ -12,11 +12,11 @@ Este proyecto comenzó como una aplicación ToDo tradicional y evolucionó hasta
 
 El objetivo principal no ha sido únicamente crear una lista de tareas, sino aplicar conceptos utilizados en aplicaciones reales:
 
-* separación de responsabilidades
-* gestión de estado predecible
-* desacoplamiento entre UI y lógica de negocio
-* persistencia de datos
-* testing automatizado
+- separación de responsabilidades
+- gestión de estado predecible
+- desacoplamiento entre UI y lógica de negocio
+- persistencia de datos
+- testing automatizado
 
 La aplicación implementa un **store propio inspirado en Redux**, utilizando reducers, acciones y una capa de Context para conectar React con la lógica de dominio.
 
@@ -26,18 +26,18 @@ El resultado es una aplicación mantenible, testeable y preparada para evolucion
 
 ## ✨ Funcionalidades
 
-* ➕ Crear tareas
-* ✏️ Editar tareas
-* ✅ Marcar tareas como completadas o pendientes
-* 🗑️ Eliminar tareas
-* 🔍 Filtrar por:
+- ➕ Crear tareas
+- ✏️ Editar tareas
+- ✅ Marcar tareas como completadas o pendientes
+- 🗑️ Eliminar tareas
+- 🔍 Filtrar por:
+  - Todas
+  - Pendientes
+  - Completadas
 
-  * Todas
-  * Pendientes
-  * Completadas
-* 📊 Contadores dinámicos
-* 🧹 Eliminación de tareas completadas
-* 💾 Persistencia mediante Local Storage
+- 📊 Contadores dinámicos
+- 🧹 Eliminación de tareas completadas
+- 💾 Persistencia mediante Local Storage
 
 ---
 
@@ -59,7 +59,7 @@ El resultado es una aplicación mantenible, testeable y preparada para evolucion
 
 # 🏛️ Arquitectura
 
-La aplicación sigue una arquitectura por capas inspirada en Redux y Clean Architecture.
+La aplicación sigue una arquitectura por capas inspirada en patrones Redux y principios de separación de responsabilidades.
 
 ```text
                  UI Components
@@ -71,7 +71,7 @@ La aplicación sigue una arquitectura por capas inspirada en Redux y Clean Archi
               Application Actions
                       │
                       ▼
-              Domain Store
+                 Domain Store
                       │
                       ▼
                  Tasks Reducer
@@ -85,52 +85,55 @@ La aplicación sigue una arquitectura por capas inspirada en Redux y Clean Archi
 
 Responsabilidades:
 
-### UI
+## UI Layer
 
-Componentes React responsables únicamente de la representación:
+Componentes React responsables de la representación:
 
-* TaskForm
-* TaskList
-* TaskItem
+- TaskForm
+- TaskList
+- TaskItem
 
-### Context Layer
+## Context Layer
 
 Puente entre React y la lógica de aplicación.
 
 Proporciona:
 
-* estado
-* acciones
-* hooks personalizados
+- estado global
+- acciones
+- hooks personalizados
 
-### Application Layer
+## Application Layer
 
 Coordina operaciones relacionadas con tareas.
 
-### Domain Layer
+## Domain Layer
 
 Contiene la lógica principal:
 
-* acciones
-* reducer
-* store
-* selectores
+- acciones
+- reducer
+- store
+- selectores
 
-### Infrastructure Layer
+## Infrastructure Layer
 
 Gestiona detalles externos:
 
-* Local Storage
-* persistencia de datos
+- Local Storage
+- persistencia de datos
 
 ---
 
 # 📂 Estructura del proyecto
 
+La estructura del proyecto separa la interfaz de usuario, la lógica de dominio, la infraestructura y las pruebas automatizadas.
+
 ```text
 src/
 ├── application/
 │   └── tasks/
+│       └── addTask.js
 │
 ├── domain/
 │   └── tasks/
@@ -144,12 +147,35 @@ src/
 │
 ├── ui/
 │   ├── components/
+│   │   ├── TaskForm.jsx
+│   │   ├── TaskItem.jsx
+│   │   └── TaskList.jsx
+│   │
 │   ├── context/
+│   │   ├── TasksContext.jsx
+│   │   └── TasksProvider.jsx
+│   │
 │   └── hooks/
+│       ├── useTasks.js
+│       └── useTasksContext.js
 │
 ├── hooks/
+│   ├── useDocumentTitle.js
+│   └── useLocalStorage.js
+│
 ├── tests/
-└── utils/
+│   ├── Component tests
+│   ├── Hook tests
+│   ├── Store tests
+│   └── Reducer tests
+│
+├── utils/
+│   └── storageAdapter.js
+│
+├── assets/
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
 La estructura mantiene separadas la interfaz, la lógica de negocio y los servicios externos.
@@ -162,7 +188,7 @@ El proyecto cuenta con una suite completa de pruebas automatizadas.
 
 Estado actual:
 
-```
+```text
 35 tests passing
 0 failing
 ```
@@ -171,25 +197,25 @@ Incluye:
 
 ## Unit Tests
 
-* Reducer
-* Store
-* Acciones
-* Hooks
-* Utilidades
+- Reducer
+- Store
+- Acciones
+- Hooks
+- Utilidades
 
 ## Component Tests
 
-* TaskForm
-* TaskItem
-* TaskList
+- TaskForm
+- TaskItem
+- TaskList
 
 ## Integration Tests
 
-* Creación de tareas
-* Edición
-* Eliminación
-* Filtrado
-* Persistencia
+- Creación de tareas
+- Edición
+- Eliminación
+- Filtrado
+- Persistencia
 
 ---
 
@@ -245,7 +271,7 @@ Previsualización del build.
 npm run test
 ```
 
-Ejecuta los tests.
+Ejecuta la suite de pruebas.
 
 ```bash
 npm run lint
@@ -259,12 +285,12 @@ Analiza el código con ESLint.
 
 Durante el desarrollo se tomaron decisiones orientadas a comprender la arquitectura interna de aplicaciones React:
 
-* Implementación de un store propio sin Redux Toolkit.
-* Uso de reducers puros.
-* Separación entre dominio y presentación.
-* Acciones centralizadas.
-* Estado externo conectado mediante `useSyncExternalStore`.
-* Testing independiente por capas.
+- Implementación de un store propio sin Redux Toolkit.
+- Uso de reducers puros.
+- Separación entre dominio y presentación.
+- Acciones centralizadas.
+- Estado externo conectado mediante `useSyncExternalStore`.
+- Testing independiente por capas.
 
 ---
 
@@ -272,27 +298,27 @@ Durante el desarrollo se tomaron decisiones orientadas a comprender la arquitect
 
 Este proyecto permitió profundizar en:
 
-* Arquitectura frontend moderna.
-* Gestión avanzada del estado.
-* Patrones Redux.
-* Context API.
-* Hooks personalizados.
-* Testing de componentes.
-* Persistencia local.
-* Organización de proyectos React escalables.
+- Arquitectura frontend moderna.
+- Gestión avanzada del estado.
+- Patrones Redux.
+- Context API.
+- Hooks personalizados.
+- Testing de componentes.
+- Persistencia local.
+- Organización de proyectos React escalables.
 
 ---
 
 # 🔮 Próximas mejoras
 
-* Drag & Drop para ordenar tareas.
-* Categorías.
-* Prioridades.
-* Fechas límite.
-* Sincronización con API REST.
-* Autenticación.
-* Tema oscuro.
-* Internacionalización.
+- Drag & Drop para ordenar tareas.
+- Categorías.
+- Prioridades.
+- Fechas límite.
+- Sincronización con API REST.
+- Autenticación.
+- Tema oscuro.
+- Internacionalización.
 
 ---
 
