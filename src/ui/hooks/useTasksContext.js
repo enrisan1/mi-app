@@ -1,20 +1,20 @@
-import { useContext, useSyncExternalStore, useState, useMemo } from "react";
+import { useContext, useSyncExternalStore, useMemo } from "react";
 
 import { TasksContext } from "../context/TasksContext";
 
 export function useTasksContext() {
-  const { store, actions } = useContext(TasksContext);
+  const { store, actions, filter, setFilter } = useContext(TasksContext);
 
   const state = useSyncExternalStore(store.subscribe, store.getState);
-
-  const [filter, setFilter] = useState("all");
 
   const filteredTasks = useMemo(() => {
     switch (filter) {
       case "completed":
         return state.filter((t) => t.completed);
+
       case "pending":
         return state.filter((t) => !t.completed);
+
       default:
         return state;
     }
