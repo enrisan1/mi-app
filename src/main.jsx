@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import { TasksProvider } from "./ui/context/TasksContext";
+import App from "./App.jsx";
+import { TasksProvider } from "./ui/context/TasksProvider";
 import { tasksStore } from "./domain/tasks/tasksStore";
+import { tasksStorage } from "./infrastructure/tasksStorage";
+
+tasksStore.hydrate(tasksStorage.load());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

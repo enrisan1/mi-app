@@ -1,4 +1,5 @@
 import { tasksReducer } from "./tasksReducer";
+import { tasksStorage } from "../../infrastructure/tasksStorage";
 
 export function createTasksStore(initialState = []) {
   let state = initialState;
@@ -8,30 +9,36 @@ export function createTasksStore(initialState = []) {
 
   const subscribe = (listener) => {
     listeners.add(listener);
-    return () => listeners.delete(listener);
+
+    return () => {
+      listeners.delete(listener);
+    };
   };
 
   const notify = () => {
-    listeners.forEach((l) => l(state));
+    listeners.forEach((listener) => listener(state));
   };
 
   const dispatch = (action) => {
     const nextState = tasksReducer(state, action);
+
     if (!Array.isArray(nextState)) return;
 
     state = nextState;
+
+    tasksStorage.save(state);
+
     notify();
   };
 
-  // helper interno opcional
   const setState = (newState) => {
     state = newState;
     notify();
   };
 
-  // API para tests
   const clear = () => {
     setState([]);
+    tasksStorage.clear();
   };
 
   const hydrate = (data = []) => {
