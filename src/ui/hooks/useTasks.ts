@@ -8,15 +8,5 @@ export function useTasks() {
     throw new Error("useTasks must be used within a TasksProvider");
   }
 
-  const { state, addTask, deleteTask, toggleTask, editTask, clearCompleted } =
-    context;
-
-  return {
-    state,
-    addTask,
-    deleteTask,
-    toggleTask,
-    editTask,
-    clearCompleted,
-  };
+  return context;
 }

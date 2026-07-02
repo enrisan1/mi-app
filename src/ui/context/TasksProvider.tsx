@@ -1,31 +1,45 @@
-import { useMemo, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { TasksContext } from "./TasksContext";
-import { tasksStore } from "../../domain/tasks/tasksStore";
+import { tasksStore } from "../../domain/tasks/tasksStoreInstance";
 import { createTaskActions } from "../../domain/tasks/taskActions";
-import type { TasksState } from "../../domain/tasks/tasksReducer";
 
 type Props = {
   children: React.ReactNode;
 };
 
+type Filter = "all" | "pending" | "completed";
+
 export function TasksProvider({ children }: Props) {
-  const state = useSyncExternalStore(
+  const tasks = useSyncExternalStore(
     tasksStore.subscribe,
     tasksStore.getState,
     tasksStore.getState,
-  ) as TasksState;
+  );
+
+  const [filter, setFilter] = useState<Filter>("all");
 
   const actions = useMemo(() => createTaskActions(tasksStore), []);
 
+  const filteredTasks = useMemo(() => {
+    switch (filter) {
+      case "pending":
+        return tasks.filter((t) => !t.completed);
+      case "completed":
+        return tasks.filter((t) => t.completed);
+      default:
+        return tasks;
+    }
+  }, [tasks, filter]);
+
   const value = useMemo(
     () => ({
-      state,
+      tasks,
+      filteredTasks,
+      filter,
+      setFilter,
       ...actions,
-      dispatch: tasksStore.dispatch,
-      clear: tasksStore.clear,
-      hydrate: tasksStore.hydrate,
     }),
-    [state, actions],
+    [tasks, filteredTasks, filter, actions],
   );
 
   return (

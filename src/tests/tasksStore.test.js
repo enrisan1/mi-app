@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { tasksStore } from "../domain/tasks/tasksStore";
+import { tasksStore } from "../domain/tasks/tasksStoreInstance";
 import { ACTIONS } from "../domain/tasks/tasksReducer";
 
 beforeEach(() => {

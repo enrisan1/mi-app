@@ -1,32 +1,32 @@
-import { useState } from "react";
 import { useTasks } from "./ui/hooks/useTasks";
 import TaskForm from "./ui/components/TaskForm";
 import TaskList from "./ui/components/TaskList";
-import {
-  selectFilteredTasks,
-  selectStats,
-  type Filter,
-} from "./domain/tasks/taskSelectors";
-
 import "./App.css";
 
 function App() {
-  const { state, addTask, deleteTask, toggleTask, editTask, clearCompleted } =
-    useTasks();
+  const {
+    filteredTasks,
+    addTask,
+    deleteTask,
+    toggleTask,
+    editTask,
+    clearCompleted,
+    filter,
+    setFilter,
+  } = useTasks();
 
-  const [filter, setFilter] = useState<Filter>("all");
-
-  const filteredTasks = selectFilteredTasks(state, filter);
-  const { total, completed, pending } = selectStats(state);
+  const totalTasks = filteredTasks.length;
+  const completedTasks = filteredTasks.filter((t) => t.completed).length;
+  const pendingTasks = totalTasks - completedTasks;
 
   return (
     <div className="app">
       <h1>Todo App</h1>
 
       <div className="stats">
-        <p>Total: {total}</p>
-        <p>Completadas: {completed}</p>
-        <p>Pendientes: {pending}</p>
+        <p>Total: {totalTasks}</p>
+        <p>Completadas: {completedTasks}</p>
+        <p>Pendientes: {pendingTasks}</p>
       </div>
 
       <TaskForm addTask={addTask} />
@@ -39,9 +39,15 @@ function App() {
       />
 
       <div className="filters">
-        <button onClick={() => setFilter("all")}>Todos</button>
-        <button onClick={() => setFilter("pending")}>Pendientes</button>
-        <button onClick={() => setFilter("completed")}>Completados</button>
+        <button onClick={() => setFilter("all")}>
+          Todos {filter === "all" && "✓"}
+        </button>
+        <button onClick={() => setFilter("pending")}>
+          Pendientes {filter === "pending" && "✓"}
+        </button>
+        <button onClick={() => setFilter("completed")}>
+          Completados {filter === "completed" && "✓"}
+        </button>
       </div>
 
       <button onClick={clearCompleted}>Eliminar completadas</button>

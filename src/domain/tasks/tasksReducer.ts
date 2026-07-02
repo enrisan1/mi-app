@@ -31,29 +31,30 @@ export type TaskAction =
 
 export type TasksState = Task[];
 
-export function tasksReducer(
-  state: TasksState,
-  action: TaskAction,
-): TasksState {
+export function tasksReducer(state, action) {
   switch (action.type) {
     case ACTIONS.ADD_TASK:
       return [...state, action.payload];
 
-    case ACTIONS.DELETE_TASK:
-      return state.filter((t) => t.id !== action.payload);
-
     case ACTIONS.TOGGLE_TASK:
-      return state.map((t) =>
-        t.id === action.payload ? { ...t, completed: !t.completed } : t,
+      return state.map((task) =>
+        task.id === action.payload
+          ? { ...task, completed: !task.completed }
+          : task,
       );
 
+    case ACTIONS.DELETE_TASK:
+      return state.filter((task) => task.id !== action.payload);
+
     case ACTIONS.EDIT_TASK:
-      return state.map((t) =>
-        t.id === action.payload.id ? { ...t, text: action.payload.text } : t,
+      return state.map((task) =>
+        task.id === action.payload.id
+          ? { ...task, text: action.payload.text }
+          : task,
       );
 
     case ACTIONS.CLEAR_COMPLETED:
-      return state.filter((t) => !t.completed);
+      return state.filter((task) => !task.completed);
 
     default:
       return state;

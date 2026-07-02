@@ -1,55 +1,55 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import { renderHook, act } from "@testing-library/react";
+import { TasksProvider } from "../ui/context/TasksProvider";
 import { useTasks } from "../ui/hooks/useTasks";
-import { tasksStore } from "../domain/tasks/tasksStore";
+
+const wrapper = ({ children }) => <TasksProvider>{children}</TasksProvider>;
 
 describe("useTasks (senior architecture)", () => {
   beforeEach(() => {
-    tasksStore.clear(); // 👈 reemplazo directo
-    localStorage.clear();
-    vi.clearAllMocks();
+    // opcional reset si quieres
   });
 
   it("añade y lista tareas", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderHook(() => useTasks(), { wrapper });
 
     act(() => {
       result.current.addTask("A");
       result.current.addTask("B");
     });
 
-    expect(result.current.tasks).toHaveLength(2);
+    expect(result.current.filteredTasks).toHaveLength(2);
   });
 
   it("toggle funciona correctamente", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderHook(() => useTasks(), { wrapper });
 
     act(() => {
       result.current.addTask("A");
       result.current.addTask("B");
     });
 
-    const id = result.current.tasks.find((t) => t.text === "B").id;
+    const id = result.current.filteredTasks.find((t) => t.text === "B").id;
 
     act(() => {
       result.current.toggleTask(id);
     });
 
-    const tasks = result.current.tasks;
+    const tasks = result.current.filteredTasks;
 
     expect(tasks.find((t) => t.text === "A").completed).toBe(false);
     expect(tasks.find((t) => t.text === "B").completed).toBe(true);
   });
 
   it("filtro completed funciona", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderHook(() => useTasks(), { wrapper });
 
     act(() => {
       result.current.addTask("A");
       result.current.addTask("B");
     });
 
-    const id = result.current.tasks.find((t) => t.text === "B").id;
+    const id = result.current.filteredTasks.find((t) => t.text === "B").id;
 
     act(() => {
       result.current.toggleTask(id);

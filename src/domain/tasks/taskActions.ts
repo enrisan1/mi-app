@@ -1,8 +1,11 @@
 import { ACTIONS } from "./tasksReducer";
+import type { createTasksStore } from "./tasksStore";
 
-export function createTaskActions(store) {
+type Store = ReturnType<typeof createTasksStore>;
+
+export function createTaskActions(store: Store) {
   return {
-    addTask(text) {
+    addTask(text: string) {
       store.dispatch({
         type: ACTIONS.ADD_TASK,
         payload: {
@@ -13,21 +16,21 @@ export function createTaskActions(store) {
       });
     },
 
-    deleteTask(id) {
+    deleteTask(id: string) {
       store.dispatch({
         type: ACTIONS.DELETE_TASK,
         payload: id,
       });
     },
 
-    toggleTask(id) {
+    toggleTask(id: string) {
       store.dispatch({
         type: ACTIONS.TOGGLE_TASK,
         payload: id,
       });
     },
 
-    editTask(id, text) {
+    editTask(id: string, text: string) {
       store.dispatch({
         type: ACTIONS.EDIT_TASK,
         payload: { id, text },
