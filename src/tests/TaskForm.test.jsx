@@ -4,8 +4,8 @@ import TaskForm from "../ui/components/TaskForm";
 
 const mockAddTask = vi.fn();
 
-vi.mock("../ui/hooks/useTasksContext", () => ({
-  useTasksContext: () => ({
+vi.mock("../ui/hooks/useTasks", () => ({
+  useTasks: () => ({
     addTask: mockAddTask,
     deleteTask: vi.fn(),
     toggleTask: vi.fn(),

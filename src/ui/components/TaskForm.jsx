@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
-import { useTasksContext } from "../hooks/useTasksContext";
+import { useTasks } from "../hooks/useTasks";
 
 function TaskForm() {
-  const { addTask } = useTasksContext();
+  const { addTask } = useTasks();
 
   const [text, setText] = useState("");
   const inputRef = useRef(null);
