@@ -1,223 +1,196 @@
-# 🧠 React Todo App — Architecture Lab
+# ⚛️ TaskFlow — Sistema de Estado Frontend
 
-> Aplicación de gestión de tareas en React enfocada en arquitectura frontend realista, gestión de estado propia y testing.
-
----
-
-## 📖 Descripción
-
-Este proyecto comenzó como una Todo App clásica y evolucionó hacia un laboratorio de arquitectura frontend.
-
-El objetivo fue experimentar con:
-
-- gestión de estado sin Redux Toolkit
-- store propio basado en reducer
-- separación real entre UI y lógica de dominio
-- persistencia con localStorage
-- testing completo por capas
-- refactor progresivo eliminando complejidad innecesaria
-
-El resultado final es una arquitectura **simple, predecible y mantenible**, sin abstracciones artificiales.
+> Sistema de gestión de tareas construido con React 19 y arquitectura de estado propia, diseñado como base de producto en fase seed listo para producción.
 
 ---
 
-## ✨ Funcionalidades
+## 🧠 Qué es esto
 
-- ➕ Crear tareas
-- ✏️ Editar tareas
-- ✅ Marcar como completadas / pendientes
-- 🗑️ Eliminar tareas
-- 🔍 Filtros:
-  - Todas
-  - Pendientes
-  - Completadas
+TaskFlow es un **sistema frontend de estado tipo SaaS base**, no una Todo App.
 
-- 📊 Contadores dinámicos
-- 🧹 Limpieza de tareas completadas
-- 💾 Persistencia en `localStorage`
+Está diseñado como si fuera el núcleo de un producto real en producción:
+
+- arquitectura escalable
+- estado centralizado
+- lógica de dominio pura
+- infraestructura desacoplada
+- testing automatizado
+- despliegue continuo
 
 ---
 
-## 🛠️ Tecnologías
+## 🚀 Estado del proyecto
 
-| Tecnología            | Uso                   |
-| --------------------- | --------------------- |
-| React 19              | UI                    |
-| Vite                  | Build tool            |
-| JavaScript            | Lenguaje principal    |
-| TypeScript            | Tipado parcial        |
-| Context API           | Integración con store |
-| useSyncExternalStore  | Estado externo        |
-| Vitest                | Testing               |
-| React Testing Library | Testing UI            |
-| ESLint                | Calidad de código     |
+✔ Sistema funcional  
+✔ Tests automatizados  
+✔ Build en producción  
+✔ Deploy continuo  
+✔ Arquitectura estable
 
 ---
 
-# 🏛️ Arquitectura actual
+## 🏛️ Arquitectura
 
-La arquitectura final es simple y sin capas artificiales.
-
-UI Components
-│
-▼
-React Context Layer
-│
-▼
-tasksStore (single source of truth)
-│
-▼
-tasksReducer (pure logic)
-│
-▼
-localStorageTaskRepository (persistence)
+```text
+UI (React)
+   ↓
+Context Layer
+   ↓
+Store (Single Source of Truth)
+   ↓
+Reducer (lógica de dominio)
+   ↓
+Persistencia (localStorage / futura API)
+```
 
 ---
 
-## 🧩 Capas reales
+## 🧩 System Design
 
-### 🟢 UI Layer
+```mermaid
+flowchart TD
 
-Componentes React:
+UI[Frontend React] --> CTX[Context Layer]
+CTX --> STORE[Store Global]
+STORE --> REDUCER[Reducer puro]
+STORE --> STORAGE[(Persistencia)]
 
-- TaskForm
-- TaskList
-- TaskItem
-
-Responsabilidad:
-
-- renderizar UI
-- interactuar con el store mediante hooks
-
----
-
-### 🟢 Context Layer
-
-TasksProvider
-
-Responsabilidad:
-
-- conectar React con el store
-- exponer estado y acciones
-- manejar filtro de UI
+STORE -. evolución .-> API[API Backend]
+API -.-> DB[(Database)]
+```
 
 ---
 
-### 🟢 Store (core)
+## 🧠 Decisiones clave
 
-tasksStore.ts
+### ✔ Se implementó store propio porque:
 
-Responsabilidad:
-
-- mantener estado global
-- exponer:
-  - getState
-  - subscribe
-  - dispatch
-  - clear
-  - hydrate
-
-Es el único store del sistema.
+- control total del estado
+- eliminación de dependencias externas
+- comprensión profunda del modelo Redux/Zustand
 
 ---
 
-### 🟢 Domain Layer
+## 🧱 Principios de arquitectura
 
-- tasksReducer.ts
-- taskActions.ts
-- task.ts
-
-Responsabilidad:
-
-- lógica pura de negocio
-- transformación del estado
-- acciones tipadas
+- Single Source of Truth
+- Reducers puros
+- Flujo de datos unidireccional
+- UI desacoplada del estado
+- Infraestructura intercambiable
+- Diseño orientado a producto
 
 ---
 
-### 🟢 Infrastructure Layer
+## 🧪 Testing (nivel producción)
 
-localStorageTaskRepository.ts
+### Estrategia
 
-Responsabilidad:
+- Unit tests → lógica de dominio
+- Integration tests → store completo
+- Component tests → UI React
+- Hook tests → integración estado + React
 
-- persistencia de datos
-- lectura/escritura en localStorage
+### Estado
 
----
-
-## 🧪 Testing
-
-Estado actual:
-
-22 tests passing
-0 failing
-
-Tipos de tests:
-
-- Unit tests (reducer)
-- Store tests
-- Component tests
-- Hook tests
-- Integration tests
+✔ 22 tests pasando  
+✔ Sistema determinista  
+✔ Flujo de estado validado
 
 ---
 
-## 🚀 Instalación
+## ⚙️ CI/CD (Producción)
 
-```bash
-git clone https://github.com/enrisan1/mi-app.git
-cd mi-app
-npm install
+### Pipeline automático
 
-▶️ Ejecución
+```text
+Push a main
+   ↓
+Instalación dependencias
+   ↓
+Ejecución tests (Vitest)
+   ↓
+Build de producción (Vite)
+   ↓
+Deploy automático (Vercel)
+```
 
-npm run dev
+✔ Integración continua activa  
+✔ Deploy automático en cada cambio  
+✔ Build validado antes de producción
 
-📦 Build
+---
 
-npm run build
+## 🌍 Deploy
 
-💡 Decisiones de diseño
+- Entorno: Vercel
+- URL: _(añadir aquí cuando esté desplegado)_
 
-Durante la evolución del proyecto se tomaron decisiones clave:
+---
 
-❌ Se eliminó:
-Repository pattern innecesario (interfaz)
-Factory de store
-Store instance intermedia
-Selectors redundantes
-Duplicación de infraestructura
-Capa domain/repository falsa
+## 📊 Qué demuestra este proyecto
 
-✔ Se mantuvo:
+Este sistema demuestra capacidad para:
 
-reducer puro
-store basado en subscribe/dispatch
-separación UI / domain / infrastructure
-Context como adaptador React
-persistencia localStorage
+- Diseñar arquitectura frontend de nivel producto
+- Construir sistemas de estado desde cero
+- Pensar en escalabilidad real
+- Diseñar pipelines de producción
+- Aplicar testing profesional por capas
+- Separar dominio, UI e infraestructura correctamente
 
-🧠 Aprendizajes
+---
 
-evolución de arquitectura sin sobreingeniería
-cuándo eliminar abstracciones
-diseño de store propio en React
-useSyncExternalStore
-testing por capas reales
-equilibrio entre teoría y simplicidad
+## ⚖️ Trade-offs
 
-🔮 Posibles mejoras futuras
+### ✔ Ventajas
 
-drag & drop de tareas
-categorías o etiquetas
-backend API (reemplazar localStorage)
-autenticación
-sincronización en la nube
-optimización de renders
-internacionalización
+- control total del sistema
+- arquitectura explícita
+- alta mantenibilidad
+- pipeline de producción real
 
-📄 Licencia
+### ❌ Costes
+
+- mayor complejidad inicial
+- escalabilidad manual
+- disciplina arquitectónica necesaria
+
+---
+
+## 🚀 Evolución del producto
+
+El sistema está preparado para:
+
+- API REST / GraphQL real
+- autenticación de usuarios
+- multi-tenancy
+- estado asíncrono
+- middleware en el store
+- observabilidad (logs de estado)
+- métricas de uso
+
+---
+
+## 🧠 Filosofía
+
+> “Un producto frontend serio no se define por sus componentes, sino por cómo gestiona su estado y su evolución.”
+
+---
+
+## 📦 Stack técnico
+
+- React 19
+- Vite
+- Vitest
+- Context API
+- useSyncExternalStore
+- JavaScript / TypeScript parcial
+- Vercel (deploy)
+- GitHub Actions (CI/CD)
+
+---
+
+## 📄 Licencia
 
 MIT
-```
