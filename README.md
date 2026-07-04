@@ -1,26 +1,23 @@
-# React Todo App — Frontend Architecture Lab
+# 🧠 React Todo App — Architecture Lab
 
-> Aplicación de gestión de tareas desarrollada con React 19 enfocada en arquitectura frontend, gestión de estado desacoplada y testing avanzado.
-
-![React Todo App Demo](docs/demo.gif)
+> Aplicación de gestión de tareas en React enfocada en arquitectura frontend realista, gestión de estado propia y testing.
 
 ---
 
 ## 📖 Descripción
 
-Este proyecto comenzó como una aplicación ToDo tradicional y evolucionó hasta convertirse en un laboratorio práctico de arquitectura frontend.
+Este proyecto comenzó como una Todo App clásica y evolucionó hacia un laboratorio de arquitectura frontend.
 
-El objetivo principal no ha sido únicamente crear una lista de tareas, sino aplicar conceptos utilizados en aplicaciones reales:
+El objetivo fue experimentar con:
 
-- separación de responsabilidades
-- gestión de estado predecible
-- desacoplamiento entre UI y lógica de negocio
-- persistencia de datos
-- testing automatizado
+- gestión de estado sin Redux Toolkit
+- store propio basado en reducer
+- separación real entre UI y lógica de dominio
+- persistencia con localStorage
+- testing completo por capas
+- refactor progresivo eliminando complejidad innecesaria
 
-La aplicación implementa un **store propio inspirado en Redux**, utilizando reducers, acciones y una capa de Context para conectar React con la lógica de dominio.
-
-El resultado es una aplicación mantenible, testeable y preparada para evolucionar.
+El resultado final es una arquitectura **simple, predecible y mantenible**, sin abstracciones artificiales.
 
 ---
 
@@ -28,300 +25,199 @@ El resultado es una aplicación mantenible, testeable y preparada para evolucion
 
 - ➕ Crear tareas
 - ✏️ Editar tareas
-- ✅ Marcar tareas como completadas o pendientes
+- ✅ Marcar como completadas / pendientes
 - 🗑️ Eliminar tareas
-- 🔍 Filtrar por:
+- 🔍 Filtros:
   - Todas
   - Pendientes
   - Completadas
 
 - 📊 Contadores dinámicos
-- 🧹 Eliminación de tareas completadas
-- 💾 Persistencia mediante Local Storage
+- 🧹 Limpieza de tareas completadas
+- 💾 Persistencia en `localStorage`
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Tecnologías
 
-| Tecnología            | Uso                               |
-| --------------------- | --------------------------------- |
-| React 19              | Interfaz de usuario               |
-| Vite                  | Entorno de desarrollo y build     |
-| JavaScript ES Modules | Lenguaje principal                |
-| Context API           | Integración con React             |
-| External Store        | Gestión global del estado         |
-| Reducer Pattern       | Actualizaciones predecibles       |
-| Vitest                | Testing                           |
-| React Testing Library | Pruebas de componentes            |
-| ESLint                | Calidad y consistencia del código |
+| Tecnología            | Uso                   |
+| --------------------- | --------------------- |
+| React 19              | UI                    |
+| Vite                  | Build tool            |
+| JavaScript            | Lenguaje principal    |
+| TypeScript            | Tipado parcial        |
+| Context API           | Integración con store |
+| useSyncExternalStore  | Estado externo        |
+| Vitest                | Testing               |
+| React Testing Library | Testing UI            |
+| ESLint                | Calidad de código     |
 
 ---
 
-# 🏛️ Arquitectura
+# 🏛️ Arquitectura actual
 
-La aplicación sigue una arquitectura por capas inspirada en patrones Redux y principios de separación de responsabilidades.
+La arquitectura final es simple y sin capas artificiales.
 
-```text
-                 UI Components
-                      │
-                      ▼
-              Tasks Context Layer
-                      │
-                      ▼
-              Application Actions
-                      │
-                      ▼
-                 Domain Store
-                      │
-                      ▼
-                 Tasks Reducer
-                      │
-                      ▼
-               Application State
-                      │
-                      ▼
-              Infrastructure Storage
-```
+UI Components
+│
+▼
+React Context Layer
+│
+▼
+tasksStore (single source of truth)
+│
+▼
+tasksReducer (pure logic)
+│
+▼
+localStorageTaskRepository (persistence)
 
-Responsabilidades:
+---
 
-## UI Layer
+## 🧩 Capas reales
 
-Componentes React responsables de la representación:
+### 🟢 UI Layer
+
+Componentes React:
 
 - TaskForm
 - TaskList
 - TaskItem
 
-## Context Layer
+Responsabilidad:
 
-Puente entre React y la lógica de aplicación.
+- renderizar UI
+- interactuar con el store mediante hooks
 
-Proporciona:
+---
 
-- estado global
-- acciones
-- hooks personalizados
+### 🟢 Context Layer
 
-## Application Layer
+TasksProvider
 
-Coordina operaciones relacionadas con tareas.
+Responsabilidad:
 
-## Domain Layer
+- conectar React con el store
+- exponer estado y acciones
+- manejar filtro de UI
 
-Contiene la lógica principal:
+---
 
-- acciones
-- reducer
-- store
-- selectores
+### 🟢 Store (core)
 
-## Infrastructure Layer
+tasksStore.ts
 
-Gestiona detalles externos:
+Responsabilidad:
 
-- Local Storage
+- mantener estado global
+- exponer:
+  - getState
+  - subscribe
+  - dispatch
+  - clear
+  - hydrate
+
+Es el único store del sistema.
+
+---
+
+### 🟢 Domain Layer
+
+- tasksReducer.ts
+- taskActions.ts
+- task.ts
+
+Responsabilidad:
+
+- lógica pura de negocio
+- transformación del estado
+- acciones tipadas
+
+---
+
+### 🟢 Infrastructure Layer
+
+localStorageTaskRepository.ts
+
+Responsabilidad:
+
 - persistencia de datos
+- lectura/escritura en localStorage
 
 ---
 
-# 📂 Estructura del proyecto
-
-La estructura del proyecto separa la interfaz de usuario, la lógica de dominio, la infraestructura y las pruebas automatizadas.
-
-```text
-src/
-├── application/
-│   └── tasks/
-│       └── addTask.js
-│
-├── domain/
-│   └── tasks/
-│       ├── taskActions.js
-│       ├── tasksReducer.js
-│       ├── tasksSelectors.js
-│       └── tasksStore.js
-│
-├── infrastructure/
-│   └── tasksStorage.js
-│
-├── ui/
-│   ├── components/
-│   │   ├── TaskForm.jsx
-│   │   ├── TaskItem.jsx
-│   │   └── TaskList.jsx
-│   │
-│   ├── context/
-│   │   ├── TasksContext.jsx
-│   │   └── TasksProvider.jsx
-│   │
-│   └── hooks/
-│       ├── useTasks.js
-│       └── useTasksContext.js
-│
-├── hooks/
-│   ├── useDocumentTitle.js
-│   └── useLocalStorage.js
-│
-├── tests/
-│   ├── Component tests
-│   ├── Hook tests
-│   ├── Store tests
-│   └── Reducer tests
-│
-├── utils/
-│   └── storageAdapter.js
-│
-├── assets/
-├── App.jsx
-├── main.jsx
-└── index.css
-```
-
-La estructura mantiene separadas la interfaz, la lógica de negocio y los servicios externos.
-
----
-
-# 🧪 Testing
-
-El proyecto cuenta con una suite completa de pruebas automatizadas.
+## 🧪 Testing
 
 Estado actual:
 
-```text
-35 tests passing
+22 tests passing
 0 failing
-```
 
-Incluye:
+Tipos de tests:
 
-## Unit Tests
-
-- Reducer
-- Store
-- Acciones
-- Hooks
-- Utilidades
-
-## Component Tests
-
-- TaskForm
-- TaskItem
-- TaskList
-
-## Integration Tests
-
-- Creación de tareas
-- Edición
-- Eliminación
-- Filtrado
-- Persistencia
+- Unit tests (reducer)
+- Store tests
+- Component tests
+- Hook tests
+- Integration tests
 
 ---
 
-# 🚀 Instalación
-
-Clonar el repositorio:
+## 🚀 Instalación
 
 ```bash
 git clone https://github.com/enrisan1/mi-app.git
-```
-
-Entrar en el proyecto:
-
-```bash
 cd mi-app
-```
-
-Instalar dependencias:
-
-```bash
 npm install
-```
 
-Ejecutar en desarrollo:
+▶️ Ejecución
 
-```bash
 npm run dev
-```
 
----
+📦 Build
 
-# 📜 Scripts disponibles
-
-```bash
-npm run dev
-```
-
-Servidor de desarrollo.
-
-```bash
 npm run build
+
+💡 Decisiones de diseño
+
+Durante la evolución del proyecto se tomaron decisiones clave:
+
+❌ Se eliminó:
+Repository pattern innecesario (interfaz)
+Factory de store
+Store instance intermedia
+Selectors redundantes
+Duplicación de infraestructura
+Capa domain/repository falsa
+
+✔ Se mantuvo:
+
+reducer puro
+store basado en subscribe/dispatch
+separación UI / domain / infrastructure
+Context como adaptador React
+persistencia localStorage
+
+🧠 Aprendizajes
+
+evolución de arquitectura sin sobreingeniería
+cuándo eliminar abstracciones
+diseño de store propio en React
+useSyncExternalStore
+testing por capas reales
+equilibrio entre teoría y simplicidad
+
+🔮 Posibles mejoras futuras
+
+drag & drop de tareas
+categorías o etiquetas
+backend API (reemplazar localStorage)
+autenticación
+sincronización en la nube
+optimización de renders
+internacionalización
+
+📄 Licencia
+
+MIT
 ```
-
-Compilación para producción.
-
-```bash
-npm run preview
-```
-
-Previsualización del build.
-
-```bash
-npm run test
-```
-
-Ejecuta la suite de pruebas.
-
-```bash
-npm run lint
-```
-
-Analiza el código con ESLint.
-
----
-
-# 💡 Decisiones de diseño
-
-Durante el desarrollo se tomaron decisiones orientadas a comprender la arquitectura interna de aplicaciones React:
-
-- Implementación de un store propio sin Redux Toolkit.
-- Uso de reducers puros.
-- Separación entre dominio y presentación.
-- Acciones centralizadas.
-- Estado externo conectado mediante `useSyncExternalStore`.
-- Testing independiente por capas.
-
----
-
-# 📚 Aprendizajes
-
-Este proyecto permitió profundizar en:
-
-- Arquitectura frontend moderna.
-- Gestión avanzada del estado.
-- Patrones Redux.
-- Context API.
-- Hooks personalizados.
-- Testing de componentes.
-- Persistencia local.
-- Organización de proyectos React escalables.
-
----
-
-# 🔮 Próximas mejoras
-
-- Drag & Drop para ordenar tareas.
-- Categorías.
-- Prioridades.
-- Fechas límite.
-- Sincronización con API REST.
-- Autenticación.
-- Tema oscuro.
-- Internacionalización.
-
----
-
-## 📄 Licencia
-
-MIT License.

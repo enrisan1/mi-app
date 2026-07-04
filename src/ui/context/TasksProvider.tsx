@@ -1,6 +1,6 @@
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { TasksContext } from "./TasksContext";
-import { tasksStore } from "../../domain/tasks/tasksStoreInstance";
+import { tasksStore } from "../../domain/tasks/tasksStore";
 import { createTaskActions } from "../../domain/tasks/taskActions";
 
 type Props = {
@@ -39,7 +39,7 @@ export function TasksProvider({ children }: Props) {
       setFilter,
       ...actions,
     }),
-    [tasks, filteredTasks, filter, actions],
+    [tasks, filter, actions],
   );
 
   return (

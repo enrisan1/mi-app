@@ -1,51 +1,36 @@
-import { tasksReducer, type TaskAction, type TasksState } from "./tasksReducer";
-import type { TaskRepository } from "./repository/taskRepository";
+import { tasksReducer } from "./tasksReducer";
+import type { Task } from "./task";
+import { localStorageTaskRepository } from "../../infrastructure/taskRepository/localStorageTaskRepository";
 
 type Listener = () => void;
 
-export function createTasksStore(
-  repository: TaskRepository,
-  initialState: TasksState = [],
-) {
-  let state: TasksState = repository.load?.() ?? initialState;
+let state: Task[] = localStorageTaskRepository.load?.() ?? [];
 
-  const listeners = new Set<Listener>();
+const listeners = new Set<Listener>();
 
-  const getState = () => state;
+export const tasksStore = {
+  getState: () => state,
 
-  const subscribe = (listener: Listener) => {
+  subscribe: (listener: Listener) => {
     listeners.add(listener);
     return () => listeners.delete(listener);
-  };
+  },
 
-  const notify = () => {
+  dispatch: (action: any) => {
+    state = tasksReducer(state, action);
+
+    localStorageTaskRepository.save(state);
     listeners.forEach((l) => l());
-  };
+  },
 
-  const dispatch = (action: TaskAction) => {
-    const nextState = tasksReducer(state, action);
-    state = nextState;
-
-    repository.save(state);
-    notify();
-  };
-
-  const clear = () => {
+  clear: () => {
     state = [];
-    repository.clear();
-    notify();
-  };
+    localStorageTaskRepository.clear();
+    listeners.forEach((l) => l());
+  },
 
-  const hydrate = (data: TasksState = []) => {
+  hydrate: (data: Task[] = []) => {
     state = Array.isArray(data) ? [...data] : [];
-    notify();
-  };
-
-  return {
-    getState,
-    subscribe,
-    dispatch,
-    clear,
-    hydrate,
-  };
-}
+    listeners.forEach((l) => l());
+  },
+};
