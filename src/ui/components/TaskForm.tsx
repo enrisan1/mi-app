@@ -1,11 +1,12 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import { useTasks } from "../hooks/useTasks";
 
 function TaskForm() {
   const { addTask } = useTasks();
 
-  const [text, setText] = useState("");
-  const inputRef = useRef(null);
+  const [text, setText] = useState<string>("");
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleAdd = () => {
     if (text.trim() === "") return;
@@ -20,11 +21,15 @@ function TaskForm() {
       <input
         ref={inputRef}
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+          setText(e.target.value)
+        }
         placeholder="Escribe una tarea"
       />
 
-      <button onClick={handleAdd}>Añadir</button>
+      <button onClick={handleAdd}>
+        Añadir
+      </button>
     </div>
   );
 }

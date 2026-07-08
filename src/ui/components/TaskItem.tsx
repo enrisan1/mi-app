@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { memo, useState, type ChangeEvent } from "react";
+import type { Task } from "../../domain/tasks/task";
 
-function TaskItem({ task, onDelete, onToggle, onEdit }) {
+type Props = {
+  task: Task;
+  onDelete(id: string): void;
+  onToggle(id: string): void;
+  onEdit(id: string, text: string): void;
+};
+
+function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(task.text);
 
@@ -13,6 +21,10 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
     setIsEditing(false);
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEditedText(e.target.value);
+  };
+
   return (
     <li>
       <input
@@ -23,11 +35,7 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
 
       {isEditing ? (
         <>
-          <input
-            type="text"
-            value={editedText}
-            onChange={(e) => setEditedText(e.target.value)}
-          />
+          <input type="text" value={editedText} onChange={handleChange} />
 
           <button onClick={handleSave}>💾</button>
 
@@ -51,7 +59,5 @@ function TaskItem({ task, onDelete, onToggle, onEdit }) {
     </li>
   );
 }
-
-import { memo } from "react";
 
 export default memo(TaskItem);

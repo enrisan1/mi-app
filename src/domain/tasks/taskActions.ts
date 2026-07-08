@@ -1,9 +1,8 @@
-import { ACTIONS } from "./tasksReducer";
-import type { createTasksStore } from "./tasksStore";
+import type { Store } from "../../store/types";
+import type { Task } from "./task";
+import { ACTIONS, type TaskAction } from "./tasksReducer";
 
-type Store = ReturnType<typeof createTasksStore>;
-
-export function createTaskActions(store: Store) {
+export function createTaskActions(store: Store<Task[], TaskAction>) {
   return {
     addTask(text: string) {
       store.dispatch({

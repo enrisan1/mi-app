@@ -1,22 +1,33 @@
+import { useMemo, useState } from "react";
 import { useTasks } from "./ui/hooks/useTasks";
 import TaskForm from "./ui/components/TaskForm";
 import TaskList from "./ui/components/TaskList";
 import "./App.css";
 
-function App() {
-  const {
-    filteredTasks,
-    addTask,
-    deleteTask,
-    toggleTask,
-    editTask,
-    clearCompleted,
-    filter,
-    setFilter,
-  } = useTasks();
+type Filter = "all" | "pending" | "completed";
 
-  const totalTasks = filteredTasks.length;
-  const completedTasks = filteredTasks.filter((t) => t.completed).length;
+function App() {
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const { tasks, addTask, deleteTask, toggleTask, editTask, clearCompleted } =
+    useTasks();
+
+  const filteredTasks = useMemo(() => {
+    switch (filter) {
+      case "completed":
+        return tasks.filter((t) => t.completed);
+
+      case "pending":
+        return tasks.filter((t) => !t.completed);
+
+      default:
+        return tasks;
+    }
+  }, [tasks, filter]);
+
+  // Estadísticas sobre TODAS las tareas
+  const totalTasks = tasks.length;
+  const completedTasks = tasks.filter((t) => t.completed).length;
   const pendingTasks = totalTasks - completedTasks;
 
   return (
@@ -29,7 +40,7 @@ function App() {
         <p>Pendientes: {pendingTasks}</p>
       </div>
 
-      <TaskForm addTask={addTask} />
+      <TaskForm />
 
       <TaskList
         tasks={filteredTasks}
@@ -42,11 +53,13 @@ function App() {
         <button onClick={() => setFilter("all")}>
           Todos {filter === "all" && "✓"}
         </button>
+
         <button onClick={() => setFilter("pending")}>
           Pendientes {filter === "pending" && "✓"}
         </button>
+
         <button onClick={() => setFilter("completed")}>
-          Completados {filter === "completed" && "✓"}
+          Completadas {filter === "completed" && "✓"}
         </button>
       </div>
 

@@ -1,16 +1,19 @@
+import type { Task } from "../domain/tasks/task";
+
 const STORAGE_KEY = "tasks";
 
 export const storageAdapter = {
-  load() {
+  load(): Task[] {
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      return data ? JSON.parse(data) : [];
+
+      return data ? (JSON.parse(data) as Task[]) : [];
     } catch {
       return [];
     }
   },
 
-  save(tasks) {
+  save(tasks: Task[]): void {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
     } catch {
@@ -18,7 +21,7 @@ export const storageAdapter = {
     }
   },
 
-  clear() {
+  clear(): void {
     localStorage.removeItem(STORAGE_KEY);
   },
 };

@@ -1,4 +1,4 @@
-import type { Task } from "../task";
+import type { Task } from "../../domain/tasks/task";
 
 const KEY = "tasks";
 

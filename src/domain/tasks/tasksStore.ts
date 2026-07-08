@@ -1,36 +1,17 @@
-import { tasksReducer } from "./tasksReducer";
+import { createStore } from "../../store/createStore";
+import { tasksReducer, type TaskAction } from "./tasksReducer";
 import type { Task } from "./task";
 import { localStorageTaskRepository } from "../../infrastructure/taskRepository/localStorageTaskRepository";
+import { loggerMiddleware } from "../../store/middleware/loggerMiddleware";
+import { persistMiddleware } from "./middleware/persistMiddleware";
+import { createTaskActions } from "./taskActions";
 
-type Listener = () => void;
+const initialState: Task[] = localStorageTaskRepository.load?.() ?? [];
 
-let state: Task[] = localStorageTaskRepository.load?.() ?? [];
+export const tasksStore = createStore<Task[], TaskAction>(
+  tasksReducer,
+  initialState,
+  [loggerMiddleware(), persistMiddleware()],
+);
 
-const listeners = new Set<Listener>();
-
-export const tasksStore = {
-  getState: () => state,
-
-  subscribe: (listener: Listener) => {
-    listeners.add(listener);
-    return () => listeners.delete(listener);
-  },
-
-  dispatch: (action: any) => {
-    state = tasksReducer(state, action);
-
-    localStorageTaskRepository.save(state);
-    listeners.forEach((l) => l());
-  },
-
-  clear: () => {
-    state = [];
-    localStorageTaskRepository.clear();
-    listeners.forEach((l) => l());
-  },
-
-  hydrate: (data: Task[] = []) => {
-    state = Array.isArray(data) ? [...data] : [];
-    listeners.forEach((l) => l());
-  },
-};
+export const taskActions = createTaskActions(tasksStore);

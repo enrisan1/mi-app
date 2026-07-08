@@ -31,7 +31,10 @@ export type TaskAction =
 
 export type TasksState = Task[];
 
-export function tasksReducer(state, action) {
+export function tasksReducer(
+  state: TasksState,
+  action: TaskAction,
+): TasksState {
   switch (action.type) {
     case ACTIONS.ADD_TASK:
       return [...state, action.payload];

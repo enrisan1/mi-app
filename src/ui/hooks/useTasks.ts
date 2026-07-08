@@ -1,12 +1,15 @@
-import { useContext } from "react";
-import { TasksContext } from "../context/TasksContext";
+import { useSyncExternalStore } from "react";
+import { tasksStore, taskActions } from "../../domain/tasks/tasksStore";
 
 export function useTasks() {
-  const context = useContext(TasksContext);
+  const tasks = useSyncExternalStore(
+    tasksStore.subscribe,
+    tasksStore.getState,
+    tasksStore.getState,
+  );
 
-  if (!context) {
-    throw new Error("useTasks must be used within a TasksProvider");
-  }
-
-  return context;
+  return {
+    tasks,
+    ...taskActions,
+  };
 }
