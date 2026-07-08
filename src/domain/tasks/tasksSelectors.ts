@@ -32,6 +32,18 @@ export function selectVisibleTasks(tasks: Task[], filter: TaskFilter): Task[] {
   }
 }
 
+export function selectTotalTasks(tasks: Task[]): number {
+  return tasks.length;
+}
+
+export function selectCompletedCount(tasks: Task[]): number {
+  return selectCompletedTasks(tasks).length;
+}
+
+export function selectPendingCount(tasks: Task[]): number {
+  return selectActiveTasks(tasks).length;
+}
+
 /**
  * Selectores memoizados
  */

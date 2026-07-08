@@ -5,9 +5,10 @@ import TaskFilters from "./ui/components/TaskFilters";
 import TaskList from "./ui/components/TaskList";
 import type { TaskFilter } from "./domain/tasks/taskFilter";
 import {
-  selectCompletedTasks,
-  selectActiveTasks,
   selectVisibleTasks,
+  selectTotalTasks,
+  selectCompletedCount,
+  selectPendingCount,
 } from "./domain/tasks/tasksSelectors";
 import "./App.css";
 
@@ -20,9 +21,10 @@ function App() {
   const filteredTasks = selectVisibleTasks(tasks, filter);
 
   // Estadísticas (las mejoraremos en la siguiente fase usando selectores)
-  const totalTasks = tasks.length;
-  const completedTasks = selectCompletedTasks(tasks).length;
-  const pendingTasks = selectActiveTasks(tasks).length;
+  // Estadísticas
+  const totalTasks = selectTotalTasks(tasks);
+  const completedTasks = selectCompletedCount(tasks);
+  const pendingTasks = selectPendingCount(tasks);
 
   return (
     <div className="app">

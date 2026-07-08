@@ -4,6 +4,9 @@ import {
   selectActiveTasks,
   selectCompletedTasks,
   selectVisibleTasks,
+  selectTotalTasks,
+  selectCompletedCount,
+  selectPendingCount,
 } from "../domain/tasks/tasksSelectors";
 import type { Task } from "../domain/tasks/task";
 
@@ -48,5 +51,16 @@ describe("tasksSelectors", () => {
 
   it("selectVisibleTasks('completed') devuelve las completadas", () => {
     expect(selectVisibleTasks(tasks, "completed")).toEqual([tasks[1]]);
+  });
+  it("selectTotalTasks devuelve el número total de tareas", () => {
+    expect(selectTotalTasks(tasks)).toBe(3);
+  });
+
+  it("selectCompletedCount devuelve el número de tareas completadas", () => {
+    expect(selectCompletedCount(tasks)).toBe(1);
+  });
+
+  it("selectPendingCount devuelve el número de tareas pendientes", () => {
+    expect(selectPendingCount(tasks)).toBe(2);
   });
 });
