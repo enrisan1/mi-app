@@ -1,34 +1,28 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useTasks } from "./ui/hooks/useTasks";
 import TaskForm from "./ui/components/TaskForm";
+import TaskFilters from "./ui/components/TaskFilters";
 import TaskList from "./ui/components/TaskList";
+import type { TaskFilter } from "./domain/tasks/taskFilter";
+import {
+  selectCompletedTasks,
+  selectActiveTasks,
+  selectVisibleTasks,
+} from "./domain/tasks/tasksSelectors";
 import "./App.css";
 
-type Filter = "all" | "pending" | "completed";
-
 function App() {
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<TaskFilter>("all");
 
-  const { tasks, addTask, deleteTask, toggleTask, editTask, clearCompleted } =
+  const { tasks, deleteTask, toggleTask, editTask, clearCompleted } =
     useTasks();
 
-  const filteredTasks = useMemo(() => {
-    switch (filter) {
-      case "completed":
-        return tasks.filter((t) => t.completed);
+  const filteredTasks = selectVisibleTasks(tasks, filter);
 
-      case "pending":
-        return tasks.filter((t) => !t.completed);
-
-      default:
-        return tasks;
-    }
-  }, [tasks, filter]);
-
-  // Estadísticas sobre TODAS las tareas
+  // Estadísticas (las mejoraremos en la siguiente fase usando selectores)
   const totalTasks = tasks.length;
-  const completedTasks = tasks.filter((t) => t.completed).length;
-  const pendingTasks = totalTasks - completedTasks;
+  const completedTasks = selectCompletedTasks(tasks).length;
+  const pendingTasks = selectActiveTasks(tasks).length;
 
   return (
     <div className="app">
@@ -42,26 +36,14 @@ function App() {
 
       <TaskForm />
 
+      <TaskFilters filter={filter} onFilterChange={setFilter} />
+
       <TaskList
         tasks={filteredTasks}
         deleteTask={deleteTask}
         toggleTask={toggleTask}
         editTask={editTask}
       />
-
-      <div className="filters">
-        <button onClick={() => setFilter("all")}>
-          Todos {filter === "all" && "✓"}
-        </button>
-
-        <button onClick={() => setFilter("pending")}>
-          Pendientes {filter === "pending" && "✓"}
-        </button>
-
-        <button onClick={() => setFilter("completed")}>
-          Completadas {filter === "completed" && "✓"}
-        </button>
-      </div>
 
       <button onClick={clearCompleted}>Eliminar completadas</button>
     </div>
