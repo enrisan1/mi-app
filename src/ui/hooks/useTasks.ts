@@ -1,5 +1,12 @@
 import { useSyncExternalStore } from "react";
-import { tasksStore, taskActions } from "../../domain/tasks/tasksStore";
+import { tasksStore } from "../../domain/tasks/tasksStore";
+import {
+  addTaskUseCase,
+  toggleTaskUseCase,
+  deleteTaskUseCase,
+  editTaskUseCase,
+  clearCompletedUseCase,
+} from "../../domain/tasks/useCases";
 
 export function useTasks() {
   const tasks = useSyncExternalStore(
@@ -10,6 +17,10 @@ export function useTasks() {
 
   return {
     tasks,
-    ...taskActions,
+    addTask: addTaskUseCase,
+    toggleTask: toggleTaskUseCase,
+    deleteTask: deleteTaskUseCase,
+    editTask: editTaskUseCase,
+    clearCompleted: clearCompletedUseCase,
   };
 }
