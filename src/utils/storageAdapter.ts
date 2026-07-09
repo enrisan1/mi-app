@@ -1,4 +1,4 @@
-import type { Task } from "../domain/tasks/task";
+import type { Task } from "../domain/tasks/entities/task";
 
 const STORAGE_KEY = "tasks";
 

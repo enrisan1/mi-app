@@ -1,4 +1,4 @@
-import { createTask } from "../task";
+import { createTask } from "../entities/task";
 import type { TaskActions } from "../taskActions.types";
 
 export function createAddTaskUseCase(actions: TaskActions) {

@@ -1,5 +1,4 @@
-import type { Task } from "./task";
-
+import type { Task } from "./entities/task";
 export interface TaskActions {
   addTask(task: Task): void;
   deleteTask(id: string): void;

@@ -1,4 +1,4 @@
-import type { Task } from "./task";
+import type { Task } from "./entities/task";
 import type { TaskFilter } from "./taskFilter";
 import { createSelector } from "../../store/createSelector";
 

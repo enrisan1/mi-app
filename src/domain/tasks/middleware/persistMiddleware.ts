@@ -1,6 +1,6 @@
 import { localStorageTaskRepository } from "../../../infrastructure/taskRepository/localStorageTaskRepository";
 import type { Middleware } from "../../../store/types";
-import type { Task } from "../task";
+import type { Task } from "../entities/task";
 import type { TaskAction } from "../tasksReducer";
 
 export const persistMiddleware =

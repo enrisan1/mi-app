@@ -1,5 +1,5 @@
 import { memo, useState, type ChangeEvent } from "react";
-import type { Task } from "../../domain/tasks/task";
+import type { Task } from "../../domain/tasks/entities/task";
 
 type Props = {
   task: Task;

@@ -1,3 +1,4 @@
+import type { Task } from "../domain/tasks/entities/task";
 import { describe, expect, it } from "vitest";
 import {
   selectAllTasks,
@@ -8,7 +9,6 @@ import {
   selectCompletedCount,
   selectPendingCount,
 } from "../domain/tasks/tasksSelectors";
-import type { Task } from "../domain/tasks/task";
 
 const tasks: Task[] = [
   {

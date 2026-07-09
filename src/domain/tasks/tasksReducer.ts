@@ -1,4 +1,4 @@
-import { renameTask, toggleTask, type Task } from "./task";
+import { renameTask, toggleTask, type Task } from "./entities/task";
 
 export const ACTIONS = {
   ADD_TASK: "ADD_TASK",
