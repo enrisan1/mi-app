@@ -4,14 +4,10 @@ import { ACTIONS, type TaskAction } from "./tasksReducer";
 
 export function createTaskActions(store: Store<Task[], TaskAction>) {
   return {
-    addTask(text: string) {
+    addTask(task: Task) {
       store.dispatch({
         type: ACTIONS.ADD_TASK,
-        payload: {
-          id: crypto.randomUUID(),
-          text,
-          completed: false,
-        },
+        payload: task,
       });
     },
 

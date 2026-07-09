@@ -1,4 +1,4 @@
-import type { Task } from "./task";
+import { renameTask, toggleTask, type Task } from "./task";
 
 export const ACTIONS = {
   ADD_TASK: "ADD_TASK",
@@ -41,9 +41,7 @@ export function tasksReducer(
 
     case ACTIONS.TOGGLE_TASK:
       return state.map((task) =>
-        task.id === action.payload
-          ? { ...task, completed: !task.completed }
-          : task,
+        task.id === action.payload ? toggleTask(task) : task,
       );
 
     case ACTIONS.DELETE_TASK:
@@ -52,7 +50,7 @@ export function tasksReducer(
     case ACTIONS.EDIT_TASK:
       return state.map((task) =>
         task.id === action.payload.id
-          ? { ...task, text: action.payload.text }
+          ? renameTask(task, action.payload.text)
           : task,
       );
 

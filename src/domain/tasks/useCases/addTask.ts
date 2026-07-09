@@ -1,5 +1,8 @@
+import { createTask } from "../task";
 import { taskActions } from "../tasksStore";
 
 export function addTaskUseCase(text: string) {
-  taskActions.addTask(text);
+  const task = createTask(text);
+
+  taskActions.addTask(task);
 }
