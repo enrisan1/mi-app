@@ -1,3 +1,5 @@
+import { TaskId } from "./taskId";
+import { TaskStatus } from "./taskStatus";
 import { TaskText } from "./taskText";
 export interface Task {
   id: string;
@@ -9,16 +11,16 @@ export function createTask(text: string): Task {
   const taskText = TaskText.create(text);
 
   return {
-    id: crypto.randomUUID(),
+    id: TaskId.create().toString(),
     text: taskText.getValue(),
-    completed: false,
+    completed: TaskStatus.pending().getValue(),
   };
 }
 
 export function toggleTask(task: Task): Task {
   return {
     ...task,
-    completed: !task.completed,
+    completed: TaskStatus.from(task.completed).toggle().getValue(),
   };
 }
 
