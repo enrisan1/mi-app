@@ -1,5 +1,5 @@
-import { taskActions } from "../tasksStore";
-
-export function editTaskUseCase(id: string, text: string) {
-  taskActions.editTask(id, text);
+export function createEditTaskUseCase(actions: TaskActions) {
+  return (id: string, text: string) => {
+    actions.editTask(id, text);
+  };
 }

@@ -6,7 +6,7 @@ import {
   deleteTaskUseCase,
   editTaskUseCase,
   clearCompletedUseCase,
-} from "../../domain/tasks/useCases";
+} from "../../domain/tasks/composition";
 
 export function useTasks() {
   const tasks = useSyncExternalStore(

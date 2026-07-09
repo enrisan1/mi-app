@@ -1,5 +1,7 @@
-import { taskActions } from "../tasksStore";
+import type { TaskActions } from "../taskActions.types";
 
-export function toggleTaskUseCase(id: string) {
-  taskActions.toggleTask(id);
+export function createToggleTaskUseCase(actions: TaskActions) {
+  return (id: string) => {
+    actions.toggleTask(id);
+  };
 }

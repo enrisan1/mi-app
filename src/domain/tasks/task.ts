@@ -1,3 +1,4 @@
+import { TaskText } from "./taskText";
 export interface Task {
   id: string;
   text: string;
@@ -5,15 +6,11 @@ export interface Task {
 }
 
 export function createTask(text: string): Task {
-  const trimmed = text.trim();
-
-  if (!trimmed) {
-    throw new Error("Task text cannot be empty");
-  }
+  const taskText = TaskText.create(text);
 
   return {
     id: crypto.randomUUID(),
-    text: trimmed,
+    text: taskText.getValue(),
     completed: false,
   };
 }
@@ -26,14 +23,10 @@ export function toggleTask(task: Task): Task {
 }
 
 export function renameTask(task: Task, text: string): Task {
-  const trimmed = text.trim();
-
-  if (!trimmed) {
-    throw new Error("Task text cannot be empty");
-  }
+  const taskText = TaskText.create(text);
 
   return {
     ...task,
-    text: trimmed,
+    text: taskText.getValue(),
   };
 }

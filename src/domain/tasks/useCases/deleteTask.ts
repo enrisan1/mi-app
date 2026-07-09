@@ -1,5 +1,5 @@
-import { taskActions } from "../tasksStore";
-
-export function deleteTaskUseCase(id: string) {
-  taskActions.deleteTask(id);
+export function createDeleteTaskUseCase(actions: TaskActions) {
+  return (id: string) => {
+    actions.deleteTask(id);
+  };
 }

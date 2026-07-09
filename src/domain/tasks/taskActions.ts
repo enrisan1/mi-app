@@ -1,8 +1,11 @@
 import type { Store } from "../../store/types";
 import type { Task } from "./task";
 import { ACTIONS, type TaskAction } from "./tasksReducer";
+import type { TaskActions } from "./taskActions.types";
 
-export function createTaskActions(store: Store<Task[], TaskAction>) {
+export function createTaskActions(
+  store: Store<Task[], TaskAction>,
+): TaskActions {
   return {
     addTask(task: Task) {
       store.dispatch({

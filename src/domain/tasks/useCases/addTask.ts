@@ -1,8 +1,10 @@
 import { createTask } from "../task";
-import { taskActions } from "../tasksStore";
+import type { TaskActions } from "../taskActions.types";
 
-export function addTaskUseCase(text: string) {
-  const task = createTask(text);
+export function createAddTaskUseCase(actions: TaskActions) {
+  return (text: string) => {
+    const task = createTask(text);
 
-  taskActions.addTask(task);
+    actions.addTask(task);
+  };
 }

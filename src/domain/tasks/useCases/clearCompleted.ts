@@ -1,5 +1,5 @@
-import { taskActions } from "../tasksStore";
-
-export function clearCompletedUseCase() {
-  taskActions.clearCompleted();
+export function createClearCompletedUseCase(actions: TaskActions) {
+  return () => {
+    actions.clearCompleted();
+  };
 }
