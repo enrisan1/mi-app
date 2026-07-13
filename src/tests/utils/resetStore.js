@@ -1,5 +1,4 @@
-import { tasksStore } from "../domain/tasks/tasksStore";
-
+import { tasksStore } from "../../application/tasks/tasksStore";
 export function resetStore() {
   tasksStore.replaceState([]);
 }

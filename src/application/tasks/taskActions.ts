@@ -1,4 +1,4 @@
-import { tasksStore } from "../../domain/tasks/tasksStore";
+import { tasksStore } from "./tasksStore";
 import type { Store } from "../../store/types";
 import type { Task } from "../../domain/tasks/entities/task";
 import { ACTIONS, type TaskAction } from "../../domain/tasks/tasksReducer";

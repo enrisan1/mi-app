@@ -2,7 +2,7 @@ import { renderHook, act } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
 
 import { useTasks } from "../ui/hooks/useTasks";
-import { tasksStore } from "../domain/tasks/tasksStore";
+import { tasksStore } from "../application/tasks/tasksStore";
 
 beforeEach(() => {
   act(() => {

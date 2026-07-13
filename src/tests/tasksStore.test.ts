@@ -1,7 +1,7 @@
 import { Task } from "../domain/tasks/entities/task";
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { tasksStore } from "../domain/tasks/tasksStore";
+import { tasksStore } from "../application/tasks/tasksStore";
 import { ACTIONS } from "../domain/tasks/tasksReducer";
 
 beforeEach(() => {

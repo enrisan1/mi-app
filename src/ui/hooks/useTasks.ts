@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { tasksStore } from "../../domain/tasks/tasksStore";
+import { tasksStore } from "../../application/tasks/tasksStore";
 import {
   addTaskUseCase,
   toggleTaskUseCase,
