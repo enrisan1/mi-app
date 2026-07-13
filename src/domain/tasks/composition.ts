@@ -1,7 +1,7 @@
 import { taskActions } from "./tasksStore";
 
 import { createAddTaskUseCase } from "../../application/tasks/useCases/addTask";
-import { createToggleTaskUseCase } from "./useCases/toggleTask";
+import { createToggleTaskUseCase } from "../../application/tasks/useCases/toggleTask";
 import { createDeleteTaskUseCase } from "./useCases/deleteTask";
 import { createEditTaskUseCase } from "./useCases/editTask";
 import { createClearCompletedUseCase } from "./useCases/clearCompleted";
