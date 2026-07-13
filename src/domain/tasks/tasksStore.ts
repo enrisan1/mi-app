@@ -5,7 +5,7 @@ import { localStorageTaskRepository } from "../../infrastructure/taskRepository/
 import { loggerMiddleware } from "../../store/middleware/loggerMiddleware";
 import { persistMiddleware } from "./middleware/persistMiddleware";
 import { createTaskActions } from "./taskActions";
-import { createAddTaskUseCase } from "./useCases/addTask";
+import { createAddTaskUseCase } from "../../application/tasks/useCases/addTask";
 
 const initialState: Task[] = localStorageTaskRepository.load?.() ?? [];
 
