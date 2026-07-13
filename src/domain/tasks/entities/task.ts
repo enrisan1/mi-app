@@ -31,4 +31,8 @@ export class Task {
   rename(text: TaskText): Task {
     return new Task(this.id, text, this.completed);
   }
+
+  uncomplete(): Task {
+    return new Task(this.id, this.text, false);
+  }
 }
