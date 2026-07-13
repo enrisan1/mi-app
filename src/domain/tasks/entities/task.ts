@@ -24,6 +24,10 @@ export class Task {
     return new Task(this.id, this.text, !this.completed);
   }
 
+  complete(): Task {
+    return this.completed ? this : new Task(this.id, this.text, true);
+  }
+
   rename(text: TaskText): Task {
     return new Task(this.id, text, this.completed);
   }
