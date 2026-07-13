@@ -3,7 +3,7 @@ import { taskActions } from "./tasksStore";
 import { createAddTaskUseCase } from "../../application/tasks/useCases/addTask";
 import { createToggleTaskUseCase } from "../../application/tasks/useCases/toggleTask";
 import { createDeleteTaskUseCase } from "../../application/tasks/useCases/deleteTask";
-import { createEditTaskUseCase } from "./useCases/editTask";
+import { createEditTaskUseCase } from "../../application/tasks/useCases/editTask";
 import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 
 export const addTaskUseCase = createAddTaskUseCase(taskActions);
