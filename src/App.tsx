@@ -59,6 +59,8 @@ function App() {
         onMarkAllCompleted={markAllCompleted}
         onMarkAllPending={markAllPending}
         onClearCompleted={clearCompleted}
+        hasCompletedTasks={completedTasks > 0}
+        hasPendingTasks={pendingTasks > 0}
       />
     </div>
   );
