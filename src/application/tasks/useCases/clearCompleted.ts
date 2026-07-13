@@ -1,4 +1,4 @@
-import type { TaskActions } from "../taskActions.types";
+import type { TaskActions } from "../../../domain/tasks/taskActions.types";
 
 export function createClearCompletedUseCase(actions: TaskActions) {
   return () => {

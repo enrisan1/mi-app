@@ -4,7 +4,7 @@ import { createAddTaskUseCase } from "../../application/tasks/useCases/addTask";
 import { createToggleTaskUseCase } from "../../application/tasks/useCases/toggleTask";
 import { createDeleteTaskUseCase } from "../../application/tasks/useCases/deleteTask";
 import { createEditTaskUseCase } from "../../application/tasks/useCases/editTask";
-import { createClearCompletedUseCase } from "./useCases/clearCompleted";
+import { createClearCompletedUseCase } from "../../application/tasks/useCases/clearCompleted";
 
 export const addTaskUseCase = createAddTaskUseCase(taskActions);
 
