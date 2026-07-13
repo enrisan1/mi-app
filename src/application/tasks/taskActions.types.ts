@@ -5,4 +5,5 @@ export interface TaskActions {
   toggleTask(id: string): void;
   editTask(id: string, text: string): void;
   clearCompleted(): void;
+  markAllCompleted(): void;
 }

@@ -42,4 +42,32 @@ describe("tasksStore", () => {
     expect(state).toHaveLength(1);
     expect(state[0]!.completed).toBe(true);
   });
+
+  it("markAllCompleted completa todas las tareas", () => {
+    tasksStore.dispatch({
+      type: ACTIONS.ADD_TASK,
+      payload: Task.restore({
+        id: "1",
+        text: "A",
+        completed: false,
+      }),
+    });
+
+    tasksStore.dispatch({
+      type: ACTIONS.ADD_TASK,
+      payload: Task.restore({
+        id: "2",
+        text: "B",
+        completed: false,
+      }),
+    });
+
+    tasksStore.dispatch({
+      type: ACTIONS.MARK_ALL_COMPLETED,
+    });
+
+    const state = tasksStore.getState();
+
+    expect(state.every((task) => task.completed)).toBe(true);
+  });
 });

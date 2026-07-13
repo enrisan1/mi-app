@@ -49,7 +49,7 @@ describe("useTasks (senior architecture)", () => {
     });
 
     const taskId = result.current.tasks[0].id.toString();
-    
+
     act(() => {
       result.current.editTask(taskId, "A editada");
     });
@@ -96,5 +96,21 @@ describe("useTasks (senior architecture)", () => {
     expect(result.current.tasks).toHaveLength(1);
     expect(result.current.tasks[0].text.toString()).toBe("B");
     expect(result.current.tasks[0].completed).toBe(false);
+  });
+
+  test("markAllCompleted marca todas las tareas como completadas", () => {
+    const { result } = renderHook(() => useTasks());
+
+    act(() => {
+      result.current.addTask("A");
+      result.current.addTask("B");
+    });
+
+    act(() => {
+      result.current.markAllCompleted();
+    });
+
+    expect(result.current.tasks).toHaveLength(2);
+    expect(result.current.tasks.every((task) => task.completed)).toBe(true);
   });
 });

@@ -39,6 +39,12 @@ function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
         type: ACTIONS.CLEAR_COMPLETED,
       });
     },
+
+    markAllCompleted() {
+      store.dispatch({
+        type: ACTIONS.MARK_ALL_COMPLETED,
+      });
+    },
   };
 }
 

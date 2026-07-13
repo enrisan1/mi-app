@@ -4,6 +4,11 @@ import { createToggleTaskUseCase } from "./useCases/toggleTask";
 import { createDeleteTaskUseCase } from "./useCases/deleteTask";
 import { createEditTaskUseCase } from "./useCases/editTask";
 import { createClearCompletedUseCase } from "./useCases/clearCompleted";
+import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
+
+export const markAllCompletedUseCase =
+  createMarkAllCompletedUseCase(taskActions);
+
 export const addTaskUseCase = createAddTaskUseCase(taskActions);
 
 export const toggleTaskUseCase = createToggleTaskUseCase(taskActions);

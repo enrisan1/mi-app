@@ -3,6 +3,7 @@ import { useTasks } from "./ui/hooks/useTasks";
 import TaskForm from "./ui/components/TaskForm";
 import TaskFilters from "./ui/components/TaskFilters";
 import TaskList from "./ui/components/TaskList";
+import TaskActions from "./ui/components/TaskActions";
 import type { TaskFilter } from "./domain/tasks/taskFilter";
 import {
   selectVisibleTasks,
@@ -15,8 +16,14 @@ import "./App.css";
 function App() {
   const [filter, setFilter] = useState<TaskFilter>("all");
 
-  const { tasks, deleteTask, toggleTask, editTask, clearCompleted } =
-    useTasks();
+  const {
+    tasks,
+    deleteTask,
+    toggleTask,
+    editTask,
+    clearCompleted,
+    markAllCompleted,
+  } = useTasks();
 
   const filteredTasks = selectVisibleTasks(tasks, filter);
 
@@ -47,7 +54,10 @@ function App() {
         editTask={editTask}
       />
 
-      <button onClick={clearCompleted}>Eliminar completadas</button>
+      <TaskActions
+        onMarkAllCompleted={markAllCompleted}
+        onClearCompleted={clearCompleted}
+      />
     </div>
   );
 }
