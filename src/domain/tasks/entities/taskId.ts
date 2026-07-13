@@ -1,15 +1,15 @@
 export class TaskId {
   private constructor(private readonly value: string) {}
 
-  static create(value?: string) {
-    return new TaskId(value ?? crypto.randomUUID());
+  static create(): TaskId {
+    return new TaskId(crypto.randomUUID());
   }
 
-  toString() {
+  static from(value: string): TaskId {
+    return new TaskId(value);
+  }
+
+  toString(): string {
     return this.value;
-  }
-
-  equals(other: TaskId) {
-    return this.value === other.value;
   }
 }

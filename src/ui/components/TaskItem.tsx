@@ -10,14 +10,14 @@ type Props = {
 
 function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(task.text);
+  const [editedText, setEditedText] = useState(task.text.toString());
 
   const handleSave = () => {
     const trimmed = editedText.trim();
 
     if (!trimmed) return;
 
-    onEdit(task.id, trimmed);
+    onEdit(task.id.toString(), trimmed);
     setIsEditing(false);
   };
 
@@ -30,7 +30,7 @@ function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
       <input
         type="checkbox"
         checked={task.completed}
-        onChange={() => onToggle(task.id)}
+        onChange={() => onToggle(task.id.toString())}
       />
 
       {isEditing ? (
@@ -48,12 +48,12 @@ function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
               textDecoration: task.completed ? "line-through" : "none",
             }}
           >
-            {task.text}
+            {task.text.toString()}
           </span>
 
           <button onClick={() => setIsEditing(true)}>✏️</button>
 
-          <button onClick={() => onDelete(task.id)}>❌</button>
+          <button onClick={() => onDelete(task.id.toString())}>❌</button>
         </>
       )}
     </li>

@@ -1,13 +1,15 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
+
 import TaskItem from "../ui/components/TaskItem";
+import { Task } from "../domain/tasks/entities/task";
 
 describe("TaskItem", () => {
-  const task = {
-    id: 1,
+  const task = Task.restore({
+    id: "1",
     text: "Aprender React Testing Library",
     completed: false,
-  };
+  });
 
   it("muestra el texto de la tarea", () => {
     render(
@@ -36,11 +38,9 @@ describe("TaskItem", () => {
       />,
     );
 
-    const checkbox = screen.getByRole("checkbox");
+    fireEvent.click(screen.getByRole("checkbox"));
 
-    fireEvent.click(checkbox);
-
-    expect(onToggle).toHaveBeenCalledWith(1);
+    expect(onToggle).toHaveBeenCalledWith(task.id.toString());
   });
 
   it("llama a onDelete al pulsar eliminar", () => {
@@ -55,11 +55,9 @@ describe("TaskItem", () => {
       />,
     );
 
-    const deleteButton = screen.getByText("❌");
+    fireEvent.click(screen.getByText("❌"));
 
-    fireEvent.click(deleteButton);
-
-    expect(onDelete).toHaveBeenCalledWith(1);
+    expect(onDelete).toHaveBeenCalledWith(task.id.toString());
   });
 
   it("entra en modo edición al pulsar editar", () => {
@@ -72,11 +70,9 @@ describe("TaskItem", () => {
       />,
     );
 
-    const editButton = screen.getByText("✏️");
+    fireEvent.click(screen.getByText("✏️"));
 
-    fireEvent.click(editButton);
-
-    expect(screen.getByDisplayValue(task.text)).toBeInTheDocument();
+    expect(screen.getByDisplayValue(task.text.toString())).toBeInTheDocument();
   });
 
   it("guarda una tarea editada", () => {
@@ -93,7 +89,7 @@ describe("TaskItem", () => {
 
     fireEvent.click(screen.getByText("✏️"));
 
-    const input = screen.getByDisplayValue(task.text);
+    const input = screen.getByDisplayValue(task.text.toString());
 
     fireEvent.change(input, {
       target: {
@@ -103,15 +99,15 @@ describe("TaskItem", () => {
 
     fireEvent.click(screen.getByText("💾"));
 
-    expect(onEdit).toHaveBeenCalledWith(1, "Nuevo texto");
+    expect(onEdit).toHaveBeenCalledWith(task.id.toString(), "Nuevo texto");
   });
 
   it("muestra una tarea pendiente sin tachado", () => {
-    const task = {
-      id: 1,
+    const task = Task.restore({
+      id: "1",
       text: "Aprender React",
       completed: false,
-    };
+    });
 
     render(
       <TaskItem
@@ -130,11 +126,11 @@ describe("TaskItem", () => {
   });
 
   it("no guarda una edición vacía", () => {
-    const task = {
-      id: 1,
+    const task = Task.restore({
+      id: "1",
       text: "Tarea original",
       completed: false,
-    };
+    });
 
     const onEdit = vi.fn();
 
@@ -149,7 +145,7 @@ describe("TaskItem", () => {
 
     fireEvent.click(screen.getByText("✏️"));
 
-    const input = screen.getByDisplayValue("Tarea original");
+    const input = screen.getByDisplayValue(task.text.toString());
 
     fireEvent.change(input, {
       target: {
@@ -163,11 +159,11 @@ describe("TaskItem", () => {
   });
 
   it("sale del modo edición después de guardar", () => {
-    const task = {
-      id: 1,
+    const task = Task.restore({
+      id: "1",
       text: "Tarea original",
       completed: false,
-    };
+    });
 
     render(
       <TaskItem
@@ -180,7 +176,7 @@ describe("TaskItem", () => {
 
     fireEvent.click(screen.getByText("✏️"));
 
-    const input = screen.getByDisplayValue("Tarea original");
+    const input = screen.getByDisplayValue(task.text.toString());
 
     fireEvent.change(input, {
       target: {
@@ -194,11 +190,11 @@ describe("TaskItem", () => {
   });
 
   it("cancela la edición", () => {
-    const task = {
-      id: 1,
+    const task = Task.restore({
+      id: "1",
       text: "Tarea original",
       completed: false,
-    };
+    });
 
     render(
       <TaskItem
@@ -209,21 +205,16 @@ describe("TaskItem", () => {
       />,
     );
 
-    // Entramos en modo edición
     fireEvent.click(screen.getByText("✏️"));
 
-    // Comprobamos que aparece el input de edición
-    expect(screen.getByDisplayValue("Tarea original")).toBeInTheDocument();
+    expect(screen.getByDisplayValue(task.text.toString())).toBeInTheDocument();
 
-    // Cancelamos
     fireEvent.click(screen.getByText("Cancelar"));
 
-    // El input de edición desaparece
     expect(
-      screen.queryByDisplayValue("Tarea original"),
+      screen.queryByDisplayValue(task.text.toString()),
     ).not.toBeInTheDocument();
 
-    // Vuelve la vista normal
-    expect(screen.getByText("Tarea original")).toBeInTheDocument();
+    expect(screen.getByText(task.text.toString())).toBeInTheDocument();
   });
 });

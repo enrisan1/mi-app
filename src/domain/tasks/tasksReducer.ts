@@ -1,4 +1,7 @@
-import { renameTask, toggleTask, type Task } from "./entities/task";
+import { TaskList } from "./entities/taskList";
+import { type Task } from "./entities/task";
+import { TaskId } from "./entities/taskId";
+import { TaskText } from "./entities/taskText";
 
 export const ACTIONS = {
   ADD_TASK: "ADD_TASK",
@@ -37,25 +40,30 @@ export function tasksReducer(
 ): TasksState {
   switch (action.type) {
     case ACTIONS.ADD_TASK:
-      return [...state, action.payload];
-
-    case ACTIONS.TOGGLE_TASK:
-      return state.map((task) =>
-        task.id === action.payload ? toggleTask(task) : task,
-      );
+      return [...TaskList.from(state).add(action.payload).getItems()];
 
     case ACTIONS.DELETE_TASK:
-      return state.filter((task) => task.id !== action.payload);
+      return [
+        ...TaskList.from(state).remove(TaskId.from(action.payload)).getItems(),
+      ];
+
+    case ACTIONS.TOGGLE_TASK:
+      return [
+        ...TaskList.from(state).toggle(TaskId.from(action.payload)).getItems(),
+      ];
 
     case ACTIONS.EDIT_TASK:
-      return state.map((task) =>
-        task.id === action.payload.id
-          ? renameTask(task, action.payload.text)
-          : task,
-      );
+      return [
+        ...TaskList.from(state)
+          .rename(
+            TaskId.from(action.payload.id),
+            TaskText.create(action.payload.text),
+          )
+          .getItems(),
+      ];
 
     case ACTIONS.CLEAR_COMPLETED:
-      return state.filter((task) => !task.completed);
+      return [...TaskList.from(state).clearCompleted().getItems()];
 
     default:
       return state;

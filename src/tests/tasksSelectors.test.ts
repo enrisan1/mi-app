@@ -1,4 +1,4 @@
-import type { Task } from "../domain/tasks/entities/task";
+import { Task } from "../domain/tasks/entities/task";
 import { describe, expect, it } from "vitest";
 import {
   selectAllTasks,
@@ -11,21 +11,21 @@ import {
 } from "../domain/tasks/tasksSelectors";
 
 const tasks: Task[] = [
-  {
+  Task.restore({
     id: "1",
-    text: "A",
+    text: "Comprar pan",
     completed: false,
-  },
-  {
+  }),
+  Task.restore({
     id: "2",
-    text: "B",
+    text: "Leer",
     completed: true,
-  },
-  {
+  }),
+  Task.restore({
     id: "3",
-    text: "C",
+    text: "Programar",
     completed: false,
-  },
+  }),
 ];
 
 describe("tasksSelectors", () => {

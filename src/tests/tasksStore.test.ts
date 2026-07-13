@@ -1,3 +1,4 @@
+import { Task } from "../domain/tasks/entities/task";
 import { beforeEach, describe, expect, it } from "vitest";
 
 import { tasksStore } from "../domain/tasks/tasksStore";
@@ -11,11 +12,11 @@ describe("tasksStore", () => {
   it("añade una tarea", () => {
     tasksStore.dispatch({
       type: ACTIONS.ADD_TASK,
-      payload: {
+      payload: Task.restore({
         id: "1",
         text: "A",
         completed: false,
-      },
+      }),
     });
 
     expect(tasksStore.getState()).toHaveLength(1);
@@ -24,11 +25,11 @@ describe("tasksStore", () => {
   it("toggle funciona", () => {
     tasksStore.dispatch({
       type: ACTIONS.ADD_TASK,
-      payload: {
+      payload: Task.restore({
         id: "1",
         text: "A",
         completed: false,
-      },
+      }),
     });
 
     tasksStore.dispatch({

@@ -1,35 +1,30 @@
 import { TaskId } from "./taskId";
-import { TaskStatus } from "./taskStatus";
 import { TaskText } from "./taskText";
 
 export class Task {
   constructor(
-    public readonly id: string,
-    public readonly text: string,
+    public readonly id: TaskId,
+    public readonly text: TaskText,
     public readonly completed: boolean,
   ) {}
-}
 
-export function createTask(text: string): Task {
-  const taskText = TaskText.create(text);
+  static create(text: string): Task {
+    return new Task(TaskId.create(), TaskText.create(text), false);
+  }
 
-  return new Task(
-    TaskId.create().toString(),
-    taskText.getValue(),
-    TaskStatus.pending().getValue(),
-  );
-}
+  static restore(data: { id: string; text: string; completed: boolean }): Task {
+    return new Task(
+      TaskId.from(data.id),
+      TaskText.create(data.text),
+      data.completed,
+    );
+  }
 
-export function toggleTask(task: Task): Task {
-  return new Task(
-    task.id,
-    task.text,
-    TaskStatus.from(task.completed).toggle().getValue(),
-  );
-}
+  toggle(): Task {
+    return new Task(this.id, this.text, !this.completed);
+  }
 
-export function renameTask(task: Task, text: string): Task {
-  const taskText = TaskText.create(text);
-
-  return new Task(task.id, taskText.getValue(), task.completed);
+  rename(text: TaskText): Task {
+    return new Task(this.id, text, this.completed);
+  }
 }

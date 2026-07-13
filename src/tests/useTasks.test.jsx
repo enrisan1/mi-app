@@ -20,8 +20,9 @@ describe("useTasks (senior architecture)", () => {
     });
 
     expect(result.current.tasks).toHaveLength(2);
-    expect(result.current.tasks[0].text).toBe("A");
-    expect(result.current.tasks[1].text).toBe("B");
+
+    expect(result.current.tasks[0].text.toString()).toBe("A");
+    expect(result.current.tasks[1].text.toString()).toBe("B");
   });
 
   test("toggle funciona correctamente", () => {
@@ -31,7 +32,7 @@ describe("useTasks (senior architecture)", () => {
       result.current.addTask("A");
     });
 
-    const taskId = result.current.tasks[0].id;
+    const taskId = result.current.tasks[0].id.toString();
 
     act(() => {
       result.current.toggleTask(taskId);
@@ -47,13 +48,13 @@ describe("useTasks (senior architecture)", () => {
       result.current.addTask("A");
     });
 
-    const taskId = result.current.tasks[0].id;
-
+    const taskId = result.current.tasks[0].id.toString();
+    
     act(() => {
       result.current.editTask(taskId, "A editada");
     });
 
-    expect(result.current.tasks[0].text).toBe("A editada");
+    expect(result.current.tasks[0].text.toString()).toBe("A editada");
   });
 
   test("deleteTask elimina una tarea", () => {
@@ -64,14 +65,14 @@ describe("useTasks (senior architecture)", () => {
       result.current.addTask("B");
     });
 
-    const taskId = result.current.tasks[0].id;
+    const taskId = result.current.tasks[0].id.toString();
 
     act(() => {
       result.current.deleteTask(taskId);
     });
 
     expect(result.current.tasks).toHaveLength(1);
-    expect(result.current.tasks[0].text).toBe("B");
+    expect(result.current.tasks[0].text.toString()).toBe("B");
   });
 
   test("clearCompleted elimina únicamente las tareas completadas", () => {
@@ -82,7 +83,7 @@ describe("useTasks (senior architecture)", () => {
       result.current.addTask("B");
     });
 
-    const taskId = result.current.tasks[0].id;
+    const taskId = result.current.tasks[0].id.toString();
 
     act(() => {
       result.current.toggleTask(taskId);
@@ -93,7 +94,7 @@ describe("useTasks (senior architecture)", () => {
     });
 
     expect(result.current.tasks).toHaveLength(1);
-    expect(result.current.tasks[0].text).toBe("B");
+    expect(result.current.tasks[0].text.toString()).toBe("B");
     expect(result.current.tasks[0].completed).toBe(false);
   });
 });

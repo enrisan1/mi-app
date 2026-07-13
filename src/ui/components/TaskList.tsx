@@ -14,7 +14,7 @@ function TaskList({ tasks, deleteTask, toggleTask, editTask }: Props) {
     <ul>
       {tasks.map((task) => (
         <TaskItem
-          key={task.id}
+          key={task.id.toString()}
           task={task}
           onDelete={deleteTask}
           onToggle={toggleTask}
