@@ -9,6 +9,7 @@ export const ACTIONS = {
   TOGGLE_TASK: "TOGGLE_TASK",
   EDIT_TASK: "EDIT_TASK",
   CLEAR_COMPLETED: "CLEAR_COMPLETED",
+  MARK_ALL_COMPLETED: "MARK_ALL_COMPLETED",
 } as const;
 
 export type TaskAction =
@@ -30,6 +31,9 @@ export type TaskAction =
     }
   | {
       type: typeof ACTIONS.CLEAR_COMPLETED;
+    }
+  | {
+      type: typeof ACTIONS.MARK_ALL_COMPLETED;
     };
 
 export type TasksState = Task[];
@@ -51,6 +55,9 @@ export function tasksReducer(
       return [
         ...TaskList.from(state).toggle(TaskId.from(action.payload)).getItems(),
       ];
+
+    case ACTIONS.MARK_ALL_COMPLETED:
+      return state.map((task) => task.complete());
 
     case ACTIONS.EDIT_TASK:
       return [
