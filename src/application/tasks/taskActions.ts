@@ -1,11 +1,10 @@
+import { tasksStore } from "../../domain/tasks/tasksStore";
 import type { Store } from "../../store/types";
-import type { Task } from "./entities/task";
-import { ACTIONS, type TaskAction } from "./tasksReducer";
-import type { TaskActions } from "../../application/tasks/taskActions.types";
+import type { Task } from "../../domain/tasks/entities/task";
+import { ACTIONS, type TaskAction } from "../../domain/tasks/tasksReducer";
+import type { TaskActions } from "./taskActions.types";
 
-export function createTaskActions(
-  store: Store<Task[], TaskAction>,
-): TaskActions {
+function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
   return {
     addTask(task: Task) {
       store.dispatch({
@@ -42,3 +41,5 @@ export function createTaskActions(
     },
   };
 }
+
+export const taskActions = createTaskActions(tasksStore);
