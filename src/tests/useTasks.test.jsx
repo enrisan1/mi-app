@@ -113,4 +113,24 @@ describe("useTasks (senior architecture)", () => {
     expect(result.current.tasks).toHaveLength(2);
     expect(result.current.tasks.every((task) => task.completed)).toBe(true);
   });
+
+  test("markAllPending marca todas las tareas como pendientes", () => {
+    const { result } = renderHook(() => useTasks());
+
+    act(() => {
+      result.current.addTask("A");
+      result.current.addTask("B");
+    });
+
+    act(() => {
+      result.current.markAllCompleted();
+    });
+
+    act(() => {
+      result.current.markAllPending();
+    });
+
+    expect(result.current.tasks).toHaveLength(2);
+    expect(result.current.tasks.every((task) => !task.completed)).toBe(true);
+  });
 });

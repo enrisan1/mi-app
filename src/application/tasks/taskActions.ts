@@ -45,6 +45,12 @@ function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
         type: ACTIONS.MARK_ALL_COMPLETED,
       });
     },
+
+    markAllPending() {
+      store.dispatch({
+        type: ACTIONS.MARK_ALL_PENDING,
+      });
+    },
   };
 }
 

@@ -7,6 +7,7 @@ import {
   editTaskUseCase,
   clearCompletedUseCase,
   markAllCompletedUseCase,
+  markAllPendingUseCase,
 } from "../../application/tasks/composition";
 
 export function useTasks() {
@@ -24,5 +25,6 @@ export function useTasks() {
     editTask: editTaskUseCase,
     clearCompleted: clearCompletedUseCase,
     markAllCompleted: markAllCompletedUseCase,
+    markAllPending: markAllPendingUseCase,
   };
 }

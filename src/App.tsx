@@ -21,8 +21,9 @@ function App() {
     deleteTask,
     toggleTask,
     editTask,
-    clearCompleted,
     markAllCompleted,
+    markAllPending,
+    clearCompleted,
   } = useTasks();
 
   const filteredTasks = selectVisibleTasks(tasks, filter);
@@ -56,6 +57,7 @@ function App() {
 
       <TaskActions
         onMarkAllCompleted={markAllCompleted}
+        onMarkAllPending={markAllPending}
         onClearCompleted={clearCompleted}
       />
     </div>

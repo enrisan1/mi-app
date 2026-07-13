@@ -6,4 +6,5 @@ export interface TaskActions {
   editTask(id: string, text: string): void;
   clearCompleted(): void;
   markAllCompleted(): void;
+  markAllPending(): void;
 }
