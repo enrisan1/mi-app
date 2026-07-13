@@ -1,7 +1,7 @@
 import type { Store } from "../../store/types";
 import type { Task } from "./entities/task";
 import { ACTIONS, type TaskAction } from "./tasksReducer";
-import type { TaskActions } from "./taskActions.types";
+import type { TaskActions } from "../../application/tasks/taskActions.types";
 
 export function createTaskActions(
   store: Store<Task[], TaskAction>,
