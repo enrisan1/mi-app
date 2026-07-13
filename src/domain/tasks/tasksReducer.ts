@@ -10,6 +10,7 @@ export const ACTIONS = {
   EDIT_TASK: "EDIT_TASK",
   CLEAR_COMPLETED: "CLEAR_COMPLETED",
   MARK_ALL_COMPLETED: "MARK_ALL_COMPLETED",
+  MARK_ALL_PENDING: "MARK_ALL_PENDING",
 } as const;
 
 export type TaskAction =
@@ -34,6 +35,9 @@ export type TaskAction =
     }
   | {
       type: typeof ACTIONS.MARK_ALL_COMPLETED;
+    }
+  | {
+      type: typeof ACTIONS.MARK_ALL_PENDING;
     };
 
 export type TasksState = Task[];
@@ -71,6 +75,9 @@ export function tasksReducer(
 
     case ACTIONS.CLEAR_COMPLETED:
       return [...TaskList.from(state).clearCompleted().getItems()];
+
+    case ACTIONS.MARK_ALL_PENDING:
+      return state.map((task) => task.uncomplete());
 
     default:
       return state;
