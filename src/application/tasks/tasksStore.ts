@@ -6,7 +6,7 @@ import { tasksReducer, type TaskAction } from "../../domain/tasks/tasksReducer";
 
 import { persistMiddleware } from "./persistMiddleware";
 
-const initialState: Task[] = localStorageTaskRepository.load?.() ?? [];
+const initialState: Task[] = localStorageTaskRepository.load() ?? [];
 
 export const tasksStore = createStore<Task[], TaskAction>(
   tasksReducer,

@@ -1,6 +1,5 @@
 interface TaskActionsProps {
-  onMarkAllCompleted: () => void;
-  onMarkAllPending: () => void;
+  onToggleAll: () => void;
   onClearCompleted: () => void;
 
   hasCompletedTasks: boolean;
@@ -8,24 +7,22 @@ interface TaskActionsProps {
 }
 
 export default function TaskActions({
-  onMarkAllCompleted,
-  onMarkAllPending,
+  onToggleAll,
   onClearCompleted,
   hasCompletedTasks,
   hasPendingTasks,
 }: TaskActionsProps) {
   return (
     <div className="task-actions">
-      <button onClick={onMarkAllCompleted} disabled={!hasPendingTasks}>
-        Marcar todas
+      <button
+        onClick={onToggleAll}
+        disabled={!hasPendingTasks && !hasCompletedTasks}
+      >
+        {hasPendingTasks ? "Marcar todas" : "Marcar todas como pendientes"}
       </button>
 
       <button onClick={onClearCompleted} disabled={!hasCompletedTasks}>
         Limpiar completadas
-      </button>
-
-      <button onClick={onMarkAllPending} disabled={!hasCompletedTasks}>
-        Marcar todas como pendientes
       </button>
     </div>
   );

@@ -1,15 +1,29 @@
-import type { Task } from "../../domain/tasks/entities/task";
+import { Task } from "../../domain/tasks/entities/task";
+import type { StoredTask } from "./storedTask";
 
 const KEY = "tasks";
 
 export const localStorageTaskRepository = {
   save(tasks: Task[]) {
-    localStorage.setItem(KEY, JSON.stringify(tasks));
+    const storedTasks: StoredTask[] = tasks.map((task) => ({
+      id: task.id.toString(),
+      text: task.text.toString(),
+      completed: task.completed,
+    }));
+
+    localStorage.setItem(KEY, JSON.stringify(storedTasks));
   },
 
   load(): Task[] {
     const data = localStorage.getItem(KEY);
-    return data ? JSON.parse(data) : [];
+
+    if (!data) {
+      return [];
+    }
+
+    const storedTasks: StoredTask[] = JSON.parse(data);
+
+    return storedTasks.map(Task.restore);
   },
 
   clear() {

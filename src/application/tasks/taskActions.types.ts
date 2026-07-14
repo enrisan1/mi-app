@@ -7,4 +7,5 @@ export interface TaskActions {
   clearCompleted(): void;
   markAllCompleted(): void;
   markAllPending(): void;
+  hasPendingTasks(): boolean;
 }

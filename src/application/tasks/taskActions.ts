@@ -3,6 +3,7 @@ import type { Store } from "../../store/types";
 import type { Task } from "../../domain/tasks/entities/task";
 import { ACTIONS, type TaskAction } from "../../domain/tasks/tasksReducer";
 import type { TaskActions } from "./taskActions.types";
+import { selectHasPendingTasks } from "../../domain/tasks/tasksSelectors";
 
 function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
   return {
@@ -50,6 +51,10 @@ function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
       store.dispatch({
         type: ACTIONS.MARK_ALL_PENDING,
       });
+    },
+
+    hasPendingTasks() {
+      return selectHasPendingTasks(store.getState());
     },
   };
 }

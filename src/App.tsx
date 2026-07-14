@@ -21,8 +21,8 @@ function App() {
     deleteTask,
     toggleTask,
     editTask,
-    markAllCompleted,
-    markAllPending,
+    toggleAll,
+    hasPendingTasks,
     clearCompleted,
   } = useTasks();
 
@@ -56,11 +56,10 @@ function App() {
       />
 
       <TaskActions
-        onMarkAllCompleted={markAllCompleted}
-        onMarkAllPending={markAllPending}
+        onToggleAll={toggleAll}
         onClearCompleted={clearCompleted}
         hasCompletedTasks={completedTasks > 0}
-        hasPendingTasks={pendingTasks > 0}
+        hasPendingTasks={hasPendingTasks}
       />
     </div>
   );

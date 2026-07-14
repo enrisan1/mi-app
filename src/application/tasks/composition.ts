@@ -6,11 +6,14 @@ import { createEditTaskUseCase } from "./useCases/editTask";
 import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
+import { createToggleAllUseCase } from "./useCases/toggleAll";
 
 export const markAllCompletedUseCase =
   createMarkAllCompletedUseCase(taskActions);
 
 export const markAllPendingUseCase = createMarkAllPendingUseCase(taskActions);
+
+export const toggleAllUseCase = createToggleAllUseCase(taskActions);
 
 export const addTaskUseCase = createAddTaskUseCase(taskActions);
 

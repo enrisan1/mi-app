@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { tasksStore } from "../../application/tasks/tasksStore";
+import { selectHasPendingTasks } from "../../domain/tasks/tasksSelectors";
 import {
   addTaskUseCase,
   toggleTaskUseCase,
@@ -8,6 +9,7 @@ import {
   clearCompletedUseCase,
   markAllCompletedUseCase,
   markAllPendingUseCase,
+  toggleAllUseCase,
 } from "../../application/tasks/composition";
 
 export function useTasks() {
@@ -16,6 +18,8 @@ export function useTasks() {
     tasksStore.getState,
     tasksStore.getState,
   );
+
+  const hasPendingTasks = selectHasPendingTasks(tasks);
 
   return {
     tasks,
@@ -26,5 +30,7 @@ export function useTasks() {
     clearCompleted: clearCompletedUseCase,
     markAllCompleted: markAllCompletedUseCase,
     markAllPending: markAllPendingUseCase,
+    toggleAll: toggleAllUseCase,
+    hasPendingTasks,
   };
 }

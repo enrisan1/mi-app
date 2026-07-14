@@ -44,6 +44,10 @@ export function selectPendingCount(tasks: Task[]): number {
   return selectActiveTasks(tasks).length;
 }
 
+export function selectHasPendingTasks(tasks: Task[]): boolean {
+  return selectPendingCount(tasks) > 0;
+}
+
 /**
  * Selectores memoizados
  */
@@ -56,3 +60,8 @@ export const selectCompleted = createSelector(
 );
 
 export const selectPending = createSelector(selectTasks, selectActiveTasks);
+
+export const selectHasPending = createSelector(
+  selectTasks,
+  selectHasPendingTasks,
+);
