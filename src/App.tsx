@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 import { useTasks } from "./ui/hooks/useTasks";
 import TaskForm from "./ui/components/TaskForm";
 import TaskFilters from "./ui/components/TaskFilters";
@@ -14,7 +14,10 @@ import {
 import "./App.css";
 
 function App() {
-  const [filter, setFilter] = useState<TaskFilter>("all");
+  const [filter, setFilter] = useLocalStorage<TaskFilter>(
+    "selected-filter",
+    "all",
+  );
 
   const {
     tasks,
@@ -28,7 +31,6 @@ function App() {
 
   const filteredTasks = selectVisibleTasks(tasks, filter);
 
-  // Estadísticas (las mejoraremos en la siguiente fase usando selectores)
   // Estadísticas
   const totalTasks = selectTotalTasks(tasks);
   const completedTasks = selectCompletedCount(tasks);
