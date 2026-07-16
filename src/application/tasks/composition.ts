@@ -1,4 +1,5 @@
-import { taskActions } from "./taskActions";
+import { createTaskActions } from "./taskActions";
+import { tasksStore } from "./tasksStore";
 import { createAddTaskUseCase } from "./useCases/addTask";
 import { createToggleTaskUseCase } from "./useCases/toggleTask";
 import { createDeleteTaskUseCase } from "./useCases/deleteTask";
@@ -7,6 +8,8 @@ import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
 import { createToggleAllUseCase } from "./useCases/toggleAll";
+
+const taskActions = createTaskActions(tasksStore);
 
 export const markAllCompletedUseCase =
   createMarkAllCompletedUseCase(taskActions);

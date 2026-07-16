@@ -59,4 +59,4 @@ function createTaskActions(store: Store<Task[], TaskAction>): TaskActions {
   };
 }
 
-export const taskActions = createTaskActions(tasksStore);
+export { createTaskActions };
