@@ -14,6 +14,9 @@ describe("createToggleAllUseCase", () => {
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
       hasPendingTasks: vi.fn(() => true),
+      hasUndo() {
+        return false;
+      },
     };
 
     const toggleAll = createToggleAllUseCase(actions);
@@ -37,6 +40,9 @@ describe("createToggleAllUseCase", () => {
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
       hasPendingTasks: vi.fn(() => false),
+      hasUndo() {
+        return false;
+      },
     };
 
     const toggleAll = createToggleAllUseCase(actions);

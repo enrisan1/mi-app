@@ -62,6 +62,10 @@ function createTaskActions(
     hasPendingTasks() {
       return selectHasPendingTasks(store.getState());
     },
+
+    hasUndo() {
+      return history.hasEntries();
+    },
   };
 }
 

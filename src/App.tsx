@@ -27,6 +27,8 @@ function App() {
     toggleAll,
     hasPendingTasks,
     clearCompleted,
+    undo,
+    hasUndo,
   } = useTasks();
 
   const filteredTasks = selectVisibleTasks(tasks, filter);
@@ -62,6 +64,8 @@ function App() {
         onClearCompleted={clearCompleted}
         hasCompletedTasks={completedTasks > 0}
         hasPendingTasks={hasPendingTasks}
+        onUndo={undo}
+        hasUndo={hasUndo()}
       />
     </div>
   );

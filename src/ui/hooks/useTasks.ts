@@ -10,6 +10,8 @@ import {
   markAllCompletedUseCase,
   markAllPendingUseCase,
   toggleAllUseCase,
+  undoUseCase,
+  hasUndo,
 } from "../../application/tasks/composition";
 
 export function useTasks() {
@@ -32,5 +34,7 @@ export function useTasks() {
     markAllPending: markAllPendingUseCase,
     toggleAll: toggleAllUseCase,
     hasPendingTasks,
+    undo: undoUseCase,
+    hasUndo,
   };
 }

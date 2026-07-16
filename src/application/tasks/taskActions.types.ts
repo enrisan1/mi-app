@@ -8,4 +8,5 @@ export interface TaskActions {
   markAllCompleted(): void;
   markAllPending(): void;
   hasPendingTasks(): boolean;
+  hasUndo(): boolean;
 }

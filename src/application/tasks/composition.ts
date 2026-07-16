@@ -10,6 +10,7 @@ import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
 import { createToggleAllUseCase } from "./useCases/toggleAll";
+import { createUndoUseCase } from "./useCases/undo";
 
 const history = new History<Task[]>();
 
@@ -24,6 +25,8 @@ export const toggleAllUseCase = createToggleAllUseCase(taskActions);
 
 export const addTaskUseCase = createAddTaskUseCase(taskActions);
 
+export const undoUseCase = createUndoUseCase(tasksStore, history);
+
 export const toggleTaskUseCase = createToggleTaskUseCase(taskActions);
 
 export const deleteTaskUseCase = createDeleteTaskUseCase(taskActions);
@@ -31,3 +34,5 @@ export const deleteTaskUseCase = createDeleteTaskUseCase(taskActions);
 export const editTaskUseCase = createEditTaskUseCase(taskActions);
 
 export const clearCompletedUseCase = createClearCompletedUseCase(taskActions);
+
+export const hasUndo = () => taskActions.hasUndo();
