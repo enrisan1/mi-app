@@ -1,3 +1,5 @@
+import { History } from "../history/History";
+import type { Task } from "../../domain/tasks/entities/task";
 import { createTaskActions } from "./taskActions";
 import { tasksStore } from "./tasksStore";
 import { createAddTaskUseCase } from "./useCases/addTask";
@@ -9,7 +11,9 @@ import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
 import { createToggleAllUseCase } from "./useCases/toggleAll";
 
-const taskActions = createTaskActions(tasksStore);
+const history = new History<Task[]>();
+
+const taskActions = createTaskActions(tasksStore, history);
 
 export const markAllCompletedUseCase =
   createMarkAllCompletedUseCase(taskActions);
