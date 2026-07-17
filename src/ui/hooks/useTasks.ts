@@ -12,6 +12,8 @@ import {
   toggleAllUseCase,
   undoUseCase,
   hasUndo,
+  redoUseCase,
+  hasRedo,
 } from "../../application/tasks/composition";
 
 export function useTasks() {
@@ -36,5 +38,7 @@ export function useTasks() {
     hasPendingTasks,
     undo: undoUseCase,
     hasUndo,
+    redo: redoUseCase,
+    hasRedo,
   };
 }

@@ -13,6 +13,7 @@ function createTaskActions(
     history.push(store.getState());
     store.dispatch(action);
   }
+
   return {
     addTask(task: Task) {
       dispatchWithHistory({
@@ -27,6 +28,7 @@ function createTaskActions(
         payload: id,
       });
     },
+
     toggleTask(id: string) {
       dispatchWithHistory({
         type: ACTIONS.TOGGLE_TASK,
@@ -64,7 +66,35 @@ function createTaskActions(
     },
 
     hasUndo() {
-      return history.hasEntries();
+      return history.canUndo();
+    },
+
+    undo() {
+      const previousState = history.undo(store.getState());
+
+      if (!previousState) {
+        return false;
+      }
+
+      store.replaceState(previousState);
+
+      return true;
+    },
+
+    hasRedo() {
+      return history.canRedo();
+    },
+
+    redo() {
+      const nextState = history.redo(store.getState());
+
+      if (!nextState) {
+        return false;
+      }
+
+      store.replaceState(nextState);
+
+      return true;
     },
   };
 }

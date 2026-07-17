@@ -1,19 +1,56 @@
 export class History<T> {
-  private entries: T[] = [];
+  private readonly undoStack: T[] = [];
+  private readonly redoStack: T[] = [];
 
-  push(entry: T): void {
-    this.entries.push(entry);
+  constructor(private readonly limit = Infinity) {}
+
+  push(state: T): void {
+    this.pushUndo(state);
+    this.redoStack.length = 0;
   }
 
-  pop(): T | undefined {
-    return this.entries.pop();
+  undo(current: T): T | undefined {
+    const previous = this.undoStack.pop();
+
+    if (previous === undefined) {
+      return undefined;
+    }
+
+    this.redoStack.push(current);
+
+    return previous;
   }
 
-  hasEntries(): boolean {
-    return this.entries.length > 0;
+  redo(current: T): T | undefined {
+    const next = this.redoStack.pop();
+
+    if (next === undefined) {
+      return undefined;
+    }
+
+    this.pushUndo(current);
+
+    return next;
+  }
+
+  canUndo(): boolean {
+    return this.undoStack.length > 0;
+  }
+
+  canRedo(): boolean {
+    return this.redoStack.length > 0;
   }
 
   clear(): void {
-    this.entries = [];
+    this.undoStack.length = 0;
+    this.redoStack.length = 0;
+  }
+
+  private pushUndo(state: T): void {
+    this.undoStack.push(state);
+
+    if (this.undoStack.length > this.limit) {
+      this.undoStack.shift();
+    }
   }
 }

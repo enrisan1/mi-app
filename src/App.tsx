@@ -29,6 +29,8 @@ function App() {
     clearCompleted,
     undo,
     hasUndo,
+    redo,
+    hasRedo,
   } = useTasks();
 
   const filteredTasks = selectVisibleTasks(tasks, filter);
@@ -66,6 +68,8 @@ function App() {
         hasPendingTasks={hasPendingTasks}
         onUndo={undo}
         hasUndo={hasUndo()}
+        onRedo={redo}
+        hasRedo={hasRedo()}
       />
     </div>
   );

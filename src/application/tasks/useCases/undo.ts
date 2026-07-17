@@ -1,21 +1,7 @@
-import { History } from "../../history/History";
-import type { Store } from "../../../store/types";
-import type { Task } from "../../../domain/tasks/entities/task";
-import type { TaskAction } from "../../../domain/tasks/tasksReducer";
+import type { TaskActions } from "../taskActions.types";
 
-export function createUndoUseCase(
-  store: Store<Task[], TaskAction>,
-  history: History<Task[]>,
-) {
+export function createUndoUseCase(taskActions: TaskActions) {
   return (): boolean => {
-    const previousState = history.pop();
-
-    if (!previousState) {
-      return false;
-    }
-
-    store.replaceState(previousState);
-
-    return true;
+    return taskActions.undo();
   };
 }
