@@ -10,9 +10,11 @@ beforeEach(() => {
   });
 });
 
+const renderUseTasks = () => renderHook(() => useTasks("all"));
+
 describe("useTasks (senior architecture)", () => {
   test("añade y lista tareas", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");
@@ -26,7 +28,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("toggle funciona correctamente", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");
@@ -42,7 +44,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("editTask modifica el texto", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");
@@ -58,8 +60,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("deleteTask elimina una tarea", () => {
-    const { result } = renderHook(() => useTasks());
-
+    const { result } = renderUseTasks();
     act(() => {
       result.current.addTask("A");
       result.current.addTask("B");
@@ -76,7 +77,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("clearCompleted elimina únicamente las tareas completadas", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");
@@ -99,7 +100,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("markAllCompleted marca todas las tareas como completadas", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");
@@ -115,7 +116,7 @@ describe("useTasks (senior architecture)", () => {
   });
 
   test("markAllPending marca todas las tareas como pendientes", () => {
-    const { result } = renderHook(() => useTasks());
+    const { result } = renderUseTasks();
 
     act(() => {
       result.current.addTask("A");

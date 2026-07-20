@@ -5,12 +5,6 @@ import TaskFilters from "./ui/components/TaskFilters";
 import TaskList from "./ui/components/TaskList";
 import TaskActions from "./ui/components/TaskActions";
 import type { TaskFilter } from "./domain/tasks/taskFilter";
-import {
-  selectVisibleTasks,
-  selectTotalTasks,
-  selectCompletedCount,
-  selectPendingCount,
-} from "./domain/tasks/tasksSelectors";
 import "./App.css";
 
 function App() {
@@ -20,25 +14,22 @@ function App() {
   );
 
   const {
-    tasks,
+    visibleTasks,
+    totalTasks,
+    pendingTasks,
+    completedTasks,
+    hasPendingTasks,
+    hasCompletedTasks,
     deleteTask,
     toggleTask,
     editTask,
     toggleAll,
-    hasPendingTasks,
     clearCompleted,
     undo,
     hasUndo,
     redo,
     hasRedo,
-  } = useTasks();
-
-  const filteredTasks = selectVisibleTasks(tasks, filter);
-
-  // Estadísticas
-  const totalTasks = selectTotalTasks(tasks);
-  const completedTasks = selectCompletedCount(tasks);
-  const pendingTasks = selectPendingCount(tasks);
+  } = useTasks(filter);
 
   return (
     <div className="app">
@@ -55,7 +46,7 @@ function App() {
       <TaskFilters filter={filter} onFilterChange={setFilter} />
 
       <TaskList
-        tasks={filteredTasks}
+        tasks={visibleTasks}
         deleteTask={deleteTask}
         toggleTask={toggleTask}
         editTask={editTask}
@@ -64,7 +55,7 @@ function App() {
       <TaskActions
         onToggleAll={toggleAll}
         onClearCompleted={clearCompleted}
-        hasCompletedTasks={completedTasks > 0}
+        hasCompletedTasks={hasCompletedTasks}
         hasPendingTasks={hasPendingTasks}
         onUndo={undo}
         hasUndo={hasUndo()}

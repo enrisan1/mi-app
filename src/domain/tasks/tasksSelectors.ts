@@ -48,6 +48,10 @@ export function selectHasPendingTasks(tasks: Task[]): boolean {
   return selectPendingCount(tasks) > 0;
 }
 
+export function selectHasCompletedTasks(tasks: Task[]): boolean {
+  return selectCompletedCount(tasks) > 0;
+}
+
 /**
  * Selectores memoizados
  */
