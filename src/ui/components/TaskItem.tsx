@@ -51,6 +51,12 @@ function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
             {task.text.toString()}
           </span>
 
+          <span>
+            {" ("}
+            {task.priority.toString()}
+            {")"}
+          </span>
+
           <button onClick={() => setIsEditing(true)}>✏️</button>
 
           <button onClick={() => onDelete(task.id.toString())}>❌</button>

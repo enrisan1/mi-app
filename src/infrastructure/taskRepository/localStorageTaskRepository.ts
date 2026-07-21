@@ -9,8 +9,8 @@ export const localStorageTaskRepository = {
       id: task.id.toString(),
       text: task.text.toString(),
       completed: task.completed,
+      priority: task.priority.toString(),
     }));
-
     localStorage.setItem(KEY, JSON.stringify(storedTasks));
   },
 

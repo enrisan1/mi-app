@@ -24,14 +24,14 @@ import {
   hasRedo,
 } from "../../application/tasks/composition";
 
-export function useTasks(filter: TaskFilter) {
+export function useTasks(filter?: TaskFilter) {
   const tasks = useSyncExternalStore(
     tasksStore.subscribe,
     tasksStore.getState,
     tasksStore.getState,
   );
   // Listados
-  const visibleTasks = selectVisibleTasks(tasks, filter);
+  const visibleTasks = filter ? selectVisibleTasks(tasks, filter) : tasks;
   // Contadores
   const totalTasks = selectTotalTasks(tasks);
   const pendingTasks = selectPendingCount(tasks);

@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import TaskForm from "../ui/components/TaskForm";
+import { Priority } from "../domain/tasks/entities/Priority";
 
 const mockAddTask = vi.fn();
 
@@ -33,7 +34,35 @@ describe("TaskForm", () => {
 
     fireEvent.click(button);
 
-    expect(mockAddTask).toHaveBeenCalledWith("Comprar leche");
+    expect(mockAddTask).toHaveBeenCalledWith(
+      "Comprar leche",
+      expect.any(Priority),
+    );
+  });
+
+  it("permite seleccionar una prioridad", () => {
+    render(<TaskForm />);
+
+    const input = screen.getByPlaceholderText("Escribe una tarea");
+    const select = screen.getByRole("combobox");
+    const button = screen.getByText("Añadir");
+
+    fireEvent.change(input, {
+      target: { value: "Comprar leche" },
+    });
+
+    fireEvent.change(select, {
+      target: { value: "high" },
+    });
+
+    fireEvent.click(button);
+
+    expect(mockAddTask).toHaveBeenCalledWith(
+      "Comprar leche",
+      expect.objectContaining({
+        value: "high",
+      }),
+    );
   });
 
   it("limpia el input después de añadir una tarea", () => {
