@@ -1,69 +1,106 @@
-import { memo, useState, type ChangeEvent } from "react";
+import { useState } from "react";
+import type { KeyboardEvent } from "react";
 import type { Task } from "../../domain/tasks/entities/task";
 
-type Props = {
+interface TaskItemProps {
   task: Task;
-  onDelete(id: string): void;
-  onToggle(id: string): void;
-  onEdit(id: string, text: string): void;
-};
+  onDelete: (id: string) => void;
+  onToggle: (id: string) => void;
+  onEdit: (id: string, text: string) => void;
+}
 
-function TaskItem({ task, onDelete, onToggle, onEdit }: Props) {
+export function TaskItem({ task, onDelete, onToggle, onEdit }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedText, setEditedText] = useState(task.text.toString());
+  const [editText, setEditText] = useState(task.text.toString());
 
-  const handleSave = () => {
-    const trimmed = editedText.trim();
+  function handleEditStart(): void {
+    setEditText(task.text.toString());
+    setIsEditing(true);
+  }
 
-    if (!trimmed) return;
+  function handleEditSave(): void {
+    const trimmedText = editText.trim();
 
-    onEdit(task.id.toString(), trimmed);
+    if (trimmedText) {
+      onEdit(task.id.toString(), trimmedText);
+    }
+
     setIsEditing(false);
-  };
+  }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setEditedText(e.target.value);
-  };
+  function handleEditCancel(): void {
+    setEditText(task.text.toString());
+    setIsEditing(false);
+  }
+
+  function handleKeyDown(event: KeyboardEvent<HTMLInputElement>): void {
+    if (event.key === "Enter") {
+      handleEditSave();
+    }
+
+    if (event.key === "Escape") {
+      handleEditCancel();
+    }
+  }
 
   return (
-    <li>
+    <div className="task-item">
       <input
         type="checkbox"
         checked={task.completed}
         onChange={() => onToggle(task.id.toString())}
+        aria-label={`Completar ${task.text.toString()}`}
       />
 
       {isEditing ? (
         <>
-          <input type="text" value={editedText} onChange={handleChange} />
+          <input
+            className="task-edit-input"
+            value={editText}
+            onChange={(event) => setEditText(event.target.value)}
+            onKeyDown={handleKeyDown}
+            autoFocus
+          />
 
-          <button onClick={handleSave}>💾</button>
+          <button
+            type="button"
+            onClick={handleEditSave}
+            aria-label="Guardar edición"
+          >
+            💾
+          </button>
 
-          <button onClick={() => setIsEditing(false)}>Cancelar</button>
+          <button type="button" onClick={handleEditCancel}>
+            Cancelar
+          </button>
         </>
       ) : (
-        <>
-          <span
-            style={{
-              textDecoration: task.completed ? "line-through" : "none",
-            }}
-          >
-            {task.text.toString()}
-          </span>
-
-          <span>
-            {" ("}
-            {task.priority.toString()}
-            {")"}
-          </span>
-
-          <button onClick={() => setIsEditing(true)}>✏️</button>
-
-          <button onClick={() => onDelete(task.id.toString())}>❌</button>
-        </>
+        <span
+          style={{
+            textDecoration: task.completed ? "line-through" : "none",
+          }}
+        >
+          {task.text.toString()}
+        </span>
       )}
-    </li>
+
+      {!isEditing && (
+        <button
+          type="button"
+          onClick={handleEditStart}
+          aria-label="Editar tarea"
+        >
+          ✏️
+        </button>
+      )}
+
+      <button
+        type="button"
+        onClick={() => onDelete(task.id.toString())}
+        aria-label="Eliminar tarea"
+      >
+        ❌
+      </button>
+    </div>
   );
 }
-
-export default memo(TaskItem);

@@ -14,6 +14,7 @@ import {
   toggleTaskUseCase,
   deleteTaskUseCase,
   editTaskUseCase,
+  changeTaskPriorityUseCase,
   clearCompletedUseCase,
   markAllCompletedUseCase,
   markAllPendingUseCase,
@@ -58,6 +59,7 @@ export function useTasks(filter?: TaskFilter) {
     markAllCompleted: markAllCompletedUseCase,
     markAllPending: markAllPendingUseCase,
     toggleAll: toggleAllUseCase,
+    changePriority: changeTaskPriorityUseCase,
 
     // Historial
     undo: undoUseCase,

@@ -1,11 +1,11 @@
 import type { TaskActions } from "../taskActions.types";
 
-export function createToggleAllUseCase(actions: TaskActions) {
+export function createToggleAllUseCase(taskActions: TaskActions) {
   return () => {
-    if (actions.hasPendingTasks()) {
-      actions.markAllCompleted();
+    if (taskActions.hasPendingTasks()) {
+      taskActions.markAllCompleted();
     } else {
-      actions.markAllPending();
+      taskActions.markAllPending();
     }
   };
 }

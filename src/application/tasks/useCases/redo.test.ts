@@ -1,55 +1,51 @@
-import { describe, expect, it, vi } from "vitest";
-import { createRedoUseCase } from "./redo";
+import { describe, it, expect, vi } from "vitest";
+import { redo } from "./redo";
 import type { TaskActions } from "../taskActions.types";
 
 describe("redo", () => {
-  it("reapplies the next state", () => {
+  it("should call redo when canRedo returns true", () => {
     const actions: TaskActions = {
       addTask: vi.fn(),
       deleteTask: vi.fn(),
       toggleTask: vi.fn(),
       editTask: vi.fn(),
+      changePriority: vi.fn(),
       clearCompleted: vi.fn(),
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
-
-      hasPendingTasks: () => false,
-
-      undo: vi.fn(() => false),
-      hasUndo: () => false,
-
-      redo: vi.fn(() => true),
-      hasRedo: () => true,
+      hasPendingTasks: vi.fn().mockReturnValue(false),
+      undo: vi.fn(),
+      redo: vi.fn(),
+      canUndo: vi.fn().mockReturnValue(true),
+      canRedo: vi.fn().mockReturnValue(true),
+      hasUndo: vi.fn().mockReturnValue(true),
+      hasRedo: vi.fn().mockReturnValue(true),
     };
 
-    const redo = createRedoUseCase(actions);
-
-    expect(redo()).toBe(true);
-    expect(actions.redo).toHaveBeenCalledTimes(1);
+    redo(actions);
+    expect(actions.redo).toHaveBeenCalled();
   });
 
-  it("returns false when there is no next state", () => {
+  it("should not call redo when canRedo returns false", () => {
     const actions: TaskActions = {
       addTask: vi.fn(),
       deleteTask: vi.fn(),
       toggleTask: vi.fn(),
       editTask: vi.fn(),
+      changePriority: vi.fn(),
       clearCompleted: vi.fn(),
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
-
-      hasPendingTasks: () => false,
-
-      undo: vi.fn(() => false),
-      hasUndo: () => false,
-
-      redo: vi.fn(() => false),
-      hasRedo: () => false,
+      hasPendingTasks: vi.fn().mockReturnValue(false),
+      undo: vi.fn(),
+      redo: vi.fn(),
+      canUndo: vi.fn().mockReturnValue(false),
+      canRedo: vi.fn().mockReturnValue(false),
+      hasUndo: vi.fn().mockReturnValue(false),
+      hasRedo: vi.fn().mockReturnValue(false),
     };
 
-    const redo = createRedoUseCase(actions);
-
-    expect(redo()).toBe(false);
-    expect(actions.redo).toHaveBeenCalledTimes(1);
+    redo(actions);
+    expect(actions.redo).not.toHaveBeenCalled();
   });
 });

@@ -1,29 +1,33 @@
 export class TaskText {
-  private constructor(private readonly value: string) {}
+  private constructor(private readonly _value: string) {}
 
-  static create(text: string): TaskText {
-    const normalized = text.trim();
+  static create(value: string): TaskText {
+    const trimmedValue = value.trim();
 
-    if (normalized.length === 0) {
+    if (!trimmedValue) {
       throw new Error("Task text cannot be empty");
     }
 
-    if (normalized.length > 200) {
-      throw new Error("Task text is too long");
+    if (trimmedValue.length > 200) {
+      throw new Error("Task text cannot exceed 200 characters");
     }
 
-    return new TaskText(normalized);
+    return new TaskText(trimmedValue);
   }
 
-  getValue(): string {
-    return this.value;
+  static restore(value: string): TaskText {
+    return new TaskText(value);
+  }
+
+  value(): string {
+    return this._value;
   }
 
   toString(): string {
-    return this.value;
+    return this._value;
   }
 
   equals(other: TaskText): boolean {
-    return this.value === other.value;
+    return this._value === other._value;
   }
 }

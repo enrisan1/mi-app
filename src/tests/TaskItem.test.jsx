@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 
-import TaskItem from "../ui/components/TaskItem";
+import { TaskItem } from "../ui/components/TaskItem";
 import { Task } from "../domain/tasks/entities/task";
 
 describe("TaskItem", () => {

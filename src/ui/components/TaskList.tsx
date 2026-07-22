@@ -1,6 +1,6 @@
 // TaskItem.tsx
 import type { Task } from "../../domain/tasks/entities/task";
-import TaskItem from "./TaskItem";
+import { TaskItem } from "./TaskItem";
 
 type Props = {
   tasks: Task[];

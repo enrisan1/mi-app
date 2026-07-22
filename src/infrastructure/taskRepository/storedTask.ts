@@ -4,5 +4,5 @@ export type StoredTask = {
   id: string;
   text: string;
   completed: boolean;
-  priority?: PriorityValue;
+  priority: PriorityValue;
 };

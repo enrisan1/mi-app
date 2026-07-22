@@ -1,55 +1,51 @@
-import { describe, expect, it, vi } from "vitest";
-import { createUndoUseCase } from "./undo";
+import { describe, it, expect, vi } from "vitest";
+import { undo } from "./undo";
 import type { TaskActions } from "../taskActions.types";
 
 describe("undo", () => {
-  it("restores the previous state", () => {
+  it("should call undo when canUndo returns true", () => {
     const actions: TaskActions = {
       addTask: vi.fn(),
       deleteTask: vi.fn(),
       toggleTask: vi.fn(),
       editTask: vi.fn(),
+      changePriority: vi.fn(), // Añadido
       clearCompleted: vi.fn(),
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
-
-      hasPendingTasks: () => false,
-
-      undo: vi.fn(() => true),
-      hasUndo: () => true,
-
-      redo: vi.fn(() => false),
-      hasRedo: () => false,
+      hasPendingTasks: vi.fn().mockReturnValue(false),
+      undo: vi.fn(),
+      redo: vi.fn(),
+      canUndo: vi.fn().mockReturnValue(true), // Añadido
+      canRedo: vi.fn().mockReturnValue(false), // Añadido
+      hasUndo: vi.fn().mockReturnValue(true),
+      hasRedo: vi.fn().mockReturnValue(false),
     };
 
-    const undo = createUndoUseCase(actions);
-
-    expect(undo()).toBe(true);
-    expect(actions.undo).toHaveBeenCalledTimes(1);
+    undo(actions);
+    expect(actions.undo).toHaveBeenCalled();
   });
 
-  it("returns false when there is no previous state", () => {
+  it("should not call undo when canUndo returns false", () => {
     const actions: TaskActions = {
       addTask: vi.fn(),
       deleteTask: vi.fn(),
       toggleTask: vi.fn(),
       editTask: vi.fn(),
+      changePriority: vi.fn(), // Añadido
       clearCompleted: vi.fn(),
       markAllCompleted: vi.fn(),
       markAllPending: vi.fn(),
-
-      hasPendingTasks: () => false,
-
-      undo: vi.fn(() => false),
-      hasUndo: () => false,
-
-      redo: vi.fn(() => false),
-      hasRedo: () => false,
+      hasPendingTasks: vi.fn().mockReturnValue(false),
+      undo: vi.fn(),
+      redo: vi.fn(),
+      canUndo: vi.fn().mockReturnValue(false), // Añadido
+      canRedo: vi.fn().mockReturnValue(false), // Añadido
+      hasUndo: vi.fn().mockReturnValue(false),
+      hasRedo: vi.fn().mockReturnValue(false),
     };
 
-    const undo = createUndoUseCase(actions);
-
-    expect(undo()).toBe(false);
-    expect(actions.undo).toHaveBeenCalledTimes(1);
+    undo(actions);
+    expect(actions.undo).not.toHaveBeenCalled();
   });
 });

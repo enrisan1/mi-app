@@ -1,7 +1,5 @@
 export type PriorityValue = "low" | "medium" | "high";
 
-export const PRIORITIES = ["low", "medium", "high"] as const;
-
 export class Priority {
   private constructor(private readonly value: PriorityValue) {}
 

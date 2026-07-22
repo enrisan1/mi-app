@@ -28,6 +28,12 @@ export class Task {
     );
   }
 
+  changePriority(newPriority: Priority): Task {
+    return this.priority.equals(newPriority)
+      ? this
+      : new Task(this.id, this.text, this.completed, newPriority);
+  }
+
   toggle(): Task {
     return new Task(this.id, this.text, !this.completed, this.priority);
   }
@@ -43,6 +49,8 @@ export class Task {
   }
 
   uncomplete(): Task {
-    return new Task(this.id, this.text, false, this.priority);
+    return this.completed
+      ? new Task(this.id, this.text, false, this.priority)
+      : this;
   }
 }

@@ -1,9 +1,15 @@
 import type { TaskActions } from "../taskActions.types";
 
-function createRedoUseCase(taskActions: TaskActions) {
-  return (): boolean => {
-    return taskActions.redo();
-  };
+export function redo(actions: TaskActions): void {
+  if (!actions.canRedo()) {
+    return;
+  }
+
+  actions.redo();
 }
 
-export { createRedoUseCase };
+export function createRedoUseCase(actions: TaskActions) {
+  return (): void => {
+    redo(actions);
+  };
+}

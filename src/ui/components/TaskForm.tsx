@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import { useTasks } from "../hooks/useTasks";
 import {
   Priority,
-  PRIORITIES,
   type PriorityValue,
 } from "../../domain/tasks/entities/Priority";
+import { PRIORITY_LABELS } from "../constants/priorityLabels";
 
 function TaskForm() {
   const { addTask } = useTasks();

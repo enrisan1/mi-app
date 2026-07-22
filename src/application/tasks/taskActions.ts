@@ -1,11 +1,12 @@
-import { History } from "../history/History";
 import type { Store } from "../../store/types";
 import type { Task } from "../../domain/tasks/entities/task";
+import type { Priority } from "../../domain/tasks/entities/Priority";
 import { ACTIONS, type TaskAction } from "../../domain/tasks/tasksReducer";
-import type { TaskActions } from "./taskActions.types";
 import { selectHasPendingTasks } from "../../domain/tasks/tasksSelectors";
+import type { History } from "../history/History";
+import type { TaskActions } from "./taskActions.types";
 
-function createTaskActions(
+export function createTaskActions(
   store: Store<Task[], TaskAction>,
   history: History<Task[]>,
 ): TaskActions {
@@ -15,88 +16,93 @@ function createTaskActions(
   }
 
   return {
-    addTask(task: Task) {
+    addTask(task: Task): void {
       dispatchWithHistory({
         type: ACTIONS.ADD_TASK,
         payload: task,
       });
     },
 
-    deleteTask(id: string) {
+    deleteTask(id: string): void {
       dispatchWithHistory({
         type: ACTIONS.DELETE_TASK,
         payload: id,
       });
     },
 
-    toggleTask(id: string) {
+    toggleTask(id: string): void {
       dispatchWithHistory({
         type: ACTIONS.TOGGLE_TASK,
         payload: id,
       });
     },
 
-    editTask(id: string, text: string) {
+    editTask(id: string, text: string): void {
       dispatchWithHistory({
         type: ACTIONS.EDIT_TASK,
         payload: { id, text },
       });
     },
 
-    clearCompleted() {
+    changePriority(id: string, priority: Priority): void {
+      dispatchWithHistory({
+        type: ACTIONS.CHANGE_PRIORITY,
+        payload: { id, priority },
+      });
+    },
+
+    clearCompleted(): void {
       dispatchWithHistory({
         type: ACTIONS.CLEAR_COMPLETED,
       });
     },
 
-    markAllCompleted() {
+    markAllCompleted(): void {
       dispatchWithHistory({
         type: ACTIONS.MARK_ALL_COMPLETED,
       });
     },
 
-    markAllPending() {
+    markAllPending(): void {
       dispatchWithHistory({
         type: ACTIONS.MARK_ALL_PENDING,
       });
     },
 
-    hasPendingTasks() {
+    hasPendingTasks(): boolean {
       return selectHasPendingTasks(store.getState());
     },
 
-    hasUndo() {
+    undo(): void {
+      const previousState = history.undo(store.getState());
+
+      if (previousState !== undefined) {
+        store.replaceState(previousState);
+      }
+    },
+
+    redo(): void {
+      const nextState = history.redo(store.getState());
+
+      if (nextState !== undefined) {
+        store.replaceState(nextState);
+      }
+    },
+
+    canUndo(): boolean {
       return history.canUndo();
     },
 
-    undo() {
-      const previousState = history.undo(store.getState());
-
-      if (!previousState) {
-        return false;
-      }
-
-      store.replaceState(previousState);
-
-      return true;
-    },
-
-    hasRedo() {
+    canRedo(): boolean {
       return history.canRedo();
     },
 
-    redo() {
-      const nextState = history.redo(store.getState());
+    hasUndo(): boolean {
+      return history.canUndo();
+    },
 
-      if (!nextState) {
-        return false;
-      }
-
-      store.replaceState(nextState);
-
-      return true;
+    hasRedo(): boolean {
+      return history.canRedo();
     },
   };
 }
-
-export { createTaskActions };
