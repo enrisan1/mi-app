@@ -1,10 +1,8 @@
 import { useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { Task } from "../../domain/tasks/entities/task";
-import {
-  Priority,
-  type PriorityValue,
-} from "../../domain/tasks/entities/Priority";
+import { TaskPrioritySelect } from "./TaskPrioritySelect";
+import type { Priority } from "../../domain/tasks/entities/Priority";
 
 interface TaskItemProps {
   task: Task;
@@ -54,10 +52,6 @@ export function TaskItem({
     }
   }
 
-  function handlePriorityChange(priorityValue: PriorityValue): void {
-    onChangePriority(task.id.toString(), Priority.restore(priorityValue));
-  }
-
   return (
     <div className="task-item">
       <input
@@ -99,18 +93,11 @@ export function TaskItem({
         </span>
       )}
 
-      <select
-        value={task.priority.toString()}
-        onChange={(event) =>
-          handlePriorityChange(event.target.value as PriorityValue)
-        }
-        aria-label={`Prioridad de ${task.text.toString()}`}
-      >
-        <option value="low">Baja</option>
-        <option value="medium">Media</option>
-        <option value="high">Alta</option>
-      </select>
-
+      <TaskPrioritySelect
+        priority={task.priority}
+        onChange={(priority) => onChangePriority(task.id.toString(), priority)}
+        ariaLabel={`Prioridad de ${task.text.toString()}`}
+      />
       {!isEditing && (
         <button
           type="button"
