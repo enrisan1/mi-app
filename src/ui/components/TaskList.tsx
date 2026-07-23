@@ -1,5 +1,5 @@
-// TaskItem.tsx
 import type { Task } from "../../domain/tasks/entities/task";
+import type { Priority } from "../../domain/tasks/entities/Priority";
 import { TaskItem } from "./TaskItem";
 
 type Props = {
@@ -7,9 +7,16 @@ type Props = {
   deleteTask(id: string): void;
   toggleTask(id: string): void;
   editTask(id: string, text: string): void;
+  changePriority(id: string, priority: Priority): void;
 };
 
-function TaskList({ tasks, deleteTask, toggleTask, editTask }: Props) {
+function TaskList({
+  tasks,
+  deleteTask,
+  toggleTask,
+  editTask,
+  changePriority,
+}: Props) {
   return (
     <ul>
       {tasks.map((task) => (
@@ -19,6 +26,7 @@ function TaskList({ tasks, deleteTask, toggleTask, editTask }: Props) {
           onDelete={deleteTask}
           onToggle={toggleTask}
           onEdit={editTask}
+          onChangePriority={changePriority}
         />
       ))}
     </ul>

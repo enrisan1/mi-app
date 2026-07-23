@@ -1,15 +1,26 @@
 import { useState } from "react";
 import type { KeyboardEvent } from "react";
 import type { Task } from "../../domain/tasks/entities/task";
+import {
+  Priority,
+  type PriorityValue,
+} from "../../domain/tasks/entities/Priority";
 
 interface TaskItemProps {
   task: Task;
   onDelete: (id: string) => void;
   onToggle: (id: string) => void;
   onEdit: (id: string, text: string) => void;
+  onChangePriority: (id: string, priority: Priority) => void;
 }
 
-export function TaskItem({ task, onDelete, onToggle, onEdit }: TaskItemProps) {
+export function TaskItem({
+  task,
+  onDelete,
+  onToggle,
+  onEdit,
+  onChangePriority,
+}: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text.toString());
 
@@ -41,6 +52,10 @@ export function TaskItem({ task, onDelete, onToggle, onEdit }: TaskItemProps) {
     if (event.key === "Escape") {
       handleEditCancel();
     }
+  }
+
+  function handlePriorityChange(priorityValue: PriorityValue): void {
+    onChangePriority(task.id.toString(), Priority.restore(priorityValue));
   }
 
   return (
@@ -83,6 +98,18 @@ export function TaskItem({ task, onDelete, onToggle, onEdit }: TaskItemProps) {
           {task.text.toString()}
         </span>
       )}
+
+      <select
+        value={task.priority.toString()}
+        onChange={(event) =>
+          handlePriorityChange(event.target.value as PriorityValue)
+        }
+        aria-label={`Prioridad de ${task.text.toString()}`}
+      >
+        <option value="low">Baja</option>
+        <option value="medium">Media</option>
+        <option value="high">Alta</option>
+      </select>
 
       {!isEditing && (
         <button

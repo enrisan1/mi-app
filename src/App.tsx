@@ -23,6 +23,7 @@ function App() {
     deleteTask,
     toggleTask,
     editTask,
+    changePriority,
     toggleAll,
     clearCompleted,
     undo,
@@ -50,6 +51,7 @@ function App() {
         deleteTask={deleteTask}
         toggleTask={toggleTask}
         editTask={editTask}
+        changePriority={changePriority}
       />
 
       <TaskActions
