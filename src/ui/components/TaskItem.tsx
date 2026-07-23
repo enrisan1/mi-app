@@ -54,67 +54,75 @@ export function TaskItem({
 
   return (
     <div className="task-item">
-      <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => onToggle(task.id.toString())}
-        aria-label={`Completar ${task.text.toString()}`}
-      />
+      <div className="task-main">
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => onToggle(task.id.toString())}
+          aria-label={`Completar ${task.text.toString()}`}
+        />
 
-      {isEditing ? (
-        <>
-          <input
-            className="task-edit-input"
-            value={editText}
-            onChange={(event) => setEditText(event.target.value)}
-            onKeyDown={handleKeyDown}
-            autoFocus
-          />
+        {isEditing ? (
+          <>
+            <input
+              className="task-edit-input"
+              value={editText}
+              onChange={(event) => setEditText(event.target.value)}
+              onKeyDown={handleKeyDown}
+              autoFocus
+            />
 
+            <button
+              type="button"
+              onClick={handleEditSave}
+              aria-label="Guardar edición"
+            >
+              💾
+            </button>
+
+            <button type="button" onClick={handleEditCancel}>
+              Cancelar
+            </button>
+          </>
+        ) : (
+          <span
+            className="task-text"
+            style={{
+              textDecoration: task.completed ? "line-through" : "none",
+            }}
+          >
+            {task.text.toString()}
+          </span>
+        )}
+      </div>
+
+      <div className="task-controls">
+        <TaskPrioritySelect
+          priority={task.priority}
+          onChange={(priority) =>
+            onChangePriority(task.id.toString(), priority)
+          }
+          ariaLabel={`Prioridad de ${task.text.toString()}`}
+        />
+
+        {!isEditing && (
           <button
             type="button"
-            onClick={handleEditSave}
-            aria-label="Guardar edición"
+            onClick={handleEditStart}
+            aria-label="Editar tarea"
           >
-            💾
+            ✏️
           </button>
+        )}
 
-          <button type="button" onClick={handleEditCancel}>
-            Cancelar
-          </button>
-        </>
-      ) : (
-        <span
-          style={{
-            textDecoration: task.completed ? "line-through" : "none",
-          }}
-        >
-          {task.text.toString()}
-        </span>
-      )}
-
-      <TaskPrioritySelect
-        priority={task.priority}
-        onChange={(priority) => onChangePriority(task.id.toString(), priority)}
-        ariaLabel={`Prioridad de ${task.text.toString()}`}
-      />
-      {!isEditing && (
         <button
           type="button"
-          onClick={handleEditStart}
-          aria-label="Editar tarea"
+          onClick={() => onDelete(task.id.toString())}
+          aria-label="Eliminar tarea"
         >
-          ✏️
+          ❌
         </button>
-      )}
-
-      <button
-        type="button"
-        onClick={() => onDelete(task.id.toString())}
-        aria-label="Eliminar tarea"
-      >
-        ❌
-      </button>
+      </div>
     </div>
   );
 }

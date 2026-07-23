@@ -18,16 +18,17 @@ function TaskList({
   changePriority,
 }: Props) {
   return (
-    <ul>
+    <ul className="task-list">
       {tasks.map((task) => (
-        <TaskItem
-          key={task.id.toString()}
-          task={task}
-          onDelete={deleteTask}
-          onToggle={toggleTask}
-          onEdit={editTask}
-          onChangePriority={changePriority}
-        />
+        <li key={task.id.toString()}>
+          <TaskItem
+            task={task}
+            onDelete={deleteTask}
+            onToggle={toggleTask}
+            onEdit={editTask}
+            onChangePriority={changePriority}
+          />
+        </li>
       ))}
     </ul>
   );

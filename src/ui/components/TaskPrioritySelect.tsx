@@ -23,20 +23,15 @@ export function TaskPrioritySelect({
   }
 
   return (
-    <div className="task-priority-controls">
-      <span className={`task-priority task-priority-${priority.toString()}`}>
-        {getPriorityLabel(priority)}
-      </span>
-
-      <select
-        value={priority.toString()}
-        onChange={handleChange}
-        aria-label={ariaLabel}
-      >
-        <option value="low">Baja</option>
-        <option value="medium">Media</option>
-        <option value="high">Alta</option>
-      </select>
-    </div>
+    <select
+      className={`task-priority-select task-priority-${priority.toString()}`}
+      value={priority.toString()}
+      onChange={handleChange}
+      aria-label={ariaLabel}
+    >
+      <option value="low">{getPriorityLabel(Priority.low())}</option>
+      <option value="medium">{getPriorityLabel(Priority.medium())}</option>
+      <option value="high">{getPriorityLabel(Priority.high())}</option>
+    </select>
   );
 }
