@@ -4,7 +4,6 @@ import { describe, it, expect, vi } from "vitest";
 import TaskForm from "../ui/components/TaskForm";
 import TaskList from "../ui/components/TaskList";
 
-const addTask = vi.fn();
 const deleteTask = vi.fn();
 const toggleTask = vi.fn();
 const editTask = vi.fn();

@@ -4,12 +4,14 @@ import { localStorageTaskRepository } from "../../infrastructure/taskRepository/
 import { loggerMiddleware } from "../../store/middleware/loggerMiddleware";
 import { tasksReducer, type TaskAction } from "../../domain/tasks/tasksReducer";
 
-import { persistMiddleware } from "./persistMiddleware";
-
 const initialState: Task[] = localStorageTaskRepository.load() ?? [];
 
 export const tasksStore = createStore<Task[], TaskAction>(
   tasksReducer,
   initialState,
-  [loggerMiddleware(), persistMiddleware()],
+  [loggerMiddleware()],
 );
+
+tasksStore.subscribe(() => {
+  localStorageTaskRepository.save(tasksStore.getState());
+});

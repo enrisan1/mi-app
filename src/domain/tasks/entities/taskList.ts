@@ -4,7 +4,7 @@ import { TaskText } from "./taskText";
 
 export class TaskList {
   private constructor(private readonly tasks: readonly Task[]) {
-    const ids = new Set(tasks.map(task => task.id.toString()));
+    const ids = new Set(tasks.map((task) => task.id.toString()));
 
     if (ids.size !== tasks.length) {
       throw new Error("TaskList cannot contain duplicated task ids.");
@@ -28,10 +28,10 @@ export class TaskList {
   }
 
   remove(id: TaskId): TaskList {
-  return new TaskList(
-    this.tasks.filter(task => task.id.toString() !== id.toString())
-  );
-}
+    return new TaskList(
+      this.tasks.filter((task) => task.id.toString() !== id.toString()),
+    );
+  }
 
   toggle(id: TaskId): TaskList {
     return new TaskList(

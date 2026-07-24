@@ -9,25 +9,14 @@ import { createEditTaskUseCase } from "./useCases/editTask";
 import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
-// import { createToggleAllUseCase } from "./useCases/toggleAll"; ← ELIMINAR
 import { createUndoUseCase } from "./useCases/undo";
 import { createRedoUseCase } from "../tasks/useCases/redo";
 import { createChangeTaskPriorityUseCase } from "./useCases/changeTaskPriority";
-import type { TaskActions } from "./taskActions.types";
+import { createToggleAllUseCase } from "./useCases/toggleAll";
 
 const history = new History<Task[]>();
 
 const taskActions = createTaskActions(tasksStore, history);
-
-export function createToggleAllUseCase(taskActions: TaskActions) {
-  return () => {
-    if (taskActions.hasPendingTasks()) {
-      taskActions.markAllCompleted();
-    } else {
-      taskActions.markAllPending();
-    }
-  };
-}
 
 export const markAllCompletedUseCase =
   createMarkAllCompletedUseCase(taskActions);

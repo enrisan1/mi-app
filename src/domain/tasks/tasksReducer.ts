@@ -2,14 +2,14 @@ import { TaskList } from "./entities/taskList";
 import { type Task } from "./entities/task";
 import { TaskId } from "./entities/taskId";
 import { TaskText } from "./entities/taskText";
-import { Priority } from "./entities/Priority"; // Añadir import
+import { Priority } from "./entities/Priority";
 
 export const ACTIONS = {
   ADD_TASK: "ADD_TASK",
   DELETE_TASK: "DELETE_TASK",
   TOGGLE_TASK: "TOGGLE_TASK",
   EDIT_TASK: "EDIT_TASK",
-  CHANGE_PRIORITY: "CHANGE_PRIORITY", // Añadir
+  CHANGE_PRIORITY: "CHANGE_PRIORITY",
   CLEAR_COMPLETED: "CLEAR_COMPLETED",
   MARK_ALL_COMPLETED: "MARK_ALL_COMPLETED",
   MARK_ALL_PENDING: "MARK_ALL_PENDING",
@@ -33,7 +33,7 @@ export type TaskAction =
       payload: { id: string; text: string };
     }
   | {
-      type: typeof ACTIONS.CHANGE_PRIORITY; // Añadir
+      type: typeof ACTIONS.CHANGE_PRIORITY;
       payload: { id: string; priority: Priority };
     }
   | {
@@ -79,7 +79,7 @@ export function tasksReducer(
           .getItems(),
       ];
 
-    case ACTIONS.CHANGE_PRIORITY: // Añadir case
+    case ACTIONS.CHANGE_PRIORITY:
       return state.map((task) =>
         task.id.toString() === action.payload.id
           ? task.changePriority(action.payload.priority)

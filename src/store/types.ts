@@ -14,11 +14,3 @@ export type Dispatch<Action> = (action: Action) => void;
 export type Middleware<State, Action> = (
   store: Store<State, Action>,
 ) => (next: Dispatch<Action>) => (action: Action) => void;
-
-export interface Task {
-  id: string;
-  text: string;
-  completed: boolean;
-}
-
-export type TaskFilter = "all" | "active" | "completed";
