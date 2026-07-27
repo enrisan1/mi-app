@@ -229,3 +229,13 @@ Los siguientes pasos previstos son:
 - mejoras de rendimiento y experiencia de usuario.
 
 Cada nueva versión intentará mantener el mismo objetivo que ha guiado este proyecto desde el principio: construir una aplicación sencilla, mantenible y técnicamente sólida.
+
+| Si quieres...                        | Consulta...            |
+| ------------------------------------ | ---------------------- |
+| Entender la arquitectura             | `ARCHITECTURE.md`      |
+| Conocer el estado actual             | `PROJECT_STATUS.md`    |
+| Ver la evolución del proyecto        | `PROJECT_JOURNAL.md`   |
+| Consultar decisiones arquitectónicas | `02-architecture/adr/` |
+| Configurar el entorno                | `DEVELOPMENT_GUIDE.md` |
+| Entender la estrategia de pruebas    | `TESTING.md`           |
+| Ver las próximas actuaciones         | `ROADMAP.md`           |

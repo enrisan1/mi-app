@@ -1,10 +1,10 @@
-# Frontend System Design — Evolución del Proyecto a Producción
+# Architecture Roadmap. Escenarios de evolución arquitectónica
 
 ## Contexto
 
 Este proyecto actualmente es una Todo App construida como laboratorio de arquitectura frontend, con un store propio, reducer puro y persistencia en localStorage.
 
-El objetivo de este documento es describir cómo evolucionaría esta arquitectura si se convirtiera en una **aplicación de producción real**.
+Este documento no constituye una hoja de ruta del proyecto, sino una recopilación de posibles escenarios de evolución arquitectónica. Su finalidad es analizar cómo podría crecer el sistema si el dominio requiriera nuevas capacidades, manteniendo la coherencia con la arquitectura actual.
 
 ---
 
@@ -32,7 +32,7 @@ Características actuales:
 
 ---
 
-## Objetivo de evolución
+## Posibles escenarios de evolución
 
 Transformar la aplicación en un sistema frontend real con:
 
@@ -103,7 +103,7 @@ Impacto:
 
 ### 2. Introducción de capa API Client
 
-Se añade una capa intermedia:
+Una posible evolución consistiría en incorporar una capa intermedia:
 
 ```text
 tasksStore → tasksService → apiClient → backend
@@ -174,7 +174,7 @@ Cada módulo contiene:
 
 ### 5. Autenticación (nuevo sistema)
 
-Se introduce:
+En un escenario de producción sería razonable introducir:
 
 - login
 - JWT token
@@ -191,7 +191,7 @@ Login → API → Token → Store → UI state
 
 ### 6. Manejo de errores global
 
-Se añade:
+Podría incorporarse:
 
 - error boundary
 - global error store
@@ -227,7 +227,7 @@ Se expande el modelo actual:
 
 ## Observabilidad (nivel producción)
 
-Se pueden añadir:
+Podría añadirse:
 
 - logging de eventos
 - tracking de errores
@@ -241,7 +241,7 @@ User Action → Store → API → Logging service
 
 ---
 
-## Trade-offs de evolución
+## Posibles líneas de evolución
 
 | Aspecto         | Actual       | Producción  |
 | --------------- | ------------ | ----------- |

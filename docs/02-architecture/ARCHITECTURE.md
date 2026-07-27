@@ -1234,7 +1234,7 @@ Como consecuencia, el foco de las futuras iteraciones deja de estar en redefinir
 
 La arquitectura ya no constituye el principal objeto de desarrollo del proyecto; pasa a ser la base sobre la que continuará evolucionando el dominio y sus funcionalidades.
 
-## 11. Relación con el resto de la documentación
+## 11. La visión dentro del sistema documental
 
 Este documento constituye la referencia principal de la arquitectura del proyecto.
 
