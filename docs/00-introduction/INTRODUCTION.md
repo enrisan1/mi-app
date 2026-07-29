@@ -1,241 +1,183 @@
-# 🎤 Interview Notes
+1.  Objetivo
 
-Este documento resume las principales decisiones de diseño tomadas durante el desarrollo del proyecto y el razonamiento técnico detrás de ellas.
+2.  Sistema documental
 
-El objetivo no era construir la aplicación Todo más completa, sino utilizar un problema sencillo para experimentar con patrones de arquitectura, gestión de estado y organización del código.
+3.  Cómo utilizar la documentación
 
----
+4.  Organización de la documentación
 
-# Objetivo del proyecto
+5.  Recorridos recomendados
 
-El propósito principal fue comprender cómo funciona internamente una arquitectura similar a Redux sin depender de librerías externas.
+6.  Evolución de la documentación
 
-Quería entender:
+7.  Relación con el resto de la documentación
 
-- cómo se gestiona un estado global;
-- cómo se notifican los cambios;
-- cómo separar la lógica de negocio de la interfaz;
-- cómo mantener el código testeable.
+# 1. Objetivo
 
-Por ese motivo decidí implementar un store propio utilizando únicamente las APIs que proporciona React.
+Este documento constituye la puerta de entrada al sistema documental del proyecto.
 
----
+Su propósito es ofrecer una visión general de la organización de la documentación, explicar la responsabilidad de los principales documentos y facilitar la localización de la información necesaria según las necesidades de cada lector.
 
-# ¿Por qué no utilicé Redux?
+La documentación del proyecto se organiza como un conjunto de documentos especializados, cada uno dedicado a una responsabilidad concreta. Esta organización permite mantener una separación clara entre la visión del proyecto, la definición del producto, la arquitectura del sistema, el proceso de desarrollo, la estrategia de pruebas y el seguimiento de su evolución.
 
-Redux Toolkit es una excelente herramienta y probablemente la utilizaría en una aplicación empresarial.
+Este documento no desarrolla en profundidad ninguno de esos aspectos ni sustituye a la documentación especializada. Su finalidad consiste en orientar al lector y proporcionar un punto de partida para comprender la estructura documental del proyecto y navegar por ella de forma eficaz.
 
-Sin embargo, en este proyecto quería aprender qué ocurre "debajo del capó".
+En conjunto, `INTRODUCTION.md` actúa como guía de navegación del sistema documental y facilita una comprensión progresiva del proyecto, desde sus aspectos más generales hasta los más específicos.
 
-Implementar un store propio me permitió comprender conceptos como:
+# 2. Sistema documental
 
-- estado único;
-- dispatch;
-- reducer;
-- suscripciones;
-- actualización de componentes mediante `useSyncExternalStore`.
+La documentación del proyecto se concibe como un sistema organizado de conocimiento cuya finalidad es describir el proyecto desde distintas perspectivas sin duplicar información.
 
-Después de construirlo resulta mucho más sencillo entender cómo funcionan Redux, Zustand o cualquier otra librería de estado.
+Cada documento desarrolla una responsabilidad específica y complementa al resto, permitiendo que la visión del proyecto, la definición del producto, la arquitectura, el proceso de desarrollo, la estrategia de pruebas y el seguimiento de la evolución puedan mantenerse de forma independiente y coherente.
 
----
+Esta organización permite estructurar el conocimiento del proyecto en ámbitos claramente diferenciados, favoreciendo su comprensión, mantenimiento y evolución sin duplicar información.
 
-# ¿Por qué usar useSyncExternalStore?
+Como criterio general, cada documento desarrolla un único ámbito de conocimiento y evita reproducir información que ya se encuentra desarrollada en otro lugar. Cuando un concepto pertenece a un documento determinado, el resto de la documentación hace referencia a él en lugar de duplicar su contenido.
 
-React recomienda `useSyncExternalStore` para conectar componentes con fuentes de estado externas.
+El sistema documental constituye una parte esencial del proyecto y proporciona el contexto necesario para comprender el proyecto y la organización de su documentación, las decisiones adoptadas durante su desarrollo y la relación existente entre sus distintos componentes documentales.
 
-Como el estado no vive dentro de React sino dentro del store, este hook permite que la interfaz permanezca sincronizada de forma segura y predecible.
+# 3. Cómo utilizar la documentación
 
-El Context únicamente expone el store; no almacena el estado.
+La documentación del proyecto está diseñada para que cada documento pueda consultarse de forma independiente, manteniendo al mismo tiempo una visión coherente del conjunto.
 
----
+Cada documento desarrolla una responsabilidad específica y contiene la información necesaria para comprender el aspecto del proyecto que le corresponde, remitiendo al resto de la documentación únicamente cuando resulta necesario ampliar el contexto.
 
-# ¿Por qué el reducer es completamente puro?
+Aunque existe un recorrido recomendado para quienes se incorporan por primera vez al proyecto, la organización documental permite acceder directamente al documento más adecuado según la información que se desee consultar.
 
-Toda la lógica de negocio está concentrada en un único reducer.
+Esta organización facilita tanto una lectura secuencial de toda la documentación como una consulta puntual orientada a resolver necesidades concretas durante el desarrollo, el mantenimiento o la evolución del sistema.
 
-El reducer:
+# 4. Organización de la documentación
 
-- no conoce React;
-- no accede al DOM;
-- no utiliza localStorage;
-- no realiza peticiones HTTP;
-- no produce efectos secundarios.
+El sistema documental se materializa en un conjunto de documentos especializados, cada uno responsable de un aspecto concreto del proyecto.
 
-Esto facilita enormemente las pruebas y hace que cualquier transición de estado sea completamente predecible.
+Esta distribución permite mantener una separación clara de responsabilidades, evitar duplicidades y facilitar que la documentación evolucione de forma coordinada con el software.
 
----
+Como criterio general, cada concepto debe desarrollarse en un único documento. El resto de la documentación hace referencia a él cuando resulta necesario, evitando repetir información y preservando la coherencia del sistema documental.
 
-# ¿Por qué existe un store independiente?
+La siguiente tabla resume la responsabilidad principal de cada documento:
 
-Separar el store de React tiene varias ventajas.
+| Documento              | Contenido principal                                        |
+| ---------------------- | ---------------------------------------------------------- |
+| `README.md`            | Presentación del proyecto y guía de inicio.                |
+| `INTRODUCTION.md`      | Guía de navegación del sistema documental                  |
+| `GLOSSARY.md`          | Lenguaje de referencia del proyecto                        |
+| `VISION.md`            | Propósito y principios del proyecto.                       |
+| `PRODUCT.md`           | Definición funcional del producto.                         |
+| `ARCHITECTURE.md`      | Organización técnica del sistema.                          |
+| `DEVELOPMENT_GUIDE.md` | Proceso y convenciones de desarrollo.                      |
+| `TESTING.md`           | Estrategia y organización de las pruebas.                  |
+| `PROJECT_STATUS.md`    | Estado actual del proyecto y punto de reanudación.         |
+| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones.     |
+| `ROADMAP.md`           | Líneas estratégicas de evolución.                          |
+| `DESIGN_JOURNAL.md`    | Ideas e hipótesis pendientes de evaluación.                |
+| `AGENTS.md`            | Instrucciones para agentes de desarrollo asistidos por IA. |
 
-Permite:
+En conjunto, estos documentos forman un sistema documental coherente en el que cada uno desempeña una función específica y complementa al resto. Esta organización facilita la comprensión del proyecto, simplifica el mantenimiento de la documentación y favorece su evolución a largo plazo.
 
-- reutilizar la lógica;
-- probar el dominio sin renderizar componentes;
-- desacoplar la interfaz del modelo de datos;
-- sustituir la interfaz sin modificar la lógica de negocio.
+# 5. Recorridos recomendados
 
-En este proyecto React actúa únicamente como consumidor del estado.
+La documentación puede consultarse de distintas formas según el objetivo de cada lector.
 
----
+Aunque todos los documentos mantienen relaciones entre sí, no siempre es necesario recorrerlos en el mismo orden. Los siguientes itinerarios ofrecen un punto de partida para las necesidades más habituales.
 
-# ¿Por qué eliminé el Repository Pattern?
+Los siguientes recorridos no son obligatorios, pero pueden servir como guía para abordar la documentación según los intereses o necesidades de cada lector.
 
-Durante una etapa del desarrollo existía una abstracción basada en Repository.
+## Conocer el proyecto
 
-Tras varias refactorizaciones observé que:
+Recomendado para quienes desean comprender el propósito del proyecto, el producto que se pretende construir y la organización general de la documentación.
 
-- solo existía una implementación;
-- la interfaz apenas aportaba valor;
-- añadía complejidad innecesaria;
-- hacía más difícil seguir el flujo del código.
-
-Por ese motivo decidí eliminarla.
-
-Fue una decisión consciente para reducir complejidad accidental.
-
-Una buena arquitectura no consiste en añadir patrones, sino en utilizar únicamente aquellos que resuelven un problema real.
-
----
-
-# ¿Por qué eliminar código en lugar de añadir más?
-
-Durante el proyecto hubo varias refactorizaciones importantes.
-
-En lugar de aumentar el número de capas, el objetivo fue simplificar la arquitectura.
-
-Se eliminaron:
-
-- factories innecesarias;
-- selectores duplicados;
-- servicios sin uso;
-- código heredado;
-- abstracciones que no aportaban valor.
-
-Considero que una arquitectura sencilla suele ser más mantenible que una excesivamente sofisticada.
-
----
-
-# ¿Cómo organizo el proyecto?
-
-La aplicación está dividida en cuatro capas principales.
-
-```
-UI
-│
-▼
-Context
-│
-▼
-Store
-│
-▼
-Reducer
-│
-▼
-Persistencia
+```text
+README.md
+    │
+    ▼
+INTRODUCTION.md
+    │
+    ▼
+VISION.md
+    │
+    ▼
+PRODUCT.md
 ```
 
-Cada una tiene una única responsabilidad.
+---
 
-Esto reduce el acoplamiento entre módulos y facilita la evolución del proyecto.
+## Comprender la arquitectura
+
+Recomendado para desarrolladores interesados en la organización técnica del sistema y en las decisiones que sustentan su diseño.
+
+```text
+INTRODUCTION.md
+    │
+    ▼
+ARCHITECTURE.md
+    │
+    ▼
+DEVELOPMENT_GUIDE.md
+    │
+    ▼
+TESTING.md
+```
 
 ---
 
-# ¿Cómo está planteado el testing?
+## Contribuir al desarrollo
 
-El objetivo fue probar cada capa por separado.
+Recomendado para quienes deseen colaborar en la evolución del proyecto respetando sus convenciones y procesos de trabajo.
 
-Actualmente existen pruebas para:
-
-- reducer;
-- store;
-- hooks;
-- componentes;
-- integración.
-
-Esto permite detectar errores rápidamente y realizar refactorizaciones con confianza.
-
----
-
-# ¿Qué aprendí durante el proyecto?
-
-Más que aprender React, este proyecto me permitió comprender conceptos de diseño de software aplicados al frontend.
-
-Especialmente:
-
-- separación de responsabilidades;
-- gestión del estado;
-- reducers;
-- arquitectura por capas;
-- testing;
-- refactorización continua;
-- eliminación de deuda técnica.
+```text
+INTRODUCTION.md
+    │
+    ▼
+DEVELOPMENT_GUIDE.md
+    │
+    ▼
+TESTING.md
+    │
+    ▼
+AGENTS.md
+```
 
 ---
 
-# ¿Qué haría diferente en una aplicación empresarial?
+## Conocer el estado del proyecto
 
-Si el proyecto creciera considerablemente probablemente incorporaría herramientas específicas.
+Recomendado para comprender la situación actual del desarrollo, su evolución y las líneas previstas para futuras iteraciones.
 
-Por ejemplo:
+```text
+INTRODUCTION.md
+    │
+    ▼
+PROJECT_STATUS.md
+    │
+    ▼
+PROJECT_JOURNAL.md
+    │
+    ▼
+ROADMAP.md
+```
 
-- Redux Toolkit;
-- Zustand;
-- React Query o TanStack Query;
-- una API REST;
-- autenticación;
-- integración continua;
-- despliegue automático.
+Cada uno de estos recorridos constituye únicamente una recomendación. La documentación está organizada para que cualquier documento pueda consultarse de forma independiente cuando se busque información específica, manteniendo siempre una referencia clara al resto del sistema documental.
 
-La decisión dependería del contexto del proyecto y del equipo.
+# 6. Evolución de la documentación
 
----
+La documentación forma parte del propio proyecto y evoluciona junto con el software, la arquitectura y el producto.
 
-# ¿Cuál fue la decisión más importante?
+Su organización no es estática. A medida que el proyecto incorpora nuevas capacidades, tecnologías o procesos, la documentación puede reorganizarse para reflejar dichos cambios, siempre que se mantengan los principios de claridad, responsabilidad única y ausencia de duplicidades.
 
-La decisión más importante no fue añadir una nueva funcionalidad.
+La incorporación de un nuevo documento deberá responder a una necesidad real y tener una responsabilidad claramente definida dentro del sistema documental. Del mismo modo, cuando un documento deje de aportar valor o su contenido pase a formar parte de otro, deberá revisarse su papel para mantener la coherencia del conjunto.
 
-Fue eliminar arquitectura que ya no aportaba valor.
+La evolución de la documentación no persigue aumentar el número de documentos, sino mejorar la organización y preservar el conocimiento generado durante el desarrollo del proyecto.
 
-Durante el desarrollo comprobé que algunos patrones que inicialmente parecían adecuados terminaron complicando innecesariamente el código.
+Como criterio general, cualquier modificación relevante del producto, la arquitectura, el proceso de desarrollo o la estrategia de validación deberá ir acompañada de la actualización del documento responsable de ese contenido, manteniendo siempre la documentación alineada con el estado real del proyecto.
 
-Aprendí que una buena arquitectura no consiste en utilizar muchos patrones, sino en elegir únicamente los necesarios.
+# 7. Relación con el resto de la documentación
 
----
+Este documento constituye la guía de navegación del sistema documental del proyecto.
 
-# Lecciones principales
+Su responsabilidad consiste en facilitar la comprensión de la organización de la documentación y orientar al lector hacia el documento más adecuado según la información que desee consultar.
 
-Al finalizar este proyecto me llevo varias conclusiones.
+A diferencia de los documentos especializados, `INTRODUCTION.md` no desarrolla el producto, la arquitectura, el proceso de desarrollo ni la estrategia de pruebas. Su finalidad es proporcionar una visión de conjunto del sistema documental y explicar cómo se relacionan sus distintos documentos.
 
-- La simplicidad suele ser una ventaja.
-- Un reducer puro es muy fácil de probar.
-- React Context no tiene por qué ser el sistema de estado.
-- Los patrones deben resolver problemas reales.
-- El código también mejora cuando se elimina.
-- La arquitectura debe evolucionar junto con el proyecto.
+Esta función complementa al resto de la documentación sin sustituir ninguno de sus contenidos. Cada documento mantiene una responsabilidad claramente definida y desarrolla en profundidad el ámbito de conocimiento que le corresponde.
 
----
-
-# Próximos retos
-
-Los siguientes pasos previstos son:
-
-- migración completa a TypeScript;
-- sustitución de localStorage por una API REST;
-- integración continua mediante GitHub Actions;
-- despliegue automático;
-- mejoras de rendimiento y experiencia de usuario.
-
-Cada nueva versión intentará mantener el mismo objetivo que ha guiado este proyecto desde el principio: construir una aplicación sencilla, mantenible y técnicamente sólida.
-
-| Si quieres...                        | Consulta...            |
-| ------------------------------------ | ---------------------- |
-| Entender la arquitectura             | `ARCHITECTURE.md`      |
-| Conocer el estado actual             | `PROJECT_STATUS.md`    |
-| Ver la evolución del proyecto        | `PROJECT_JOURNAL.md`   |
-| Consultar decisiones arquitectónicas | `02-architecture/adr/` |
-| Configurar el entorno                | `DEVELOPMENT_GUIDE.md` |
-| Entender la estrategia de pruebas    | `TESTING.md`           |
-| Ver las próximas actuaciones         | `ROADMAP.md`           |
+En conjunto, todos ellos forman un sistema documental coherente cuyo objetivo es preservar, organizar y facilitar el acceso al conocimiento generado durante la evolución del proyecto.

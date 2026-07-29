@@ -32,6 +32,8 @@ A diferencia de `PROJECT_STATUS.md`, que refleja el estado actual del proyecto, 
 
 Las propuestas incluidas en este Roadmap no constituyen compromisos de implementación. Representan escenarios de evolución compatibles con la arquitectura actual y sirven como referencia para orientar las futuras decisiones de evolución del proyecto.
 
+Las ideas que todavía no forman parte de las líneas estratégicas del proyecto se documentan en `DESIGN_JOURNAL.md`, donde permanecen en evaluación hasta que exista contexto suficiente para valorar su incorporación.
+
 En conjunto, este documento proporciona una visión estratégica del futuro del proyecto y complementa la documentación dedicada al estado actual, la arquitectura y la evolución histórica del sistema.
 
 ## 2. Principios de evolución
@@ -88,6 +90,8 @@ Cada una de ellas agrupa un conjunto de iniciativas relacionadas por un objetivo
 
 Estas líneas no establecen un orden de implementación ni una prioridad fija. Su incorporación dependerá de las necesidades del proyecto, del valor que aporten y del contexto en el que se produzca su evolución.
 
+La documentación deberá evolucionar para servir como fuente de conocimiento tanto para desarrolladores humanos como para herramientas automatizadas, favoreciendo la comprensión del proyecto y la continuidad de su desarrollo.
+
 ### 3.1 Arquitectura
 
 **Objetivo**
@@ -137,6 +141,7 @@ Ampliar progresivamente las capacidades funcionales de la aplicación para ofrec
 - Facilitar la interacción mediante acciones más eficientes y una experiencia de uso más fluida.
 - Adaptar la interfaz a nuevas capacidades del dominio preservando la simplicidad de la aplicación.
 - Evolucionar la experiencia de usuario manteniendo la coherencia entre funcionalidad, arquitectura y modelo de dominio.
+- La definición funcional vigente del producto se desarrolla en `PRODUCT.md`. Este documento únicamente recoge posibles líneas de evolución futuras.
 
 **Estado**
 

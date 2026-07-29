@@ -26,7 +26,7 @@ Este documento define la visión a largo plazo del proyecto y el propósito que 
 
 Su finalidad no es describir la arquitectura, el estado actual ni la planificación del desarrollo, sino explicar qué pretende llegar a ser el proyecto y los principios que guían su crecimiento.
 
-La visión aquí descrita actúa como un marco de referencia para la toma de decisiones. Cualquier nueva funcionalidad, cambio arquitectónico o iniciativa de evolución debería contribuir a acercar el proyecto a esta visión, manteniendo la coherencia entre el producto, la arquitectura y la documentación.
+La visión aquí descrita constituye el marco de referencia para la toma de decisiones estratégicas del proyecto. Cualquier nueva funcionalidad, cambio arquitectónico o iniciativa de evolución debería contribuir a acercar el proyecto a esta visión, manteniendo la coherencia entre el producto, la arquitectura y la documentación.
 
 En conjunto, este documento proporciona el contexto que da sentido al resto de la documentación técnica y establece el propósito común que guía la evolución del proyecto a largo plazo.
 
@@ -38,7 +38,7 @@ La evolución de la plataforma estará guiada por las necesidades reales de quie
 
 El desarrollo del sistema se concibe simultáneamente como un laboratorio de ingeniería de software y como un proyecto educativo. Cada decisión de diseño, cada refactorización y cada nueva funcionalidad constituyen una oportunidad para experimentar soluciones, validar su utilidad en un contexto real y documentar el conocimiento adquirido durante el proceso.
 
-La visión no pretende definir una lista cerrada de funcionalidades, sino establecer una dirección de crecimiento estable. Las tecnologías, las herramientas y las capacidades concretas podrán evolucionar con el tiempo, pero el propósito del proyecto permanecerá centrado en facilitar la creación y difusión del conocimiento mediante un desarrollo consciente, una arquitectura mantenible y una documentación que preserve el aprendizaje obtenido.
+La visión no pretende definir una lista cerrada de funcionalidades, sino establecer una dirección de crecimiento estable. Las tecnologías, las herramientas y las capacidades concretas podrán evolucionar con el tiempo, pero el propósito del proyecto permanecerá centrado en facilitar la creación y difusión del conocimiento mediante un producto útil, un desarrollo consciente, una arquitectura mantenible y una documentación que preserve el aprendizaje obtenido.
 
 ## 3. El conocimiento como eje del proyecto
 
@@ -57,8 +57,6 @@ Ambos procesos se refuerzan mutuamente. La plataforma proporciona un contexto re
 
 Esta relación convierte al conocimiento no solo en el contenido que gestiona la plataforma, sino también en el principio que orienta su evolución y da sentido al conjunto del proyecto.
 
-Esta relación convierte al conocimiento no solo en el contenido que gestiona la plataforma, sino también en el principio que orienta su evolución y da sentido al conjunto del proyecto.
-
                 Conocimiento
                       │
        ┌──────────────┼──────────────┐
@@ -68,7 +66,7 @@ Producto Laboratorio Proyecto educativo
 │ │ │
 └──────────────┼──────────────┘
 │
-Nuevo conocimiento
+Evolución del conocimiento
 
 ## 4. Los tres pilares
 
@@ -78,17 +76,7 @@ El proyecto aspira a convertirse en una plataforma real orientada a la creación
 
 La plataforma estará dirigida a personas que desarrollen trabajos escritos de distinta naturaleza, como artículos, ensayos, libros, tesis, investigaciones, manuales u otros contenidos textuales, permitiéndoles administrar sus obras dentro de un entorno propio.
 
-El producto deberá facilitar progresivamente capacidades como:
-
-- Crear o incorporar documentos utilizando formatos habituales.
-- Organizar, editar, versionar y conservar los trabajos publicados.
-- Gestionar cuentas, perfiles de autor y espacios personales.
-- Clasificar y localizar contenidos mediante categorías, etiquetas, búsquedas y colecciones.
-- Publicar documentos con distintos niveles de acceso y visibilidad.
-- Definir autoría, licencias y condiciones de utilización.
-- Facilitar la revisión, la colaboración y el intercambio de conocimiento.
-- Proporcionar mecanismos que permitan a los autores obtener ingresos por sus trabajos cuando el modelo del producto lo justifique.
-- Favorecer la transparencia sobre el proceso de creación, incluyendo la posibilidad de declarar el uso de herramientas de asistencia o inteligencia artificial.
+El producto deberá facilitar progresivamente las capacidades descritas en PRODUCT.md, evolucionando desde un núcleo funcional reducido hacia una plataforma completa para la creación, gestión y difusión del conocimiento.
 
 Estas capacidades representan posibles formas de materializar la visión, pero no constituyen una lista cerrada ni un compromiso inmediato de implementación. Su incorporación dependerá de las necesidades reales de los usuarios, de la viabilidad técnica y del valor que aporten al conjunto de la plataforma.
 
@@ -170,6 +158,10 @@ La incorporación de nuevas capacidades deberá perseguir siempre el equilibrio 
 
 Las tecnologías, las herramientas y las funcionalidades podrán cambiar con el tiempo. La visión del proyecto, sin embargo, constituye el criterio estable que orienta todas las decisiones de su evolución.
 
+---
+
+### 5.8 La separación de responsabilidades favorece la evolución
+
 ## 6. Qué significa completar el proyecto
 
 El proyecto no persigue un estado de finalización entendido como la incorporación de un conjunto cerrado de funcionalidades.
@@ -192,7 +184,7 @@ Por tanto, el verdadero objetivo del proyecto no consiste en llegar a un estado 
 
 ---
 
-"El conocimiento no es únicamente el contenido que gestiona la plataforma; es también el resultado del modo en que la plataforma se desarrolla."
+**"El conocimiento no es únicamente el contenido que gestiona la plataforma; es también el resultado del modo en que la plataforma se desarrolla."**
 
 ## 7. La visión dentro del sistema documental
 
@@ -202,31 +194,16 @@ Mientras otros documentos describen el estado actual, la arquitectura, la evoluc
 
 Su relación con el resto de la documentación puede resumirse de la siguiente forma:
 
-```text
 VISION
-   │
-   ├── Define el propósito del proyecto.
-   │
-   ▼
-ROADMAP
-   │
-   ├── Describe las líneas estratégicas de evolución.
-   │
-   ▼
-ARCHITECTURE
-   │
-   ├── Explica cómo se materializa esa visión mediante la arquitectura.
-   │
-   ▼
-PROJECT_STATUS
-   │
-   ├── Refleja el estado actual del proyecto.
-   │
-   ▼
-PROJECT_JOURNAL
-   │
-   └── Conserva la historia y el conocimiento generado durante su evolución.
-```
+│
+├── PRODUCT
+├── ROADMAP
+├── ARCHITECTURE
+├── PROJECT_STATUS
+├── PROJECT_JOURNAL
+├── DEVELOPMENT_GUIDE
+├── TESTING
+└── AGENTS
 
 Los documentos dedicados al desarrollo (`DEVELOPMENT_GUIDE`, `TESTING`, `AGENTS` y otros que puedan incorporarse en el futuro) complementan este recorrido proporcionando las guías, procedimientos y convenciones necesarias para trabajar con el proyecto de forma coherente.
 

@@ -1,0 +1,165 @@
+1. Propósito
+
+2. Evolución del dominio
+
+3. Evolución del modelo conceptual
+
+4. Transparencia editorial
+
+5. Modelo de publicación
+
+6. Modelo de monetización
+
+7. Otras ideas
+
+# DESIGN_JOURNAL.md
+
+# 1. Propósito
+
+Este documento recoge ideas, hipótesis y reflexiones relacionadas con la evolución del diseño del producto y de la arquitectura del proyecto.
+
+Su finalidad es preservar aquellas propuestas que, aun no formando parte de la documentación oficial, puedan resultar valiosas para orientar futuras decisiones de diseño.
+
+El contenido de este documento no constituye una especificación del producto ni un compromiso de implementación. Cada idea deberá evaluarse cuando el contexto del proyecto lo justifique y, en caso de ser adoptada, pasará a incorporarse al documento correspondiente (`PRODUCT.md`, `ARCHITECTURE.md` u otro que resulte adecuado).
+
+De este modo, el diario de diseño permite conservar el conocimiento generado durante la evolución del proyecto sin comprometer la estabilidad ni la coherencia de la documentación principal.
+
+Ninguna idea permanecerá indefinidamente en este documento. Cuando una propuesta sea adoptada, deberá trasladarse al documento oficial correspondiente y eliminarse del diario de diseño, dejando constancia únicamente de que la idea fue incorporada.
+
+Las propuestas que alcancen suficiente madurez podrán incorporarse a las líneas estratégicas definidas en `ROADMAP.md` antes de formar parte de la documentación oficial del proyecto.
+
+Cuando una propuesta sea finalmente adoptada e implementada, su incorporación quedará reflejada en `PROJECT_JOURNAL.md` como parte de la evolución histórica del proyecto.
+
+# 2. Evolución del dominio
+
+Este apartado recoge posibles evoluciones del modelo de dominio que podrían incorporarse en el futuro si las necesidades del producto lo justifican.
+
+Las propuestas aquí descritas no forman parte del modelo actual y deberán evaluarse antes de su incorporación.
+
+## 2.1 Evolución del concepto de participante
+
+Actualmente el producto identifica la figura del autor como uno de sus conceptos fundamentales.
+
+En el futuro podría resultar conveniente generalizar este concepto mediante una entidad más amplia denominada **Participante**, capaz de representar los distintos roles que intervienen en el ciclo de vida de un documento.
+
+```text
+Participante
+│
+├── Autor
+├── Coautor
+├── Revisor
+├── Editor
+└── Colaborador
+```
+
+Este enfoque permitiría ampliar el modelo colaborativo sin alterar el significado del concepto de Documento ni del resto del dominio.
+
+---
+
+# 3. Evolución del modelo conceptual
+
+Este apartado recoge posibles ampliaciones del modelo conceptual del producto.
+
+## 3.1 Organización de la biblioteca
+
+La organización conceptual de la biblioteca podría evolucionar hacia una estructura más rica que permita integrar distintos elementos dentro de un mismo espacio de trabajo.
+
+```text
+Biblioteca
+│
+├── Colecciones
+│   └── Documentos
+│
+├── Autores
+│
+├── Publicaciones
+│
+└── Configuración
+```
+
+Esta organización permitiría ampliar progresivamente las capacidades del producto manteniendo un modelo coherente.
+
+## 3.2 Evolución del concepto de usuario
+
+Durante la revisión de `PRODUCT.md` surgió una posible evolución del modo de describir el público objetivo.
+
+En lugar de centrar el producto en perfiles profesionales concretos, podría formularse desde una perspectiva basada en necesidades comunes:
+
+> "El producto está dirigido a cualquier persona cuya actividad implique gestionar conocimiento."
+
+Este enfoque permite integrar de forma natural perfiles muy diversos.
+
+Por ejemplo:
+
+- Un estudiante puede convertirse en autor.
+- Un autor puede crear una comunidad.
+- Una organización puede utilizar la plataforma para gestionar documentación interna.
+
+Todos ellos comparten un mismo modelo conceptual basado en la gestión del conocimiento.
+
+---
+
+# 4. Transparencia editorial
+
+La transparencia editorial podría evolucionar hacia un modelo más estructurado basado en una ficha editorial asociada a cada documento.
+
+No se trataría de un formulario obligatorio, sino de un conjunto de metadatos opcionales que permitieran comprender mejor el proceso de creación y evolución de una obra.
+
+Posibles elementos de la ficha editorial:
+
+- Autoría.
+- Participación.
+- Historial de revisiones.
+- Metodología utilizada.
+- Uso declarado de herramientas de asistencia.
+- Licencia.
+- Fecha de publicación.
+- Referencias.
+
+Esta información reforzaría la transparencia del producto sin imponer una forma única de documentar el proceso editorial.
+
+---
+
+# 5. Modelo de publicación
+
+El modelo de publicación podría evolucionar hacia una estructura compuesta por varias dimensiones independientes en lugar de un único estado.
+
+Por ejemplo:
+
+- **Visibilidad:** privada, compartida o pública.
+- **Acceso:** libre, restringido o mediante suscripción.
+- **Licencia:** todos los derechos reservados, licencias abiertas u otras modalidades.
+- **Monetización:** gratuita, de pago, por membresía u otras formas que el producto incorpore.
+- **Estado editorial:** borrador, publicada, archivada u otros estados futuros.
+
+Este enfoque permitiría describir una publicación mediante la combinación de distintas decisiones independientes, proporcionando un modelo más flexible y expresivo.
+
+---
+
+# 6. Modelo de monetización
+
+La monetización también podría evolucionar hacia un modelo basado en distintos niveles de acceso al conocimiento.
+
+Un posible enfoque sería:
+
+```text
+Documento
+│
+├── Acceso libre
+├── Registro requerido
+├── Suscripción
+├── Compra individual
+└── Licencia específica
+```
+
+Este modelo permitiría desacoplar la monetización de la propia publicación y facilitar la incorporación de nuevas modalidades económicas sin modificar el resto del modelo conceptual.
+
+---
+
+# 7. Otras ideas
+
+Este apartado recoge propuestas que todavía no encajan claramente en ninguna categoría anterior.
+
+A medida que el diario evolucione, estas ideas podrán reorganizarse o trasladarse a nuevos apartados cuando adquieran suficiente entidad.
+
+El objetivo de esta sección es evitar la pérdida de ideas surgidas durante el diseño, manteniendo el diario como un espacio de incubación de futuras evoluciones del proyecto.

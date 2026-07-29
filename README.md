@@ -1,196 +1,118 @@
-# ⚛️ TaskFlow — Sistema de Estado Frontend
+1. ¿Qué es el proyecto?
 
-> Sistema de gestión de tareas construido con React 19 y arquitectura de estado propia, diseñado como base de producto en fase seed listo para producción.
+2. Estado del proyecto
 
----
+3. Primeros pasos
+   - Requisitos
+   - Instalación
+   - Ejecución
 
-## 🧠 Qué es esto
+4. Documentación
 
-TaskFlow es un **sistema frontend de estado tipo SaaS base**, no una Todo App.
+5. Cómo contribuir
 
-Está diseñado como si fuera el núcleo de un producto real en producción:
+6. Licencia
 
-- arquitectura escalable
-- estado centralizado
-- lógica de dominio pura
-- infraestructura desacoplada
-- testing automatizado
-- despliegue continuo
+# 1. ¿Qué es este proyecto?
 
----
+Este repositorio contiene el desarrollo de una plataforma orientada a la creación, gestión, publicación, difusión y preservación del conocimiento mediante documentos.
 
-## 🚀 Estado del proyecto
+El proyecto se desarrolla de forma incremental utilizando una aplicación de gestión de tareas como dominio de referencia para diseñar, implementar y validar progresivamente la arquitectura, el modelo del producto y el proceso de desarrollo.
 
-✔ Sistema funcional  
-✔ Tests automatizados  
-✔ Build en producción  
-✔ Deploy continuo  
-✔ Arquitectura estable
+Además de la implementación del software, el repositorio documenta las decisiones, principios y conocimientos adquiridos durante su evolución. La documentación forma parte del propio proyecto y constituye un recurso para comprender no solo el resultado obtenido, sino también el proceso seguido para construirlo.
 
----
+El objetivo es desarrollar un producto sostenible, una arquitectura mantenible y una documentación que permita preservar y compartir el conocimiento generado durante su construcción.
 
-## 🏛️ Arquitectura
+# 2. Estado del proyecto
 
-```text
-UI (React)
-   ↓
-Context Layer
-   ↓
-Store (Single Source of Truth)
-   ↓
-Reducer (lógica de dominio)
-   ↓
-Persistencia (localStorage / futura API)
-```
+El proyecto se encuentra en una fase de desarrollo activo.
 
----
+La arquitectura principal del sistema, la estrategia de desarrollo, la organización de la documentación y el proceso de validación han alcanzado un nivel de estabilidad que permite centrar las siguientes iteraciones en la evolución del producto y de su modelo de dominio.
 
-## 🧩 System Design
+La implementación actual utiliza una aplicación de gestión de tareas como dominio de referencia para validar progresivamente las decisiones de diseño, la arquitectura y el proceso de desarrollo. A partir de esta base, el proyecto continuará evolucionando hacia la plataforma de gestión del conocimiento definida en la documentación.
 
-```mermaid
-flowchart TD
+La información detallada sobre el estado del desarrollo, las funcionalidades implementadas y los próximos objetivos puede consultarse en PROJECT_STATUS.md.
 
-UI[Frontend React] --> CTX[Context Layer]
-CTX --> STORE[Store Global]
-STORE --> REDUCER[Reducer puro]
-STORE --> STORAGE[(Persistencia)]
+# 3. Primeros pasos
 
-STORE -. evolución .-> API[API Backend]
-API -.-> DB[(Database)]
-```
+Este apartado reúne la información mínima necesaria para preparar el entorno de desarrollo, ejecutar la aplicación y comprobar que el proyecto funciona correctamente.
 
----
+La guía completa del proceso de desarrollo, las convenciones del proyecto y el flujo de trabajo se encuentran en DEVELOPMENT_GUIDE.md.
 
-## 🧠 Decisiones clave
+## 3.1 Requisitos
 
-### ✔ Se implementó store propio porque:
+Antes de comenzar, asegúrate de disponer de las herramientas necesarias para ejecutar el proyecto.
 
-- control total del estado
-- eliminación de dependencias externas
-- comprensión profunda del modelo Redux/Zustand
+Requisitos mínimos:
 
----
+Node.js
+npm
+Git
 
-## 🧱 Principios de arquitectura
+Las versiones recomendadas y la configuración detallada del entorno de desarrollo se describen en DEVELOPMENT_GUIDE.md.
 
-- Single Source of Truth
-- Reducers puros
-- Flujo de datos unidireccional
-- UI desacoplada del estado
-- Infraestructura intercambiable
-- Diseño orientado a producto
+## 3.2 Instalación
 
----
+npm install
 
-## 🧪 Testing (nivel producción)
+## 3.3 Ejecución
 
-### Estrategia
+Inicia el servidor de desarrollo:
 
-- Unit tests → lógica de dominio
-- Integration tests → store completo
-- Component tests → UI React
-- Hook tests → integración estado + React
+npm run dev
 
-### Estado
+La aplicación quedará disponible en la dirección indicada por Vite, normalmente:
 
-✔ 22 tests pasando  
-✔ Sistema determinista  
-✔ Flujo de estado validado
+http://localhost:5173
 
----
+## 3.4 Validación
 
-## ⚙️ CI/CD (Producción)
+Antes de realizar cualquier modificación, es recomendable comprobar que el proyecto se ejecuta correctamente y que todas las validaciones disponibles se superan sin errores.
 
-### Pipeline automático
+npm run typecheck
+npm test
+npm run build
 
-```text
-Push a main
-   ↓
-Instalación dependencias
-   ↓
-Ejecución tests (Vitest)
-   ↓
-Build de producción (Vite)
-   ↓
-Deploy automático (Vercel)
-```
+La estrategia de pruebas y el proceso de validación se describen con mayor detalle en TESTING.md y DEVELOPMENT_GUIDE.md.
 
-✔ Integración continua activa  
-✔ Deploy automático en cada cambio  
-✔ Build validado antes de producción
+# 4. Documentación
 
----
+La documentación del proyecto se organiza en un conjunto de documentos especializados, cada uno responsable de un aspecto concreto del sistema. Se recomienda comenzar por INTRODUCTION.md, que ofrece una visión general del sistema documental. Para consultar el significado preciso de los principales términos utilizados en la documentación, puede recurrirse a GLOSSARY.md.
 
-## 🌍 Deploy
+| Documento              | Contenido principal                                               |
+| ---------------------- | ----------------------------------------------------------------- |
+| `INTRODUCTION.md`      | Guía de navegación de la documentación.                           |
+| `GLOSSARY.md`          | Lenguaje de referencia del proyecto.                              |
+| `VISION.md`            | Propósito y principios del proyecto.                              |
+| `PRODUCT.md`           | Definición funcional del producto.                                |
+| `ARCHITECTURE.md`      | Organización técnica del sistema.                                 |
+| `DEVELOPMENT_GUIDE.md` | Proceso y convenciones de desarrollo.                             |
+| `TESTING.md`           | Estrategia y organización de las pruebas.                         |
+| `PROJECT_STATUS.md`    | Estado actual del proyecto y punto de reanudación del desarrollo. |
+| `PROJECT_JOURNAL.md`   | HRegistro histórico del desarrollo y de las decisiones adoptadas. |
+| `ROADMAP.md`           | Líneas estratégicas de evolución.                                 |
+| `DESIGN_JOURNAL.md`    | Ideas e hipótesis pendientes de evaluación.                       |
+| `AGENTS.md`            | Instrucciones para agentes de desarrollo asistidos por IA.        |
 
-- Entorno: Vercel
-- URL: _(añadir aquí cuando esté desplegado)_
+Cada documento desarrolla una responsabilidad específica y complementa al resto del sistema documental. Esta organización evita duplicidades, facilita el mantenimiento de la documentación y permite que el proyecto evolucione de forma coherente.
 
----
+# 5. Cómo contribuir
 
-## 📊 Qué demuestra este proyecto
+Las contribuciones al proyecto son bienvenidas siempre que respeten la visión, la arquitectura y las convenciones definidas para el repositorio.
 
-Este sistema demuestra capacidad para:
+Antes de realizar cualquier modificación, se recomienda consultar la documentación de desarrollo para comprender la organización del proyecto, el flujo de trabajo y los criterios de validación aplicables.
 
-- Diseñar arquitectura frontend de nivel producto
-- Construir sistemas de estado desde cero
-- Pensar en escalabilidad real
-- Diseñar pipelines de producción
-- Aplicar testing profesional por capas
-- Separar dominio, UI e infraestructura correctamente
+En particular:
 
----
+DEVELOPMENT_GUIDE.md describe el proceso de desarrollo y las convenciones del proyecto.
+TESTING.md define la estrategia de pruebas y los criterios de validación.
+ARCHITECTURE.md explica la organización técnica del sistema y las responsabilidades de cada capa.
+AGENTS.md contiene las instrucciones específicas para agentes de desarrollo asistidos por IA.
 
-## ⚖️ Trade-offs
+Toda contribución deberá mantener la coherencia con la documentación del proyecto y actualizar los documentos afectados cuando los cambios modifiquen el producto, la arquitectura, el proceso de desarrollo o cualquier otro aspecto documentado.
 
-### ✔ Ventajas
+# # 6. Licencia
 
-- control total del sistema
-- arquitectura explícita
-- alta mantenibilidad
-- pipeline de producción real
+Este proyecto se distribuye bajo la licencia MIT.
 
-### ❌ Costes
-
-- mayor complejidad inicial
-- escalabilidad manual
-- disciplina arquitectónica necesaria
-
----
-
-## 🚀 Evolución del producto
-
-El sistema está preparado para:
-
-- API REST / GraphQL real
-- autenticación de usuarios
-- multi-tenancy
-- estado asíncrono
-- middleware en el store
-- observabilidad (logs de estado)
-- métricas de uso
-
----
-
-## 🧠 Filosofía
-
-> “Un producto frontend serio no se define por sus componentes, sino por cómo gestiona su estado y su evolución.”
-
----
-
-## 📦 Stack técnico
-
-- React 19
-- Vite
-- Vitest
-- Context API
-- useSyncExternalStore
-- JavaScript / TypeScript parcial
-- Vercel (deploy)
-- GitHub Actions (CI/CD)
-
----
-
-## 📄 Licencia
-
-MIT
+El texto completo de la licencia puede consultarse en el archivo `LICENSE` del repositorio.

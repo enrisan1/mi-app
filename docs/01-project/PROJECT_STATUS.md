@@ -1,5 +1,3 @@
-# PROJECT_STATUS
-
 1. Resumen ejecutivo
 
 2. Entorno de desarrollo
@@ -14,29 +12,29 @@
 
 7. Próximo objetivo
 
-8. Lecciones aprendidas
+8. Principios consolidados
 
-## 1. Resumen ejecutivo
+# 1. Resumen ejecutivo
 
 Este documento ofrece una visión actualizada del estado del proyecto y sirve como punto de referencia para retomar su desarrollo en cualquier momento.
 
-Actualmente, la aplicación dispone de una arquitectura consolidada, una separación clara de responsabilidades entre sus distintas capas y una estrategia de pruebas automatizadas que permite evolucionar el sistema con seguridad.
-
-El trabajo actual ya no se centra en definir la arquitectura fundamental del proyecto, sino en ampliar sus funcionalidades y continuar mejorando la documentación técnica que la acompaña.
-
 Para facilitar el mantenimiento, este documento recoge únicamente el estado presente del proyecto. La arquitectura se documenta en `ARCHITECTURE.md`, la evolución histórica en `PROJECT_JOURNAL.md` y la planificación futura en `ROADMAP.md`.
 
-## 2. Entorno de desarrollo
+La documentación principal del proyecto se considera consolidada. La reorganización del sistema documental, la definición de responsabilidades, la normalización terminológica y la incorporación de convenciones editoriales han proporcionado una base estable para el desarrollo futuro.
+
+El proyecto entra ahora en una nueva etapa centrada en la evolución funcional del producto, apoyándose en un sistema documental preparado para acompañar su crecimiento y facilitar la colaboración entre desarrolladores humanos y agentes de desarrollo.
+
+# 2. Entorno de desarrollo
 
 El estado actual del proyecto ha sido desarrollado y validado utilizando el siguiente entorno de trabajo.
 
-### Sistema
+## Sistema
 
 ```text
 Ubuntu 24.04.4 LTS
 ```
 
-### Herramientas principales
+## Herramientas principales
 
 ```text
 Visual Studio Code
@@ -46,13 +44,13 @@ npm 10.8.2
 Python 3.12.3
 ```
 
-### Navegador utilizado
+## Navegador utilizado
 
 ```text
 Firefox 153.0
 ```
 
-### Extensiones relevantes
+## Extensiones relevantes
 
 ```text
 React DevTools
@@ -64,11 +62,11 @@ Este apartado tiene un carácter exclusivamente informativo y refleja el entorno
 
 Las instrucciones de instalación, configuración y puesta en marcha del entorno se documentan en `DEVELOPMENT_GUIDE.md`.
 
-## 3. Funcionalidad implementada
+# 3. Funcionalidad implementada
 
 Actualmente, la aplicación ofrece las siguientes capacidades funcionales:
 
-### Gestión de tareas
+## Gestión de tareas
 
 - Crear tareas.
 - Editar el texto de una tarea.
@@ -78,19 +76,19 @@ Actualmente, la aplicación ofrece las siguientes capacidades funcionales:
 - Marcar o desmarcar todas las tareas mediante una única acción.
 - Eliminar todas las tareas completadas.
 
-### Consulta y visualización
+## Consulta y visualización
 
 - Mostrar todas las tareas.
 - Filtrar tareas activas, completadas o todas.
 - Mantener el filtro seleccionado entre sesiones.
 - Mostrar estadísticas básicas del estado de las tareas.
 
-### Persistencia
+## Persistencia
 
 - Conservar automáticamente el estado de la aplicación entre sesiones mediante `localStorage`.
 - Restaurar el estado al iniciar la aplicación.
 
-### Gestión del estado
+## Gestión del estado
 
 - Store propio como fuente única de verdad.
 - Reducer puro para la transformación del estado.
@@ -98,13 +96,15 @@ Actualmente, la aplicación ofrece las siguientes capacidades funcionales:
 - Selectores para encapsular las consultas.
 - Historial de estados con soporte para operaciones de Undo y Redo.
 
-### Calidad del software
+## Calidad del software
 
 - Cobertura mediante pruebas unitarias e integración.
 - Tipado mediante TypeScript.
 - Modelo de dominio basado en entidades y Value Objects.
 
-## 4. Estado técnico
+La definición funcional completa del producto se desarrolla en PRODUCT.md. Este apartado refleja únicamente el grado actual de implementación.
+
+# 4. Estado técnico
 
 El proyecto dispone actualmente de una base técnica estable que permite incorporar nuevas funcionalidades sin modificar su arquitectura fundamental.
 
@@ -112,32 +112,31 @@ El sistema documental del proyecto se encuentra prácticamente consolidado y con
 
 Los principales aspectos del estado técnico son los siguientes:
 
-### Arquitectura
+## Arquitectura
 
-- Arquitectura organizada por capas.
-- Separación clara entre interfaz, aplicación, dominio e infraestructura.
-- Store propio como fuente única de verdad.
-- Reducer puro para la gestión del estado.
+- La arquitectura principal se considera estable.
+- La organización por responsabilidades se encuentra consolidada.
+- La base técnica permite continuar la evolución funcional sin cambios estructurales significativos.
 
-### Dominio
+## Dominio
 
 - Modelo basado en entidades y Value Objects.
 - Reglas de negocio encapsuladas en el dominio.
 - Casos de uso como punto de entrada para las operaciones de la aplicación.
 
-### Calidad del código
+## Calidad del código
 
 - Tipado mediante TypeScript.
 - Código organizado por responsabilidades.
 - Refactorizaciones orientadas a reducir complejidad y acoplamiento.
 
-### Pruebas
+## Pruebas
 
 - Cobertura mediante pruebas unitarias e integración.
 - Validación continua mediante TypeScript y Vitest.
 - Arquitectura diseñada para facilitar la verificación automática.
 
-### Documentación
+## Documentación
 
 - Arquitectura documentada.
 - Estado del proyecto actualizado.
@@ -145,46 +144,51 @@ Los principales aspectos del estado técnico son los siguientes:
 
 La arquitectura y la organización del código han alcanzado un nivel de estabilidad que permite que el esfuerzo de desarrollo se centre principalmente en la evolución funcional del proyecto, más que en la incorporación de nuevos elementos estructurales.
 
-## 5. Historial reciente
+# 5. Historial reciente
 
 Las actuaciones más relevantes que han conducido al estado actual del proyecto son las siguientes:
 
-- Finalización de ARCHITECTURE.md como documento de referencia.
-- Reorganización del sistema documental en documentos especializados.
-- Definición de PROJECT_STATUS.md, PROJECT_JOURNAL.md y ROADMAP.md.
+- Reorganización completa de la documentación.
+- Creación de `VISION.md`.
+- Definición de `PRODUCT.md`.
+- Nueva estructura documental por responsabilidades.
+- Consolidación del directorio docs.
+- Definición de `PROJECT_STATUS.md`, `PROJECT_JOURNAL.md` y `ROADMAP.md`.
 - Consolidación de la estructura de docs.
+- Creación de `GLOSSARY.md`.
+- Auditoría de responsabilidades.
+- Auditoría de duplicidades.
+- Auditoría de terminología.
+- Auditoría de referencias cruzadas.
+- Auditoría de coherencia global.
+- Consolidación del sistema documental.
 
 El detalle cronológico de las sesiones de desarrollo, las decisiones adoptadas y su evolución se conserva en `PROJECT_JOURNAL.md`.
 
-## 6. Punto de reanudación
+# 6. Punto de reanudación
 
-En el estado actual del proyecto, la arquitectura principal y su documentación de referencia se consideran consolidadas.
+La reorganización y consolidación del sistema documental se consideran finalizadas.
 
-El siguiente paso consiste en continuar la reorganización de 03-development, comenzando por DEVELOPMENT_GUIDE.md. y manteniendo los mismos criterios aplicados durante la elaboración de `ARCHITECTURE.md`:
+El proyecto dispone actualmente de una arquitectura documental estable, una terminología normalizada, criterios editoriales comunes y un conjunto de convenciones que facilitan el mantenimiento de la documentación y su evolución junto con el software.
 
-- Definir una responsabilidad clara para cada documento.
-- Evitar duplicidades entre documentos.
-- Mantener una organización modular y fácilmente mantenible.
-- Reflejar únicamente el estado vigente del proyecto.
+El siguiente ciclo del proyecto estará orientado nuevamente al desarrollo funcional del producto. Las futuras iteraciones se centrarán en ampliar el modelo de dominio, incorporar nuevas capacidades funcionales y continuar la evolución de la plataforma de gestión del conocimiento definida en PRODUCT.md, manteniendo sincronizada la documentación con cada avance significativo.
 
-Una vez finalizada la revisión de este documento, el trabajo continuará con `DEVELOPMENT_GUIDE.md`, `TESTING.md`, `AGENTS.md`, `README.md` e `INTRODUCTION.md`, siguiendo el orden establecido para la reorganización de la documentación.
+El sistema documental pasa a formar parte del proceso habitual de desarrollo. A partir de este momento, cada cambio relevante del proyecto deberá reflejarse en el documento responsable correspondiente y, cuando proceda, actualizar también `PROJECT_STATUS.md`, `PROJECT_JOURNAL.md` y `ROADMAP.md` para mantener la coherencia del conjunto.
 
-## 7. Próximo objetivo
+# 7. Próximo objetivo
 
-El siguiente objetivo del proyecto consiste en completar la reorganización del sistema de documentación iniciado con la elaboración de `ARCHITECTURE.md`.
+Retomar la evolución funcional del producto utilizando el sistema documental consolidado como soporte del proceso de desarrollo.
 
-Actualmente, el trabajo se centra en reorganizar DEVELOPMENT_GUIDE.md, aplicando los mismos principios utilizados durante la reorganización de la arquitectura documental:
+Las próximas actuaciones se centrarán en:
 
-- Una responsabilidad claramente definida para cada documento.
-- Ausencia de duplicidades entre documentos.
-- Organización modular y mantenible.
-- Separación entre estado actual, evolución histórica y planificación futura.
+Evolucionar progresivamente el modelo de dominio.
+Incorporar nuevas funcionalidades de acuerdo con la visión del producto.
+Actualizar la documentación asociada a cada nueva capacidad incorporada.
+Mantener la coherencia entre producto, arquitectura, desarrollo y documentación durante toda la evolución del proyecto.
 
-Una vez finalizada la revisión de este documento, el trabajo continuará con `DEVELOPMENT_GUIDE.md`, siguiendo el orden de reorganización establecido para el resto de la documentación del proyecto.
+La planificación estratégica de medio y largo plazo continúa documentándose de forma independiente en `ROADMAP.md`.
 
-La planificación de medio y largo plazo se mantiene de forma independiente en `ROADMAP.md`.
-
-## 8. Lecciones aprendidas
+# 8. Principios consolidados
 
 La evolución del proyecto ha permitido consolidar una serie de principios de trabajo que continúan guiando su desarrollo y mantenimiento.
 
@@ -201,3 +205,5 @@ La evolución del proyecto ha permitido consolidar una serie de principios de tr
 - **La documentación debe evolucionar junto con el software.** Cada documento debe mantener una responsabilidad clara, evitar duplicidades y reflejar únicamente la información que le corresponde.
 
 Estos principios forman parte del modo de trabajo del proyecto y constituyen una referencia para evaluar tanto las futuras decisiones de diseño como la incorporación de nuevas funcionalidades.
+
+Una documentación bien estructurada no solo facilita el trabajo de las personas, sino que también permite que nuevos colaboradores y herramientas automatizadas comprendan el proyecto y contribuyan a él de forma coherente.
