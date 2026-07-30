@@ -10,7 +10,7 @@ import { createClearCompletedUseCase } from "./useCases/clearCompleted";
 import { createMarkAllCompletedUseCase } from "./useCases/markAllCompleted";
 import { createMarkAllPendingUseCase } from "./useCases/markAllPending";
 import { createUndoUseCase } from "./useCases/undo";
-import { createRedoUseCase } from "../tasks/useCases/redo";
+import { createRedoUseCase } from "./useCases/redo";
 import { createChangeTaskPriorityUseCase } from "./useCases/changeTaskPriority";
 import { createToggleAllUseCase } from "./useCases/toggleAll";
 

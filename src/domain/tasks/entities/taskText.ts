@@ -15,10 +15,6 @@ export class TaskText {
     return new TaskText(trimmedValue);
   }
 
-  static restore(value: string): TaskText {
-    return new TaskText(value);
-  }
-
   value(): string {
     return this._value;
   }

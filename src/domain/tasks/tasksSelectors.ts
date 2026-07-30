@@ -1,6 +1,5 @@
 import type { Task } from "./entities/task";
 import type { TaskFilter } from "./taskFilter";
-import { createSelector } from "../../store/createSelector";
 
 /**
  * Selectores puros
@@ -51,21 +50,3 @@ export function selectHasPendingTasks(tasks: Task[]): boolean {
 export function selectHasCompletedTasks(tasks: Task[]): boolean {
   return selectCompletedCount(tasks) > 0;
 }
-
-/**
- * Selectores memoizados
- */
-
-export const selectTasks = (state: Task[]) => state;
-
-export const selectCompleted = createSelector(
-  selectTasks,
-  selectCompletedTasks,
-);
-
-export const selectPending = createSelector(selectTasks, selectActiveTasks);
-
-export const selectHasPending = createSelector(
-  selectTasks,
-  selectHasPendingTasks,
-);

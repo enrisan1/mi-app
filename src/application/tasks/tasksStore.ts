@@ -4,7 +4,7 @@ import { localStorageTaskRepository } from "../../infrastructure/taskRepository/
 import { loggerMiddleware } from "../../store/middleware/loggerMiddleware";
 import { tasksReducer, type TaskAction } from "../../domain/tasks/tasksReducer";
 
-const initialState: Task[] = localStorageTaskRepository.load() ?? [];
+const initialState: Task[] = localStorageTaskRepository.load();
 
 export const tasksStore = createStore<Task[], TaskAction>(
   tasksReducer,

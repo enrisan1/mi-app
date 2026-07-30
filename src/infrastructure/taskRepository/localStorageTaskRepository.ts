@@ -25,8 +25,4 @@ export const localStorageTaskRepository = {
 
     return storedTasks.map(Task.restore);
   },
-
-  clear() {
-    localStorage.removeItem(KEY);
-  },
 };
