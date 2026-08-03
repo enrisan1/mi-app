@@ -114,3 +114,37 @@ Con la consolidación del sistema documental, el proyecto queda preparado para r
 La consolidación de un sistema documental requiere un proceso de revisión tan riguroso como el aplicado al propio código fuente. La calidad de la documentación no depende únicamente del contenido que describe, sino también de la claridad de sus responsabilidades, de la coherencia de su terminología y de la consistencia de sus relaciones internas.
 
 La experiencia obtenida durante esta etapa ha demostrado que un sistema documental bien diseñado reduce la complejidad del proyecto, facilita la incorporación de nuevos colaboradores y proporciona un marco estable para acompañar la evolución del software sin perder conocimiento ni introducir inconsistencias.
+
+# 4. Ideas pendientes de maduración
+
+## 4.1 Evaluación de la consistencia del conocimiento
+
+Idea surgida durante la sesión: estudiar un modelo de evaluación de la consistencia del conocimiento basado en indicadores de fundamentación y transparencia, evitando que la plataforma actúe como árbitro de la veracidad de los contenidos.
+
+La plataforma podría incorporar un modelo de indicadores de consistencia destinado a aportar contexto sobre el proceso de creación y evolución de un documento.
+
+Estos indicadores no tendrían como finalidad determinar la veracidad del contenido, sino facilitar una evaluación crítica por parte de los lectores.
+
+Cada comunidad o contexto de uso podría definir qué indicadores considera relevantes, evitando imponer un único modelo de validación del conocimiento.
+
+## 4.2 concepto de documento
+
+¿Debe el concepto de Documento definirse por la naturaleza del contenido que representa (texto, imagen, audio, vídeo...) o únicamente por su función como unidad de conocimiento, independientemente del medio utilizado?
+
+## 4.3 herramientas
+
+Idea para futuras herramientas de apoyo: incorporar un sistema de traducción de textos como una de las utilidades básicas de la plataforma. Esta capacidad se considera parte del conjunto de herramientas de apoyo al trabajo intelectual y no del núcleo conceptual del dominio. En fases posteriores podrá ampliarse con otras herramientas como corrección lingüística, resumen, comparación de versiones o asistencia mediante IA.
+
+## 4.4 lector libros
+
+Idea para futuras herramientas de apoyo: incorporar un lector integrado capaz de visualizar distintos tipos de documentos (libros electrónicos, PDF, artículos, etc.), evitando depender de aplicaciones externas y proporcionando una experiencia unificada de lectura y estudio.
+
+no hablamos de un "Kindle". Hablamos de un lector de documentos.
+
+Y mañana podría incorporar:
+
+subrayados;
+anotaciones;
+traducción;
+lectura en voz alta;
+comparación de versiones.
