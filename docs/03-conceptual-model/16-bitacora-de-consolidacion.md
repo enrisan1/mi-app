@@ -38,7 +38,7 @@ Si un documento supera el tamaño máximo que puede entregarse íntegramente en 
 | 14-auditoria-de-completitud    | Finalizado | 2026-08-03      |
 | 15-validacion-de-la-metateoria | Finalizado | 2026-08-03      |
 | 16-README.md                   | Finalizado | 2026-08-03      |
-| 17-17-indice-general           | Finalizado | 2026-08-03      |
+| 17-indice-general              | Finalizado | 2026-08-03      |
 | 99-protocolo consolidacion...  | Finalizado | 2026-08-03      |
 
 ## 00-marco-teorico.md
