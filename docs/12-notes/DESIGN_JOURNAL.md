@@ -24,13 +24,15 @@ El contenido de este documento no constituye una especificación del producto ni
 
 De este modo, el diario de diseño permite conservar el conocimiento generado durante la evolución del proyecto sin comprometer la estabilidad ni la coherencia de la documentación principal.
 
-Ninguna idea permanecerá indefinidamente en este documento. Cuando una propuesta sea adoptada, deberá trasladarse al documento oficial correspondiente y eliminarse del diario de diseño, dejando constancia únicamente de que la idea fue incorporada.
+Una idea permanecerá en este documento mientras no exista justificación suficiente para incorporarla a otro cuerpo documental, descartarla o reformularla.
+
+La presencia de una propuesta en este documento no constituye evidencia a favor de su incorporación ni genera por sí misma una obligación de investigación.
 
 Las propuestas que alcancen suficiente madurez podrán incorporarse a las líneas estratégicas definidas en `ROADMAP.md` antes de formar parte de la documentación oficial del proyecto.
 
 Cuando una propuesta sea finalmente adoptada e implementada, su incorporación quedará reflejada en `PROJECT_JOURNAL.md` como parte de la evolución histórica del proyecto.
 
-# 2. Evolución del dominio
+# 2. Hipótesis sobre el producto y su dominio
 
 Este apartado recoge posibles evoluciones del modelo de dominio que podrían incorporarse en el futuro si las necesidades del producto lo justifican.
 
@@ -52,11 +54,17 @@ Participante
 └── Colaborador
 ```
 
+...
+↓
+HIPÓTESIS HISTÓRICA DE PRODUCTO
+↓
+no incorporable automáticamente
+
 Este enfoque permitiría ampliar el modelo colaborativo sin alterar el significado del concepto de Documento ni del resto del dominio.
 
 ---
 
-# 3. Evolución del modelo conceptual
+# 3. Hipótesis de organización del producto
 
 Este apartado recoge posibles ampliaciones del modelo conceptual del producto.
 
@@ -76,6 +84,16 @@ Biblioteca
 │
 └── Configuración
 ```
+
+     ↓
+
+candidatos históricos
+↓
+someter a rederivación
+↓
+¿qué situación justifican?
+↓
+¿siguen siendo necesarios?
 
 Esta organización permitiría ampliar progresivamente las capacidades del producto manteniendo un modelo coherente.
 
@@ -138,7 +156,7 @@ Este enfoque permitiría describir una publicación mediante la combinación de 
 
 # 6. Modelo de monetización
 
-La monetización también podría evolucionar hacia un modelo basado en distintos niveles de acceso al conocimiento.
+La monetización también podría evolucionar hacia un modelo basado en distintos niveles de acceso al conocimiento. No deben influir todavía en la definición del MVP salvo que durante su derivación aparezca una necesidad que las justifique.
 
 Un posible enfoque sería:
 

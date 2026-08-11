@@ -271,11 +271,7 @@ Siempre que resulte posible, la documentación distinguirá dos criterios comple
 
 ## Según el dominio
 
-- metodología;
-- teoría conceptual;
-- arquitectura;
-- implementación;
-- validación.
+Según el ámbito o cuerpo de responsabilidad: metodología, cuerpos teóricos de dominio, metateoría, ingeniería, realización, implementación y demás ámbitos diferenciados que el proyecto justifique.
 
 ## Según la función documental
 
@@ -317,11 +313,9 @@ Los principios contenidos en esta sección regulan la construcción de cuerpos t
 
 ## CT-1 — Derivación del marco teórico
 
-Todo cuerpo teórico autónomo deberá comenzar por un documento denominado:
+Todo cuerpo teórico autónomo deberá comenzar por un documento de marco identificado con el prefijo 00-, cuya denominación refleje adecuadamente la naturaleza del cuerpo teórico.
 
-```text
-00-marco-teorico.md
-```
+En los cuerpos teóricos ordinarios podrá utilizarse 00-marco-teorico.md. Cuando la naturaleza de la disciplina justifique una denominación más precisa, podrá emplearse una variante equivalente, siempre que conserve las responsabilidades establecidas por CT-1.
 
 La responsabilidad irreducible de este documento consiste en establecer la identidad científica del cuerpo teórico al que pertenece.
 
