@@ -38,9 +38,11 @@ Como resultado de este proceso existen actualmente cuerpos diferenciados para:
 - arquitectura software;
 - desarrollo.
 
-La auditoría global cerrada el 08/08/2026 no ha identificado ninguna carencia fundamental cuya resolución deba preceder necesariamente a la reconstrucción del producto.
+La auditoría global cerrada el 08/08/2026 determinó que no existía ninguna carencia fundamental cuya resolución debiera preceder necesariamente a la reconstrucción del producto.
 
-Se consolida, por tanto, el siguiente cambio de fase:
+A partir de ese resultado, `PRODUCT.md` fue reconstruido y auditado y se consolidó la primera vertical `PV-001`.
+
+El estado alcanzado puede representarse así:
 
 ```text
 investigación fundamental
@@ -49,21 +51,20 @@ como actividad principal
 fundamento suficiente
         ↓
 reconstrucción del producto
+        ✔ completada
         ↓
-primera vertical mínima
+PV-001
+        ✔ consolidada
         ↓
-derivación de arquitectura
-        ↓
-realización
-        ↓
-implementación experimental
+determinación de la siguiente actuación justificable
+        ?
 ```
 
 Esto no significa que la investigación haya terminado.
 
 Los cuerpos teóricos permanecen abiertos a nuevas investigaciones cuando aparezca una pérdida concreta que no pueda resolverse mediante los resultados ya consolidados.
 
-El proyecto entra así en una nueva etapa: **reconstruir progresivamente el producto a partir de los fundamentos obtenidos, en lugar de continuar ampliando dichos fundamentos de manera preventiva.**
+El proyecto entra así en una nueva etapa: **derivar la siguiente actuación justificable a partir de los compromisos de producto ya consolidados, sin presuponer qué cuerpo deberá intervenir ni restaurar como normativa la secuencia histórica hacia Engineering, Architecture, Realization o Implementation.**
 
 ---
 
@@ -301,7 +302,7 @@ La documentación arquitectónica existente describe fundamentalmente la evoluci
 
 Conserva valor histórico y experimental, pero no determina automáticamente la arquitectura software del producto futuro.
 
-La nueva arquitectura software deberá derivarse después de definir una primera vertical mínima.
+La arquitectura software del producto futuro no se considera todavía derivada. Su necesidad, alcance y momento de derivación deberán justificarse a partir de los compromisos de producto consolidados y de los problemas concretos que aparezcan, sin presuponer que Architecture deba constituir automáticamente la siguiente actuación del proyecto.
 
 **Estado:** arquitectura histórica conservada; arquitectura del nuevo producto todavía no derivada.
 
@@ -374,34 +375,27 @@ El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bit�
 
 La auditoría global del proyecto se encuentra cerrada.
 
-Su resultado fundamental establece que no se ha identificado ninguna carencia conceptual, metateórica, arquitectónica, realizativa o metodológica cuya resolución deba preceder necesariamente a la reconstrucción del producto.
+La reconstrucción de `PRODUCT.md` derivada de sus resultados también ha sido completada y auditada.
 
-Por tanto, **no procede continuar ampliando preventivamente los fundamentos antes de trabajar sobre el producto**.
-
-El punto exacto de reanudación es:
+Como resultado de dicha reconstrucción:
 
 ```text
-AUDITORÍA GLOBAL
-        ✔ cerrada
-        ↓
-PROJECT_STATUS.md
-        ✔ actualizado
-        ↓
 PRODUCT.md
-        ← SIGUIENTE PASO
+        ✔ reconstruido y auditado
+        ↓
+PV-001
+        ✔ consolidada
 ```
 
-La siguiente fase comienza reconstruyendo la definición vigente del producto a partir de los resultados consolidados.
+No se encuentra justificado continuar automáticamente con Engineering, Architecture, Realization o Implementation por el mero hecho de que esos cuerpos formen parte de la secuencia histórica del proyecto.
 
-No debe comenzarse todavía por:
+Tampoco procede ampliar preventivamente los fundamentos ni reabrir investigaciones consolidadas mientras no aparezca una pérdida concreta que lo justifique.
 
-- diseñar una nueva arquitectura software;
-- seleccionar tecnologías;
-- reutilizar automáticamente la arquitectura de la Todo App;
-- programar nuevas funcionalidades;
-- ni completar preventivamente todos los cuerpos teóricos pendientes.
+El punto de reanudación vigente consiste en **determinar cuál es la siguiente actuación justificable a partir del compromiso establecido por `PV-001`**.
 
-Debe comenzarse determinando qué producto puede justificarse a partir del fundamento existente.
+La investigación deberá comenzar preguntando qué diferencia debe ser necesariamente realizable para satisfacer dicho compromiso sin introducir estructura, semántica o responsabilidades que Product no haya justificado.
+
+Sólo después de identificar esa necesidad deberá determinarse qué cuerpo posee competencia para tratarla.
 
 ---
 
