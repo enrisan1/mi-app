@@ -353,3 +353,371 @@ La investigación confirma que la fase de realización no introduce nuevos fenó
 ## Estado
 
 **Consolidado.**
+
+---
+
+# Ficha de consolidación
+
+## Fecha
+
+14/08/2026
+
+### Investigación afectada
+
+`R-002` — Realización de las competencias
+
+### Situación inicial
+
+`R-002` permanecía cerrada tras haber concluido que no se habían identificado fenómenos arquitectónicos irreducibles específicos de la realización de las competencias.
+
+Entre las hipótesis previamente declaradas como reducidas figuraban:
+
+- `correspondencia realizativa`;
+- criterio autónomo de `no sustituibilidad semántica`.
+
+### Nueva evidencia
+
+Durante la investigación de una realización concreta en la vertical de Product se detectó una pérdida generalizable relativa a la atribución del estatuto de realizador dentro de una configuración satisfaciente.
+
+El caso de control utilizado para aislarla fue:
+
+```text
+E satisface INV-K
+
+Ω = <Σ∅, E>
+
+Ω satisface INV-K
+```
+
+La investigación mostró que los resultados consolidados de `R-002` permiten evaluar la preservación de una competencia por una configuración, pero no han permitido todavía determinar qué parte de dicha configuración materializa la competencia y qué parte constituye mera condición, entorno o copresencia.
+
+### Auditoría realizada
+
+Se comprobó que identificar materialización con mera pertenencia a una configuración satisfaciente elimina la distinción entre materialización y mera copresencia y atribuye estatuto realizativo a elementos incorporados arbitrariamente.
+
+Se reconstruyeron además, utilizando exclusivamente los resultados
+consolidados de `R-002`, las mejores reducciones actualmente justificables de:
+
+- `correspondencia realizativa`;
+- criterio autónomo de `no sustituibilidad semántica`.
+
+Ninguna de ellas permitió absorber la pérdida.
+
+La revisión del historial Git tampoco permitió recuperar las cadenas justificativas individuales originales de ambas reducciones.
+
+### Decisión
+
+Se reabre `R-002`.
+
+La reapertura:
+
+- no invalida los resultados consolidados anteriormente;
+- conserva el cierre anterior como resultado histórico;
+- suspende únicamente la afirmación de completitud de dicho cierre;
+- incorpora la nueva pérdida como objeto de investigación.
+
+### Nueva pregunta
+
+`Q-R002-01`:
+
+> Dada una competencia `K` y una configuración `Ω` en la que sus invariantes `INV-K` se satisfacen, ¿qué debe ser necesariamente cierto para que pueda atribuirse a una parte `Σ` de `Ω` la materialización de `K`, sin reducir dicha atribución a la mera pertenencia de `Σ` a una configuración satisfaciente?
+
+### Caso de control
+
+`TC-R002-01` — Copresencia arbitraria
+
+Toda hipótesis candidata deberá ser contrastada con `Σ∅ + E` sin presuponer previamente el estatuto realizativo de `Σ∅`.
+
+### Estado
+
+`R-002`
+→ reabierta
+
+`Q-R002-01`
+→ abierta
+
+`TC-R002-01`
+→ activo
+
+resultados anteriores de `R-002`
+→ conservados provisionalmente
+
+completitud del cierre anterior
+→ suspendida
+
+### Punto de continuación
+
+Investigar `Q-R002-01` sin presuponer ninguna forma positiva determinada de materialización y comenzando por intentar reducir nuevamente la pérdida a resultados ya consolidados.
+
+---
+
+# Ficha de consolidación
+
+## Fecha
+
+14/08/2026
+
+### Investigación afectada
+
+`R-002` — Realización de las competencias
+
+### Situación inicial
+
+`R-002` había sido reabierta tras detectarse una pérdida relativa a la atribución del estatuto de realizador dentro de una configuración satisfaciente.
+
+El cierre anterior permitía evaluar la preservación de una competencia por una configuración, pero no había permitido determinar si de dicha satisfacción podía derivarse legítimamente la atribución:
+
+`materializa(Σ,K)`
+
+para una parte determinada `Σ` de la configuración.
+
+La reapertura quedó articulada mediante:
+
+- `Q-R002-01` — pregunta de investigación;
+- `TC-R002-01` — caso de control de copresencia arbitraria.
+
+### Investigación realizada
+
+Se intentó reducir la pérdida utilizando exclusivamente resultados ya consolidados, sin introducir previamente una teoría positiva de qué significa materializar una competencia.
+
+Se examinó si la atribución realizativa podía derivarse de:
+
+- pertenencia a una configuración satisfaciente;
+- preservación íntegra de `INV-K`;
+- verificación sistémica;
+- semántica particular de `K`;
+- relevancia semántica;
+- participación no gratuita;
+- necesidad individual;
+- suficiencia local;
+- causalidad;
+- minimalidad satisfactiva;
+- eliminabilidad;
+- ejercicio de una responsabilidad;
+- contribución positivamente orientada;
+- correspondencia realizativa;
+- no sustituibilidad semántica.
+
+Ninguna de estas vías permitió derivar de manera general una atribución realizativa determinada a partir de la mera satisfacción sistémica de la competencia.
+
+### Contraejemplos examinados
+
+La pérdida fue sometida progresivamente a tres clases de caso:
+
+`Σ∅`
+→ mera copresencia
+
+`Σ¬`
+→ relevancia condicionante
+
+`Σ+`
+→ relevancia positivamente orientada sin atribución realizativa determinada
+
+La pérdida sobrevivió a la retirada de las propiedades particulares de
+los tres casos.
+
+Por tanto, ninguno de ellos constituye el fundamento del resultado.
+
+### Resultado consolidado
+
+Se consolida:
+
+`RS-R002-01` — No implicación de la atribución realizativa por satisfacción sistémica.
+
+Dada una competencia `K`, una configuración `Ω` y una parte `Σ ⊆ Ω`:
+
+`Ω ⊨ INV-K`
+
+no implica por sí mismo:
+
+`materializa(Σ,K)`
+
+La satisfacción sistémica de los invariantes de una competencia y la atribución realizativa a una parte determinada de la configuración constituyen pretensiones semánticamente no intercambiables.
+
+El resultado no afirma que toda competencia produzca necesariamente indeterminación realizativa ni excluye que fundamentos adicionales legítimos permitan determinar una atribución concreta.
+
+### Auditoría de eliminación
+
+Se examinó si `RS-R002-01` podía eliminarse conservando únicamente las normas generales de suficiencia justificativa y no sobreextensión.
+
+La eliminación no resultó conservativa.
+
+Dichas normas regulan qué contenido puede reclamar legítimamente una conclusión, pero no establecen por sí mismas la diferencia semántica específica entre:
+
+`Ω ⊨ INV-K`
+
+y:
+
+`materializa(Σ,K)`
+
+Por tanto, `RS-R002-01` sobrevivió a la prueba de eliminación como
+resultado semántico negativo específico de `R-002`.
+
+### Auditoría de independencia
+
+Se comprobó que `RS-R002-01` no depende de los contraejemplos `Σ∅`,
+`Σ¬` ni `Σ+`.
+
+Los tres casos conservan valor falsador, pero la no implicación permanece formulable independientemente de las propiedades particulares que cada uno representa.
+
+### Alcance y estatuto
+
+`RS-R002-01` posee alcance general únicamente como una no implicación.
+
+No introduce:
+
+- una nueva competencia;
+- una nueva responsabilidad arquitectónica;
+- una nueva entidad;
+- una nueva relación arquitectónica fundamental;
+- un criterio atributivo universal;
+- una obligación de existencia de una delimitación realizativa;
+- una obligación de unicidad de dicha delimitación;
+- una propiedad ontológica de indeterminación.
+
+Cuando los fundamentos disponibles no autorizan el contenido adicional reclamado por una atribución realizativa determinada, dicha atribución debe permanecer suspendida.
+
+Esta consecuencia se reduce a las obligaciones generales de suficiencia justificativa y no sobreextensión y no constituye un principio adicional
+de `R-002`.
+
+### Resolución de `Q-R002-01`
+
+`Q-R002-01` queda resuelta.
+
+La investigación no ha identificado una propiedad positiva universal que una parte `Σ` deba poseer para materializar una competencia `K`.
+
+Ha establecido, en cambio, que dicha atribución no puede obtener su autorización exclusivamente del hecho de que una configuración `Ω` que contiene a `Σ` satisfaga `INV-K`.
+
+Cuando se formule una atribución realizativa determinada, sus fundamentos deberán autorizar específicamente el contenido atributivo reclamado.
+
+### Auditoría documental
+
+Se auditó la propagación de `RS-R002-01` dentro de
+`docs/06-realization`.
+
+#### `00-principios-de-realizacion.md`
+
+El documento resultó sustantivamente compatible con `RS-R002-01`.
+
+Se confirmó que:
+
+- su objeto fundamental es la transformación conservativa;
+- presupone realizaciones cuya atribución ya está justificada;
+- `HR-001` continúa siendo válido;
+- `PRR-1`, `PRR-2` y `PRR-3` continúan siendo válidos;
+- ninguno de dichos principios proporciona por sí mismo un criterio de atribución realizativa.
+
+Se introdujeron únicamente precisiones destinadas a delimitar
+explícitamente dicho alcance.
+
+No fue necesario introducir un nuevo principio realizativo.
+
+#### `01-realizacion-de-las-competencias.md`
+
+Se detectó una confusión localizada entre:
+
+`(A)` validez conservativa de una realización cuya atribución está
+justificada;
+
+y
+
+`(B)` autorización para atribuir a una configuración o a una de sus partes el estatuto de realización o realizador de `K`.
+
+La distinción fue explicitada y las formulaciones que podían convertir la preservación de invariantes en condición suficiente de atribución fueron corregidas.
+
+Una segunda auditoría confirmó que el documento ya no contiene ninguna inferencia conocida de la forma:
+
+`preservación/satisfacción de INV-K`
+→ `atribución realizativa determinada`
+
+El documento queda consolidado respecto de `RS-R002-01`.
+
+#### Restantes documentos
+
+`02-realizacion-de-los-contratos.md`
+→ vacío; sin contenido susceptible de auditoría.
+
+`03-realizacion-del-significado.md`
+→ sin propagación detectada.
+
+`04-organizacion-del-nucleo.md`
+→ sin propagación detectada.
+
+`05-puntos-de-extension.md`
+→ sin propagación detectada.
+
+Una búsqueda transversal adicional de formulaciones potencialmente
+equivalentes no detectó nuevas colisiones.
+
+### Revisión del cierre anterior
+
+La reapertura no falsifica los resultados consolidados anteriormente relativos a:
+
+- ausencia de nuevas competencias arquitectónicas;
+- permanencia de la autoridad normativa en la competencia;
+- ausencia de nuevas responsabilidades arquitectónicas;
+- preservación íntegra de los invariantes;
+- alcance sistémico de la verificación;
+- legitimidad de las transformaciones conservativas;
+- reducción de `correspondencia realizativa` dentro de su alcance;
+- reducción del criterio autónomo de `no sustituibilidad semántica`
+  dentro de su alcance.
+
+Sí queda corregida la antigua afirmación de completitud.
+
+El cierre anterior se conserva como resultado histórico y como registro reconstruible del estado de la investigación anterior a la nueva evidencia.
+
+### Decisión
+
+Se cierra nuevamente `R-002`.
+
+El nuevo cierre no restablece una afirmación de saturación fenomenológica absoluta.
+
+Establece únicamente que la pérdida que motivó la reapertura ha sido investigada hasta obtener un resultado estable, falsable y suficientemente delimitado, y que su propagación documental conocida ha sido auditada.
+
+### Estado final
+
+`R-002`
+→ cerrada nuevamente
+
+`Q-R002-01`
+→ resuelta
+
+`RS-R002-01`
+→ consolidado
+
+`TC-R002-01`
+→ caso de control completado
+
+resultados consolidados anteriores
+→ conservados dentro de su alcance
+
+completitud del cierre anterior
+→ corregida por `RS-R002-01`
+
+`00-principios-de-realizacion.md`
+→ auditado y consolidado respecto de `RS-R002-01`
+
+`01-realizacion-de-las-competencias.md`
+→ auditado y consolidado respecto de `RS-R002-01`
+
+propagación documental conocida
+→ auditada
+
+nuevo principio realizativo
+→ no introducido
+
+nueva ontología
+→ no introducida
+
+nueva competencia
+→ no introducida
+
+nueva responsabilidad arquitectónica
+→ no introducida
+
+### Punto de continuación
+
+Reanudar la fase de realización desde el estado consolidado resultante, manteniendo `RS-R002-01` como restricción semántica sobre cualquier atribución realizativa futura y sin presuponer un criterio positivo universal de materialización.
+
+---

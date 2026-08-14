@@ -75,6 +75,21 @@ Su alcance comprende:
 - la cooperación entre múltiples realizadores cuando una misma competencia se materializa conjuntamente;
 - los criterios generales de verificación de la preservación de las competencias.
 
+### Frontera entre atribución y validez conservativa
+
+Las condiciones establecidas en este documento regulan la validez
+conservativa de una realización cuya atribución a una competencia esté justificada.
+
+No constituyen por sí mismas un criterio suficiente para determinar qué parte de una configuración software materializa dicha competencia.
+
+En particular, dada una competencia `K`, una configuración `Ω` y una parte `Σ ⊆ Ω`, la satisfacción o preservación sistémica de `INV-K` por `Ω` no autoriza por sí sola la atribución:
+
+`materializa(Σ,K)`
+
+La determinación de una atribución realizativa deberá estar justificada por fundamentos que autoricen específicamente dicho contenido cuando tal atribución sea necesaria.
+
+Esta distinción no introduce una nueva competencia, responsabilidad, entidad ni relación arquitectónica fundamental.
+
 Quedan expresamente fuera de su alcance:
 
 - la definición de nuevas competencias;
@@ -121,7 +136,7 @@ En consecuencia, la realización no crea competencias.
 
 Únicamente incorpora una realización software capaz de ejercerlas conforme a las condiciones establecidas por la arquitectura.
 
-Por ello, dos plataformas distintas pueden realizar legítimamente una misma competencia siempre que ambas preserven exactamente los mismos invariantes arquitectónicos.
+Por ello, dos plataformas cuya atribución como realizaciones de una misma competencia esté justificada podrán diferir tecnológica, organizativa o estructuralmente sin que dichas diferencias afecten a su validez conservativa, siempre que ambas preserven íntegramente los invariantes arquitectónicos aplicables.
 
 Las diferencias tecnológicas, organizativas o estructurales entre ambas plataformas no alteran la competencia realizada mientras dichos invariantes permanezcan íntegramente conservados.
 
@@ -187,7 +202,7 @@ En consecuencia:
 - podrá distribuirse entre varios realizadores cooperantes;
 - podrá reorganizarse internamente sin modificar la arquitectura del núcleo.
 
-Todas estas posibilidades serán arquitectónicamente equivalentes siempre que preserven íntegramente los invariantes de la competencia realizada.
+Una vez justificada su atribución realizativa, todas estas posibilidades serán arquitectónicamente equivalentes respecto de la conservación de la competencia siempre que preserven íntegramente sus invariantes.
 
 La identidad arquitectónica pertenece a la competencia.
 
@@ -215,11 +230,11 @@ Toda reorganización interna deberá preservar exactamente las mismas garantías
 
 ## Verificación
 
-Toda realización deberá poder demostrar objetivamente que continúa materializando la competencia arquitectónica correspondiente.
+Toda realización cuya atribución a una competencia esté justificada deberá permitir demostrar objetivamente que continúa preservando las condiciones arquitectónicas exigidas para su realización conservativa.
 
-La verificación no consiste en comprobar la corrección técnica de una implementación.
+La verificación regulada en este documento no consiste en comprobar la corrección técnica de una implementación ni en establecer por sí misma la atribución realizativa.
 
-Consiste en demostrar que la competencia conserva íntegramente su identidad arquitectónica.
+Consiste en demostrar que, dada una atribución realizativa justificada, la competencia conserva íntegramente su identidad arquitectónica.
 
 En consecuencia, toda verificación deberá confirmar al menos:
 
@@ -265,12 +280,13 @@ En consecuencia:
 
 - la arquitectura del núcleo permanece definida por la teoría conceptual, la ingeniería y los principios generales de realización;
 - la realización únicamente materializa las competencias previamente consolidadas;
-- distintas plataformas podrán realizar legítimamente una misma competencia siempre que preserven íntegramente los mismos invariantes arquitectónicos;
+- distintas plataformas cuya atribución realizativa esté justificada podrán constituir realizaciones conservativamente legítimas de una misma competencia siempre que preserven íntegramente los invariantes arquitectónicos aplicables;
 - toda reorganización interna de la plataforma será arquitectónicamente transparente mientras no modifique la identidad, la autoridad, la responsabilidad ni los invariantes de las competencias realizadas.
 
-La validez arquitectónica de una realización no depende de la organización concreta del software utilizado para materializarla.
+La validez conservativa de una realización cuya atribución esté
+justificada no depende de la organización concreta del software utilizado para materializarla.
 
-Depende exclusivamente de la preservación íntegra de la arquitectura previamente consolidada.
+Dentro del alcance de este documento, dicha validez conservativa depende exclusivamente de la preservación íntegra de la arquitectura previamente consolidada.
 
 ---
 

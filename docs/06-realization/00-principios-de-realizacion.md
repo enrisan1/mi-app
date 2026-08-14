@@ -48,6 +48,8 @@ La investigación no pretende descubrir nuevos principios arquitectónicos.
 
 Pretende determinar bajo qué condiciones una transformación puede considerarse una realización conservativa de la arquitectura previamente consolidada.
 
+Este documento presupone la atribución de las realizaciones sobre las que operan dichas transformaciones y no establece por sí mismo criterios para determinar qué configuración materializa una competencia concreta.
+
 ---
 
 # Hipótesis de trabajo
@@ -70,7 +72,7 @@ La fase de realización no parte de la búsqueda de nuevos conceptos fundamental
 
 Parte de la hipótesis de que la arquitectura del núcleo ya se encuentra completamente determinada.
 
-Su objeto de estudio consiste en determinar qué transformaciones permiten realizar, reorganizar y evolucionar el software preservando íntegramente dicha arquitectura.
+Su objeto de estudio consiste en determinar qué transformaciones permiten reorganizar y evolucionar una realización software preservando íntegramente dicha arquitectura.
 
 ---
 
@@ -169,7 +171,7 @@ Los principios definidos en este documento constituyen el marco normativo común
 
 Ningún documento posterior de esta fase deberá introducir transformaciones que contradigan estos principios.
 
-Toda propuesta de realización deberá justificarse conforme a ellos.
+Toda transformación propuesta sobre una realización deberá justificarse conforme a ellos.
 
 En consecuencia:
 
