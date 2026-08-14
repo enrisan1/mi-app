@@ -105,6 +105,8 @@ Existe una responsabilidad documental irreducible que no puede ser absorbida por
 
 ### Conclusiones
 
+#### Sobre la función del documento de investigación
+
 La investigación confirma la necesidad de un documento específico cuya responsabilidad consiste en preservar la justificación racional de las decisiones adoptadas durante la fase de realización.
 
 El documento no incorpora conocimiento arquitectónico nuevo.

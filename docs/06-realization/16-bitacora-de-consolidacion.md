@@ -205,14 +205,6 @@ Cada nivel conserva una responsabilidad diferenciada:
 
 ---
 
----
-
----
-
----
-
----
-
 # Ficha de consolidación
 
 ## Fecha
