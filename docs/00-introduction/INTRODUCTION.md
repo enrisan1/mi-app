@@ -46,117 +46,296 @@ Aunque existe un recorrido recomendado para quienes se incorporan por primera ve
 
 Esta organización facilita tanto una lectura secuencial de toda la documentación como una consulta puntual orientada a resolver necesidades concretas durante el desarrollo, el mantenimiento o la evolución del sistema.
 
+La unidad principal de navegación es el cuerpo competente por responsabilidad. Una vez identificado dicho cuerpo, sus documentos internos permiten localizar el resultado consolidado, investigación, auditoría o registro pertinente.
+
 # 4. Organización de la documentación
 
-El sistema documental se materializa en un conjunto de documentos especializados, cada uno responsable de un aspecto concreto del proyecto.
+El sistema documental se organiza en cuerpos diferenciados, cada uno responsable de una clase específica de problemas, resultados y decisiones.
 
-Esta distribución permite mantener una separación clara de responsabilidades, evitar duplicidades y facilitar que la documentación evolucione de forma coordinada con el software.
+Esta distribución permite:
 
-Como criterio general, cada concepto debe desarrollarse en un único documento. El resto de la documentación hace referencia a él cuando resulta necesario, evitando repetir información y preservando la coherencia del sistema documental.
+- mantener separadas responsabilidades distintas;
+- evitar que un cuerpo adquiera autoridad sobre resultados que pertenecen a otro;
+- localizar la fuente competente a partir del problema que se pretende resolver;
+- preservar la diferencia entre investigación, conocimiento consolidado, estado, arquitectura histórica y construcción concreta;
+- y evitar duplicidades entre documentos.
 
-La siguiente tabla resume la responsabilidad principal de cada documento:
+La organización documental no establece una cadena lineal obligatoria entre los cuerpos.
 
-| Documento              | Contenido principal                                        |
-| ---------------------- | ---------------------------------------------------------- |
-| `README.md`            | Presentación del proyecto y guía de inicio.                |
-| `INTRODUCTION.md`      | Guía de navegación del sistema documental                  |
-| `GLOSSARY.md`          | Lenguaje de referencia del proyecto                        |
-| `VISION.md`            | Propósito y principios del proyecto.                       |
-| `PRODUCT.md`           | Definición funcional del producto.                         |
-| `ARCHITECTURE.md`      | Organización técnica del sistema.                          |
-| `DEVELOPMENT_GUIDE.md` | Proceso y convenciones de desarrollo.                      |
-| `TESTING.md`           | Estrategia y organización de las pruebas.                  |
-| `PROJECT_STATUS.md`    | Estado actual del proyecto y punto de reanudación.         |
-| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones.     |
-| `ROADMAP.md`           | Líneas estratégicas de evolución.                          |
-| `DESIGN_JOURNAL.md`    | Ideas e hipótesis pendientes de evaluación.                |
-| `AGENTS.md`            | Instrucciones para agentes de desarrollo asistidos por IA. |
+La existencia de un cuerpo posterior en la numeración no implica que deba intervenir automáticamente después del anterior.
 
-En conjunto, estos documentos forman un sistema documental coherente en el que cada uno desempeña una función específica y complementa al resto. Esta organización facilita la comprensión del proyecto, simplifica el mantenimiento de la documentación y favorece su evolución a largo plazo.
+Ante una necesidad concreta deberá determinarse primero qué tipo de problema existe y sólo después qué cuerpo posee competencia para tratarlo.
 
-# 5. Recorridos recomendados
-
-La documentación puede consultarse de distintas formas según el objetivo de cada lector.
-
-Aunque todos los documentos mantienen relaciones entre sí, no siempre es necesario recorrerlos en el mismo orden. Los siguientes itinerarios ofrecen un punto de partida para las necesidades más habituales.
-
-Los siguientes recorridos no son obligatorios, pero pueden servir como guía para abordar la documentación según los intereses o necesidades de cada lector.
-
-## Conocer el proyecto
-
-Recomendado para quienes desean comprender el propósito del proyecto, el producto que se pretende construir y la organización general de la documentación.
+La estructura principal es:
 
 ```text
-README.md
-    │
-    ▼
-INTRODUCTION.md
-    │
-    ▼
-VISION.md
-    │
-    ▼
-PRODUCT.md
+docs/
+│
+├── 00-introduction
+│
+├── 01-methodology
+├── 02-metatheory
+├── 03-conceptual-model
+├── 04-governance
+├── 05-engineering
+├── 06-realization
+├── 07-implementation
+├── 08-project
+├── 09-architecture
+└── 10-development
+```
+
+## 4.1 Puerta de entrada — `00-introduction`
+
+`00-introduction` proporciona el acceso general al sistema documental.
+
+Su responsabilidad comprende:
+
+- orientar la navegación;
+- ofrecer el vocabulario común;
+- presentar el propósito general del proyecto;
+- y dirigir al lector hacia el cuerpo competente según la información que necesite.
+
+No sustituye a ninguno de los cuerpos especializados.
+
+---
+
+## 4.2 Cuerpos documentales
+
+| Cuerpo                | Responsabilidad principal                                                                                                                                                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `01-methodology`      | Define el método transversal mediante el que se abren, desarrollan, falsan, consolidan, documentan y reabren investigaciones y decisiones del proyecto.                                                                                                    |
+| `02-metatheory`       | Investiga y establece resultados transversales relativos al estatuto, alcance, dependencia, comparación, autoridad y relación entre teorías, resultados o construcciones cuando el problema no pertenece exclusivamente a uno de los cuerpos particulares. |
+| `03-conceptual-model` | Contiene la investigación y el conocimiento consolidado sobre la estructura conceptual necesaria para explicar el dominio, sus fenómenos, exigencias y relaciones fundamentales.                                                                           |
+| `04-governance`       | Trata los problemas pertenecientes al gobierno epistemológico y a las condiciones bajo las que afirmaciones, evaluaciones o resultados adquieren y conservan legitimidad dentro de su ámbito.                                                              |
+| `05-engineering`      | Deriva responsabilidades, capacidades, relaciones, garantías y restricciones estructurales necesarias para realizar los fundamentos aceptados, sin decidir todavía su materialización concreta.                                                            |
+| `06-realization`      | Investiga y establece las condiciones bajo las que los resultados anteriores pueden recibir realizaciones concretas legítimas, así como las decisiones y pruebas propias de realizaciones particulares cuando corresponda.                                 |
+| `07-implementation`   | Establece las exigencias, competencias, contratos, dependencias y fronteras que restringen implementaciones válidas sin imponer automáticamente componentes técnicos concretos.                                                                            |
+| `08-project`          | Contiene la definición vigente del producto, su estado, auditorías, historial y propuestas de evolución; determina qué compromisos de producto están actualmente establecidos y cuál es el estado real del proyecto.                                       |
+| `09-architecture`     | Conserva y describe la arquitectura software y su evolución técnica. La arquitectura histórica no adquiere por su sola existencia autoridad prescriptiva sobre nuevas construcciones.                                                                      |
+| `10-development`      | Define el proceso práctico de construcción, las convenciones de desarrollo, el entorno, los comandos y la estrategia general de testing y validación.                                                                                                      |
+
+La tabla identifica responsabilidades, no un orden obligatorio de intervención.
+
+Una misma tarea puede requerir consultar varios cuerpos, pero cada decisión deberá mantenerse bajo la autoridad del cuerpo que tenga competencia para establecerla.
+
+---
+
+## 4.3 Investigación y conocimiento consolidado dentro de los cuerpos
+
+Algunos cuerpos distinguen internamente entre:
+
+```text
+investigación
+        ↓
+resultado suficientemente justificado
+        ↓
+consolidación en documento competente
+        ↓
+registro de la consolidación
+```
+
+Por tanto, encontrar una afirmación en un documento de investigación no implica automáticamente que constituya una regla universal consolidada.
+
+Antes de utilizar un resultado deberá atenderse a su estatuto:
+
+- hipótesis;
+- resultado provisional;
+- decisión contingente;
+- resultado consolidado;
+- documento histórico;
+- o estado vigente.
+
+El uso de un resultado por otro cuerpo tampoco transfiere autoridad sobre dicho resultado.
+
+---
+
+# 5. Recorridos de navegación
+
+La documentación no debe recorrerse siempre en el mismo orden.
+
+El punto de partida deberá seleccionarse según la necesidad concreta.
+
+Los siguientes recorridos son guías de navegación y no secuencias normativas de trabajo.
+
+## 5.1 Determinar qué cuerpo posee competencia
+
+Ante una cuestión nueva:
+
+```text
+problema concreto
+        ↓
+¿qué clase de resultado necesitamos?
+        ↓
+¿qué cuerpo posee autoridad
+para producir ese resultado?
+        ↓
+consultar el cuerpo competente
+```
+
+Como orientación:
+
+```text
+¿cómo debe investigarse o documentarse?
+        ↓
+01-methodology
+
+¿es un problema transversal sobre
+autoridad, alcance o relaciones entre resultados?
+        ↓
+02-metatheory
+
+¿qué debe ser cierto en el modelo del dominio?
+        ↓
+03-conceptual-model
+
+¿cómo se gobierna epistemológicamente
+una afirmación o resultado?
+        ↓
+04-governance
+
+¿qué responsabilidad o capacidad
+estructural es necesaria?
+        ↓
+05-engineering
+
+¿cómo puede realizarse concretamente
+un resultado ya justificado?
+        ↓
+06-realization
+
+¿qué debe preservar o respetar
+una implementación válida?
+        ↓
+07-implementation
+
+¿qué producto está comprometido
+y cuál es el estado vigente?
+        ↓
+08-project
+
+¿qué organización software
+está actualmente justificada?
+        ↓
+09-architecture
+
+¿cómo construir, probar y validar
+el cambio?
+        ↓
+10-development
 ```
 
 ---
 
-## Comprender la arquitectura
+## 5.2 Conocer el estado vigente del proyecto
 
-Recomendado para desarrolladores interesados en la organización técnica del sistema y en las decisiones que sustentan su diseño.
-
-```text
-INTRODUCTION.md
-    │
-    ▼
-ARCHITECTURE.md
-    │
-    ▼
-DEVELOPMENT_GUIDE.md
-    │
-    ▼
-TESTING.md
-```
-
----
-
-## Contribuir al desarrollo
-
-Recomendado para quienes deseen colaborar en la evolución del proyecto respetando sus convenciones y procesos de trabajo.
+Cuando la necesidad consiste en saber dónde se encuentra actualmente el proyecto:
 
 ```text
 INTRODUCTION.md
-    │
-    ▼
-DEVELOPMENT_GUIDE.md
-    │
-    ▼
-TESTING.md
-    │
-    ▼
-AGENTS.md
-```
-
----
-
-## Conocer el estado del proyecto
-
-Recomendado para comprender la situación actual del desarrollo, su evolución y las líneas previstas para futuras iteraciones.
-
-```text
-INTRODUCTION.md
-    │
-    ▼
+        ↓
+08-project
+        ↓
 PROJECT_STATUS.md
-    │
-    ▼
-PROJECT_JOURNAL.md
-    │
-    ▼
-ROADMAP.md
 ```
 
-Cada uno de estos recorridos constituye únicamente una recomendación. La documentación está organizada para que cualquier documento pueda consultarse de forma independiente cuando se busque información específica, manteniendo siempre una referencia clara al resto del sistema documental.
+`PROJECT_STATUS.md` constituye la referencia para conocer el estado actual, el último objetivo completado y el punto vigente de continuación.
+
+Los documentos históricos deberán utilizarse como antecedentes y no como sustitutos del estado presente.
+
+---
+
+## 5.3 Investigar una nueva necesidad
+
+Cuando durante el trabajo aparece una pérdida o una pregunta cuya respuesta todavía no está justificada:
+
+```text
+necesidad o pérdida concreta
+        ↓
+identificar el tipo de problema
+        ↓
+localizar el cuerpo competente
+        ↓
+¿existe ya un resultado suficiente?
+       / \
+     sí   no
+     ↓     ↓
+utilizar  abrir o reabrir
+resultado investigación
+```
+
+No deberá abrirse una investigación en un cuerpo simplemente porque históricamente éste aparezca después en la organización documental.
+
+---
+
+## 5.4 Pasar de un compromiso de producto a una realización
+
+Cuando existe un compromiso de Product y se necesita determinar cómo puede hacerse realizable:
+
+```text
+08-project
+PRODUCT.md
+        ↓
+compromiso vigente
+        ↓
+¿qué diferencia debe realizarse?
+        ↓
+determinar cuerpo competente
+        ↓
+05-engineering
+si existe una cuestión estructural necesaria
+        ↓
+06-realization
+cuando corresponde investigar
+una realización concreta
+```
+
+Engineering no debe intervenir automáticamente si ninguna nueva responsabilidad arquitectónica necesita ser derivada.
+
+Del mismo modo, Realization no convierte sus decisiones particulares en arquitectura normativa por el mero hecho de utilizarlas en una realización experimental.
+
+---
+
+## 5.5 Construir una realización ya justificada
+
+Cuando una realización concreta ya ha sido suficientemente especificada:
+
+```text
+fuente que justifica la realización
+        ↓
+estado vigente del proyecto
+        ↓
+10-development
+        ↓
+construcción
+        ↓
+testing y validación
+```
+
+`09-architecture` deberá consultarse cuando la tarea requiera utilizar, modificar o derivar arquitectura software.
+
+Su intervención no debe presumirse automáticamente únicamente porque vaya a escribirse código.
+
+---
+
+## 5.6 Regla general de navegación
+
+Cuando exista duda sobre qué documento consultar, no deberá elegirse el siguiente documento por proximidad física, numeración o continuidad histórica.
+
+Se aplicará:
+
+```text
+¿qué problema existe?
+        ↓
+¿qué resultado necesitamos?
+        ↓
+¿qué cuerpo posee competencia?
+        ↓
+¿qué documento de ese cuerpo
+posee el resultado o la investigación relevante?
+```
+
+El sistema documental debe permitir resolver esta navegación sin duplicar en `INTRODUCTION.md` el contenido especializado de los documentos a los que dirige.
 
 # 6. Evolución de la documentación
 

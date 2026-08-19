@@ -524,7 +524,71 @@ No deberán comprobarse directamente:
 
 Las pruebas deberán permanecer válidas cuando se refactorice la implementación sin modificar la responsabilidad del elemento probado.
 
-## 5.4 Mantener el aislamiento
+## 5.4 Preservar la trazabilidad entre criterio y evidencia
+
+Cuando una prueba declare verificar un criterio, requisito, contrato o comportamiento documentado, deberá poder establecerse una correspondencia explícita entre:
+
+```text
+criterio documentado
+        ↓
+condiciones que lo constituyen
+        ↓
+comportamiento implementado
+        ↓
+condiciones verificadas por la prueba
+        ↓
+evidencia obtenida
+```
+
+La prueba deberá comprobar las condiciones relevantes que hacen verdadero el criterio y no únicamente una consecuencia más débil compatible con él.
+
+El nombre del test, la referencia a un identificador documental o el hecho de que la prueba termine satisfactoriamente no constituyen por sí mismos evidencia de que el criterio haya sido satisfecho.
+
+Cuando el criterio establezca propiedades como:
+
+- ausencia;
+- exclusividad;
+- equivalencia;
+- invariancia;
+- conservación;
+- correspondencia;
+- o dependencia entre condiciones;
+
+la prueba deberá verificar también que no se introducen diferencias relevantes incompatibles con dichas propiedades.
+
+Por ejemplo:
+
+```text
+criterio:
+"puede introducirse A"
+
+no queda demostrado por:
+"A aparece en pantalla"
+
+debe comprobarse:
+que A puede ser introducida mediante
+el comportamiento previsto por el criterio
+```
+
+Del mismo modo:
+
+```text
+criterio:
+"E+ y E− sólo difieren en la disponibilidad de A"
+
+no queda demostrado únicamente por:
+"A aparece en E+ y no aparece en E−"
+
+debe comprobarse además:
+que no se introduce otra diferencia relevante
+entre ambas condiciones
+```
+
+> **RT-DV-001 — Trazabilidad entre criterio y evidencia**
+>
+> Cuando una prueba afirme satisfacer un criterio documentado, deberá verificar las condiciones que constituyen dicho criterio con suficiente fuerza para que el éxito de la prueba pueda utilizarse legítimamente como evidencia de su satisfacción.
+
+## 5.5 Mantener el aislamiento
 
 Cada prueba deberá poder ejecutarse de forma independiente y producir siempre el mismo resultado.
 
@@ -538,7 +602,7 @@ No deberá depender de:
 
 Cuando una prueba modifique estado global, almacenamiento, temporizadores, mocks o suscripciones, deberá restaurarlos al finalizar.
 
-## 5.5 Utilizar datos mínimos y expresivos
+## 5.6 Utilizar datos mínimos y expresivos
 
 Los escenarios deberán construirse utilizando únicamente los datos necesarios para demostrar el comportamiento comprobado.
 
@@ -548,7 +612,7 @@ Los datos de prueba deberán ser fáciles de reconocer y expresar la intención 
 
 Cuando varias pruebas compartan una preparación compleja, podrá extraerse una función auxiliar siempre que esta no oculte las condiciones relevantes del test.
 
-## 5.6 Limitar cada prueba a un comportamiento principal
+## 5.7 Limitar cada prueba a un comportamiento principal
 
 Cada prueba deberá perseguir un objetivo claramente identificable.
 
@@ -556,7 +620,7 @@ Podrá contener varias comprobaciones cuando todas ellas describan un mismo resu
 
 Cuando un fallo dificulte determinar qué responsabilidad se ha roto, la prueba deberá dividirse en escenarios más específicos.
 
-## 5.7 Evitar duplicidades entre niveles
+## 5.8 Evitar duplicidades entre niveles
 
 Un comportamiento ya validado en un nivel inferior no deberá repetirse exhaustivamente en niveles superiores.
 
@@ -564,7 +628,7 @@ Las pruebas de niveles superiores deberán centrarse en la colaboración entre r
 
 Antes de añadir un test, deberá revisarse si el comportamiento ya está cubierto y si el nuevo escenario aporta una protección diferente o necesaria.
 
-## 5.8 Utilizar dobles de prueba con criterio
+## 5.9 Utilizar dobles de prueba con criterio
 
 Las pruebas deberán describir el comportamiento observado y utilizarse únicamente cuando ayuden a aislar una responsabilidad o controlar una dependencia.
 
@@ -574,7 +638,7 @@ Siempre que resulte posible, deberán preferirse valores y colaboradores reales 
 
 Las interacciones deberán comprobarse solo cuando formen parte del contrato o de la responsabilidad del elemento probado.
 
-## 5.9 Priorizar la perspectiva del usuario en la interfaz
+## 5.10 Priorizar la perspectiva del usuario en la interfaz
 
 Las pruebas de componentes deberán interactuar con la interfaz utilizando elementos accesibles y comportamientos visibles.
 
@@ -588,7 +652,7 @@ Se priorizarán consultas basadas en:
 
 Se evitarán selectores basados únicamente en clases CSS, posiciones dentro del DOM o atributos creados exclusivamente para facilitar el test, salvo que no exista una alternativa razonable.
 
-## 5.10 Mantener los tests junto con el código
+## 5.11 Mantener los tests junto con el código
 
 Cuando cambie un comportamiento, deberán revisarse inmediatamente sus pruebas.
 
@@ -878,20 +942,20 @@ Su contenido complementa al resto de la documentación, manteniendo una separaci
 
 En particular:
 
-| Documento              | Responsabilidad principal                                                                                        |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `INTRODUCTION.md`      | Guía de navegación y organización general de la documentación del proyecto.                                      |
-| `GLOSSARY.md`          | Definición de la terminología común utilizada en toda la documentación del proyecto.                             |
-| `VISION.md`            | Propósito del proyecto, principios fundamentales y dirección estratégica a largo plazo.                          |
-| `PRODUCT.md`           | Definición funcional del producto, sus conceptos fundamentales y las capacidades que deben proteger las pruebas. |
-| `ARCHITECTURE.md`      | Organización técnica del sistema y responsabilidades sobre las que se construye la estrategia de testing.        |
-| `DEVELOPMENT_GUIDE.md` | Proceso de desarrollo, flujo de trabajo y criterios generales de validación.                                     |
-| `TESTING.md`           | Estrategia de pruebas, organización de la suite y criterios para su evolución.                                   |
-| `AGENTS.md`            | Instrucciones operativas para los agentes de desarrollo durante su colaboración con el proyecto.                 |
-| `PROJECT_STATUS.md`    | Estado actual del proyecto y punto de reanudación del desarrollo.                                                |
-| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones adoptadas.                                                 |
-| `ROADMAP.md`           | Líneas estratégicas y evolución prevista del proyecto.                                                           |
-| `DESIGN_JOURNAL.md`    | Ideas, hipótesis y propuestas de diseño pendientes de evaluación o incorporación.                                |
+| Documento              | Responsabilidad principal                                                                                             |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `INTRODUCTION.md`      | Guía de navegación y organización general de la documentación del proyecto.                                           |
+| `GLOSSARY.md`          | Definición de la terminología común utilizada en toda la documentación del proyecto.                                  |
+| `VISION.md`            | Propósito del proyecto, principios fundamentales y dirección estratégica a largo plazo.                               |
+| `PRODUCT.md`           | Definición funcional del producto, sus conceptos fundamentales y las capacidades que deben proteger las pruebas.      |
+| `ARCHITECTURE.md`      | Organización técnica del sistema y responsabilidades sobre las que se construye la estrategia de testing.             |
+| `DEVELOPMENT_GUIDE.md` | Proceso de desarrollo, flujo de trabajo y criterios generales de validación.                                          |
+| `TESTING.md`           | Estrategia de pruebas, organización de la suite y criterios para su evolución.                                        |
+| `AGENTS.md`            | Instrucciones operativas para los agentes de desarrollo durante su colaboración con el proyecto.                      |
+| `PROJECT_STATUS.md`    | Estado actual del proyecto y actuaciones o puntos de reanudación que hayan quedado justificadamente establecidos.     |
+| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones adoptadas.                                                      |
+| `ROADMAP.md`           | Líneas estratégicas de evolución cuya vigencia haya quedado justificada respecto del estado consolidado del proyecto. |
+| `DESIGN_JOURNAL.md`    | Ideas, hipótesis y propuestas de diseño pendientes de evaluación o incorporación.                                     |
 
 La estrategia de testing deberá mantenerse alineada con el producto, la arquitectura y el proceso de desarrollo, garantizando que las pruebas evolucionen junto con el sistema y continúen validando las responsabilidades que les corresponden.
 

@@ -6,6 +6,12 @@
 
    3.1 Reorganización del sistema documental
 
+   3.2 Consolidación del sistema documental
+
+   3.3 Primera derivación desde Product y determinación del estado de continuidad
+
+4. Ideas pendientes de maduración
+
 # 1. Objetivo
 
 Este documento recoge la evolución del proyecto desde sus primeras versiones hasta su estado actual.
@@ -115,6 +121,116 @@ La consolidación de un sistema documental requiere un proceso de revisión tan 
 
 La experiencia obtenida durante esta etapa ha demostrado que un sistema documental bien diseñado reduce la complejidad del proyecto, facilita la incorporación de nuevos colaboradores y proporciona un marco estable para acompañar la evolución del software sin perder conocimiento ni introducir inconsistencias.
 
+## 3.3 Primera derivación desde Product y determinación del estado de continuidad
+
+### Contexto
+
+Tras la consolidación del fundamento teórico y la auditoría global del proyecto, se reconstruyó `PRODUCT.md` y se estableció `PV-001` como primera vertical consolidada.
+
+La nueva etapa abandonó la utilización automática de la secuencia histórica entre cuerpos del proyecto. La existencia de Product no debía conducir por sí misma a Engineering, Architecture, Realization o Implementation.
+
+Cada actuación posterior debía quedar justificada por una necesidad efectivamente derivada del estado consolidado.
+
+### Objetivo
+
+El objetivo de esta etapa fue determinar qué actuación podía derivarse del compromiso establecido por `PV-001`, someter la candidata obtenida a evaluación sin repararla retrospectivamente y comprobar, una vez agotada esa derivación, si el estado resultante exigía alguna actuación posterior.
+
+### Cambios principales
+
+Durante esta etapa:
+
+- se reconstruyó y auditó `PRODUCT.md`;
+- se consolidó `PV-001` como primera vertical de producto;
+- se derivó `R-PV001-001` como primera realización experimental;
+- se formularon y construyeron dispositivos experimentales destinados a evaluar la candidata;
+- se identificaron y redujeron progresivamente las pérdidas aparecidas durante dicha evaluación;
+- se mantuvieron congeladas las decisiones experimentales cuando su modificación habría convertido la evaluación en reparación retrospectiva;
+- se cerró la investigación de `R-PV001-001` sin establecer que la candidata satisficiera `CR-PV001-01`;
+- se comprobó que ese resultado no falsaba `PV-001` ni `CR-PV001-01`;
+- y se examinó si del estado resultante podía derivarse alguna actuación posterior necesaria.
+
+### Decisiones principales
+
+La evaluación de una candidata no obliga a repararla hasta obtener un resultado favorable.
+
+El fracaso probatorio de una realización concreta tampoco deriva automáticamente:
+
+```text
+otra realización
+PV-002
+reapertura de investigación fundamental
+Engineering
+Architecture
+Implementation
+```
+
+La existencia de cuerpos incompletos, posibilidades todavía no exploradas o situaciones potencialmente valiosas tampoco constituye por sí misma fundamento suficiente para continuar la derivación.
+
+Toda actuación posterior deberá disponer de un fundamento positivo independiente perteneciente al cuerpo competente.
+
+### Resultado
+
+La secuencia alcanzada puede resumirse así:
+
+```text
+PRODUCT.md
+        ↓
+PV-001
+        ↓
+R-PV001-001
+        ↓
+evaluación no reparadora
+        ↓
+satisfacción de CR-PV001-01
+no establecida
+        ↓
+investigación cerrada
+        ↓
+búsqueda de actuación posterior
+        ↓
+ninguna actuación actualmente derivada
+```
+
+`R-PV001-001` queda conservada como candidata derivada y evaluada dentro de su alcance histórico.
+
+Su evaluación no permite establecer su satisfacción de `CR-PV001-01`, pero tampoco proporciona fundamento para modificarla retrospectivamente, sustituirla automáticamente o derivar una sucesora.
+
+El proyecto alcanza así un estado legítimo en el que no existe actualmente una actuación siguiente obligatoria.
+
+Este estado no declara terminado ni completo el proyecto.
+
+Una actuación futura podrá abrirse cuando aparezca una pérdida concreta, nueva evidencia, una dependencia necesaria, una incompatibilidad, una nueva situación justificadamente seleccionada por Product u otro fundamento independiente suficiente dentro del cuerpo competente.
+
+### Dificultades encontradas
+
+La principal dificultad consistió en distinguir entre:
+
+```text
+algo todavía no resuelto
+```
+
+y:
+
+```text
+una obligación actualmente derivada de resolverlo.
+```
+
+Durante la investigación aparecieron numerosas preguntas que podían continuar desarrollándose, pero su mera formulabilidad no demostraba que pertenecieran al camino necesario de evaluación de la candidata.
+
+Fue necesario reconstruir repetidamente la genealogía de las obligaciones para impedir que nuevas preguntas, criterios o construcciones adquirieran autoridad únicamente por haber surgido durante la investigación.
+
+La misma distinción resultó necesaria al finalizar la evaluación: la incompletitud del proyecto no podía utilizarse como fundamento circular para exigir que siempre existiera una siguiente actuación.
+
+### Lecciones aprendidas
+
+Una investigación puede alcanzar un resultado metodológicamente válido sin producir una candidata favorable ni una actuación posterior.
+
+La ausencia de una siguiente actuación derivada constituye un estado posible del proyecto y no una pérdida que deba repararse por sí misma.
+
+La continuidad del trabajo debe derivarse de una necesidad demostrada y no del hecho de que todavía sea posible formular nuevas preguntas.
+
+La trazabilidad exige conservar no sólo por qué se realizó una actuación, sino también por qué, llegado un determinado estado, **no se encuentra justificado realizar otra**.
+
 # 4. Ideas pendientes de maduración
 
 ## 4.1 Evaluación de la consistencia del conocimiento
@@ -148,3 +264,399 @@ anotaciones;
 traducción;
 lectura en voz alta;
 comparación de versiones.
+
+---
+
+---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+19/08/2026
+
+## Actuación
+
+Reconstrucción y auditoría de `ROADMAP.md`.
+
+### Situación inicial
+
+Tras la reconstrucción y consolidación de `PRODUCT.md`, la investigación de `PV-001` y la determinación del estado global del proyecto, se estableció que actualmente no existe ninguna actuación siguiente cuya necesidad haya quedado derivada del estado consolidado.
+
+La auditoría posterior de `ROADMAP.md` mostró que el documento conservaba líneas estratégicas procedentes mayoritariamente del escenario anterior de la Todo App, entre ellas posibles evoluciones de arquitectura, dominio, funcionalidad, infraestructura, calidad y documentación.
+
+También conservaba una sección de ideas en evaluación relativa a posibles desarrollos futuros.
+
+La existencia histórica de estas propuestas no demostraba su vigencia estratégica respecto del producto actualmente consolidado.
+
+---
+
+### Problema detectado
+
+Debía determinarse si:
+
+```text
+ROADMAP.md
+→ exige mantener alguna línea estratégica concreta vigente
+```
+
+o si:
+
+```text
+líneas estratégicas concretas vigentes
+→ pueden ser ∅
+```
+
+sin que ello constituya:
+
+- una incompletitud documental;
+- una obligación de buscar nuevas líneas;
+- una obligación de seleccionar una nueva vertical de Product;
+- ni una obligación de derivar una nueva actuación del proyecto.
+
+También debía determinarse el estatuto de las líneas e ideas históricas cuya vigencia actual no había quedado demostrada.
+
+---
+
+### Resultado de la auditoría
+
+No se identificó ningún compromiso que obligue a `ROADMAP.md` a contener permanentemente al menos una línea estratégica concreta.
+
+Se estableció:
+
+```text
+ROADMAP.md
+→ puede existir legítimamente
+
+líneas estratégicas concretas vigentes
+→ pueden ser ∅
+```
+
+La ausencia de líneas estratégicas vigentes:
+
+```text
+↛ incompletitud documental
+
+↛ cierre del proyecto
+
+↛ agotamiento de posibilidades futuras
+
+↛ obligación de buscar una nueva línea
+
+↛ obligación de determinar una nueva actuación
+```
+
+La existencia del Roadmap conserva una responsabilidad independiente aunque actualmente no exista ninguna línea concreta que deba ocuparlo.
+
+---
+
+### Estatuto consolidado de `ROADMAP.md`
+
+La responsabilidad vigente de `ROADMAP.md` queda limitada a registrar aquellas líneas estratégicas de evolución cuya vigencia haya quedado suficientemente justificada respecto del estado consolidado del proyecto.
+
+Se establece:
+
+```text
+ROADMAP.md
+→ carácter orientativo
+→ no normativo
+→ no determina automáticamente prioridades
+→ no determina automáticamente actuaciones
+→ no determina automáticamente qué cuerpo debe intervenir
+```
+
+Una línea estratégica:
+
+```text
+↛ compromiso de Product
+
+↛ obligación de implementación
+
+↛ prioridad automática
+
+↛ siguiente actuación justificable
+```
+
+Toda incorporación futura requerirá una justificación independiente suficiente.
+
+---
+
+### Criterio de incorporación
+
+Se consolidó la relación:
+
+```text
+propuesta o posibilidad
+        ↓
+justificación independiente
+respecto del estado vigente
+        ↓
+reconocimiento de relevancia estratégica
+        ↓
+incorporación a ROADMAP.md
+```
+
+No constituyen fundamento suficiente por sí solos:
+
+```text
+existencia histórica
+↛ vigencia estratégica
+
+posibilidad técnica
+↛ vigencia estratégica
+
+compatibilidad con la implementación existente
+↛ vigencia estratégica
+
+posibilidad futura
+↛ vigencia estratégica
+```
+
+La ausencia de contenido estratégico concreto tampoco constituye fundamento para introducir artificialmente una nueva línea.
+
+---
+
+### Tratamiento de las líneas históricas
+
+Las líneas estratégicas procedentes del Roadmap anterior fueron retiradas del estado vigente porque su pertinencia respecto del producto actualmente consolidado no había sido demostrada.
+
+Su retirada:
+
+```text
+↛ falsación
+
+↛ imposibilidad futura
+
+↛ descarte definitivo
+```
+
+Establece únicamente:
+
+```text
+vigencia estratégica actual
+→ no demostrada
+```
+
+No se realizó una reevaluación individual de dichas líneas, porque la reconstrucción documental no exigía determinar si podrían resultar útiles en algún estado futuro del proyecto.
+
+El contenido literal anterior permanece preservado mediante la historia del sistema de control de versiones.
+
+---
+
+### Tratamiento de las ideas en evaluación
+
+Las ideas anteriormente incluidas en la sección de evaluación de `ROADMAP.md` fueron retiradas del documento vigente.
+
+Se comprobó que no se encontraban actualmente registradas como propuestas identificables en `DESIGN_JOURNAL.md`.
+
+No fueron trasladadas automáticamente.
+
+Se estableció:
+
+```text
+retirada de ROADMAP.md
+↛ incorporación automática a DESIGN_JOURNAL.md
+```
+
+porque dicho traslado habría atribuido nuevamente a esas propuestas un estatuto de posibilidad viva en evaluación cuya pertinencia respecto del estado actual tampoco había sido demostrada.
+
+Su existencia histórica permanece preservada mediante el sistema de control de versiones.
+
+---
+
+### Reconstrucción de `ROADMAP.md`
+
+`ROADMAP.md` fue reconstruido conservando exclusivamente:
+
+- su propósito;
+- su responsabilidad;
+- su estatuto no normativo;
+- el criterio de incorporación de futuras líneas;
+- la relación con los demás documentos;
+- los principios de mantenimiento;
+- y la declaración explícita de su estado actual.
+
+El resultado vigente establece:
+
+```text
+líneas estratégicas concretas vigentes
+→ ninguna actualmente
+```
+
+y:
+
+```text
+ausencia de líneas
+→ estado legítimo
+→ no constituye incompletitud
+→ no genera obligación de búsqueda
+```
+
+---
+
+### Auditoría interna
+
+El documento reconstruido fue sometido a una búsqueda específica destinada a localizar restos semánticos de las antiguas líneas estratégicas o formulaciones que pudieran reintroducir:
+
+- evolución prevista;
+- prioridades;
+- continuidad obligatoria;
+- soluciones técnicas concretas;
+- funcionalidades históricas;
+- infraestructura anticipada;
+- o una obligación de determinar la siguiente actuación.
+
+No se localizaron restos de las antiguas líneas concretas.
+
+Las referencias supervivientes a prioridad, implementación y siguiente actuación poseen carácter restrictivo y establecen precisamente que `ROADMAP.md` no posee autoridad para determinarlas automáticamente.
+
+La auditoría interna se considera superada.
+
+---
+
+### Propagación documental
+
+Se auditó la propagación del nuevo estatuto de `ROADMAP.md` sobre los documentos que lo referencian.
+
+Se determinó:
+
+```text
+ARCHITECTURE.md
+→ descripción compatible
+→ sin modificación
+
+DEVELOPMENT_GUIDE.md
+→ descripción compatible
+→ sin modificación
+
+DESIGN_JOURNAL.md
+→ relación documental compatible
+→ sin modificación
+
+AUDITORIA_GLOBAL_DEL_PROYECTO.md
+→ evidencia histórica
+→ sin modificación
+
+PROJECT_JOURNAL.md
+→ contenido histórico conservado
+→ nueva ficha añadida
+```
+
+Se modificó:
+
+```text
+TESTING.md
+```
+
+para eliminar la atribución de una «evolución prevista del proyecto» y describir `ROADMAP.md` conforme a su responsabilidad vigente.
+
+También se modificó:
+
+```text
+PROJECT_STATUS.md
+```
+
+porque todavía presentaba la revisión de `ROADMAP.md` como una actuación pendiente.
+
+El estado declarado fue actualizado para reflejar que el Roadmap ha sido reconstruido y que actualmente no existe ninguna línea estratégica concreta vigente.
+
+---
+
+### Estado resultante
+
+```text
+ROADMAP.md
+→ reconstruido
+→ auditado
+→ carácter no normativo
+→ responsabilidad vigente
+
+líneas estratégicas concretas vigentes
+→ ninguna actualmente
+
+líneas históricas anteriores
+→ retiradas del estado vigente
+→ no declaradas falsas
+→ preservadas históricamente
+
+ideas históricas en evaluación
+→ retiradas
+→ no trasladadas automáticamente
+→ preservadas históricamente
+
+TESTING.md
+→ propagación realizada
+
+PROJECT_STATUS.md
+→ propagación realizada
+
+auditoría interna de ROADMAP.md
+→ superada
+
+auditoría de propagación
+→ superada
+```
+
+---
+
+### Consecuencia sobre el estado global
+
+La reconstrucción de `ROADMAP.md` no produce una nueva actuación material del proyecto.
+
+Por el contrario, confirma documentalmente el resultado previamente alcanzado:
+
+```text
+estado consolidado
+        ↓
+compromisos vigentes
+        ↓
+actuaciones actualmente necesarias
+        ↓
+ninguna nueva actuación derivada
+```
+
+La ausencia actual de una actuación siguiente no constituye una pérdida que deba repararse.
+
+Tampoco obliga a utilizar `ROADMAP.md`, `DESIGN_JOURNAL.md`, Product u otro cuerpo como mecanismo para generar artificialmente una nueva dirección de trabajo.
+
+---
+
+### Punto de continuación
+
+No queda prescrita una nueva actuación por continuidad documental.
+
+Cualquier actuación posterior deberá partir de una necesidad, pérdida, compromiso, oportunidad suficientemente justificada u otro fundamento identificable que aparezca respecto del estado consolidado.
+
+Hasta que exista dicho fundamento:
+
+```text
+siguiente actuación actualmente derivada
+→ ninguna
+```
+
+Este resultado constituye un estado legítimo del proyecto y no una obligación pendiente de resolución.
+
+---
+
+---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+19/08/2026
+
+## Actuación
+
+Cierre de la auditoría global de continuidad del proyecto.
+
+### Situación inicial
+
+La determinación de la siguiente actuación justificable a partir del estado consolidado del proyecto había producido un resultado negativo legítimo:
+
+```text
+siguiente actuación actualmente derivada
+→ ninguna
+```
+
+---

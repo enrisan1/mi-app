@@ -278,7 +278,7 @@ Reglas generales tipográficas:
 - Reservar las negritas para destacar conceptos importantes.
 - Usar el punto final solo en listas cuyos elementos sean frases completas.
 
-Los documentos que describen información dependiente del estado del proyecto deberán actualizarse inmediatamente después de completar una fase significativa del desarrollo. En particular, `PROJECT_STATUS.md` deberá reflejar siempre el estado vigente del proyecto, el punto de reanudación y el siguiente objetivo.
+Los documentos que describen información dependiente del estado del proyecto deberán actualizarse inmediatamente después de completar una fase significativa del desarrollo. En particular, `PROJECT_STATUS.md` deberá reflejar siempre el estado vigente del proyecto y, cuando hayan quedado justificadamente establecidos, el punto de reanudación y el siguiente objetivo.
 
 Las referencias incluidas en `PROJECT_JOURNAL.md` deberán preservar el contexto histórico de cada hito, aunque describan documentos, estructuras o decisiones que posteriormente hayan evolucionado o dejado de existir.
 
@@ -338,6 +338,8 @@ Las herramientas concretas utilizadas para estas validaciones se describen en lo
 Cuando una modificación altere el comportamiento del sistema, deberá verificarse que la funcionalidad implementada responde al objetivo previsto y que no afecta negativamente al resto del producto.
 
 Siempre que resulte necesario, esta validación deberá apoyarse en nuevas pruebas o en la actualización de las existentes.
+
+Cuando la implementación deba satisfacer criterios, contratos o condiciones definidos documentalmente, las pruebas utilizadas como evidencia deberán preservar la trazabilidad entre criterio y verificación establecida en `TESTING.md`.
 
 ## 8.3 Validación documental
 
@@ -414,19 +416,19 @@ La organización documental del proyecto distribuye las responsabilidades entre 
 
 En particular:
 
-| Documento              | Responsabilidad principal                                                               |
-| ---------------------- | --------------------------------------------------------------------------------------- |
-| `INTRODUCTION.md`      | Guía de navegación y organización general de la documentación del proyecto.             |
-| `GLOSSARY.md`          | Definición de la terminología común utilizada en toda la documentación del proyecto.    |
-| `VISION.md`            | Propósito del proyecto, principios fundamentales y dirección estratégica a largo plazo. |
-| `PRODUCT.md`           | Definición funcional del producto, su modelo conceptual y sus capacidades.              |
-| `ARCHITECTURE.md`      | Organización técnica del sistema, principios arquitectónicos y decisiones de diseño.    |
-| `DEVELOPMENT_GUIDE.md` | Proceso de desarrollo, convenciones de trabajo y organización del repositorio.          |
-| `TESTING.md`           | Estrategia de pruebas, organización del testing y criterios de validación.              |
-| `AGENTS.md`            | Instrucciones operativas para los agentes de desarrollo que colaboran en el proyecto.   |
-| `PROJECT_STATUS.md`    | Estado actual del proyecto, funcionalidades implementadas y punto de reanudación.       |
-| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones adoptadas.                        |
-| `ROADMAP.md`           | Líneas estratégicas y posibles evoluciones futuras.                                     |
-| `DESIGN_JOURNAL.md`    | Ideas, hipótesis y propuestas de diseño pendientes de evaluación o incorporación.       |
+| Documento              | Responsabilidad principal                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `INTRODUCTION.md`      | Guía de navegación y organización general de la documentación del proyecto.                                       |
+| `GLOSSARY.md`          | Definición de la terminología común utilizada en toda la documentación del proyecto.                              |
+| `VISION.md`            | Propósito del proyecto, principios fundamentales y dirección estratégica a largo plazo.                           |
+| `PRODUCT.md`           | Definición funcional del producto, su modelo conceptual y sus capacidades.                                        |
+| `ARCHITECTURE.md`      | Organización técnica del sistema, principios arquitectónicos y decisiones de diseño.                              |
+| `DEVELOPMENT_GUIDE.md` | Proceso de desarrollo, convenciones de trabajo y organización del repositorio.                                    |
+| `TESTING.md`           | Estrategia de pruebas, organización del testing y criterios de validación.                                        |
+| `AGENTS.md`            | Instrucciones operativas para los agentes de desarrollo que colaboran en el proyecto.                             |
+| `PROJECT_STATUS.md`    | Estado actual del proyecto y actuaciones o puntos de reanudación que hayan quedado justificadamente establecidos. |
+| `PROJECT_JOURNAL.md`   | Registro histórico del desarrollo y de las decisiones adoptadas.                                                  |
+| `ROADMAP.md`           | Líneas estratégicas y posibles evoluciones futuras.                                                               |
+| `DESIGN_JOURNAL.md`    | Ideas, hipótesis y propuestas de diseño pendientes de evaluación o incorporación.                                 |
 
 Esta distribución permite que cada documento mantenga una responsabilidad claramente definida, evitando duplicidades y favoreciendo que el conocimiento del proyecto pueda consultarse, mantenerse y evolucionar de forma coherente.

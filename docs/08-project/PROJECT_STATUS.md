@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 08/08/2026
+**Fecha de actualización:** 19/08/2026
 
 ## Índice
 
@@ -9,8 +9,8 @@
 3. Estado de la implementación existente
 4. Estado técnico y científico
 5. Historial reciente
-6. Punto de reanudación
-7. Próximo objetivo
+6. Estado de reanudación
+7. Últimos objetivos completados
 8. Principios consolidados
 
 ---
@@ -21,7 +21,11 @@ Este documento ofrece una visión actualizada del estado del proyecto y constitu
 
 Su responsabilidad consiste exclusivamente en declarar el estado vigente.
 
-La justificación detallada de dicho estado se encuentra distribuida entre los cuerpos documentales responsables y, en particular, en `AUDITORIA_GLOBAL_DEL_PROYECTO.md`, que establece el resultado de la última auditoría transversal realizada sobre el proyecto.
+La justificación detallada de dicho estado se encuentra distribuida entre los cuerpos documentales responsables.
+
+`AUDITORIA_GLOBAL_DEL_PROYECTO.md` conserva la justificación del cambio de fase que permitió abandonar la investigación fundamental como actividad principal e iniciar la reconstrucción del producto.
+
+La determinación posterior de la siguiente actuación justificable y la auditoría global de continuidad han confirmado que actualmente no existe ninguna actuación siguiente derivada ni ninguna obligación transversal vigente que exija producirla.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -56,15 +60,34 @@ reconstrucción del producto
 PV-001
         ✔ consolidada
         ↓
+R-PV001-001
+        ✔ derivada y evaluada
+        ↓
+satisfacción de CR-PV001-01
+        no establecida
+        ↓
 determinación de la siguiente actuación justificable
-        ?
+        ✔ completada
+        ↓
+siguiente actuación actualmente derivada
+        ninguna
 ```
 
-Esto no significa que la investigación haya terminado.
+La evaluación de `R-PV001-001` no ha falsado `PV-001` ni `CR-PV001-01`, pero tampoco ha permitido establecer probatoriamente que la candidata satisfaga dicho criterio.
 
-Los cuerpos teóricos permanecen abiertos a nuevas investigaciones cuando aparezca una pérdida concreta que no pueda resolverse mediante los resultados ya consolidados.
+El resultado no deriva por sí mismo una obligación de reparar la candidata, construir una nueva realización, seleccionar una nueva vertical ni abrir otra investigación.
 
-El proyecto entra así en una nueva etapa: **derivar la siguiente actuación justificable a partir de los compromisos de producto ya consolidados, sin presuponer qué cuerpo deberá intervenir ni restaurar como normativa la secuencia histórica hacia Engineering, Architecture, Realization o Implementation.**
+La revisión posterior del estado consolidado tampoco ha identificado ningún compromiso superior que exija generar una nueva actuación por el mero hecho de que el proyecto permanezca incompleto, existan posibilidades todavía no exploradas o no haya actualmente una actuación siguiente derivada.
+
+Esto no significa que la investigación haya terminado ni que el proyecto se encuentre completo.
+
+Los cuerpos teóricos permanecen abiertos a nuevas investigaciones cuando aparezca una pérdida concreta que no pueda resolverse mediante los resultados ya consolidados, y podrán aparecer nuevas actuaciones cuando exista un fundamento positivo independiente que justifique su apertura.
+
+El proyecto alcanza así un estado legítimo en el que **no existe actualmente una siguiente actuación derivada**.
+
+Este estado no constituye una clausura definitiva.
+
+Una actuación posterior deberá justificarse a partir de nueva evidencia, una pérdida concreta, una dependencia necesaria demostrada, una nueva selección debidamente justificada dentro de Product u otro fundamento independiente perteneciente al cuerpo competente, sin restaurar como normativa la secuencia histórica hacia Engineering, Architecture, Realization o Implementation.
 
 ---
 
@@ -288,9 +311,13 @@ La documentación de producto ha sido sometida a revisión y reconstrucción a p
 
 `PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y la primera vertical consolidada `PV-001`.
 
-`PROJECT_STATUS.md` se actualiza mediante el presente documento para reflejar el estado resultante de dicha reconstrucción.
+`PROJECT_STATUS.md` refleja el estado global vigente del proyecto, incluyendo los resultados posteriores a la reconstrucción de Product que hayan modificado dicho estado.
 
-`ROADMAP.md` conserva carácter no normativo y deberá revisarse únicamente cuando exista justificación suficiente para determinar qué propuestas históricas continúan siendo pertinentes respecto del producto actualmente consolidado.
+`ROADMAP.md` conserva carácter no normativo y ha sido reconstruido respecto del estado actualmente consolidado del proyecto.
+
+Las líneas estratégicas históricas cuya vigencia no había sido demostrada han sido retiradas del estado vigente sin ser declaradas falsas ni trasladadas automáticamente a otros documentos.
+
+Actualmente no existe ninguna línea estratégica concreta vigente. Esta ausencia no constituye una incompletitud documental ni genera por sí misma la obligación de identificar una nueva línea o una nueva actuación.
 
 **Estado:** reconstrucción documental de Product completada respecto del alcance actual; evolución posterior abierta a nueva justificación.
 
@@ -371,35 +398,67 @@ El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bit�
 
 ---
 
-# 6. Punto de reanudación
+# 6. Estado de reanudación
 
 La auditoría global del proyecto se encuentra cerrada.
 
 La reconstrucción de `PRODUCT.md` derivada de sus resultados también ha sido completada y auditada.
 
-Como resultado de dicha reconstrucción:
+A partir del compromiso consolidado por `PV-001` se derivó y desarrolló la investigación correspondiente a `R-PV001-001`.
+
+La evaluación final de dicha candidata no ha falsado:
 
 ```text
-PRODUCT.md
-        ✔ reconstruido y auditado
-        ↓
 PV-001
-        ✔ consolidada
+CR-PV001-01
 ```
 
-No se encuentra justificado continuar automáticamente con Engineering, Architecture, Realization o Implementation por el mero hecho de que esos cuerpos formen parte de la secuencia histórica del proyecto.
+pero tampoco ha permitido establecer probatoriamente que:
 
-Tampoco procede ampliar preventivamente los fundamentos ni reabrir investigaciones consolidadas mientras no aparezca una pérdida concreta que lo justifique.
+```text
+R-PV001-001
+```
 
-El punto de reanudación vigente consiste en **determinar cuál es la siguiente actuación justificable a partir del compromiso establecido por `PV-001`**.
+satisfaga:
 
-La investigación deberá comenzar preguntando qué diferencia debe ser necesariamente realizable para satisfacer dicho compromiso sin introducir estructura, semántica o responsabilidades que Product no haya justificado.
+`CR-PV001-01`.
 
-Sólo después de identificar esa necesidad deberá determinarse qué cuerpo posee competencia para tratarla.
+La insuficiencia probatoria de la candidata ha quedado localizada sin introducir una obligación de reparación, una nueva realización ni una nueva vertical.
+
+La revisión posterior del estado resultante tampoco ha identificado ningún compromiso vigente que exija actualmente:
+
+- `R-PV001-002`
+- `PV-002`
+- una nueva operacionalización
+- una nueva investigación fundamental
+- ni otra actuación concreta.
+
+La ausencia de una actuación actualmente derivada no implica:
+
+- que el proyecto se encuentre completo;
+- que PV-001 haya dejado de estar vigente;
+- que no puedan seleccionarse posteriormente nuevas verticales;
+- que no puedan aparecer nuevas pérdidas;
+- ni que los cuerpos consolidados hayan quedado definitivamente clausurados.
+
+Implica exclusivamente que el estado actualmente consolidado no proporciona por sí mismo fundamento suficiente para imponer una nueva actuación.
+
+Por tanto:
+
+siguiente actuación actualmente derivada
+→ ninguna
+
+No se encuentra justificado continuar automáticamente con Engineering, Architecture, Realization o Implementation por continuidad con la secuencia histórica del proyecto.
+
+Tampoco procede abrir una nueva realización, seleccionar una nueva vertical, ampliar preventivamente los fundamentos o reabrir investigaciones consolidadas por la mera necesidad de mantener el proyecto en movimiento.
+
+Una actuación posterior deberá disponer de un fundamento positivo independiente que justifique su apertura dentro del cuerpo competente.
+
+El proyecto queda, por tanto, en un estado legítimo sin actuación siguiente actualmente derivada y permanece abierto a reanudación cuando aparezca un fundamento que permita justificarla.
 
 ---
 
-# 7. Último objetivo completado
+# 7. Últimos objetivos completados
 
 ## Reconstrucción de `PRODUCT.md`
 
@@ -474,6 +533,60 @@ Implementation
 ```
 
 La siguiente actuación deberá justificarse a partir del estado actualmente consolidado y no por continuidad con la secuencia histórica anterior.
+
+## Determinación de la actuación derivada de `PV-001`
+
+Tras la reconstrucción y consolidación de `PRODUCT.md`, el proyecto investigó qué actuación podía derivarse justificadamente del compromiso establecido por `PV-001` sin presuponer la continuidad de la secuencia histórica entre cuerpos.
+
+La investigación condujo a la derivación y evaluación de:
+
+```text
+R-PV001-001
+```
+
+respecto de:
+
+`CR-PV001-01`.
+
+La candidata fue sometida a construcción, control crítico y evaluación probatoria.
+
+El resultado final conserva:
+
+`PV-001`
+→ no falsada
+
+`CR-PV001-01`
+→ no falsado
+
+`R-PV001-001`
+→ satisfacción no establecida
+
+sin derivar de ese resultado una obligación de reparación de la candidata.
+
+La revisión del estado resultante comprobó además que no existe actualmente una actuación posterior cuya necesidad pueda derivarse por el mero hecho de haber concluido esta investigación.
+
+En particular:
+
+`R-PV001-002`
+→ no derivada
+
+`PV-002`
+→ no derivada
+
+nueva investigación fundamental
+→ no derivada
+
+otra actuación necesaria
+→ no localizada
+
+La determinación de la siguiente actuación justificable queda así completada con un resultado negativo legítimo:
+
+siguiente actuación actualmente derivada
+→ ninguna
+
+Este resultado no declara completo ni terminado el proyecto.
+
+Establece únicamente que cualquier actuación posterior deberá justificarse mediante un fundamento positivo independiente.
 
 ---
 
@@ -615,6 +728,11 @@ Implementation
 Auditoría global
     ✔ cerrada — 08/08/2026
 
+Auditoría global de continuidad
+    ✔ cerrada — 19/08/2026
+    → ninguna obligación transversal de continuación localizada
+    → conserva el estado sin siguiente actuación actualmente derivada
+
 Todo App
     ✔ implementación funcional
     → patrimonio experimental
@@ -627,6 +745,15 @@ PV-001
     ✔ valor justificado consolidado
     ✔ compromiso consolidado
 
+R-PV001-001
+    ✔ investigación cerrada
+    → satisfacción de CR-PV001-01 no establecida
+    → sin reparación ni sucesora automáticamente derivada
+
+Siguiente actuación
+    ○ ninguna actualmente derivada
+    ↺ reanudable ante fundamento positivo independiente
+
 Design Journal
     ✔ responsabilidad vigente
     ◐ contenido histórico pendiente de reevaluación
@@ -636,13 +763,11 @@ Arquitectura del nuevo producto
     ○ todavía no derivada
 ```
 
-## Punto exacto de continuación
+## Condición de reanudación
 
-> **Determinar cuál es la siguiente actuación justificable del proyecto a partir de `PRODUCT.md` ya reconstruido y de `PV-001`, sin presuponer que la secuencia histórica hacia Engineering, Architecture, Realization o Implementation continúa siendo normativa.**
+La determinación de la siguiente actuación justificable a partir de `PRODUCT.md` y de `PV-001` ha sido completada.
 
-La determinación deberá comprobar qué cuerpo posee competencia sobre el siguiente problema real que aparezca.
-
-El punto de partida vigente es:
+El estado resultante es:
 
 ```text
 fundamento consolidado
@@ -651,12 +776,30 @@ PRODUCT.md reconstruido
         ↓
 PV-001 consolidada
         ↓
-¿qué diferencia debe realizarse ahora
-y qué cuerpo tiene competencia sobre ella?
+R-PV001-001 derivada y evaluada
         ↓
-SIGUIENTE INVESTIGACIÓN
+satisfacción de CR-PV001-01
+no establecida
+        ↓
+ninguna actuación posterior
+actualmente derivada
+        ↓
 ```
 
-La respuesta no se fija anticipadamente en este documento.
+No existe, por tanto, un punto de continuación obligatorio actualmente establecido.
+
+La reanudación del proyecto requerirá la aparición o identificación de un fundamento positivo independiente que justifique una nueva actuación dentro del cuerpo competente.
+
+Dicho fundamento podrá proceder, entre otros casos compatibles con los compromisos ya consolidados, de:
+
+- una pérdida concreta;
+- nueva evidencia relevante;
+- una dependencia necesaria demostrada;
+- una incompatibilidad entre compromisos;
+- o una nueva situación cuya selección como compromiso de Product quede independientemente justificada.
+
+La mera incompletitud del proyecto, la existencia de posibilidades todavía no exploradas o el hecho de no disponer actualmente de una actuación siguiente no constituyen por sí mismos fundamento suficiente para reanudar la derivación.
+
+La ausencia de un punto de continuación obligatorio no constituye una declaración de completitud ni de terminación definitiva del proyecto.
 
 ---
