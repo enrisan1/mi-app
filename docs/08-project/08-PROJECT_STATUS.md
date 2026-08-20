@@ -347,13 +347,19 @@ Deberán adaptarse cuando exista una nueva arquitectura software concreta.
 
 ## Design Journal
 
-`DESIGN_JOURNAL.md` conserva su responsabilidad como espacio de incubación para ideas, hipótesis y propuestas que todavía no forman parte de la documentación normativa del proyecto.
+`05-DESIGN_JOURNAL.md` conserva su responsabilidad como espacio de incubación para ideas, hipótesis y propuestas que todavía no forman parte de la documentación normativa del proyecto.
 
-Parte de su contenido procede de etapas anteriores de la evolución conceptual y deberá tratarse como conjunto de hipótesis históricas susceptibles de reevaluación o rederivación.
+El corpus histórico reconstruido del Design Journal ha sido sometido a una auditoría sistemática respecto del Product actualmente consolidado.
 
-Su contenido no constituye una especificación vigente del producto, del dominio ni de la arquitectura.
+La auditoría no ha identificado ningún residuo positivo independiente que justifique actualmente un nuevo compromiso de Product, una modificación de `PV-001` o la derivación de `PV-002`.
 
-**Estado:** responsabilidad vigente; contenido histórico sujeto a reevaluación.
+Las propuestas históricas permanecen conservadas como registro de la evolución del proyecto, pero su presencia documental no les confiere vigencia normativa ni las convierte en trabajo pendiente.
+
+La justificación completa del cierre se conserva en `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
+
+El Design Journal mantiene abierta su responsabilidad como espacio de incubación: nuevas propuestas podrán incorporarse y las propuestas históricas podrán reabrirse cuando aparezca un fundamento positivo independiente.
+
+**Estado:** responsabilidad vigente; corpus histórico auditado y cerrado respecto del Product actualmente consolidado.
 
 ---
 
@@ -391,7 +397,7 @@ Los principales hitos han sido:
 La justificación completa del último cambio de fase se conserva en:
 
 ```text
-docs/08-project/AUDITORIA_GLOBAL_DEL_PROYECTO.md
+docs/08-project/04-AUDITORIA_GLOBAL_DEL_PROYECTO.md
 ```
 
 El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bitácoras específicas de los distintos cuerpos.
@@ -465,7 +471,7 @@ El proyecto queda, por tanto, en un estado legítimo sin actuación siguiente ac
 El objetivo de reconstruir:
 
 ```text
-docs/08-project/PRODUCT.md
+docs/08-project/01-PRODUCT.md
 ```
 
 a partir del fundamento consolidado ha sido completado.
@@ -756,8 +762,10 @@ Siguiente actuación
 
 Design Journal
     ✔ responsabilidad vigente
-    ◐ contenido histórico pendiente de reevaluación
-    → no normativo
+    ✔ corpus histórico auditado respecto del alcance actual
+    → ningún residuo positivo independiente identificado
+    → contenido histórico no normativo
+    ↺ reabrible ante fundamento positivo independiente
 
 Arquitectura del nuevo producto
     ○ todavía no derivada
@@ -784,6 +792,15 @@ no establecida
 ninguna actuación posterior
 actualmente derivada
         ↓
+Design Journal histórico
+        ↓
+auditoría reconstructiva completada
+        ↓
+ningún residuo positivo independiente
+        ↓
+ninguna modificación de Product
+        ↓
+ninguna nueva actuación derivada
 ```
 
 No existe, por tanto, un punto de continuación obligatorio actualmente establecido.

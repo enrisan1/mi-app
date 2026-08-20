@@ -32,6 +32,40 @@ Las propuestas que alcancen suficiente madurez podrán incorporarse a las línea
 
 Cuando una propuesta sea finalmente adoptada e implementada, su incorporación quedará reflejada en `PROJECT_JOURNAL.md` como parte de la evolución histórica del proyecto.
 
+## 1.1. Estado del corpus histórico auditado
+
+El corpus histórico reconstruido de este documento ha sido sometido a una auditoría sistemática respecto del Product actualmente consolidado.
+
+La auditoría examinó las familias históricas de propuestas intentando determinar si, una vez eliminadas las soluciones concretas mediante las que fueron formuladas, alguna conservaba una posibilidad humana cuya pérdida justificara un nuevo compromiso de Product, la modificación de un compromiso existente o la apertura de una nueva vertical.
+
+El resultado de la auditoría no identificó ningún residuo positivo independiente que requiera actualmente:
+
+- modificar `PRODUCT.md`;
+- modificar `PV-001`;
+- derivar `PV-002`;
+- ni incorporar como compromiso de Product alguna de las capacidades históricas examinadas.
+
+Las propuestas históricas se conservan en este documento como registro de la evolución del proyecto.
+
+Su conservación documental no les confiere vigencia normativa ni las convierte en compromisos, requisitos o líneas de desarrollo pendientes.
+
+La justificación completa de la reevaluación y de su resultado se conserva en `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
+
+### Condición de reapertura
+
+El cierre afecta al corpus histórico auditado y al estado actual de la evidencia.
+
+Una propuesta podrá reabrirse si aparece nueva evidencia capaz de mostrar una pérdida humana concreta que no pueda reducirse a los compromisos vigentes y que proporcione un fundamento positivo independiente de la propia solución histórica.
+
+No constituyen por sí mismos fundamento suficiente para la reapertura:
+
+- la presencia histórica de una propuesta en este documento;
+- su utilidad técnica o conveniencia de implementación;
+- su semejanza con funcionalidades habituales;
+- ni su posible utilidad futura todavía no justificada.
+
+**Estado del corpus histórico auditado:** cerrado respecto del Product actualmente consolidado.
+
 # 2. Hipótesis sobre el producto y su dominio
 
 Este apartado recoge posibles evoluciones del modelo de dominio que podrían incorporarse en el futuro si las necesidades del producto lo justifican.

@@ -1,8 +1,8 @@
 # Auditoría de reconstrucción de `PRODUCT.md`
 
-**Documento auditado:** `docs/08-project/PRODUCT.md`
+**Documento auditado:** `docs/08-project/01-PRODUCT.md`
 
-**Documento antecedente:** `docs/08-project/AUDITORIA_DE_PRODUCTO.md`
+**Documento antecedente:** `docs/08-project/02-AUDITORIA_DE_PRODUCTO.md`
 
 **Estado:** Cerrada
 

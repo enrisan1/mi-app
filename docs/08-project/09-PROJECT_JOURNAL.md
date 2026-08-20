@@ -660,3 +660,105 @@ siguiente actuación actualmente derivada
 ```
 
 ---
+
+## Cierre de la auditoría histórica del Design Journal
+
+**Fecha:** 20/08/2026
+
+### Contexto
+
+Tras la consolidación y auditoría de `PRODUCT.md`, permanecía pendiente reevaluar el corpus histórico de `DESIGN_JOURNAL.md` para determinar si alguna de sus propuestas conservaba una posibilidad humana no recogida por los compromisos vigentes de Product.
+
+La revisión debía realizarse sin recuperar directamente las soluciones históricas como requisitos del producto.
+
+Para ello, cada familia fue reconstruida eliminando primero el vocabulario y los mecanismos mediante los que había sido formulada y buscando después la situación humana que pudiera haberla originado.
+
+### Trabajo realizado
+
+Se realizó una auditoría reconstructiva y falsadora de las familias históricas recuperadas del Design Journal.
+
+La revisión comprendió:
+
+- las familias principales de Participante, Transparencia editorial, Modelo de publicación y Modelo de monetización;
+- el universo histórico candidato reconstruido de «Otras ideas»;
+- las pruebas de eliminación y reducción de las posibilidades candidatas;
+- la investigación transversal `PA-EP-001` sobre el significado de que una persona pueda realizar una actuación;
+- una revisión transversal de los residuos aparecidos durante las auditorías individuales;
+- y una auditoría global final destinada a comprobar si alguna familia conservaba un residuo positivo independiente.
+
+La justificación completa del recorrido queda consolidada en `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
+
+### Resultado
+
+La auditoría no identificó ninguna posibilidad humana irreducible que justifique actualmente un nuevo compromiso de Product.
+
+Las propuestas históricas pudieron:
+
+- reducirse a diferencias o relaciones cuya pertinencia depende de compromisos independientemente justificados;
+- quedar absorbidas por compromisos ya existentes;
+- identificarse como posibles mecanismos de realización;
+- o cerrarse por ausencia de fundamento independiente.
+
+La situación reconstruida detrás de Transparencia editorial quedó absorbida por `PV-001` y no produjo una ampliación independiente.
+
+La investigación transversal `PA-EP-001` tampoco derivó un nuevo compromiso.
+
+### Consecuencias
+
+El cierre produce las siguientes consecuencias:
+
+```text
+PRODUCT.md
+        → sin modificación
+
+PV-001
+        → sin modificación
+
+PV-002
+        → no derivada
+
+corpus histórico auditado
+de DESIGN_JOURNAL.md
+        → cerrado respecto del Product
+          actualmente consolidado
+
+DESIGN_JOURNAL.md
+        → mantiene su responsabilidad
+          como espacio de incubación
+          de nuevas propuestas
+```
+
+Las propuestas históricas permanecen conservadas como registro de la evolución del proyecto, pero su presencia documental no les confiere vigencia normativa ni las convierte en trabajo pendiente.
+
+### Cambios documentales
+
+Como consecuencia del cierre:
+
+- se incorpora `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md` como documento de justificación;
+- se actualiza `05-DESIGN_JOURNAL.md` para declarar el estado de su corpus histórico auditado;
+- se actualiza `08-PROJECT_STATUS.md` para reflejar el nuevo estado del proyecto;
+- `01-PRODUCT.md` permanece sin modificación sustantiva.
+
+La documentación de `08-project` queda además ordenada mediante numeración explícita según su posición dentro del cuerpo documental del proyecto.
+
+### Condición de reapertura
+
+El cierre no implica que Product haya agotado todas las posibilidades humanas que puedan llegar a justificar compromisos futuros.
+
+Una propuesta histórica podrá reabrirse si aparece nueva evidencia capaz de mostrar una pérdida humana concreta que:
+
+1. sobreviva a la eliminación de la solución histórica;
+2. no pueda reducirse a los compromisos vigentes;
+3. y disponga de fundamento positivo independiente.
+
+La utilidad técnica, la presencia histórica de una propuesta o su posible pertinencia futura no constituyen por sí mismas fundamento suficiente para reabrirla.
+
+### Estado
+
+**Auditoría histórica del Design Journal: cerrada.**
+
+**Residuo positivo pendiente: ninguno.**
+
+**Modificación de Product derivada de la auditoría: ninguna.**
+
+---
