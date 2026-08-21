@@ -686,7 +686,7 @@ La revisión comprendió:
 - una revisión transversal de los residuos aparecidos durante las auditorías individuales;
 - y una auditoría global final destinada a comprobar si alguna familia conservaba un residuo positivo independiente.
 
-La justificación completa del recorrido queda consolidada en `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
+La justificación completa del recorrido queda consolidada en `07-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
 
 ### Resultado
 
@@ -734,10 +734,10 @@ Las propuestas históricas permanecen conservadas como registro de la evolución
 
 Como consecuencia del cierre:
 
-- se incorpora `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md` como documento de justificación;
-- se actualiza `05-DESIGN_JOURNAL.md` para declarar el estado de su corpus histórico auditado;
-- se actualiza `08-PROJECT_STATUS.md` para reflejar el nuevo estado del proyecto;
-- `01-PRODUCT.md` permanece sin modificación sustantiva.
+- se incorpora `07-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md` como documento de justificación;
+- se actualiza `06-DESIGN_JOURNAL.md` para declarar el estado de su corpus histórico auditado;
+- se actualiza `09-PROJECT_STATUS.md` para reflejar el nuevo estado del proyecto;
+- `02-PRODUCT.md` permanece sin modificación sustantiva.
 
 La documentación de `08-project` queda además ordenada mediante numeración explícita según su posición dentro del cuerpo documental del proyecto.
 

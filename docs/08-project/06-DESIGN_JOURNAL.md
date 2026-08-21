@@ -49,7 +49,7 @@ Las propuestas históricas se conservan en este documento como registro de la ev
 
 Su conservación documental no les confiere vigencia normativa ni las convierte en compromisos, requisitos o líneas de desarrollo pendientes.
 
-La justificación completa de la reevaluación y de su resultado se conserva en `06-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
+La justificación completa de la reevaluación y de su resultado se conserva en `07-AUDITORIA_HISTORICA_DEL_DESIGN_JOURNAL.md`.
 
 ### Condición de reapertura
 

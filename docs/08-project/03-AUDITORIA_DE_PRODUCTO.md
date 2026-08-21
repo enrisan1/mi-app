@@ -2,7 +2,7 @@
 
 **Fecha de cierre:** 08/08/2026
 
-**Documento auditado:** `docs/08-project/01-PRODUCT.md`
+**Documento auditado:** `docs/08-project/02-PRODUCT.md`
 
 **Resultado:** reconstrucción sustantiva requerida.
 
@@ -433,7 +433,7 @@ Este resultado autoriza el paso desde la auditoría del producto histórico haci
 
 # Próximo paso
 
-Reconstruir `docs/08-project/01-PRODUCT.md` a partir de los resultados consolidados de esta auditoría.
+Reconstruir `docs/08-project/02-PRODUCT.md` a partir de los resultados consolidados de esta auditoría.
 
 La reconstrucción deberá comenzar por:
 

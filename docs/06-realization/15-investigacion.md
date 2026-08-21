@@ -983,7 +983,7 @@ nueva responsabilidad arquitectónica
 
 ### Origen
 
-La investigación se abre a partir de `PV-001`, primera vertical consolidada en `docs/08-project/01-PRODUCT.md`.
+La investigación se abre a partir de `PV-001`, primera vertical consolidada en `docs/08-project/02-PRODUCT.md`.
 
 `PV-001` compromete que aquello que una situación hace disponible pueda intervenir posteriormente de manera que las posibilidades humanas en una situación posterior puedan depender también de lo anteriormente disponible.
 
