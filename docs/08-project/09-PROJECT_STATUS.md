@@ -589,6 +589,49 @@ Establece únicamente que cualquier actuación posterior deberá justificarse me
 
 ---
 
+## Investigación de candidata a segunda vertical de Product
+
+Tras determinar que el estado consolidado no derivaba automáticamente una siguiente actuación, se investigó si existía fundamento positivo independiente para ampliar Product mediante una segunda vertical.
+
+La candidata examinada partió de situaciones en las que una persona continúa actuando apoyándose en algo procedente de situaciones anteriores mientras una variación posterior podría intervenir también en esa actuación.
+
+La candidata fue sometida a reducción mediante falsadores relativos a:
+
+- diferencia humana efectiva;
+- disponibilidad de información;
+- eficiencia y practicabilidad;
+- escala o complejidad;
+- pertinencia;
+- intención;
+- no clausura;
+- y concurrencia de aportaciones procedentes de distintas situaciones.
+
+La investigación eliminó progresivamente como fundamentos independientes la revisabilidad, la respuesta al cambio, la flexibilidad, la adaptabilidad, la pertinencia, la intención y la no clausura.
+
+El residuo final quedó reducido a la posibilidad de que aquello procedente de distintas situaciones anteriores pueda intervenir en una situación posterior.
+
+No se demostró que esa concurrencia constituya por sí misma una diferencia humana independiente respecto de `PV-001`.
+
+El resultado alcanzado es:
+
+```text
+candidata a PV-002
+        ↓
+valor humano independiente no demostrado
+        ↓
+reducción composicional a PV-001
+        ↓
+PV-002 no consolidada
+```
+
+Esta reducción no implica que `PV-001` comprometa toda composición, comparación, síntesis o relación imaginable entre aportaciones anteriores. Cualquier exigencia específica de ese tipo requerirá justificación independiente.
+
+La investigación queda cerrada sin modificar `02-PRODUCT.md`, sin crear `PV-002` y sin derivar una nueva actuación práctica.
+
+Su resultado se encuentra desarrollado en `06-DESIGN_JOURNAL.md` y registrado históricamente en `10-PROJECT_JOURNAL.md`.
+
+---
+
 # 8. Principios consolidados
 
 La evolución del proyecto ha permitido consolidar principios procedentes tanto de su etapa de desarrollo técnico como de la investigación posterior.
@@ -741,6 +784,12 @@ R-PV001-001
     → satisfacción de CR-PV001-01 no establecida
     → sin reparación ni sucesora automáticamente derivada
 
+Candidata a segunda vertical de Product
+    ✔ investigación cerrada
+    → valor humano independiente no demostrado
+    → reducida composicionalmente a PV-001
+    → PV-002 no consolidada
+
 Siguiente actuación
     ○ ninguna actualmente derivada
     ↺ reanudable ante fundamento positivo independiente
@@ -782,6 +831,13 @@ Design Journal histórico
 auditoría reconstructiva completada
         ↓
 ningún residuo positivo independiente
+        ↓
+investigación de candidata
+a segunda vertical
+        ↓
+reducción composicional a PV-001
+        ↓
+PV-002 no consolidada
         ↓
 ninguna modificación de Product
         ↓

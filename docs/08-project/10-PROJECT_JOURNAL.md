@@ -1023,3 +1023,68 @@ La reorganización no deriva por sí misma una nueva actuación de Architecture,
 Concluido este control, cualquier actuación posterior deberá determinarse a partir del estado vigente registrado en `PROJECT_STATUS.md` y de los compromisos que permanezcan abiertos.
 
 No queda prescrita una siguiente actuación por continuidad con la reorganización documental realizada.
+
+---
+
+## Investigación y rechazo de una candidata a segunda vertical de Product
+
+Tras la reorganización documental y la revisión del estado vigente del proyecto, se investigó si existía fundamento positivo para ampliar Product mediante una segunda vertical.
+
+La investigación partió de una posible diferencia humana asociada a situaciones en las que una persona continúa actuando apoyándose en algo procedente de situaciones anteriores mientras aparece una variación posterior que podría intervenir también en esa actuación.
+
+La candidata fue sometida sucesivamente a falsadores relativos a:
+
+- ausencia de diferencia humana;
+- reducción a disponibilidad de información;
+- reducción a eficiencia;
+- dependencia de escala o complejidad;
+- circularidad de la pertinencia;
+- dependencia de la intención de la persona;
+- y generalidad extrínseca de la no clausura.
+
+Durante la reducción se descartaron como fundamentos independientes formulaciones basadas en revisabilidad, respuesta al cambio, flexibilidad, adaptabilidad, pertinencia, intención y no clausura.
+
+El residuo final quedó reducido a la posibilidad de que aquello procedente de distintas situaciones anteriores pueda intervenir en una situación posterior.
+
+No se demostró que la concurrencia de esas aportaciones constituya por sí misma una diferencia humana independiente respecto de `PV-001`.
+
+La candidata quedó por tanto rechazada como segunda vertical:
+
+```text
+candidata a PV-002
+        ↓
+valor humano independiente no demostrado
+        ↓
+reducción composicional a PV-001
+        ↓
+no consolidar PV-002
+```
+
+Este resultado no implica que `PV-001` comprometa toda composición, comparación, síntesis o relación imaginable entre aportaciones anteriores. Cualquier exigencia específica de ese tipo requerirá justificación independiente.
+
+Tampoco se deriva de la investigación una obligación general de flexibilidad, adaptabilidad, revisabilidad o respuesta al cambio.
+
+Como resultado metodológico adicional se preserva la distinción entre:
+
+```text
+posibilidad formal
+        ≠
+posibilidad humanamente practicable
+```
+
+y:
+
+```text
+propiedad necesaria para realizar
+un valor ya seleccionado
+        ≠
+nuevo valor de Product
+```
+
+No se modifica `02-PRODUCT.md` ni se crea `PV-002`.
+
+La investigación queda cerrada y registrada en `06-DESIGN_JOURNAL.md`.
+
+Su cierre tampoco prescribe la búsqueda inmediata de otra vertical ni abre automáticamente una actuación práctica. Cualquier nueva investigación de Product o actuación sobre `PV-001` deberá disponer de fundamento positivo independiente.
+
+---

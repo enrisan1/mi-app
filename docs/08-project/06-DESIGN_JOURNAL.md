@@ -215,3 +215,294 @@ Este apartado recoge propuestas que todavía no encajan claramente en ninguna ca
 A medida que el diario evolucione, estas ideas podrán reorganizarse o trasladarse a nuevos apartados cuando adquieran suficiente entidad.
 
 El objetivo de esta sección es evitar la pérdida de ideas surgidas durante el diseño, manteniendo el diario como un espacio de incubación de futuras evoluciones del proyecto.
+
+---
+
+## Investigación de candidata a segunda vertical de Product — reducción a PV-001
+
+### Pregunta de partida
+
+Se investigó si existía una diferencia humana adicional a `PV-001` asociada a la posibilidad de que una persona, al continuar actuando apoyándose en algo procedente de situaciones anteriores, pudiera incorporar una variación posterior a esa misma continuidad.
+
+La investigación no partió de la presunción de que dicha diferencia constituyera una nueva vertical de Product.
+
+Su objetivo fue intentar demostrar si existía un residuo humano positivo, independiente y justificable que sobreviviera a su reducción a `PV-001`.
+
+### Candidata inicial
+
+La intuición inicial apareció alrededor de situaciones en las que:
+
+```text
+situación anterior
+        ↓
+algo queda disponible
+        ↓
+interviene posteriormente
+        ↓
+la actuación continúa
+
+mientras
+
+ocurre una variación posterior
+        ↓
+que podría incidir
+en cómo continúa la actuación
+```
+
+La cuestión consistía en determinar si poder integrar esa variación en la actuación continuada proporcionaba una diferencia humana no contenida ya en el valor justificado de `PV-001`.
+
+### Falsadores aplicados
+
+La candidata fue sometida sucesivamente a intentos de reducción.
+
+#### F-002 — ausencia de diferencia humana
+
+Se examinó si la diferencia entre poder y no poder incorporar una variación posterior constituía realmente una diferencia para la persona o únicamente una diferencia estructural en la descripción del sistema.
+
+La prueba permitió mantener provisionalmente una diferencia en las posibilidades de actuación, pero no demostró todavía un valor independiente.
+
+#### F-003 — reducción a disponibilidad de información
+
+Se examinó si la diferencia desaparecía cuando toda la información necesaria acerca de la variación permanecía disponible para la persona.
+
+La candidata no pudo justificarse mediante mera disponibilidad informativa.
+
+Se distinguió entre:
+
+```text
+información disponible
+        ≠
+posibilidad practicable de hacerla intervenir
+en una actuación continuada
+```
+
+#### F-004 — reducción a eficiencia
+
+Se examinó si la diferencia consistía únicamente en hacer más fácil, rápida o económica una actuación que ya era posible mediante información, búsqueda, selección y actuación.
+
+La investigación mostró que eficiencia, coste, accesibilidad o practicabilidad pueden afectar a la realizabilidad humana de una posibilidad.
+
+Sin embargo, esa diferencia no demostró por sí misma la existencia de un nuevo valor de Product.
+
+Por tanto:
+
+```text
+dificultad práctica
+        ⇏
+nueva vertical de Product
+```
+
+#### F-005 — dependencia de escala o complejidad
+
+Se examinó si la candidata sólo aparecía cuando una capacidad formalmente existente dejaba de resultar practicable bajo condiciones humanas finitas.
+
+La escala o complejidad no se aceptaron como fundamento constitutivo de una nueva vertical.
+
+Pueden afectar a la realización efectiva de un valor ya seleccionado, pero no demuestran por sí mismas otro valor independiente.
+
+#### F-006 — circularidad de la pertinencia
+
+Se examinó la formulación según la cual la persona debería poder responder a una «variación pertinente».
+
+La noción de pertinencia fue rechazada como fundamento primario porque podía introducir circularmente:
+
+- incidencia;
+- dependencia;
+- corrección;
+- una norma epistemológica;
+- o un criterio técnico previamente asumido.
+
+La candidata pudo reformularse sin utilizar «pertinencia», pero ello desplazó la investigación hacia la intención de la persona de hacer intervenir una variación.
+
+La intención tampoco fue aceptada como fundamento suficiente del valor.
+
+```text
+la persona quiere realizar P
+        ⇏
+P constituye por ello
+un compromiso justificable de Product
+```
+
+#### F-007 — generalidad extrínseca de la no clausura
+
+Tras eliminar pertinencia e intención como fundamentos, apareció provisionalmente una diferencia formulable como ausencia de clausura:
+
+```text
+continuar desde lo anterior
+        +
+poder incorporar una variación posterior
+```
+
+La «no clausura» abstracta fue rechazada como valor específico de Product.
+
+Formulaciones generales como:
+
+- flexibilidad;
+- adaptabilidad;
+- autonomía;
+- preservación de opciones;
+- o capacidad general de responder al cambio
+
+resultaban aplicables indistintamente a multitud de productos y no proporcionaban fundamento suficiente para una nueva vertical.
+
+### Residuo final de la investigación
+
+Eliminados los fundamentos anteriores, el fenómeno quedó reducido a:
+
+```text
+S1 → X
+S2 → Y
+
+X ──┐
+    ↓
+    S3
+    ↑
+Y ──┘
+```
+
+Es decir:
+
+> aquello procedente de distintas situaciones anteriores puede intervenir en una situación posterior.
+
+Se examinó entonces si la intervención conjunta de `X` e `Y` constituía una diferencia humana adicional respecto de `PV-001`.
+
+No se demostró tal independencia.
+
+La multiplicidad de aportaciones anteriores no constituye por sí misma una nueva clase de valor humano.
+
+Interpretada mínimamente, la concurrencia significa que las posibilidades de actuación en una situación posterior pueden depender de aquello que distintas situaciones anteriores hayan hecho disponible.
+
+Esta estructura permanece dentro del espacio de incidencia entre situaciones ya seleccionado por `PV-001`.
+
+### Límite de la reducción
+
+El resultado no establece que `PV-001` exija automáticamente:
+
+```text
+cualquier X
++
+cualquier Y
+        ↓
+cualquier situación posterior
+```
+
+ni que toda relación, composición, comparación o tratamiento conjunto entre elementos anteriormente disponibles esté ya comprometido por Product.
+
+Una exigencia específica de:
+
+- composición;
+- comparación;
+- síntesis;
+- relación;
+- resolución de tensiones;
+- o cualquier otra operación entre aportaciones
+
+requeriría justificación independiente.
+
+Por tanto:
+
+```text
+PV-001
+        ⇏
+toda composición imaginable
+```
+
+pero también:
+
+```text
+composición no explicitada por PV-001
+        ⇏
+nueva vertical de Product
+```
+
+### Resultado
+
+La investigación no ha demostrado una diferencia humana positiva independiente suficiente para justificar una nueva vertical de Product.
+
+El recorrido de reducción puede representarse como:
+
+```text
+revisabilidad fundada
+        ↓
+incidencia ante variaciones
+        ↓
+respuesta practicable
+        ↓
+continuidad ante variación
+        ↓
+no clausura
+        ↓
+concurrencia de aportaciones temporales
+        ↓
+incidencia de elementos procedentes
+de distintas situaciones anteriores
+        ↓
+PV-001
+```
+
+Por tanto, la candidata queda rechazada como segunda vertical.
+
+```text
+candidata a PV-002
+        ↓
+valor humano independiente no demostrado
+        ↓
+reducción composicional a PV-001
+        ↓
+no consolidar PV-002
+```
+
+### Consecuencias para Product
+
+No se crea una ficha `PV-002` en `02-PRODUCT.md`.
+
+No se modifica el compromiso consolidado de `PV-001`.
+
+La investigación tampoco demuestra que Product deba incorporar una obligación general de:
+
+- revisabilidad;
+- respuesta al cambio;
+- flexibilidad;
+- adaptabilidad;
+- no clausura;
+- composición;
+- o tratamiento conjunto de aportaciones anteriores.
+
+Cualquiera de esas propiedades requerirá fundamento positivo independiente si posteriormente aparece como candidata.
+
+### Resultado metodológico adicional
+
+La investigación permite conservar dos distinciones:
+
+```text
+posibilidad formal
+        ≠
+posibilidad humanamente practicable
+```
+
+y:
+
+```text
+propiedad necesaria para realizar
+un valor ya seleccionado
+        ≠
+nuevo valor de Product
+```
+
+La practicabilidad puede resultar relevante al investigar la realización de un compromiso, pero no constituye por sí misma fundamento suficiente para ampliar Product.
+
+### Estado
+
+**Cerrada — candidata rechazada por reducción a `PV-001`.**
+
+No existe fundamento derivado de esta investigación para crear `PV-002` ni para abrir automáticamente una nueva actuación práctica.
+
+### Punto de reanudación
+
+El cierre de esta candidata no prescribe la búsqueda inmediata de otra vertical.
+
+Una nueva investigación de Product deberá abrirse únicamente si aparece fundamento positivo independiente para considerar una situación humana cuya diferencia no esté ya contenida en los compromisos consolidados.
+
+Del mismo modo, una actuación práctica sobre `PV-001` requerirá fundamento independiente adicional si el estado actualmente consolidado continúa sin justificarla.
+
+---
