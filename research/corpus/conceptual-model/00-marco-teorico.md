@@ -1117,7 +1117,11 @@ irrevisable.
 
 # Protocolo de Consolidación Documental
 
-La consolidación documental se rige por `99-protocolo-de-consolidacion-documental.md`.
+La consolidación documental se rige por el Protocolo de Consolidación Documental, cuya referencia canónica vigente se conserva externamente en:
+
+`docs/01-methodology/99-protocolo-de-consolidacion-documental.md`
+
+Su aplicabilidad metodológica al presente corpus no implica pertenencia documental a éste.
 
 El PCD distingue entre investigación y consolidación documental.
 
@@ -1250,10 +1254,18 @@ La estructura principal actualmente consolidada comprende:
         │
 17-indice-general.md
         │
-99-protocolo-de-consolidacion-documental.md
-        │
 16-bitacora-de-consolidacion.md
 ```
+
+El Protocolo de Consolidación Documental mantiene una relación metodológica transversal externa con este conjunto:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
+gobierno documental transversal aplicable
+```
+
+Su posición externa no lo convierte en una competencia interna adicional del corpus.
 
 Este esquema enumera competencias documentales.
 
@@ -1568,7 +1580,7 @@ Los resultados obtenidos son:
 | Ausencia de sesgo eliminativista residual                        | `PASS`    |
 | Simetría entre conservación y eliminación                        | `PASS`    |
 | Compatibilidad con `RM-01…RM-08`                                 | `PASS`    |
-| Compatibilidad con `99-protocolo-de-consolidacion-documental.md` | `PASS`    |
+| Compatibilidad con el PCD metodológico aplicable                  | `PASS`    |
 | Compatibilidad con `17-indice-general.md`                        | `PASS`    |
 | Ausencia de reintroducción de un núcleo universal positivo       | `PASS`    |
 | Capacidad de aceptar resultados abiertos y especializados        | `PASS`    |

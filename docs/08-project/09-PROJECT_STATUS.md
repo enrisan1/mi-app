@@ -87,7 +87,7 @@ El proyecto alcanza así un estado legítimo en el que **no existe actualmente u
 
 Este estado no constituye una clausura definitiva.
 
-Una actuación posterior deberá justificarse a partir de nueva evidencia, una pérdida concreta, una dependencia necesaria demostrada, una nueva selección debidamente justificada dentro de Product u otro fundamento independiente perteneciente al cuerpo competente, sin restaurar como normativa la secuencia histórica hacia Engineering, Architecture, Realization o Implementation.
+Una actuación posterior deberá justificarse a partir de nueva evidencia, una pérdida concreta, una dependencia necesaria demostrada, una nueva selección debidamente justificada dentro de Product u otro fundamento independiente perteneciente al cuerpo competente, sin restaurar como normativa la secuencia histórica hacia Architecture ni reactivar automáticamente Engineering, Realization o Implementation conservados en `research/corpus/`.
 
 ---
 
@@ -251,57 +251,47 @@ La metateoría permanece reabrible ante problemas genuinamente transversales que
 
 ---
 
-## Conceptual Model
+## Corpus de investigación conservado
 
-El núcleo conceptual se encuentra consolidado respecto del alcance actualmente aceptado.
+Las investigaciones históricas correspondientes a Conceptual Model, Governance, Engineering, Realization e Implementation se conservan actualmente bajo:
 
-Existen preguntas abiertas y posibles extensiones, pero ninguna ha demostrado constituir una condición previa para iniciar la reconstrucción del producto.
+```text
+research/corpus/
+```
 
-**Estado:** núcleo consolidado.
+Estos cuerpos mantienen sus resultados, investigaciones, auditorías, preguntas abiertas y estados internos como corpus intelectualmente autónomos.
 
----
+Entre los resultados conservados se encuentran:
 
-## Governance
+- la consolidación del núcleo del Modelo Conceptual respecto de su alcance investigado;
+- la constitución del marco teórico de Governance y sus investigaciones pendientes;
+- las derivaciones estructurales y auditorías desarrolladas en Engineering;
+- los principios y desarrollos parciales investigados en Realization;
+- y las exigencias, competencias, contratos, dependencias y fronteras formuladas en Implementation.
 
-La Teoría del Gobierno Epistemológico dispone de un marco teórico consolidado que delimita su competencia científica.
+La conservación de estos resultados no los convierte automáticamente en cuerpos normativos del proyecto principal ni establece una secuencia necesaria entre ellos.
 
-Sus investigaciones específicas permanecen pendientes.
+Por tanto:
 
-La auditoría global no ha demostrado que su desarrollo completo constituya una condición previa universal para una primera vertical mínima.
+```text
+resultado conservado en research/corpus/
+        ⇏
+compromiso vigente de Product
 
-**Estado:** cuerpo teórico constituido; desarrollo científico pendiente.
 
----
+posición histórica del cuerpo
+        ⇏
+siguiente actuación del proyecto
 
-## Engineering
 
-La arquitectura del núcleo ha sido derivada y sometida a auditorías estructurales y fenomenológicas.
+resultado interno del corpus
+        ⇏
+aplicabilidad automática
+```
 
-Engineering determina responsabilidades arquitectónicas necesarias sin imponer una organización software concreta.
+Cuando una necesidad vigente del proyecto pueda beneficiarse de alguno de estos resultados, su utilización deberá justificarse por su pertinencia, competencia, alcance y aplicabilidad al problema concreto.
 
-**Estado:** consolidado respecto del alcance actual.
-
----
-
-## Realization
-
-Se encuentran establecidos principios generales de realización y parte de sus investigaciones específicas.
-
-Permanecen pendientes desarrollos relativos, entre otros, a contratos, preservación del significado, organización y extensibilidad.
-
-Estas cuestiones constituyen pendientes relevantes, pero no se ha demostrado que bloqueen la definición de una primera vertical.
-
-**Estado:** parcialmente desarrollado.
-
----
-
-## Implementation
-
-Se encuentran establecidas las exigencias realizativas fundamentales del núcleo, incluyendo competencias, contratos arquitectónicos, dependencias permitidas y fronteras.
-
-Implementation restringe las implementaciones válidas sin imponer todavía componentes técnicos concretos.
-
-**Estado:** consolidado respecto de la arquitectura actualmente aceptada.
+Estado: corpus histórico conservado; reutilización condicionada a justificación independiente.
 
 ---
 
@@ -388,6 +378,9 @@ Los principales hitos han sido:
 - constitución formal de Governance como cuerpo teórico autónomo;
 - reorganización global de `docs/`;
 - separación explícita de Methodology, Metatheory, Conceptual Model, Governance, Engineering, Realization, Implementation, Project, Architecture y Development;
+- posterior separación entre los cuerpos vigentes del proyecto principal y los cuerpos históricos de investigación conservados;
+- traslado de Conceptual Model, Governance, Engineering, Realization e Implementation a `research/corpus/`;
+- establecimiento de `research/corpus/` como corpus intelectualmente autónomo cuya reutilización no posee autoridad automática sobre Product ni sobre la secuencia vigente del proyecto;
 - auditoría global del proyecto;
 - prueba final de H-AG-001;
 - consolidación de C-AG-001 — Suficiencia para el cambio de fase;
@@ -454,7 +447,7 @@ Por tanto:
 siguiente actuación actualmente derivada
 → ninguna
 
-No se encuentra justificado continuar automáticamente con Engineering, Architecture, Realization o Implementation por continuidad con la secuencia histórica del proyecto.
+No se encuentra justificado continuar automáticamente con Architecture ni reactivar o reutilizar resultados de Engineering, Realization o Implementation conservados en `research/corpus/` por mera continuidad con la secuencia histórica del proyecto.
 
 Tampoco procede abrir una nueva realización, seleccionar una nueva vertical, ampliar preventivamente los fundamentos o reabrir investigaciones consolidadas por la mera necesidad de mantener el proyecto en movimiento.
 
@@ -714,22 +707,14 @@ Metatheory
     ✔ MT-001 / MT-002 / MT-003 cerradas
     ↺ reabrible por necesidad
 
-Conceptual Model
-    ✔ núcleo consolidado
-    ↺ extensible
-
-Governance
-    ◐ marco consolidado
-    ○ investigación pendiente
-
-Engineering
-    ✔ consolidado
-
-Realization
-    ◐ parcialmente desarrollado
-
-Implementation
-    ✔ consolidado respecto del alcance actual
+Research Corpus
+    ✔ corpus histórico conservado
+    → Conceptual Model
+    → Governance
+    → Engineering
+    → Realization
+    → Implementation
+    ↺ reutilizable únicamente mediante justificación independiente
 
 Auditoría global
     ✔ cerrada — 08/08/2026

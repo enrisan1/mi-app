@@ -762,3 +762,264 @@ La utilidad técnica, la presencia histórica de una propuesta o su posible pert
 **Modificación de Product derivada de la auditoría: ninguna.**
 
 ---
+
+# Reorganización del corpus de investigación y cierre del control global documental
+
+**Fecha:** 22/08/2026
+
+## Situación de partida
+
+El proyecto conservaba bajo `docs/` varios cuerpos desarrollados históricamente durante la investigación:
+
+- Conceptual Model;
+- Governance;
+- Engineering;
+- Realization;
+- Implementation.
+
+La organización documental podía inducir a interpretar estos cuerpos como etapas necesarias de una secuencia normativa del proyecto principal y a considerar sus resultados como presupuestos automáticos de actuaciones posteriores.
+
+La revisión global mostró además la necesidad de distinguir con mayor precisión entre:
+
+- documentación vigente del proyecto;
+- cuerpos de investigación conservados;
+- metodología transversal;
+- fuentes históricas;
+- y estado actual del proyecto.
+
+## Actuación realizada
+
+Se efectuó una reorganización estructural y una revisión transversal de la documentación.
+
+Los cuerpos históricos de investigación fueron trasladados desde `docs/` a:
+
+```text
+research/corpus/
+```
+
+quedando organizados como:
+
+```text
+research/corpus/
+├── conceptual-model/
+├── governance/
+├── engineering/
+├── implementation/
+└── realization/
+```
+
+La nueva ubicación expresa su conservación como cuerpos de investigación y no establece por sí misma una secuencia normativa, una dependencia general entre ellos ni una obligación de intervención para el proyecto principal.
+
+Se creó:
+
+```text
+research/corpus/README.md
+```
+
+como punto de entrada documental del corpus.
+
+El documento establece:
+
+- el estatuto y procedencia histórica del corpus;
+  su perímetro documental;
+- la autonomía de responsabilidad de los cuerpos conservados;
+  la ausencia de una teoría transversal única actualmente demostrada;
+- la separación entre resultados del corpus y compromisos de Product;
+- las condiciones de reutilización de resultados;
+  su relación con Methodology y Metatheory;
+- y la preservación de las referencias históricas sin reescritura retrospectiva.
+
+## Consolidación metodológica
+
+El Protocolo de Consolidación Documental dejó de conservarse como documento propio de Conceptual Model o Governance y pasó a disponer de una única referencia canónica en:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+Con ello se reconoce su responsabilidad metodológica transversal y se elimina la duplicación documental histórica.
+
+## Revisión de dependencias entre cuerpos
+
+Se revisaron específicamente formulaciones que podían convertir relaciones históricas entre cuerpos en dependencias generales o fases necesarias del proyecto.
+
+La revisión afectó especialmente a:
+
+- Governance;
+- Realization;
+- Implementation;
+- documentación transversal del proyecto;
+- documentos introductorios;
+- Methodology;
+- Metatheory;
+- Vision;
+- Product y estado del proyecto.
+
+Como criterio general quedó establecido que:
+
+```text
+existencia de un resultado en otro cuerpo
+        ⇏
+presupuesto automático
+```
+
+y:
+
+```text
+orden documental
+        ≠
+orden lógico universal
+        ≠
+secuencia obligatoria de desarrollo
+```
+
+La utilización de resultados conservados en otro cuerpo deberá justificar su pertinencia, competencia, alcance y aplicabilidad respecto de la cuestión concreta investigada.
+
+## Resolución de AG-001
+
+La incidencia `AG-001`, relativa a una posible inversión entre Implementation y Realization, fue revisada.
+
+No se demostró una dependencia general que obligara a establecer un orden lógico universal entre ambos cuerpos.
+
+La incidencia quedó cerrada con el criterio:
+
+```text
+Implementation
+        ⇏
+Realization
+```
+
+y:
+
+```text
+Realization
+        ⇏
+Implementation
+```
+
+como relaciones generales necesarias.
+
+Podrán existir dependencias entre resultados concretos de ambos cuerpos cuando sean justificadas localmente por una investigación.
+
+## Revisión de la continuidad del proyecto
+
+Se revisaron las formulaciones que podían reconstruir una secuencia automática desde Product hacia Engineering, Architecture, Implementation, Realization o implementación experimental.
+
+Se consolidó el principio de que ninguna reorganización histórica ni ningún resultado previo determina automáticamente la siguiente actuación.
+
+La actuación siguiente deberá derivarse del estado vigente del proyecto y de los compromisos que permanezcan abiertos en ese momento.
+
+La reconstrucción histórica de Product permanece justificada como actuación adoptada tras la auditoría global, pero no establece una cadena universal de actuaciones posteriores.
+
+## Revisión de la documentación introductoria
+
+Se revisaron `INTRODUCTION.md`, `VISION.md` y `GLOSSARY.md` para eliminar formulaciones que pudieran identificar:
+
+- Product con una aplicación software concreta;
+- desarrollo con una progresión lineal;
+- madurez con una secuencia obligatoria;
+- o relaciones documentales con una jerarquía normativa de actuación.
+
+La visión conserva su función orientadora sin determinar automáticamente el orden de desarrollo del proyecto.
+
+## Preservación de las fuentes históricas
+
+Las transcripciones utilizadas para reconstruir el origen y evolución inicial del proyecto fueron separadas de la documentación normativa.
+
+Se conservaron en:
+
+```text
+research/history/codex/
+```
+
+La carpeta contiene nueve transcripciones históricas.
+
+Su función es preservar evidencia y trazabilidad histórica.
+
+No forman parte del árbol documental normativo del proyecto ni del corpus de investigación consolidado.
+
+## Resultado estructural
+
+Tras la reorganización, la separación principal queda establecida como:
+
+```text
+docs/
+        documentación vigente y registros documentales del proyecto
+
+research/corpus/
+        cuerpos de investigación conservados
+
+research/history/
+        fuentes históricas
+```
+
+`Methodology` y `Metatheory` permanecen dentro de `docs/` por sus responsabilidades transversales actuales.
+
+Los cuerpos conservados bajo `research/corpus/` permanecen disponibles para crítica, reapertura y eventual reutilización futura bajo justificación independiente.
+
+## Controles realizados
+
+Se realizaron controles sobre:
+
+- rutas históricas;
+- referencias entre cuerpos;
+- formulaciones de dependencia;
+- secuencias de fases;
+- presupuestos automáticos;
+- relaciones entre Implementation y Realization;
+- continuidad automática desde Product;
+- referencias documentales antiguas;
+- recuentos documentales obsoletos;
+- estructura física del nuevo corpus;
+- fuentes históricas;
+- y consistencia formal de los cambios.
+
+El corpus trasladado quedó compuesto por:
+
+```text
+conceptual-model/    18 documentos
+governance/          18 documentos
+engineering/          7 documentos
+implementation/       6 documentos
+realization/          8 documentos
+```
+
+más:
+
+```text
+research/corpus/README.md
+```
+
+No se detectó pérdida de documentos durante el traslado.
+
+El control formal final:
+
+```text
+git diff --check
+```
+
+no produjo ninguna salida.
+
+## Estado alcanzado
+
+La reorganización estructural y el control global documental quedan cerrados satisfactoriamente.
+
+El proyecto dispone ahora de una separación explícita entre:
+
+```text
+documentación vigente
+investigación conservada
+fuentes históricas
+```
+
+sin convertir esa separación en una nueva teoría, jerarquía normativa o secuencia obligatoria.
+
+Los resultados del corpus continúan disponibles, pero su incorporación a futuras actuaciones del proyecto requerirá justificación independiente.
+
+La reorganización no deriva por sí misma una nueva actuación de Architecture, Development ni de ningún cuerpo del corpus.
+
+## Punto de reanudación
+
+Concluido este control, cualquier actuación posterior deberá determinarse a partir del estado vigente registrado en `PROJECT_STATUS.md` y de los compromisos que permanezcan abiertos.
+
+No queda prescrita una siguiente actuación por continuidad con la reorganización documental realizada.

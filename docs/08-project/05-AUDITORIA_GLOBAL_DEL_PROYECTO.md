@@ -6,6 +6,8 @@
 
 **Naturaleza del documento:** auditoría transversal de estado y suficiencia para el cambio de fase.
 
+**Estatuto histórico:** este documento conserva el estado, la organización documental, las denominaciones y las relaciones existentes en la fecha de cierre de la auditoría. Las reorganizaciones posteriores del repositorio no modifican retrospectivamente el objeto auditado ni las conclusiones alcanzadas. Para conocer el estado vigente del proyecto deberá consultarse `PROJECT_STATUS.md`.
+
 ## Propósito
 
 El presente documento consolida los resultados de la auditoría global realizada sobre la estructura científica, arquitectónica, realizativa, documental y técnica del proyecto.
@@ -553,11 +555,15 @@ No constituye una razón para reabrir los cuerpos teóricos cuyos resultados ya 
 
 ---
 
-# 9. Incidencia transversal AG-001
+# 9. Resolución de la incidencia transversal AG-001
 
-## Orden entre Implementation y Realization
+## Relación entre Implementation y Realization
 
-La organización documental actual presenta:
+La auditoría había registrado inicialmente la siguiente incidencia:
+
+> **AG-001 — Posible inversión entre el orden documental de Implementation y Realization y su orden lógico de dependencia.**
+
+La incidencia surgió al comparar la organización documental histórica:
 
 ```text
 05-engineering
@@ -565,7 +571,7 @@ La organización documental actual presenta:
 07-implementation
 ```
 
-Sin embargo, durante la auditoría se ha observado una dependencia conceptual que parece corresponder más aproximadamente a:
+con una posible relación conceptual formulada entonces como:
 
 ```text
 Engineering
@@ -575,17 +581,29 @@ Implementation
 Realization
 ```
 
-Implementation establece las exigencias, competencias, contratos, dependencias y fronteras que debe preservar una implementación.
+No se ha demostrado que Implementation y Realization mantengan entre sí una relación de dependencia general que obligue a establecer un orden lógico universal entre ambos cuerpos.
 
-Realization estudia las condiciones bajo las cuales una materialización concreta puede conservar legítimamente dicho significado.
+Cada uno conserva investigaciones pertenecientes a una competencia distinta, y la utilización de resultados procedentes de otro cuerpo deberá justificarse respecto de la cuestión concreta en la que resulten pertinentes.
 
-La discrepancia entre orden documental y dependencia conceptual queda registrada como:
+Por tanto, la discrepancia observada entre el orden documental y la relación conceptual inicialmente propuesta no demuestra una inversión que deba corregirse mediante la reordenación de los cuerpos.
 
-> **AG-001 — Posible inversión entre el orden documental de Implementation y Realization y su orden lógico de dependencia.**
+La incidencia queda resuelta del siguiente modo:
 
-La auditoría no determina todavía que las carpetas deban renombrarse.
+`AG-001` — Cerrada. El orden documental entre Implementation y Realization no establece por sí mismo una dependencia conceptual ni una secuencia normativa entre ambos cuerpos.
 
-La incidencia deberá resolverse mediante una revisión específica antes de considerar definitivamente estabilizada la organización documental global.
+En consecuencia:
+
+```text
+orden documental
+        ≠
+orden lógico universal
+        ≠
+secuencia obligatoria de desarrollo
+```
+
+Podrán existir dependencias justificadas entre resultados concretos de Implementation y Realization.
+
+Dichas dependencias deberán establecerse localmente a partir de la cuestión investigada y no podrán inferirse de la posición documental de los cuerpos ni de la secuencia histórica mediante la que fueron desarrollados.
 
 ---
 
@@ -624,62 +642,59 @@ Su permanencia dependerá de su capacidad para realizar responsabilidades justif
 
 ---
 
-# 11. Criterio de salida de la fase actual
+# 11. Criterio de salida de la investigación fundamental como actividad principal
 
-La fase de investigación fundamental como actividad principal puede considerarse cerrada cuando:
+La investigación fundamental puede dejar de constituir la actividad principal del proyecto cuando:
 
-1. existe un núcleo conceptual consolidado;
-2. existe una arquitectura derivada de dicho núcleo;
-3. existen exigencias realizativas capaces de restringir implementaciones;
-4. no se ha identificado ninguna carencia fundamental bloqueante;
-5. las investigaciones pendientes pueden reabrirse por pérdida concreta;
-6. y resulta posible formular una primera hipótesis de producto sin introducir nuevas primitivas científicas de manera arbitraria.
+1. los compromisos actualmente asumidos disponen de fundamento suficiente para continuar la investigación sin introducir decisiones arbitrarias;
+2. no se ha identificado ninguna carencia fundamental cuya resolución deba preceder necesariamente a toda actuación posterior;
+3. los resultados conservados pueden reutilizarse cuando su pertinencia y aplicabilidad hayan sido justificadas;
+4. las investigaciones pendientes pueden reabrirse cuando aparezca una pérdida, insuficiencia, falsador o necesidad concreta;
+5. y resulta posible formular e investigar actuaciones candidatas a partir del estado consolidado del proyecto.
 
-La auditoría ha determinado que estas condiciones se satisfacen actualmente.
+La auditoría determinó que estas condiciones se satisfacían respecto del estado examinado.
 
 En consecuencia:
 
-> **el proyecto puede abandonar legítimamente la investigación fundamental como actividad principal.**
+> **el proyecto podía abandonar legítimamente la investigación fundamental como actividad principal.**
+
+Esta conclusión no determina por sí misma cuál debe ser la actuación posterior ni establece una secuencia necesaria entre los cuerpos conservados del proyecto.
 
 ---
 
-# 12. Nueva fase
+# 12. Actuación justificada tras la auditoría
 
-La nueva fase no comienza todavía con la programación.
+La auditoría determinó que no existía ninguna carencia fundamental cuya resolución debiera preceder necesariamente a la reconstrucción del producto.
 
-Comienza con la **reconstrucción del producto a partir de los resultados consolidados**.
+A partir de ese resultado quedó justificada la apertura de la reconstrucción de Product como siguiente actuación del proyecto en aquel estado.
 
-La secuencia inicial será:
+La actuación adoptada históricamente fue:
 
 ```text
-resultados teóricos consolidados
+estado consolidado del proyecto
         ↓
-reconstrucción de la definición del producto
-        ↓
-determinación de necesidades de producto
-        ↓
-definición de una primera vertical mínima
-        ↓
-derivación de responsabilidades necesarias
-        ↓
-confrontación con Engineering
-        ↓
-confrontación con Implementation
-        ↓
-propuesta de arquitectura software mínima
-        ↓
-validación mediante principios de Realization
-        ↓
-implementación experimental
-        ↓
-evidencia
+reconstrucción de Product
 ```
 
-La implementación no deberá preceder a la definición de la vertical.
+Esta transición no establece una secuencia universal entre los cuerpos del proyecto.
 
-La arquitectura software tampoco deberá precederla.
+Tampoco permite inferir que, una vez reconstruido Product, deban sucederse necesariamente:
 
-La vertical proporciona el problema concreto respecto del cual podrán justificarse las decisiones posteriores.
+```text
+Engineering
+        ↓
+Implementation
+        ↓
+Realization
+        ↓
+implementación experimental
+```
+
+La intervención de cualquiera de esos cuerpos deberá justificarse a partir de las necesidades concretas que aparezcan durante la investigación.
+
+Por tanto, la auditoría justificó la reconstrucción de Product, pero no fijó legítimamente una cadena completa de actuaciones posteriores.
+
+Cada actuación ulterior deberá derivarse independientemente del estado alcanzado y de los compromisos que permanezcan abiertos en ese momento.
 
 ---
 

@@ -67,7 +67,9 @@ en estructura universal?
 
 No determina las condiciones de su admisibilidad.
 
-`99-protocolo-de-consolidacion-documental.md` gobierna documentos y versiones.
+El Protocolo de Consolidación Documental, cuya referencia canónica vigente se conserva externamente en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`, gobierna documentos y versiones.
+
+Su aplicabilidad metodológica al presente corpus no implica pertenencia documental a éste.
 
 No gobierna la legitimidad conceptual de una especialización.
 

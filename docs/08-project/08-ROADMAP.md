@@ -150,7 +150,7 @@ La línea deberá evaluarse respecto del producto, los fundamentos y las restric
 
 ### Autoridad
 
-La incorporación de una línea al Roadmap no podrá utilizarse para establecer por autoridad propia resultados que correspondan a Product, Methodology, Metatheory, Conceptual Model, Governance, Engineering, Realization, Implementation, Architecture, Development u otro cuerpo competente.
+La incorporación de una línea al Roadmap no podrá utilizarse para establecer por autoridad propia resultados que correspondan a Product, Methodology, Metatheory, Architecture, Development, a los cuerpos de investigación conservados en `research/corpus/` o a cualquier otro cuerpo competente.
 
 ### Alcance
 
@@ -335,7 +335,7 @@ No deberán anticiparse arquitecturas, infraestructuras, funcionalidades, abstra
 
 ## Preservar la autoridad de cada cuerpo
 
-`ROADMAP.md` no sustituye la autoridad de los documentos responsables de Product, Methodology, Metatheory, Conceptual Model, Governance, Engineering, Realization, Implementation, Architecture o Development.
+`ROADMAP.md` no sustituye la autoridad de los documentos responsables de Product, Methodology, Metatheory, Architecture o Development, ni la autoridad interna de los cuerpos de investigación conservados en `research/corpus/`.
 
 Cuando una línea requiera resultados pertenecientes a alguno de esos ámbitos, dichos resultados deberán proceder del cuerpo competente.
 

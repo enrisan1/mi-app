@@ -10,6 +10,16 @@ Su finalidad consiste en preservar la reconstruibilidad epistemológica del cono
 
 No constituye un documento de teoría consolidada.
 
+Las referencias conservadas en este documento a la `fase de realización`, a fases anteriores o posteriores y a relaciones históricas con teoría conceptual, Engineering o Implementation describen el marco bajo el que las investigaciones correspondientes fueron abiertas y desarrolladas.
+
+No deberán interpretarse como establecimiento vigente de una secuencia normativa entre cuerpos del proyecto.
+
+Realization se conserva actualmente como cuerpo de investigación autónomo bajo:
+
+```text
+research/corpus/realization/
+```
+
 Tampoco constituye una bitácora cronológica del proyecto.
 
 Su responsabilidad consiste exclusivamente en preservar la justificación racional que conduce desde las hipótesis iniciales hasta las conclusiones consolidadas o el cierre de cada investigación.
@@ -18989,8 +18999,6 @@ y no demuestra:
 anclaje fenomenológico humano suficiente.
 ```
 
-
-
 Por tanto:
 
 ```text
@@ -19086,8 +19094,6 @@ CompletesStruct(σ*,F,S)
 CR-Term(E_S).
 ```
 
-
-
 Esta constitución establece propiedades de:
 
 ```text
@@ -19170,8 +19176,6 @@ Así se obtuvo el control:
 ¬ΔCompletesStruct.
 ```
 
-
-
 Esta estructura proporciona:
 
 ```text
@@ -19236,8 +19240,6 @@ CR-Term
 CompletesStruct
 Disp_W.
 ```
-
-
 
 Por tanto `Out` constituye una adaptación estructural neutral.
 
@@ -19318,8 +19320,6 @@ La documentación ya había limitado expresamente el alcance de esta prueba a:
 ```text
 co-pertenencia técnica.
 ```
-
-
 
 Por tanto:
 

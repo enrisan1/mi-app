@@ -66,23 +66,25 @@ La existencia de un cuerpo posterior en la numeración no implica que deba inter
 
 Ante una necesidad concreta deberá determinarse primero qué tipo de problema existe y sólo después qué cuerpo posee competencia para tratarlo.
 
-La estructura principal es:
+La estructura principal distingue entre la documentación normativa y transversal del proyecto y los cuerpos de investigación conservados de forma autónoma.
 
 ```text
 docs/
 │
 ├── 00-introduction
-│
 ├── 01-methodology
 ├── 02-metatheory
-├── 03-conceptual-model
-├── 04-governance
-├── 05-engineering
-├── 06-realization
-├── 07-implementation
 ├── 08-project
 ├── 09-architecture
 └── 10-development
+
+research/
+└── corpus/
+    ├── conceptual-model
+    ├── governance
+    ├── engineering
+    ├── realization
+    └── implementation
 ```
 
 ## 4.1 Puerta de entrada — `00-introduction`
@@ -102,22 +104,46 @@ No sustituye a ninguno de los cuerpos especializados.
 
 ## 4.2 Cuerpos documentales
 
-| Cuerpo                | Responsabilidad principal                                                                                                                                                                                                                                  |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `01-methodology`      | Define el método transversal mediante el que se abren, desarrollan, falsan, consolidan, documentan y reabren investigaciones y decisiones del proyecto.                                                                                                    |
-| `02-metatheory`       | Investiga y establece resultados transversales relativos al estatuto, alcance, dependencia, comparación, autoridad y relación entre teorías, resultados o construcciones cuando el problema no pertenece exclusivamente a uno de los cuerpos particulares. |
-| `03-conceptual-model` | Contiene la investigación y el conocimiento consolidado sobre la estructura conceptual necesaria para explicar el dominio, sus fenómenos, exigencias y relaciones fundamentales.                                                                           |
-| `04-governance`       | Trata los problemas pertenecientes al gobierno epistemológico y a las condiciones bajo las que afirmaciones, evaluaciones o resultados adquieren y conservan legitimidad dentro de su ámbito.                                                              |
-| `05-engineering`      | Deriva responsabilidades, capacidades, relaciones, garantías y restricciones estructurales necesarias para realizar los fundamentos aceptados, sin decidir todavía su materialización concreta.                                                            |
-| `06-realization`      | Investiga y establece las condiciones bajo las que los resultados anteriores pueden recibir realizaciones concretas legítimas, así como las decisiones y pruebas propias de realizaciones particulares cuando corresponda.                                 |
-| `07-implementation`   | Establece las exigencias, competencias, contratos, dependencias y fronteras que restringen implementaciones válidas sin imponer automáticamente componentes técnicos concretos.                                                                            |
-| `08-project`          | Contiene la definición vigente del producto, su estado, auditorías, historial y propuestas de evolución; determina qué compromisos de producto están actualmente establecidos y cuál es el estado real del proyecto.                                       |
-| `09-architecture`     | Conserva y describe la arquitectura software y su evolución técnica. La arquitectura histórica no adquiere por su sola existencia autoridad prescriptiva sobre nuevas construcciones.                                                                      |
-| `10-development`      | Define el proceso práctico de construcción, las convenciones de desarrollo, el entorno, los comandos y la estrategia general de testing y validación.                                                                                                      |
+La documentación distingue actualmente dos conjuntos con estatutos diferentes.
 
-La tabla identifica responsabilidades, no un orden obligatorio de intervención.
+### Documentación del proyecto principal y cuerpos transversales
 
-Una misma tarea puede requerir consultar varios cuerpos, pero cada decisión deberá mantenerse bajo la autoridad del cuerpo que tenga competencia para establecerla.
+| Cuerpo            | Responsabilidad principal                                                                                                                                                                                                                       |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `01-methodology`  | Define el método transversal mediante el que se abren, desarrollan, falsan, consolidan, documentan y reabren investigaciones y decisiones del proyecto.                                                                                         |
+| `02-metatheory`   | Investiga y establece resultados transversales relativos al estatuto, alcance, dependencia, comparación, autoridad y relación entre teorías, resultados o construcciones cuando el problema no pertenece exclusivamente a un cuerpo particular. |
+| `08-project`      | Contiene las referencias constitutivas y de Product, el estado vigente, auditorías, historial y propuestas de evolución del proyecto.                                                                                                           |
+| `09-architecture` | Conserva y describe la arquitectura software y su evolución técnica. La arquitectura histórica no adquiere por su sola existencia autoridad prescriptiva sobre nuevas construcciones.                                                           |
+| `10-development`  | Define el proceso práctico de construcción, las convenciones de desarrollo, el entorno, los comandos y la estrategia general de testing y validación.                                                                                           |
+
+### Corpus autónomo de investigación
+
+El directorio:
+
+```text
+research/corpus/
+```
+
+conserva cinco cuerpos surgidos históricamente durante la evolución del proyecto:
+
+Cuerpo Responsabilidad interna
+conceptual-model Conserva la investigación y los resultados conceptuales desarrollados sobre fenómenos, exigencias, funciones, formalización, especialización, validación y reconstrucción.
+governance Conserva la investigación y los resultados relativos al gobierno epistemológico y a las condiciones de legitimidad de afirmaciones, evaluaciones y resultados dentro de su ámbito.
+engineering Conserva las derivaciones de responsabilidades, capacidades, relaciones, garantías y restricciones estructurales desarrolladas dentro del corpus.
+realization Conserva la investigación sobre condiciones y decisiones de realización concreta desarrolladas bajo la competencia propia del cuerpo.
+implementation Conserva exigencias, competencias, contratos, dependencias y fronteras formuladas para implementaciones válidas dentro del corpus.
+
+Estos cinco cuerpos poseen coherencia y valor interno, pero su pertenencia a `research/corpus/` no los convierte automáticamente en cuerpos normativos de Product.
+
+Por tanto:
+
+resultado del corpus
+⇏
+compromiso del proyecto principal
+
+La utilización de un resultado del corpus por Product, Architecture, Development u otro cuerpo requerirá justificar independientemente su pertinencia, competencia, alcance y aplicabilidad.
+
+La organización identifica responsabilidades y relaciones de autoridad, no un orden obligatorio de intervención.
 
 ---
 
@@ -185,30 +211,6 @@ autoridad, alcance o relaciones entre resultados?
         ↓
 02-metatheory
 
-¿qué debe ser cierto en el modelo del dominio?
-        ↓
-03-conceptual-model
-
-¿cómo se gobierna epistemológicamente
-una afirmación o resultado?
-        ↓
-04-governance
-
-¿qué responsabilidad o capacidad
-estructural es necesaria?
-        ↓
-05-engineering
-
-¿cómo puede realizarse concretamente
-un resultado ya justificado?
-        ↓
-06-realization
-
-¿qué debe preservar o respetar
-una implementación válida?
-        ↓
-07-implementation
-
 ¿qué producto está comprometido
 y cuál es el estado vigente?
         ↓
@@ -224,6 +226,32 @@ el cambio?
         ↓
 10-development
 ```
+
+Cuando una necesidad del proyecto plantee una pregunta conceptual, normativa, estructural, realizativa o implementativa, deberá determinarse primero si existe ya un cuerpo competente vigente dentro del proyecto principal.
+
+Los cuerpos conservados en:
+
+`research/corpus/`
+
+podrán consultarse como antecedentes o como fuentes candidatas cuando la pregunta coincida con su competencia interna.
+
+Sin embargo:
+
+```text
+existencia histórica de un cuerpo competente
+        ⇏
+obligación de utilizarlo
+```
+
+y:
+
+```text
+resultado disponible en research/corpus/
+        ⇏
+resultado aplicable automáticamente
+```
+
+Si un resultado del corpus se considera candidato a resolver una necesidad vigente, su aplicabilidad deberá justificarse independientemente antes de adquirir autoridad sobre el proyecto principal.
 
 ---
 
@@ -268,9 +296,11 @@ No deberá abrirse una investigación en un cuerpo simplemente porque histórica
 
 ---
 
-## 5.4 Pasar de un compromiso de producto a una realización
+## 5.4 Pasar de un compromiso de Product a una realización
 
-Cuando existe un compromiso de Product y se necesita determinar cómo puede hacerse realizable:
+Cuando existe un compromiso de Product y se necesita determinar cómo puede hacerse realizable, no deberá presumirse por continuidad histórica qué cuerpo debe intervenir.
+
+Se seguirá:
 
 ```text
 08-project
@@ -280,19 +310,36 @@ compromiso vigente
         ↓
 ¿qué diferencia debe realizarse?
         ↓
-determinar cuerpo competente
+¿qué nueva pregunta aparece?
         ↓
-05-engineering
-si existe una cuestión estructural necesaria
+determinar su naturaleza
+y el cuerpo competente
         ↓
-06-realization
-cuando corresponde investigar
-una realización concreta
+investigar sólo aquello
+que todavía no esté justificado
 ```
 
-Engineering no debe intervenir automáticamente si ninguna nueva responsabilidad arquitectónica necesita ser derivada.
+La existencia en `research/corpus/` de cuerpos denominados `engineering`, `realization` o `implementation` no establece por sí misma una secuencia normativa para el proyecto principal.
 
-Del mismo modo, Realization no convierte sus decisiones particulares en arquitectura normativa por el mero hecho de utilizarlas en una realización experimental.
+Dichos cuerpos podrán proporcionar antecedentes o resultados candidatos cuando exista correspondencia con la pregunta planteada.
+
+Por tanto:
+
+```text
+Product
+        ⇏
+Engineering del corpus
+        ⇏
+Realization del corpus
+        ⇏
+Implementation del corpus
+```
+
+Toda transición entre cuerpos deberá justificarse por la necesidad concreta del resultado requerido.
+
+Una investigación del corpus podrá abrirse legítimamente a partir de un compromiso de Product cuando su cuerpo posea competencia para resolver la pregunta planteada.
+
+Esta procedencia no convierte automáticamente sus resultados particulares en obligaciones de Product.
 
 ---
 
@@ -349,6 +396,18 @@ La evolución de la documentación no persigue aumentar el número de documentos
 
 Como criterio general, cualquier modificación relevante del producto, la arquitectura, el proceso de desarrollo o la estrategia de validación deberá ir acompañada de la actualización del documento responsable de ese contenido, manteniendo siempre la documentación alineada con el estado real del proyecto.
 
+La reorganización física de un cuerpo no modifica por sí misma el estatuto intelectual de sus resultados.
+
+Del mismo modo, la separación documental de un corpus histórico no deberá reescribir retrospectivamente las ubicaciones, decisiones o relaciones vigentes en el momento que documentan sus investigaciones, auditorías o bitácoras.
+
+Por tanto:
+
+```text
+reorganización documental
+        ⇏
+reescritura histórica
+```
+
 # 7. Relación con el resto de la documentación
 
 Este documento constituye la guía de navegación del sistema documental del proyecto.
@@ -359,4 +418,16 @@ A diferencia de los documentos especializados, `INTRODUCTION.md` no desarrolla e
 
 Esta función complementa al resto de la documentación sin sustituir ninguno de sus contenidos. Cada documento mantiene una responsabilidad claramente definida y desarrolla en profundidad el ámbito de conocimiento que le corresponde.
 
+`INTRODUCTION.md` reconoce además la existencia de `research/corpus/` como cuerpo de investigación autónomo conservado dentro del repositorio.
+
+Su función respecto de dicho corpus es exclusivamente navegacional: permitir localizarlo, comprender su estatuto y distinguirlo de la documentación normativa del proyecto principal.
+
+La definición detallada del estatuto del corpus corresponde a:
+
+```text
+research/corpus/README.md
+```
+
 En conjunto, todos ellos forman un sistema documental coherente cuyo objetivo es preservar, organizar y facilitar el acceso al conocimiento generado durante la evolución del proyecto.
+
+---

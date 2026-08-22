@@ -56,11 +56,13 @@ Su entrada documental está constituida por:
 
 todos ellos actualmente consolidados provisionalmente.
 
-El procedimiento de construcción y consolidación del presente documento queda regulado por:
+El procedimiento de construcción y consolidación del presente documento queda regulado por el Protocolo de Consolidación Documental, cuya referencia canónica vigente se conserva externamente en:
 
 ```text
-99-protocolo-de-consolidacion-documental.md
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
 ```
+
+Su aplicabilidad metodológica no implica pertenencia documental al presente corpus.
 
 ---
 
@@ -1232,7 +1234,7 @@ A efectos de los documentos posteriores, la base consolidada actual está consti
 06-axiomas.md
 ```
 
-`99-protocolo-de-consolidacion-documental.md` regula su mantenimiento documental, pero no forma parte de la base sustantiva de la teoría.
+El Protocolo de Consolidación Documental, conservado canónicamente en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`, regula su mantenimiento documental, pero no forma parte de la base sustantiva de la teoría ni del conjunto documental interno de `conceptual-model`.
 
 ---
 
@@ -1433,10 +1435,10 @@ La reapertura estará justificada si aparece:
 - una incorrecta localización de nivel;
 - o cualquier otra evidencia capaz de falsar alguno de los resultados consolidados.
 
-La reapertura deberá seguir:
+La reapertura deberá seguir el Protocolo de Consolidación Documental aplicable, cuya referencia canónica vigente es:
 
 ```text
-99-protocolo-de-consolidacion-documental.md
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
 ```
 
 ---
@@ -1601,7 +1603,7 @@ La modificación seguirá el PCD.
 
 **Fuentes sustantivas primarias:** `02–06`.
 
-**Protocolo documental aplicable:** `99`.
+**Protocolo documental aplicable:** `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`.
 
 **Nuevas demostraciones introducidas:** ninguna.
 

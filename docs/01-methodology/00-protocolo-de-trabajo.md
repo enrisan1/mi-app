@@ -2,7 +2,13 @@
 
 # Propósito
 
-Este documento define la metodología de trabajo utilizada durante el desarrollo del proyecto denominada Protocolo de Consolidación Documental (PCD)
+Este documento define la metodología general de trabajo utilizada
+durante el desarrollo del proyecto.
+
+El Protocolo de Consolidación Documental (PCD) constituye una
+disciplina documental específica dentro de esta metodología y se
+define de forma independiente en
+`99-protocolo-de-consolidacion-documental.md`.
 
 Su objetivo consiste en garantizar que todas las investigaciones, auditorías y documentos consolidados se elaboren siguiendo un procedimiento uniforme, trazable y reproducible.
 
@@ -100,108 +106,31 @@ Un documento podrá contener referencias o breves contextualizaciones de otras f
 
 ---
 
-# Ciclo de elaboración documental
+# Consolidación documental
 
-Todo documento seguirá el siguiente procedimiento.
+La construcción, revisión, congelación, reapertura y registro
+documental se rigen por el Protocolo de Consolidación Documental.
 
-## Fase 1 — Auditoría
+Referencia canónica:
 
-Se investiga el problema intentando falsar las hipótesis de trabajo.
+`99-protocolo-de-consolidacion-documental.md`
 
-Durante esta fase el documento permanece abierto.
-
----
-
-## Fase 2 — Cierre de la auditoría
-
-La auditoría finaliza cuando deja de producir descubrimientos relevantes respecto del objetivo planteado.
-
-El cierre de la auditoría no implica todavía que el documento quede consolidado.
-
----
-
-## Fase 3 — Entrega del documento completo
-
-Una vez cerrada la auditoría se redacta nuevamente el documento completo.
-
-No se aplican modificaciones parciales sobre versiones anteriores.
-
-Cada entrega debe representar una versión íntegra, coherente y autosuficiente.
-
----
-
-## Fase 4 — Revisión conjunta
-
-El documento completo se revisa íntegramente.
-
-La revisión comprobará:
-
-- coherencia interna;
-- claridad;
-- consistencia con el resto del proyecto;
-- ausencia de redundancias;
-- adecuación al alcance.
-
-Durante esta fase todavía podrán introducirse modificaciones.
-
----
-
-## Fase 5 — Congelación provisional
-
-Una vez aceptado, el documento pasa a estado de congelación provisional.
-
-A partir de ese momento constituye una referencia estable para el resto del proyecto.
-
-Sólo podrá modificarse mediante la reapertura formal de su auditoría.
-
----
-
-## Fase 6 — Registro en la bitácora
-
-Tras la congelación se registrará una ficha de bitácora.
-
-La ficha constituye el registro metodológico del documento y reflejará, como mínimo:
-
-- documento;
-- estado;
-- última revisión;
-- fases del PCD superadas;
-- auditorías superadas;
-- cuestiones pendientes, si las hubiera.
-
-La bitácora no sustituye a la investigación ni resume el contenido del documento consolidado.
-
-A partir de la consolidación del principio CT-1 y de la creación del cuerpo teórico Governance, las fichas de consolidación dejan de incluir el campo "Estado". La existencia de la ficha constituye por sí misma evidencia suficiente de que el hito ha sido consolidado.
+El PCD forma parte de la metodología general, pero posee
+responsabilidad documental propia y este documento no duplica
+sus fases ni reglas operativas.
 
 ---
 
 # Reapertura de documentos
 
-Un documento congelado sólo podrá reabrirse cuando concurra alguna de las siguientes circunstancias:
+los resultados consolidados pueden reabrirse cuando aparece nuevo fundamento
 
-- aparición de un contraejemplo válido;
-- descubrimiento de una contradicción;
-- ampliación del alcance;
-- incorporación de nuevos principios que afecten directamente al documento;
-- modificación justificada de la arquitectura del proyecto.
+Todo resultado consolidado permanece reabrible.
+
+Las condiciones y el procedimiento documental de reapertura
+se rigen por el PCD.
 
 Toda reapertura iniciará una nueva auditoría.
-
----
-
-# Criterios de congelación
-
-Un documento podrá congelarse provisionalmente cuando:
-
-- haya concluido su auditoría;
-- no existan contradicciones conocidas;
-- haya superado la revisión conjunta;
-- resulte coherente con el resto de documentos consolidados;
-- sirva como base estable para investigaciones posteriores.
-
-La congelación nunca implica verdad definitiva.
-
-Implica únicamente estabilidad respecto del conocimiento disponible y del alcance declarado.
 
 ---
 
@@ -258,10 +187,12 @@ Contiene:
 
 Las modificaciones deberán realizarse respetando las siguientes reglas.
 
-- Evitar modificaciones parciales cuando afecten a la coherencia global del documento.
-- Preferir la sustitución completa de una sección frente a múltiples parches.
-- Mantener la consistencia terminológica en todo el proyecto.
-- Actualizar los documentos dependientes cuando un documento consolidado cambie.
+- Evitar parches incoherentes.
+- Mantener la consistencia terminológica.
+- Actualizar los documentos dependientes.
+
+Cuando un cambio afecte a un documento consolidado o a sus
+dependencias, su tratamiento documental se realizará conforme al PCD.
 
 ---
 
@@ -285,19 +216,11 @@ Todo documento deberá pertenecer claramente a un dominio y desempeñar una úni
 
 # Principio de estabilidad
 
-Los documentos consolidados constituyen la base sobre la que se desarrollan las fases posteriores del proyecto.
+Los documentos consolidados constituyen una base estable para las actuaciones posteriores del proyecto que requieran apoyarse en ellos.
 
 Su modificación debe considerarse una excepción y nunca una práctica habitual.
 
 La estabilidad documental forma parte de la propia metodología del proyecto.
-
----
-
-# Estado
-
-Protocolo vigente.
-
-Este procedimiento será aplicable, salvo justificación explícita en contrario, a todas las investigaciones, auditorías y documentos consolidados del proyecto.
 
 ---
 
@@ -443,3 +366,5 @@ En consecuencia, toda teoría autónoma del proyecto deberá establecer primero 
 Protocolo vigente.
 
 Este procedimiento será aplicable, salvo justificación explícita en contrario, a todas las investigaciones, auditorías y documentos consolidados del proyecto.
+
+---

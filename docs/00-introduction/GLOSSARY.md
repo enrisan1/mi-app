@@ -124,11 +124,11 @@ Los términos se presentan agrupados por afinidad conceptual para facilitar su c
 
         Definición
 
-        Software que el proyecto pretende construir y cuya definición funcional se recoge en `PRODUCT.md`.
+        Resultado orientado a satisfacer necesidades humanas cuya identidad, compromisos y posibilidades justificadas se investigan y consolidan en `PRODUCT.md`.
 
         Ejemplo
 
-        El producto permite gestionar conocimiento.
+        El producto se orienta a facilitar la creación, organización y difusión del conocimiento.
 
         No utilizar como sinónimo de
 
@@ -139,11 +139,11 @@ Los términos se presentan agrupados por afinidad conceptual para facilitar su c
 
         Definición
 
-        Programa ejecutable utilizado por el usuario como materialización del producto.
+        Programa ejecutable mediante el que pueden materializarse determinadas capacidades o experiencias de uso de un producto.
 
         Ejemplo
 
-        La aplicación conserva el estado mediante localStorage.
+        Una aplicación puede proporcionar al usuario acceso a capacidades del producto.
 
         No utilizar como sinónimo de
 
@@ -236,7 +236,7 @@ Los términos se presentan agrupados por afinidad conceptual para facilitar su c
 
         Ejemplo
 
-        El desarrollo del proyecto es incremental.
+        El desarrollo del proyecto comprende actividades de investigación, diseño, implementación, validación y documentación cuando resultan pertinentes.
 
         No utilizar como sinónimo de
 

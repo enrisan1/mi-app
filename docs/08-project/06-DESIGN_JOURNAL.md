@@ -1,3 +1,5 @@
+# DESIGN_JOURNAL.md
+
 1. Propósito
 
 2. Evolución del dominio
@@ -11,8 +13,6 @@
 6. Modelo de monetización
 
 7. Otras ideas
-
-# DESIGN_JOURNAL.md
 
 # 1. Propósito
 

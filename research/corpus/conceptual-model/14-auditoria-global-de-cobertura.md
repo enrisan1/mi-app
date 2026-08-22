@@ -838,7 +838,7 @@ explicitación de dependencias;
 PCD.
 ```
 
-La teoría dispone de `99-protocolo-de-consolidacion-documental.md` para una parte de ese control.
+La teoría dispone, para una parte de ese control, del Protocolo de Consolidación Documental aplicable, cuya referencia canónica vigente se conserva externamente en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`.
 
 Por tanto, externalizar una propiedad a metodología no equivale a perderla.
 
@@ -1855,7 +1855,7 @@ Se perdería la frontera explícita entre decisión conceptual y decisión técn
 
 No existiría un régimen controlado de consolidación y reapertura.
 
-`99` realiza trabajo real.
+El Protocolo de Consolidación Documental aplicable realiza trabajo metodológico real, aunque se conserve externamente al corpus en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`.
 
 ---
 

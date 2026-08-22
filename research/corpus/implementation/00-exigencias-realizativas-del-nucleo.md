@@ -4,7 +4,7 @@
 
 Este documento especifica el conjunto mínimo de principios y exigencias realizativas que debe satisfacer cualquier implementación software para realizar fielmente la arquitectura consolidada del núcleo.
 
-Su finalidad consiste en preservar, durante la implementación, todas las propiedades arquitectónicas demostradas por la teoría conceptual y la ingeniería del núcleo.
+Su finalidad consiste en preservar, durante la implementación, todas las propiedades arquitectónicas que hayan sido establecidas como aplicables a la implementación considerada.
 
 El documento establece qué propiedades deben garantizarse.
 

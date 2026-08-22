@@ -8,11 +8,11 @@
 
 4. Los tres pilares
 
-   3.1 Producto
+   4.1 Producto
 
-   3.2 Laboratorio de arquitectura
+   4.2 Laboratorio de ingeniería de software
 
-   3.3 Proyecto educativo
+   4.3 Proyecto educativo
 
 5. Principios que guían la visión
 
@@ -76,13 +76,13 @@ El proyecto aspira a convertirse en una plataforma real orientada a la creación
 
 La plataforma estará dirigida a personas que desarrollen trabajos escritos de distinta naturaleza, como artículos, ensayos, libros, tesis, investigaciones, manuales u otros contenidos textuales, permitiéndoles administrar sus obras dentro de un entorno propio.
 
-El producto deberá facilitar progresivamente las capacidades descritas en PRODUCT.md, evolucionando desde un núcleo funcional reducido hacia una plataforma completa para la creación, gestión y difusión del conocimiento.
+Las capacidades descritas en `PRODUCT.md` expresan compromisos, posibilidades o desarrollos cuya incorporación deberá justificarse conforme al estatuto que posean en cada momento dentro de Product.
 
-Estas capacidades representan posibles formas de materializar la visión, pero no constituyen una lista cerrada ni un compromiso inmediato de implementación. Su incorporación dependerá de las necesidades reales de los usuarios, de la viabilidad técnica y del valor que aporten al conjunto de la plataforma.
+La visión no determina el orden en que dichas capacidades deban investigarse, realizarse o incorporarse, ni establece una trayectoria necesaria desde una configuración inicial hacia una configuración final de la plataforma.
 
-El producto deberá evolucionar de manera gradual, comenzando por un núcleo funcional reducido y útil antes de incorporar capacidades más avanzadas. Cada nueva funcionalidad deberá integrarse de forma coherente con el dominio, la arquitectura y la experiencia de uso.
+La evolución concreta del producto deberá justificarse a partir de sus compromisos vigentes, de las necesidades identificadas y de la evidencia obtenida durante el desarrollo.
 
-El objetivo no es construir una plataforma compleja desde el principio, sino desarrollar progresivamente un producto sostenible, comprensible y capaz de resolver problemas reales relacionados con la creación y difusión del conocimiento.
+El objetivo es desarrollar un producto sostenible, comprensible y capaz de resolver problemas reales relacionados con la creación y difusión del conocimiento, evitando introducir complejidad que no esté justificada por sus necesidades.
 
 ### 4.2 Laboratorio de ingeniería de software
 
@@ -94,7 +94,7 @@ Cada evolución de la plataforma representa una oportunidad para profundizar en 
 
 La experimentación forma parte del proceso de desarrollo, pero siempre estará vinculada a necesidades reales del producto o a hipótesis concretas de mejora. Las nuevas tecnologías, patrones o abstracciones no se incorporarán por su interés teórico, sino por su capacidad para resolver problemas existentes y mejorar la calidad del sistema.
 
-Las soluciones adoptadas deberán poder evaluarse mediante su aplicación práctica. Cuando una decisión demuestre aportar valor al proyecto, pasará a formar parte de la arquitectura estable. En caso contrario, podrá modificarse, simplificarse o descartarse sin comprometer la coherencia del sistema.
+Las soluciones adoptadas deberán poder evaluarse mediante su aplicación práctica. Cuando una decisión demuestre aportar valor al proyecto, podrá consolidarse en el ámbito al que corresponda siempre que su incorporación quede suficientemente justificada. En caso contrario, podrá modificarse, simplificarse o descartarse sin comprometer la coherencia del sistema.
 
 De este modo, el laboratorio no constituye un fin en sí mismo, sino el mecanismo que permite hacer evolucionar el producto de forma consciente, fundamentada y sostenible.
 
@@ -156,11 +156,9 @@ La incorporación de nuevas capacidades deberá perseguir siempre el equilibrio 
 
 ### 5.7 La visión permanece, el proyecto evoluciona
 
-Las tecnologías, las herramientas y las funcionalidades podrán cambiar con el tiempo. La visión del proyecto, sin embargo, constituye el criterio estable que orienta todas las decisiones de su evolución.
+Las tecnologías, las herramientas y las funcionalidades podrán cambiar con el tiempo. La visión del proyecto, sin embargo, constituye un marco estable de orientación respecto del cual deberá preservarse la coherencia de su evolución.
 
 ---
-
-### 5.8 La separación de responsabilidades favorece la evolución
 
 ## 6. Qué significa completar el proyecto
 
@@ -178,6 +176,8 @@ Ese propósito se considerará cumplido cuando el proyecto reúna, de forma equi
 - Preserve y comparta el conocimiento generado durante su desarrollo mediante una documentación completa y coherente.
 - Mantenga la alineación entre el producto, la arquitectura, la documentación y la visión que da sentido al conjunto del proyecto.
 
+Estas características expresan un horizonte de madurez del proyecto y no una secuencia de desarrollo, un conjunto de fases obligatorias ni un criterio para determinar automáticamente la siguiente actuación.
+
 Alcanzado ese punto, el proyecto podrá seguir incorporando nuevas capacidades, pero su crecimiento dejará de responder a la necesidad de completar una visión y pasará a formar parte del proceso natural de evolución de un producto consolidado.
 
 Por tanto, el verdadero objetivo del proyecto no consiste en llegar a un estado en el que ya no existan cambios, sino en construir un sistema capaz de evolucionar sin perder la identidad que define su propósito.
@@ -191,6 +191,8 @@ Por tanto, el verdadero objetivo del proyecto no consiste en llegar a un estado 
 La visión constituye el punto de partida del sistema documental del proyecto.
 
 Mientras otros documentos describen el estado actual, la arquitectura, la evolución o los aspectos relacionados con el desarrollo, este documento define el propósito que da sentido al conjunto del proyecto y establece el marco de referencia para su crecimiento a largo plazo.
+
+Esta relación expresa una organización de referencias y responsabilidades documentales. No representa una cadena de derivación, una jerarquía normativa ni un orden obligatorio de intervención entre documentos.
 
 Su relación con el resto de la documentación puede resumirse de la siguiente forma:
 

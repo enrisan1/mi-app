@@ -18041,3 +18041,404 @@ y corpus declarado
 Ninguno dentro del alcance propio de esta reapertura localizada de `17-indice-general.md`.
 
 ---
+
+# Ficha de consolidación — Reorganización documental del corpus y actualización localizada de `17-indice-general.md`
+
+## Fecha
+
+22/08/2026
+
+---
+
+## Actuación
+
+Registro de la reorganización documental mediante la que el Protocolo de Consolidación Documental deja de pertenecer al perímetro interno de `conceptual-model` y pasa a conservarse bajo Methodology, junto con la reapertura documental localizada y posterior cierre de `17-indice-general.md`.
+
+---
+
+## Situación anterior
+
+El estado documental anteriormente consolidado de `conceptual-model` comprendía:
+
+```text
+19 documentos internos
+```
+
+entre los que se encontraba:
+
+```text
+99-protocolo-de-consolidacion-documental.md
+```
+
+El protocolo desempeñaba una función transversal de gobierno documental y regulaba los procedimientos de construcción, revisión, congelación, reapertura y registro.
+
+La documentación histórica de esta bitácora conserva correctamente ese estado anterior.
+
+Por tanto:
+
+```text
+estado histórico anterior
+        =
+19 documentos internos
+        +
+99 integrado documentalmente
+en conceptual-model
+```
+
+---
+
+## Reorganización documental
+
+La reorganización posterior del repositorio trasladó la referencia canónica del Protocolo de Consolidación Documental a:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+El protocolo deja así de pertenecer documentalmente a:
+
+```text
+research/corpus/conceptual-model/
+```
+
+sin perder por ello su aplicabilidad metodológica sobre los documentos del corpus cuando corresponda.
+
+Se establece:
+
+```text
+aplicabilidad metodológica
+        ≠
+pertenencia documental
+```
+
+y:
+
+```text
+PCD
+        → gobierno documental transversal
+        → externo a conceptual-model
+        → aplicable cuando corresponda
+```
+
+---
+
+## Conservación histórica
+
+La reorganización no modifica retrospectivamente los estados anteriores registrados en esta bitácora.
+
+En particular, permanecen válidas como descripciones históricas las entradas que registran:
+
+```text
+19 archivos
+19 documentos
+99 como documento interno
+antiguas ubicaciones bajo docs/03-conceptual-model/
+fases PCD-1…PCD-5
+consolidaciones realizadas conforme al PCD
+```
+
+cuando dichas expresiones describen el estado existente en el momento correspondiente.
+
+Por tanto:
+
+```text
+reorganización posterior
+        ⇏
+reescritura retrospectiva
+de la bitácora
+```
+
+y:
+
+```text
+descripción histórica correcta
+        +
+cambio documental posterior
+        =
+historia preservada
+        +
+nuevo estado registrado
+```
+
+---
+
+## Impacto sobre `17-indice-general.md`
+
+La externalización del PCD modificó el perímetro documental que debía representar:
+
+```text
+17-indice-general.md
+```
+
+El índice conservaba todavía como integrante interno:
+
+```text
+99-protocolo-de-consolidacion-documental.md
+```
+
+y representaba el corpus mediante:
+
+```text
+19 documentos internos
+```
+
+La reorganización produjo, por tanto, una discrepancia entre:
+
+```text
+perímetro documental vigente
+        ≠
+perímetro representado por 17
+```
+
+Esta discrepancia justificó una reapertura documental localizada de `17`.
+
+---
+
+## Alcance de la reapertura
+
+La reapertura quedó limitada a:
+
+```text
+17-indice-general.md
+```
+
+y tuvo como objeto restaurar la correspondencia entre el índice y el perímetro documental vigente.
+
+No se identificó evidencia suficiente para derivar de la reorganización una reapertura conceptual de:
+
+```text
+00–16
+```
+
+ni una modificación de:
+
+```text
+resultados conceptuales
+resultados metateóricos
+resultados de validación
+preguntas abiertas
+```
+
+Por tanto:
+
+```text
+IMPACTO_CONCEPTUAL = NO IDENTIFICADO
+
+IMPACTO_DOCUMENTAL = LOCALIZADO EN 17
+```
+
+---
+
+## Modificaciones realizadas en `17`
+
+La actualización de `17-indice-general.md` estableció el nuevo perímetro vigente:
+
+```text
+research/corpus/conceptual-model/
+        =
+18 documentos internos
+```
+
+y reclasificó el PCD como relación metodológica externa:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
+gobierno documental transversal
+externo y aplicable
+```
+
+Se actualizaron, dentro del alcance documental necesario:
+
+```text
+perímetro del corpus
+navegación
+matrices documentales
+dependencias documentales
+órdenes de lectura
+estado documental
+```
+
+sin modificar los resultados conceptuales conservados.
+
+---
+
+## Preservación de la historia interna de `17`
+
+Las secciones históricas de `17` que describen estados anteriores conservaron sus referencias originales cuando éstas eran correctas respecto del momento documentado.
+
+Por tanto, las referencias históricas a:
+
+```text
+19 documentos
+99 como integrante interno
+docs/03-conceptual-model/
+```
+
+no fueron eliminadas por el mero hecho de que la organización vigente sea distinta.
+
+Se consolidó la distinción:
+
+```text
+estado histórico representado
+        ≠
+estado documental vigente
+```
+
+---
+
+## Controles de cierre de `17`
+
+La reapertura documental localizada fue sometida a los siguientes controles:
+
+| Control                                                                            | Resultado |
+| ---------------------------------------------------------------------------------- | --------- |
+| Correspondencia del perímetro vigente con `research/corpus/conceptual-model/`      | `PASS`    |
+| Exclusión del PCD de las matrices documentales internas vigentes                   | `PASS`    |
+| Exclusión del PCD como nodo constitutivo de las dependencias internas vigentes     | `PASS`    |
+| Exclusión del PCD como etapa conceptual interna de los órdenes de lectura vigentes | `PASS`    |
+| Preservación de las referencias históricas a estados anteriores                    | `PASS`    |
+| Referencia canónica al PCD bajo Methodology                                        | `PASS`    |
+| Ausencia de modificaciones conceptuales derivadas del desacoplamiento documental   | `PASS`    |
+| `git diff --check`                                                                 | `PASS`    |
+
+Resultado:
+
+```text
+controles = 8
+
+PASS = 8
+
+FAIL = 0
+
+OPEN = 0
+```
+
+---
+
+## Cierre de la reapertura
+
+Superados los controles establecidos, se cerró la reapertura mediante:
+
+```text
+REAPERTURA_DOCUMENTAL_LOCALIZADA_17 = CERRADA
+```
+
+El cierre posee alcance exclusivamente documental.
+
+No implica:
+
+- nueva consolidación conceptual de `00–16`;
+- nueva ratificación de sus resultados;
+- modificación de sus alcances;
+- incorporación del PCD al corpus;
+- ni clausura frente a futuras pérdidas o falsadores.
+
+---
+
+## Estado documental resultante
+
+El estado vigente queda representado mediante:
+
+```text
+research/corpus/conceptual-model/
+        ↓
+18 documentos internos
+```
+
+con:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
+PCD externo aplicable
+```
+
+Por tanto:
+
+```text
+archivos internos de conceptual-model = 18
+
+PCD externo aplicable = 1
+
+pertenencia del PCD al corpus = no
+
+documentos internos en reapertura = 0
+```
+
+---
+
+## Impacto sobre esta bitácora
+
+`16-bitacora-de-consolidacion.md` conserva íntegramente las entradas históricas anteriores.
+
+No procede corregir retrospectivamente en ellas:
+
+```text
+19 archivos
+19 documentos
+99 como integrante interno
+antiguas rutas documentales
+referencias históricas al PCD
+```
+
+cuando describen correctamente el estado correspondiente a su fecha.
+
+La presente ficha incorpora el acontecimiento posterior que permite reconstruir la transición:
+
+```text
+estado histórico
+19 documentos internos
+        ↓
+reorganización documental
+        ↓
+externalización del PCD
+        ↓
+18 documentos internos
+        ↓
+reapertura localizada de 17
+        ↓
+actualización documental
+        ↓
+8 PASS
+0 FAIL
+0 OPEN
+        ↓
+cierre de la reapertura
+```
+
+---
+
+## Resultado
+
+```text
+HISTORIA DOCUMENTAL
+        → preservada
+
+PCD
+        → referencia canónica bajo Methodology
+        → externo a conceptual-model
+        → aplicabilidad preservada
+
+conceptual-model
+        → 18 documentos internos
+
+17-indice-general.md
+        → actualizado
+        → reapertura localizada cerrada
+
+00–16
+        → sin reapertura conceptual derivada
+
+16-bitacora-de-consolidacion.md
+        → historia anterior preservada
+        → nuevo estado registrado
+```
+
+---
+
+## Pendiente
+
+Ninguno derivado dentro del alcance de esta reorganización documental y del cierre de la reapertura localizada de `17-indice-general.md`.
+
+---

@@ -117,7 +117,9 @@ Su alcance podrá depender, entre otros factores, de:
 - una modalidad o régimen de evaluación;
 - o condiciones metodológicas explícitas.
 
-El Modelo Conceptual, Governance y Engineering podrán utilizarse como ámbitos internos de contraste cuando resulte pertinente comprobar si una propiedad propuesta como general depende inadvertidamente del contexto en el que fue identificada.
+Las investigaciones conservadas en el Modelo Conceptual, Governance y Engineering podrán utilizarse como ámbitos de contraste cuando resulte pertinente comprobar si una propiedad propuesta como general depende inadvertidamente del contexto en el que fue identificada.
+
+Su conservación bajo `research/corpus/` no les concede autoridad automática sobre la metateoría ni convierte los resultados obtenidos en esos cuerpos en premisas metateóricas. Su utilización requerirá justificar su pertinencia y aplicabilidad respecto de la cuestión concreta investigada.
 
 La aparición de una propiedad en varios ámbitos no bastará para establecer su universalidad.
 

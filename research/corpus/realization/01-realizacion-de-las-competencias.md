@@ -6,7 +6,7 @@
 
 Este documento establece los principios arquitectónicos que gobiernan la realización de las competencias fundamentales del núcleo.
 
-Su finalidad consiste en determinar las condiciones generales que toda plataforma debe satisfacer para materializar una competencia arquitectónica preservando íntegramente la arquitectura consolidada durante la teoría conceptual, la ingeniería y la implementación.
+Su finalidad consiste en determinar las condiciones generales que toda plataforma debe satisfacer para materializar una competencia arquitectónica preservando íntegramente los resultados arquitectónicos establecidos como aplicables a dicha realización.
 
 No introduce nuevas competencias.
 
@@ -18,15 +18,17 @@ Su responsabilidad consiste exclusivamente en establecer cómo deben realizarse 
 
 ---
 
-# Posición dentro de la arquitectura
+# Posición dentro de Realization
+
+El presente documento desarrolla una aplicación particular de los principios generales establecidos en:
 
 ```text
-Teoría conceptual
-        │
-        ▼
-Ingeniería del núcleo
-        │
-        ▼
+00-principios-de-realizacion.md
+```
+
+Su posición interna dentro de Realization puede representarse mediante:
+
+```text
 00-principios-de-realizacion.md
         │
         ▼
@@ -42,15 +44,29 @@ Ingeniería del núcleo
 04-fronteras-del-dominio.md
 ```
 
-La teoría conceptual determina qué competencias existen y cuáles son sus propiedades fundamentales.
+Esta secuencia representa exclusivamente la organización interna del cuerpo de Realization.
 
-La ingeniería determina cómo deben organizarse dichas competencias dentro del núcleo software.
+No establece una secuencia necesaria entre Realization y los demás cuerpos conservados en `research/corpus/`.
 
-Los principios generales de realización establecen el marco normativo común que gobierna toda realización válida.
+Cuando la realización de una competencia requiera utilizar resultados conservados en otro cuerpo, deberá justificarse específicamente:
+
+```text
+resultado utilizado
+        ↓
+pertinencia para la competencia realizada
+        ↓
+alcance de su aplicabilidad
+        ↓
+condiciones que debe preservar la realización
+```
+
+La mera existencia de un resultado en otro cuerpo no lo convierte en presupuesto necesario de toda realización.
+
+Los principios generales de Realization establecen el marco normativo común que gobierna toda realización válida dentro de su alcance.
 
 El presente documento aplica dicho marco específicamente a la realización de las competencias arquitectónicas.
 
-Los documentos posteriores desarrollarán las implicaciones particulares relativas a los contratos, las dependencias permitidas y las fronteras del dominio.
+Los documentos siguientes de Realization desarrollan las cuestiones particulares relativas a los contratos, las dependencias permitidas y las fronteras del dominio.
 
 ---
 
@@ -100,7 +116,7 @@ Quedan expresamente fuera de su alcance:
 - las dependencias entre componentes;
 - las fronteras del dominio.
 
-Todas estas cuestiones serán desarrolladas en sus documentos específicos o permanecen reguladas por la teoría conceptual, la ingeniería del núcleo y los principios generales de realización.
+Todas estas cuestiones serán desarrolladas en sus documentos específicos o permanecerán reguladas por los resultados que hayan sido establecidos como aplicables dentro de su ámbito correspondiente y por los principios generales de realización.
 
 ---
 
@@ -278,7 +294,7 @@ Constituye una fase de preservación arquitectónica.
 
 En consecuencia:
 
-- la arquitectura del núcleo permanece definida por la teoría conceptual, la ingeniería y los principios generales de realización;
+- la arquitectura relevante para la realización permanece determinada por los resultados arquitectónicos establecidos como aplicables y por los principios generales de realización;
 - la realización únicamente materializa las competencias previamente consolidadas;
 - distintas plataformas cuya atribución realizativa esté justificada podrán constituir realizaciones conservativamente legítimas de una misma competencia siempre que preserven íntegramente los invariantes arquitectónicos aplicables;
 - toda reorganización interna de la plataforma será arquitectónicamente transparente mientras no modifique la identidad, la autoridad, la responsabilidad ni los invariantes de las competencias realizadas.
@@ -300,7 +316,7 @@ No introduce nuevas responsabilidades, autoridades, contratos ni invariantes arq
 
 Tampoco establece decisiones relativas a tecnologías, lenguajes, plataformas, patrones de implementación o estructuras organizativas concretas.
 
-Todas estas cuestiones pertenecen a sus correspondientes fases de investigación o a los documentos específicos de la arquitectura de realización.
+Todas estas cuestiones pertenecen a los cuerpos, documentos o investigaciones competentes según la naturaleza concreta del problema, o a los documentos específicos de Realization cuando corresponda.
 
 ---
 
@@ -308,8 +324,8 @@ Todas estas cuestiones pertenecen a sus correspondientes fases de investigación
 
 La realización de las competencias constituye la aplicación conservativa de la arquitectura previamente consolidada.
 
-Su finalidad consiste exclusivamente en garantizar que las competencias definidas por la teoría conceptual puedan materializarse mediante plataformas software sin alterar la identidad arquitectónica del núcleo.
+Su finalidad consiste exclusivamente en garantizar que las competencias establecidas como aplicables puedan materializarse mediante plataformas software sin alterar la identidad arquitectónica pertinente.
 
-En consecuencia, toda realización válida deberá preservar íntegramente las competencias arquitectónicas previamente definidas y justificar objetivamente cualquier transformación realizada conforme a los principios generales establecidos para la fase de realización.
+En consecuencia, toda realización válida deberá preservar íntegramente las competencias arquitectónicas previamente definidas y justificar objetivamente cualquier transformación realizada conforme a los principios generales establecidos para Realization.
 
 Con ello queda establecido el marco normativo específico para la realización de las competencias fundamentales del núcleo, sirviendo como base para el estudio de los contratos arquitectónicos, las dependencias permitidas y las restantes dimensiones de la realización.

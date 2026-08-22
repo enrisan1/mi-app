@@ -160,10 +160,10 @@ No se detectó ningún `FAIL` conceptual.
 
 # Alcance
 
-Este índice organiza el corpus completo actualmente consolidado de:
+Este índice organiza el corpus completo actualmente conservado de:
 
 ```text
-docs/03-conceptual-model/
+research/corpus/conceptual-model/
 ```
 
 compuesto por:
@@ -187,14 +187,21 @@ compuesto por:
 15-auditoria-de-la-metateoria.md
 16-bitacora-de-consolidacion.md
 17-indice-general.md
-99-protocolo-de-consolidacion-documental.md
 ```
 
 El corpus contiene actualmente:
 
 ```text
-19 archivos
+18 archivos
 ```
+
+El protocolo que regula transversalmente su construcción, revisión, congelación, reapertura y registro se conserva actualmente fuera de este corpus en:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+Su posición externa no elimina su aplicabilidad metodológica al corpus ni lo convierte en parte del contenido conceptual conservado en `research/corpus/conceptual-model/`.
 
 La numeración no expresa por sí sola:
 
@@ -316,14 +323,18 @@ VI.  Auditorías globales y metateóricas
 VII. Apertura, terminología y navegación
 ```
 
-Además existen dos funciones transversales:
+Además existe una función transversal interna:
 
 ```text
 16
 → memoria documental
+```
 
-99
-→ gobierno documental
+y una relación metodológica externa:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+→ gobierno documental transversal aplicable
 ```
 
 Esta organización es exclusivamente documental.
@@ -524,11 +535,13 @@ numeración del documento
 
 # Gobierno documental transversal
 
+El protocolo conservado actualmente en:
+
 ```text
-99-protocolo-de-consolidacion-documental.md
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
 ```
 
-gobierna transversalmente:
+gobierna transversalmente este corpus en materia de:
 
 - construcción;
 - auditoría;
@@ -542,7 +555,7 @@ No pertenece a una fase conceptual concreta.
 Por tanto:
 
 ```text
-99
+PCD
 ≠
 premisa conceptual anterior a 00
 ```
@@ -550,7 +563,7 @@ premisa conceptual anterior a 00
 y:
 
 ```text
-99
+PCD
 ≠
 resultado teórico del dominio
 ```
@@ -599,11 +612,15 @@ Una representación simplificada del corpus es:
 con:
 
 ```text
-99
-→ gobierno documental transversal
-
 16
 → memoria histórica transversal
+```
+
+y con una relación metodológica externa:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+→ gobierno documental transversal aplicable
 ```
 
 Este esquema es navegacional.
@@ -1717,58 +1734,56 @@ hasta superar nuevamente el PCD.
 
 ---
 
-# `99-protocolo-de-consolidacion-documental.md`
+# Relación externa con el Protocolo de Consolidación Documental
 
-## Función propia
-
-Regular el ciclo documental de construcción, revisión, congelación y reapertura.
-
-## Nivel
+El Protocolo de Consolidación Documental posee actualmente su referencia canónica en:
 
 ```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+## Función respecto del corpus
+
+Regular el ciclo documental aplicable a la construcción, revisión, congelación y reapertura de los documentos consolidables del corpus.
+
+## Estatuto
+
+```text
+EXTERNO AL CORPUS
++
 DOCUMENTAL / TRANSVERSAL
 ```
 
+El PCD no constituye un documento integrante de `conceptual-model`.
+
+Su aplicabilidad al corpus no lo convierte en resultado conceptual ni en premisa teórica.
+
 ## Aplicación
 
-Se aplica a los documentos consolidables del corpus.
+Se aplica a los documentos consolidables del corpus cuando corresponda según la metodología vigente.
 
 ## Ciclo general
 
 ```text
 PCD-1
 Auditoría conceptual
-
-↓
-
+        ↓
 PCD-2
 Versión completa auditable
-
-↓
-
+        ↓
 PCD-3
 Revisión y aceptación explícita
-
-↓
-
+        ↓
 PCD-4
 Congelación provisional
-
-↓
-
+        ↓
 PCD-5
 Registro en bitácora
 ```
 
 ## Modos documentales
 
-```text
-TD-1
-→ construcción inicial
-
-TD-2
-→ reapertura
-```
+Conservan el estatuto definido por el protocolo canónico vigente.
 
 ## Precaución
 
@@ -1778,9 +1793,13 @@ consolidación documental
 verdad conceptual
 ```
 
-## Estado
+y:
 
-✔ Consolidado provisionalmente
+```text
+aplicabilidad del PCD
+≠
+pertenencia documental al corpus
+```
 
 ---
 
@@ -1806,7 +1825,6 @@ verdad conceptual
 | `15`      | Auditoría del método                         |
 | `16`      | Memoria cronológica de consolidación         |
 | `17`      | Navegación documental                        |
-| `99`      | Gobierno documental transversal              |
 
 Cada producto realiza una función distinta.
 
@@ -1834,7 +1852,6 @@ Cada producto realiza una función distinta.
 | `15`      | Metateoría                                |
 | `16`      | Documental / histórico / transversal      |
 | `17`      | Navegación documental                     |
-| `99`      | Gobierno documental                       |
 
 ---
 
@@ -1858,7 +1875,6 @@ Cada producto realiza una función distinta.
 | `11`      | `COBERTURA TERMINOLÓGICA = PASS`                               |
 | `16`      | Memoria cronológica acumulativa                                |
 | `17`      | Mapa completo del corpus                                       |
-| `99`      | PCD                                                            |
 
 `02` y `07` no se reducen apropiadamente a una única ecuación de resultado.
 
@@ -2113,12 +2129,14 @@ corpus vigente
 ## Dependencia de navegación
 
 ```text
-00–17 + 99
+00–17
 →
 17
 ```
 
-en el sentido de que `17` debe representar fielmente el conjunto documental vigente.
+en el sentido de que `17` debe representar fielmente el conjunto documental interno vigente de `conceptual-model`.
+
+La relación con el PCD deberá representarse como interfaz metodológica externa y no como pertenencia al conjunto documental indexado.
 
 ---
 
@@ -2162,17 +2180,19 @@ No sustituye los documentos de origen.
 
 ---
 
-## `99 — Relación de gobierno documental`
+## PCD — Relación externa de gobierno documental
 
 ```text
-99
-→
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
 procedimientos de
 construcción,
 revisión,
 congelación
 y reapertura
 ```
+
+Esta relación es metodológica y documental, pero externa al perímetro interno de `conceptual-model`.
 
 ---
 
@@ -2252,13 +2272,17 @@ con:
 
 ```text
 00
-→ regulación metodológica transversal
+→ regulación metodológica transversal interna
 
 16
-→ memoria histórica transversal
+→ memoria histórica transversal interna
+```
 
-99
-→ gobierno documental transversal
+con una relación externa adicional:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+→ gobierno documental transversal aplicable
 ```
 
 La figura no pretende representar todas las dependencias argumentativas internas.
@@ -2398,14 +2422,22 @@ Antes de iniciar una nueva investigación:
 ```text
 00
 ↓
-99
-↓
 15
 ↓
 10
 ↓
 11
 ```
+
+y, transversalmente, el protocolo metodológico aplicable:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+El PCD regula el procedimiento documental de la investigación, pero no constituye una etapa conceptual dentro del orden interno de lectura.
+
+Después deberán consultarse los documentos específicamente afectados por la nueva cuestión.
 
 y después los documentos específicamente afectados por la nueva cuestión.
 
@@ -2508,15 +2540,25 @@ auditoría del método
 
 ---
 
-## `16` y `99`
+## `16` y el PCD
 
 ```text
 16
 → registra qué ocurrió
+   dentro de la historia documental
+   de conceptual-model
 
-99
+PCD
 → regula cómo debe
    realizarse la consolidación
+```
+
+Por tanto:
+
+```text
+memoria documental interna
+≠
+gobierno metodológico externo
 ```
 
 ---
@@ -2648,14 +2690,16 @@ El glosario no debe resolver preguntas abiertas mediante definición.
 
 ---
 
-## `15` y `99`
+## `15` y el `PCD`
 
 ```text
 15
 → restricciones metateóricas
+   internas al cuerpo
 
-99
+PCD
 → protocolo documental
+   transversal externo
 ```
 
 Actualmente:
@@ -2676,36 +2720,43 @@ PA-13
 
 # Estado documental del corpus durante esta reapertura
 
-| Documento                                     | Estado                         |
-| --------------------------------------------- | ------------------------------ |
-| `00-marco-teorico.md`                         | ✔ Consolidado provisionalmente |
-| `01-investigacion.md`                         | ✔ Vigente / integrado          |
-| `02-fenomenos-fundamentales.md`               | ✔ Consolidado provisionalmente |
-| `03-reduccion-de-fenomenos.md`                | ✔ Consolidado provisionalmente |
-| `04-exigencias-estructurales.md`              | ✔ Consolidado provisionalmente |
-| `05-perfil-funcional.md`                      | ✔ Consolidado provisionalmente |
-| `06-axiomas.md`                               | ✔ Consolidado provisionalmente |
-| `07-conclusiones-consolidadas.md`             | ✔ Consolidado provisionalmente |
-| `08-regimen-de-especializacion.md`            | ✔ Consolidado provisionalmente |
-| `09-validacion-por-casos.md`                  | ✔ Consolidado provisionalmente |
-| `10-preguntas-abiertas.md`                    | ✔ Consolidado provisionalmente |
-| `11-glosario.md`                              | ✔ Consolidado provisionalmente |
-| `12-reconstrucciones-conservativas.md`        | ✔ Consolidado provisionalmente |
-| `13-marco-de-realizacion.md`                  | ✔ Consolidado provisionalmente |
-| `14-auditoria-global-de-cobertura.md`         | ✔ Consolidado provisionalmente |
-| `15-auditoria-de-la-metateoria.md`            | ✔ Consolidado provisionalmente |
-| `16-bitacora-de-consolidacion.md`             | ✔ Vigente / acumulativo        |
-| `17-indice-general.md`                        | ◐ Reabierto mediante `TD-2`    |
-| `99-protocolo-de-consolidacion-documental.md` | ✔ Consolidado provisionalmente |
+| Documento                              | Estado                         |
+| -------------------------------------- | ------------------------------ |
+| `00-marco-teorico.md`                  | ✔ Consolidado provisionalmente |
+| `01-investigacion.md`                  | ✔ Vigente / integrado          |
+| `02-fenomenos-fundamentales.md`        | ✔ Consolidado provisionalmente |
+| `03-reduccion-de-fenomenos.md`         | ✔ Consolidado provisionalmente |
+| `04-exigencias-estructurales.md`       | ✔ Consolidado provisionalmente |
+| `05-perfil-funcional.md`               | ✔ Consolidado provisionalmente |
+| `06-axiomas.md`                        | ✔ Consolidado provisionalmente |
+| `07-conclusiones-consolidadas.md`      | ✔ Consolidado provisionalmente |
+| `08-regimen-de-especializacion.md`     | ✔ Consolidado provisionalmente |
+| `09-validacion-por-casos.md`           | ✔ Consolidado provisionalmente |
+| `10-preguntas-abiertas.md`             | ✔ Consolidado provisionalmente |
+| `11-glosario.md`                       | ✔ Consolidado provisionalmente |
+| `12-reconstrucciones-conservativas.md` | ✔ Consolidado provisionalmente |
+| `13-marco-de-realizacion.md`           | ✔ Consolidado provisionalmente |
+| `14-auditoria-global-de-cobertura.md`  | ✔ Consolidado provisionalmente |
+| `15-auditoria-de-la-metateoria.md`     | ✔ Consolidado provisionalmente |
+| `16-bitacora-de-consolidacion.md`      | ✔ Vigente / acumulativo        |
+| `17-indice-general.md`                 | ◐ Reabierto mediante `TD-2`    |
 
-Una vez superado nuevamente el PCD de `17`, el corpus podrá expresarse como:
+El Protocolo de Consolidación Documental aplicable al corpus se conserva externamente en:
 
 ```text
-archivos del corpus = 19
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
 
-archivos vigentes = 19
+Su estado documental no forma parte del cómputo interno de `conceptual-model`.
 
-documentos en reapertura = 0
+Una vez superado nuevamente el `PCD` de `17`, el corpus podrá expresarse como:
+
+```text
+archivos internos del corpus = 18
+
+archivos internos vigentes = 18
+
+documentos internos en reapertura = 0
 ```
 
 ---
@@ -3078,7 +3129,7 @@ Se comprueba que cada documento posee un producto no producido íntegramente por
 
 17 → navegación
 
-99 → protocolo documental
+PCD externo → protocolo documental
 ```
 
 Se comprueba especialmente:
@@ -3114,7 +3165,7 @@ de consolidación
 Y:
 
 ```text
-16 ≠ 99
+16 ≠ PCD
 ```
 
 porque:
@@ -4085,5 +4136,525 @@ TD-2
 ```
 
 sobre `17-indice-general.md`.
+
+---
+
+---
+
+# Nueva reapertura localizada por desacoplamiento documental
+
+## Motivo de la reapertura
+
+Con posterioridad al cierre documental anteriormente registrado, la organización general del repositorio fue revisada para distinguir con mayor precisión entre:
+
+- los cuerpos de investigación conservados;
+- la metodología transversal del proyecto;
+- y los documentos vigentes del proyecto principal.
+
+Como resultado de esta reorganización, el Protocolo de Consolidación Documental dejó de conservarse como documento interno de `conceptual-model` y pasó a disponer de una referencia metodológica transversal única en:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+El corpus conceptual se conserva actualmente en:
+
+```text
+research/corpus/conceptual-model/
+```
+
+Esta modificación altera el perímetro documental representado por `17-indice-general.md`, pero no modifica por sí misma los resultados conceptuales conservados en el corpus.
+
+Por tanto, procede una nueva reapertura localizada de `17` destinada exclusivamente a restaurar la correspondencia entre el índice y la organización documental actualmente vigente.
+
+---
+
+# Alcance de la reapertura
+
+La reapertura afecta a:
+
+```text
+17-indice-general.md
+```
+
+en aquellos lugares en los que el documento representaba:
+
+- `99-protocolo-de-consolidacion-documental.md` como integrante interno de `conceptual-model`;
+- un corpus compuesto por 19 documentos;
+- matrices internas que incluían `99`;
+- dependencias documentales que trataban `99` como nodo interno;
+- órdenes de lectura que incorporaban `99` como etapa del corpus;
+- o estados documentales que contabilizaban el protocolo dentro del perímetro de `conceptual-model`.
+
+La corrección establece actualmente:
+
+```text
+conceptual-model
+        =
+18 documentos internos
+```
+
+y:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        =
+interfaz metodológica externa aplicable
+```
+
+Por tanto:
+
+```text
+aplicabilidad metodológica
+        ≠
+pertenencia documental
+```
+
+y:
+
+```text
+PCD aplicable a conceptual-model
+        ⇏
+PCD integrante de conceptual-model
+```
+
+---
+
+# Límites de la reapertura
+
+Esta reapertura no constituye una nueva investigación conceptual.
+
+No modifica:
+
+- los fenómenos investigados;
+- las reducciones realizadas;
+- las exigencias estructurales obtenidas;
+- el perfil funcional;
+- la firma ni los axiomas;
+- las conclusiones consolidadas;
+- el régimen de especialización;
+- los resultados de validación;
+- las reconstrucciones conservativas;
+- el marco de realización;
+- la auditoría global de cobertura;
+- la auditoría de la metateoría;
+- las preguntas abiertas;
+- el glosario;
+- ni la historia de consolidación previamente registrada.
+
+Tampoco modifica retrospectivamente las afirmaciones históricas de este documento que describen correctamente estados anteriores del repositorio.
+
+Por tanto:
+
+```text
+reorganización documental posterior
+        ⇏
+falsación retrospectiva
+```
+
+y:
+
+```text
+cambio de ubicación del PCD
+        ⇏
+cambio de resultado conceptual
+```
+
+---
+
+# Auditoría de impacto
+
+## Impacto sobre el perímetro documental
+
+Antes de la reorganización aquí registrada, el índice representaba:
+
+```text
+conceptual-model
+        =
+19 archivos
+```
+
+incluyendo:
+
+```text
+99-protocolo-de-consolidacion-documental.md
+```
+
+La organización vigente distingue:
+
+```text
+research/corpus/conceptual-model/
+        =
+18 archivos
+```
+
+y:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        =
+protocolo metodológico transversal externo
+```
+
+El cambio afecta, por tanto, al perímetro documental representado por el índice.
+
+---
+
+## Impacto sobre la función de `17`
+
+La función propia de `17-indice-general.md` permanece inalterada:
+
+```text
+17
+→ navegación documental
+```
+
+Lo que cambia es el conjunto documental que debe representar fielmente.
+
+La dependencia de navegación pasa a expresarse como:
+
+```text
+00–17
+        ↓
+17
+```
+
+respecto del corpus interno, junto con la relación externa:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
+gobierno documental transversal aplicable
+```
+
+---
+
+## Impacto sobre el PCD
+
+El PCD conserva su función metodológica.
+
+Su traslado fuera de `conceptual-model` no elimina su aplicabilidad cuando corresponda según la metodología vigente.
+
+Se mantiene:
+
+```text
+PCD
+        ↓
+construcción
+revisión
+congelación
+reapertura
+registro
+```
+
+pero se establece explícitamente:
+
+```text
+función transversal del PCD
+        ≠
+pertenencia a conceptual-model
+```
+
+El protocolo no constituye:
+
+- un resultado conceptual;
+- una premisa conceptual;
+- una etapa deductiva del corpus;
+- ni un documento interno de `research/corpus/conceptual-model/`.
+
+---
+
+## Impacto sobre las matrices
+
+Las matrices funcionales y de niveles de `17` pasan a representar exclusivamente los documentos internos:
+
+```text
+00–17
+```
+
+con las numeraciones efectivamente existentes dentro del corpus.
+
+El PCD deja de aparecer como fila interna de dichas matrices.
+
+Su función permanece representada mediante una relación metodológica externa.
+
+---
+
+## Impacto sobre los órdenes de lectura
+
+Los órdenes de lectura conceptuales no deben incorporar el PCD como una etapa interna.
+
+Cuando resulte metodológicamente pertinente consultarlo, deberá indicarse transversalmente mediante su referencia canónica:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+Por tanto:
+
+```text
+consulta metodológica transversal
+        ≠
+etapa conceptual de lectura
+```
+
+---
+
+## Impacto sobre las dependencias
+
+Las dependencias conceptuales internas permanecen inalteradas.
+
+La relación con el PCD se reclasifica exclusivamente como:
+
+```text
+relación metodológica externa
+```
+
+y no como dependencia constitutiva interna del corpus.
+
+No se deriva ninguna nueva dependencia conceptual como consecuencia del traslado.
+
+---
+
+## Impacto sobre la historia documental
+
+Las secciones históricas de `17` que registran estados anteriores en los que `99` pertenecía al corpus conservan su validez histórica.
+
+En particular, las referencias anteriores a:
+
+```text
+19 archivos
+```
+
+o a:
+
+```text
+99
+```
+
+como integrante del corpus no deben reinterpretarse como descripciones del estado vigente cuando formen parte de una auditoría o cierre histórico anterior.
+
+Se establece:
+
+```text
+descripción histórica correcta
+        +
+reorganización posterior
+        ⇏
+necesidad de reescritura retrospectiva
+```
+
+La nueva reapertura complementa esa historia mediante la incorporación del estado posterior.
+
+---
+
+# Resultado de la auditoría de impacto
+
+No se ha identificado ninguna pérdida conceptual producida por el desacoplamiento documental del PCD.
+
+La modificación afecta a:
+
+```text
+perímetro documental
+navegación
+matrices
+dependencias documentales
+órdenes de lectura
+estado documental
+```
+
+pero no a:
+
+```text
+resultados conceptuales
+resultados metateóricos
+resultados de validación
+preguntas abiertas
+```
+
+Por tanto:
+
+```text
+IMPACTO_CONCEPTUAL = NO IDENTIFICADO
+```
+
+y:
+
+```text
+IMPACTO_DOCUMENTAL = LOCALIZADO EN 17
+```
+
+No existe fundamento derivado de esta reorganización para reabrir automáticamente `00–16`.
+
+---
+
+# Estado de la reapertura actual
+
+La reapertura queda caracterizada como:
+
+```text
+tipo
+→ documental localizada
+
+documento afectado
+→ 17-indice-general.md
+
+causa
+→ modificación del perímetro documental
+  por externalización del PCD
+
+resultado conceptual afectado
+→ ninguno identificado
+
+documentos conceptuales adicionales
+que deban reabrirse
+→ ninguno derivado
+```
+
+El estado documental vigente del corpus es:
+
+| Documento                              | Estado                                     |
+| -------------------------------------- | ------------------------------------------ |
+| `00-marco-teorico.md`                  | ✔ Conservado                               |
+| `01-investigacion.md`                  | ✔ Conservado                               |
+| `02-fenomenos-fundamentales.md`        | ✔ Conservado                               |
+| `03-reduccion-de-fenomenos.md`         | ✔ Conservado                               |
+| `04-exigencias-estructurales.md`       | ✔ Conservado                               |
+| `05-perfil-funcional.md`               | ✔ Conservado                               |
+| `06-axiomas.md`                        | ✔ Conservado                               |
+| `07-conclusiones-consolidadas.md`      | ✔ Conservado                               |
+| `08-regimen-de-especializacion.md`     | ✔ Conservado                               |
+| `09-validacion-por-casos.md`           | ✔ Conservado                               |
+| `10-preguntas-abiertas.md`             | ✔ Conservado                               |
+| `11-glosario.md`                       | ✔ Conservado                               |
+| `12-reconstrucciones-conservativas.md` | ✔ Conservado                               |
+| `13-marco-de-realizacion.md`           | ✔ Conservado                               |
+| `14-auditoria-global-de-cobertura.md`  | ✔ Conservado                               |
+| `15-auditoria-de-la-metateoria.md`     | ✔ Conservado                               |
+| `16-bitacora-de-consolidacion.md`      | ✔ Conservado / acumulativo                 |
+| `17-indice-general.md`                 | ✔ Reapertura documental localizada cerrada |
+
+El protocolo metodológico aplicable se conserva externamente en:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+y no se contabiliza entre los documentos internos del corpus.
+
+Por tanto:
+
+```text
+archivos internos de conceptual-model = 18
+
+PCD externo aplicable = 1
+
+pertenencia del PCD al corpus = no
+```
+
+---
+
+# Criterio de cierre
+
+La reapertura podrá cerrarse cuando se haya comprobado que:
+
+1. el perímetro vigente de `research/corpus/conceptual-model/` está representado correctamente;
+2. ninguna matriz vigente contabiliza el PCD como documento interno;
+3. ninguna dependencia vigente presenta el PCD como nodo constitutivo del corpus;
+4. ningún orden de lectura vigente lo presenta como etapa conceptual interna;
+5. las referencias históricas permanecen conservadas como descripciones de estados anteriores;
+6. la referencia canónica al PCD apunta a:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+7. no se ha introducido ninguna modificación conceptual no justificada durante la corrección documental;
+8. y `git diff --check` no detecta errores formales.
+
+# Resultado de los controles de cierre
+
+Se han ejecutado los controles establecidos para esta reapertura.
+
+| Control                                                                                         | Resultado |
+| ----------------------------------------------------------------------------------------------- | --------- |
+| Correspondencia del perímetro vigente con `research/corpus/conceptual-model/`                   | `PASS`    |
+| Exclusión del PCD de las matrices documentales internas vigentes                                | `PASS`    |
+| Exclusión del PCD como nodo constitutivo de las dependencias internas vigentes                  | `PASS`    |
+| Exclusión del PCD como etapa conceptual interna de los órdenes de lectura vigentes              | `PASS`    |
+| Preservación de las referencias históricas a los estados anteriores                             | `PASS`    |
+| Referencia canónica al PCD en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md` | `PASS`    |
+| Ausencia de modificaciones conceptuales derivadas del desacoplamiento documental                | `PASS`    |
+| `git diff --check`                                                                              | `PASS`    |
+
+Resultado global:
+
+```text
+controles = 8
+
+PASS = 8
+
+FAIL = 0
+
+OPEN = 0
+```
+
+Se establece, por tanto:
+
+```text
+REAPERTURA_DOCUMENTAL_LOCALIZADA_17 = CERRADA
+```
+
+El cierre posee alcance exclusivamente documental.
+
+No implica:
+
+- nueva consolidación conceptual de `00–16`;
+- ratificación adicional de sus resultados;
+- modificación de sus alcances;
+- ni clausura definitiva frente a futuras pérdidas o falsadores.
+
+---
+
+# Estado resultante
+
+Tras el cierre:
+
+```text
+research/corpus/conceptual-model/
+        ↓
+18 documentos internos
+        ↓
+17 representa fielmente
+el perímetro documental vigente
+```
+
+con:
+
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+        ↓
+gobierno documental transversal
+externo y aplicable
+```
+
+y manteniendo:
+
+```text
+historia anterior
+        → preservada
+
+resultados conceptuales
+        → no modificados
+
+PCD
+        → aplicable
+        → externo al corpus
+
+17
+        → actualizado
+        → nuevamente coherente
+          con el estado documental vigente
+```
 
 ---

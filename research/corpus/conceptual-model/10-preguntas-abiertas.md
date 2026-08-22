@@ -876,14 +876,20 @@ PA-12 — PA-OPEN
 Actualmente:
 
 ```text
-99
+PCD
 → disciplina documental
 
 15
 → disciplina metateórica
 ```
 
-y las `RM` no fueron importadas automáticamente al protocolo.
+El PCD posee su referencia canónica vigente en:
+
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+
+Su posición metodológica externa no elimina la cuestión investigada por PA-13.
+
+las `RM` no fueron importadas automáticamente al protocolo.
 
 La frontera sigue abierta.
 
@@ -891,7 +897,7 @@ La frontera sigue abierta.
 
 ```text
 15
-99
+PCD
 ```
 
 ## Evidencia relevante
@@ -936,7 +942,7 @@ Principalmente:
 
 ```text
 15
-99
+PCD
 ```
 
 y la metodología futura.
@@ -1302,9 +1308,13 @@ Su realización aportaría independencia respecto de la autoauditoría metateór
 | `PA-10`  | `02–15`                      |
 | `PA-11`  | `02`, `03`, `14`, `15`       |
 | `PA-12`  | `15`                         |
-| `PA-13`  | `15`, `99`                   |
-| `PA-14`  | `15`, `99`                   |
+| `PA-13`  | `15`, `PCD externo`          |
+| `PA-14`  | `15`, `PCD externo`          |
 | `PA-15`  | `08`, `15`                   |
+
+En esta matriz, `PCD externo` designa el Protocolo de Consolidación Documental cuya referencia canónica vigente se conserva en `docs/01-methodology/99-protocolo-de-consolidacion-documental.md`.
+
+Su inclusión como resultado potencialmente afectado no implica pertenencia documental a `conceptual-model`.
 
 ---
 

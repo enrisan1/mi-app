@@ -386,14 +386,15 @@ No sustituye las competencias propias de:
 - `PROJECT_STATUS.md`;
 - `PROJECT_JOURNAL.md`;
 - la metodología;
-- los cuerpos teóricos;
-- Engineering;
-- Realization;
+- la metateoría;
+- los cuerpos de investigación conservados en `research/corpus/`;
 - Architecture;
 - Development;
-- ni Implementation.
+- ni ningún otro cuerpo competente del proyecto.
 
-Cada uno de esos cuerpos conserva su responsabilidad propia.
+Cada uno de esos cuerpos conserva su responsabilidad propia dentro de su ámbito.
+
+Los resultados conservados en `research/corpus/` no adquieren autoridad sobre el proyecto principal por su sola existencia, pero tampoco quedan subordinados retrospectivamente a la carta fuera de las relaciones de aplicabilidad que deban justificarse en cada caso.
 
 La carta proporciona el marco superior frente al que puede comprobarse si su evolución continúa perteneciendo al mismo proyecto o implica una modificación explícita de éste.
 

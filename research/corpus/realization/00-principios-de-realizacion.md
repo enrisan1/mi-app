@@ -6,7 +6,7 @@ Este documento identifica y justifica los principios generales que gobiernan tod
 
 No define todavía componentes software concretos, patrones de diseño, tecnologías o decisiones de implementación.
 
-Su objetivo consiste en establecer las condiciones generales que debe satisfacer cualquier transformación sobre una realización para preservar íntegramente la arquitectura consolidada durante las fases anteriores del proyecto.
+Su objetivo consiste en establecer las condiciones generales que debe satisfacer cualquier transformación sobre una realización para preservar íntegramente la arquitectura establecida como aplicable dentro del alcance de la investigación.
 
 ---
 
@@ -56,7 +56,7 @@ Este documento presupone la atribución de las realizaciones sobre las que opera
 
 ## HR-001
 
-> **Toda realización válida del núcleo deberá preservar íntegramente los invariantes arquitectónicos consolidados durante la teoría, la ingeniería y la implementación.**
+> **Toda realización válida del núcleo deberá preservar íntegramente los invariantes arquitectónicos establecidos como aplicables a dicha realización.**
 
 La investigación intentará falsar esta hipótesis.
 
@@ -91,7 +91,7 @@ Para ello se intentó construir contraejemplos que exigieran:
 
 Ninguno de estos intentos produjo un fenómeno irreducible adicional.
 
-Las distintas propuestas acabaron reduciéndose sistemáticamente a principios ya consolidados durante las fases de teoría, ingeniería e implementación, o bien constituyeron mecanismos particulares para realizar dichos principios.
+Las distintas propuestas acabaron reduciéndose sistemáticamente a principios establecidos como aplicables dentro del alcance de la investigación, o bien constituyeron mecanismos particulares para realizar dichos principios.
 
 Como consecuencia, la investigación acepta provisionalmente la siguiente conclusión.
 
@@ -129,7 +129,7 @@ Describen las condiciones bajo las cuales una transformación puede considerarse
 
 En consecuencia, estos principios pertenecen al gobierno de la evolución de una realización y no a la definición de la arquitectura del núcleo.
 
-Su finalidad consiste en garantizar que toda evolución preserve íntegramente los resultados obtenidos durante las fases anteriores de la investigación.
+Su finalidad consiste en garantizar que toda evolución preserve íntegramente los resultados establecidos como aplicables a la realización considerada.
 
 ---
 
@@ -187,36 +187,87 @@ Ninguno de ellos podrá introducir principios realizativos adicionales sin justi
 
 ---
 
-# Relación con las fases anteriores
+# Relación con otros cuerpos de investigación
 
-La fase de realización no sustituye los resultados obtenidos durante la teoría, la ingeniería ni la implementación.
+Realization se conserva actualmente como un cuerpo de investigación autónomo dentro de:
 
-Los presupone íntegramente.
+```text
+research/corpus/realization/
+```
 
-Su función consiste exclusivamente en gobernar la evolución de realizaciones concretas preservando dichos resultados.
+Su desarrollo histórico fue formulado en relación con resultados procedentes de la teoría conceptual, Engineering e Implementation.
 
-En consecuencia:
+Estas relaciones deberán interpretarse de acuerdo con el contexto en el que fueron investigadas.
 
-- la teoría determina el significado del dominio;
-- la ingeniería determina las responsabilidades arquitectónicas;
-- la implementación determina la organización fundamental del núcleo;
-- la realización determina las condiciones bajo las cuales dicha organización puede transformarse sin perder su identidad arquitectónica.
+La conservación de Realization bajo `research/corpus/` no convierte dichos cuerpos en fases necesarias de una secuencia de desarrollo del proyecto principal ni obliga a adoptar automáticamente sus resultados como presupuestos de toda investigación realizativa.
 
-Cada fase amplía el ámbito de aplicación de la anterior sin modificar sus conclusiones.
+Cuando una investigación de Realization requiera utilizar un resultado conservado en otro cuerpo, deberá establecer explícitamente:
+
+```text
+resultado utilizado
+        ↓
+pertinencia para la cuestión investigada
+        ↓
+alcance de su aplicabilidad
+        ↓
+consecuencias realizativas justificadas
+```
+
+La mera existencia de un resultado en otro cuerpo de `research/corpus/` no basta para convertirlo en premisa necesaria de Realization.
+
+Dentro de una investigación concreta podrán existir dependencias justificadas entre resultados.
+
+Esto no implica una dependencia general entre los cuerpos documentales que los contienen.
 
 ---
 
 # Criterio de reapertura
 
-Toda transformación propuesta deberá evaluarse inicialmente como una posible operación conservativa.
+Toda transformación estudiada dentro de Realization deberá evaluarse respecto de los resultados que hayan sido establecidos como aplicables a la cuestión concreta.
 
-Cuando durante su justificación se demuestre que la transformación requiere modificar alguno de los principios consolidados durante la teoría, la ingeniería o la implementación, dejará inmediatamente de pertenecer al ámbito de la realización.
+Cuando durante su justificación se demuestre que la transformación entra en conflicto con alguno de esos resultados, deberá determinarse primero la naturaleza de la discrepancia.
 
-En tal caso deberá reabrirse la fase correspondiente para revisar el principio afectado antes de continuar con la transformación propuesta.
+Podrá tratarse, entre otros casos, de:
 
-La fase de realización no constituye un mecanismo para modificar la arquitectura del núcleo.
+```text
+error en la atribución de aplicabilidad
 
-Constituye el mecanismo para preservar dicha arquitectura durante su evolución.
+insuficiencia del resultado utilizado
+
+falsador del resultado conservado
+
+cambio de alcance
+
+problema propio de Realization
+
+problema perteneciente a otro cuerpo
+```
+
+Sólo cuando exista fundamento independiente para ello deberá reabrirse el documento o cuerpo correspondiente.
+
+Por tanto:
+
+```text
+conflicto detectado
+        ⇏
+reapertura automática de una fase anterior
+```
+
+sino:
+
+```text
+conflicto detectado
+        ↓
+identificación de su naturaleza
+        ↓
+localización del resultado afectado
+        ↓
+justificación de la actuación correspondiente
+```
+
+Realization no constituye por sí misma un mecanismo general para modificar resultados pertenecientes a otros cuerpos.
+
+Su competencia queda determinada por los problemas realizativos investigados en sus propios documentos y por las dependencias concretas cuya pertinencia haya sido establecida.
 
 ---
 
@@ -224,7 +275,7 @@ Constituye el mecanismo para preservar dicha arquitectura durante su evolución.
 
 La investigación realizada en este documento acepta provisionalmente la hipótesis de trabajo.
 
-No se ha encontrado ninguna transformación legítima que exija ampliar el conjunto de principios arquitectónicos consolidados durante las fases anteriores.
+No se ha encontrado ninguna transformación legítima que exija ampliar el conjunto de principios arquitectónicos establecidos como aplicables dentro del alcance de esta investigación.
 
 Como consecuencia, la investigación concluye provisionalmente que una realización válida del núcleo puede evolucionar mediante transformaciones conservativas gobernadas por el sistema normativo definido en este documento.
 

@@ -1805,7 +1805,13 @@ verdad absoluta
 
 ### Documento
 
-`99-protocolo-de-consolidacion-documental.md`
+`docs/01-methodology/99-protocolo-de-consolidacion-documental.md`
+
+### Relación con el corpus
+
+El PCD se conserva externamente a `conceptual-model` y mantiene sobre él una relación metodológica transversal aplicable.
+
+Su aplicabilidad documental no implica pertenencia al corpus.
 
 ### Función
 

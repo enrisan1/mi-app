@@ -66,9 +66,13 @@ la prueba.
 
 # Justificación documental
 
-`99-protocolo-de-consolidacion-documental.md` regula cómo se consolidan documentalmente los resultados.
+El Protocolo de Consolidación Documental regula cómo se consolidan documentalmente los resultados. Su referencia canónica vigente se conserva externamente en:
 
-`14-auditoria-global-de-cobertura.md` comprueba si el sistema consolidado cubre suficientemente el corpus actual.
+```text
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
+```
+
+Su aplicabilidad metodológica al presente corpus no implica pertenencia documental a éste.
 
 Ninguno responde por sí solo a:
 
@@ -2471,7 +2475,7 @@ posibilidad de OPEN.
 
 ---
 
-# Posible impacto sobre `99`
+# Posible impacto sobre el Protocolo de Consolidación Documental
 
 La aparición de:
 
@@ -2479,10 +2483,10 @@ La aparición de:
 RM-01…RM-08
 ```
 
-no obliga automáticamente a reabrir:
+no obliga automáticamente a reabrir el Protocolo de Consolidación Documental, cuya referencia canónica vigente se conserva en:
 
 ```text
-99-protocolo-de-consolidacion-documental.md.
+docs/01-methodology/99-protocolo-de-consolidacion-documental.md
 ```
 
 Debe distinguirse:
@@ -2498,10 +2502,10 @@ de:
 ```text
 RM
 →
-restricciones de investigación.
+restricciones de investigación
 ```
 
-Si posteriormente se decide que alguna `RM` debe convertirse en obligación formal del PCD, esa decisión deberá justificar una reapertura específica de `99`.
+Si posteriormente se decide que alguna `RM` debe convertirse en obligación formal del PCD, esa decisión deberá justificar una reapertura específica del protocolo dentro de su ubicación metodológica vigente.
 
 No se importa automáticamente.
 
