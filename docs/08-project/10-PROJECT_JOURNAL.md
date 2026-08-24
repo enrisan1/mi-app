@@ -765,7 +765,9 @@ La utilidad técnica, la presencia histórica de una propuesta o su posible pert
 
 # Reorganización del corpus de investigación y cierre del control global documental
 
-**Fecha:** 22/08/2026
+## Fecha
+
+22/08/2026
 
 ## Situación de partida
 
@@ -1151,5 +1153,454 @@ ninguna siguiente actuación derivada
 No se modifica `02-PRODUCT.md`, no se crea una nueva vertical y no se deriva automáticamente ninguna actuación práctica.
 
 La investigación queda cerrada respecto del alcance actualmente justificado.
+
+---
+
+# Derivación, construcción, validación y consolidación de la primera realización contingente destinada al uso
+
+## Fecha
+
+24/08/2026
+
+### Situación inicial
+
+El proyecto partía de un estado en el que `PV-001` se encontraba
+consolidada como primera vertical de Product, pero todavía no se había
+establecido una primera realización destinada al uso.
+
+La determinación anterior de la siguiente actuación justificable había
+concluido legítimamente que el estado entonces examinado no derivaba
+por sí mismo una actuación posterior obligatoria.
+
+Las investigaciones posteriores debían, por tanto, disponer de un
+fundamento positivo independiente y no podían justificarse por mera
+continuidad del desarrollo, por incompletitud genérica del proyecto ni
+por recuperación automática de soluciones históricas.
+
+### Problema investigado
+
+La investigación se abrió sobre la consecuencia legítima del resultado
+experimental obtenido mediante:
+
+```text
+PV-001
+↓
+CR-PV001-01
+↓
+D-001
+↓
+EX-R-A1
+```
+
+La cuestión consistía en determinar qué propiedad debía adquirir una
+realización para dejar de constituir únicamente una prueba experimental
+y poder convertirse en una primera realización efectivamente destinada
+al uso, sin introducir funcionalidades por anticipación.
+
+La reducción postexperimental identificó un residuo necesario que
+posteriormente fue sometido a investigación realizativa.
+
+A partir de ese residuo se examinó cómo seleccionar una realización
+contingente sin identificar:
+
+```text
+no necesario
+=
+arbitrario
+```
+
+La búsqueda de un anclaje independiente condujo a la selección de `R-U2` como primer anclaje legítimo de uso sobre el que continuar la investigación.
+
+### Investigación de `R-U2`
+
+La reducción de `R-U2` permitió distinguir las condiciones necesarias
+que debía conservar una realización de las propiedades que todavía
+permanecían contingentes.
+
+Se investigaron mecanismos deliberadamente diferentes y se aplicó
+`SCU-01` para evitar elevar prematuramente una solución particular a
+necesidad del producto.
+
+La investigación mostró que la mera presencia o reexposición de un
+estado anterior no era suficiente.
+
+Era necesario que aquello procedente de una situación anterior
+configurase efectivamente una posibilidad posterior de actuación.
+
+Esta diferencia condujo a investigar una forma mínima de incidencia en
+la que:
+
+```text
+S1
+↓
+X
+↓
+interrupción
+↓
+S2(X)
+↓
+Y
+```
+
+sin que el sistema tuviera que:
+
+- interpretar semánticamente `X`;
+- decidir por la persona qué actuación debía realizar;
+- determinar el contenido de `Y`;
+- exigir una continuidad semántica predeterminada;
+- introducir tareas, recomendaciones o flujos de trabajo.
+
+### Selección de `R-U2-M1`
+
+Como resultado de la reducción se especificó `R-U2-M1`.
+
+La realización establece dos situaciones mínimas:
+
+```text
+S1
+```
+
+y:
+
+```text
+S2(X)
+```
+
+donde `X` es un estado válido producido anteriormente y conservado a
+través de una interrupción.
+
+En `S2(X)`, la presencia de `X` configura la disponibilidad de una
+actuación mediante la cual la persona puede producir libremente una
+nueva aportación `Y`.
+
+La situación de reanudación establece `X` como antecedente de la nueva
+actuación sin requerir una operación humana adicional destinada
+exclusivamente a seleccionar explícitamente dicho antecedente.
+
+La realización permite así observar localmente:
+
+```text
+X → Y
+```
+
+sin convertir esta forma concreta en una estructura universal de
+Product.
+
+### Desarrollo dirigido por pruebas
+
+Antes de completar la implementación se especificaron las propiedades
+observables exigidas a cada nivel de la realización.
+
+La construcción se desarrolló progresivamente mediante pruebas.
+
+#### Modelo
+
+Se creó el modelo mínimo de reanudación y se validaron las operaciones
+necesarias para determinar la disponibilidad de reanudación y constituir
+un resultado situado.
+
+Resultado:
+
+```text
+resumeModel.test.ts
+17 / 17 tests superados
+```
+
+Las pruebas verifican, entre otras propiedades, que:
+
+- la disponibilidad depende de la existencia de un estado anterior
+  válido;
+- los valores vacíos o formados únicamente por espacios no constituyen
+  estados válidos;
+- los valores válidos se conservan exactamente;
+- el modelo no interpreta semánticamente su contenido;
+- `Y` no necesita continuar semánticamente `X`.
+
+#### Persistencia
+
+Se comprobó si la realización necesitaba introducir una abstracción
+general `ResumeRepository`.
+
+Al existir una única implementación necesaria para la realización, no
+se encontró fundamento suficiente para introducir anticipadamente esa
+abstracción.
+
+Se implementó directamente:
+
+```text
+localStorageResumeRepository
+```
+
+con las operaciones mínimas:
+
+```text
+savePrevious
+loadPrevious
+```
+
+Resultado:
+
+```text
+localStorageResumeRepository.test.ts
+6 / 6 tests superados
+```
+
+`localStorage` queda clasificado como mecanismo contingente de
+`R-U2-M1` y no como requisito de Product.
+
+#### Trayectoria integrada
+
+Se construyó `ResumeExperience` para hacer observable la trayectoria
+completa de la realización.
+
+Las pruebas cubren:
+
+- primera ejecución sin `X`;
+- producción y persistencia de un `X` válido;
+- interrupción efectiva mediante destrucción del estado del componente;
+- nueva ejecución;
+- recuperación de `X`;
+- constitución de `S2(X)`;
+- disponibilidad de una actuación dependiente de `X`;
+- producción libre de `Y`;
+- y evidencia observable de `X → Y`.
+
+Resultado:
+
+```text
+ResumeExperience.test.tsx
+18 / 18 tests superados
+```
+
+### Validación conjunta
+
+La suite completa de `R-U2-M1` produjo:
+
+```text
+Test Files  3 passed (3)
+Tests       41 passed (41)
+```
+
+La construcción de producción mediante Vite finalizó igualmente sin
+errores.
+
+La evidencia técnica quedó distribuida entre:
+
+```text
+modelo
+        ↓
+persistencia
+        ↓
+trayectoria integrada de uso
+```
+
+### Auditoría formal
+
+Una vez construida la realización se auditó formalmente respecto de:
+
+```text
+RU2-N01…RU2-N05
+MO-01r
+CY-01
+CY-02
+SCU-01
+```
+
+La auditoría distinguió entre:
+
+```text
+propiedades cuya satisfacción
+justifica la realización
+```
+
+y:
+
+```text
+mecanismos contingentes utilizados
+para satisfacerlas
+```
+
+La realización superó los criterios establecidos dentro del alcance
+sometido a prueba.
+
+### Resultado consolidado
+
+Se consolidó:
+
+```text
+RC-RU2M1-01
+```
+
+`R-U2-M1` constituye la primera realización contingente destinada al
+uso validada del proyecto dentro del alcance actualmente establecido.
+
+El resultado demuestra existencialmente que puede realizarse una
+situación en la que un estado `X` procedente de `S1` atraviese una
+interrupción y constituya posteriormente `S2(X)`, configurando en ella
+una posibilidad de actuación mediante la cual la persona pueda producir
+libremente `Y`.
+
+La realización permite distinguir entre:
+
+```text
+mera conservación o reexposición de X
+```
+
+y:
+
+```text
+incidencia efectiva de X
+sobre una posibilidad posterior de actuación
+```
+
+### Límites del resultado
+
+La validación de `R-U2-M1` no establece que:
+
+- `PV-001` haya quedado completamente realizada;
+- `R-U2-M1` sea el producto definitivo;
+- la realización determine la arquitectura futura;
+- Product requiera texto;
+- Product requiera `localStorage`;
+- deba conservarse necesariamente un único `X`;
+- toda actuación posterior adopte la forma `X → Y`;
+- React constituya una tecnología necesaria;
+- las estructuras concretas utilizadas deban generalizarse;
+- ni `R-U2-M1` excluya otras realizaciones compatibles.
+
+Las decisiones concretas utilizadas para construir la realización
+permanecen contingentes.
+
+### Consolidación documental
+
+La auditoría documental posterior mostró que la descripción completa
+de `R-U2-M1` no pertenecía a los documentos históricos de auditoría del
+proyecto ni debía quedar absorbida por `PRODUCT.md`.
+
+Se estableció el cuerpo:
+
+```text
+docs/06-realization/
+```
+
+y se consolidó como documento canónico de la realización:
+
+```text
+docs/06-realization/00-R-U2-M1.md
+```
+
+La propagación posterior se realizó por responsabilidad documental.
+
+`PRODUCT.md` conserva únicamente la consecuencia correspondiente al
+estado de realizabilidad de `PV-001`.
+
+`PROJECT_STATUS.md` declara el nuevo estado vigente del proyecto.
+
+Los documentos históricos permanecen sin modificación cuando el nuevo
+resultado no altera aquello que les corresponde registrar.
+
+`ROADMAP.md` tampoco requiere una nueva línea estratégica, puesto que
+la existencia de `R-U2-M1` no constituye por sí misma fundamento
+suficiente para establecerla.
+
+### Lecciones aprendidas
+
+> **Una realización contingente no es arbitraria cuando su selección
+> puede reconstruirse desde un fundamento independiente y supera
+> criterios explícitos de conservación.**
+
+> **La mera persistencia o reexposición de un estado anterior no
+> demuestra incidencia efectiva sobre una situación posterior. Debe
+> existir una diferencia observable en las posibilidades de actuación
+> configurada por dicho estado.**
+
+> **Una necesidad puede realizarse mediante mecanismos contingentes sin
+> que esos mecanismos adquieran por ello estatuto normativo.**
+
+> **No debe introducirse una abstracción arquitectónica únicamente
+> porque pueda resultar útil en el futuro. Su existencia necesita una
+> necesidad presente que la justifique.**
+
+> **Las pruebas pueden utilizarse no sólo para verificar código, sino
+> para preservar experimentalmente la frontera entre lo demostrado y
+> aquello que la implementación podría introducir accidentalmente.**
+
+> **La propagación documental debe seguir la responsabilidad de cada
+> documento y no la mera aparición de un resultado nuevo.**
+
+### Estado resultante
+
+El estado alcanzado puede resumirse como:
+
+```text
+PV-001
+        ✔ vigente
+        ↓
+R-U2
+        ✔ seleccionada como primer anclaje de uso
+        ↓
+R-U2-M1
+        ✔ especificada
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+        ↓
+RC-RU2M1-01
+        ✔ consolidado
+        ↓
+primera realización contingente
+destinada al uso
+        ✔ disponible
+```
+
+La realización puede constituirse ahora en objeto de observación de uso.
+
+Este estado no deriva automáticamente:
+
+```text
+ampliación de R-U2-M1
+segunda realización
+nueva vertical de Product
+arquitectura software
+funcionalidad adicional
+nueva línea estratégica
+```
+
+### Punto de reanudación
+
+La pregunta que precedía a esta investigación:
+
+```text
+¿puede derivarse justificadamente
+una primera realización destinada al uso?
+```
+
+dispone ahora de una respuesta positiva dentro del alcance establecido
+por `R-U2-M1`.
+
+El nuevo punto de reanudación es:
+
+```text
+R-U2-M1 disponible
+        ↓
+posibilidad de observación de uso
+        ↓
+¿aparece una insuficiencia,
+pérdida, dependencia no satisfecha
+u otro fundamento positivo?
+        ↓
+si aparece
+        ↓
+determinar el cuerpo competente
+        ↓
+derivar únicamente
+la actuación justificada
+```
+
+La mera existencia de la realización, su éxito técnico o la posibilidad
+de imaginar mejoras no justifican por sí mismos una ampliación.
+
+Hasta que aparezca un fundamento positivo suficiente, no queda derivada
+automáticamente ninguna actuación adicional.
 
 ---

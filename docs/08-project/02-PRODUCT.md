@@ -416,3 +416,18 @@ Product establece el resultado cuya imposibilidad constituye incumplimiento de l
 La derivación de esas condiciones corresponde a los cuerpos competentes dentro de sus respectivas competencias.
 
 El alcance de este compromiso queda limitado a `PV-001` y no establece una obligación universal para otras verticales.
+
+### Estado de realizabilidad de `PV-001`
+
+La investigación posterior al establecimiento de `PV-001` ha producido al menos una realización contingente destinada al uso que ha superado los criterios de validación establecidos dentro de su alcance.
+
+El resultado consolidado `RC-RU2M1-01` demuestra existencialmente que el compromiso admite una realización en la que algo procedente de una situación anterior puede configurar una posibilidad de actuación en
+una situación posterior.
+
+Este resultado no modifica `PV-001`, no amplía su compromiso y no
+convierte los mecanismos concretos de la realización validada en
+requisitos de Product.
+
+La descripción, evidencia, auditoría y límites de dicha realización pertenecen al cuerpo competente de Realization y al registro histórico del proyecto.
+
+---

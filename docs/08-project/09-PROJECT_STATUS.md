@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 19/08/2026
+**Fecha de actualización:** 24/08/2026
 
 ## Índice
 
@@ -25,7 +25,7 @@ La justificación detallada de dicho estado se encuentra distribuida entre los c
 
 `AUDITORIA_GLOBAL_DEL_PROYECTO.md` conserva la justificación del cambio de fase que permitió abandonar la investigación fundamental como actividad principal e iniciar la reconstrucción del producto.
 
-La determinación posterior de la siguiente actuación justificable y la auditoría global de continuidad han confirmado que actualmente no existe ninguna actuación siguiente derivada ni ninguna obligación transversal vigente que exija producirla.
+La determinación de la siguiente actuación justificable y la auditoría global de continuidad cerraron inicialmente sin derivar una actuación posterior obligatoria. Investigaciones posteriores fundadas independientemente condujeron, sin embargo, a la selección de `R-U2` y a la construcción, validación y auditoría de `R-U2-M1`.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -60,34 +60,44 @@ reconstrucción del producto
 PV-001
         ✔ consolidada
         ↓
+primera investigación realizativa
+        ↓
 R-PV001-001
-        ✔ derivada y evaluada
+        ✔ evaluada
         ↓
 satisfacción de CR-PV001-01
         no establecida
         ↓
-determinación de la siguiente actuación justificable
-        ✔ completada
+investigaciones posteriores de fundamento
+        ✔ completadas respecto de su alcance
         ↓
-siguiente actuación actualmente derivada
-        ninguna
+R-U2
+        ✔ seleccionada como primer anclaje de uso
+        ↓
+R-U2-M1
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+        ↓
+RC-RU2M1-01
+        ✔ consolidado
+        ↓
+primera realización contingente
+destinada al uso
+        ✔ disponible
 ```
 
-La evaluación de `R-PV001-001` no ha falsado `PV-001` ni `CR-PV001-01`, pero tampoco ha permitido establecer probatoriamente que la candidata satisfaga dicho criterio.
+`R-U2-M1` constituye actualmente la primera realización contingente destinada al uso validada dentro del alcance establecido.
 
-El resultado no deriva por sí mismo una obligación de reparar la candidata, construir una nueva realización, seleccionar una nueva vertical ni abrir otra investigación.
+La realización permite que un estado `X` producido en una situación `S1` atraviese una interrupción y constituya posteriormente una situación `S2(X)` en la que queda disponible una posibilidad de actuación configurada por la presencia de dicho antecedente. La persona puede producir libremente una nueva aportación `Y` sin que el sistema interprete semánticamente `X` ni determine el contenido de `Y`.
 
-La revisión posterior del estado consolidado tampoco ha identificado ningún compromiso superior que exija generar una nueva actuación por el mero hecho de que el proyecto permanezca incompleto, existan posibilidades todavía no exploradas o no haya actualmente una actuación siguiente derivada.
+Este resultado no establece que `R-U2-M1` constituya una realización completa de `PV-001`, una arquitectura normativa o el producto definitivo. Sus mecanismos concretos permanecen contingentes.
 
-Esto no significa que la investigación haya terminado ni que el proyecto se encuentre completo.
+La construcción y auditoría de `R-U2-M1` modifican, sin embargo, el estado del proyecto: existe ya una realización ejecutable que puede constituirse en objeto de observación de uso.
 
-Los cuerpos teóricos permanecen abiertos a nuevas investigaciones cuando aparezca una pérdida concreta que no pueda resolverse mediante los resultados ya consolidados, y podrán aparecer nuevas actuaciones cuando exista un fundamento positivo independiente que justifique su apertura.
+No se deriva de su éxito técnico ninguna capacidad adicional automática.
 
-El proyecto alcanza así un estado legítimo en el que **no existe actualmente una siguiente actuación derivada**.
-
-Este estado no constituye una clausura definitiva.
-
-Una actuación posterior deberá justificarse a partir de nueva evidencia, una pérdida concreta, una dependencia necesaria demostrada, una nueva selección debidamente justificada dentro de Product u otro fundamento independiente perteneciente al cuerpo competente, sin restaurar como normativa la secuencia histórica hacia Architecture ni reactivar automáticamente Engineering, Realization o Implementation conservados en `research/corpus/`.
+La siguiente actuación deberá justificarse a partir de una insuficiencia observable, una dependencia todavía no satisfecha u otro fundamento positivo independiente perteneciente al cuerpo competente.
 
 ---
 
@@ -313,6 +323,34 @@ Actualmente no existe ninguna línea estratégica concreta vigente. Esta ausenci
 
 ---
 
+## Realization
+
+El proyecto dispone nuevamente de un cuerpo vigente de Realization bajo:
+
+```text
+docs/06-realization/
+```
+
+Este cuerpo no restaura como normativa la antigua secuencia histórica entre Product, Engineering, Realization e Implementation ni reactiva automáticamente el corpus histórico conservado en `research/corpus/`.
+
+Su existencia procede de una realización concreta cuya construcción fue independientemente justificada a partir del estado posterior de Product.
+
+Actualmente contiene:
+
+```text
+00-R-U2-M1.md
+```
+
+que constituye la fuente canónica de la primera realización contingente destinada al uso validada del proyecto.
+
+`R-U2-M1` satisface, dentro del alcance auditado, las necesidades y criterios que justificaron su construcción y dispone de evidencia automatizada en los niveles de modelo, persistencia y trayectoria integrada de uso.
+
+Sus mecanismos técnicos concretos permanecen contingentes y no adquieren por ello autoridad sobre Product ni sobre una futura arquitectura software.
+
+Estado: cuerpo vigente; `R-U2-M1` consolidada dentro de su alcance; evolución posterior no derivada automáticamente.
+
+---
+
 ## Architecture
 
 La documentación arquitectónica existente describe fundamentalmente la evolución técnica de la Todo App.
@@ -385,7 +423,17 @@ Los principales hitos han sido:
 - prueba final de H-AG-001;
 - consolidación de C-AG-001 — Suficiencia para el cambio de fase;
 - establecimiento de RT-AG-001 — Reapertura por pérdida;
-- y cierre formal de la auditoría global el 08/08/2026.
+- cierre formal de la auditoría global el 08/08/2026;
+- reconstrucción y auditoría de `PRODUCT.md`;
+- consolidación de `PV-001`;
+- derivación y evaluación de `R-PV001-001`;
+- investigación y rechazo de una candidata a segunda vertical de Product;
+- auditoría adicional del fundamento histórico;
+- auditoría global de continuidad;
+- selección de `R-U2` como primer anclaje de uso;
+- construcción, validación y auditoría de `R-U2-M1`;
+- consolidación de `RC-RU2M1-01`;
+- y constitución de `docs/06-realization/` como cuerpo vigente de Realization.
 
 La justificación completa del último cambio de fase se conserva en:
 
@@ -399,61 +447,83 @@ El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bit�
 
 # 6. Estado de reanudación
 
-La auditoría global del proyecto se encuentra cerrada.
+La investigación posterior a la consolidación de `PV-001` ha conducido a la construcción, validación y auditoría de `R-U2-M1`.
 
-La reconstrucción de `PRODUCT.md` derivada de sus resultados también ha sido completada y auditada.
-
-A partir del compromiso consolidado por `PV-001` se derivó y desarrolló la investigación correspondiente a `R-PV001-001`.
-
-La evaluación final de dicha candidata no ha falsado:
+El estado vigente puede representarse así:
 
 ```text
 PV-001
-CR-PV001-01
+        ✔ vigente
+        ↓
+investigación realizativa
+        ↓
+R-U2
+        ✔ seleccionada como primer anclaje de uso
+        ↓
+R-U2-M1
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+        ↓
+RC-RU2M1-01
+        ✔ consolidado
+        ↓
+primera realización contingente
+destinada al uso
+        ✔ disponible
 ```
 
-pero tampoco ha permitido establecer probatoriamente que:
+`R-U2-M1` constituye la primera realización contingente destinada al uso validada dentro del alcance actualmente establecido.
+
+La realización permite que un estado `X` producido en una situación `S1` atraviese una interrupción y constituya posteriormente una situación `S2(X)` en la que queda disponible una posibilidad de actuación configurada por la presencia de dicho antecedente.
+
+La persona puede producir libremente una nueva aportación `Y` en `S2(X)` sin que el sistema interprete semánticamente `X`, determine el contenido de `Y` ni exija una relación semántica predeterminada entre ambos.
+
+La construcción y validación de `R-U2-M1` modifican la condición de reanudación del proyecto.
+
+La pregunta ya no es:
 
 ```text
-R-PV001-001
+¿puede derivarse justificadamente una primera realización destinada al uso?
 ```
 
-satisfaga:
+Esa cuestión dispone ahora de una respuesta positiva dentro del alcance establecido por `R-U2-M1`.
 
-`CR-PV001-01`.
+El proyecto dispone de una realización ejecutable que puede constituirse en objeto de observación de uso.
 
-La insuficiencia probatoria de la candidata ha quedado localizada sin introducir una obligación de reparación, una nueva realización ni una nueva vertical.
+Este resultado no deriva automáticamente:
 
-La revisión posterior del estado resultante tampoco ha identificado ningún compromiso vigente que exija actualmente:
+- una ampliación de `R-U2-M1`;
+- una segunda realización;
+- una nueva vertical de Product;
+- una arquitectura software;
+- la reactivación normativa del corpus histórico;
+- ni ninguna funcionalidad adicional.
 
-- `R-PV001-002`
-- `PV-002`
-- una nueva operacionalización
-- una nueva investigación fundamental
-- ni otra actuación concreta.
+La situación de reanudación es, por tanto:
 
-La ausencia de una actuación actualmente derivada no implica:
-
-- que el proyecto se encuentre completo;
-- que PV-001 haya dejado de estar vigente;
-- que no puedan seleccionarse posteriormente nuevas verticales;
-- que no puedan aparecer nuevas pérdidas;
-- ni que los cuerpos consolidados hayan quedado definitivamente clausurados.
-
-Implica exclusivamente que el estado actualmente consolidado no proporciona por sí mismo fundamento suficiente para imponer una nueva actuación.
-
-Por tanto:
-
-siguiente actuación actualmente derivada
-→ ninguna
-
-No se encuentra justificado continuar automáticamente con Architecture ni reactivar o reutilizar resultados de Engineering, Realization o Implementation conservados en `research/corpus/` por mera continuidad con la secuencia histórica del proyecto.
-
-Tampoco procede abrir una nueva realización, seleccionar una nueva vertical, ampliar preventivamente los fundamentos o reabrir investigaciones consolidadas por la mera necesidad de mantener el proyecto en movimiento.
+```text
+primera realización contingente
+destinada al uso disponible
+        ↓
+posibilidad de observación
+        ↓
+¿aparece una insuficiencia,
+pérdida o dependencia no satisfecha?
+```
 
 Una actuación posterior deberá disponer de un fundamento positivo independiente que justifique su apertura dentro del cuerpo competente.
 
-El proyecto queda, por tanto, en un estado legítimo sin actuación siguiente actualmente derivada y permanece abierto a reanudación cuando aparezca un fundamento que permita justificarla.
+Ese fundamento podrá proceder, entre otros casos admisibles, de:
+
+- una insuficiencia observable durante el uso de la realización;
+- una pérdida concreta;
+- una dependencia necesaria todavía no satisfecha;
+- o un fundamento positivo independiente obtenido por otra investigación legítima.
+
+La mera existencia de `R-U2-M1`, su éxito técnico o la posibilidad de imaginar mejoras no constituyen por sí mismos fundamento suficiente para ampliar la realización.
+
+Hasta que aparezca un fundamento de esa clase, no debe añadirse ninguna capacidad por mera continuación del desarrollo.
 
 ---
 
@@ -677,6 +747,39 @@ Establece únicamente que no queda entre los resultados actualmente obtenidos un
 
 ---
 
+## Primera realización contingente destinada al uso
+
+Las investigaciones posteriores condujeron a la selección de `R-U2` como primer anclaje legítimo para una realización destinada al uso y a la especificación de `R-U2-M1`.
+
+`R-U2-M1` fue construida, validada y sometida a auditoría formal respecto de las necesidades y criterios que justificaron su realización.
+
+El resultado alcanzado es:
+
+```text
+R-U2
+        ✔ seleccionada
+
+R-U2-M1
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+
+RC-RU2M1-01
+        ✔ consolidado
+```
+
+`R-U2-M1` constituye la primera realización contingente destinada al uso validada dentro del alcance actualmente establecido.
+
+Este resultado no convierte sus mecanismos concretos en requisitos de Product, no establece una arquitectura normativa y no deriva automáticamente una ampliación de la realización.
+
+La especificación, evidencia, auditoría y límites del resultado se encuentran consolidados en:
+
+```text
+docs/06-realization/00-R-U2-M1.md
+```
+
+---
+
 # 8. Principios consolidados
 
 La evolución del proyecto ha permitido consolidar principios procedentes tanto de su etapa de desarrollo técnico como de la investigación posterior.
@@ -810,7 +913,7 @@ Auditoría global
 Auditoría global de continuidad
     ✔ cerrada — 19/08/2026
     → ninguna obligación transversal de continuación localizada
-    → conserva el estado sin siguiente actuación actualmente derivada
+    → cerró sin derivar por sí misma una actuación posterior obligatoria
 
 Todo App
     ✔ implementación funcional
@@ -823,6 +926,19 @@ PV-001
     ✔ situación consolidada
     ✔ valor justificado consolidado
     ✔ compromiso consolidado
+
+Realization vigente
+
+    ✔ docs/06-realization/ constituido
+
+R-U2-M1
+
+    ✔ construida
+    ✔ validada
+    ✔ auditada
+    ✔ RC-RU2M1-01 consolidado
+    → primera realización contingente destinada al uso
+    → mecanismos concretos no normativos
 
 R-PV001-001
     ✔ investigación cerrada
@@ -845,9 +961,12 @@ Auditoría adicional de fundamento histórico
     → ningún nuevo compromiso de Product derivado
     → extracción exhaustiva del corpus no justificada actualmente
 
-Siguiente actuación
-    ○ ninguna actualmente derivada
-    ↺ reanudable ante fundamento positivo independiente
+Estado de continuación
+
+    ✔ primera realización contingente disponible
+    → susceptible de observación de uso
+    ○ ninguna ampliación automáticamente derivada
+    ↺ nueva actuación condicionada a fundamento positivo independiente
 
 Design Journal
     ✔ responsabilidad vigente
@@ -859,86 +978,5 @@ Design Journal
 Arquitectura del nuevo producto
     ○ todavía no derivada
 ```
-
-## Condición de reanudación
-
-La determinación de la siguiente actuación justificable a partir de `PRODUCT.md` y de `PV-001` ha sido completada.
-
-El estado resultante es:
-
-```text
-fundamento consolidado
-        ↓
-PRODUCT.md reconstruido
-        ↓
-PV-001 consolidada
-        ↓
-R-PV001-001 derivada y evaluada
-        ↓
-satisfacción de CR-PV001-01
-no establecida
-        ↓
-ninguna actuación posterior
-actualmente derivada
-        ↓
-Design Journal histórico
-        ↓
-auditoría reconstructiva completada
-        ↓
-ningún residuo positivo independiente
-        ↓
-investigación de candidata
-a segunda vertical
-        ↓
-reducción composicional a PV-001
-        ↓
-PV-002 no consolidada
-        ↓
-ninguna modificación de Product
-        ↓
-ninguna nueva actuación derivada
-        ↓
-auditoría adicional de
-fundamento histórico
-        ↓
-primer barrido no exhaustivo
-        ↓
-segunda extracción primaria
-        ↓
-nuevas familias identificadas
-        ↓
-fundamentos relevantes examinados
-        ↓
-FP-6 reducido
-        ↓
-núcleo de FP-7 examinado
-        ↓
-ninguna diferencia humana
-independiente demostrada
-        ↓
-extracción histórica suficiente
-para la finalidad actual
-        ↓
-ningún fundamento positivo
-pendiente actualmente identificado
-        ↓
-ninguna nueva actuación derivada
-```
-
-No existe actualmente un punto de continuación obligatorio ni una actuación adicional positivamente justificada a partir de los resultados disponibles y examinados.
-
-La reanudación del proyecto requerirá la aparición o identificación de un fundamento positivo independiente que justifique una nueva actuación dentro del cuerpo competente.
-
-Dicho fundamento podrá proceder, entre otros casos compatibles con los compromisos ya consolidados, de:
-
-- una pérdida concreta;
-- nueva evidencia relevante;
-- una dependencia necesaria demostrada;
-- una incompatibilidad entre compromisos;
-- o una nueva situación cuya selección como compromiso de Product quede independientemente justificada.
-
-La mera incompletitud del proyecto, la existencia de posibilidades todavía no exploradas o el hecho de no disponer actualmente de una actuación siguiente no constituyen por sí mismos fundamento suficiente para reanudar la derivación.
-
-La ausencia de un punto de continuación obligatorio no constituye una declaración de completitud ni de terminación definitiva del proyecto.
 
 ---
