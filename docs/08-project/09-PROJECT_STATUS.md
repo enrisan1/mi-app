@@ -632,6 +632,51 @@ Su resultado se encuentra desarrollado en `06-DESIGN_JOURNAL.md` y registrado hi
 
 ---
 
+## Auditoría adicional de fundamento histórico
+
+Tras el rechazo de la candidata a segunda vertical se examinó si el material histórico disponible podía contener fundamento humano independiente que hubiera quedado omitido.
+
+La investigación demostró que el primer barrido de fenómenos no podía considerarse exhaustivo y realizó una segunda extracción centrada en intervenciones primarias, separándolas de interpretaciones, soluciones y elaboraciones posteriores.
+
+Se identificaron provisionalmente las familias `FP-1` a `FP-7`.
+
+Los nuevos resultados con fundamento suficiente fueron sometidos a reducción.
+
+`FP-5`, relativa a condiciones de elaboración reconocibles, no demostró una diferencia humana propia de Product.
+
+`FP-6`, relativa inicialmente a la evaluación de una aportación, fue investigada bajo control explícito de `PROJECT_CHARTER.md` para impedir su expansión hacia una investigación epistemológica autónoma.
+
+Su residuo quedó reducido a la diferencia entre que una aportación intervenga en una actividad y que pueda convertirse en objeto de otra actuación.
+
+No se demostró que esa estructura constituya una diferencia humana propia del trabajo intelectual frente a la capacidad general de actuar sobre objetos disponibles.
+
+La reducción alcanzó también el núcleo estructural de `FP-7`, sin proporcionar fundamento independiente para abrir otra investigación.
+
+Una prueba adicional de control estableció que continuar hasta clasificar exhaustivamente el corpus histórico no se encuentra actualmente justificado. La extracción realizada alcanzó suficiencia para la finalidad que motivó su apertura.
+
+Por tanto:
+
+```text
+material histórico adicional examinado
+        ↓
+posibles fundamentos omitidos localizados
+        ↓
+fundamentos positivos relevantes examinados
+        ↓
+ninguna nueva diferencia humana
+independiente demostrada
+        ↓
+Product no modificado
+        ↓
+ninguna nueva actuación derivada
+```
+
+Este resultado no declara agotado el corpus histórico ni completo el producto.
+
+Establece únicamente que no queda entre los resultados actualmente obtenidos un fundamento positivo pendiente cuya investigación derive ahora una nueva actuación.
+
+---
+
 # 8. Principios consolidados
 
 La evolución del proyecto ha permitido consolidar principios procedentes tanto de su etapa de desarrollo técnico como de la investigación posterior.
@@ -790,6 +835,16 @@ Candidata a segunda vertical de Product
     → reducida composicionalmente a PV-001
     → PV-002 no consolidada
 
+Auditoría adicional de fundamento histórico
+    ✔ cerrada respecto del alcance actualmente justificado
+    → primer barrido demostrado no exhaustivo
+    → segunda extracción primaria realizada
+    → FP-1 ... FP-7 identificadas provisionalmente
+    → FP-5 y FP-6 reducidas
+    → núcleo de FP-7 examinado
+    → ningún nuevo compromiso de Product derivado
+    → extracción exhaustiva del corpus no justificada actualmente
+
 Siguiente actuación
     ○ ninguna actualmente derivada
     ↺ reanudable ante fundamento positivo independiente
@@ -842,9 +897,35 @@ PV-002 no consolidada
 ninguna modificación de Product
         ↓
 ninguna nueva actuación derivada
+        ↓
+auditoría adicional de
+fundamento histórico
+        ↓
+primer barrido no exhaustivo
+        ↓
+segunda extracción primaria
+        ↓
+nuevas familias identificadas
+        ↓
+fundamentos relevantes examinados
+        ↓
+FP-6 reducido
+        ↓
+núcleo de FP-7 examinado
+        ↓
+ninguna diferencia humana
+independiente demostrada
+        ↓
+extracción histórica suficiente
+para la finalidad actual
+        ↓
+ningún fundamento positivo
+pendiente actualmente identificado
+        ↓
+ninguna nueva actuación derivada
 ```
 
-No existe, por tanto, un punto de continuación obligatorio actualmente establecido.
+No existe actualmente un punto de continuación obligatorio ni una actuación adicional positivamente justificada a partir de los resultados disponibles y examinados.
 
 La reanudación del proyecto requerirá la aparición o identificación de un fundamento positivo independiente que justifique una nueva actuación dentro del cuerpo competente.
 

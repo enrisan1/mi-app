@@ -1088,3 +1088,68 @@ La investigación queda cerrada y registrada en `06-DESIGN_JOURNAL.md`.
 Su cierre tampoco prescribe la búsqueda inmediata de otra vertical ni abre automáticamente una actuación práctica. Cualquier nueva investigación de Product o actuación sobre `PV-001` deberá disponer de fundamento positivo independiente.
 
 ---
+
+## Auditoría adicional de fundamento histórico y cierre de FP-6/FP-7
+
+Tras el rechazo de la candidata a segunda vertical de Product se examinó si las fuentes históricas del origen del proyecto contenían fundamento positivo independiente que hubiera quedado oculto por las categorías utilizadas en reconstrucciones posteriores.
+
+Un primer barrido de fenómenos humanos no produjo una diferencia independiente suficiente.
+
+Se comprobó posteriormente que aquel barrido no podía considerarse exhaustivo y se realizó una segunda lectura centrada en intervenciones primarias, manteniendo separadas:
+
+```text
+situación humana
+interpretación
+solución
+elaboración conceptual posterior
+```
+
+La revisión permitió identificar provisionalmente las familias `FP-1` a `FP-7`.
+
+La investigación de FP-5, relativa a condiciones de elaboración reconocibles, no demostró una diferencia humana propia de Product después de eliminar información adicional, confianza general, supervisión, transparencia normativa y presupuestos epistemológicos.
+
+El crecimiento de la investigación motivó una prueba de control respecto de `PROJECT_CHARTER.md`.
+
+El control confirmó la legitimidad de la búsqueda histórica como medio para localizar fundamento humano omitido, pero rechazó convertir la clasificación exhaustiva del corpus en un objetivo autónomo.
+
+La extracción histórica quedó cerrada al alcanzar suficiencia para su finalidad actual.
+
+Entre los resultados pendientes, FP-6 fue seleccionado para investigación por reunir evidencia primaria, situación humana identificable, diferencia potencial y pertenencia plausible al perímetro del proyecto.
+
+La investigación eliminó como fundamentos independientes la información adicional, la evaluación general, la confianza, la decisión y cualquier norma epistemológica.
+
+El residuo quedó reducido a:
+
+```text
+X puede intervenir
+en una actividad
+
+        ≠
+
+X puede convertirse
+en objeto de una actuación
+```
+
+La estructura no demostró una diferencia propia del trabajo intelectual, pues podía reducirse a la capacidad general de actuar sobre objetos disponibles.
+
+Este resultado alcanzó también el núcleo estructural de `FP-7`, sin demostrar en él una diferencia humana independiente.
+
+El estado resultante es:
+
+```text
+auditoría histórica adicional
+        ↓
+nuevos fundamentos identificados
+        ↓
+fundamentos examinados
+        ↓
+ningún nuevo compromiso de Product
+        ↓
+ninguna siguiente actuación derivada
+```
+
+No se modifica `02-PRODUCT.md`, no se crea una nueva vertical y no se deriva automáticamente ninguna actuación práctica.
+
+La investigación queda cerrada respecto del alcance actualmente justificado.
+
+---

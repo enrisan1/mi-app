@@ -506,3 +506,378 @@ Una nueva investigación de Product deberá abrirse únicamente si aparece funda
 Del mismo modo, una actuación práctica sobre `PV-001` requerirá fundamento independiente adicional si el estado actualmente consolidado continúa sin justificarla.
 
 ---
+
+## Auditoría adicional de fundamento histórico y control de alineación
+
+### Origen
+
+Tras el rechazo de la candidata a segunda vertical de Product, el proyecto alcanzó un estado en el que no existía una siguiente actuación automáticamente derivada.
+
+Antes de aceptar ese estado como suficientemente investigado, se examinó si las fuentes históricas del origen del proyecto contenían situaciones humanas capaces de proporcionar fundamento positivo independiente que hubiera quedado oculto por las categorías utilizadas durante las reconstrucciones posteriores.
+
+La investigación no pretendía restaurar soluciones históricas ni convertir el corpus histórico en una fuente normativa.
+
+Su finalidad era comprobar si el material ya disponible contenía evidencia humana relevante que no hubiera sido considerada adecuadamente.
+
+### Primer barrido de fenómenos
+
+Un primer barrido permitió identificar provisionalmente fenómenos relacionados con:
+
+- utilización de información disponible;
+- fragmentación entre ámbitos;
+- separación entre actividad propia y disponibilidad para otras personas;
+- y preservación de formas sencillas de actuación frente al aumento de complejidad.
+
+Estos fenómenos fueron sometidos a pruebas de reducción.
+
+No se demostró en ellos una diferencia humana positiva independiente suficiente para ampliar Product.
+
+Entre las reducciones aparecieron:
+
+- dependencia de escala o practicabilidad;
+- eficiencia;
+- relacionalidad general;
+- autonomía, privacidad, control o acceso;
+- generalidad de principios de diseño;
+- y convergencia parcial con `PV-001`.
+
+### Control de exhaustividad del primer barrido
+
+Se examinó posteriormente si aquel primer barrido podía considerarse suficientemente exhaustivo respecto de las fuentes históricas originales.
+
+El control mostró que no podía sostenerse esa conclusión.
+
+El procedimiento anterior había estado parcialmente orientado por categorías ya disponibles y podía dejar sin detectar situaciones humanas que no encajaran en ellas.
+
+Se realizó por ello una segunda lectura centrada en intervenciones primarias, distinguiendo entre:
+
+```text
+situación o dificultad expresada por la persona
+        ≠
+interpretación posterior
+        ≠
+solución propuesta
+        ≠
+elaboración conceptual posterior
+```
+
+La finalidad consistió en extraer primero la evidencia y clasificarla únicamente después.
+
+### Familias primarias obtenidas
+
+La revisión permitió distinguir provisionalmente las siguientes familias:
+
+```text
+FP-1
+trabajo con información
+
+FP-2
+abundancia, localización y utilización
+
+FP-3
+actividad propia y disponibilidad para otras personas
+
+FP-4
+variabilidad de necesidad y complejidad
+
+FP-5
+condiciones de elaboración reconocibles
+
+FP-6
+evaluación de una aportación
+
+FP-7
+distinción entre aportación y actividad sobre ella
+```
+
+También apareció una preocupación relativa a la estabilidad del propio proceso de investigación.
+
+Esta última fue reconocida como cuestión metodológica y no como fundamento de Product.
+
+Las familias no fueron consideradas verticales, requisitos ni compromisos.
+
+Su identificación sólo establecía que determinadas preocupaciones poseían raíz histórica suficiente para poder ser examinadas.
+
+### Reducción de FP-5
+
+`FP-5` partía de la posibilidad de que una persona pudiera conocer determinadas condiciones de elaboración de una aportación.
+
+La candidata fue examinada eliminando como fundamentos:
+
+- curiosidad;
+- información adicional;
+- confianza general;
+- supervisión;
+- control social;
+- normas generales de transparencia;
+- y normas epistemológicas acerca del valor de determinadas formas de producción.
+
+El residuo quedó reducido a disponer de información adicional acerca del proceso de elaboración de una aportación.
+
+No se demostró una diferencia humana específicamente propia de Product.
+
+### Control mediante PROJECT_CHARTER.md
+
+El crecimiento de la investigación histórica hizo necesario comprobar que ésta continuaba subordinada a la finalidad del proyecto y no estaba adquiriendo una agenda autónoma.
+
+La prueba de control confirmó que la investigación:
+
+- pertenecía al perímetro humano del proyecto;
+- mantenía separadas situaciones y soluciones;
+- no restauraba automáticamente soluciones históricas;
+- no convertía candidatas en compromisos;
+- no derivaba implementación;
+- y conservaba a Product como cuerpo competente para determinar compromisos de producto.
+
+Se identificó, sin embargo, un riesgo de desviación hacia investigaciones conceptuales o epistemológicas autónomas.
+
+Se estableció por ello como criterio operativo:
+
+```text
+pregunta teórica T
+        ↓
+no puede reconstruirse
+qué diferencia humana del proyecto
+obliga actualmente a responder T
+        ↓
+T no está justificada
+por la investigación actual
+```
+
+### Control de la extracción histórica
+
+La misma prueba se aplicó a la pretensión de continuar extrayendo exhaustivamente todas las intervenciones históricas primarias.
+
+El control distinguió entre:
+
+```text
+buscar evidencia suficiente
+para no omitir un fundamento relevante
+        ✓
+```
+
+y:
+
+```text
+clasificar exhaustivamente
+todo el corpus histórico
+por el mero hecho de existir
+        ✗
+```
+
+La segunda lectura ya había demostrado que el primer barrido no era exhaustivo y había producido nuevas familias susceptibles de evaluación.
+
+No se identificó una pérdida concreta que exigiera continuar hasta agotar el corpus.
+
+La extracción histórica alcanzó por tanto su criterio de suficiencia actual y quedó detenida.
+
+### Selección de FP-6 para investigación
+
+Entre los resultados pendientes, `FP-6` fue el único que reunía simultáneamente:
+
+- evidencia primaria;
+- una situación humana identificable;
+- una diferencia humana potencial;
+- pertenencia plausible al perímetro del proyecto;
+- y ausencia de investigación previa suficiente.
+
+Su prioridad no procedía del orden histórico ni de su interés conceptual, sino del fundamento positivo disponible.
+
+La investigación fue delimitada expresamente para evitar convertirla en una investigación acerca de:
+
+- verdad;
+- falsedad;
+- consistencia;
+- calidad;
+- evidencia;
+- justificación;
+- o criterios epistemológicos.
+
+El objeto consistió únicamente en comprobar si detrás de la preocupación histórica existía una diferencia humana propia de Product.
+
+### Reducción de FP-6
+
+La investigación partió de la diferencia provisional entre:
+
+```text
+disponer de una aportación X
+```
+
+y:
+
+```text
+poder actuar respecto
+de alguna condición atribuible a X
+```
+
+Se eliminaron sucesivamente como fundamentos independientes:
+
+```text
+información adicional
+        ✗
+
+capacidad general de evaluar
+        ✗
+
+confianza
+        ✗
+
+decisión
+        ✗
+
+norma epistemológica
+        ✗
+```
+
+La posibilidad de que el resultado de una evaluación quedara disponible para intervenir posteriormente permanecía dentro del espacio ya seleccionado por `PV-001`.
+
+El residuo quedó entonces formulado como:
+
+```text
+X puede intervenir
+en una actividad
+
+        ≠
+
+X puede convertirse
+en objeto de una actuación
+```
+
+### Prueba de irreducibilidad del residuo
+
+Se examinó si esa diferencia era propia del trabajo intelectual.
+
+La estructura podía reproducirse fuera del dominio:
+
+```text
+algo interviene en una actividad
+        ↓
+ese mismo algo puede posteriormente
+ser objeto de otra actuación
+```
+
+La diferencia resultó compatible con la capacidad humana general de actuar sobre objetos disponibles.
+
+Las actuaciones específicas que podrían realizarse sobre una aportación —criticar, corregir, comparar, evaluar, transformar, anotar u otras— no podían derivarse automáticamente de la categoría general.
+
+Cada una requeriría fundamento independiente si posteriormente apareciera como candidata.
+
+Por tanto:
+
+```text
+poder actuar sobre X
+        ⇏
+Product debe hacer realizable
+cualquier actuación imaginable sobre X
+```
+
+No se demostró una diferencia humana propia de Product en el residuo de `FP-6`.
+
+### Consecuencia para FP-7
+
+`FP-7` distinguía entre una aportación y la actividad realizada sobre ella.
+
+La reducción de `FP-6` alcanzó precisamente el núcleo estructural compartido por ambas familias:
+
+```text
+aportación
+        ≠
+actividad sobre la aportación
+```
+
+La convergencia de dos raíces históricas no demostró por sí misma un valor humano independiente.
+
+El núcleo de `FP-7` quedó por tanto examinado hasta el punto necesario para establecer que no existe actualmente una diferencia humana propia demostrada que justifique abrir otra investigación de Product a partir de esa estructura general.
+
+### Resultado global
+
+El recorrido adicional puede representarse como:
+
+```text
+estado sin actuación derivada
+        ↓
+búsqueda de fundamento positivo
+en evidencia histórica
+        ↓
+primer barrido
+        ↓
+fenómenos reducidos
+        ↓
+control de exhaustividad
+        ↓
+primer barrido no exhaustivo
+        ↓
+segunda extracción primaria
+        ↓
+FP-1 ... FP-7
+        ↓
+FP-5 reducido
+        ↓
+control de alineación
+con PROJECT_CHARTER.md
+        ↓
+extracción histórica
+suficiente para el objetivo actual
+        ↓
+FP-6 seleccionado
+por fundamento positivo
+        ↓
+FP-6 reducido
+        ↓
+núcleo compartido con FP-7
+        ↓
+diferencia humana propia
+no demostrada
+        ↓
+ningún fundamento positivo pendiente
+actualmente identificado
+```
+
+### Consecuencias para Product
+
+No se modifica `02-PRODUCT.md`.
+
+No se crea una nueva vertical.
+
+No se modifica el compromiso consolidado de `PV-001`.
+
+No se deriva automáticamente una actuación de Architecture, Development, Realization, Implementation ni de otro cuerpo.
+
+Tampoco se deriva una obligación de investigar separadamente:
+
+- crítica;
+- comparación;
+- corrección;
+- anotación;
+- evaluación;
+- verdad;
+- consistencia;
+- procedencia;
+- transparencia;
+- o cualquier otra instancia posible de las abstracciones examinadas.
+
+Cualquiera de ellas requerirá fundamento positivo independiente.
+
+### Estado
+
+**Cerrada — búsqueda adicional de fundamento histórico completada respecto del alcance actualmente justificado, sin derivación de una nueva actuación.**
+
+El resultado no establece que el corpus histórico haya sido agotado exhaustivamente ni que Product esté completo.
+
+Establece que la extracción adicional necesaria para comprobar la posible omisión de fundamento alcanzó su criterio de suficiencia y que los fundamentos positivos identificados durante ella han sido examinados sin producir un nuevo compromiso de Product.
+
+### Punto de reanudación
+
+No existe actualmente una siguiente actuación derivada de los resultados examinados.
+
+La investigación podrá reabrirse si aparece fundamento positivo independiente, por ejemplo mediante:
+
+- nueva evidencia relevante;
+- una pérdida concreta no explicada por los compromisos actuales;
+- una dependencia necesaria demostrada;
+- una incompatibilidad entre compromisos;
+- o una situación humana cuya diferencia justifique independientemente una nueva investigación.
+
+La mera existencia de material histórico todavía no clasificado, de actuaciones intelectuales imaginables o de aspectos del producto todavía no desarrollados no constituye por sí misma fundamento suficiente.
+
+---
