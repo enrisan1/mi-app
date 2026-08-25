@@ -7,9 +7,12 @@ import {
 import { localStorageResumeRepository } from "./localStorageResumeRepository";
 
 export function ResumeExperience() {
-  const restoredPrevious = localStorageResumeRepository.loadPrevious();
+  const [restoredPrevious] = useState(() =>
+    localStorageResumeRepository.loadPrevious(),
+  );
 
   const [currentInput, setCurrentInput] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const [result, setResult] = useState<SituatedResult | null>(null);
 
   if (!isResumeAvailable(restoredPrevious)) {
@@ -21,7 +24,10 @@ export function ResumeExperience() {
           Aportación actual
           <input
             value={currentInput}
-            onChange={(event) => setCurrentInput(event.target.value)}
+            onChange={(event) => {
+              setCurrentInput(event.target.value);
+              setAccepted(false);
+            }}
           />
         </label>
 
@@ -30,11 +36,14 @@ export function ResumeExperience() {
           onClick={() => {
             if (isResumeAvailable(currentInput)) {
               localStorageResumeRepository.savePrevious(currentInput);
+              setAccepted(true);
             }
           }}
         >
           Terminar por ahora
         </button>
+
+        {accepted && <p role="status">Aportación preparada para después.</p>}
       </section>
     );
   }

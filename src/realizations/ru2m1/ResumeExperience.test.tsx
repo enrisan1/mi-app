@@ -66,6 +66,29 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(localStorage.getItem("ru2m1.previous")).toBeNull();
     });
 
+    it("does not report acceptance when X is invalid", async () => {
+      const user = userEvent.setup();
+
+      render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "   ",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      );
+
+      expect(localStorage.getItem("ru2m1.previous")).toBeNull();
+
+      expect(screen.queryByRole("status")).not.toBeInTheDocument();
+    });
+
     it("persists a valid X when the current activity is ended", async () => {
       const user = userEvent.setup();
 
@@ -87,6 +110,64 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(localStorage.getItem("ru2m1.previous")).toBe(
         "Resultado alcanzado anteriormente",
       );
+    });
+
+    it("makes the acceptance of a valid X observable in S1", async () => {
+      const user = userEvent.setup();
+
+      render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "X preparado para después",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      );
+
+      expect(localStorage.getItem("ru2m1.previous")).toBe(
+        "X preparado para después",
+      );
+
+      expect(
+        screen.getByText(/aportación preparada para después/i),
+      ).toBeInTheDocument();
+    });
+
+    it("remains in S1 after accepting X during the current execution", async () => {
+      const user = userEvent.setup();
+
+      render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "X preparado para después",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      );
+
+      expect(
+        screen.getByRole("heading", {
+          name: /ahora/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.queryByRole("heading", {
+          name: /de antes/i,
+        }),
+      ).not.toBeInTheDocument();
     });
 
     it("preserves X exactly when it is persisted", async () => {
@@ -180,6 +261,47 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(screen.getByLabelText(/aportación anterior/i).textContent).toBe(
         "X producido en S1",
+      );
+    });
+
+    it("constitutes S2(X) in a new execution after observable acceptance in S1", async () => {
+      const user = userEvent.setup();
+
+      const firstExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "X preparado para después",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      );
+
+      expect(screen.getByRole("status")).toBeInTheDocument();
+
+      expect(
+        screen.getByRole("heading", {
+          name: /ahora/i,
+        }),
+      ).toBeInTheDocument();
+
+      firstExecution.unmount();
+
+      render(<ResumeExperience />);
+
+      expect(
+        screen.getByRole("heading", {
+          name: /de antes/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(screen.getByLabelText(/aportación anterior/i).textContent).toBe(
+        "X preparado para después",
       );
     });
   });
