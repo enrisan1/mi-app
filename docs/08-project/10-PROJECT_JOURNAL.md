@@ -1604,3 +1604,432 @@ Hasta que aparezca un fundamento positivo suficiente, no queda derivada
 automáticamente ninguna actuación adicional.
 
 ---
+
+# Observación de uso, evolución local y segunda reconsolidación de `R-U2-M1`
+
+## Fecha
+
+2026-08-26
+
+### Situación inicial
+
+La consolidación anterior había dejado disponible:
+
+```text
+R-U2-M1
+        ✔ especificada
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+        ↓
+RC-RU2M1-01
+        ✔ consolidado
+        ↓
+primera realización contingente
+destinada al uso
+        ✔ disponible
+```
+
+La siguiente actuación no estaba predeterminada.
+
+La realización podía someterse a observación de uso para comprobar si durante
+una actividad real aparecía alguna insuficiencia, pérdida, dependencia no
+satisfecha u otro fundamento positivo capaz de justificar una actuación
+posterior.
+
+---
+
+### Primera observación instrumental de uso
+
+Se realizó:
+
+```text
+OU-RU2M1-001
+```
+
+sobre una actividad intelectual real.
+
+La observación proporcionó evidencia positiva local de que `R-U2-M1` podía
+ejercerse en uso y permitió localizar:
+
+```text
+F-OU001-01
+↓
+ausencia de manifestación observable
+de terminación de S1
+```
+
+La investigación posterior estableció:
+
+```text
+F-OU001-01
+↓
+L-OU001-01
+↓
+RU2M1-U01
+```
+
+La pérdida demostrada justificó reabrir localmente la realización.
+
+---
+
+### Investigación y modificación local
+
+La investigación de `RU2M1-U01` redujo las alternativas posibles y seleccionó:
+
+```text
+MR-U01-01
+```
+
+La modificación hizo observable durante `S1` la aceptación efectiva de un
+`X` válido sin constituir prematuramente `S2(X)`.
+
+La misma investigación estableció además la necesidad de conservar estable
+el antecedente restaurado durante la ejecución actual:
+
+```text
+CU01-08
+```
+
+La modificación de código afectó exclusivamente a:
+
+```text
+src/realizations/ru2m1/ResumeExperience.tsx
+src/realizations/ru2m1/ResumeExperience.test.tsx
+```
+
+No fue necesario modificar:
+
+```text
+resumeModel
+localStorageResumeRepository
+```
+
+La realización modificada fue validada mediante:
+
+```text
+RV-MR-U01-01
+```
+
+y conservó las propiedades previamente demostradas de `R-U2-M1`.
+
+Los controles realizados produjeron:
+
+```text
+45 / 45 tests propios superados
+184 / 184 tests globales superados
+build de producción superado
+git diff --check superado
+```
+
+Tras esta actuación, `R-U2-M1` quedó reconsolidada dentro de su alcance.
+
+---
+
+### Primera reconsolidación
+
+El primer ciclo quedó constituido por:
+
+```text
+OU-RU2M1-001
+↓
+F-OU001-01
+↓
+L-OU001-01
+↓
+RU2M1-U01
+↓
+MR-U01-01
+↓
+RV-MR-U01-01
+↓
+primera reconsolidación
+```
+
+La observación proporcionó evidencia positiva local de uso.
+
+No demostró:
+
+- utilidad general de `R-U2-M1`;
+- utilidad para otras personas;
+- validez para toda situación de reanudación;
+- una nueva capacidad de Product;
+- ni una decisión arquitectónica general.
+
+La modificación permaneció localizada en `R-U2-M1`.
+
+---
+
+### Segunda observación instrumental de uso
+
+Después de la primera reconsolidación se prerregistró y realizó una nueva
+trayectoria independiente:
+
+```text
+OU-RU2M1-002
+```
+
+La actividad observada fue distinta de la utilizada en `OU-RU2M1-001`.
+
+Durante la trayectoria:
+
+- un `X` procedente de `S1` volvió a estar disponible después de una
+  interrupción;
+- la persona reconoció el antecedente restaurado;
+- pudo continuar la actividad;
+- y produjo libremente una nueva aportación `Y`.
+
+La segunda observación proporcionó así una nueva evidencia positiva local de
+uso efectivo de `R-U2-M1`.
+
+Durante la trayectoria se observó además una diferencia entre la estructura
+multilineal de la aportación realizada durante `S1` y el `X` posteriormente
+disponible en `S2(X)`.
+
+El fenómeno fue registrado como:
+
+```text
+F-OU002-01
+```
+
+---
+
+### Investigación de `F-OU002-01`
+
+La investigación técnica examinó separadamente:
+
+```text
+captura
+persistencia
+modelo
+restauración
+representación
+```
+
+La evidencia permitió establecer que la diferencia observada se originaba
+antes de la persistencia.
+
+El mecanismo monolínea utilizado para capturar la aportación durante `S1`
+restringía las formas textuales que podían llegar a constituirse como `X`.
+
+La comparación instrumental mostró que:
+
+```text
+input de texto
+→ no conserva estructura multilineal
+
+textarea
+→ puede conservar estructura multilineal
+```
+
+Esta comparación se utilizó únicamente como discriminante técnico.
+
+No constituyó la selección de una solución ni derivó la obligación de
+sustituir el mecanismo actual por un `textarea`.
+
+La persistencia, el modelo y la restauración quedaron descartados como causa
+de `F-OU002-01`.
+
+La investigación tampoco estableció:
+
+```text
+violación de RU2-N03
+violación de I-RU2M1-04
+nueva pérdida necesaria de R-U2-M1
+necesidad suficiente para modificar el código
+```
+
+La correspondencia actualmente validada entre el `X` persistido y el `X`
+restaurado permaneció satisfecha dentro del alcance existente.
+
+---
+
+### Estatuto de la restricción localizada
+
+La investigación permitió distinguir entre:
+
+```text
+aportación humana realizada durante S1
+```
+
+y:
+
+```text
+X que el mecanismo contingente
+permite constituir y persistir
+```
+
+La restricción localizada pertenece al mecanismo contingente de captura.
+
+Por tanto, la evidencia disponible no permite concluir que:
+
+- `R-U2-M1` deba admitir necesariamente contenido multilineal;
+- Product deba admitir texto multilineal;
+- el control `input` deba sustituirse por un mecanismo concreto;
+- exista una nueva capacidad que deba incorporarse;
+- ni haya aparecido una obligación arquitectónica.
+
+---
+
+### Segunda reconsolidación documental
+
+La segunda trayectoria y su investigación quedaron conservadas en:
+
+```text
+docs/06-realization/05-OU-RU2M1-002.md
+docs/06-realization/06-investigacion-F-OU002-01.md
+```
+
+La evidencia obtenida fue posteriormente propagada al documento canónico:
+
+```text
+docs/06-realization/00-R-U2-M1.md
+```
+
+La reconsolidación conservó la distinción entre los dos ciclos:
+
+```text
+OU-RU2M1-001
+↓
+pérdida demostrada
+↓
+necesidad local
+↓
+modificación
+↓
+primera reconsolidación
+
+OU-RU2M1-002
+↓
+nueva evidencia
+↓
+F-OU002-01
+↓
+atribución técnica
+↓
+restricción contingente localizada
+↓
+ninguna nueva pérdida necesaria
+↓
+ninguna modificación de código
+↓
+reconsolidación documental
+```
+
+---
+
+### Propagación por responsabilidad documental
+
+La nueva evidencia modifica el estado que debe declarar:
+
+```text
+PROJECT_STATUS.md
+```
+
+pero no modifica:
+
+```text
+PV-001
+Product
+Architecture
+```
+
+`R-U2-M1` continúa siendo la primera realización contingente destinada al uso
+validada dentro del alcance actualmente establecido.
+
+Las dos observaciones constituyen evidencia positiva local de uso.
+
+No demuestran utilidad general de la realización.
+
+---
+
+### Estado resultante
+
+El estado alcanzado puede resumirse así:
+
+```text
+R-U2-M1
+        ✔ construida
+        ✔ validada
+        ✔ auditada
+        ↓
+OU-RU2M1-001
+        ✔ completada
+        ↓
+necesidad local
+        ✔ demostrada
+        ↓
+modificación local
+        ✔ construida
+        ✔ validada
+        ↓
+primera reconsolidación
+        ✔ completada
+        ↓
+OU-RU2M1-002
+        ✔ completada
+        ↓
+F-OU002-01
+        ✔ localizado
+        ↓
+atribución técnica
+        ✔ cerrada
+        ↓
+restricción contingente de captura
+        ✔ localizada
+        ↓
+nueva pérdida necesaria
+        ✘ no establecida
+        ↓
+modificación de código
+        ✘ no derivada
+        ↓
+R-U2-M1
+        ✔ reconsolidada documentalmente
+          dentro de su alcance actual
+```
+
+---
+
+### Punto de reanudación
+
+La segunda observación aporta un caso en el que la aparición de nueva
+evidencia no deriva por sí sola una nueva modificación.
+
+La secuencia vigente es:
+
+```text
+R-U2-M1 reconsolidada
+        ↓
+nueva evidencia
+        ↓
+atribuir y evaluar
+        ↓
+¿existe una pérdida,
+dependencia necesaria,
+incompatibilidad
+u otro fundamento positivo suficiente?
+        ↓
+sí
+→ determinar el cuerpo competente
+→ derivar únicamente la actuación justificada
+
+no
+→ conservar la evidencia
+→ no ampliar por continuación automática
+```
+
+Por tanto, no queda derivada automáticamente:
+
+```text
+ampliación de R-U2-M1
+segunda realización
+nueva vertical de Product
+arquitectura software
+funcionalidad adicional
+nueva línea estratégica
+```
+
+Cualquier actuación posterior requerirá fundamento positivo independiente.
+
+---

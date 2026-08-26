@@ -25,7 +25,16 @@ La justificación detallada de dicho estado se encuentra distribuida entre los c
 
 `AUDITORIA_GLOBAL_DEL_PROYECTO.md` conserva la justificación del cambio de fase que permitió abandonar la investigación fundamental como actividad principal e iniciar la reconstrucción del producto.
 
-La determinación de la siguiente actuación justificable y la auditoría global de continuidad cerraron inicialmente sin derivar una actuación posterior obligatoria. Investigaciones posteriores fundadas independientemente condujeron, sin embargo, a la selección de `R-U2`, a la construcción y consolidación inicial de `R-U2-M1` y, posteriormente, a su primera observación instrumental de uso, a la derivación y realización de una necesidad local surgida de dicha observación y a la reconsolidación de la realización dentro de su alcance actual.
+La determinación de la siguiente actuación justificable y la auditoría global
+de continuidad cerraron inicialmente sin derivar una actuación posterior
+obligatoria. Investigaciones posteriores fundadas independientemente
+condujeron a la selección de `R-U2`, a la construcción y consolidación inicial
+de `R-U2-M1` y a dos observaciones instrumentales de uso. La primera produjo
+una necesidad local demostrada, posteriormente realizada y validada. La
+segunda produjo nueva evidencia positiva local y permitió atribuir
+técnicamente una restricción contingente de captura, sin derivar una nueva
+pérdida necesaria ni una modificación de código. `R-U2-M1` ha quedado
+reconsolidada documentalmente dentro de su alcance actual.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -102,7 +111,24 @@ RV-MR-U01-01
         ✔ validada
         ↓
 R-U2-M1
-        ✔ reconsolidada dentro de su alcance actual
+        ✔ primera reconsolidación completada
+        ↓
+OU-RU2M1-002
+        ✔ segunda observación instrumental completada
+        ↓
+F-OU002-01
+        ✔ localizado
+        ↓
+atribución técnica
+        ✔ cerrada
+        ↓
+restricción contingente de captura
+        ✔ localizada
+        ↓
+R-U2-M1
+        ✔ ninguna nueva pérdida necesaria establecida
+        ✔ ninguna modificación de código derivada
+        ✔ reconsolidada documentalmente dentro de su alcance actual
 ```
 
 `R-U2-M1` constituye actualmente la primera realización contingente destinada al uso validada dentro del alcance establecido.
@@ -111,13 +137,30 @@ La realización permite que un estado `X` producido en una situación `S1` atrav
 
 Este resultado no establece que `R-U2-M1` constituya una realización completa de `PV-001`, una arquitectura normativa o el producto definitivo. Sus mecanismos concretos permanecen contingentes.
 
-La primera observación instrumental de `R-U2-M1` produjo evidencia positiva local de uso y permitió localizar `F-OU001-01`. La investigación posterior estableció `L-OU001-01` y derivó `RU2M1-U01`, cuya realización mediante `MR-U01-01` fue construida y validada, tras lo cual `R-U2-M1` quedó reconsolidada dentro de su alcance actual.
+La primera observación instrumental de `R-U2-M1` produjo evidencia positiva
+local de uso y permitió localizar `F-OU001-01`. Su investigación estableció
+`L-OU001-01` y derivó `RU2M1-U01`, cuya realización mediante `MR-U01-01` fue
+construida y validada antes de la primera reconsolidación de `R-U2-M1`.
 
-Este ciclo no modifica `PV-001`, no amplía Product y no determina una arquitectura software.
+Una segunda observación instrumental independiente, `OU-RU2M1-002`,
+proporcionó nueva evidencia positiva local de uso y permitió localizar
+`F-OU002-01`. Su investigación cerró la atribución técnica de la diferencia
+observada y localizó una restricción del mecanismo contingente de captura,
+sin establecer una nueva pérdida necesaria de `R-U2-M1` ni una necesidad
+suficiente para modificar el código.
 
-Tampoco deriva automáticamente una nueva ampliación de `R-U2-M1`, una segunda realización ni otra actuación posterior.
+Las dos observaciones permanecen como evidencia local y no demuestran
+utilidad general de `R-U2-M1`, utilidad para otras personas ni validez para
+toda situación de reanudación.
 
-La siguiente actuación deberá justificarse a partir de nueva evidencia, una pérdida concreta, una dependencia necesaria todavía no satisfecha u otro fundamento positivo independiente perteneciente al cuerpo competente.
+La evolución observada no modifica `PV-001`, no amplía Product, no determina
+una arquitectura software y no deriva automáticamente una nueva ampliación
+de `R-U2-M1`, una segunda realización ni otra actuación posterior.
+
+La siguiente actuación deberá justificarse a partir de una nueva pérdida,
+una dependencia necesaria todavía no satisfecha, una incompatibilidad
+demostrada u otro fundamento positivo independiente perteneciente al cuerpo
+competente.
 
 ---
 
@@ -366,18 +409,22 @@ Actualmente contiene:
 02-OU-RU2M1-001.md
 03-investigacion-F-OU001-01.md
 04-investigacion-RU2M1-U01.md
+05-OU-RU2M1-002.md
+06-investigacion-F-OU002-01.md
 ```
 
 `00-R-U2-M1.md` constituye la fuente canónica de la primera realización
 contingente destinada al uso validada del proyecto.
 
-Los documentos `01–04` conservan, respectivamente:
+Los documentos `01–06` conservan, respectivamente:
 
 - el protocolo mínimo de observación de uso;
 - la primera observación instrumental `OU-RU2M1-001`;
 - la investigación de atribución de `F-OU001-01`;
-- y la investigación, construcción y validación de la realización de
-  `RU2M1-U01`.
+- la investigación, construcción y validación de la realización de
+  `RU2M1-U01`;
+- la segunda observación instrumental `OU-RU2M1-002`;
+- y la investigación de atribución de `F-OU002-01`.
 
 `R-U2-M1` satisface, dentro del alcance auditado, las condiciones que
 justificaron su construcción y las obligaciones locales posteriormente
@@ -401,7 +448,32 @@ RV-MR-U01-01
 ```
 
 Tras la construcción y validación de `MR-U01-01`, `R-U2-M1` quedó
-reconsolidada dentro de su alcance actual.
+reconsolidada dentro de su alcance.
+
+Posteriormente se realizó una segunda observación instrumental independiente:
+
+```text
+OU-RU2M1-002
+↓
+F-OU002-01
+↓
+atribución técnica
+↓
+restricción contingente de captura localizada
+```
+
+La investigación estableció que la diferencia observada se origina en el
+mecanismo monolínea utilizado para capturar `X` durante `S1`.
+
+No estableció:
+
+- una violación de `RU2-N03`;
+- una violación de `I-RU2M1-04`;
+- una nueva pérdida necesaria de `R-U2-M1`;
+- ni una necesidad suficiente para modificar el código.
+
+`R-U2-M1` quedó posteriormente reconsolidada documentalmente con esta nueva
+evidencia dentro de su alcance actual.
 
 Sus mecanismos técnicos concretos permanecen contingentes y no adquieren
 por ello autoridad sobre Product ni sobre una futura arquitectura software.
@@ -413,10 +485,17 @@ cuerpo vigente
 R-U2-M1
 ✔ construida
 ✔ validada
+✔ auditada
 ✔ primera observación instrumental completada
 ✔ necesidad local derivada
 ✔ modificación local construida y validada
-✔ reconsolidada dentro de su alcance actual
+✔ primera reconsolidación completada
+✔ segunda observación instrumental completada
+✔ F-OU002-01 atribuida técnicamente
+✔ restricción contingente de captura localizada
+✔ ninguna nueva pérdida necesaria establecida
+✔ ninguna modificación de código derivada
+✔ reconsolidada documentalmente dentro de su alcance actual
 
 evolución posterior
 ○ no derivada automáticamente
@@ -523,10 +602,26 @@ El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bit�
 La investigación posterior a la consolidación de `PV-001` condujo a la
 construcción, validación y consolidación inicial de `R-U2-M1`.
 
-Posteriormente, la realización fue sometida a su primera observación
-instrumental de uso. Esa observación proporcionó evidencia positiva local,
-permitió localizar una pérdida concreta y justificó una modificación local
-posteriormente construida y validada.
+Posteriormente se completó un primer ciclo de observación y evolución local.
+
+La observación `OU-RU2M1-001` proporcionó evidencia positiva local de uso,
+permitió localizar `F-OU001-01` y condujo, mediante su investigación, a
+`L-OU001-01` y `RU2M1-U01`.
+
+La necesidad fue realizada mediante `MR-U01-01`, validada mediante
+`RV-MR-U01-01` y seguida de una primera reconsolidación de `R-U2-M1`.
+
+Después de esa reconsolidación se realizó una segunda observación
+instrumental independiente, `OU-RU2M1-002`.
+
+Esta segunda trayectoria proporcionó nueva evidencia positiva local de uso y
+permitió localizar `F-OU002-01`.
+
+La investigación de `F-OU002-01` cerró su atribución técnica y estableció una
+restricción del mecanismo contingente de captura actualmente utilizado.
+
+No estableció una nueva pérdida necesaria de `R-U2-M1` ni una necesidad
+suficiente para modificar el código.
 
 El estado vigente puede representarse así:
 
@@ -565,40 +660,62 @@ RV-MR-U01-01
         ✔ validada
         ↓
 R-U2-M1
-        ✔ reconsolidada dentro de su alcance actual
+        ✔ primera reconsolidación completada
+        ↓
+OU-RU2M1-002
+        ✔ completada
+        ↓
+F-OU002-01
+        ✔ localizado
+        ↓
+atribución técnica
+        ✔ cerrada
+        ↓
+restricción contingente de captura
+        ✔ localizada
+        ↓
+R-U2-M1
+        ✔ ninguna nueva pérdida necesaria establecida
+        ✔ ninguna modificación de código derivada
+        ✔ reconsolidada documentalmente dentro de su alcance actual
 ```
 
 `R-U2-M1` continúa constituyendo la primera realización contingente
 destinada al uso validada dentro del alcance actualmente establecido.
 
-La primera observación instrumental proporcionó evidencia positiva local de
-que la realización podía ejercerse en una actividad intelectual real y
-permitió localizar `F-OU001-01`.
+Las dos observaciones proporcionan evidencia positiva local de uso, pero no
+demuestran utilidad general de `R-U2-M1`, utilidad para otras personas ni
+validez para toda situación de reanudación.
 
-La investigación posterior estableció `L-OU001-01` y derivó:
+El primer ciclo produjo una necesidad local demostrada y justificó una
+modificación de la realización.
 
-```text
-F-OU001-01
-↓
-L-OU001-01
-↓
-RU2M1-U01
-```
+El segundo ciclo produjo conocimiento adicional sobre un mecanismo
+contingente de captura, pero no justificó una nueva modificación.
 
-y la reducción de soluciones condujo a:
+En particular:
 
 ```text
-MR-U01-01
+OU-RU2M1-001
 ↓
-RV-MR-U01-01
+pérdida demostrada
+↓
+modificación justificada
+
+OU-RU2M1-002
+↓
+diferencia observada
+↓
+atribución técnica
+↓
+restricción contingente localizada
+↓
+ninguna nueva pérdida necesaria demostrada
+↓
+ninguna modificación derivada
 ```
 
-La modificación conserva las propiedades anteriormente validadas de
-`R-U2-M1` y añade localmente la observabilidad de la aceptación efectiva de
-un `X` válido y la estabilidad intraejecución necesaria para no constituir
-prematuramente `S2(X)`.
-
-Este ciclo no deriva automáticamente:
+Ninguno de estos ciclos deriva automáticamente:
 
 - una nueva ampliación de `R-U2-M1`;
 - una segunda realización;
@@ -612,9 +729,10 @@ La situación de reanudación es actualmente:
 
 ```text
 R-U2-M1
-        ✔ observada
-        ✔ modificada sobre necesidad demostrada
-        ✔ reconsolidada
+        ✔ observada en dos trayectorias reales independientes
+        ✔ modificada cuando apareció una necesidad demostrada
+        ✔ segunda evidencia investigada y atribuida
+        ✔ reconsolidada documentalmente
         ↓
 ninguna actuación posterior
 automáticamente derivada
@@ -625,14 +743,10 @@ automáticamente derivada
 Una actuación posterior deberá disponer de fundamento positivo suficiente
 dentro del cuerpo competente.
 
-Ese fundamento podrá proceder, entre otros casos admisibles, de:
-
-- nueva evidencia de uso;
-- una pérdida concreta;
-- una dependencia necesaria todavía no satisfecha;
-- una incompatibilidad demostrada;
-- o un fundamento positivo independiente obtenido mediante otra
-  investigación legítima.
+Ese fundamento podrá proceder, entre otros casos admisibles, de una nueva
+evidencia de uso, una pérdida concreta, una dependencia necesaria todavía no
+satisfecha, una incompatibilidad demostrada o un fundamento positivo
+independiente obtenido mediante otra investigación legítima.
 
 La mera posibilidad de imaginar mejoras, nuevas funcionalidades u otras
 realizaciones no constituye por sí misma fundamento suficiente para actuar.
@@ -641,6 +755,8 @@ Hasta que aparezca un fundamento de esa clase, no debe añadirse ninguna
 capacidad por mera continuación del desarrollo.
 
 ---
+
+# 7. Últimos objetivos completados
 
 ## Primera realización contingente destinada al uso
 
@@ -673,6 +789,12 @@ de la realización:
 OU-RU2M1-001
         ✔ completada
 
+F-OU001-01
+        ✔ localizado
+
+L-OU001-01
+        ✔ establecida
+
 RU2M1-U01
         ✔ derivada
 
@@ -684,15 +806,55 @@ RV-MR-U01-01
         ✔ validada
 
 R-U2-M1
-        ✔ reconsolidada dentro de su alcance actual
+        ✔ primera reconsolidación completada
 ```
+
+Después de esa reconsolidación se completó una segunda trayectoria real
+independiente:
+
+```text
+OU-RU2M1-002
+        ✔ completada
+
+F-OU002-01
+        ✔ localizado
+
+atribución técnica
+        ✔ cerrada
+
+restricción contingente de captura
+        ✔ localizada
+
+R-U2-M1
+        ✔ ninguna nueva pérdida necesaria establecida
+        ✔ ninguna modificación de código derivada
+        ✔ reconsolidada documentalmente dentro de su alcance actual
+```
+
+`OU-RU2M1-002` proporciona una segunda evidencia positiva local de uso
+efectivo de `R-U2-M1`.
+
+La investigación de `F-OU002-01` estableció que la diferencia observada se
+origina en el mecanismo monolínea utilizado para capturar la aportación
+durante `S1`.
+
+La persistencia, el modelo y la restauración no constituyen la causa de esa
+diferencia.
+
+La investigación no estableció una violación de `RU2-N03` ni de
+`I-RU2M1-04`, una nueva pérdida necesaria de `R-U2-M1` ni una necesidad
+suficiente para modificar el código.
 
 `R-U2-M1` continúa constituyendo la primera realización contingente
 destinada al uso validada dentro del alcance actualmente establecido.
 
-La observación y modificación posteriores no convierten sus mecanismos
-concretos en requisitos de Product, no establecen una arquitectura normativa
-y no derivan automáticamente una nueva ampliación de la realización.
+Las observaciones realizadas no demuestran utilidad general, utilidad para
+otras personas ni validez para toda situación de reanudación.
+
+La evolución posterior tampoco convierte los mecanismos concretos de
+`R-U2-M1` en requisitos de Product, no modifica `PV-001`, no establece una
+arquitectura normativa y no deriva automáticamente una nueva ampliación de
+la realización.
 
 La especificación, evidencia, auditoría y estado consolidado vigente se
 encuentran en:
@@ -701,8 +863,17 @@ encuentran en:
 docs/06-realization/00-R-U2-M1.md
 ```
 
-El protocolo, la observación y las investigaciones posteriores se conservan
-en los documentos `01–04` del mismo cuerpo.
+El protocolo, las dos observaciones instrumentales y sus investigaciones se
+conservan en los documentos `01–06` del mismo cuerpo:
+
+```text
+01-protocolo-de-observacion-de-uso-R-U2-M1.md
+02-OU-RU2M1-001.md
+03-investigacion-F-OU001-01.md
+04-investigacion-RU2M1-U01.md
+05-OU-RU2M1-002.md
+06-investigacion-F-OU002-01.md
+```
 
 ---
 
@@ -867,7 +1038,15 @@ R-U2-M1
     ✔ RU2M1-U01 derivada
     ✔ MR-U01-01 construida y validada
     ✔ RV-MR-U01-01 validada
-    ✔ reconsolidada dentro de su alcance actual
+    ✔ primera reconsolidación completada
+    ✔ OU-RU2M1-002 completada
+    ✔ segunda evidencia positiva local obtenida
+    ✔ F-OU002-01 localizado
+    ✔ atribución técnica de F-OU002-01 cerrada
+    ✔ restricción contingente de captura localizada
+    ✔ ninguna nueva pérdida necesaria establecida
+    ✔ ninguna modificación de código derivada
+    ✔ reconsolidada documentalmente dentro de su alcance actual
     → primera realización contingente destinada al uso
     → mecanismos concretos no normativos
 
@@ -895,6 +1074,8 @@ Auditoría adicional de fundamento histórico
 Estado de continuación
 
     ✔ primer ciclo de observación, atribución, modificación y reconsolidación completado
+    ✔ segundo ciclo de observación, atribución y reconsolidación documental completado
+    → segundo ciclo cerrado sin nueva pérdida necesaria ni modificación de código
     ○ ninguna ampliación automáticamente derivada
     ↺ nueva actuación condicionada a nuevo fundamento positivo independiente
 

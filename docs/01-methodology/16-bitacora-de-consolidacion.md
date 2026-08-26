@@ -81,3 +81,94 @@ La modificación realizada responde exclusivamente a una pérdida demostrada dur
 No queda derivada automáticamente ninguna actuación posterior. Una nueva apertura requerirá nuevo fundamento positivo independiente.
 
 ---
+
+# Ficha de bitácora
+
+## Documento: 00-R-U2-M1.md
+
+## Fecha:
+
+2026-08-26
+
+## Motivo:
+
+Reconsolidación documental de `R-U2-M1` tras su segunda observación
+instrumental de uso y el cierre de la atribución técnica de `F-OU002-01`.
+
+## Resultado:
+
+Se completa el segundo ciclo de observación y atribución de `R-U2-M1`.
+
+`OU-RU2M1-002` proporciona una segunda evidencia positiva local de uso
+efectivo de la realización en una trayectoria independiente posterior a su
+primera reconsolidación.
+
+Durante la observación se localiza `F-OU002-01`, posteriormente refinado como
+una diferencia observable entre la estructura multilineal de la aportación
+realizada durante `S1` y el `X` disponible en `S2(X)`.
+
+La investigación técnica establece que la diferencia se origina en el
+mecanismo monolínea contingente utilizado para capturar la aportación durante
+`S1`.
+
+La persistencia, el modelo y la restauración quedan descartados como causa del
+fenómeno observado.
+
+La investigación no establece una violación de `RU2-N03` ni de
+`I-RU2M1-04`, no demuestra una nueva pérdida necesaria de `R-U2-M1` y no
+deriva una modificación de código.
+
+La restricción localizada queda atribuida al mecanismo contingente de captura
+sin convertirse en exigencia de Product, obligación arquitectónica ni
+requisito general de contenido multilineal.
+
+Se incorporan al cuerpo vigente de Realization:
+
+```text
+05-OU-RU2M1-002.md
+06-investigacion-F-OU002-01.md
+```
+
+`00-R-U2-M1.md` queda reconsolidado documentalmente dentro de su alcance
+actual.
+
+`PROJECT_STATUS.md` queda actualizado para declarar el nuevo estado vigente y
+`PROJECT_JOURNAL.md` incorpora el registro cronológico de los dos ciclos de
+observación y evolución local de la realización.
+
+## Auditorías superadas:
+
+- Trazabilidad `OU-RU2M1-002 → F-OU002-01 → atribución técnica → restricción contingente de captura localizada`.
+- Distinción entre la aportación humana realizada durante `S1` y el `X` constituido por el mecanismo contingente de captura.
+- Localización de la diferencia observada antes de la persistencia.
+- Descartado de persistencia, modelo y restauración como causa de `F-OU002-01`.
+- Conservación de la correspondencia actualmente validada entre el `X` persistido y el `X` restaurado.
+- Ausencia de violación establecida de `RU2-N03`.
+- Ausencia de violación establecida de `I-RU2M1-04`.
+- Ausencia de nueva pérdida necesaria demostrada.
+- Ausencia de modificación de código derivada.
+- Ausencia de propagación no justificada a Product o Architecture.
+
+# Observaciones:
+
+La segunda observación proporciona evidencia positiva local adicional, pero
+no demuestra utilidad general de `R-U2-M1`, utilidad para otras personas ni
+validez para toda situación de reanudación.
+
+`F-OU002-01` no establece que `R-U2-M1` deba admitir contenido multilineal ni
+obliga a sustituir el control `input` por un `textarea` u otro mecanismo
+concreto.
+
+La segunda trayectoria muestra un caso en el que nueva evidencia amplía el
+conocimiento disponible sobre una realización sin justificar una nueva
+modificación.
+
+No se repitieron los tests ni el build durante esta reconsolidación
+documental, al no haberse producido cambios de código. Las validaciones
+técnicas anteriores permanecen como evidencia histórica de la realización
+que no fue modificada por este segundo ciclo.
+
+No queda derivada automáticamente ninguna actuación posterior. Una nueva
+apertura requerirá fundamento positivo independiente suficiente.
+
+---
