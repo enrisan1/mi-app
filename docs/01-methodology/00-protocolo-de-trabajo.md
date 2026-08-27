@@ -38,7 +38,7 @@ Todo el trabajo del proyecto deberá respetar los siguientes principios.
 
 No se diseñará ninguna solución antes de comprender suficientemente el problema.
 
-La investigación precede siempre al diseño.
+La investigación necesaria para justificar una solución precede al diseño de esa solución.
 
 ---
 
@@ -103,6 +103,21 @@ Las funciones documentales fundamentales del proyecto son:
 - **Justificación**: demostrar que dicha estructura es necesaria, coherente o suficiente respecto del alcance declarado.
 
 Un documento podrá contener referencias o breves contextualizaciones de otras funciones cuando resulten necesarias para su comprensión, pero no deberá asumir simultáneamente más de una función principal.
+
+---
+
+## PM-9 — Separación entre dependencia lógica y orden temporal
+
+La existencia de una dependencia lógica puede imponer un orden entre
+actuaciones, pero la mera coexistencia de varias líneas de trabajo no
+establece por sí misma una relación de precedencia.
+
+Podrán mantenerse abiertas simultáneamente varias líneas cuando cada una
+disponga de fundamento positivo suficiente y no exista entre ellas una
+dependencia que obligue a establecer un orden.
+
+El trabajo simultáneo no elimina las dependencias justificativas internas ni
+autoriza la apertura de líneas carentes de fundamento propio.
 
 ---
 
@@ -200,7 +215,7 @@ dependencias, su tratamiento documental se realizará conforme al PCD.
 
 Siempre que resulte posible, la documentación distinguirá dos criterios complementarios de organización.
 
-## Según el dominio
+## Según el ámbito o cuerpo de responsabilidad
 
 Según el ámbito o cuerpo de responsabilidad: metodología, cuerpos teóricos de dominio, metateoría, ingeniería, realización, implementación y demás ámbitos diferenciados que el proyecto justifique.
 
@@ -210,7 +225,7 @@ Según el ámbito o cuerpo de responsabilidad: metodología, cuerpos teóricos d
 - especificación;
 - justificación.
 
-Todo documento deberá pertenecer claramente a un dominio y desempeñar una única función principal.
+Todo documento deberá pertenecer claramente a un ámbito o cuerpo de responsabilidad y desempeñar una única función principal.
 
 ---
 

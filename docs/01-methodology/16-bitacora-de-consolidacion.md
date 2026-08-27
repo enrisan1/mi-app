@@ -340,3 +340,420 @@ Cualquier actuación posterior requerirá fundamento positivo independiente
 suficiente.
 
 ---
+
+# Ficha de bitácora
+
+## Documento: 01-investigacion.md
+
+## Fecha:
+
+2026-08-27
+
+## Motivo:
+
+Construcción inicial del documento de investigación correspondiente al cuerpo `Methodology` para estudiar si la metodología del proyecto requiere una secuencia temporal única o admite trabajo simultáneo entre líneas cuando no exista una dependencia lógica que imponga precedencia.
+
+La investigación se abre a partir de una cuestión metodológica surgida durante el control global del proyecto:
+
+```text
+coexistencia de varias líneas justificables
+↓
+¿orden temporal único?
+o
+¿paralelismo controlado por dependencias?
+```
+
+El documento se construye como función documental de investigación, separada de la especificación normativa contenida en `00-protocolo-de-trabajo.md`.
+
+## Resultado:
+
+La investigación reconstruye y conserva:
+
+```text
+pregunta metodológica
+↓
+modelo exploratorio v0.1
+↓
+prueba contra casos reales
+↓
+detección de carencias
+↓
+modelo v0.2
+↓
+prueba contrafactual adversarial
+↓
+prueba de impacto
+↓
+modelo v0.3
+↓
+formalización de hipótesis
+↓
+auditoría de Methodology
+↓
+reducción normativa
+```
+
+Se examinaron tres hipótesis:
+
+```text
+H1 — linealidad temporal fuerte
+→ rechazada
+
+H2 — paralelismo libre
+→ rechazada
+
+H3 — paralelismo controlado por dependencias
+→ corroborada dentro del alcance examinado
+```
+
+El resultado metodológico formal establece que la metodología del proyecto no requiere una secuencia temporal única.
+
+La secuencialidad obligatoria deriva de dependencias lógicas concretas y no de la mera coexistencia de líneas de trabajo.
+
+Pueden mantenerse simultáneamente varias líneas cuando cada una disponga de fundamento positivo independiente y su interacción preserve:
+
+```text
+dependencias
+alcance
+autoridad
+trazabilidad
+coherencia de consolidación
+```
+
+La investigación establece como invariante central:
+
+```text
+trabajo temporalmente paralelo
+↓
+admisible
+
+siempre que
+
+la validez de cada resultado
+permanezca ligada explícitamente
+a las entradas de las que fue derivado
+```
+
+El modelo exploratorio `v0.3` se conserva como resultado de investigación y no se traslada íntegramente a Methodology.
+
+Se conservan asimismo como resultados negativos, entre otros:
+
+```text
+linealidad temporal fuerte
+paralelismo libre
+apertura de líneas por mera posibilidad
+autoridad derivada de recibir evidencia
+WIP = 3 como norma
+estados N0–N3 como taxonomía normativa
+"rebase" como término obligatorio
+DESFASADO como estado documental
+nueva barrera de consolidación
+nuevo punto de convergencia
+traslado íntegro de v0.3
+modificación innecesaria del PCD
+```
+
+La auditoría de `00-protocolo-de-trabajo.md` deriva únicamente:
+
+```text
+precisión de PM-1
++
+nuevo PM-9
++
+corrección terminológica localizada
+en Organización documental
+```
+
+La auditoría de `99-protocolo-de-consolidacion-documental.md` concluye que el PCD vigente ya dispone de mecanismos suficientes para:
+
+```text
+dependencias
+impacto
+reapertura localizada
+compatibilidad
+propagación
+versionado documental
+no modificación silenciosa
+```
+
+por lo que no se deriva modificación de `99`.
+
+El documento supera:
+
+```text
+TD-1 — Construcción inicial
+PCD-1 — Auditoría conceptual
+PCD-2 — Versión completa auditable
+PCD-3 — Revisión y aceptación explícita
+PCD-4 — Congelación provisional
+PCD-5 — Registro en bitácora
+```
+
+y queda:
+
+```text
+CONSOLIDADO PROVISIONALMENTE
+```
+
+## Auditorías superadas:
+
+- Adecuación de la investigación al cuerpo `Methodology`.
+- Separación entre investigación y especificación normativa.
+- Reconstrucción de la pregunta metodológica desde situaciones reales del proyecto.
+- Prueba del modelo inicial contra casos reales.
+- Identificación explícita de carencias de `v0.1`.
+- Revisión mediante `v0.2`.
+- Prueba contrafactual adversarial.
+- Prueba de impacto ante modificación de dependencias.
+- Distinción entre dependencia lógica y orden temporal.
+- Formalización y refutación de `H1`.
+- Formalización y refutación de `H2`.
+- Corroboración limitada de `H3`.
+- Conservación de términos y resultados exploratorios sin convertirlos retrospectivamente en norma.
+- Fidelidad histórica de las formulaciones auditadas.
+- Auditoría específica de `00-protocolo-de-trabajo.md`.
+- Auditoría específica de `99-protocolo-de-consolidacion-documental.md`.
+- Reducción desde `v0.3` hasta una consecuencia normativa mínima.
+- Conservación explícita de resultados negativos.
+- Control de ampliación silenciosa.
+- Control de responsabilidades documentales.
+- Comprobación estructural de la versión completa materializada.
+- Ausencia de restos documentales que obliguen a reabrir otros cuerpos.
+
+# Observaciones:
+
+La consolidación de esta investigación no convierte el modelo exploratorio `v0.3` en una estructura normativa del proyecto.
+
+La conclusión obtenida tampoco autoriza por sí misma la apertura simultánea de nuevas líneas.
+
+Cada línea futura continuará requiriendo:
+
+```text
+pregunta concreta
++
+fundamento positivo suficiente
++
+cuerpo competente
++
+resultado admisible
++
+criterio de cierre
+```
+
+La investigación tampoco deriva automáticamente:
+
+```text
+nueva línea de Product
+nueva Realization
+nueva Architecture
+modificación de código
+nueva observación de uso
+modificación del PCD
+```
+
+Cualquier actuación posterior requerirá fundamento positivo independiente suficiente.
+
+---
+
+# Ficha de bitácora
+
+## Documento: 00-protocolo-de-trabajo.md
+
+## Fecha:
+
+2026-08-27
+
+## Motivo:
+
+Reapertura reconstructiva localizada de `00-protocolo-de-trabajo.md` a partir del resultado consolidable obtenido en `01-investigacion.md` sobre la relación entre dependencia lógica y orden temporal.
+
+La investigación mostró que la formulación vigente de `PM-1`:
+
+```text
+"La investigación precede siempre al diseño."
+```
+
+podía interpretarse como una precedencia temporal global más fuerte que la realmente justificada.
+
+También mostró que `PM-1…PM-8` no expresaban de forma suficiente la distinción entre:
+
+```text
+dependencia lógica
+≠
+orden temporal global
+```
+
+y proporcionó fundamento positivo para incorporar un nuevo principio metodológico.
+
+Durante la auditoría se localizó además una incoherencia terminológica menor en el criterio de organización documental.
+
+## Resultado:
+
+La reapertura se limita a cuatro modificaciones textuales agrupadas en tres resultados.
+
+### `PM-1 — Descubrir antes de diseñar`
+
+Se sustituye:
+
+```text
+La investigación precede siempre al diseño.
+```
+
+por:
+
+```text
+La investigación necesaria para justificar una solución precede al diseño de esa solución.
+```
+
+La modificación conserva la precedencia justificativa necesaria sin imponer una secuencia temporal global entre líneas independientes.
+
+### `PM-9 — Separación entre dependencia lógica y orden temporal`
+
+Se incorpora un nuevo principio:
+
+```text
+La existencia de una dependencia lógica puede imponer un orden entre
+actuaciones, pero la mera coexistencia de varias líneas de trabajo no
+establece por sí misma una relación de precedencia.
+
+Podrán mantenerse abiertas simultáneamente varias líneas cuando cada una
+disponga de fundamento positivo suficiente y no exista entre ellas una
+dependencia que obligue a establecer un orden.
+
+El trabajo simultáneo no elimina las dependencias justificativas internas ni
+autoriza la apertura de líneas carentes de fundamento propio.
+```
+
+La formulación incorporada corresponde a la reducción normativa mínima obtenida después de auditar `00` y `99`.
+
+No se incorporan al protocolo:
+
+```text
+modelo v0.3 completo
+WIP = 3
+N0–N3
+"rebase" como término normativo
+DESFASADO
+nueva barrera de consolidación
+nuevo punto de convergencia
+```
+
+porque no resultan necesarios para expresar el principio metodológico derivado.
+
+### Organización documental
+
+Se sustituye:
+
+```text
+Según el dominio
+```
+
+por:
+
+```text
+Según el ámbito o cuerpo de responsabilidad
+```
+
+y se sincroniza la afirmación:
+
+```text
+Todo documento deberá pertenecer claramente a un ámbito o cuerpo de responsabilidad y desempeñar una única función principal.
+```
+
+Se conserva la expresión:
+
+```text
+cuerpos teóricos de dominio
+```
+
+porque allí `dominio` cumple una función semántica distinta.
+
+No se modifican:
+
+```text
+Objetivos
+PM-2…PM-8
+PM-5
+Gestión de cambios
+Principio de estabilidad
+CT-1
+99-protocolo-de-consolidacion-documental.md
+```
+
+La reapertura satisface el principio de intervención mínima.
+
+El documento supera:
+
+```text
+TD-2 — Reapertura reconstructiva
+PCD-1 — Auditoría conceptual
+PCD-2 — Versión completa auditable
+PCD-3 — Revisión y aceptación explícita
+PCD-4 — Congelación provisional
+PCD-5 — Registro en bitácora
+```
+
+y la nueva versión queda:
+
+```text
+CONSOLIDADA PROVISIONALMENTE
+```
+
+como versión vigente de `00-protocolo-de-trabajo.md`, sin borrar la existencia histórica de la versión anterior.
+
+## Auditorías superadas:
+
+- Existencia de causa sustantiva de reapertura.
+- Fundamento de la reapertura en investigación metodológica explícita.
+- Delimitación localizada del alcance de la intervención.
+- Intervención mínima.
+- Precisión de `PM-1` sin pérdida de su función original.
+- Irreducibilidad de `PM-9` respecto de `PM-1…PM-8`.
+- Reducción de `PM-9` a contenido estrictamente metodológico.
+- Ausencia de traslado íntegro del modelo exploratorio `v0.3`.
+- Ausencia de duplicación de responsabilidades ya realizadas por el PCD.
+- Compatibilidad con `Gestión de cambios`.
+- Compatibilidad con el Principio de estabilidad.
+- Conservación de `CT-1` como secuencia lógica local legítima.
+- Sincronización terminológica de Organización documental.
+- Conservación de `cuerpos teóricos de dominio` en su significado propio.
+- Comprobación de ausencia de la formulación obsoleta de `PM-1`.
+- Comprobación de ausencia del encabezado obsoleto `Según el dominio`.
+- Comprobación de ausencia de la frase organizativa obsoleta.
+- Presencia única y ordenada de `PM-1…PM-9`.
+- `git diff --check` sin incidencias.
+- Análisis de impacto documental posterior a la modificación.
+- Ausencia de dependencias reales afectadas que justifiquen la reapertura reconstructiva de otros documentos.
+
+# Observaciones:
+
+El análisis de impacto realizado después de modificar `00-protocolo-de-trabajo.md` no localizó en `docs/` dependencias documentales reales afectadas por los cambios de `PM-1`, `PM-9` o de Organización documental.
+
+La única referencia explícita localizada fuera de los documentos directamente implicados corresponde a:
+
+```text
+16-bitacora-de-consolidacion.md
+```
+
+cuya relación con `00-protocolo-de-trabajo.md` es registral y no constituye una dependencia conceptual que requiera reapertura reconstructiva.
+
+Por tanto, no se deriva reapertura de:
+
+```text
+Product
+Realization
+Architecture
+Development
+otros documentos de Methodology
+99-protocolo-de-consolidacion-documental.md
+```
+
+ni modificación de código.
+
+La incorporación de `PM-9` tampoco implica que deban abrirse ahora varias líneas de trabajo.
+
+Únicamente elimina la presunción de que toda coexistencia de líneas exige una secuencia temporal global.
+
+Toda nueva actuación seguirá requiriendo fundamento positivo independiente suficiente.
+
+---
