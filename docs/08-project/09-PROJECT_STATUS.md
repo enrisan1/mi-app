@@ -411,12 +411,13 @@ Actualmente contiene:
 04-investigacion-RU2M1-U01.md
 05-OU-RU2M1-002.md
 06-investigacion-F-OU002-01.md
+07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
 ```
 
 `00-R-U2-M1.md` constituye la fuente canónica de la primera realización
 contingente destinada al uso validada del proyecto.
 
-Los documentos `01–06` conservan, respectivamente:
+Los documentos `01–07` conservan, respectivamente:
 
 - el protocolo mínimo de observación de uso;
 - la primera observación instrumental `OU-RU2M1-001`;
@@ -424,7 +425,9 @@ Los documentos `01–06` conservan, respectivamente:
 - la investigación, construcción y validación de la realización de
   `RU2M1-U01`;
 - la segunda observación instrumental `OU-RU2M1-002`;
-- y la investigación de atribución de `F-OU002-01`.
+- la investigación de atribución de `F-OU002-01`;
+- y la investigación de suficiencia preobservacional de `POU-RU2M1-01`,
+  incluida la derivación de su modificación mínima.
 
 `R-U2-M1` satisface, dentro del alcance auditado, las condiciones que
 justificaron su construcción y las obligaciones locales posteriormente
@@ -475,6 +478,33 @@ No estableció:
 `R-U2-M1` quedó posteriormente reconsolidada documentalmente con esta nueva
 evidencia dentro de su alcance actual.
 
+Durante la preparación de `OU-RU2M1-002` se localizó además una cuestión
+independiente sobre las condiciones de reaplicación de `POU-RU2M1-01`.
+
+La investigación posterior estableció que la versión entonces examinada del
+protocolo exigía comenzar una aplicación completa en `S1`, pero no
+operacionalizaba la condición constitutiva ya definida por `R-U2-M1`:
+
+```text
+la ejecución destinada a constituir S1
+debe comenzar sin X válido restaurado
+```
+
+La insuficiencia fue atribuida localmente a `POU-RU2M1-01` y dio lugar a una
+modificación mínima del protocolo:
+
+```text
+condición preobservacional explícita
++
+registro de su cumplimiento en la ficha mínima
+```
+
+La revisión no prescribe localStorage, ausencia absoluta de estado previo ni
+ningún otro mecanismo técnico concreto.
+
+El protocolo revisado todavía no ha sido ejercido mediante una nueva
+aplicación y no se ha formulado `RP-POU-RU2M1-02`.
+
 Sus mecanismos técnicos concretos permanecen contingentes y no adquieren
 por ello autoridad sobre Product ni sobre una futura arquitectura software.
 
@@ -496,6 +526,14 @@ R-U2-M1
 ✔ ninguna nueva pérdida necesaria establecida
 ✔ ninguna modificación de código derivada
 ✔ reconsolidada documentalmente dentro de su alcance actual
+POU-RU2M1-01
+✔ insuficiencia preobservacional local investigada
+✔ modificación mínima derivada
+✔ condición preobservacional explicitada
+✔ trazabilidad incorporada a la ficha
+○ protocolo revisado todavía no ejercido en una nueva aplicación
+○ nueva evidencia de suficiencia no obtenida
+○ RP-POU-RU2M1-02 no formulado
 
 evolución posterior
 ○ no derivada automáticamente
@@ -691,7 +729,37 @@ El primer ciclo produjo una necesidad local demostrada y justificó una
 modificación de la realización.
 
 El segundo ciclo produjo conocimiento adicional sobre un mecanismo
-contingente de captura, pero no justificó una nueva modificación.
+contingente de captura, pero no justificó una nueva modificación de
+`R-U2-M1` ni del código.
+
+La misma preparación de `OU-RU2M1-002` dejó, de forma separada, una cuestión
+sobre `POU-RU2M1-01`: la realización conservaba un `X` válido restaurado de la
+observación anterior y comenzó inicialmente en `S2(X anterior)`, no en el
+`S1` requerido para iniciar una nueva trayectoria completa.
+
+La investigación posterior localizó una insuficiencia preobservacional del
+protocolo y justificó una modificación mínima exclusivamente documental.
+
+Por tanto:
+
+```text
+cuestión protocolaria
+↓
+investigación de suficiencia preobservacional
+↓
+condición de S1 reconstruida desde R-U2-M1
+↓
+insuficiencia local de POU-RU2M1-01
+↓
+modificación mínima del protocolo
+↓
+condición preobservacional explicitada
++
+registro incorporado a la ficha
+```
+
+Esta evolución no modifica `R-U2-M1`, no modifica código y no propaga ninguna
+exigencia a Product, Architecture o Methodology.
 
 En particular:
 
@@ -712,7 +780,8 @@ restricción contingente localizada
 ↓
 ninguna nueva pérdida necesaria demostrada
 ↓
-ninguna modificación derivada
+ninguna modificación de R-U2-M1
+ni del código derivada
 ```
 
 Ninguno de estos ciclos deriva automáticamente:
@@ -733,6 +802,12 @@ R-U2-M1
         ✔ modificada cuando apareció una necesidad demostrada
         ✔ segunda evidencia investigada y atribuida
         ✔ reconsolidada documentalmente
+
+POU-RU2M1-01
+        ✔ insuficiencia preobservacional local investigada
+        ✔ modificación mínima incorporada
+        ○ revisión todavía no ejercida mediante nueva aplicación
+        ○ RP-POU-RU2M1-02 no formulado
         ↓
 ninguna actuación posterior
 automáticamente derivada
@@ -829,10 +904,54 @@ R-U2-M1
         ✔ ninguna nueva pérdida necesaria establecida
         ✔ ninguna modificación de código derivada
         ✔ reconsolidada documentalmente dentro de su alcance actual
+
+POU-RU2M1-01
+    ✔ dos aplicaciones completadas
+    ✔ suficiencia instrumental inicial conservada
+    ✔ insuficiencia preobservacional local establecida
+    ✔ investigación correspondiente cerrada
+    ✔ modificación mínima derivada
+    ✔ condición preobservacional incorporada
+    ✔ trazabilidad incorporada a la ficha mínima
+    ○ revisión todavía no ejercida mediante nueva aplicación
+    ○ nueva evidencia de suficiencia no obtenida
+    ○ RP-POU-RU2M1-02 no formulado
 ```
 
 `OU-RU2M1-002` proporciona una segunda evidencia positiva local de uso
 efectivo de `R-U2-M1`.
+
+### Investigación y revisión preobservacional de `POU-RU2M1-01`
+
+Durante la preparación de `OU-RU2M1-002` se observó que la realización
+conservaba un `X` válido restaurado de la trayectoria anterior y comenzaba en
+`S2(X anterior)`.
+
+La cuestión fue investigada separadamente en:
+
+```text
+07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+```
+
+La investigación estableció una insuficiencia preobservacional local:
+`POU-RU2M1-01` exigía comenzar en `S1`, pero no operacionalizaba la condición
+constitutiva correspondiente.
+
+La modificación mínima quedó incorporada al protocolo mediante:
+
+```text
+comprobación preobservacional
+→ ejecución destinada a S1 iniciada sin X válido restaurado
+
++
+registro de cumplimiento
+→ ficha mínima de observación
+```
+
+No se prescribió ningún mecanismo técnico concreto.
+
+La revisión todavía no ha sido ejercida mediante una nueva aplicación y
+`RP-POU-RU2M1-02` no ha sido formulado.
 
 La investigación de `F-OU002-01` estableció que la diferencia observada se
 origina en el mecanismo monolínea utilizado para capturar la aportación
@@ -864,7 +983,7 @@ docs/06-realization/00-R-U2-M1.md
 ```
 
 El protocolo, las dos observaciones instrumentales y sus investigaciones se
-conservan en los documentos `01–06` del mismo cuerpo:
+conservan en los documentos `01–07` del mismo cuerpo:
 
 ```text
 01-protocolo-de-observacion-de-uso-R-U2-M1.md
@@ -873,6 +992,7 @@ conservan en los documentos `01–06` del mismo cuerpo:
 04-investigacion-RU2M1-U01.md
 05-OU-RU2M1-002.md
 06-investigacion-F-OU002-01.md
+07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
 ```
 
 ---
@@ -1049,6 +1169,18 @@ R-U2-M1
     ✔ reconsolidada documentalmente dentro de su alcance actual
     → primera realización contingente destinada al uso
     → mecanismos concretos no normativos
+
+POU-RU2M1-01
+    ✔ dos aplicaciones completadas
+    ✔ suficiencia instrumental inicial conservada
+    ✔ insuficiencia preobservacional local establecida
+    ✔ investigación correspondiente cerrada
+    ✔ modificación mínima derivada e incorporada documentalmente
+    ✔ condición preobservacional explicitada
+    ✔ trazabilidad incorporada a la ficha mínima
+    ○ revisión todavía no ejercida mediante nueva aplicación
+    ○ nueva evidencia de suficiencia no obtenida
+    ○ RP-POU-RU2M1-02 no formulado
 
 R-PV001-001
     ✔ investigación cerrada

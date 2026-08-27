@@ -172,3 +172,171 @@ No queda derivada automáticamente ninguna actuación posterior. Una nueva
 apertura requerirá fundamento positivo independiente suficiente.
 
 ---
+
+## Documento: 01-protocolo-de-observacion-de-uso-R-U2-M1.md
+
+## Fecha:
+
+2026-08-27
+
+## Motivo:
+
+Investigación y resolución documental de la insuficiencia preobservacional
+localizada durante la preparación de `OU-RU2M1-002`.
+
+## Resultado:
+
+La cuestión preobservacional conservada en `OU-RU2M1-002` es evaluada
+separadamente respecto de `F-OU002-01`.
+
+El hecho observado fue:
+
+```text
+antecedente válido procedente de OU-RU2M1-001
+↓
+restaurado al comienzo de una nueva ejecución
+↓
+S2(X anterior)
+en lugar del S1 pretendido
+↓
+actuación preobservacional realizada
+↓
+inicio efectivo posterior de OU-RU2M1-002
+```
+
+La existencia efectiva de esta situación proporciona fundamento positivo
+suficiente para abrir una investigación propia sobre la suficiencia
+preobservacional de `POU-RU2M1-01`.
+
+La investigación se conserva en:
+
+```text
+07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+```
+
+La revisión de `R-U2-M1` establece que la condición constitutiva de `S1` ya
+estaba definida:
+
+```text
+S1
+→ ejecución iniciada sin X válido restaurado
+```
+
+y que `S2(X)` corresponde simétricamente a:
+
+```text
+S2(X)
+→ ejecución iniciada con X válido restaurado
+```
+
+La investigación establece que la versión entonces examinada de
+`POU-RU2M1-01` exigía comenzar una aplicación completa en `S1`, pero no
+operacionalizaba esta condición mediante una comprobación preobservacional.
+
+La insuficiencia queda por tanto atribuida localmente al protocolo y no a
+`R-U2-M1`.
+
+Se deriva e incorpora una modificación mínima de `POU-RU2M1-01` consistente
+en:
+
+```text
+condición preobservacional explícita
+↓
+la ejecución destinada a constituir S1
+debe comenzar sin X válido restaurado
+
++
+
+trazabilidad
+↓
+registro de la comprobación
+en la ficha mínima de observación
+```
+
+La modificación no prescribe:
+
+```text
+borrado de localStorage
+ausencia absoluta de estado previo
+eliminación de todo antecedente persistido
+ni
+ningún mecanismo técnico concreto
+```
+
+El ciclo local de Realization queda consolidado mediante:
+
+```text
+01-protocolo-de-observacion-de-uso-R-U2-M1.md
+07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+```
+
+y cerrado en:
+
+```text
+4f11fb6
+docs(realization): resolve preobservational protocol insufficiency
+```
+
+`PROJECT_STATUS.md` queda actualizado para reflejar el nuevo estado vigente
+del protocolo y `PROJECT_JOURNAL.md` incorpora el registro cronológico de su
+investigación y revisión.
+
+## Auditorías superadas:
+
+- Separación entre la cuestión protocolaria y `F-OU002-01`.
+- Fundamento positivo de apertura procedente de una situación efectivamente
+  observada.
+- Reconstrucción de la condición constitutiva de `S1` desde la especificación
+  vigente de `R-U2-M1`.
+- Distinción entre `S1` y `S2(X)` según exista o no un `X` válido restaurado al
+  comienzo de la ejecución.
+- Atribución de la insuficiencia a `POU-RU2M1-01` y no a `R-U2-M1`.
+- Derivación de una modificación mínima exclusivamente protocolaria.
+- Ausencia de prescripción de `localStorage` o de cualquier mecanismo técnico
+  concreto.
+- Incorporación de trazabilidad mediante la ficha mínima de observación.
+- Ausencia de modificación de `R-U2-M1`.
+- Ausencia de modificación de código.
+- Ausencia de propagación no justificada a Product, Architecture o
+  Methodology.
+- Conservación de `RP-POU-RU2M1-01` dentro de su alcance original.
+- Ausencia de formulación de `RP-POU-RU2M1-02` sin nueva evidencia de
+  aplicación.
+
+# Observaciones:
+
+La insuficiencia localizada no invalida `POU-RU2M1-01` en conjunto ni
+descarta su suficiencia instrumental inicial.
+
+La modificación documental corrige una condición preobservacional concreta,
+pero no constituye por sí misma evidencia de suficiencia del protocolo
+revisado en una aplicación posterior.
+
+Por tanto:
+
+```text
+POU-RU2M1-01 revisado
+↓
+nueva aplicación
+○ no realizada
+
+nueva evidencia de suficiencia
+○ no obtenida
+
+RP-POU-RU2M1-02
+○ no formulado
+```
+
+No se repitieron tests ni build durante este ciclo, al no haberse producido
+cambios de código. Las validaciones técnicas anteriores de `R-U2-M1`
+permanecen como evidencia histórica y no fueron modificadas por esta revisión
+documental del protocolo.
+
+No queda derivada automáticamente una nueva observación, una ampliación de
+`R-U2-M1`, una segunda realización, una nueva vertical de Product, una
+arquitectura software ni una nueva funcionalidad.
+
+Cualquier actuación posterior requerirá fundamento positivo independiente
+suficiente.
+
+---
