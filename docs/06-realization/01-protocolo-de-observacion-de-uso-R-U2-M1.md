@@ -5,7 +5,7 @@
 **Identificador:** `POU-RU2M1-01`
 **Naturaleza:** protocolo local de observación de uso.
 **Ámbito:** `R-U2-M1`.
-**Estado:** primera aplicación completada; suficiencia instrumental inicial establecida; abierto a revisión mediante observaciones posteriores.
+**Estado:** dos aplicaciones completadas; suficiencia instrumental inicial conservada; insuficiencia preobservacional local identificada y corregida documentalmente; revisión pendiente de nueva evidencia de aplicación.
 **Realización observada:** `R-U2-M1`.
 **Resultado de referencia:** `RC-RU2M1-01`.
 
@@ -218,6 +218,60 @@ No deberá exigirse que `Y`:
 - ni pertenezca a una tarea o workflow predefinido.
 
 La libertad semántica de la actuación posterior debe conservarse.
+
+---
+
+### 6.5. Constitución preobservacional de `S1`
+
+Antes de iniciar una aplicación completa del protocolo, deberá comprobarse que
+la ejecución destinada a constituir `S1` comenzó:
+
+```text
+sin X válido restaurado
+```
+
+Esta condición procede de la especificación vigente de `R-U2-M1`.
+
+Si la ejecución comienza con un `X` válido restaurado, constituye `S2(X)` y
+no el `S1` requerido para iniciar una nueva trayectoria completa:
+
+```text
+ejecución comienza
+con X válido restaurado
+↓
+S2(X)
+↓
+no iniciar todavía
+S1 → X → interrupción → S2(X)
+```
+
+En ese caso, la trayectoria no deberá considerarse iniciada.
+
+Antes de iniciarla deberá disponerse de una ejecución que satisfaga la
+condición de `S1`.
+
+El protocolo no prescribe el mecanismo técnico mediante el que se alcance esa
+condición.
+
+Por tanto:
+
+```text
+ejecución destinada a S1
+sin X válido restaurado
+=
+condición protocolaria
+
+pero
+
+borrado de localStorage
+ausencia absoluta de estado previo
+u otro mecanismo concreto
+=
+no derivados
+```
+
+Cualquier actuación necesaria para preparar esa condición deberá distinguirse
+del inicio efectivo de la trayectoria observada.
 
 ---
 
@@ -603,6 +657,11 @@ Persona:
 
 Actividad real:
 
+Condición preobservacional
+--------------------------
+Ejecución iniciada sin X válido restaurado: [sí / no]
+Actuaciones preparatorias, si existieron:
+
 S1
 --
 Inicio:
@@ -738,22 +797,64 @@ POU-RU2M1-01
 ✔ protocolo mínimo derivado
 ✔ primera aplicación completada
 ✔ suficiencia instrumental inicial observada
+✔ segunda aplicación completada
+✔ insuficiencia preobservacional local localizada
+✔ investigación de suficiencia preobservacional completada
+✔ condición constitutiva de S1 identificada en R-U2-M1
+✔ condición preobservacional incorporada al protocolo
+✔ ficha mínima ampliada para registrar su cumplimiento
+○ revisión todavía no ejercida en una nueva aplicación
 ○ suficiencia general no establecida
-○ abierto a revisión mediante observaciones posteriores
 
 OU-RU2M1-001
 ✔ primera aplicación realizada
 ✔ trayectoria completada
 ✔ fenómeno relevante localizado
+✔ RP-POU-RU2M1-01 formulado provisionalmente
 
-consecuencia posterior
-→ remitida fuera de este protocolo
-→ continuada en 02-OU-RU2M1-001.md
-  y 03-investigacion-F-OU001-01.md
+OU-RU2M1-002
+✔ segunda aplicación realizada
+✔ trayectoria completada
+✔ evidencia positiva local obtenida
+✔ F-OU002-01 localizado
+✔ cuestión preobservacional del protocolo localizada
+
+investigación preobservacional
+✔ abierta con fundamento positivo
+✔ condición constitutiva de S1 reconstruida
+✔ insuficiencia atribuida a POU-RU2M1-01
+✔ investigación cerrada
+→ documentada en
+  07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+
+revisión de POU-RU2M1-01
+✔ modificación mínima derivada
+✔ condición preobservacional explicitada
+✔ mecanismo técnico dejado abierto
+✔ trazabilidad incorporada a la ficha
+○ nueva evidencia de aplicación no obtenida todavía
+
+RP-POU-RU2M1-02
+○ no formulado
 ```
 
 La primera aplicación prevista por este protocolo se realizó en
 `OU-RU2M1-001`.
 
-La apertura de observaciones posteriores no queda establecida
+La segunda aplicación se realizó en `OU-RU2M1-002` y permitió localizar una
+insuficiencia preobservacional relativa a la constitución inicial de `S1`.
+
+La investigación posterior estableció que una aplicación completa del
+protocolo debe comenzar mediante una ejecución iniciada sin un `X` válido
+restaurado.
+
+Esta condición ha sido incorporada al protocolo sin prescribir el mecanismo
+técnico mediante el que deberá satisfacerse.
+
+La revisión documental no constituye por sí misma evidencia de suficiencia en
+una aplicación posterior.
+
+La apertura de nuevas observaciones continúa sin quedar establecida
 automáticamente y deberá justificarse por aquello que sea necesario conocer.
+
+---
