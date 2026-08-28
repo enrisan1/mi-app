@@ -50,6 +50,42 @@ responsabilidad realizativa, una nueva condición irreducible, una realización
 autónoma `R*` ni una modificación de código. La nueva evidencia quedó
 reconsolidada en `R-U2-M1` dentro de su alcance.
 
+Posteriormente apareció un nuevo fundamento positivo independiente durante el
+examen de una situación en la que una aportación `Y`, producida mediante la
+incidencia previa de `X`, debía poder conservar capacidad de incidencia después
+de que `X` dejara de estar disponible.
+
+La investigación distinguió esta trayectoria de la reiteración por composición
+previamente observada y examinó si la incidencia posterior de `Y` requería
+prepararla previamente como antecedente de una nueva aplicación.
+
+Se derivó para ello la realización experimental candidata `R-DX1-M1`, que
+mantiene disponibilidades distinguibles de `X` e `Y`, permite retirar `X` sin
+reescribir `Y` y conserva `Y` a través de una interrupción instrumentada para
+que pueda intervenir posteriormente como antecedente de una nueva actuación.
+
+La candidata fue implementada y validada mediante pruebas prerregistradas:
+
+```text
+tests específicos
+→ 20/20
+
+suite global
+→ 204/204
+
+TypeScript
+→ sin errores
+```
+
+La investigación corroboró, a nivel de realización ejecutable y dentro del
+alcance de `R-DX1-M1`, que la incidencia posterior de Y después de la
+indisponibilidad de `X` no requiere necesariamente una preparación previa
+`Y → X2`.
+
+La investigación quedó cerrada sin derivar una nueva condición realizativa
+irreducible, una modificación de `R-U2-M1`, una nueva responsabilidad normativa,
+una modificación de Product ni una arquitectura software.
+
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
 Como resultado de este proceso existen actualmente cuerpos diferenciados para:
@@ -162,6 +198,24 @@ R-U2-M1
         ✔ reiterabilidad interna no demostrada
         ✔ ninguna realización autónoma R* derivada
         ✔ ninguna modificación de código derivada
+        ↓
+investigación de incidencia posterior
+tras indisponibilidad del antecedente
+        ✔ cerrada
+        ↓
+R-DX1-M1
+        ✔ derivada como candidata experimental
+        ✔ implementada
+        ✔ validada mediante 20/20 tests específicos
+        ✔ suite global 204/204
+        ✔ TypeScript sin errores
+        ✔ trayectoria X → Y / X indisponible / Y → Z ejercida
+        ✔ ausencia de preparación previa Y → X2 ejercida
+        ✔ H-DX2 corroborada dentro del alcance experimental
+        → H-DX3 no corroborada
+        → witness experimental ejecutable
+        → ninguna modificación de R-U2-M1 derivada
+        → ninguna modificación de Product derivada
 ```
 
 `R-U2-M1` constituye actualmente la primera realización contingente destinada al uso validada dentro del alcance establecido.
@@ -446,12 +500,13 @@ Actualmente contiene:
 06-investigacion-F-OU002-01.md
 07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
 08-investigacion-reiteracion-por-composicion-R-U2-M1.md
+09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
 ```
 
 `00-R-U2-M1.md` constituye la fuente canónica de la primera realización
 contingente destinada al uso validada del proyecto.
 
-Los documentos `01–08` conservan, respectivamente:
+Los documentos `01–09` conservan, respectivamente:
 
 - el protocolo mínimo de observación de uso;
 - la primera observación instrumental `OU-RU2M1-001`;
@@ -462,8 +517,11 @@ Los documentos `01–08` conservan, respectivamente:
 - la investigación de atribución de `F-OU002-01`;
 - la investigación de suficiencia preobservacional de `POU-RU2M1-01`,
   incluida la derivación de su modificación mínima;
-- y la investigación de reiteración por composición de aplicaciones locales
-  de `R-U2-M1`.
+- la investigación de reiteración por composición de aplicaciones locales
+  de `R-U2-M1`;
+- y la investigación de incidencia posterior tras indisponibilidad del
+  antecedente, incluida la derivación, implementación, validación y clausura
+  de `R-DX1-M1` como witness experimental ejecutable.
 
 `R-U2-M1` satisface, dentro del alcance auditado, las condiciones que
 justificaron su construcción y las obligaciones locales posteriormente
@@ -556,6 +614,50 @@ autónoma `R*` ni una modificación de código.
 Sus mecanismos técnicos concretos permanecen contingentes y no adquieren
 por ello autoridad sobre Product ni sobre una futura arquitectura software.
 
+Posteriormente apareció fundamento positivo independiente para investigar una
+trayectoria distinta de la composición anterior:
+
+```text
+X → Y
+↓
+Y queda disponible
+↓
+X deja de estar disponible
+↓
+interrupción
+↓
+X continúa indisponible
+Y continúa disponible
+↓
+Y → Z
+```
+
+La investigación quedó conservada en:
+
+```text
+09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
+```
+
+y derivó `R-DX1-M1` como candidata experimental.
+
+La candidata permitió distinguir las disponibilidades de `X` e `Y`, retirar
+`X` sin reescribir ni sustituir `Y` y comprobar, después de una interrupción
+instrumentada y nuevas lecturas, que `Y` podía producir incidencia posterior.
+
+La trayectoria quedó validada mediante 20/20 tests específicos, 204/204 tests
+globales y comprobación de TypeScript sin errores.
+
+`H-DX2` quedó corroborada a nivel de realización ejecutable dentro del alcance
+de `R-DX1-M1`: la incidencia posterior de `Y` no requirió su preparación previa
+como `X2`.
+
+La investigación quedó cerrada sin derivar una nueva condición realizativa
+irreducible, una modificación de `R-U2-M1`, una nueva responsabilidad normativa,
+una modificación de Product ni una arquitectura software.
+
+`R-DX1-M1` se conserva exclusivamente como witness experimental ejecutable
+dentro del alcance investigado.
+
 Estado:
 
 ```text
@@ -588,6 +690,20 @@ POU-RU2M1-01
 ○ protocolo revisado todavía no ejercido en una nueva aplicación
 ○ nueva evidencia de suficiencia no obtenida
 ○ RP-POU-RU2M1-02 no formulado
+R-DX1-M1
+✔ investigación correspondiente cerrada
+✔ candidata experimental derivada
+✔ implementación mínima construida
+✔ 20/20 tests específicos
+✔ 204/204 tests globales
+✔ TypeScript sin errores
+✔ incidencia posterior tras indisponibilidad de X ejercida
+✔ ausencia de preparación previa Y → X2 ejercida
+✔ H-DX2 corroborada dentro del alcance experimental
+→ H-DX3 no corroborada
+→ conservar como witness experimental ejecutable
+→ ninguna ampliación de R-U2-M1 derivada
+→ ninguna responsabilidad normativa adicional derivada
 
 evolución posterior
 ○ no derivada automáticamente
@@ -689,7 +805,15 @@ Los principales hitos han sido:
 - obtención de evidencia positiva local de incidencia reiterada por
   composición;
 - y nueva reconsolidación documental de `R-U2-M1` mediante `E-RU2M1-08` y
-  `CP-RU2M1-11`.
+  `CP-RU2M1-11`;
+- investigación de incidencia posterior tras indisponibilidad del antecedente;
+- derivación, implementación y validación de la candidata experimental
+  `R-DX1-M1`;
+- corroboración ejecutable de incidencia posterior de `Y` sin preparación
+  previa `Y → X2`;
+- auditoría de suficiencia de la evidencia;
+- y clausura de la investigación sin nueva responsabilidad normativa ni
+  modificación de `R-U2-M1`, Product o Architecture.
 
 La justificación completa del último cambio de fase se conserva en:
 
@@ -887,6 +1011,69 @@ No estableció:
 - una realización autónoma R\*;
 - ni una modificación de R-U2-M1 o del código.
 
+Posteriormente apareció un fundamento positivo distinto, relacionado con una
+trayectoria que la composición anterior no había ejercido:
+
+```text
+X → Y
+↓
+X deja de estar disponible
+↓
+Y permanece disponible
+↓
+Y produce incidencia posterior
+```
+
+La investigación correspondiente quedó conservada en:
+
+```text
+09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
+```
+
+y derivó la candidata experimental `R-DX1-M1`.
+
+La candidata proporcionó un contraejemplo ejecutable frente a la necesidad de:
+
+```text
+preparar Y como X2
+antes de que X deje de estar disponible
+```
+
+La trayectoria fue validada con control negativo, correspondencia
+transinterrupción y ausencia de preparación anticipada.
+
+La investigación quedó cerrada con:
+
+```text
+H-DX1
+→ rechazada
+
+H-DX2
+→ corroborada a nivel ejecutable
+  dentro de R-DX1-M1
+
+H-DX3
+→ no corroborada
+
+H-DX4
+→ rechazada como inferencia
+
+suficiencia de la evidencia
+→ auditada y aceptada
+
+R-DX1-M1
+→ witness experimental ejecutable
+
+R-U2-M1
+→ intacta
+
+Product
+→ intacto
+
+nueva responsabilidad normativa
+→ no derivada
+```
+
 Ninguno de estos ciclos deriva automáticamente:
 
 - una nueva ampliación de `R-U2-M1`;
@@ -917,11 +1104,26 @@ POU-RU2M1-01
         ✔ modificación mínima incorporada
         ○ revisión todavía no ejercida mediante nueva aplicación formal
         ○ RP-POU-RU2M1-02 no formulado
+
+R-DX1-M1
+        ✔ investigación derivada desde fundamento positivo independiente
+        ✔ implementación experimental mínima construida
+        ✔ trayectoria positiva ejercida
+        ✔ control negativo ejercido
+        ✔ ausencia de preparación previa Y → X2 ejercida
+        ✔ H-DX2 corroborada dentro del alcance experimental
+        → H-DX3 no corroborada
+        ✔ suficiencia de la evidencia auditada
+        ✔ investigación cerrada
+        → conservar como witness experimental ejecutable
+        → ninguna ampliación de R-U2-M1 derivada
+        → ninguna responsabilidad normativa adicional derivada
         ↓
 ninguna actuación posterior
 automáticamente derivada
         ↓
-¿existe nuevo fundamento positivo independiente?
+¿existe nuevo fundamento positivo independiente
+posterior al cierre de esta investigación?
 ```
 
 Una actuación posterior deberá disponer de fundamento positivo suficiente
@@ -1092,7 +1294,8 @@ docs/06-realization/00-R-U2-M1.md
 ```
 
 El protocolo, las dos observaciones instrumentales y las investigaciones
-posteriores se conservan en los documentos `01–08` del mismo cuerpo:
+posteriores vinculadas directamente a `R-U2-M1` se conservan en los documentos
+`01–08` del mismo cuerpo:
 
 ```text
 01-protocolo-de-observacion-de-uso-R-U2-M1.md
@@ -1103,6 +1306,10 @@ posteriores se conservan en los documentos `01–08` del mismo cuerpo:
 06-investigacion-F-OU002-01.md
 07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
 08-investigacion-reiteracion-por-composicion-R-U2-M1.md
+
+09
+→ investigación posterior independiente
+→ R-DX1-M1
 ```
 
 ### Investigación de reiteración por composición
@@ -1125,6 +1332,118 @@ La investigación quedó cerrada sin demostrar:
 
 El resultado quedó reconsolidado en `00-R-U2-M1.md` mediante
 `E-RU2M1-08` y `CP-RU2M1-11`.
+
+### Investigación de incidencia posterior tras indisponibilidad del antecedente
+
+Una investigación posterior examinó una trayectoria distinta de la reiteración
+por composición:
+
+```text
+X → Y
+↓
+Y disponible
+↓
+X indisponible
+↓
+interrupción
+↓
+Y disponible
+↓
+Y → Z
+```
+
+La pregunta fue si la incidencia posterior de `Y` requería necesariamente una
+preparación previa:
+
+```text
+Y → X2
+```
+
+La investigación quedó documentada en:
+
+```text
+docs/06-realization/09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
+```
+
+Se derivó `R-DX1-M1` como candidata experimental mínima.
+
+La implementación y el protocolo ejecutable produjeron:
+
+```text
+fase RED
+✔ observada
+
+tests específicos
+✔ 20/20
+
+suite global
+✔ 204/204
+
+TypeScript
+✔ sin errores
+```
+
+La trayectoria positiva demostró:
+
+```text
+X → Y
+↓
+retirada de X sin reescritura de Y
+↓
+interrupción
+↓
+X ausente
+Y conservada
+↓
+Y → Z
+```
+
+sin preparación previa de `Y` como nuevo `X`.
+
+El resultado consolidado fue:
+
+```text
+H-DX1
+→ rechazada
+
+H-DX2
+→ corroborada a nivel ejecutable
+  dentro de R-DX1-M1
+
+H-DX3
+→ no corroborada
+
+H-DX4
+→ rechazada como inferencia
+```
+
+La auditoría de suficiencia posterior no identificó una diferencia
+epistemológica que justificara construir una interfaz o exigir una nueva
+validación humana de la misma trayectoria.
+
+La auditoría de clausura determinó:
+
+```text
+pregunta principal
+→ respondida
+
+criterios de aceptación
+→ satisfechos
+
+obligaciones pendientes
+→ ninguna
+
+residuo positivo pendiente
+→ ninguno actualmente identificado
+
+investigación
+→ CERRADA
+```
+
+`R-DX1-M1` se conserva como witness experimental ejecutable.
+
+No se derivó una modificación de `R-U2-M1`, Product, Architecture ni una nueva
+responsabilidad normativa.
 
 ---
 
@@ -1319,6 +1638,18 @@ POU-RU2M1-01
     ○ nueva evidencia de suficiencia no obtenida
     ○ RP-POU-RU2M1-02 no formulado
 
+R-DX1-M1
+    ✔ investigación cerrada
+    ✔ candidata experimental derivada
+    ✔ implementada
+    ✔ 20/20 tests específicos
+    ✔ 204/204 tests globales
+    ✔ H-DX2 corroborada dentro del alcance experimental
+    → H-DX3 no corroborada
+    → witness experimental ejecutable
+    → ninguna modificación de R-U2-M1 derivada
+    → ninguna nueva responsabilidad normativa derivada
+
 R-PV001-001
     ✔ investigación cerrada
     → satisfacción de CR-PV001-01 no establecida
@@ -1349,6 +1680,10 @@ Estado de continuación
     → reiterabilidad interna de R-U2-M1 no demostrada
     → ninguna realización autónoma R* derivada
     → ninguna modificación de código derivada
+    ✔ investigación de incidencia posterior tras indisponibilidad del antecedente completada
+    ✔ R-DX1-M1 validada como witness experimental ejecutable
+    → ninguna nueva condición irreducible derivada
+    → ninguna ampliación de R-U2-M1 derivada
     ○ ninguna ampliación automáticamente derivada
     ↺ nueva actuación condicionada a nuevo fundamento positivo independiente
 

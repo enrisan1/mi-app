@@ -3896,3 +3896,853 @@ El cierre de `FP-2` no prescribe la investigación inmediata de otra familia his
 Una actuación posterior deberá contar con fundamento positivo propio dentro del cuerpo competente.
 
 ---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+2026-08-29
+
+## Actuación
+
+**Investigación de incidencia posterior tras indisponibilidad del antecedente, derivación y validación de `R-DX1-M1` y clausura sin nueva responsabilidad normativa.**
+
+### Situación de partida
+
+La investigación de reiteración por composición de `R-U2-M1` había quedado cerrada dentro de su alcance.
+
+Aquella investigación había obtenido evidencia positiva local de que la incidencia admitida por `PV-001` podía aparecer reiteradamente mediante composición de dos aplicaciones locales de `R-U2-M1` enlazadas por mediación humana trazable.
+
+El resultado había establecido:
+
+```text
+incidencia reiterada por composición
+✔ observada
+
+reiterabilidad interna de R-U2-M1
+✘ no demostrada
+
+nueva condición realizativa irreducible
+✘ no demostrada
+
+realización autónoma R*
+✘ no derivada
+
+modificación de R-U2-M1
+✘ no derivada
+
+modificación de Product
+✘ no derivada
+```
+
+La investigación había dejado además una distinción importante.
+
+La composición ejercida seguía una trayectoria en la que el resultado de una aplicación podía ser mediado humanamente antes de constituir el antecedente de otra aplicación.
+
+No había demostrado específicamente:
+
+```text
+Y producida
+↓
+Y permanece disponible
+↓
+X deja de estar disponible
+↓
+interrupción
+↓
+Y continúa disponible
+↓
+Y produce una incidencia posterior
+```
+
+sin que `Y` hubiera sido preparada previamente como antecedente de una nueva aplicación.
+
+### Fundamento positivo para investigar
+
+Una situación concreta permitió localizar esta diferencia.
+
+La cuestión no consistía en determinar si una aportación posterior podía existir después de otra, ni en exigir una determinada organización estructural de la plataforma.
+
+La diferencia relevante era:
+
+```text
+X interviene en una situación
+↓
+se produce Y
+↓
+Y queda disponible
+↓
+X deja posteriormente de estar disponible
+↓
+Y conserva capacidad de incidencia
+en una situación posterior
+```
+
+El control sobre la investigación previa mostró que la trayectoria de reiteración por composición no constituía evidencia suficiente para este caso.
+
+En particular:
+
+```text
+nuevo S1 sin X1 restaurado
+≠
+evidencia de incidencia de Y1
+después de la desaparición de X1
+```
+
+Por tanto existía un fundamento positivo independiente para abrir una investigación realizativa específica.
+
+### Pregunta investigada
+
+La pregunta quedó formulada como:
+
+> **¿Puede una aportación `Y`, después de haber sido producida y hecha disponible mediante una situación en la que intervino `X`, conservar capacidad de incidencia posterior cuando `X` deja de estar disponible antes de dicha incidencia, sin requerir que `Y` haya sido previamente transformada en el antecedente de una nueva aplicación?**
+
+La investigación se conservó en:
+
+```text
+docs/06-realization/09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
+```
+
+### Hipótesis
+
+Se establecieron cuatro hipótesis principales:
+
+```text
+H-DX1
+la composición previamente observada
+ya es evidencia suficiente
+→ RECHAZADA
+
+H-DX2
+Y puede conservar incidencia posterior
+después de que X deje de estar disponible
+sin preparación previa Y → X2
+→ sometida a prueba
+
+H-DX3
+la trayectoria exige una condición
+realizativa irreducible adicional
+→ sometida a prueba
+
+H-DX4
+si R-U2-M1 no realiza internamente
+la trayectoria, queda refutada
+→ RECHAZADA COMO INFERENCIA
+```
+
+La incapacidad de `R-U2-M1` para proporcionar por sí sola la nueva trayectoria no fue tratada como defecto automático.
+
+La pregunta investigada quedaba fuera de las responsabilidades que habían justificado y consolidado previamente dicha realización.
+
+### Reducción de la trayectoria
+
+La investigación distinguió entre disponibilidad, desaparición del antecedente, permanencia del resultado e incidencia posterior.
+
+Se derivó como trayectoria mínima:
+
+```text
+E0
+(X, ∅)
+↓
+X → Y
+
+E1
+(X, Y)
+↓
+X deja de estar disponible
+
+E2
+(∅, Y)
+↓
+interrupción
+
+E3
+(∅, Y)
+↓
+Y → Z
+```
+
+La investigación exigió distinguir localmente:
+
+```text
+X no disponible
++
+Y disponible
+```
+
+después de una interrupción.
+
+No se consideró suficiente:
+
+```text
+eliminar X
+durante la misma ejecución
+```
+
+porque el estado de ejecución podía conservar todavía información relevante.
+
+Tampoco se consideró válida una trayectoria en la que `Y` hubiera sido previamente preparada como sustituto de `X`.
+
+La secuencia prohibida como evidencia era:
+
+```text
+X → Y
+↓
+Y se prepara como X2
+↓
+X desaparece
+↓
+interrupción
+↓
+incidencia de Y
+```
+
+La secuencia requerida era:
+
+```text
+X → Y
+↓
+Y queda disponible
+↓
+X desaparece
+↓
+interrupción
+↓
+Y sigue disponible
+↓
+sólo entonces
+Y → Z
+```
+
+### Derivación de `R-DX1-M1`
+
+Para someter la cuestión a prueba se derivó una candidata experimental independiente:
+
+```text
+R-DX1-M1
+```
+
+La candidata no constituye:
+
+```text
+una modificación de R-U2-M1
+✘
+
+una sucesora normativa de R-U2-M1
+✘
+
+una arquitectura
+✘
+
+una realización general de PV-001
+✘
+
+un compromiso de Product
+✘
+```
+
+Su responsabilidad se limitó a proporcionar un witness ejecutable de la trayectoria investigada.
+
+Se rechazó como primer mecanismo experimental una única posición persistente compartida por `X` e `Y`, porque sustituir `X` por `Y` habría reproducido precisamente la preparación previa `Y → X2` que debía mantenerse fuera de la trayectoria.
+
+Se seleccionaron dos posiciones persistentemente distinguibles:
+
+```text
+PX
+→ disponibilidad de X
+
+PY
+→ disponibilidad de Y
+```
+
+La realización contingente utilizó:
+
+```text
+rdx1m1.x
+rdx1m1.y
+```
+
+como dos posiciones independientes en `localStorage`.
+
+La operación crítica:
+
+```text
+removeX()
+```
+
+elimina exclusivamente `X` y no escribe, copia, reconstruye ni sustituye `Y`.
+
+### Contratos y controles
+
+La candidata fue derivada mediante contratos que exigían, entre otras condiciones:
+
+```text
+X e Y distinguibles
+✔
+
+Y constituida mediante X → Y
+✔
+
+Y disponible más allá de la constitución inmediata
+✔
+
+retirada de X sin reescritura de Y
+✔
+
+ausencia de preparación previa Y → X2
+✔
+
+interrupción seguida de nuevas lecturas
+✔
+
+X ausente después de la interrupción
+✔
+
+Y disponible después de la interrupción
+✔
+
+correspondencia trazable de Y
+✔
+
+incidencia posterior Y → Z
+✔
+
+control negativo sin Y
+✔
+
+opacidad semántica
+✔
+```
+
+La correspondencia transinterrupción se ejerció mediante identidad literal de `Y` como witness contingente para reducir ambigüedad.
+
+La identidad literal no fue elevada a requisito universal de correspondencia.
+
+### Desarrollo dirigido por pruebas
+
+La fase RED fue ejercida antes de disponer de la implementación del repositorio experimental.
+
+El resultado inicial fue estructural:
+
+```text
+instrumento de antecedencia
+→ tests ejecutables
+
+repositorio experimental
+→ importación inexistente
+
+protocolo integrado
+→ importación inexistente
+```
+
+La ausencia de implementación impidió que las suites correspondientes pudieran recolectarse y ejecutarse.
+
+Posteriormente se incorporó la implementación mínima:
+
+```text
+src/realizations/rdx1m1/
+├── dxAntecedenceInstrument.test.ts
+├── localStorageDxRepository.test.ts
+├── localStorageDxRepository.ts
+└── rdx1m1Protocol.test.ts
+```
+
+La fase GREEN específica produjo:
+
+```text
+Test Files
+→ 3 passed
+
+Tests
+→ 20 passed
+```
+
+La validación global del proyecto produjo:
+
+```text
+Test Files
+→ 24 passed
+
+Tests
+→ 204 passed
+```
+
+La comprobación:
+
+```text
+npx tsc --noEmit
+```
+
+finalizó sin errores.
+
+### Trayectoria positiva ejercida
+
+La prueba integrada ejerció:
+
+```text
+X1 disponible
+↓
+X1 → Y1
+↓
+X1 e Y1 disponibles
+y distinguibles
+↓
+retirada de X1
+sin escritura sobre Y1
+↓
+X1 ausente
+Y1 disponible
+↓
+interrupción instrumentada
+mediante reinicio de módulos
+↓
+nueva instancia
+y nuevas lecturas
+↓
+X1 ausente
+Y1 disponible
+↓
+Y1 → Z1
+```
+
+La incidencia posterior de `Y1` se constituyó únicamente después de la interrupción.
+
+### Control negativo
+
+Se ejerció también la condición:
+
+```text
+X ausente
+Y ausente
+↓
+interrupción
+↓
+Y continúa ausente
+↓
+Y → Z
+✘
+```
+
+El control confirmó que la acción posterior utilizada como evidencia no quedaba disponible en ausencia de `Y`.
+
+### Control de ausencia de preparación
+
+Se comprobó expresamente:
+
+```text
+X1 disponible
+↓
+X1 → Y1
+↓
+guardar Y1
+
+X sigue siendo X1
+Y es Y1
+
+X ≠ Y
+↓
+retirar X
+↓
+X ausente
+Y1 disponible
+```
+
+Por tanto la evidencia positiva no depende de haber convertido previamente `Y` en el nuevo contenido de la posición de `X`.
+
+### Resultado de las hipótesis
+
+Después de la ejecución:
+
+```text
+H-DX1
+→ RECHAZADA
+
+la composición previa
+no constituía por sí sola
+evidencia del nuevo caso
+```
+
+```text
+H-DX2
+→ CORROBORADA
+A NIVEL DE REALIZACIÓN EJECUTABLE
+DENTRO DE R-DX1-M1
+```
+
+La candidata proporciona evidencia de que:
+
+```text
+X → Y
+↓
+X deja de estar disponible
+↓
+Y permanece disponible
+↓
+interrupción
+↓
+Y produce incidencia posterior
+```
+
+sin preparación previa:
+
+```text
+Y → X2
+```
+
+```text
+H-DX3
+→ NO CORROBORADA
+```
+
+No se identificó un residuo positivo que obligara a introducir una nueva condición realizativa irreducible.
+
+Este resultado no constituye una demostración universal de que ninguna realización imaginable pueda requerir otras condiciones.
+
+```text
+H-DX4
+→ RECHAZADA COMO INFERENCIA
+```
+
+La investigación no refuta `R-U2-M1`.
+
+La nueva trayectoria se encuentra fuera del alcance previamente consolidado de dicha realización.
+
+### Auditoría de suficiencia de la evidencia
+
+Después del resultado ejecutable se examinó si era necesaria una validación humana independiente o una interrupción técnica más fuerte.
+
+Se estableció como criterio que una validación adicional sólo estaría justificada si pudiera:
+
+```text
+A
+ejercer una condición relevante
+todavía no ejercida
+
+o
+
+B
+falsar H-DX2
+mientras las pruebas actuales pasaran
+
+o
+
+C
+verificar una responsabilidad
+que realmente perteneciera
+al alcance de R-DX1-M1
+```
+
+No se identificó ninguna de esas condiciones.
+
+Una interfaz habría añadido:
+
+```text
+React
+eventos
+renderizado
+interacción manual
+```
+
+sin introducir una diferencia discriminante respecto de la pregunta investigada.
+
+La interrupción mediante `vi.resetModules()` no fue identificada como equivalente universal a cerrar o recargar un navegador.
+
+Sin embargo, una recarga o cierre de navegador tampoco había sido derivado como criterio necesario de la pregunta.
+
+Exigirlo después del resultado habría fortalecido retroactivamente el criterio experimental sin fundamento independiente.
+
+El resultado de la auditoría fue:
+
+```text
+H-VO1
+validación humana independiente necesaria
+→ RECHAZADA
+
+H-VO2
+interrupción técnica más fuerte necesaria
+→ NO DERIVADA
+
+H-VO3
+evidencia ejecutable suficiente
+dentro del alcance de R-DX1-M1
+→ CORROBORADA
+```
+
+### Auditoría de clausura
+
+La auditoría final revisó:
+
+```text
+pregunta original
+✔ respondida
+
+hipótesis
+✔ evaluadas
+
+contratos
+✔ ejercidos
+
+criterio de aceptación
+✔ satisfecho
+
+falsos positivos
+✔ controlados
+
+suficiencia de evidencia
+✔ auditada y aceptada
+```
+
+No se identificó:
+
+```text
+obligación pendiente
+→ ninguna
+
+residuo positivo pendiente
+→ ninguno actualmente identificado
+```
+
+El estado final quedó establecido como:
+
+```text
+R-DX1-M1
+→ corroborada como realización experimental
+
+H-DX2
+→ corroborada dentro del alcance experimental
+
+H-DX3
+→ no corroborada
+
+R-U2-M1
+→ intacta
+
+Product
+→ intacto
+
+Architecture
+→ sin obligación derivada
+
+nueva responsabilidad normativa
+→ no derivada
+
+investigación
+→ CERRADA
+```
+
+### Estatuto de `R-DX1-M1`
+
+`R-DX1-M1` se conserva como:
+
+```text
+witness experimental ejecutable
+```
+
+Su existencia demuestra realizabilidad dentro de las condiciones investigadas.
+
+No adquiere por ello estatuto de:
+
+```text
+realización destinada al uso
+✘
+
+realización general de PV-001
+✘
+
+responsabilidad normativa de Realization
+✘
+
+arquitectura
+✘
+
+funcionalidad de Product
+✘
+
+continuación obligatoria
+✘
+```
+
+Los mecanismos utilizados permanecen contingentes.
+
+En particular:
+
+```text
+localStorage
+dos claves
+strings
+identidad literal de Y
+vi.resetModules()
+```
+
+son medios del witness experimental y no requisitos generales derivados.
+
+### Consolidación en Git
+
+La investigación, la candidata experimental y su evidencia ejecutable quedaron consolidadas conjuntamente mediante:
+
+```text
+3f86468
+feat(realization): validate incidence after antecedent unavailability
+```
+
+El commit incorporó:
+
+```text
+docs/06-realization/09-investigacion-incidencia-posterior-tras-indisponibilidad-del-antecedente.md
+
+src/realizations/rdx1m1/dxAntecedenceInstrument.test.ts
+src/realizations/rdx1m1/localStorageDxRepository.test.ts
+src/realizations/rdx1m1/localStorageDxRepository.ts
+src/realizations/rdx1m1/rdx1m1Protocol.test.ts
+```
+
+El repositorio quedó limpio inmediatamente después de la consolidación.
+
+### Propagación documental
+
+El nuevo resultado modifica materialmente el estado vigente que es responsabilidad de:
+
+```text
+PROJECT_STATUS.md
+```
+
+por lo que el estado global fue actualizado para incorporar:
+
+```text
+investigación 09
+R-DX1-M1
+resultado de H-DX2
+límites de H-DX3
+clausura
+ausencia de nuevas obligaciones normativas
+nuevo punto de reanudación
+```
+
+La actuación se registra asimismo en `PROJECT_JOURNAL.md` para conservar su trayectoria histórica.
+
+No existe fundamento para modificar por este resultado:
+
+```text
+05-AUDITORIA_GLOBAL_DEL_PROYECTO.md
+✘
+
+08-ROADMAP.md
+✘
+
+architecture-roadmap.md
+✘
+
+bitácora de Methodology
+✘
+
+bitácora de Metatheory
+✘
+```
+
+La auditoría global conserva su estatuto histórico.
+
+El Roadmap no ha recibido una nueva línea estratégica.
+
+Architecture no ha recibido una nueva responsabilidad.
+
+### Estado resultante
+
+El estado posterior a la investigación es:
+
+```text
+PV-001
+✔ intacta
+
+R-U2-M1
+✔ intacta dentro de su alcance consolidado
+
+investigación de reiteración por composición
+✔ cerrada
+
+investigación de incidencia posterior
+tras indisponibilidad del antecedente
+✔ cerrada
+
+R-DX1-M1
+✔ candidata experimental derivada
+✔ implementación mínima construida
+✔ trayectoria positiva ejercida
+✔ control negativo ejercido
+✔ ausencia de preparación previa ejercida
+✔ 20/20 tests específicos
+✔ 204/204 tests globales
+✔ TypeScript sin errores
+✔ H-DX2 corroborada dentro del alcance experimental
+→ H-DX3 no corroborada
+→ witness experimental ejecutable
+
+Product
+✔ sin modificación
+
+Architecture
+✔ sin obligación derivada
+
+R-U2-M1
+✔ sin ampliación derivada
+
+nueva responsabilidad normativa
+✘ no derivada
+```
+
+### Condición de reapertura
+
+La investigación no deberá reabrirse por:
+
+```text
+deseo de probar otra implementación
+✘
+
+posibilidad de construir una interfaz
+✘
+
+interés en utilizar otro almacenamiento
+✘
+
+deseo de producir más ejemplos
+✘
+
+existencia de mecanismos alternativos
+✘
+```
+
+Sólo deberá considerarse su reapertura si aparece evidencia positiva capaz de cuestionar alguna conclusión de clausura, como:
+
+- un contraejemplo relevante al criterio utilizado;
+- una condición no ejercida que pertenezca demostrablemente a la pregunta original;
+- una incompatibilidad descubierta con un compromiso consolidado;
+- o una nueva diferencia irreducible positivamente fundada.
+
+### Punto de reanudación
+
+La investigación queda cerrada sin derivar por sí misma una actuación posterior.
+
+En particular:
+
+```text
+R-DX1-M1 experimental
+⇏ ampliar R-DX1-M1
+
+R-DX1-M1 experimental
+⇏ convertirla en realización destinada al uso
+
+H-DX2 corroborada
+⇏ nueva responsabilidad normativa
+
+H-DX3 no corroborada
+⇏ obligación de seguir investigándola
+
+arquitectura del producto no derivada
+⇏ Architecture como siguiente actuación
+
+POU-RU2M1-01 con nueva aplicación formal no realizada
+⇏ obligación automática de ejecutarla
+```
+
+La siguiente actuación deberá justificarse nuevamente a partir del estado global del proyecto y de un fundamento positivo independiente perteneciente al cuerpo competente.
+
+---
