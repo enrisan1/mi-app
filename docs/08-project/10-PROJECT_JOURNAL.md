@@ -3544,3 +3544,355 @@ Una propuesta podrá incorporarse cuando exista una razón identificable para co
 Su investigación posterior requerirá, cuando corresponda, el fundamento positivo exigible por el cuerpo competente.
 
 ---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+2026-08-28
+
+## Actuación
+
+Reexamen específico de `FP-2 — abundancia, localización y utilización`, familia identificada durante la auditoría adicional de fundamento histórico del Design Journal.
+
+### Situación de partida
+
+La auditoría histórica había identificado provisionalmente la familia:
+
+```text
+FP-2
+abundancia, localización y utilización
+```
+
+dentro de una segunda extracción de evidencia primaria realizada para comprobar si el corpus histórico contenía situaciones humanas capaces de proporcionar fundamento positivo independiente que hubiera quedado oculto durante reconstrucciones posteriores.
+
+`FP-2` había quedado comprendida en el resultado reductivo global de aquella investigación.
+
+El cierre histórico establecía que los fundamentos positivos identificados habían sido examinados sin producir un nuevo compromiso de Product.
+
+No existía, sin embargo, una reducción específica de `FP-2` con el mismo grado de trazabilidad documental alcanzado posteriormente para otras familias.
+
+El reexamen no parte de una invalidación del cierre anterior ni de nueva autoridad normativa atribuida al corpus histórico.
+
+Su finalidad consiste exclusivamente en someter a prueba explícita la diferencia humana contenida en aquella raíz histórica.
+
+### Pregunta examinada
+
+La investigación se formuló mediante la pregunta:
+
+> ¿Existe una diferencia humana irreducible entre que información relevante esté disponible o sea localizable y que una persona pueda utilizarla efectivamente en una situación, o esa diferencia puede reconstruirse mediante `PV-001` y los demás resultados ya consolidados?
+
+Se eliminaron como presupuestos necesarios:
+
+- una cantidad enorme de información;
+- mapas;
+- grafos;
+- buscadores;
+- inteligencia artificial;
+- clasificaciones;
+- rutas de aprendizaje;
+- relaciones semánticas predeterminadas;
+- y otras soluciones históricas concretas.
+
+### Diferencia humana corroborada
+
+El reexamen permitió establecer que disponibilidad y localización no son universalmente suficientes para la utilización efectiva.
+
+Puede darse:
+
+```text
+aportaciones relevantes
+        ↓
+disponibles
+        ↓
+localizables
+
+pero
+
+persona
+        ↓
+no puede todavía realizar
+una actuación para la que
+esas aportaciones podrían resultar relevantes
+```
+
+Por tanto:
+
+```text
+disponibilidad + localización
+        ⇏
+utilización efectiva
+```
+
+La diferencia histórica no quedó reducida a mera inexistencia fenomenológica.
+
+### Reducción de la abundancia
+
+Se comprobó que la diferencia puede aparecer incluso con una cantidad pequeña de aportaciones.
+
+Por tanto:
+
+```text
+gran cantidad de información
+        → puede aumentar dificultad,
+          coste, esfuerzo o practicabilidad
+
+pero
+
+gran cantidad de información
+        → no constituye una condición
+          necesaria del fenómeno
+```
+
+La abundancia no proporciona por sí misma un fundamento independiente de Product.
+
+### Pruebas de irreducibilidad
+
+Se intentó localizar un residuo de utilización que permaneciera después de conceder las posibilidades ya admitidas por `PV-001`.
+
+La investigación examinó varias vías.
+
+#### Aportaciones o mediaciones adicionales
+
+Cuando la utilización depende de una explicación, selección, comparación, organización, transformación u otra aportación mediadora, dicha aportación puede quedar disponible e intervenir posteriormente.
+
+La estructura continúa siendo reconstruible como:
+
+```text
+situación anterior
+        ↓
+algo queda disponible
+        ↓
+intervención posterior
+        ↓
+diferencia en posibilidades humanas
+```
+
+No se demostró por esta vía una nueva clase de compromiso de Product.
+
+#### Interpretación humana
+
+Cuando las configuraciones pertinentes están disponibles pero la pérdida consiste en que una persona no comprende, conoce o interpreta aquello disponible, el residuo se desplaza hacia la interpretación humana.
+
+La plataforma puede hacer disponibles configuraciones capaces de intervenir posteriormente, pero la interpretación o el conocimiento resultantes no se convierten por ello en resultados garantizados por Product.
+
+Tampoco apareció por esta vía una nueva vertical.
+
+#### Condiciones situacionales de actuación
+
+Se examinó asimismo si la diferencia dependía de condiciones propias de la situación presente.
+
+Se distinguieron tres casos:
+
+```text
+condición externa de la situación
+        ↓
+contexto de la incidencia
+        ↓
+sin nueva responsabilidad demostrada
+
+condición procedente de otra aportación
+        ↓
+puede intervenir posteriormente
+        ↓
+espacio de PV-001
+
+función específica que Product
+deba realizar respecto de la condición
+        ↓
+requiere fundamento positivo independiente
+        ↓
+no demostrado
+```
+
+La existencia de condiciones que afectan a las posibilidades humanas no implica por sí misma que Product deba representarlas, identificarlas, conservarlas, clasificarlas, modificarlas o controlarlas.
+
+### Prueba fuerte de control
+
+Se intentó construir dos situaciones manteniendo constantes:
+
+- las mismas aportaciones antecedentes relevantes;
+- las mismas posibilidades de incidencia admitidas por `PV-001`;
+- las mismas capacidades interpretativas pertinentes;
+- y las mismas condiciones situacionales relevantes para la actuación considerada.
+
+No fue posible obtener:
+
+```text
+situación A
+→ no utilizable
+
+situación B
+→ utilizable
+```
+
+sin introducir alguna diferencia adicional entre ambas.
+
+Las diferencias localizadas pertenecían a alguno de los siguientes ámbitos:
+
+```text
+aportación o configuración
+incidencia
+interpretación
+condición de actuación
+condición situacional
+```
+
+No quedó identificado un residuo positivo independiente denominado simplemente «utilización».
+
+### Estado de las hipótesis
+
+```text
+H-U1
+disponibilidad o localización
+es suficiente para la utilización
+→ RECHAZADA
+
+H-U2
+la diferencia de utilización
+constituye una diferencia de Product
+irreducible a PV-001
+→ NO CORROBORADA
+
+H-U3
+la diferencia se explica exclusivamente
+por escala o eficiencia
+→ RECHAZADA
+
+H-U4
+la diferencia depende necesariamente
+de una solución histórica concreta
+→ RECHAZADA
+
+H-U5
+la diferencia humana es real,
+pero puede reconstruirse mediante
+PV-001, interpretación humana
+o condiciones situacionales que
+no generan por sí mismas
+una nueva responsabilidad de Product
+→ CORROBORADA DENTRO DEL ALCANCE INVESTIGADO
+```
+
+### Control sobre `PV-001`
+
+Se comprobó la formulación vigente de `PV-001`.
+
+El compromiso ya establece que aquello procedente de situaciones anteriores puede incidir en las posibilidades humanas de una situación posterior y que dicha incidencia no tiene que producirse efectivamente en cada situación concreta.
+
+También permanece establecido que las propiedades adicionales de casos particulares no forman parte de la vertical salvo demostración independiente de su necesidad.
+
+Por tanto:
+
+```text
+reexamen de FP-2
+        ↓
+no identifica carencia
+en PV-001
+
+PV-001
+        → no modificada
+        → no ampliada
+```
+
+La precisión relativa al carácter situado de las posibilidades humanas resulta compatible con el alcance ya consolidado y no requiere incorporación normativa adicional.
+
+### Resultado
+
+La investigación confirma:
+
+```text
+disponibilidad o localización
+        ≠
+utilización efectiva
+```
+
+como diferencia humana posible.
+
+Sin embargo, no identifica en dicha diferencia un compromiso de Product independiente.
+
+Por tanto:
+
+```text
+diferencia humana
+        → corroborada
+
+residuo positivo independiente de Product
+        → no identificado
+
+nueva vertical de Product
+        → no derivada
+
+modificación de PV-001
+        → no derivada
+
+PV-002
+        → no derivada
+
+capacidad funcional concreta
+        → no derivada
+```
+
+El reexamen hace explícita la reducción específica de `FP-2` y aumenta la trazabilidad de su cierre histórico.
+
+No corrige ni invalida el resultado de la auditoría histórica anterior.
+
+### Modificación documental
+
+El resultado fue incorporado a:
+
+```text
+docs/08-project/06-DESIGN_JOURNAL.md
+```
+
+como:
+
+```text
+Reexamen posterior de
+FP-2 — abundancia, localización y utilización
+```
+
+La incorporación se realizó después del cierre de la auditoría histórica original para conservar explícitamente la diferencia temporal y documental entre:
+
+```text
+investigación histórica original
+        ↓
+cierre previo
+
+y
+
+reexamen posterior específico
+        ↓
+aumento de trazabilidad
+        ↓
+confirmación del cierre
+```
+
+No se modificó `02-PRODUCT.md`.
+
+No se derivó modificación de `ROADMAP.md`.
+
+No se identificó un cambio material de estado que exigiera modificar `PROJECT_STATUS.md`.
+
+### Estado
+
+**Cerrado — reexamen específico de `FP-2` completado sin residuo positivo independiente de Product.**
+
+### Condición de reapertura
+
+La cuestión podrá reabrirse si aparece fundamento positivo independiente capaz de identificar una pérdida humana concreta que:
+
+- no pueda reducirse a incidencias ya admitidas por `PV-001`;
+- no consista únicamente en interpretación humana;
+- no dependa únicamente de condiciones externas de la situación;
+- y permita justificar una responsabilidad propia de Product todavía no contenida en los compromisos vigentes.
+
+La mera posibilidad de imaginar mecanismos destinados a hacer la información más fácil de localizar, organizar, relacionar, comprender o utilizar no constituye por sí misma fundamento suficiente.
+
+### Punto de reanudación
+
+El cierre de `FP-2` no prescribe la investigación inmediata de otra familia histórica ni la búsqueda de una nueva vertical.
+
+Una actuación posterior deberá contar con fundamento positivo propio dentro del cuerpo competente.
+
+---
