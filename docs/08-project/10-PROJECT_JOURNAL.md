@@ -2353,3 +2353,1003 @@ realización, nueva vertical de Product, arquitectura software, funcionalidad
 adicional ni nueva línea estratégica.
 
 ---
+
+# Investigación de reiteración por composición de `R-U2-M1`
+
+## Fecha
+
+2026-08-28
+
+## Situación de partida
+
+La investigación y revisión preobservacional de `POU-RU2M1-01` había quedado
+cerrada dentro de su alcance.
+
+La revisión había incorporado:
+
+```text
+condición preobservacional explícita
+↓
+la ejecución destinada a constituir S1
+debe comenzar sin X válido restaurado
+
++
+
+trazabilidad
+↓
+registro de la comprobación
+en la ficha mínima de observación
+```
+
+Sin embargo, esa revisión no había derivado automáticamente una nueva
+aplicación formal del protocolo, una nueva observación de uso ni otra
+actuación posterior.
+
+El estado resultante era:
+
+```text
+POU-RU2M1-01
+✔ revisión documental incorporada
+○ nueva aplicación formal no realizada
+○ RP-POU-RU2M1-02 no formulado
+
+R-U2-M1
+✔ primera realización contingente destinada al uso validada
+✔ dos observaciones instrumentales completadas
+✔ reconsolidada dentro de su alcance
+
+continuación
+○ ninguna actuación posterior automáticamente derivada
+↺ nueva actuación condicionada a fundamento positivo independiente
+```
+
+De forma independiente, `PV-001` admitía ya que la incidencia de aportaciones
+procedentes de situaciones anteriores pudiera aparecer reiteradamente.
+
+La cuestión abierta no consistía por tanto en ampliar automáticamente
+Product, sino en determinar si esa reiteración hacía aparecer alguna pérdida
+realizativa no satisfecha por los resultados ya disponibles.
+
+---
+
+## Evaluación del fundamento para investigar
+
+Se examinó si existía fundamento positivo suficiente para abrir una
+investigación específica en Realization.
+
+La cuestión no procedía de la mera posibilidad de imaginar una realización
+más rica.
+
+Existía una diferencia concreta entre:
+
+```text
+incidencia local ya realizada por R-U2-M1
+
+S1
+↓
+X
+↓
+interrupción
+↓
+S2(X)
+↓
+Y
+```
+
+y una trayectoria reiterada:
+
+```text
+situación anterior
+↓
+algo puede intervenir posteriormente
+↓
+nueva situación
+↓
+algo puede volver a quedar disponible
+↓
+nueva incidencia posterior
+↓
+...
+```
+
+`R-U2-M1` realizaba localmente un enlace `X → Y`, pero no especificaba una
+transición interna mediante la que lo producido posteriormente tuviera que
+convertirse en el antecedente de otro ciclo.
+
+La diferencia proporcionó fundamento positivo para investigar si la
+reiteración exigía:
+
+- ampliar `R-U2-M1`;
+- introducir una nueva responsabilidad realizativa;
+- derivar una nueva condición irreducible;
+- o constituir una realización autónoma más general.
+
+La investigación quedó abierta en Realization sin presuponer que ninguna de
+esas posibilidades fuera necesaria.
+
+---
+
+## Primera reducción: composición interna del antecedente
+
+Se examinó inicialmente si una trayectoria reiterada requería un antecedente
+estructuralmente nuevo capaz de conservar varias aportaciones, estados o
+resultados anteriores.
+
+Se consideró provisionalmente una configuración compuesta:
+
+```text
+X*
+=
+aportaciones anteriores
++
+estado actual
++
+resultados negativos
++
+punto de continuación
++
+otras diferencias disponibles
+```
+
+La investigación mostró que esa composición interna no constituía por sí
+misma una nueva exigencia realizativa.
+
+`R-U2-M1` no interpreta semánticamente `X`.
+
+Por tanto, una configuración intelectualmente compleja puede intervenir
+localmente como un `X` opaco para la realización:
+
+```text
+composición interna de X*
+↓
+relevante para la persona
+
+pero
+
+composición interna de X*
+↓
+no requiere necesariamente
+una nueva estructura realizativa
+```
+
+La hipótesis de que la composición interna del antecedente exigiera una
+ampliación de `R-U2-M1` quedó reducida.
+
+---
+
+## Investigación de la reiteración de los enlaces
+
+Después de reducir la estructura interna de `X`, permaneció una cuestión
+distinta.
+
+La realización validada conserva la forma:
+
+```text
+S1
+↓
+X1
+↓
+interrupción
+↓
+S2(X1)
+↓
+Y
+```
+
+pero no contiene una transición interna especificada:
+
+```text
+S2(X1)
+↓
+X2 preparado para una futura reanudación
+```
+
+Se distinguieron entonces dos posibilidades.
+
+### Composición externa
+
+Una nueva trayectoria puede prepararse independientemente:
+
+```text
+primera aplicación de R-U2-M1
+↓
+resultado posterior
+↓
+actividad humana
+↓
+nuevo antecedente
+
+nueva preparación de S1
+↓
+segunda aplicación de R-U2-M1
+```
+
+Esta forma de composición era compatible con las capacidades existentes.
+
+### Reiteración interna
+
+Una forma más fuerte habría requerido que la propia situación `S2(Xn)`
+permitiera preparar internamente `Xn+1` para una futura reanudación:
+
+```text
+S2(Xn)
+↓
+Xn+1 queda preparado
+↓
+interrupción
+↓
+S2(Xn+1)
+```
+
+Esa capacidad no estaba establecida en `R-U2-M1`.
+
+La investigación distinguió por tanto:
+
+```text
+componibilidad externa de aplicaciones locales
+≠
+reiterabilidad interna de R-U2-M1
+```
+
+---
+
+## Reducción de la producción automática de `Xn+1`
+
+Se examinó si el sistema debía producir, derivar o seleccionar
+automáticamente el siguiente antecedente.
+
+La hipótesis fue reducida.
+
+Nada en `PV-001` ni en el criterio realizativo vigente exige que el sistema:
+
+- interprete semánticamente la aportación anterior;
+- determine qué debe conservarse;
+- derive una nueva aportación;
+- seleccione el futuro antecedente;
+- ni establezca cuál es la continuación intelectualmente correcta.
+
+La persona puede intervenir entre dos aplicaciones locales:
+
+```text
+situación anterior
+↓
+actividad humana
+↓
+persona alcanza o formula Xn+1
+↓
+Xn+1 puede intervenir posteriormente
+```
+
+Por tanto:
+
+```text
+producción automática de Xn+1
+✘ no demostrada como necesaria
+```
+
+---
+
+## Preparación de una prueba experimental de composición
+
+Después de las reducciones anteriores permanecía una pregunta empírica:
+
+> ¿pueden dos aplicaciones locales de `R-U2-M1` enlazarse mediante una
+> mediación humana sin introducir una nueva responsabilidad del sistema?
+
+Se diseñó una prueba mínima de dos ciclos.
+
+La trayectoria prevista era:
+
+```text
+CICLO 1
+
+S1
+↓
+X1
+↓
+aceptación
+↓
+interrupción
+↓
+S2(X1)
+↓
+actividad humana
+↓
+resultado posterior
+↓
+persona alcanza o formula X2
+
+
+──────── mediación humana ────────
+
+
+CICLO 2
+
+preparación de un nuevo S1
+↓
+persona proporciona X2
+↓
+aceptación
+↓
+interrupción
+↓
+S2(X2)
+↓
+Y2
+```
+
+La prueba no pretendía validar una nueva realización.
+
+Su objetivo consistía únicamente en determinar si la composición podía
+obtenerse utilizando:
+
+```text
+R-U2-M1
++
+mediación humana
++
+otra aplicación local de R-U2-M1
+```
+
+---
+
+## Primer ciclo experimental
+
+El primer antecedente utilizado fue:
+
+```text
+La mediación humana podría enlazar dos ciclos de reanudación sin exigir una nueva responsabilidad del sistema.
+```
+
+`R-U2-M1` lo aceptó como `X1`.
+
+Después de la interrupción correspondiente, la nueva ejecución restauró
+`X1` y constituyó `S2(X1)`.
+
+Durante esa situación la persona produjo posteriormente:
+
+```text
+¿es realmente efectiva esta prueba?
+```
+
+y ejecutó la actuación de creación.
+
+La aportación fue producida dentro de una situación configurada por `X1`.
+
+La investigación examinó entonces si algo procedente de ese resultado podía
+intervenir como antecedente en otra trayectoria.
+
+---
+
+## Preparación del segundo ciclo
+
+Para iniciar una nueva aplicación local fue necesario satisfacer de nuevo la
+condición constitutiva de `S1`:
+
+```text
+ejecución destinada a S1
+↓
+sin X válido restaurado
+```
+
+La preparación se realizó externamente a `R-U2-M1`.
+
+Se eliminó temporalmente el valor persistido utilizado por la realización
+para permitir una nueva ejecución en `S1`.
+
+Esta actuación formó parte exclusivamente de la preparación experimental.
+
+No constituyó:
+
+- una capacidad nueva de `R-U2-M1`;
+- una funcionalidad destinada a la persona;
+- una responsabilidad realizativa;
+- ni evidencia de reiterabilidad interna.
+
+Una vez obtenido `S1`, la persona proporcionó como nuevo antecedente:
+
+```text
+¿Es realmente efectiva esta prueba?
+```
+
+`R-U2-M1` aceptó la aportación mediante sus capacidades existentes.
+
+---
+
+## Diferencia entre el resultado anterior y `X2`
+
+La comparación entre ambas aportaciones mostró:
+
+```text
+resultado producido anteriormente
+¿es realmente efectiva esta prueba?
+
+X2 proporcionado posteriormente
+¿Es realmente efectiva esta prueba?
+```
+
+No existe identidad literal entre las dos representaciones.
+
+La capitalización inicial es diferente.
+
+La trayectoria observada debe por tanto reconstruirse como:
+
+```text
+resultado anterior
+↓
+mediación humana trazable
+↓
+aportación correspondiente
+↓
+X2
+```
+
+y no como:
+
+```text
+resultado anterior
+=
+X2 literal
+```
+
+Este resultado proporcionó evidencia contra la hipótesis de que la
+composición entre ciclos requiriera identidad literal de representación.
+
+---
+
+## Segundo ciclo experimental
+
+Después de aceptar `X2`, la ejecución se interrumpió.
+
+En una ejecución posterior, `R-U2-M1` restauró:
+
+```text
+¿Es realmente efectiva esta prueba?
+```
+
+y constituyó:
+
+```text
+S2(X2)
+```
+
+Dentro de esa situación la persona produjo:
+
+```text
+Se espera que así sea
+```
+
+y ejecutó la actuación de creación.
+
+La segunda trayectoria quedó por tanto completada:
+
+```text
+S1
+↓
+X2
+↓
+aceptación
+↓
+interrupción
+↓
+S2(X2)
+↓
+Y2
+```
+
+Las capacidades existentes de `R-U2-M1` fueron suficientes para aceptar,
+conservar, restaurar y hacer incidir `X2` una vez proporcionado como nuevo
+antecedente.
+
+---
+
+## Resultado inmediato de la prueba
+
+La trayectoria completa observada puede reconstruirse así:
+
+```text
+S1
+↓
+X1
+↓
+interrupción
+↓
+S2(X1)
+↓
+resultado posterior
+
+        ↓
+mediación humana trazable
+        ↓
+
+aportación correspondiente
+↓
+X2
+↓
+nueva aplicación local de R-U2-M1
+↓
+interrupción
+↓
+S2(X2)
+↓
+Y2
+```
+
+La prueba demostró localmente que:
+
+1. dos aplicaciones de `R-U2-M1` pueden participar en una trayectoria
+   compuesta;
+2. la persona puede intervenir entre ambas aplicaciones;
+3. una aportación procedente del resultado de una situación anterior puede
+   intervenir posteriormente en la constitución de un nuevo antecedente;
+4. no fue necesario que `R-U2-M1` interpretara semánticamente la relación
+   entre las aportaciones;
+5. no fue necesaria identidad literal entre el resultado anterior y el nuevo
+   antecedente;
+6. y no fue necesario introducir durante la prueba una nueva responsabilidad
+   interna de la realización.
+
+---
+
+## Investigación de una posible realización más general
+
+La obtención de la trayectoria compuesta no resolvía todavía si debía
+derivarse una realización más general.
+
+Se examinó una candidata provisional `R*` capaz de conservar
+`R-U2-M1` como caso local y permitir una reiteración internamente integrada.
+
+La condición candidata más fuerte se formuló provisionalmente como:
+
+> **`R*-N01 — Reaplicabilidad de la puesta a disposición`**
+
+Según esa hipótesis, dentro de una situación reanudada `S2(Xn)` la persona
+debería poder hacer disponible `Xn+1` para una situación posterior sin
+alterar el antecedente vigente durante la situación actual.
+
+La condición habría permitido una trayectoria del tipo:
+
+```text
+S2(X1)
+↓
+persona produce X2
+↓
+X2 queda preparado
+↓
+interrupción
+↓
+S2(X2)
+```
+
+---
+
+## Falsación de `R*-N01` como necesidad
+
+La propia prueba experimental proporcionó un contraejemplo a la necesidad de
+`R*-N01`.
+
+La trayectoria obtenida fue:
+
+```text
+S1a
+↓
+X1
+↓
+interrupción
+↓
+S2a(X1)
+↓
+resultado posterior
+
+        ↓
+mediación humana
+        ↓
+
+preparación de una nueva trayectoria
+↓
+S1b
+↓
+X2
+↓
+interrupción
+↓
+S2b(X2)
+↓
+Y2
+```
+
+La composición se produjo sin que `S2a(X1)` tuviera que preparar
+internamente `X2` para la siguiente ejecución.
+
+Por tanto:
+
+```text
+R*-N01
+
+necesaria para PV-001
+✘
+
+necesaria para la reiteración observada
+✘
+
+necesaria para componer los dos ciclos investigados
+✘
+
+posible mecanismo de una realización
+internamente reiterable
+✔
+```
+
+La candidata dejó de disponer de fundamento para ser tratada como condición
+realizativa necesaria.
+
+---
+
+## Distinción entre repetición y composición
+
+La reducción de `R*-N01` no permite concluir que cualquier repetición de dos
+aplicaciones independientes constituya reiteración.
+
+Se distinguió:
+
+```text
+aplicación A de R-U2-M1
+
+aplicación B de R-U2-M1
+```
+
+de:
+
+```text
+aplicación A
+↓
+algo procedente de A interviene posteriormente
+↓
+aplicación B
+```
+
+La mera sucesión temporal de dos aplicaciones no establece una trayectoria
+acumulativa.
+
+Para que el caso investigado constituya reiteración debe poder reconstruirse
+alguna incidencia o dependencia trazable entre ambas trayectorias.
+
+La prueba proporcionó esa dependencia mediante la mediación humana.
+
+---
+
+## Investigación de una posible nueva regla de composición
+
+Se examinó si la necesidad de una incidencia trazable entre ciclos exigía una
+regla realizativa autónoma adicional.
+
+No se demostró una condición irreducible nueva.
+
+`CR-PV001-01` ya permite que aquello procedente de una situación anterior
+produzca, directamente o mediante mediaciones derivadas, una diferencia
+relevante en las posibilidades humanas de una situación posterior.
+
+En el caso investigado, los enlaces relevantes pudieron reconstruirse
+mediante ese criterio sin añadir una condición realizativa independiente.
+
+El resultado no permite afirmar que `CR-PV001-01` constituya por sí solo un
+criterio universal suficiente para toda forma posible de composición o
+reiteración.
+
+Por tanto:
+
+```text
+nueva regla autónoma de composición
+✘ no demostrada
+
+nuevo criterio realizativo irreducible
+✘ no demostrado
+
+CR-PV001-01
+✔ permite reconstruir los enlaces
+  relevantes del caso investigado
+  sin añadir una condición independiente
+```
+
+---
+
+## Resultado de atribución
+
+La evidencia obtenida permite afirmar:
+
+> Dos aplicaciones locales de `R-U2-M1`, enlazadas mediante una mediación
+> humana trazable, proporcionaron evidencia positiva local de que la
+> incidencia comprometida por `PV-001` puede aparecer de forma reiterada.
+
+La atribución debe mantenerse limitada.
+
+La investigación no permite afirmar:
+
+```text
+R-U2-M1
+=
+realización internamente reiterable
+```
+
+ni:
+
+```text
+dos aplicaciones cualesquiera de R-U2-M1
+=
+reiteración de PV-001
+```
+
+El resultado observado es composicional:
+
+```text
+R-U2-M1
++
+mediación humana trazable
++
+R-U2-M1
+↓
+trayectoria reiterada observada
+```
+
+---
+
+## Relación con `POU-RU2M1-01`
+
+Durante la preparación del segundo ciclo experimental se satisfizo de hecho
+la misma condición preobservacional incorporada previamente al protocolo:
+
+```text
+ejecución destinada a constituir S1
+↓
+sin X válido restaurado
+```
+
+Este hecho no constituye una nueva aplicación formal de
+`POU-RU2M1-01`.
+
+Por tanto:
+
+```text
+condición revisada satisfecha de hecho
+✔
+
+OU-RU2M1-003
+✘ no constituida
+
+nueva aplicación formal del protocolo revisado
+✘ no realizada
+
+RP-POU-RU2M1-02
+✘ no formulado
+```
+
+La investigación de reiteración conserva una responsabilidad distinta de la
+observación instrumental de uso.
+
+---
+
+## Restauración del estado experimental
+
+La preparación del segundo ciclo requirió una modificación temporal del
+estado persistido utilizado por `R-U2-M1`.
+
+Antes de la prueba se conservó el estado previo.
+
+Después de completar la trayectoria experimental, dicho estado fue
+restaurado y el respaldo temporal eliminado.
+
+La comprobación final mostró:
+
+```text
+ru2m1.previous
+→ restaurado al valor anterior a la prueba
+
+respaldo temporal del experimento
+→ eliminado
+```
+
+Por tanto, la investigación quedó también cerrada respecto de su preparación
+técnica y no dejó como resultado una modificación persistente de la
+realización.
+
+---
+
+## Consolidación documental
+
+La investigación quedó conservada en:
+
+```text
+docs/06-realization/08-investigacion-reiteracion-por-composicion-R-U2-M1.md
+```
+
+El documento fue sometido posteriormente a auditoría.
+
+La auditoría corrigió expresamente:
+
+- una formulación que podía sugerir identidad literal entre el resultado del
+  primer ciclo y `X2`;
+- una formulación excesivamente fuerte sobre la suficiencia general de
+  `CR-PV001-01`;
+- la atribución de la incidencia reiterada;
+- la relación con `POU-RU2M1-01`;
+- y la cláusula de reapertura.
+
+Después de las correcciones, la investigación quedó cerrada dentro de su
+alcance.
+
+El conocimiento canónico pertinente fue propagado a:
+
+```text
+docs/06-realization/00-R-U2-M1.md
+```
+
+mediante:
+
+```text
+E-RU2M1-08
+↓
+Investigación de reiteración por composición
+
+CP-RU2M1-11
+↓
+evidencia positiva local de incidencia reiterada por composición
+```
+
+La reconsolidación no modificó las condiciones internas, invariantes ni
+garantías de `R-U2-M1`.
+
+---
+
+## Resultado consolidado
+
+El resultado alcanzado puede resumirse así:
+
+```text
+situación real de reiteración
+✔ investigada
+
+composición interna nueva de X
+✘ no necesaria
+
+producción automática de Xn+1
+✘ no necesaria
+
+interpretación semántica por el sistema
+✘ no necesaria
+
+transición interna S2(Xn) → Xn+1
+✘ no demostrada como necesaria
+
+R*-N01
+✘ falsificada como condición necesaria
+
+identidad literal entre ciclos
+✘ no necesaria
+
+mera repetición de aplicaciones
+✘ insuficiente por sí sola
+
+mediación humana trazable
+✔ observada en el caso investigado
+
+dos aplicaciones locales de R-U2-M1
+✔ participaron en una trayectoria compuesta
+
+incidencia reiterada de PV-001
+✔ evidencia positiva local obtenida
+
+nueva condición realizativa irreducible
+✘ no demostrada
+
+nueva responsabilidad realizativa
+✘ no demostrada
+
+realización autónoma R*
+✘ no derivada
+
+modificación de R-U2-M1
+✘ no derivada
+
+modificación de código
+✘ no derivada
+
+Product
+✘ ninguna modificación derivada
+
+Architecture
+✘ ninguna obligación derivada
+```
+
+---
+
+## Estado resultante
+
+```text
+08-investigacion-reiteracion-por-composicion-R-U2-M1.md
+✔ investigación cerrada
+✔ auditada dentro de su alcance
+
+R-U2-M1
+✔ E-RU2M1-08 incorporada
+✔ CP-RU2M1-11 incorporada
+✔ nueva evidencia reconsolidada
+✔ garantías internas preservadas
+✔ reiterabilidad interna no demostrada
+✔ ninguna realización autónoma R* derivada
+✔ ninguna modificación de código derivada
+
+POU-RU2M1-01
+✔ condición preobservacional satisfecha de hecho durante la preparación experimental
+○ nueva aplicación formal del protocolo revisado no realizada
+○ OU-RU2M1-003 no constituida
+○ RP-POU-RU2M1-02 no formulado
+
+Product
+✔ sin modificación derivada
+
+Architecture
+✔ sin obligación derivada
+```
+
+---
+
+## Punto de reanudación
+
+La investigación de reiteración por composición queda cerrada dentro de su
+alcance.
+
+La evidencia obtenida no proporciona fundamento suficiente para continuar
+desarrollando una realización `R*` por mera extensión del trabajo realizado.
+
+En particular:
+
+```text
+evidencia de incidencia reiterada por composición
+⇏
+R-U2-M1 internamente reiterable
+
+evidencia de incidencia reiterada por composición
+⇏
+R* necesaria
+
+evidencia de incidencia reiterada por composición
+⇏
+nueva responsabilidad realizativa
+
+evidencia de incidencia reiterada por composición
+⇏
+modificación de código
+
+evidencia de incidencia reiterada por composición
+⇏
+OU-RU2M1-003
+```
+
+El protocolo revisado continúa sin haber sido ejercido mediante una nueva
+aplicación formal y `RP-POU-RU2M1-02` continúa sin formularse.
+
+Ninguna de estas circunstancias constituye por sí misma una deuda obligatoria
+del proyecto.
+
+Por tanto:
+
+```text
+investigación de reiteración por composición
+↓
+cerrada
+↓
+R-U2-M1 reconsolidada
+↓
+ninguna ampliación automáticamente derivada
+↓
+¿existe nuevo fundamento positivo independiente?
+```
+
+Una actuación posterior sólo deberá abrirse cuando exista fundamento
+positivo suficiente dentro del cuerpo competente.
+
+La mera posibilidad de imaginar una realización reiterable más integrada,
+una nueva funcionalidad, una nueva observación o una mediación diferente no
+constituye por sí misma fundamento suficiente.
+
+---

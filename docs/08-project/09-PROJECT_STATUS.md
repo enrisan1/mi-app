@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 24/08/2026
+**Fecha de actualización:** 28/08/2026
 
 ## Índice
 
@@ -35,6 +35,20 @@ segunda produjo nueva evidencia positiva local y permitió atribuir
 técnicamente una restricción contingente de captura, sin derivar una nueva
 pérdida necesaria ni una modificación de código. `R-U2-M1` ha quedado
 reconsolidada documentalmente dentro de su alcance actual.
+
+Una investigación posterior, abierta mediante fundamento positivo
+independiente, examinó si la forma reiterada de la incidencia comprometida
+por `PV-001` exigía ampliar `R-U2-M1`, introducir una nueva responsabilidad
+realizativa o derivar una nueva realización autónoma.
+
+La investigación ejerció dos aplicaciones locales de `R-U2-M1` enlazadas
+mediante una mediación humana trazable y obtuvo evidencia positiva local de
+incidencia reiterada por composición.
+
+El resultado no estableció reiterabilidad interna de `R-U2-M1`, una nueva
+responsabilidad realizativa, una nueva condición irreducible, una realización
+autónoma `R*` ni una modificación de código. La nueva evidencia quedó
+reconsolidada en `R-U2-M1` dentro de su alcance.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -129,6 +143,25 @@ R-U2-M1
         ✔ ninguna nueva pérdida necesaria establecida
         ✔ ninguna modificación de código derivada
         ✔ reconsolidada documentalmente dentro de su alcance actual
+        ↓
+investigación de reiteración por composición
+        ✔ cerrada
+        ↓
+dos aplicaciones locales de R-U2-M1
++
+mediación humana trazable
+        ✔ trayectoria compuesta observada
+        ↓
+evidencia positiva local
+de incidencia reiterada
+        ✔ obtenida
+        ↓
+R-U2-M1
+        ✔ E-RU2M1-08 incorporada
+        ✔ CP-RU2M1-11 incorporada
+        ✔ reiterabilidad interna no demostrada
+        ✔ ninguna realización autónoma R* derivada
+        ✔ ninguna modificación de código derivada
 ```
 
 `R-U2-M1` constituye actualmente la primera realización contingente destinada al uso validada dentro del alcance establecido.
@@ -412,12 +445,13 @@ Actualmente contiene:
 05-OU-RU2M1-002.md
 06-investigacion-F-OU002-01.md
 07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+08-investigacion-reiteracion-por-composicion-R-U2-M1.md
 ```
 
 `00-R-U2-M1.md` constituye la fuente canónica de la primera realización
 contingente destinada al uso validada del proyecto.
 
-Los documentos `01–07` conservan, respectivamente:
+Los documentos `01–08` conservan, respectivamente:
 
 - el protocolo mínimo de observación de uso;
 - la primera observación instrumental `OU-RU2M1-001`;
@@ -426,8 +460,10 @@ Los documentos `01–07` conservan, respectivamente:
   `RU2M1-U01`;
 - la segunda observación instrumental `OU-RU2M1-002`;
 - la investigación de atribución de `F-OU002-01`;
-- y la investigación de suficiencia preobservacional de `POU-RU2M1-01`,
-  incluida la derivación de su modificación mínima.
+- la investigación de suficiencia preobservacional de `POU-RU2M1-01`,
+  incluida la derivación de su modificación mínima;
+- y la investigación de reiteración por composición de aplicaciones locales
+  de `R-U2-M1`.
 
 `R-U2-M1` satisface, dentro del alcance auditado, las condiciones que
 justificaron su construcción y las obligaciones locales posteriormente
@@ -503,7 +539,19 @@ La revisión no prescribe localStorage, ausencia absoluta de estado previo ni
 ningún otro mecanismo técnico concreto.
 
 El protocolo revisado todavía no ha sido ejercido mediante una nueva
-aplicación y no se ha formulado `RP-POU-RU2M1-02`.
+aplicación formal y no se ha formulado `RP-POU-RU2M1-02`.
+
+Posteriormente se investigó, con fundamento positivo independiente, si la
+reiteración de la incidencia comprometida por `PV-001` exigía una ampliación
+de `R-U2-M1` o una nueva realización autónoma.
+
+La investigación obtuvo una trayectoria compuesta mediante dos aplicaciones
+locales de `R-U2-M1` enlazadas por una mediación humana trazable.
+
+El resultado proporcionó evidencia positiva local de incidencia reiterada,
+pero no estableció reiterabilidad interna de `R-U2-M1`, una nueva
+responsabilidad realizativa, una nueva condición irreducible, una realización
+autónoma `R*` ni una modificación de código.
 
 Sus mecanismos técnicos concretos permanecen contingentes y no adquieren
 por ello autoridad sobre Product ni sobre una futura arquitectura software.
@@ -516,6 +564,12 @@ R-U2-M1
 ✔ construida
 ✔ validada
 ✔ auditada
+✔ investigación de reiteración por composición cerrada
+✔ evidencia positiva local de incidencia reiterada por composición obtenida
+✔ E-RU2M1-08 incorporada
+✔ CP-RU2M1-11 incorporada
+✔ reiterabilidad interna no demostrada
+✔ ninguna realización autónoma R* derivada
 ✔ primera observación instrumental completada
 ✔ necesidad local derivada
 ✔ modificación local construida y validada
@@ -623,7 +677,19 @@ Los principales hitos han sido:
 - selección de `R-U2` como primer anclaje de uso;
 - construcción, validación y auditoría de `R-U2-M1`;
 - consolidación de `RC-RU2M1-01`;
-- y constitución de `docs/06-realization/` como cuerpo vigente de Realization.
+- y constitución de `docs/06-realization/` como cuerpo vigente de Realization;
+- primera observación instrumental de uso `OU-RU2M1-001`;
+- derivación, realización y validación de `RU2M1-U01`;
+- primera reconsolidación de `R-U2-M1`;
+- segunda observación instrumental `OU-RU2M1-002`;
+- investigación y atribución de `F-OU002-01`;
+- investigación y revisión preobservacional de `POU-RU2M1-01`;
+- investigación de reiteración por composición de aplicaciones locales de
+  `R-U2-M1`;
+- obtención de evidencia positiva local de incidencia reiterada por
+  composición;
+- y nueva reconsolidación documental de `R-U2-M1` mediante `E-RU2M1-08` y
+  `CP-RU2M1-11`.
 
 La justificación completa del último cambio de fase se conserva en:
 
@@ -784,6 +850,43 @@ ninguna modificación de R-U2-M1
 ni del código derivada
 ```
 
+Con posterioridad apareció fundamento positivo independiente para investigar
+una cuestión distinta: si la forma reiterada de la incidencia comprometida
+por `PV-001` exigía ampliar `R-U2-M1` o derivar una nueva realización.
+
+La investigación quedó conservada en:
+
+```text
+08-investigacion-reiteracion-por-composicion-R-U2-M1.md
+```
+
+y obtuvo la trayectoria:
+
+```text
+aplicación local de R-U2-M1
+↓
+resultado posterior
+↓
+mediación humana trazable
+↓
+nuevo antecedente
+↓
+segunda aplicación local de R-U2-M1
+↓
+nueva incidencia local
+```
+
+La investigación proporcionó evidencia positiva local de reiteración por
+composición.
+
+No estableció:
+
+- reiterabilidad interna de R-U2-M1;
+- una nueva responsabilidad realizativa;
+- una nueva condición realizativa irreducible;
+- una realización autónoma R\*;
+- ni una modificación de R-U2-M1 o del código.
+
 Ninguno de estos ciclos deriva automáticamente:
 
 - una nueva ampliación de `R-U2-M1`;
@@ -801,12 +904,18 @@ R-U2-M1
         ✔ observada en dos trayectorias reales independientes
         ✔ modificada cuando apareció una necesidad demostrada
         ✔ segunda evidencia investigada y atribuida
+        ✔ investigación de reiteración por composición cerrada
+        ✔ evidencia positiva local de incidencia reiterada obtenida
+        ✔ E-RU2M1-08 incorporada
+        ✔ CP-RU2M1-11 incorporada
+        ✔ reiterabilidad interna no demostrada
+        ✔ ninguna realización autónoma R* derivada
         ✔ reconsolidada documentalmente
 
 POU-RU2M1-01
         ✔ insuficiencia preobservacional local investigada
         ✔ modificación mínima incorporada
-        ○ revisión todavía no ejercida mediante nueva aplicación
+        ○ revisión todavía no ejercida mediante nueva aplicación formal
         ○ RP-POU-RU2M1-02 no formulado
         ↓
 ninguna actuación posterior
@@ -913,7 +1022,7 @@ POU-RU2M1-01
     ✔ modificación mínima derivada
     ✔ condición preobservacional incorporada
     ✔ trazabilidad incorporada a la ficha mínima
-    ○ revisión todavía no ejercida mediante nueva aplicación
+    ○ revisión todavía no ejercida mediante nueva aplicación formal
     ○ nueva evidencia de suficiencia no obtenida
     ○ RP-POU-RU2M1-02 no formulado
 ```
@@ -950,7 +1059,7 @@ registro de cumplimiento
 
 No se prescribió ningún mecanismo técnico concreto.
 
-La revisión todavía no ha sido ejercida mediante una nueva aplicación y
+La revisión todavía no ha sido ejercida mediante una nueva aplicación formal y
 `RP-POU-RU2M1-02` no ha sido formulado.
 
 La investigación de `F-OU002-01` estableció que la diferencia observada se
@@ -982,8 +1091,8 @@ encuentran en:
 docs/06-realization/00-R-U2-M1.md
 ```
 
-El protocolo, las dos observaciones instrumentales y sus investigaciones se
-conservan en los documentos `01–07` del mismo cuerpo:
+El protocolo, las dos observaciones instrumentales y las investigaciones
+posteriores se conservan en los documentos `01–08` del mismo cuerpo:
 
 ```text
 01-protocolo-de-observacion-de-uso-R-U2-M1.md
@@ -993,7 +1102,29 @@ conservan en los documentos `01–07` del mismo cuerpo:
 05-OU-RU2M1-002.md
 06-investigacion-F-OU002-01.md
 07-investigacion-suficiencia-preobservacional-POU-RU2M1-01.md
+08-investigacion-reiteracion-por-composicion-R-U2-M1.md
 ```
+
+### Investigación de reiteración por composición
+
+Una investigación posterior examinó si la reiteración de la incidencia de
+`PV-001` exigía una ampliación de `R-U2-M1` o la derivación de una nueva
+realización autónoma.
+
+La investigación ejerció dos aplicaciones locales de `R-U2-M1` enlazadas
+mediante mediación humana trazable y obtuvo evidencia positiva local de que
+la incidencia puede aparecer reiteradamente mediante composición.
+
+La investigación quedó cerrada sin demostrar:
+
+- reiterabilidad interna de `R-U2-M1`;
+- una nueva responsabilidad realizativa;
+- una nueva condición irreducible;
+- una realización autónoma `R*`;
+- ni una modificación de código.
+
+El resultado quedó reconsolidado en `00-R-U2-M1.md` mediante
+`E-RU2M1-08` y `CP-RU2M1-11`.
 
 ---
 
@@ -1169,6 +1300,12 @@ R-U2-M1
     ✔ reconsolidada documentalmente dentro de su alcance actual
     → primera realización contingente destinada al uso
     → mecanismos concretos no normativos
+    ✔ investigación de reiteración por composición cerrada
+    ✔ evidencia positiva local de incidencia reiterada por composición obtenida
+    ✔ E-RU2M1-08 incorporada
+    ✔ CP-RU2M1-11 incorporada
+    ✔ reiterabilidad interna no demostrada
+    ✔ ninguna realización autónoma R* derivada
 
 POU-RU2M1-01
     ✔ dos aplicaciones completadas
@@ -1178,7 +1315,7 @@ POU-RU2M1-01
     ✔ modificación mínima derivada e incorporada documentalmente
     ✔ condición preobservacional explicitada
     ✔ trazabilidad incorporada a la ficha mínima
-    ○ revisión todavía no ejercida mediante nueva aplicación
+    ○ revisión todavía no ejercida mediante nueva aplicación formal
     ○ nueva evidencia de suficiencia no obtenida
     ○ RP-POU-RU2M1-02 no formulado
 
@@ -1207,7 +1344,11 @@ Estado de continuación
 
     ✔ primer ciclo de observación, atribución, modificación y reconsolidación completado
     ✔ segundo ciclo de observación, atribución y reconsolidación documental completado
-    → segundo ciclo cerrado sin nueva pérdida necesaria ni modificación de código
+    ✔ investigación de reiteración por composición completada
+    ✔ evidencia positiva local de incidencia reiterada por composición obtenida
+    → reiterabilidad interna de R-U2-M1 no demostrada
+    → ninguna realización autónoma R* derivada
+    → ninguna modificación de código derivada
     ○ ninguna ampliación automáticamente derivada
     ↺ nueva actuación condicionada a nuevo fundamento positivo independiente
 
