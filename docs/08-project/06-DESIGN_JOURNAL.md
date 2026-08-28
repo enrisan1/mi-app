@@ -14,6 +14,8 @@
 
 7. Otras ideas
 
+8. Nuevas propuestas en evaluación
+
 # 1. Propósito
 
 Este documento recoge ideas, hipótesis y reflexiones relacionadas con la evolución del diseño del producto y de la arquitectura del proyecto.
@@ -881,3 +883,51 @@ La investigación podrá reabrirse si aparece fundamento positivo independiente,
 La mera existencia de material histórico todavía no clasificado, de actuaciones intelectuales imaginables o de aspectos del producto todavía no desarrollados no constituye por sí misma fundamento suficiente.
 
 ---
+
+# 8. Nuevas propuestas en evaluación
+
+Este apartado conserva las ideas, hipótesis y propuestas surgidas con posterioridad al cierre del corpus histórico auditado de este documento cuando exista una razón identificable para preservarlas como posibilidades vivas en evaluación.
+
+Las propuestas registradas en este apartado no forman parte del corpus histórico cerrado descrito en `1.1 Estado del corpus histórico auditado`.
+
+Su incorporación a esta sección no constituye por sí misma:
+
+- un compromiso de Product;
+- una modificación de `PV-001`;
+- una nueva vertical;
+- una línea estratégica;
+- una prioridad;
+- una obligación de investigación;
+- una obligación de implementación;
+- ni la siguiente actuación justificable del proyecto.
+
+Una propuesta permanecerá aquí mientras exista una razón identificable para conservarla como posibilidad viva y hasta que una evaluación posterior justifique su incorporación a otro cuerpo documental, su reformulación o su cierre.
+
+Cada propuesta nueva deberá registrarse de forma identificable y conservar, como mínimo:
+
+- fecha;
+- origen o situación que la motiva;
+- formulación de la idea o propuesta;
+- razón por la que merece conservarse;
+- estatuto actual;
+- y, cuando corresponda, condición que justificaría su evaluación posterior.
+
+Las propuestas podrán identificarse mediante la serie `NP-001`, `NP-002`, `NP-003`, etc.
+
+Una entrada podrá utilizar la siguiente estructura:
+
+```text
+## `NP-XXX — Título`
+
+### Fecha
+
+### Situación u origen
+
+### Propuesta
+
+### Razón para conservarla
+
+### Estatuto
+
+### Condición de evaluación
+```

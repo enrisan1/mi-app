@@ -3353,3 +3353,194 @@ una nueva funcionalidad, una nueva observación o una mediación diferente no
 constituye por sí misma fundamento suficiente.
 
 ---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+2026-08-28
+
+## Actuación
+
+Auditoría de la capacidad vigente de `06-DESIGN_JOURNAL.md` para incorporar nuevas propuestas posteriores al cierre de su corpus histórico.
+
+### Situación de partida
+
+El corpus histórico reconstruido de `06-DESIGN_JOURNAL.md` había sido sometido a una auditoría sistemática respecto del Product actualmente consolidado y se encontraba cerrado dentro de dicho alcance.
+
+Al mismo tiempo, el propio Design Journal conservaba vigente su responsabilidad como espacio de incubación para nuevas ideas, hipótesis y propuestas que todavía no formen parte de la documentación normativa del proyecto.
+
+Se identificó entonces una cuestión documental concreta:
+
+```text
+corpus histórico
+        → auditado
+        → cerrado
+
+responsabilidad de incubación
+        → vigente
+        → abierta a nuevas propuestas
+
+estructura disponible
+        → ¿permite distinguir inequívocamente
+          las propuestas posteriores
+          del corpus histórico cerrado?
+```
+
+### Auditoría realizada
+
+Se examinó la estructura vigente de `06-DESIGN_JOURNAL.md`.
+
+La revisión confirmó que:
+
+- el propósito del documento ya permitía conservar ideas, hipótesis y propuestas;
+- su mera presencia en el Design Journal no constituía evidencia a favor de su incorporación;
+- tampoco generaba por sí misma una obligación de investigación;
+- el corpus histórico estaba explícitamente identificado como auditado y cerrado respecto del Product actualmente consolidado;
+- y las secciones materiales existentes correspondían al corpus histórico o a investigaciones posteriormente incorporadas sobre dicho material.
+
+Sin embargo, no existía un espacio estructural inequívoco destinado específicamente a propuestas surgidas después del cierre del corpus histórico.
+
+Se estableció por tanto:
+
+```text
+responsabilidad vigente
+de recibir nuevas propuestas
+        +
+corpus histórico cerrado
+        +
+ausencia de una ubicación
+estructuralmente diferenciada
+        ↓
+carencia documental positiva
+```
+
+La carencia no afectaba al contenido ni a las conclusiones de la auditoría histórica.
+
+Afectaba exclusivamente a la posibilidad de ejercer en el futuro la responsabilidad vigente del Design Journal sin introducir ambigüedad respecto del estatuto de las nuevas propuestas.
+
+### Modificación realizada
+
+Se incorporó a `06-DESIGN_JOURNAL.md`:
+
+```text
+# 8. Nuevas propuestas en evaluación
+```
+
+y se añadió dicha sección al índice del documento.
+
+La nueva sección establece explícitamente que las propuestas allí registradas:
+
+- son posteriores al cierre del corpus histórico auditado;
+- no forman parte de dicho corpus;
+- requieren una razón identificable para ser conservadas como posibilidades vivas;
+- y pueden permanecer en evaluación hasta que exista justificación para incorporarlas a otro cuerpo documental, reformularlas o cerrarlas.
+
+También se estableció una serie identificativa:
+
+```text
+NP-001
+NP-002
+NP-003
+...
+```
+
+y una estructura mínima de registro basada en:
+
+- fecha;
+- situación u origen;
+- propuesta;
+- razón para conservarla;
+- estatuto;
+- y, cuando corresponda, condición de evaluación.
+
+### Distinción metodológica consolidada
+
+La modificación permite mantener separadas cuatro situaciones que no deben confundirse:
+
+```text
+razón para conservar una propuesta
+        ≠
+fundamento positivo para investigarla
+        ≠
+justificación para convertirla
+en compromiso de Product
+        ≠
+justificación para convertirla
+en línea estratégica
+```
+
+Por tanto, la incorporación de una propuesta al Design Journal no constituye por sí misma:
+
+- un compromiso de Product;
+- una modificación de `PV-001`;
+- una nueva vertical;
+- una línea estratégica;
+- una prioridad;
+- una obligación de investigación;
+- una obligación de implementación;
+- ni la siguiente actuación justificable del proyecto.
+
+### Límites de la actuación
+
+La auditoría y la modificación realizada:
+
+```text
+no reabren
+el corpus histórico auditado
+
+no modifican
+PRODUCT.md
+
+no modifican
+PV-001
+
+no derivan
+PV-002
+
+no modifican
+ROADMAP.md
+
+no derivan
+una nueva actuación práctica
+```
+
+Tampoco se ha incorporado todavía ninguna propuesta concreta a la nueva sección.
+
+La actuación establece únicamente el espacio documental y las reglas necesarias para que futuras propuestas puedan conservarse sin adquirir por ello un estatuto que todavía no haya sido justificado.
+
+### Resultado
+
+```text
+06-DESIGN_JOURNAL.md
+        ↓
+responsabilidad de incubación
+        → vigente
+
+corpus histórico
+        → preservado
+        → auditado
+        → cerrado dentro de su alcance
+
+propuestas posteriores
+        → espacio propio
+        → estatuto no normativo
+        → trazabilidad mediante NP-XXX
+
+carencia documental detectada
+        → reparada
+```
+
+La auditoría de esta cuestión queda cerrada.
+
+**Resultado:** PASS.
+
+### Punto de reanudación
+
+La existencia de la nueva sección no obliga a poblarla ni genera por sí misma una nueva actuación.
+
+Una propuesta podrá incorporarse cuando exista una razón identificable para conservarla como posibilidad viva en evaluación.
+
+Su investigación posterior requerirá, cuando corresponda, el fundamento positivo exigible por el cuerpo competente.
+
+---
