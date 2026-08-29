@@ -213,7 +213,8 @@ uso real
 
 POU-RU2M1-01
 → protocolo revisado
-→ disponible para una nueva aplicación formal
+→ nueva aplicación formal completada mediante OU-RU2M1-003
+→ suficiencia instrumental local de la versión revisada establecida
 
 Design Journal
 → capacidad vigente para recibir nuevas situaciones y propuestas
@@ -276,30 +277,48 @@ La línea se ejercerá inicialmente mediante dos carriles independientes.
 
 ### Carril A — nueva evidencia de uso
 
-Se realizará una nueva aplicación formal del protocolo corregido
-`POU-RU2M1-01`.
+La actuación inicialmente seleccionada para este carril fue una nueva
+aplicación formal del protocolo corregido `POU-RU2M1-01`.
 
-La aplicación tendrá como finalidad obtener nueva evidencia sobre
-`R-U2-M1` dentro de las condiciones preobservacionales ya consolidadas.
-
-La ejecución no presupone que:
+La actuación fue realizada mediante:
 
 ```text
-deba aparecer una pérdida
-✘
-
-deba modificarse R-U2-M1
-✘
-
-deba abrirse una nueva investigación
-✘
-
-deba formularse RP-POU-RU2M1-02
-✘
+OU-RU2M1-003
 ```
 
-Cualquier investigación posterior deberá quedar justificada por aquello que
-efectivamente aparezca durante la nueva observación.
+y produjo:
+
+```text
+trayectoria completa observada
+→ sí
+
+clasificación
+→ B — Evidencia positiva local
+
+consecuencia
+→ ninguna
+
+RP-POU-RU2M1-02
+→ suficiencia instrumental local
+  de la versión revisada
+
+modificación de R-U2-M1
+→ no
+
+modificación adicional de POU-RU2M1-01
+→ no
+
+investigación posterior
+→ ninguna automáticamente derivada
+```
+
+La actuación seleccionada para el Carril A queda por tanto completada.
+
+Este cierre no establece por sí mismo una nueva actuación para el carril ni
+determina el siguiente movimiento temporal de LE-001.
+
+Cualquier observación o investigación posterior deberá contar con fundamento
+propio.
 
 ### Carril B — nuevas situaciones humanas
 
@@ -655,7 +674,9 @@ fundamento de LE-001
 → primera cadena empírica ya obtenida
 → R-U2-M1 destinada al uso
 → POU-RU2M1-01 revisado
-  y disponible para nueva aplicación formal
+→ nueva aplicación formal completada
+  mediante OU-RU2M1-003
+→ RP-POU-RU2M1-02 establecido localmente
 → capacidad vigente para incorporar
   nuevas situaciones humanas
 → paralelismo controlado disponible
@@ -664,8 +685,12 @@ fundamento de LE-001
   construcción y uso
 
 Carril A
-→ nueva aplicación formal de POU-RU2M1-01
-→ nueva evidencia de uso
+→ actuación inicialmente seleccionada completada
+→ OU-RU2M1-003 cerrada
+→ B — Evidencia positiva local
+→ consecuencia: ninguna
+→ RP-POU-RU2M1-02 establecido localmente
+→ ninguna actuación posterior automáticamente derivada
 
 Carril B
 → incorporación de nuevas situaciones humanas

@@ -677,6 +677,8 @@ R-U2-M1
 ✔ modificación local construida y validada
 ✔ primera reconsolidación completada
 ✔ segunda observación instrumental completada
+✔ tercera observación instrumental completada
+✔ nueva evidencia positiva local de uso obtenida mediante OU-RU2M1-003
 ✔ F-OU002-01 atribuida técnicamente
 ✔ restricción contingente de captura localizada
 ✔ ninguna nueva pérdida necesaria establecida
@@ -687,9 +689,11 @@ POU-RU2M1-01
 ✔ modificación mínima derivada
 ✔ condición preobservacional explicitada
 ✔ trazabilidad incorporada a la ficha
-○ protocolo revisado todavía no ejercido en una nueva aplicación
-○ nueva evidencia de suficiencia no obtenida
-○ RP-POU-RU2M1-02 no formulado
+✔ protocolo revisado ejercido mediante OU-RU2M1-003
+✔ nueva evidencia formal de aplicación obtenida
+✔ RP-POU-RU2M1-02 formulado
+→ suficiencia instrumental local de la versión revisada
+○ suficiencia general no establecida
 R-DX1-M1
 ✔ investigación correspondiente cerrada
 ✔ candidata experimental derivada
@@ -1088,7 +1092,7 @@ La situación de reanudación es actualmente:
 
 ```text
 R-U2-M1
-        ✔ observada en dos trayectorias reales independientes
+        ✔ observada en tres trayectorias reales independientes
         ✔ modificada cuando apareció una necesidad demostrada
         ✔ segunda evidencia investigada y atribuida
         ✔ investigación de reiteración por composición cerrada
@@ -1102,8 +1106,20 @@ R-U2-M1
 POU-RU2M1-01
         ✔ insuficiencia preobservacional local investigada
         ✔ modificación mínima incorporada
-        ○ revisión todavía no ejercida mediante nueva aplicación formal
-        ○ RP-POU-RU2M1-02 no formulado
+        ✔ revisión ejercida mediante OU-RU2M1-003
+        ✔ tercera aplicación formal completada
+        ✔ RP-POU-RU2M1-02 formulado
+        → suficiencia instrumental local de la versión revisada
+        ○ suficiencia general no establecida
+
+OU-RU2M1-003
+        ✔ tercera observación instrumental completada
+        ✔ condición preobservacional revisada ejercida y satisfecha
+        ✔ trayectoria completa observada
+        ✔ B — Evidencia positiva local
+        ✔ consecuencia: ninguna
+        → ninguna modificación de R-U2-M1 derivada
+        → ninguna investigación posterior automáticamente derivada
 
 R-DX1-M1
         ✔ investigación derivada desde fundamento positivo independiente
@@ -1160,17 +1176,20 @@ una nueva investigación obligatoria
 ✘
 ```
 
-La estrategia se ejercerá inicialmente mediante dos carriles paralelos:
+La estrategia fue articulada inicialmente mediante dos carriles paralelos.
+
+La actuación seleccionada para el Carril A ha sido ya completada:
 
 ```text
 Carril A
-→ nueva aplicación formal
-  del POU-RU2M1-01 revisado
-→ observación
-→ nueva evidencia de uso
+→ OU-RU2M1-003 completada y cerrada
+→ B — Evidencia positiva local
+→ consecuencia: ninguna
+→ RP-POU-RU2M1-02 establecido localmente
+→ ninguna actuación posterior automáticamente derivada
 ```
 
-y:
+El Carril B conserva su capacidad estratégica vigente:
 
 ```text
 Carril B
@@ -1296,16 +1315,18 @@ R-U2-M1
         ✔ reconsolidada documentalmente dentro de su alcance actual
 
 POU-RU2M1-01
-    ✔ dos aplicaciones completadas
+    ✔ tres aplicaciones completadas
     ✔ suficiencia instrumental inicial conservada
     ✔ insuficiencia preobservacional local establecida
     ✔ investigación correspondiente cerrada
     ✔ modificación mínima derivada
     ✔ condición preobservacional incorporada
     ✔ trazabilidad incorporada a la ficha mínima
-    ○ revisión todavía no ejercida mediante nueva aplicación formal
-    ○ nueva evidencia de suficiencia no obtenida
-    ○ RP-POU-RU2M1-02 no formulado
+    ✔ revisión ejercida mediante OU-RU2M1-003
+    ✔ nueva evidencia formal de aplicación obtenida
+    ✔ RP-POU-RU2M1-02 formulado
+    → suficiencia instrumental local de la versión revisada
+    ○ suficiencia general no establecida
 ```
 
 `OU-RU2M1-002` proporciona una segunda evidencia positiva local de uso
@@ -1340,8 +1361,17 @@ registro de cumplimiento
 
 No se prescribió ningún mecanismo técnico concreto.
 
-La revisión todavía no ha sido ejercida mediante una nueva aplicación formal y
-`RP-POU-RU2M1-02` no ha sido formulado.
+La revisión fue ejercida posteriormente mediante la nueva aplicación formal
+`OU-RU2M1-003`.
+
+La aplicación completó una trayectoria observada bajo la condición
+preobservacional revisada, obtuvo clasificación
+`B — Evidencia positiva local`, produjo consecuencia `ninguna` y permitió
+establecer `RP-POU-RU2M1-02` como resultado local de suficiencia instrumental
+de la versión revisada.
+
+Este resultado no establece suficiencia general de `POU-RU2M1-01` ni utilidad
+general de `R-U2-M1`.
 
 La investigación de `F-OU002-01` estableció que la diferencia observada se
 origina en el mecanismo monolínea utilizado para capturar la aportación
@@ -1706,16 +1736,18 @@ R-U2-M1
     ✔ ninguna realización autónoma R* derivada
 
 POU-RU2M1-01
-    ✔ dos aplicaciones completadas
+    ✔ tres aplicaciones completadas
     ✔ suficiencia instrumental inicial conservada
     ✔ insuficiencia preobservacional local establecida
     ✔ investigación correspondiente cerrada
-    ✔ modificación mínima derivada e incorporada documentalmente
-    ✔ condición preobservacional explicitada
+    ✔ modificación mínima derivada
+    ✔ condición preobservacional incorporada
     ✔ trazabilidad incorporada a la ficha mínima
-    ○ revisión todavía no ejercida mediante nueva aplicación formal
-    ○ nueva evidencia de suficiencia no obtenida
-    ○ RP-POU-RU2M1-02 no formulado
+    ✔ revisión ejercida mediante OU-RU2M1-003
+    ✔ nueva evidencia formal de aplicación obtenida
+    ✔ RP-POU-RU2M1-02 formulado
+    → suficiencia instrumental local de la versión revisada
+    ○ suficiencia general no establecida
 
 R-DX1-M1
     ✔ investigación cerrada
@@ -1768,12 +1800,17 @@ Estado de continuación
     → convergencia empírica hacia una primera trayectoria humana integrada
 
 Carril A — uso
-    → nueva aplicación formal de POU-RU2M1-01
-    → condición preobservacional revisada deberá ejercerse
-    → producir nueva evidencia
-    → no presupone nueva pérdida
-    → no presupone nueva investigación
-    → investigación sólo si la evidencia deja fundamento positivo
+    ✔ actuación inicialmente seleccionada completada
+    ✔ OU-RU2M1-003 cerrada
+    ✔ condición preobservacional revisada ejercida
+    ✔ trayectoria completa observada
+    ✔ B — Evidencia positiva local
+    ✔ consecuencia: ninguna
+    ✔ RP-POU-RU2M1-02 formulado localmente
+    → ninguna modificación de R-U2-M1 derivada
+    → ninguna modificación adicional de POU-RU2M1-01 derivada
+    → ninguna investigación posterior automáticamente derivada
+    → ninguna nueva actuación del carril automáticamente derivada
 
 Carril B — nuevas situaciones
     → capturar situaciones humanas, no funcionalidades

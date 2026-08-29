@@ -5217,3 +5217,343 @@ Cualquier investigación que aparezca posteriormente deberá disponer de fundame
 La próxima etapa no deberá volver a abrir la transición estratégica salvo que aparezca evidencia de que `LE-001` produce una pérdida, incompatibilidad o desvío respecto de la visión del proyecto.
 
 ---
+
+# Ejecución y cierre de la actuación seleccionada para el Carril A de `LE-001`
+
+## Situación de partida
+
+La adopción de `LE-001 — Convergencia empírica hacia una primera trayectoria
+humana integrada` había seleccionado para el Carril A una nueva aplicación
+formal del protocolo revisado `POU-RU2M1-01`.
+
+La selección no procedía de una obligación pendiente de investigaciones
+anteriores.
+
+Constituía una decisión estratégica posterior orientada a producir nueva
+evidencia mediante uso efectivo.
+
+El estado de partida era:
+
+```text
+POU-RU2M1-01
+→ condición preobservacional revisada
+→ nueva aplicación formal todavía no realizada
+
+RP-POU-RU2M1-02
+→ no formulado
+
+Carril A
+→ actuación seleccionada
+→ nueva aplicación formal de POU-RU2M1-01
+```
+
+## Constitución de `OU-RU2M1-003`
+
+La actuación seleccionada fue constituida como:
+
+```text
+OU-RU2M1-003
+→ tercera observación instrumental de uso de R-U2-M1
+```
+
+La versión sustantiva observada de `R-U2-M1` fue:
+
+```text
+1966ced
+```
+
+La actividad humana utilizada para la observación consistió en la revisión real
+de un párrafo de un artículo todavía no terminado ni publicado.
+
+Antes de iniciar `S1` se ejerció por primera vez en una nueva aplicación formal
+la condición preobservacional incorporada a `POU-RU2M1-01`.
+
+La primera ejecución encontrada restauró un antecedente válido y constituyó:
+
+```text
+S2(X anterior)
+```
+
+por lo que no fue utilizada como `S1`.
+
+Después de una actuación preparatoria contingente se inició una nueva
+ejecución que comenzó:
+
+```text
+sin X válido restaurado
+```
+
+La condición preobservacional quedó así comprobada y satisfecha sin convertir
+el mecanismo técnico utilizado para prepararla en requisito del protocolo.
+
+## Trayectoria observada
+
+La trayectoria efectiva pudo reconstruirse como:
+
+```text
+S1
+↓
+X
+↓
+interrupción
+↓
+S2(X)
+↓
+Y
+```
+
+Durante `S1` surgió como antecedente:
+
+```text
+se deben comparar los parrafos nuevos con la versión anerior guardada
+```
+
+`X` fue aceptado y almacenado por `R-U2-M1`.
+
+La interrupción se extendió aproximadamente desde las 11:51 hasta las 17:29.
+
+Al comenzar `S2(X)`, una nueva ejecución de `R-U2-M1` restauró y presentó
+literalmente `X` antes de cualquier intervención posterior.
+
+La actividad real fue retomada mediante la comparación en Obsidian de dos
+versiones del artículo.
+
+Durante esa comparación se observó que modificar cada diferencia
+inmediatamente después de localizarla hacía el procedimiento lento y tedioso.
+
+La actividad produjo una nueva forma de proceder y una nueva aportación `Y`:
+
+```text
+para poder hacer los cambios adecuadamente hay primero que anotar la localización de los mismos en una nota aparte después de localizarlos para poder encontrarlos en el momento de hacer las modificaciones porque hacer uno a uno es muy tedioso.
+```
+
+`Y` fue incorporado posteriormente mediante `R-U2-M1`, que presentó
+conjuntamente el antecedente `X` y la actuación actual `Y`.
+
+## Incidencia observada de `X`
+
+La persona declaró que `X` tuvo una incidencia efectiva reducida en esta
+situación concreta porque todavía recordaba la actuación que debía retomar.
+
+Este resultado fue conservado como límite situacional de la observación.
+
+No se interpretó como:
+
+```text
+insuficiencia de R-U2-M1
+→ no
+
+inutilidad de la persistencia
+→ no
+```
+
+También se registró como posibilidad imaginada que un antecedente pudiera
+producir una diferencia mayor tras una interrupción más prolongada o cuando
+contuviera más elementos que recordar.
+
+Esta posibilidad no fue convertida en evidencia ni en fundamento automático
+para una nueva observación o investigación.
+
+## Clasificación y consecuencia
+
+La observación fue clasificada como:
+
+```text
+B — Evidencia positiva local
+```
+
+porque `R-U2-M1` participó efectivamente en una trayectoria humana posterior a
+una interrupción y volvió a poner a disposición el antecedente producido en
+`S1`.
+
+La consecuencia resultante fue:
+
+```text
+ninguna
+```
+
+No se estableció:
+
+```text
+pérdida atribuible a R-U2-M1
+→ no
+
+insuficiencia candidata
+→ no
+
+incompatibilidad con R-U2-M1
+→ no
+
+necesidad de modificar R-U2-M1
+→ no
+
+necesidad de nueva investigación
+→ no
+```
+
+## Evaluación de `POU-RU2M1-01`
+
+La aplicación proporcionó nueva evidencia sobre la versión revisada del
+protocolo.
+
+La condición preobservacional permitió distinguir efectivamente:
+
+```text
+ejecución con X válido restaurado
+→ S2(X anterior)
+→ no constituye S1
+
+nueva ejecución sin X válido restaurado
+→ condición satisfecha
+→ S1 constituible
+```
+
+La aplicación permitió además observar, registrar y evaluar una trayectoria
+completa manteniendo separadas:
+
+```text
+hechos observados
+declaraciones
+interpretaciones
+posibles insuficiencias
+posibilidades imaginadas
+consecuencia justificable
+```
+
+Por ello quedó establecido:
+
+### `RP-POU-RU2M1-02` — Suficiencia instrumental local de la versión revisada
+
+```text
+La aplicación formal OU-RU2M1-003 aporta evidencia de que la versión revisada
+de POU-RU2M1-01 fue instrumentalmente suficiente, en esta aplicación, para
+constituir preobservacionalmente una nueva trayectoria válida, observarla,
+registrarla y evaluarla sin confundir una ejecución inicialmente constituida
+como S2(X anterior) con el S1 requerido.
+```
+
+El resultado es local.
+
+No establece suficiencia general o universal del protocolo ni utilidad general
+de `R-U2-M1`.
+
+## Efecto sobre el Carril A
+
+La actuación inicialmente seleccionada para el Carril A queda completada.
+
+El estado resultante es:
+
+```text
+Carril A
+→ actuación seleccionada completada
+→ OU-RU2M1-003 cerrada
+→ B — Evidencia positiva local
+→ consecuencia: ninguna
+
+POU-RU2M1-01
+→ revisión ejercida formalmente
+→ RP-POU-RU2M1-02 establecido localmente
+→ sin nueva modificación derivada
+
+R-U2-M1
+→ sin modificación derivada
+
+investigación posterior
+→ ninguna automáticamente derivada
+```
+
+Este resultado no equivale al cierre de `LE-001`.
+
+Tampoco establece que el Carril B constituya automáticamente la siguiente
+actuación temporal.
+
+`LE-001` continúa vigente bajo su objetivo más amplio de convergencia hacia una
+primera trayectoria humana integrada.
+
+## Preservación de la secuencia histórica
+
+El resultado actual no modifica retrospectivamente el estado anterior.
+
+La secuencia conservada es:
+
+```text
+investigaciones anteriores cerradas
+↓
+ninguna actuación posterior automáticamente derivada
+↓
+decisión estratégica posterior
+↓
+LE-001
+↓
+selección de una actuación para Carril A
+↓
+OU-RU2M1-003
+↓
+evidencia
+↓
+evaluación
+↓
+cierre de la actuación seleccionada
+```
+
+Por tanto, la ejecución de `OU-RU2M1-003` no convierte en obligaciones
+retrospectivas las posibilidades que permanecían abiertas antes de la adopción
+de `LE-001`.
+
+## Estado resultante
+
+```text
+OU-RU2M1-003
+✔ cerrada
+✔ B — Evidencia positiva local
+✔ consecuencia: ninguna
+
+POU-RU2M1-01
+✔ tercera aplicación completada
+✔ revisión preobservacional ejercida
+✔ RP-POU-RU2M1-02 establecido localmente
+○ suficiencia general no establecida
+
+Carril A
+✔ actuación inicialmente seleccionada completada
+→ ninguna nueva actuación automáticamente derivada
+
+Carril B
+→ capacidad vigente conservada
+→ ninguna prioridad temporal automáticamente derivada
+
+LE-001
+→ vigente
+
+primera trayectoria humana integrada
+→ todavía no seleccionada
+
+Architecture
+→ todavía no derivada
+→ condicionada a trayectoria suficientemente justificada
+```
+
+## Punto de reanudación
+
+La actuación seleccionada para el Carril A ha quedado completada y no deja una
+continuación interna pendiente.
+
+La continuación del proyecto deberá determinarse a partir del estado global
+vigente de `LE-001`, preservando:
+
+```text
+evidencia antes que investigación
++
+investigación sólo ante fundamento positivo
++
+dependencia lógica distinta del orden temporal
++
+arquitectura derivada por trayectoria
++
+construcción y uso cuando exista justificación suficiente
+```
+
+No deberá inferirse una siguiente actuación únicamente por la terminación de
+`OU-RU2M1-003` o por el orden documental de los carriles.
+
+---

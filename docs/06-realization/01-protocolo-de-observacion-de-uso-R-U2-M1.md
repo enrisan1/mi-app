@@ -5,7 +5,7 @@
 **Identificador:** `POU-RU2M1-01`
 **Naturaleza:** protocolo local de observación de uso.
 **Ámbito:** `R-U2-M1`.
-**Estado:** dos aplicaciones completadas; suficiencia instrumental inicial conservada; insuficiencia preobservacional local identificada y corregida documentalmente; revisión pendiente de nueva evidencia de aplicación.
+**Estado:** tres aplicaciones completadas; suficiencia instrumental inicial conservada; insuficiencia preobservacional local identificada y corregida; revisión ejercida formalmente en `OU-RU2M1-003`; suficiencia instrumental local de la versión revisada establecida; suficiencia general no establecida.
 **Realización observada:** `R-U2-M1`.
 **Resultado de referencia:** `RC-RU2M1-01`.
 
@@ -803,7 +803,9 @@ POU-RU2M1-01
 ✔ condición constitutiva de S1 identificada en R-U2-M1
 ✔ condición preobservacional incorporada al protocolo
 ✔ ficha mínima ampliada para registrar su cumplimiento
-○ revisión todavía no ejercida en una nueva aplicación
+✔ revisión ejercida en una nueva aplicación formal
+✔ tercera aplicación completada
+✔ suficiencia instrumental local de la versión revisada establecida
 ○ suficiencia general no establecida
 
 OU-RU2M1-001
@@ -832,10 +834,20 @@ revisión de POU-RU2M1-01
 ✔ condición preobservacional explicitada
 ✔ mecanismo técnico dejado abierto
 ✔ trazabilidad incorporada a la ficha
-○ nueva evidencia de aplicación no obtenida todavía
+✔ nueva aplicación formal realizada
+✔ nueva evidencia de aplicación obtenida
+
+OU-RU2M1-003
+✔ tercera aplicación formal realizada
+✔ condición preobservacional ejercida y satisfecha
+✔ trayectoria completa observada
+✔ clasificación B — Evidencia positiva local
+✔ consecuencia: ninguna
+✔ evaluación posterior cerrada
 
 RP-POU-RU2M1-02
-○ no formulado
+✔ suficiencia instrumental local de la versión revisada establecida por
+  OU-RU2M1-003
 ```
 
 La primera aplicación prevista por este protocolo se realizó en
@@ -848,11 +860,38 @@ La investigación posterior estableció que una aplicación completa del
 protocolo debe comenzar mediante una ejecución iniciada sin un `X` válido
 restaurado.
 
-Esta condición ha sido incorporada al protocolo sin prescribir el mecanismo
-técnico mediante el que deberá satisfacerse.
+Esta condición fue incorporada al protocolo sin prescribir el mecanismo
+técnico mediante el que debía satisfacerse.
 
-La revisión documental no constituye por sí misma evidencia de suficiencia en
-una aplicación posterior.
+La versión revisada fue ejercida posteriormente mediante `OU-RU2M1-003`.
+
+La aplicación permitió distinguir una ejecución inicialmente constituida como
+`S2(X anterior)` del `S1` requerido, preparar de forma diferenciada una nueva
+ejecución, satisfacer explícitamente la condición preobservacional y observar
+una trayectoria completa.
+
+La evidencia obtenida permite establecer `RP-POU-RU2M1-02` exclusivamente como
+resultado local sobre la suficiencia instrumental de la versión revisada en
+esta aplicación.
+
+No establece:
+
+```text
+suficiencia general de POU-RU2M1-01
+→ no
+
+suficiencia universal del protocolo
+→ no
+
+utilidad general de R-U2-M1
+→ no
+
+necesidad de nuevas observaciones
+→ no
+
+necesidad de nueva investigación
+→ no
+```
 
 La apertura de nuevas observaciones continúa sin quedar establecida
 automáticamente y deberá justificarse por aquello que sea necesario conocer.
