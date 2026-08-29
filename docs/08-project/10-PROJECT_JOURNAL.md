@@ -5557,3 +5557,385 @@ No deberá inferirse una siguiente actuación únicamente por la terminación de
 `OU-RU2M1-003` o por el orden documental de los carriles.
 
 ---
+
+# Selección y formalización de la primera trayectoria candidata de `LE-001`
+
+## Situación de partida
+
+El cierre y propagación de `OU-RU2M1-003` dejó:
+
+```text
+Carril A
+→ actuación inicialmente seleccionada completada
+
+LE-001
+→ vigente
+
+Carril B
+→ capacidad estratégica conservada
+
+primera trayectoria humana integrada
+→ todavía no seleccionada
+```
+
+El cierre del Carril A no convirtió automáticamente el Carril B en la siguiente
+actuación.
+
+La continuación fue determinada mediante una evaluación posterior del estado
+global de `LE-001`.
+
+## Evaluación posterior de la evidencia
+
+La evaluación identificó que durante `OU-RU2M1-003` había aparecido una
+situación humana distinta de la pregunta específica que aquella observación
+evaluaba respecto de `R-U2-M1`.
+
+Durante la revisión real de un artículo:
+
+```text
+comparación de dos versiones
+↓
+localización de diferencias
+↓
+modificación inmediata diferencia por diferencia
+resulta demasiado tediosa
+↓
+la persona separa ambas actuaciones
+↓
+primero localizar
+↓
+conservar lo necesario para reencontrar
+↓
+modificar posteriormente
+```
+
+La situación no fue tratada como una insuficiencia de `R-U2-M1`.
+
+Tampoco fue convertida directamente en una funcionalidad.
+
+## Ejercicio del Carril B
+
+La situación fue formulada como situación humana y sometida a reducción frente
+al compromiso vigente `PV-001`.
+
+La diferencia humana identificada fue que una actuación posterior puede evitar
+reconstruir parte del trabajo anterior cuando aquello producido durante la
+localización permanece disponible de forma suficiente para incidir
+posteriormente.
+
+La reducción produjo:
+
+```text
+PV-001
+→ suficiente para explicar
+  el valor humano actualmente establecido
+
+residuo independiente de Product
+→ no establecido
+
+nueva vertical
+→ no
+
+investigación de Product
+→ no
+```
+
+La ausencia de un nuevo valor independiente no hizo irrelevante la situación
+para `LE-001`.
+
+## Selección de `CT-LE001-01`
+
+La situación presentó fundamento suficiente para ser seleccionada como:
+
+```text
+CT-LE001-01
+→ candidata a primera trayectoria humana integrada de LE-001
+```
+
+La selección no equivalió a consolidar todavía la trayectoria.
+
+El estatuto quedó:
+
+```text
+candidata seleccionada
+✔
+
+trayectoria completa empíricamente observada
+○
+
+incidencia posterior completa establecida
+○
+
+trayectoria integrada suficientemente justificada
+○
+```
+
+## Reconstrucción extremo a extremo
+
+La candidata fue reconstruida como:
+
+```text
+S1 — localización
+↓
+persona compara dos versiones
+↓
+identifica diferencias
+↓
+produce L
+
+        ↓
+separación entre situaciones
+        ↓
+
+S2(L) — modificación
+↓
+L vuelve a estar disponible
+↓
+la persona utiliza L
+↓
+reencuentra aquello localizado
+↓
+realiza al menos una modificación
+```
+
+`L` fue definido sin prescribir una solución técnica:
+
+> una aportación producida durante `S1` que conserva información suficiente
+> para que pueda utilizarse posteriormente para reencontrar aquello pertinente.
+
+## Condiciones realizativas mínimas
+
+La reconstrucción permitió derivar:
+
+```text
+CR-CT01-01
+→ constitución de L
+
+CR-CT01-02
+→ continuidad entre situaciones
+
+CR-CT01-03
+→ reaparición posterior
+
+CR-CT01-04
+→ correspondencia suficiente
+
+CR-CT01-05
+→ incidencia efectiva
+
+CR-CT01-06
+→ actuación posterior efectiva
+```
+
+La derivación no estableció necesidad de:
+
+```text
+comparador automático
+→ no
+
+versionado interno
+→ no
+
+algoritmo diff
+→ no
+
+editor integrado
+→ no
+
+colección estructurada de diferencias
+→ no
+
+Architecture
+→ no
+```
+
+## Relación con `R-U2-M1`
+
+La realización existente fue examinada como instrumento inicialmente disponible
+para intentar ejercer la candidata.
+
+Mediante:
+
+```text
+X := L
+```
+
+`R-U2-M1` parece poder proporcionar inicialmente:
+
+```text
+constitución de L
++
+continuidad
++
+reaparición
+```
+
+La correspondencia suficiente, la incidencia efectiva y la actuación posterior
+requieren evidencia de uso.
+
+Por tanto:
+
+```text
+R-U2-M1
+→ aparentemente suficiente
+  para intentar ejercer CT-LE001-01
+
+modificación de R-U2-M1
+→ no derivada
+
+nueva realización
+→ no derivada
+```
+
+## Incertidumbre restante
+
+La principal incertidumbre dejó de ser teórica o arquitectónica.
+
+Quedó formulada como una cuestión empírica:
+
+> ¿Puede una `L` producida durante una actividad real de localización atravesar
+> una separación entre situaciones, reaparecer posteriormente y ser utilizada
+> efectivamente para reencontrar aquello localizado y realizar al menos una
+> modificación?
+
+## Formalización de `POT-CTLE001-01`
+
+Para producir esa evidencia se formalizó un protocolo específico:
+
+```text
+POT-CTLE001-01
+→ protocolo de observación de CT-LE001-01
+```
+
+El protocolo distingue:
+
+```text
+preparación
+≠
+trayectoria
+
+reaparición de L
+≠
+utilización de L
+
+intento de correspondencia
+≠
+correspondencia satisfecha
+
+trayectoria conductualmente completa
+≠
+incidencia humana relevante
+```
+
+La primera aplicación utilizará inicialmente `R-U2-M1` sin modificación previa.
+
+El protocolo fue congelado antes de conocer el resultado de su primera
+aplicación.
+
+## Categorías de resultado
+
+`POT-CTLE001-01` establece:
+
+```text
+A
+→ trayectoria completa
+  con incidencia positiva local
+
+B
+→ trayectoria conductualmente completa
+  sin incidencia relevante establecida
+
+C
+→ trayectoria incompleta
+  por correspondencia insuficiente de L
+
+D
+→ trayectoria no evaluable
+  por causa externa
+
+E
+→ problema instrumental candidato
+```
+
+Ninguna categoría deriva automáticamente una modificación de Product,
+`R-U2-M1` o Architecture.
+
+## Resultado documental
+
+La formalización quedó consolidada mediante:
+
+```text
+42a9776
+docs(realization): formalize first integrated trajectory candidate
+```
+
+con:
+
+```text
+11-trayectoria-candidata-CT-LE001-01.md
++
+12-protocolo-de-observacion-CT-LE001-01.md
+```
+
+## Estado resultante
+
+```text
+Carril B
+✔ primera situación humana evaluada
+✔ reducción frente a PV-001 completada
+→ residuo independiente de Product no establecido
+→ nueva vertical no derivada
+✔ CT-LE001-01 seleccionada
+
+CT-LE001-01
+✔ formalizada
+✔ reconstrucción extremo a extremo establecida
+✔ CR-CT01-01 ... CR-CT01-06 derivadas
+○ trayectoria completa todavía no corroborada empíricamente
+
+POT-CTLE001-01
+✔ formalizado
+✔ congelado antes de observar
+○ primera aplicación formal todavía no realizada
+
+R-U2-M1
+→ sin modificación derivada
+
+Architecture
+→ todavía no derivada
+
+LE-001
+→ vigente
+→ ya dispone de una primera candidata
+  a trayectoria humana integrada
+```
+
+## Punto de reanudación
+
+La siguiente necesidad de conocimiento es empírica.
+
+No existe fundamento actual para ampliar teoría, modificar `R-U2-M1` o derivar
+Architecture antes de obtener nueva evidencia.
+
+La actuación habilitada es:
+
+```text
+actividad humana real apta para S1
+↓
+primera aplicación formal
+de POT-CTLE001-01
+↓
+evidencia
+↓
+evaluación
+```
+
+La actividad no deberá producirse artificialmente para satisfacer el protocolo.
+
+La primera aplicación deberá constituirse únicamente cuando exista una
+situación real apta.
+
+Cualquier investigación, modificación realizativa o derivación arquitectónica
+posterior deberá quedar justificada por la evidencia efectivamente obtenida.
+
+---

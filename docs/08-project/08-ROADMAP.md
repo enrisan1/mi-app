@@ -335,6 +335,83 @@ compromisos vigentes, particularmente `PV-001`.
 Sólo se abrirá una investigación cuando sobreviva un fundamento positivo
 propio que la justifique.
 
+La capacidad prevista por este carril ha sido ejercida por primera vez a partir
+de evidencia producida durante `OU-RU2M1-003`.
+
+La situación humana identificada fue sometida a reducción frente a `PV-001`.
+
+El resultado fue:
+
+```text
+situación humana procedente de uso real
+✔
+
+diferencia humana identificada
+✔
+
+reducción frente a PV-001
+✔
+
+residuo independiente de Product
+→ no establecido
+
+nueva vertical de Product
+→ no justificada
+
+investigación de Product
+→ no justificada
+```
+
+La reducción no eliminó la relevancia de la situación para `LE-001`.
+
+La situación proporcionó fundamento suficiente para seleccionar:
+
+```text
+CT-LE001-01
+→ candidata a primera trayectoria humana integrada de LE-001
+```
+
+La candidata ha sido reconstruida de extremo a extremo y se han derivado sus
+condiciones realizativas mínimas:
+
+```text
+CR-CT01-01
+→ constitución de L
+
+CR-CT01-02
+→ continuidad entre situaciones
+
+CR-CT01-03
+→ reaparición posterior
+
+CR-CT01-04
+→ correspondencia suficiente
+
+CR-CT01-05
+→ incidencia efectiva
+
+CR-CT01-06
+→ actuación posterior efectiva
+```
+
+La reconstrucción no derivó una nueva arquitectura ni una modificación de
+`R-U2-M1`.
+
+La siguiente incertidumbre relevante es empírica.
+
+Para producir esa evidencia se ha formalizado:
+
+`POT-CTLE001-01`
+→ protocolo específico de observación de CT-LE001-01
+→ R-U2-M1 como realización instrumental inicial
+→ primera aplicación formal todavía no realizada
+
+La existencia del protocolo no obliga a producir artificialmente una situación
+de uso.
+
+Su primera aplicación deberá constituirse únicamente cuando exista una
+actividad humana real apta para `S1`.
+
 ## 4.3 Régimen de investigaciones simultáneas
 
 La línea estratégica admite que varias investigaciones independientes
@@ -677,6 +754,13 @@ fundamento de LE-001
 → nueva aplicación formal completada
   mediante OU-RU2M1-003
 → RP-POU-RU2M1-02 establecido localmente
+→ situación humana identificada
+  a partir de evidencia de OU-RU2M1-003
+→ reducción frente a PV-001 completada
+→ CT-LE001-01 seleccionada
+  como candidata a primera trayectoria
+  humana integrada
+→ POT-CTLE001-01 formalizado
 → capacidad vigente para incorporar
   nuevas situaciones humanas
 → paralelismo controlado disponible
@@ -691,10 +775,16 @@ Carril A
 → consecuencia: ninguna
 → RP-POU-RU2M1-02 establecido localmente
 → ninguna actuación posterior automáticamente derivada
-
 Carril B
-→ incorporación de nuevas situaciones humanas
-→ reducción frente a compromisos vigentes
+→ capacidad ejercida sobre situación humana
+  aparecida durante OU-RU2M1-003
+→ reducción frente a PV-001 completada
+→ residuo independiente de Product no establecido
+→ nueva vertical no derivada
+→ CT-LE001-01 seleccionada como candidata
+→ POT-CTLE001-01 formalizado
+→ primera aplicación formal todavía no realizada
+→ capacidad para nuevas situaciones conservada
 → investigación sólo ante fundamento positivo
 
 investigaciones simultáneas
@@ -711,6 +801,13 @@ investigación
 trayectoria suficientemente justificada
 → prioridad de construcción y uso
   frente a generalización teórica adicional
+
+primera trayectoria humana integrada
+→ CT-LE001-01 seleccionada como candidata
+→ reconstrucción extremo a extremo establecida
+→ condiciones realizativas mínimas derivadas
+→ corroboración empírica completa todavía no establecida
+→ siguiente necesidad de conocimiento: empírica
 
 Architecture
 → todavía no derivada en general

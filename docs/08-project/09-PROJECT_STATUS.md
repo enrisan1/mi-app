@@ -1201,6 +1201,52 @@ Carril B
   si sobrevive fundamento positivo
 ```
 
+Esta capacidad fue ejercida posteriormente a partir de una situación humana
+aparecida durante `OU-RU2M1-003`.
+
+La situación fue formulada sin partir de una funcionalidad y sometida a
+reducción frente a `PV-001`.
+
+El resultado fue:
+
+```text
+reducción frente a PV-001
+✔
+
+residuo humano independiente
+→ no establecido
+
+nueva vertical de Product
+→ no derivada
+
+investigación de Product
+→ no derivada
+```
+
+La situación conservó, sin embargo, fundamento suficiente para ser seleccionada
+como candidata a la primera trayectoria humana integrada de `LE-001`.
+
+El resultado fue formalizado como:
+
+```text
+CT-LE001-01
+→ candidata seleccionada
+→ reconstrucción extremo a extremo establecida
+→ CR-CT01-01 ... CR-CT01-06 derivadas
+```
+
+y su siguiente incertidumbre empírica fue operacionalizada mediante:
+
+```text
+POT-CTLE001-01
+→ protocolo formalizado
+→ R-U2-M1 como realización instrumental inicial
+→ primera aplicación formal todavía no realizada
+```
+
+Este resultado no deriva todavía Architecture ni una modificación de
+`R-U2-M1`.
+
 Podrán coexistir varias investigaciones cuando cada una disponga de fundamento
 propio y sus dependencias permanezcan explícitas.
 
@@ -1813,10 +1859,19 @@ Carril A — uso
     → ninguna nueva actuación del carril automáticamente derivada
 
 Carril B — nuevas situaciones
-    → capturar situaciones humanas, no funcionalidades
-    → registrar como NP-* cuando exista razón para conservarlas
-    → reducir frente a PV-001 y otros compromisos vigentes
-    → abrir investigación únicamente ante residuo positivo propio
+    ✔ primera situación humana procedente de evidencia real evaluada
+    ✔ situación formulada sin partir de funcionalidad
+    ✔ reducción frente a PV-001 completada
+    → residuo independiente de Product no establecido
+    → nueva vertical de Product no derivada
+    → investigación de Product no derivada
+    ✔ CT-LE001-01 seleccionada como candidata
+    ✔ reconstrucción extremo a extremo establecida
+    ✔ CR-CT01-01 ... CR-CT01-06 derivadas
+    ✔ POT-CTLE001-01 formalizado
+    ○ primera aplicación formal de POT-CTLE001-01 todavía no realizada
+    → capacidad para nuevas situaciones humanas conservada
+    → futuras investigaciones únicamente ante fundamento positivo propio
 
 Investigaciones simultáneas
     ✔ admitidas cuando sean independientemente justificadas
@@ -1827,7 +1882,17 @@ Investigaciones simultáneas
     → cierre cuando exista evidencia suficiente para decidir
 
 Trayectoria humana integrada
-    ○ todavía no seleccionada
+    ✔ CT-LE001-01 seleccionada como primera candidata
+    ✔ origen empírico establecido
+    ✔ reducción frente a PV-001 realizada
+    ✔ reconstrucción extremo a extremo establecida
+    ✔ condiciones realizativas mínimas derivadas
+    → R-U2-M1 aparentemente suficiente para intentar ejercerla
+    ○ trayectoria completa todavía no corroborada empíricamente
+    ○ incidencia posterior completa todavía no establecida
+    → siguiente necesidad de conocimiento: empírica
+    → primera aplicación de POT-CTLE001-01
+      cuando exista actividad humana real apta
     → no requiere cerrar previamente todas las investigaciones independientes
     → cuando quede suficientemente justificada:
         construcción y uso tendrán prioridad
@@ -1843,6 +1908,7 @@ Design Journal
 
 Arquitectura del nuevo producto
     ○ todavía no derivada
+    → CT-LE001-01 no ha derivado todavía necesidad arquitectónica
     → no se derivará preventivamente como arquitectura general
     → primera derivación condicionada a una trayectoria suficientemente justificada
     → alcance inicial limitado a lo necesario para realizar esa trayectoria
