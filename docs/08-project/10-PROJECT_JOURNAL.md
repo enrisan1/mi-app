@@ -4746,3 +4746,474 @@ POU-RU2M1-01 con nueva aplicación formal no realizada
 La siguiente actuación deberá justificarse nuevamente a partir del estado global del proyecto y de un fundamento positivo independiente perteneciente al cuerpo competente.
 
 ---
+
+# Ficha de evolución del proyecto
+
+## Fecha
+
+29/08/2026
+
+## Actuación
+
+Adopción de `LE-001 — Convergencia empírica hacia una primera trayectoria humana integrada` y establecimiento de un nuevo régimen operativo orientado a evidencia, construcción y uso.
+
+## Situación de partida
+
+El proyecto había cerrado las investigaciones inmediatamente anteriores sin derivar de ellas una actuación posterior obligatoria.
+
+El estado consolidado mantenía:
+
+```text
+investigaciones anteriores
+→ cerradas
+
+actuación posterior automáticamente derivada
+→ ninguna
+
+R-U2-M1
+→ primera realización contingente destinada al uso
+
+POU-RU2M1-01
+→ revisado
+→ disponible para una nueva aplicación formal
+
+Design Journal
+→ responsabilidad vigente
+→ espacio disponible para nuevas situaciones y propuestas
+
+Architecture del nuevo producto
+→ todavía no derivada
+```
+
+La ausencia de una actuación automáticamente derivada constituía un resultado válido y no una pérdida que debiera repararse.
+
+Al mismo tiempo, el proyecto disponía ya de una primera cadena empírica capaz de relacionar:
+
+```text
+Product
+↓
+Realization
+↓
+artefacto
+↓
+uso
+↓
+observación
+↓
+pérdida
+↓
+investigación
+↓
+modificación
+↓
+nueva observación
+```
+
+La visión vigente continuaba orientada hacia la construcción progresiva de una plataforma real de conocimiento.
+
+## Fundamento de la decisión estratégica
+
+La nueva línea no se justificó por:
+
+```text
+aspectos todavía no construidos
+✘
+
+necesidad de poblar ROADMAP.md
+✘
+
+mera continuidad temporal
+✘
+
+existencia de preguntas todavía formulables
+✘
+
+necesidad de abrir nuevas investigaciones
+✘
+```
+
+Su fundamento procedió de la convergencia de capacidades y resultados ya disponibles:
+
+```text
+visión vigente
+→ construcción progresiva de un producto real
+
+Product
+→ primera vertical consolidada
+
+R-U2-M1
+→ realización destinada al uso
+
+uso real
+→ capacidad demostrada para producir evidencia
+
+POU-RU2M1-01
+→ protocolo revisado
+→ disponible para nueva aplicación formal
+
+Design Journal
+→ capacidad para recibir nuevas situaciones humanas
+
+Methodology
+→ paralelismo controlado disponible
+→ dependencia lógica distinta del orden temporal
+```
+
+Esta convergencia proporcionó una oportunidad estratégica suficiente para modificar el centro de gravedad del trabajo.
+
+## Decisión
+
+Se incorporó al Roadmap la línea:
+
+```text
+LE-001
+→ Convergencia empírica hacia
+  una primera trayectoria humana integrada
+```
+
+La línea persigue una secuencia general de trabajo:
+
+```text
+situación o uso
+        ↓
+evidencia
+        ↓
+investigación
+sólo cuando resulte necesaria
+        ↓
+resultado suficientemente establecido
+        ↓
+compromisos suficientes
+        ↓
+trayectoria humana
+suficientemente justificada
+        ↓
+arquitectura mínima necesaria
+        ↓
+artefacto
+        ↓
+uso
+        ↓
+nueva evidencia
+        ↺
+```
+
+La decisión no introduce por sí misma:
+
+```text
+una nueva funcionalidad de Product
+✘
+
+una nueva vertical
+✘
+
+una ampliación de PV-001
+✘
+
+una modificación de R-U2-M1
+✘
+
+una arquitectura general
+✘
+
+una investigación obligatoria
+✘
+```
+
+## Carril A — nueva evidencia de uso
+
+Se seleccionó como primera fuente empírica la realización de una nueva aplicación formal del protocolo revisado `POU-RU2M1-01`.
+
+Su finalidad será obtener nueva evidencia sobre `R-U2-M1` bajo las condiciones preobservacionales ya corregidas.
+
+La aplicación no presupone:
+
+```text
+pérdida
+✘
+
+modificación de R-U2-M1
+✘
+
+nueva investigación
+✘
+
+RP-POU-RU2M1-02
+✘
+```
+
+Cualquier investigación posterior deberá justificarse por aquello que efectivamente aparezca durante la observación.
+
+## Carril B — nuevas situaciones humanas
+
+En paralelo podrá comenzar la incorporación de nuevas situaciones humanas posteriores al cierre del corpus histórico.
+
+El punto de partida deberá ser:
+
+```text
+situación humana
++
+diferencia identificable
+```
+
+y no:
+
+```text
+funcionalidad
++
+solución técnica
+```
+
+Cuando exista razón suficiente para conservar una situación como posibilidad viva, podrá registrarse mediante la serie `NP-*` de `DESIGN_JOURNAL.md`.
+
+Su registro no constituirá por sí mismo:
+
+```text
+compromiso de Product
+✘
+
+línea estratégica
+✘
+
+prioridad
+✘
+
+investigación obligatoria
+✘
+
+implementación
+✘
+```
+
+Las situaciones deberán reducirse frente a los compromisos vigentes y sólo podrán producir una investigación cuando sobreviva un fundamento positivo propio.
+
+## Régimen de investigaciones simultáneas
+
+La nueva etapa admite varias investigaciones abiertas simultáneamente.
+
+Cada investigación deberá conservar:
+
+```text
+fundamento positivo propio
++
+pregunta propia
++
+cuerpo competente
++
+dependencias explícitas
++
+criterio de cierre propio
+```
+
+Dos investigaciones podrán comenzar y terminar en cualquier orden.
+
+La regla aplicable será:
+
+```text
+orden temporal
+≠
+dependencia lógica
+```
+
+Ninguna investigación podrá utilizar como entrada un resultado todavía no establecido por otra.
+
+## Criterio de suficiencia de investigación
+
+Una investigación no deberá prolongarse únicamente para aumentar la precisión de su resultado.
+
+La precisión adicional sólo estará justificada cuando pueda cambiar una decisión actualmente relevante de:
+
+```text
+Product
+Realization
+Architecture
+construcción
+```
+
+Cuando la evidencia disponible sea suficiente para adoptar, rechazar, posponer o descartar la decisión que justificó la investigación, ésta deberá cerrarse dentro de su alcance.
+
+## Prioridad de construcción y uso
+
+Se estableció como criterio de la nueva etapa:
+
+> Cuando una situación o trayectoria humana esté suficientemente justificada para ser construida, la construcción y el uso tienen prioridad sobre continuar generalizando su teoría.
+
+La generalización previa sólo deberá continuar cuando exista una decisión concreta cuya resolución dependa de ella.
+
+El criterio operativo puede representarse como:
+
+```text
+trayectoria suficientemente justificada
+        ↓
+¿queda una decisión necesaria
+dependiente de más investigación?
+        │
+        ├── sí
+        │   → investigar lo necesario
+        │
+        └── no
+            ↓
+          construir
+            ↓
+            usar
+            ↓
+      obtener evidencia
+```
+
+## Arquitectura por trayectoria
+
+La adopción de `LE-001` no deriva una arquitectura general para la futura plataforma.
+
+Architecture deberá intervenir únicamente cuando una trayectoria suficientemente justificada requiera resolver responsabilidades, límites, relaciones o mecanismos pertenecientes a ese cuerpo.
+
+El criterio será:
+
+```text
+trayectoria humana
+        ↓
+responsabilidades necesarias
+        ↓
+arquitectura mínima
+        ↓
+construcción
+```
+
+y no:
+
+```text
+visión completa
+        ↓
+arquitectura completa anticipada
+```
+
+Las ampliaciones arquitectónicas posteriores deberán justificarse mediante nuevas trayectorias, pérdidas, incompatibilidades o dependencias efectivamente identificadas.
+
+## Control práctico del paralelismo
+
+Se adoptó como criterio operativo inicial, no normativo:
+
+```text
+2 investigaciones activas
+→ régimen normal
+
+3 investigaciones activas
+→ admisible cuando sean independientes
+
+más de 3
+→ requiere justificar que el beneficio
+  supera el coste de fragmentación
+```
+
+Este límite no modifica las condiciones metodológicas de admisibilidad del paralelismo.
+
+## Preservación del resultado anterior
+
+La adopción de `LE-001` no reinterpreta retrospectivamente el cierre anterior.
+
+Permanece válido:
+
+```text
+investigaciones anteriores
+↓
+ninguna actuación posterior
+automáticamente derivada
+```
+
+La nueva secuencia histórica es:
+
+```text
+cierre anterior
+↓
+ausencia legítima de actuación derivada
+↓
+evaluación del estado global
+↓
+decisión estratégica posterior
+↓
+LE-001
+```
+
+Por tanto, `LE-001` constituye una decisión estratégica posterior y no una obligación que hubiera permanecido oculta o pendiente dentro de las investigaciones anteriores.
+
+## Criterio de primer resultado estratégico
+
+La línea habrá alcanzado su primer resultado estratégico cuando pueda reconstruirse una trayectoria de la forma:
+
+```text
+situación humana
+        ↓
+diferencia suficientemente establecida
+        ↓
+compromisos suficientes
+        ↓
+condiciones realizativas necesarias
+        ↓
+arquitectura mínima
+        ↓
+artefacto integrado
+        ↓
+uso
+        ↓
+evidencia posterior
+```
+
+No será necesario completar una teoría general del producto ni cerrar investigaciones independientes que no constituyan una dependencia lógica necesaria de esa trayectoria.
+
+## Estado resultante
+
+```text
+ROADMAP
+→ LE-001 vigente
+
+centro de gravedad
+→ evidencia
+→ construcción
+→ uso
+
+Carril A
+→ preparado
+→ nueva aplicación formal de POU-RU2M1-01
+
+Carril B
+→ preparado
+→ nuevas situaciones humanas
+→ NP-* cuando proceda
+
+investigaciones simultáneas
+→ admitidas bajo dependencia controlada
+
+trayectoria humana integrada
+→ todavía no seleccionada
+
+Architecture
+→ todavía no derivada
+→ condicionada a trayectoria suficientemente justificada
+```
+
+## Punto de reanudación
+
+La transición operativa queda definida.
+
+La continuación podrá comenzar mediante dos actuaciones temporalmente paralelas:
+
+```text
+Carril A
+→ preparar y ejercer
+  una nueva aplicación formal
+  de POU-RU2M1-01
+```
+
+y:
+
+```text
+Carril B
+→ comenzar la captura
+  de nuevas situaciones humanas
+→ sin partir de funcionalidades
+```
+
+Cualquier investigación que aparezca posteriormente deberá disponer de fundamento positivo propio.
+
+La próxima etapa no deberá volver a abrir la transición estratégica salvo que aparezca evidencia de que `LE-001` produce una pérdida, incompatibilidad o desvío respecto de la visión del proyecto.
+
+---

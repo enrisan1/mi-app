@@ -189,49 +189,295 @@ Implica únicamente que ya no posee el estatuto necesario para permanecer como l
 
 # 4. Líneas estratégicas vigentes
 
-Actualmente no existe ninguna línea estratégica concreta cuya vigencia haya quedado justificada respecto del estado consolidado actual del proyecto.
+El estado consolidado del proyecto ha permitido justificar una nueva línea
+estratégica.
 
-El estado vigente es:
+Su incorporación no deriva de la necesidad de mantener ocupado el Roadmap ni
+de la mera existencia de aspectos todavía no desarrollados.
 
-```text
-líneas estratégicas concretas
-actualmente justificadas
-→ ninguna
-```
-
-Esta ausencia no implica:
+Procede de la convergencia de varios resultados ya disponibles:
 
 ```text
-proyecto
-→ cerrado
+Product
+→ primera vertical consolidada
+
+visión vigente del proyecto
+→ materialización progresiva
+  de una plataforma real de conocimiento
+
+R-U2-M1
+→ primera realización contingente destinada al uso
+
+uso real
+→ ya produjo observación, pérdida, investigación y modificación
+
+POU-RU2M1-01
+→ protocolo revisado
+→ disponible para una nueva aplicación formal
+
+Design Journal
+→ capacidad vigente para recibir nuevas situaciones y propuestas
+
+Methodology
+→ paralelismo controlado disponible
+→ dependencia lógica distinta del orden temporal
 ```
 
-ni:
+Este estado proporciona una oportunidad estratégica suficientemente
+justificada para desplazar el centro de gravedad del trabajo desde la expansión
+teórica continuada hacia la producción de nueva evidencia mediante situaciones,
+uso y construcción progresiva.
+
+## 4.1 `LE-001 — Convergencia empírica hacia una primera trayectoria humana integrada`
+
+La línea estratégica vigente consiste en obtener evidencia suficiente para
+identificar, justificar, construir y observar una primera trayectoria humana
+coherente de extremo a extremo dentro del futuro producto.
+
+La trayectoria general perseguida es:
 
 ```text
-posibilidades futuras
-→ agotadas
+situación o uso
+        ↓
+evidencia
+        ↓
+¿aparece una diferencia relevante?
+        ↓
+investigación
+sólo cuando resulte necesaria
+        ↓
+resultado suficientemente establecido
+        ↓
+compromisos vigentes suficientes
+o nuevo compromiso cuando proceda
+        ↓
+primera trayectoria humana
+suficientemente justificada
+        ↓
+arquitectura mínima necesaria
+        ↓
+artefacto
+        ↓
+uso
+        ↓
+nueva evidencia
+        ↺
 ```
 
-ni:
+La secuencia no obliga a que cada situación produzca una investigación ni a
+que cada investigación produzca un nuevo compromiso de Product.
+
+Una situación podrá quedar reducida a compromisos ya existentes, cerrarse por
+ausencia de diferencia suficiente o permanecer como posibilidad en evaluación.
+
+## 4.2 Fuentes paralelas de nueva evidencia
+
+La línea se ejercerá inicialmente mediante dos carriles independientes.
+
+### Carril A — nueva evidencia de uso
+
+Se realizará una nueva aplicación formal del protocolo corregido
+`POU-RU2M1-01`.
+
+La aplicación tendrá como finalidad obtener nueva evidencia sobre
+`R-U2-M1` dentro de las condiciones preobservacionales ya consolidadas.
+
+La ejecución no presupone que:
 
 ```text
-nueva línea estratégica
-→ debe buscarse
+deba aparecer una pérdida
+✘
+
+deba modificarse R-U2-M1
+✘
+
+deba abrirse una nueva investigación
+✘
+
+deba formularse RP-POU-RU2M1-02
+✘
 ```
 
-ni:
+Cualquier investigación posterior deberá quedar justificada por aquello que
+efectivamente aparezca durante la nueva observación.
+
+### Carril B — nuevas situaciones humanas
+
+Podrán incorporarse al espacio vigente de nuevas propuestas de
+`DESIGN_JOURNAL.md` situaciones humanas surgidas después del cierre del corpus
+histórico.
+
+Su punto de partida deberá ser una situación y una diferencia humana
+identificable, no una funcionalidad o solución técnica previamente elegida.
+
+Cada situación deberá someterse, cuando proceda, a reducción respecto de los
+compromisos vigentes, particularmente `PV-001`.
+
+Sólo se abrirá una investigación cuando sobreviva un fundamento positivo
+propio que la justifique.
+
+## 4.3 Régimen de investigaciones simultáneas
+
+La línea estratégica admite que varias investigaciones independientes
+permanezcan abiertas simultáneamente.
+
+Dos o más investigaciones podrán comenzar y terminar en distinto orden siempre
+que cada una conserve:
 
 ```text
-siguiente actuación
-→ debe derivarse desde ROADMAP.md
+fundamento positivo propio
++
+pregunta propia
++
+cuerpo competente
++
+dependencias explícitas
++
+criterio de cierre propio
 ```
 
-El proyecto puede permanecer legítimamente en un estado en el que no exista ninguna línea estratégica concreta vigente y ninguna actuación posterior haya quedado actualmente derivada.
+Ninguna investigación podrá utilizar como entrada un resultado de otra
+investigación que todavía no haya sido establecido.
 
-Cuando aparezca una necesidad, pérdida, compromiso, oportunidad suficientemente justificada u otro fundamento pertinente, podrá evaluarse entonces si de dicho resultado procede incorporar una nueva línea estratégica.
+Por tanto:
 
-Hasta que exista ese fundamento, no deberá introducirse una línea con la finalidad exclusiva de poblar el Roadmap o mantener artificialmente una dirección futura.
+```text
+orden temporal
+≠
+dependencia lógica
+```
+
+La dependencia lógica determinará cuándo un resultado puede ser utilizado.
+
+## 4.4 Suficiencia de la investigación
+
+Una investigación no deberá prolongarse únicamente para aumentar la precisión
+de su resultado.
+
+La precisión adicional sólo estará justificada cuando pueda cambiar una
+decisión actualmente relevante de:
+
+```text
+Product
+Realization
+Architecture
+construcción
+```
+
+Cuando la evidencia disponible resulte suficiente para adoptar, rechazar,
+posponer o descartar la decisión que justificó la investigación, ésta deberá
+cerrarse dentro de su alcance.
+
+## 4.5 Prioridad de construcción y uso
+
+Cuando una situación o trayectoria humana esté suficientemente justificada
+para ser construida, la construcción y el uso tendrán prioridad sobre continuar
+generalizando su teoría.
+
+La generalización previa sólo deberá continuar cuando exista una decisión
+concreta todavía necesaria para la trayectoria cuya resolución dependa de dicha
+generalización.
+
+La línea adopta por tanto el criterio:
+
+```text
+trayectoria suficientemente justificada
+        ↓
+no ampliar teoría por mera posibilidad
+        ↓
+derivar lo necesario
+        ↓
+construir
+        ↓
+usar
+        ↓
+obtener nueva evidencia
+```
+
+## 4.6 Arquitectura por trayectoria
+
+La existencia de esta línea no deriva todavía una arquitectura general para la
+plataforma.
+
+Architecture deberá intervenir cuando una trayectoria suficientemente
+justificada exija determinar responsabilidades, límites, relaciones o
+mecanismos cuya resolución pertenezca a ese cuerpo.
+
+En ese momento deberá derivarse únicamente la arquitectura necesaria para
+realizar correctamente la trayectoria considerada.
+
+Por tanto:
+
+```text
+primera trayectoria
+        ↓
+responsabilidades necesarias
+        ↓
+arquitectura mínima
+```
+
+y no:
+
+```text
+visión completa de la plataforma
+        ↓
+arquitectura completa anticipada
+```
+
+Las ampliaciones arquitectónicas posteriores deberán justificarse a partir de
+nuevas trayectorias, pérdidas, incompatibilidades o dependencias efectivamente
+identificadas.
+
+## 4.7 Control práctico del paralelismo
+
+Como criterio operativo inicial, no normativo:
+
+```text
+2 investigaciones activas
+→ régimen normal
+
+3 investigaciones activas
+→ admisible cuando sean independientes
+
+más de 3
+→ deberá justificarse que el beneficio del paralelismo
+  supera el coste de fragmentación y cambio de contexto
+```
+
+Este límite no constituye una restricción teórica del proyecto.
+
+Su finalidad es proteger la continuidad del trabajo mientras se ejercita el
+nuevo régimen de paralelismo.
+
+## 4.8 Criterio de avance de la línea
+
+La línea habrá producido el primer resultado estratégico buscado cuando pueda
+reconstruirse una trayectoria de la forma:
+
+```text
+situación humana
+        ↓
+diferencia suficientemente establecida
+        ↓
+compromisos suficientes
+        ↓
+condiciones realizativas necesarias
+        ↓
+arquitectura mínima
+        ↓
+artefacto integrado
+        ↓
+uso
+        ↓
+evidencia posterior
+```
+
+No será necesario cerrar todas las investigaciones abiertas ni completar una
+teoría general del producto antes de iniciar dicha construcción.
+
+Una investigación independiente podrá continuar en paralelo cuando sus
+resultados no constituyan una dependencia lógica necesaria de la trayectoria
+que vaya a construirse.
 
 ---
 
@@ -395,10 +641,57 @@ Mientras no ocurra ninguno de estos casos, la ausencia de modificaciones constit
 ROADMAP.md
 → responsabilidad vigente
 → carácter no normativo
-→ no determina la siguiente actuación
+→ no crea compromisos de Product
+→ no determina por sí mismo funcionalidades concretas
 
 líneas estratégicas concretas vigentes
-→ ninguna actualmente
+→ LE-001
+→ convergencia empírica hacia
+  una primera trayectoria humana integrada
+
+fundamento de LE-001
+→ visión vigente orientada
+  a la construcción de un producto real
+→ primera cadena empírica ya obtenida
+→ R-U2-M1 destinada al uso
+→ POU-RU2M1-01 revisado
+  y disponible para nueva aplicación formal
+→ capacidad vigente para incorporar
+  nuevas situaciones humanas
+→ paralelismo controlado disponible
+→ oportunidad justificada de desplazar
+  el centro de gravedad hacia evidencia,
+  construcción y uso
+
+Carril A
+→ nueva aplicación formal de POU-RU2M1-01
+→ nueva evidencia de uso
+
+Carril B
+→ incorporación de nuevas situaciones humanas
+→ reducción frente a compromisos vigentes
+→ investigación sólo ante fundamento positivo
+
+investigaciones simultáneas
+→ admitidas
+→ cada una requiere fundamento propio
+→ dependencia lógica explícita
+→ pueden terminar en cualquier orden
+→ ningún resultado no establecido
+  puede utilizarse como entrada
+
+investigación
+→ no prolongar por precisión sin efecto decisorio
+
+trayectoria suficientemente justificada
+→ prioridad de construcción y uso
+  frente a generalización teórica adicional
+
+Architecture
+→ todavía no derivada en general
+→ se derivará sólo cuando una trayectoria
+  suficientemente justificada la necesite
+→ alcance inicial mínimo respecto de esa trayectoria
 
 líneas históricas anteriores
 → no declaradas falsas
@@ -409,12 +702,4 @@ líneas históricas anteriores
 ideas históricas anteriormente en evaluación
 → no trasladadas automáticamente a DESIGN_JOURNAL.md
 → preservadas mediante la historia del proyecto
-
-nuevas líneas
-→ requieren justificación independiente
-
-ausencia de líneas
-→ estado legítimo
-→ no genera obligación de búsqueda
-→ no constituye incompletitud documental
 ```

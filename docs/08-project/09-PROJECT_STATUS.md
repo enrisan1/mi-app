@@ -1122,9 +1122,88 @@ R-DX1-M1
 ninguna actuación posterior
 automáticamente derivada
         ↓
-¿existe nuevo fundamento positivo independiente
-posterior al cierre de esta investigación?
+decisión estratégica posterior
+        ↓
+producir nueva evidencia
+mediante uso y nuevas situaciones
+        ↓
+investigar sólo cuando
+la evidencia lo justifique
 ```
+
+La ausencia de una actuación automáticamente derivada se mantiene como
+resultado válido de las investigaciones anteriores.
+
+Posteriormente se ha adoptado una decisión estratégica distinta: orientar la
+siguiente etapa hacia la producción de nueva evidencia empírica que permita
+aproximar el proyecto a una primera trayectoria humana integrada.
+
+La decisión no introduce por sí misma:
+
+```text
+una nueva funcionalidad de Product
+✘
+
+una nueva vertical
+✘
+
+una ampliación de PV-001
+✘
+
+una modificación de R-U2-M1
+✘
+
+una arquitectura general
+✘
+
+una nueva investigación obligatoria
+✘
+```
+
+La estrategia se ejercerá inicialmente mediante dos carriles paralelos:
+
+```text
+Carril A
+→ nueva aplicación formal
+  del POU-RU2M1-01 revisado
+→ observación
+→ nueva evidencia de uso
+```
+
+y:
+
+```text
+Carril B
+→ nuevas situaciones humanas
+→ conservación identificable cuando proceda
+  mediante NP-*
+→ reducción frente a compromisos vigentes
+→ investigación únicamente
+  si sobrevive fundamento positivo
+```
+
+Podrán coexistir varias investigaciones cuando cada una disponga de fundamento
+propio y sus dependencias permanezcan explícitas.
+
+El orden temporal de apertura o cierre no determinará sus dependencias.
+
+Ninguna investigación podrá utilizar como entrada un resultado todavía no
+establecido por otra.
+
+La investigación adicional sólo deberá continuar mientras la precisión que
+pueda obtenerse sea capaz de cambiar una decisión relevante de Product,
+Realization, Architecture o construcción.
+
+Cuando una situación o trayectoria humana esté suficientemente justificada para
+ser construida, la construcción y el uso tendrán prioridad sobre continuar
+generalizando su teoría sin una decisión concreta que dependa de dicha
+generalización.
+
+La arquitectura del nuevo producto seguirá sin considerarse derivada en general.
+
+Su primera derivación deberá producirse únicamente cuando una trayectoria
+humana suficientemente justificada identifique responsabilidades o dependencias
+que hagan necesaria una solución arquitectónica concreta.
 
 Una actuación posterior deberá disponer de fundamento positivo suficiente
 dentro del cuerpo competente.
@@ -1684,18 +1763,52 @@ Estado de continuación
     ✔ R-DX1-M1 validada como witness experimental ejecutable
     → ninguna nueva condición irreducible derivada
     → ninguna ampliación de R-U2-M1 derivada
-    ○ ninguna ampliación automáticamente derivada
-    ↺ nueva actuación condicionada a nuevo fundamento positivo independiente
+    ✔ ausencia de actuación automáticamente derivada confirmada
+    ✔ nueva línea estratégica LE-001 adoptada
+    → convergencia empírica hacia una primera trayectoria humana integrada
+
+Carril A — uso
+    → nueva aplicación formal de POU-RU2M1-01
+    → condición preobservacional revisada deberá ejercerse
+    → producir nueva evidencia
+    → no presupone nueva pérdida
+    → no presupone nueva investigación
+    → investigación sólo si la evidencia deja fundamento positivo
+
+Carril B — nuevas situaciones
+    → capturar situaciones humanas, no funcionalidades
+    → registrar como NP-* cuando exista razón para conservarlas
+    → reducir frente a PV-001 y otros compromisos vigentes
+    → abrir investigación únicamente ante residuo positivo propio
+
+Investigaciones simultáneas
+    ✔ admitidas cuando sean independientemente justificadas
+    → pueden comenzar y terminar en cualquier orden
+    → dependencia lógica distinta del orden temporal
+    → resultado todavía no establecido no puede utilizarse como entrada
+    → precisión adicional sólo si puede cambiar una decisión relevante
+    → cierre cuando exista evidencia suficiente para decidir
+
+Trayectoria humana integrada
+    ○ todavía no seleccionada
+    → no requiere cerrar previamente todas las investigaciones independientes
+    → cuando quede suficientemente justificada:
+        construcción y uso tendrán prioridad
+        sobre generalización teórica adicional no necesaria
 
 Design Journal
     ✔ responsabilidad vigente
     ✔ corpus histórico auditado respecto del alcance actual
-    → ningún residuo positivo independiente identificado
+    ✔ espacio para nuevas propuestas NP-* disponible
     → contenido histórico no normativo
-    ↺ reabrible ante fundamento positivo independiente
+    → nuevas situaciones no adquieren por registro estatuto de Product
+    → investigación posterior condicionada a fundamento positivo propio
 
 Arquitectura del nuevo producto
     ○ todavía no derivada
+    → no se derivará preventivamente como arquitectura general
+    → primera derivación condicionada a una trayectoria suficientemente justificada
+    → alcance inicial limitado a lo necesario para realizar esa trayectoria
 ```
 
 ---
