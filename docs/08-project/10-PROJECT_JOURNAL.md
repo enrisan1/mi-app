@@ -5939,3 +5939,330 @@ Cualquier investigación, modificación realizativa o derivación arquitectónic
 posterior deberá quedar justificada por la evidencia efectivamente obtenida.
 
 ---
+
+# Primera corroboración empírica completa de `CT-LE001-01` y primer resultado estratégico de `LE-001`
+
+## Situación de partida
+
+La formalización de `CT-LE001-01` había dejado:
+
+```text
+CT-LE001-01
+→ candidata seleccionada
+→ reconstrucción extremo a extremo establecida
+→ CR-CT01-01 ... CR-CT01-06 derivadas
+
+POT-CTLE001-01
+→ formalizado
+→ congelado antes de observar
+→ primera aplicación formal pendiente
+
+R-U2-M1
+→ realización instrumental inicial
+
+incertidumbre restante
+→ empírica
+
+Architecture
+→ ninguna necesidad derivada
+```
+
+La cuestión pendiente era determinar si una `L` producida durante una actividad
+real podía atravesar una separación entre situaciones, reaparecer
+posteriormente, permitir reencontrar aquello localizado y producir una
+diferencia efectiva en la actuación posterior.
+
+## Primera aplicación formal
+
+La primera aplicación de `POT-CTLE001-01` fue realizada mediante:
+
+```text
+OT-CTLE001-001
+```
+
+La situación observada surgió durante la comparación real de dos versiones de
+un artículo.
+
+Durante `S1` se produjo literalmente:
+
+```text
+final del párrafo 14 en el artículo antiguo se encuentra a mitad del 20 del nuevo
+```
+
+como `L`.
+
+`L` fue conservada mediante `R-U2-M1`.
+
+Después de una separación, `S2(L)` se constituyó mediante una nueva situación
+real de actuación sobre los artículos.
+
+`L` reapareció literalmente y fue utilizada para reencontrar la
+correspondencia previamente localizada.
+
+La valoración posterior de los contenidos llevó a decidir la eliminación del
+artículo antiguo.
+
+## Incidencia observada
+
+La persona declaró que disponer de `L` facilitó reencontrar los párrafos en
+estudio.
+
+Sin `L`, habría sido necesario comenzar nuevamente buscando dichos párrafos.
+
+La diferencia observada quedó por tanto:
+
+```text
+con L
+→ continuar desde una localización anterior
+→ reencontrar los párrafos
+
+sin L
+→ volver a realizar la búsqueda
+```
+
+La disponibilidad de una aportación procedente de la situación anterior produjo
+así una diferencia relevante en las posibilidades de actuación de la situación
+posterior.
+
+## Resultado de la observación
+
+La aplicación produjo:
+
+```text
+CR-CT01-01
+✔ satisfecha localmente
+
+CR-CT01-02
+✔ satisfecha localmente
+
+CR-CT01-03
+✔ satisfecha localmente
+
+CR-CT01-04
+✔ satisfecha localmente
+
+CR-CT01-05
+✔ satisfecha localmente
+
+CR-CT01-06
+✔ satisfecha localmente
+```
+
+y fue clasificada como:
+
+```text
+A — Trayectoria completa con incidencia positiva local
+```
+
+No apareció necesidad de:
+
+```text
+modificar R-U2-M1
+→ no
+
+derivar una nueva realización
+→ no
+
+derivar una nueva responsabilidad arquitectónica
+→ no
+```
+
+## Consolidación de `CT-LE001-01`
+
+La incertidumbre que impedía consolidar la trayectoria quedó resuelta dentro
+del alcance observado.
+
+No se identificó una incertidumbre adicional cuya resolución pudiera cambiar
+la decisión de si `CT-LE001-01` había recibido una primera corroboración
+empírica completa.
+
+Por tanto:
+
+```text
+CT-LE001-01
+→ primera trayectoria humana integrada
+  consolidada dentro del alcance actual de LE-001
+
+generalización
+→ no establecida
+
+segunda observación necesaria
+→ no derivada
+```
+
+La consolidación quedó formalizada mediante:
+
+```text
+ee2b141
+docs(realization): consolidate first integrated trajectory
+```
+
+con:
+
+```text
+11-trayectoria-candidata-CT-LE001-01.md
+12-protocolo-de-observacion-CT-LE001-01.md
+13-OT-CTLE001-001.md
+```
+
+## Evaluación del primer resultado estratégico de `LE-001`
+
+El criterio vigente del Roadmap establece:
+
+```text
+situación humana
+        ↓
+diferencia suficientemente establecida
+        ↓
+compromisos suficientes
+        ↓
+condiciones realizativas necesarias
+        ↓
+arquitectura mínima
+        ↓
+artefacto integrado
+        ↓
+uso
+        ↓
+evidencia posterior
+```
+
+La evidencia consolidada permite reconstruir:
+
+```text
+situación humana
+✔ revisión real de dos versiones de un artículo
+
+diferencia suficientemente establecida
+✔ disponer de L evita repetir la búsqueda anterior
+
+compromisos suficientes
+✔ PV-001 suficiente
+→ ningún nuevo compromiso derivado
+
+condiciones realizativas necesarias
+✔ CR-CT01-01 ... CR-CT01-06
+
+arquitectura mínima
+✔ ninguna derivación arquitectónica adicional
+  necesaria para esta trayectoria
+
+artefacto integrado
+✔ R-U2-M1 ejercida efectivamente
+  dentro de la trayectoria
+
+uso
+✔ actividad humana real
+
+evidencia posterior
+✔ OT-CTLE001-001
+✔ A — Trayectoria completa con incidencia positiva local
+```
+
+La formulación `arquitectura mínima` no obliga a derivar Architecture cuando la
+trayectoria no identifica una necesidad perteneciente a ese cuerpo.
+
+La formulación `artefacto integrado` se reconstruye dentro de `LE-001` como el
+artefacto efectivamente incorporado a la trayectoria ejercida; el corpus no
+establece una exigencia independiente de integración técnica adicional.
+
+Por tanto:
+
+```text
+LE-001
+✔ primer resultado estratégico alcanzado
+```
+
+## Límites de la conclusión
+
+El resultado no establece:
+
+```text
+generalidad de CT-LE001-01
+→ no
+
+suficiencia universal de R-U2-M1
+→ no
+
+Architecture general innecesaria
+→ no
+
+producto completo construido
+→ no
+
+cierre automático de LE-001
+→ no
+
+continuación automática de LE-001
+→ no
+
+sustitución automática de LE-001
+→ no
+```
+
+Alcanzar el primer resultado estratégico satisface el criterio de avance de la
+línea.
+
+No determina por sí mismo qué estatuto estratégico deberá adoptar `LE-001` a
+continuación.
+
+## Estado resultante
+
+```text
+OT-CTLE001-001
+✔ cerrada
+✔ A — Trayectoria completa con incidencia positiva local
+
+CT-LE001-01
+✔ primera trayectoria humana integrada consolidada
+  dentro del alcance actual de LE-001
+→ generalización no establecida
+
+POT-CTLE001-01
+✔ primera aplicación formal completada
+→ repetición no derivada
+
+R-U2-M1
+→ utilizada sin modificación
+→ ninguna ampliación derivada
+
+Architecture
+→ todavía no derivada en general
+→ ninguna necesidad adicional derivada
+  por CT-LE001-01
+
+LE-001
+✔ primer resultado estratégico alcanzado
+→ destino posterior todavía no decidido
+```
+
+## Punto de reanudación
+
+La obtención del primer resultado estratégico no determina automáticamente la
+siguiente actuación.
+
+La siguiente cuestión estratégica deberá evaluarse independientemente:
+
+```text
+LE-001
+↓
+primer resultado estratégico alcanzado
+↓
+¿qué estatuto posterior está justificado?
+
+cerrar
+/
+mantener vigente con un nuevo objetivo
+/
+sustituir por otra línea
+/
+otra posibilidad derivada de evidencia
+```
+
+Ninguna de estas posibilidades adquiere prioridad por su posición en esta
+enumeración.
+
+La decisión deberá derivarse del estado global vigente del proyecto y no del
+mero hecho de haber alcanzado el primer resultado estratégico.
+
+---

@@ -1224,28 +1224,78 @@ investigación de Product
 ```
 
 La situación conservó, sin embargo, fundamento suficiente para ser seleccionada
-como candidata a la primera trayectoria humana integrada de `LE-001`.
+inicialmente como candidata a la primera trayectoria humana integrada de
+`LE-001`.
 
-El resultado fue formalizado como:
+La candidata fue formalizada como:
 
 ```text
 CT-LE001-01
-→ candidata seleccionada
 → reconstrucción extremo a extremo establecida
 → CR-CT01-01 ... CR-CT01-06 derivadas
 ```
 
-y su siguiente incertidumbre empírica fue operacionalizada mediante:
+y su incertidumbre empírica fue operacionalizada mediante:
 
 ```text
 POT-CTLE001-01
 → protocolo formalizado
 → R-U2-M1 como realización instrumental inicial
-→ primera aplicación formal todavía no realizada
 ```
 
-Este resultado no deriva todavía Architecture ni una modificación de
-`R-U2-M1`.
+La primera aplicación formal fue realizada posteriormente mediante:
+
+```text
+OT-CTLE001-001
+```
+
+La observación produjo:
+
+```text
+A — Trayectoria completa con incidencia positiva local
+
+CR-CT01-01 ... CR-CT01-06
+→ satisfechas localmente
+
+incidencia posterior efectiva
+→ establecida localmente
+```
+
+La diferencia observada fue:
+
+```text
+con L
+→ reencontrar los párrafos previamente localizados
+
+sin L
+→ volver a realizar su búsqueda
+```
+
+La evidencia obtenida resultó suficiente para consolidar:
+
+```text
+CT-LE001-01
+→ primera trayectoria humana integrada
+  dentro del alcance actual de LE-001
+```
+
+sin establecer su generalidad.
+
+La observación no derivó una modificación de `R-U2-M1`, una nueva realización
+ni una necesidad arquitectónica adicional para esta trayectoria.
+
+El criterio de primer resultado estratégico establecido por `LE-001` pudo
+reconstruirse completamente mediante `CT-LE001-01`.
+
+Por tanto:
+
+```text
+primer resultado estratégico de LE-001
+→ alcanzado
+
+destino posterior de LE-001
+→ todavía no decidido
+```
 
 Podrán coexistir varias investigaciones cuando cada una disponga de fundamento
 propio y sus dependencias permanezcan explícitas.
@@ -1865,11 +1915,15 @@ Carril B — nuevas situaciones
     → residuo independiente de Product no establecido
     → nueva vertical de Product no derivada
     → investigación de Product no derivada
-    ✔ CT-LE001-01 seleccionada como candidata
+    ✔ CT-LE001-01 seleccionada inicialmente como candidata
     ✔ reconstrucción extremo a extremo establecida
     ✔ CR-CT01-01 ... CR-CT01-06 derivadas
     ✔ POT-CTLE001-01 formalizado
-    ○ primera aplicación formal de POT-CTLE001-01 todavía no realizada
+    ✔ primera aplicación formal realizada mediante OT-CTLE001-001
+    ✔ A — Trayectoria completa con incidencia positiva local
+    ✔ CT-LE001-01 consolidada dentro del alcance actual de LE-001
+    → generalización no establecida
+    → segunda aplicación no derivada automáticamente
     → capacidad para nuevas situaciones humanas conservada
     → futuras investigaciones únicamente ante fundamento positivo propio
 
@@ -1882,21 +1936,19 @@ Investigaciones simultáneas
     → cierre cuando exista evidencia suficiente para decidir
 
 Trayectoria humana integrada
-    ✔ CT-LE001-01 seleccionada como primera candidata
+    ✔ CT-LE001-01 seleccionada inicialmente como primera candidata
     ✔ origen empírico establecido
     ✔ reducción frente a PV-001 realizada
     ✔ reconstrucción extremo a extremo establecida
     ✔ condiciones realizativas mínimas derivadas
-    → R-U2-M1 aparentemente suficiente para intentar ejercerla
-    ○ trayectoria completa todavía no corroborada empíricamente
-    ○ incidencia posterior completa todavía no establecida
-    → siguiente necesidad de conocimiento: empírica
-    → primera aplicación de POT-CTLE001-01
-      cuando exista actividad humana real apta
-    → no requiere cerrar previamente todas las investigaciones independientes
-    → cuando quede suficientemente justificada:
-        construcción y uso tendrán prioridad
-        sobre generalización teórica adicional no necesaria
+    ✔ R-U2-M1 utilizada sin modificación previa
+    ✔ trayectoria completa corroborada empíricamente
+    ✔ incidencia posterior positiva establecida localmente
+    ✔ primera trayectoria humana integrada consolidada
+      dentro del alcance actual de LE-001
+    → generalización no establecida
+    ✔ primer resultado estratégico de LE-001 alcanzado
+    → destino posterior de LE-001 todavía no decidido
 
 Design Journal
     ✔ responsabilidad vigente
@@ -1907,11 +1959,17 @@ Design Journal
     → investigación posterior condicionada a fundamento positivo propio
 
 Arquitectura del nuevo producto
-    ○ todavía no derivada
-    → CT-LE001-01 no ha derivado todavía necesidad arquitectónica
+    ○ todavía no derivada en general
+    → CT-LE001-01 no ha demostrado necesitar
+      una derivación arquitectónica adicional
+    → el nodo de arquitectura mínima del primer resultado
+      estratégico queda satisfecho para esta trayectoria
+      sin nueva derivación arquitectónica
     → no se derivará preventivamente como arquitectura general
-    → primera derivación condicionada a una trayectoria suficientemente justificada
-    → alcance inicial limitado a lo necesario para realizar esa trayectoria
+    → futura derivación condicionada a una trayectoria
+      que establezca una necesidad arquitectónica
+    → alcance inicial limitado a lo necesario
+      para realizar esa trayectoria
 ```
 
 ---

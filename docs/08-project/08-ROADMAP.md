@@ -371,7 +371,7 @@ CT-LE001-01
 → candidata a primera trayectoria humana integrada de LE-001
 ```
 
-La candidata ha sido reconstruida de extremo a extremo y se han derivado sus
+La candidata fue reconstruida de extremo a extremo y se derivaron sus
 condiciones realizativas mínimas:
 
 ```text
@@ -397,20 +397,64 @@ CR-CT01-06
 La reconstrucción no derivó una nueva arquitectura ni una modificación de
 `R-U2-M1`.
 
-La siguiente incertidumbre relevante es empírica.
+La incertidumbre relevante restante fue empírica y se operacionalizó mediante:
 
-Para producir esa evidencia se ha formalizado:
-
-`POT-CTLE001-01`
+```text
+POT-CTLE001-01
 → protocolo específico de observación de CT-LE001-01
 → R-U2-M1 como realización instrumental inicial
-→ primera aplicación formal todavía no realizada
+```
 
-La existencia del protocolo no obliga a producir artificialmente una situación
-de uso.
+La primera aplicación formal fue realizada mediante:
 
-Su primera aplicación deberá constituirse únicamente cuando exista una
-actividad humana real apta para `S1`.
+```text
+OT-CTLE001-001
+```
+
+y produjo:
+
+```text
+trayectoria completa observada
+→ sí
+
+clasificación
+→ A — Trayectoria completa con incidencia positiva local
+
+CR-CT01-01 ... CR-CT01-06
+→ satisfechas localmente
+
+incidencia posterior efectiva
+→ establecida localmente
+
+modificación de R-U2-M1
+→ no
+
+nueva realización
+→ no
+
+nueva necesidad arquitectónica
+→ no derivada
+```
+
+La evidencia obtenida resultó suficiente para cambiar el estatuto de
+`CT-LE001-01`:
+
+```text
+candidata seleccionada
+↓
+primera trayectoria humana integrada
+consolidada dentro del alcance actual de LE-001
+```
+
+La consolidación no establece generalidad respecto de personas, materiales,
+duraciones, cantidades de aportaciones o contextos de uso.
+
+La primera aplicación formal de `POT-CTLE001-01` queda completada y no deriva
+automáticamente una segunda aplicación.
+
+El Carril B conserva capacidad para recibir nuevas situaciones humanas, pero
+ninguna nueva actuación queda automáticamente derivada por el mero cierre de
+`OT-CTLE001-001`.
 
 ## 4.3 Régimen de investigaciones simultáneas
 
@@ -740,7 +784,7 @@ ROADMAP.md
 → no crea compromisos de Product
 → no determina por sí mismo funcionalidades concretas
 
-líneas estratégicas concretas vigentes
+línea estratégica concreta vigente
 → LE-001
 → convergencia empírica hacia
   una primera trayectoria humana integrada
@@ -748,25 +792,24 @@ líneas estratégicas concretas vigentes
 fundamento de LE-001
 → visión vigente orientada
   a la construcción de un producto real
-→ primera cadena empírica ya obtenida
+→ primera cadena empírica obtenida
 → R-U2-M1 destinada al uso
 → POU-RU2M1-01 revisado
-→ nueva aplicación formal completada
-  mediante OU-RU2M1-003
-→ RP-POU-RU2M1-02 establecido localmente
+→ OU-RU2M1-003 completada
 → situación humana identificada
   a partir de evidencia de OU-RU2M1-003
 → reducción frente a PV-001 completada
-→ CT-LE001-01 seleccionada
-  como candidata a primera trayectoria
-  humana integrada
+→ CT-LE001-01 seleccionada,
+  reconstruida y ejercida
 → POT-CTLE001-01 formalizado
+→ OT-CTLE001-001 completada
+→ primera trayectoria humana integrada
+  consolidada dentro del alcance actual
+→ primer resultado estratégico de LE-001
+  alcanzado
 → capacidad vigente para incorporar
   nuevas situaciones humanas
 → paralelismo controlado disponible
-→ oportunidad justificada de desplazar
-  el centro de gravedad hacia evidencia,
-  construcción y uso
 
 Carril A
 → actuación inicialmente seleccionada completada
@@ -775,15 +818,24 @@ Carril A
 → consecuencia: ninguna
 → RP-POU-RU2M1-02 establecido localmente
 → ninguna actuación posterior automáticamente derivada
+
 Carril B
-→ capacidad ejercida sobre situación humana
-  aparecida durante OU-RU2M1-003
+→ primera situación humana procedente
+  de evidencia real evaluada
 → reducción frente a PV-001 completada
 → residuo independiente de Product no establecido
 → nueva vertical no derivada
-→ CT-LE001-01 seleccionada como candidata
+→ CT-LE001-01 seleccionada inicialmente
+  como candidata
+→ reconstrucción extremo a extremo completada
+→ CR-CT01-01 ... CR-CT01-06 derivadas
 → POT-CTLE001-01 formalizado
-→ primera aplicación formal todavía no realizada
+→ OT-CTLE001-001 completada
+→ A — Trayectoria completa
+  con incidencia positiva local
+→ CT-LE001-01 consolidada dentro
+  del alcance actual de LE-001
+→ segunda aplicación no derivada
 → capacidad para nuevas situaciones conservada
 → investigación sólo ante fundamento positivo
 
@@ -803,17 +855,39 @@ trayectoria suficientemente justificada
   frente a generalización teórica adicional
 
 primera trayectoria humana integrada
-→ CT-LE001-01 seleccionada como candidata
-→ reconstrucción extremo a extremo establecida
-→ condiciones realizativas mínimas derivadas
-→ corroboración empírica completa todavía no establecida
-→ siguiente necesidad de conocimiento: empírica
+→ CT-LE001-01 consolidada dentro
+  del alcance actual de LE-001
+→ primera corroboración empírica completa obtenida
+→ incidencia posterior positiva establecida localmente
+→ generalización no establecida
+
+primer resultado estratégico de LE-001
+→ criterio de 4.8 satisfecho
+→ situación humana: sí
+→ diferencia suficientemente establecida: sí
+→ compromisos suficientes: sí
+→ condiciones realizativas necesarias: sí
+→ arquitectura mínima: satisfecha para esta trayectoria
+  sin nueva derivación arquitectónica necesaria
+→ artefacto integrado: R-U2-M1 ejercida
+  dentro de la trayectoria
+→ uso: sí
+→ evidencia posterior: sí
 
 Architecture
 → todavía no derivada en general
+→ CT-LE001-01 no ha demostrado necesitar
+  una derivación arquitectónica adicional
 → se derivará sólo cuando una trayectoria
   suficientemente justificada la necesite
-→ alcance inicial mínimo respecto de esa trayectoria
+→ alcance inicial mínimo respecto
+  de esa trayectoria
+
+destino posterior de LE-001
+→ todavía no decidido
+→ alcanzar el primer resultado estratégico
+  no deriva automáticamente cierre,
+  continuación ni sustitución de la línea
 
 líneas históricas anteriores
 → no declaradas falsas
@@ -823,5 +897,8 @@ líneas históricas anteriores
 
 ideas históricas anteriormente en evaluación
 → no trasladadas automáticamente a DESIGN_JOURNAL.md
-→ preservadas mediante la historia del proyecto
+→ investigación únicamente
+  si sobrevive fundamento positivo
 ```
+
+---
