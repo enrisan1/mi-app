@@ -6266,3 +6266,206 @@ La decisión deberá derivarse del estado global vigente del proyecto y no del
 mero hecho de haber alcanzado el primer resultado estratégico.
 
 ---
+
+# Cierre de `LE-001` por cumplimiento de su objetivo estratégico
+
+## Fecha
+
+31/08/2026
+
+## Situación de partida
+
+La consolidación y propagación de `CT-LE001-01` había establecido:
+
+```text
+OT-CTLE001-001
+✔ cerrada
+✔ A — Trayectoria completa con incidencia positiva local
+
+CT-LE001-01
+✔ primera trayectoria humana integrada
+  consolidada dentro del alcance actual de LE-001
+
+LE-001
+✔ primer resultado estratégico alcanzado
+
+destino posterior de LE-001
+→ todavía no decidido
+```
+
+La cuestión pendiente era independiente del resultado empírico:
+
+> ¿qué estatuto posterior está justificado para `LE-001` después de haber
+> alcanzado su primer resultado estratégico?
+
+## Evaluación del objetivo de la línea
+
+`LE-001` había sido adoptada para obtener evidencia suficiente que permitiera:
+
+```text
+identificar
++
+justificar
++
+construir
++
+observar
+```
+
+una primera trayectoria humana coherente de extremo a extremo dentro del
+futuro producto.
+
+Ese objetivo quedó realizado mediante `CT-LE001-01` y
+`OT-CTLE001-001`.
+
+La evaluación estableció:
+
+```text
+identificación
+✔
+
+justificación
+✔
+
+reconstrucción extremo a extremo
+✔
+
+condiciones realizativas necesarias
+✔
+
+ejercicio mediante artefacto
+✔
+
+uso humano real
+✔
+
+evidencia posterior
+✔
+
+primera trayectoria humana integrada
+✔
+
+primer resultado estratégico
+✔
+```
+
+## Evaluación de dependencias restantes
+
+Se examinó si el cumplimiento del primer resultado dejaba una obligación
+interna todavía pendiente de `LE-001`.
+
+No se estableció como dependencia necesaria:
+
+```text
+generalizar CT-LE001-01
+→ no
+
+realizar una segunda observación
+→ no
+
+obtener una segunda trayectoria
+→ no
+
+modificar R-U2-M1
+→ no
+
+derivar una nueva realización
+→ no
+
+derivar Architecture
+→ no
+```
+
+Estas actuaciones pueden resultar justificables en estados futuros, pero su
+mera posibilidad no prolonga el objetivo de `LE-001`.
+
+La expresión `primer resultado estratégico` tampoco establece por sí misma un
+segundo resultado obligatorio de la línea.
+
+## Decisión
+
+La condición que justificó la existencia de `LE-001` ha quedado satisfecha y no
+se ha identificado una dependencia interna pendiente cuya resolución resulte
+necesaria para completar ese mismo objetivo.
+
+Por tanto:
+
+```text
+LE-001
+→ cerrada por cumplimiento
+  del objetivo estratégico establecido
+```
+
+El cierre es relativo al alcance de la línea.
+
+No constituye:
+
+```text
+cierre del proyecto
+→ no
+
+generalización de CT-LE001-01
+→ no
+
+suficiencia universal de R-U2-M1
+→ no
+
+declaración de innecesariedad general de Architecture
+→ no
+
+adopción de una línea sucesora
+→ no
+```
+
+## Estado resultante
+
+```text
+LE-001
+✔ objetivo estratégico satisfecho
+✔ primer resultado estratégico alcanzado
+✔ cerrada por cumplimiento
+
+CT-LE001-01
+✔ primera trayectoria humana integrada
+  consolidada dentro del alcance actual
+→ generalización no establecida
+
+R-U2-M1
+→ ninguna modificación derivada
+
+Architecture
+→ todavía no derivada en general
+→ ninguna necesidad adicional derivada
+  por CT-LE001-01
+
+siguiente línea estratégica
+→ ninguna actualmente establecida
+
+actuación posterior automáticamente derivada
+→ ninguna
+```
+
+## Punto de reanudación
+
+El cierre de `LE-001` deja al proyecto sin una línea estratégica sucesora
+automáticamente derivada.
+
+La siguiente actuación deberá comenzar, si existe fundamento para ello, mediante
+una nueva evaluación del estado global posterior al cierre.
+
+La pregunta de reanudación pasa a ser:
+
+```text
+estado global posterior a LE-001
+↓
+¿existe una diferencia, necesidad, pérdida,
+oportunidad o compromiso suficientemente establecido
+que justifique una nueva línea estratégica?
+```
+
+La ausencia de una respuesta positiva constituye un estado válido.
+
+No deberá seleccionarse una nueva línea únicamente para mantener continuidad
+temporal del trabajo.
+
+---

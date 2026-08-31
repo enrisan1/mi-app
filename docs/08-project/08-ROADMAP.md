@@ -619,6 +619,104 @@ Una investigación independiente podrá continuar en paralelo cuando sus
 resultados no constituyan una dependencia lógica necesaria de la trayectoria
 que vaya a construirse.
 
+## 4.9 Cierre de `LE-001`
+
+`LE-001` fue adoptada para obtener evidencia suficiente que permitiera
+identificar, justificar, construir y observar una primera trayectoria humana
+coherente de extremo a extremo dentro del futuro producto.
+
+El criterio de primer resultado estratégico definido por la propia línea quedó
+satisfecho mediante:
+
+```text
+CT-LE001-01
++
+OT-CTLE001-001
+```
+
+La trayectoria permitió reconstruir:
+
+```text
+situación humana
+        ↓
+diferencia suficientemente establecida
+        ↓
+compromisos suficientes
+        ↓
+condiciones realizativas necesarias
+        ↓
+arquitectura mínima
+        ↓
+artefacto integrado
+        ↓
+uso
+        ↓
+evidencia posterior
+```
+
+La evaluación posterior estableció:
+
+```text
+primer resultado estratégico de LE-001
+✔ alcanzado
+
+objetivo explícito de LE-001
+✔ satisfecho dentro de su alcance
+
+dependencia interna necesaria todavía pendiente
+→ ninguna establecida
+
+generalización de CT-LE001-01
+→ no establecida
+→ no necesaria para resolver el objetivo de LE-001
+
+nueva necesidad de Architecture
+→ no derivada
+
+modificación de R-U2-M1
+→ no derivada
+```
+
+No existe fundamento para mantener `LE-001` vigente únicamente por la
+posibilidad de obtener nuevas observaciones, generalizaciones, trayectorias o
+realizaciones.
+
+Tales posibilidades requerirían fundamento positivo propio y no constituyen
+dependencias internas del objetivo que justificó la línea.
+
+Por tanto:
+
+```text
+LE-001
+→ cerrada por cumplimiento
+  del objetivo estratégico establecido
+```
+
+El cierre no significa:
+
+```text
+proyecto terminado
+→ no
+
+CT-LE001-01 generalizada
+→ no
+
+R-U2-M1 establecida como solución general
+→ no
+
+Architecture general innecesaria
+→ no
+
+nueva línea estratégica derivada
+→ no
+```
+
+El cierre de `LE-001` no determina automáticamente la siguiente actuación del
+proyecto.
+
+Cualquier nueva línea estratégica deberá justificarse mediante una evaluación
+posterior del estado global y disponer de fundamento positivo independiente.
+
 ---
 
 # 5. Relación con otros documentos
@@ -785,9 +883,19 @@ ROADMAP.md
 → no determina por sí mismo funcionalidades concretas
 
 línea estratégica concreta vigente
-→ LE-001
-→ convergencia empírica hacia
-  una primera trayectoria humana integrada
+→ ninguna actualmente establecida
+
+LE-001
+→ cerrada por cumplimiento
+  del objetivo estratégico establecido
+→ primera trayectoria humana integrada
+  consolidada dentro del alcance actual
+→ primer resultado estratégico alcanzado
+→ ninguna dependencia interna necesaria
+  todavía pendiente
+→ generalización no establecida
+→ ninguna actuación posterior
+  automáticamente derivada
 
 fundamento de LE-001
 → visión vigente orientada
@@ -884,11 +992,12 @@ Architecture
   de esa trayectoria
 
 destino posterior de LE-001
-→ todavía no decidido
-→ alcanzar el primer resultado estratégico
-  no deriva automáticamente cierre,
-  continuación ni sustitución de la línea
+→ cierre por cumplimiento establecido
 
+siguiente línea estratégica
+→ ninguna actualmente establecida
+→ deberá contar con fundamento positivo propio
+→ no se deriva automáticamente del cierre de LE-001
 líneas históricas anteriores
 → no declaradas falsas
 → vigencia estratégica actual no demostrada

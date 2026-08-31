@@ -1293,9 +1293,33 @@ Por tanto:
 primer resultado estratégico de LE-001
 → alcanzado
 
-destino posterior de LE-001
-→ todavía no decidido
+objetivo estratégico explícito de LE-001
+→ satisfecho dentro de su alcance
+
+dependencia interna pendiente
+→ ninguna establecida
+
+LE-001
+→ cerrada por cumplimiento
+
+siguiente línea estratégica
+→ ninguna actualmente establecida
 ```
+
+La evaluación posterior del estado de la línea determinó que el resultado
+alcanzado satisface el objetivo que justificó `LE-001`.
+
+No se identificó una dependencia interna cuya resolución fuera necesaria para
+completar ese objetivo.
+
+La generalización de `CT-LE001-01`, nuevas trayectorias, nuevas realizaciones o
+una eventual derivación de Architecture permanecen como posibilidades
+condicionadas a fundamento propio y no como continuaciones internas pendientes
+de `LE-001`.
+
+Por tanto, `LE-001` queda cerrada por cumplimiento dentro de su alcance.
+
+El cierre no establece por sí mismo una línea estratégica sucesora.
 
 Podrán coexistir varias investigaciones cuando cada una disponga de fundamento
 propio y sus dependencias permanezcan explícitas.
@@ -1948,7 +1972,19 @@ Trayectoria humana integrada
       dentro del alcance actual de LE-001
     → generalización no establecida
     ✔ primer resultado estratégico de LE-001 alcanzado
-    → destino posterior de LE-001 todavía no decidido
+    ✔ objetivo explícito de LE-001 satisfecho
+    ✔ LE-001 cerrada por cumplimiento
+    → ninguna dependencia interna pendiente establecida
+    → siguiente línea estratégica no establecida
+
+    LE-001
+    ✔ primera trayectoria humana integrada obtenida
+    ✔ primer resultado estratégico alcanzado
+    ✔ objetivo estratégico satisfecho dentro de su alcance
+    ✔ cerrada por cumplimiento
+    → generalización de CT-LE001-01 no establecida
+    → ninguna nueva actuación automáticamente derivada
+    → ninguna línea sucesora actualmente establecida
 
 Design Journal
     ✔ responsabilidad vigente
