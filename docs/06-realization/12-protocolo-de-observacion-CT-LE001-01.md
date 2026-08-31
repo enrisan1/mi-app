@@ -3,12 +3,12 @@
 ## Estado
 
 **Identificador:** `POT-CTLE001-01`
-**Naturaleza:** protocolo local de observación de una trayectoria humana candidata.
+**Naturaleza:** protocolo local de observación de `CT-LE001-01`, formulado durante su estatuto de trayectoria candidata.
 **Trayectoria observada:** `CT-LE001-01`.
 **Origen de la trayectoria:** situación empírica aparecida durante `OU-RU2M1-003`.
 **Compromiso de Product relacionado:** `PV-001`.
 **Realización instrumental inicial:** `R-U2-M1`.
-**Estado:** protocolo derivado; pendiente de primera aplicación formal.
+**Estado:** primera aplicación formal completada mediante `OT-CTLE001-001`; resultado `A — Trayectoria completa con incidencia positiva local`; repetición no derivada; suficiencia general no establecida.
 
 ---
 
@@ -1039,5 +1039,46 @@ si existe fundamento positivo
 
 Ninguna conclusión sobre Architecture, nueva realización o modificación de
 Product deberá anticiparse al resultado empírico.
+
+---
+
+# 27. Primera aplicación formal
+
+La primera aplicación formal del protocolo se realizó mediante:
+
+```text
+OT-CTLE001-001
+```
+
+La aplicación completó la trayectoria prevista y obtuvo:
+
+```text
+A — Trayectoria completa con incidencia positiva local
+```
+
+Las seis condiciones realizativas de `CT-LE001-01` fueron satisfechas
+localmente.
+
+No apareció una insuficiencia del protocolo que justifique su modificación.
+
+---
+
+# 28. Estado posterior a la primera aplicación
+
+```text
+POT-CTLE001-01
+✔ primera aplicación formal completada
+✔ trayectoria completa observada
+✔ incidencia positiva local observada
+✔ ninguna insuficiencia instrumental nueva establecida
+○ suficiencia general no establecida
+→ segunda aplicación no derivada automáticamente
+```
+
+La primera aplicación aporta evidencia suficiente para la decisión local que
+la justificaba.
+
+No existe actualmente fundamento para repetirla únicamente con el objetivo de
+aumentar precisión o confianza.
 
 ---

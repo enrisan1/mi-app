@@ -3,10 +3,10 @@
 ## Estado
 
 **Identificador:** `CT-LE001-01`
-**Naturaleza:** trayectoria humana candidata de `LE-001`.
+**Naturaleza:** trayectoria humana integrada de `LE-001`, inicialmente seleccionada como candidata.
 **Origen empírico:** `OU-RU2M1-003`.
 **Compromiso de Product relacionado:** `PV-001`.
-**Estado:** candidata seleccionada; reconstrucción extremo a extremo establecida; condiciones realizativas mínimas derivadas; trayectoria completa todavía no observada.
+**Estado:** primera trayectoria humana integrada consolidada dentro del alcance actual de `LE-001`; primera corroboración empírica completa obtenida mediante `OT-CTLE001-001`; generalización no establecida.
 **Realización inicialmente disponible para su ejercicio:** `R-U2-M1`.
 
 ---
@@ -699,8 +699,6 @@ la posible aplicación de la categoría C.
 
 No se reparará `L` durante la observación.
 
-
-
 ---
 
 # 16. Estado resultante
@@ -768,5 +766,87 @@ evaluar la incidencia posterior
 El resultado de esa observación deberá conservarse como nueva evidencia antes
 de decidir cualquier investigación, modificación realizativa o derivación
 arquitectónica.
+
+---
+
+# 18. Reconsolidación tras `OT-CTLE001-001`
+
+La primera aplicación formal de `POT-CTLE001-01` fue realizada mediante:
+
+```text
+OT-CTLE001-001
+```
+
+La aplicación produjo:
+
+```text
+A — Trayectoria completa con incidencia positiva local
+```
+
+y permitió observar:
+
+```text
+S1
+↓
+L
+↓
+separación
+↓
+S2(L)
+↓
+L utilizada
+↓
+correspondencia reencontrada
+↓
+actuación posterior efectiva
+↓
+incidencia humana positiva local
+```
+
+Las condiciones:
+
+```text
+CR-CT01-01
+CR-CT01-02
+CR-CT01-03
+CR-CT01-04
+CR-CT01-05
+CR-CT01-06
+```
+
+quedaron satisfechas localmente en la aplicación.
+
+La diferencia humana reducida previamente a `PV-001` apareció efectivamente:
+
+```text
+sin L
+→ volver a realizar la búsqueda
+
+con L
+→ continuar desde
+  una localización anterior
+```
+
+La evidencia disponible resulta suficiente para cambiar el estatuto de
+`CT-LE001-01` desde:
+
+```text
+candidata seleccionada
+```
+
+a:
+
+```text
+primera trayectoria humana integrada
+consolidada dentro del alcance actual de LE-001
+```
+
+La consolidación es local.
+
+No demuestra generalidad respecto de personas, materiales, duraciones,
+cantidades de aportaciones o contextos de uso.
+
+No se deriva actualmente necesidad de nueva Architecture, nueva realización ni
+modificación de `R-U2-M1`.
 
 ---
