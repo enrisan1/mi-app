@@ -6811,3 +6811,316 @@ No deberá abrirse una nueva línea únicamente para mantener continuidad tempor
 del trabajo.
 
 ---
+
+# Cierre de la prueba empírica de incorporación, organización y recuperación de información
+
+## Fecha
+
+04/09/2026
+
+## Situación de partida
+
+La evaluación global posterior al cierre de `LE-001` había concluido sin
+identificar fundamento positivo suficiente para seleccionar una nueva línea
+estratégica.
+
+El estado resultante era:
+
+```text
+LE-001
+→ cerrada por cumplimiento
+
+línea estratégica concreta vigente
+→ ninguna
+
+actuación posterior automáticamente derivada
+→ ninguna
+```
+
+Este resultado permitía que nuevas situaciones humanas produjeran evidencia,
+pero impedía convertir la mera continuidad temporal del proyecto en fundamento
+para abrir una nueva línea.
+
+Con posterioridad apareció una actividad independiente que la persona ya
+deseaba realizar: procesar vídeos seleccionados para extraer, conservar,
+organizar y recuperar información considerada relevante.
+
+La actividad no fue adoptada como nueva línea estratégica ni como prueba de una
+funcionalidad previamente postulada.
+
+## Desarrollo de la actividad
+
+La actividad comenzó con una trayectoria sencilla:
+
+```text
+vídeo
+↓
+transcripción
+↓
+lectura
+↓
+extracción
+↓
+organización
+↓
+conservación
+```
+
+Durante el uso aparecieron diferencias que obligaron a modificar localmente el
+procedimiento.
+
+Entre ellas se encontraron:
+
+```text
+necesidad de regresar al contexto de origen
+→ conservación de correspondencia temporal
+
+múltiples aportaciones de una misma fuente
+→ reconocimiento de procedencia común
+
+fuente y elaboración posterior
+→ conservación distinguible
+
+aportaciones relacionadas
+→ relaciones explícitas
+
+preguntas producidas durante la interpretación
+→ distinción respecto de lo afirmado por la fuente
+
+recuperación posterior sin conocer la ubicación exacta
+→ búsqueda desde indicios
+```
+
+Las soluciones concretas utilizadas —Markdown, enlaces, callouts, colores,
+archivos temáticos o mecanismos de búsqueda de Obsidian— permanecieron
+contingentes.
+
+No fueron trasladadas automáticamente a requisitos del futuro producto.
+
+## Estabilización
+
+La prueba se mantuvo abierta mientras el uso continuó produciendo modificaciones
+estructurales relevantes.
+
+El criterio local de cierre combinó:
+
+```text
+trayectoria completa ejercida
++
+recuperación posterior comprobada
++
+ausencia de problema bloqueante
++
+tres vídeos consecutivos
+sin modificación estructural importante
+```
+
+Se procesaron seis vídeos.
+
+Los primeros permitieron descubrir y corregir el procedimiento.
+
+Los tres últimos fueron procesados consecutivamente sin necesidad de una nueva
+modificación estructural importante.
+
+Por tanto:
+
+```text
+prueba
+✔ cerrada positivamente
+  dentro de su alcance
+
+estabilización local
+✔ obtenida
+
+generalización
+→ no establecida
+```
+
+## Evidencia consolidada
+
+La revisión final redujo los mecanismos instrumentales concretos y conservó seis
+resultados empíricos realizativamente relevantes:
+
+```text
+RE-IOR-01
+→ multiplicidad distinguible
+
+RE-IOR-02
+→ correspondencia de procedencia
+
+RE-IOR-03
+→ relaciones entre aportaciones
+
+RE-IOR-04
+→ pluralidad contextual
+
+RE-IOR-05
+→ recuperación desde indicios
+
+RE-IOR-06
+→ derivación distinguible
+```
+
+La justificación completa y los límites de estos resultados quedaron
+consolidados en:
+
+`docs/06-realization/14-evidencia-empirica-incorporacion-organizacion-recuperacion.md`
+
+Su estatuto actual es:
+
+```text
+evidencia empírica
+✔
+
+relevancia realizativa local
+✔
+
+condiciones universales
+→ no establecidas
+
+irreducibilidad mutua
+→ no establecida
+
+generalización
+→ no establecida
+```
+
+## Reducción y consecuencias
+
+La diferencia humana observada continuó siendo explicable mediante `PV-001`.
+
+No apareció un valor humano independiente.
+
+Por tanto:
+
+```text
+PV-001
+✔ suficiente dentro del alcance observado
+
+PV-002
+→ no derivado
+
+modificación de Product
+→ no derivada
+```
+
+La nueva trayectoria resultó más rica que la realizada por `R-U2-M1`.
+
+Quedó establecido localmente que `R-U2-M1` no reproduce conjuntamente
+multiplicidad, procedencia, relaciones, pluralidad contextual, recuperación y
+derivación tal como aparecieron en esta actividad.
+
+Este resultado no constituye una deficiencia de `R-U2-M1`, que mantiene el
+alcance para el que fue derivada.
+
+Por tanto:
+
+```text
+R-U2-M1
+✔ conserva su alcance vigente
+
+insuficiencia para reproducir conjuntamente
+la trayectoria más rica observada
+✔ establecida localmente
+
+modificación
+→ no derivada
+
+reapertura
+→ no derivada
+```
+
+La actividad pudo completarse suficientemente mediante infraestructura externa
+disponible.
+
+No se observó una pérdida humana que obligara al proyecto a reproducir
+actualmente esas capacidades mediante una realización propia.
+
+Tampoco apareció una necesidad arquitectónica concreta.
+
+Por tanto:
+
+```text
+nueva realización propia obligatoria
+→ no derivada
+
+Architecture
+→ no derivada
+
+nueva línea estratégica
+→ no justificada por esta prueba
+```
+
+## Decisión
+
+La prueba queda cerrada con resultado positivo dentro de su alcance.
+
+`RE-IOR-01` ... `RE-IOR-06` quedan disponibles como evidencia empírica para
+futuras decisiones.
+
+La nueva evidencia modifica el estado empírico disponible, pero no invalida la
+evaluación global anterior ni proporciona por sí misma fundamento suficiente
+para abrir una nueva línea estratégica.
+
+## Estado resultante
+
+```text
+prueba de incorporación,
+organización y recuperación
+✔ cerrada positivamente
+
+RE-IOR-01 ... RE-IOR-06
+✔ evidencia empírica disponible
+
+PV-001
+✔ suficiente para explicar
+  la diferencia humana observada
+
+PV-002
+→ no derivado
+
+R-U2-M1
+✔ conserva su alcance
+✔ insuficiencia local para reproducir conjuntamente
+  la trayectoria más rica observada
+→ modificación no derivada
+
+instrumentación externa
+✔ suficiente provisionalmente
+  dentro del alcance observado
+
+Architecture
+→ no derivada
+
+línea estratégica concreta vigente
+→ ninguna
+
+actuación posterior automáticamente derivada
+→ ninguna
+```
+
+## Punto de reanudación
+
+El procesamiento de vídeos puede continuar como actividad humana ordinaria.
+
+Su mera repetición no constituye una nueva investigación del proyecto.
+
+`RE-IOR-01` ... `RE-IOR-06` podrán intervenir en futuras decisiones únicamente
+cuando exista un fundamento positivo suficiente.
+
+Una nueva actuación deberá surgir de nueva evidencia, una situación humana,
+una pérdida concreta, una necesidad no satisfecha, una incompatibilidad, un
+nuevo compromiso, una oportunidad suficientemente justificada u otro
+fundamento positivo independiente.
+
+Hasta entonces:
+
+```text
+línea estratégica concreta vigente
+→ ninguna
+
+ausencia de actuación derivada
+→ estado válido
+```
+
+---

@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 28/08/2026
+**Fecha de actualización:** 04/09/2026
 
 ## Índice
 
@@ -2085,5 +2085,172 @@ una pérdida que deba repararse.
 Una actuación posterior deberá justificarse mediante nueva evidencia o mediante
 una reevaluación que establezca una pérdida, necesidad, incompatibilidad,
 oportunidad, compromiso u otro fundamento positivo suficiente.
+
+## Evidencia empírica posterior: incorporación, organización y recuperación
+
+Con posterioridad a la evaluación global posterior al cierre de `LE-001`
+se realizó una actividad humana real de incorporación, elaboración,
+organización y recuperación de información procedente de vídeos.
+
+La actividad no fue seleccionada como nueva línea estratégica ni como prueba de
+una funcionalidad previamente diseñada.
+
+Partió de una necesidad independiente de uso y utilizó provisionalmente
+infraestructura externa disponible.
+
+Su desarrollo y cierre quedan consolidados en:
+
+`docs/06-realization/14-evidencia-empirica-incorporacion-organizacion-recuperacion.md`
+
+La prueba quedó cerrada con resultado positivo dentro de su alcance y permitió
+observar los siguientes resultados realizativamente relevantes:
+
+```text
+RE-IOR-01
+→ multiplicidad distinguible
+
+RE-IOR-02
+→ correspondencia de procedencia
+
+RE-IOR-03
+→ relaciones entre aportaciones
+
+RE-IOR-04
+→ pluralidad contextual
+
+RE-IOR-05
+→ recuperación desde indicios
+
+RE-IOR-06
+→ derivación distinguible
+```
+
+Los resultados fueron obtenidos mediante actividad humana real y ejercidos
+conjuntamente dentro de la trayectoria observada.
+
+Su estatuto actual es:
+
+```text
+evidencia empírica positiva
+✔
+
+relevancia realizativa local
+✔
+
+condiciones realizativas universales
+→ no establecidas
+
+irreducibilidad mutua
+→ no establecida
+
+generalización
+→ no establecida
+```
+
+La diferencia humana observada continúa siendo explicable mediante `PV-001`.
+
+Por tanto:
+
+```text
+PV-001
+→ suficiente dentro del alcance observado
+
+nuevo valor humano independiente
+→ no establecido
+
+PV-002
+→ no derivado
+
+modificación de Product
+→ no derivada
+```
+
+La prueba estableció además que `R-U2-M1`, manteniendo intacto el alcance para el
+que fue derivada, no reproduce conjuntamente la trayectoria más rica observada,
+que incluye multiplicidad, correspondencias, relaciones, pluralidad contextual
+y recuperación posterior.
+
+Este resultado no establece una deficiencia de `R-U2-M1` ni deriva su
+modificación o reapertura.
+
+Por tanto:
+
+```text
+R-U2-M1
+✔ mantiene su alcance vigente
+
+insuficiencia de R-U2-M1
+para reproducir conjuntamente
+la trayectoria más rica observada
+✔ establecida localmente
+
+modificación de R-U2-M1
+→ no derivada
+
+reapertura de R-U2-M1
+→ no derivada
+```
+
+La actividad pudo completarse suficientemente mediante infraestructura externa
+disponible.
+
+No se observó una pérdida o bloqueo humano que exigiera que el proyecto
+reprodujera actualmente mediante una realización propia las capacidades
+ejercidas durante la prueba.
+
+Por tanto:
+
+```text
+nueva realización propia obligatoria
+→ no derivada
+
+nueva responsabilidad arquitectónica
+→ no derivada
+
+Architecture
+→ continúa sin derivarse en general
+
+nueva línea estratégica
+→ no justificada por esta prueba
+```
+
+El estado global posterior a esta nueva evidencia queda así:
+
+```text
+prueba de incorporación,
+organización y recuperación
+✔ cerrada positivamente dentro de su alcance
+
+RE-IOR-01 ... RE-IOR-06
+✔ evidencia empírica disponible
+
+PV-001
+✔ suficiente para la diferencia humana observada
+
+R-U2-M1
+✔ mantiene intacto su alcance
+
+instrumentación externa
+✔ suficiente provisionalmente
+  dentro del alcance observado
+
+línea estratégica concreta vigente
+→ ninguna
+
+siguiente actuación automáticamente derivada
+→ ninguna
+```
+
+La aparición de nueva evidencia posterior a la evaluación global anterior no
+invalida aquella evaluación.
+
+Establece un nuevo estado empírico que ha sido evaluado respecto de sus
+consecuencias actuales y que tampoco proporciona, por sí mismo, fundamento
+positivo suficiente para abrir una nueva línea estratégica.
+
+Una actuación posterior continuará requiriendo nueva evidencia, una pérdida
+concreta, una necesidad no satisfecha, una incompatibilidad, un nuevo compromiso,
+una oportunidad suficientemente justificada u otro fundamento positivo
+independiente.
 
 ---
