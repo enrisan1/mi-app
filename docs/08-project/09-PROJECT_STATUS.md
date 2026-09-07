@@ -2254,3 +2254,220 @@ una oportunidad suficientemente justificada u otro fundamento positivo
 independiente.
 
 ---
+
+## Evidencia experimental posterior: primera prueba ciega de `R-EXP-RCA-01`
+
+Con posterioridad al cierre de la prueba de incorporación, organización y
+recuperación se investigó una dificultad realizativa concreta:
+
+```text
+aportación candidata
+        +
+corpus documental amplio
+        ↓
+recuperación de antecedentes pertinentes
+        ↓
+comparación humana previa
+```
+
+La cuestión fue reducida respecto de Product y de las exigencias estructurales.
+
+No se derivó una nueva vertical de Product ni una nueva responsabilidad
+arquitectónica.
+
+Se formuló:
+
+```text
+H-RCA-02
+— Recuperación comparativa previa
+```
+
+y se construyó la realización experimental:
+
+```text
+R-EXP-RCA-01
+— Recuperación previa para comparación de aportaciones
+```
+
+El prototipo quedó congelado mediante:
+
+```text
+45b6f80
+experiment(realization): freeze RCA-01 retrieval prototype
+```
+
+y fue sometido posteriormente a una primera prueba ciega con documentación no
+utilizada durante su construcción ni durante sus comprobaciones iniciales.
+
+El resultado completo quedó consolidado en:
+
+```text
+docs/06-realization/15-prueba-ciega-r-exp-rca-01.md
+```
+
+mediante:
+
+```text
+d958c7e
+docs(realization): record first blind test of R-EXP-RCA-01
+```
+
+La prueba proporcionó evidencia positiva local de que la recuperación previa
+puede apoyar de forma efectiva la comparación humana de nuevas aportaciones con
+antecedentes existentes.
+
+Al mismo tiempo reveló insuficiencias concretas:
+
+```text
+F-RCA-01
+→ priorización insuficiente
+
+F-RCA-02
+→ sobrevaloración de unidades breves
+
+F-RCA-03
+→ insuficiencia de una unidad candidata física fija
+
+F-RCA-04
+→ correspondencias distribuidas o reformuladas
+  insuficientemente priorizadas
+```
+
+El estado actual de la realización queda así:
+
+```text
+R-EXP-RCA-01
+✔ construida
+✔ versión congelada
+✔ primera prueba ciega completada
+
+utilidad local
+✔ corroborada
+
+apoyo a comparación humana
+✔ corroborado
+
+mejora respecto de búsqueda textual simple
+✔ observada en casos concretos
+
+H-RCA-02
+→ apoyo empírico parcial
+
+suficiencia general
+→ no establecida
+
+fiabilidad de priorización
+→ insuficiente
+
+unidad candidata fija
+→ insuficiente
+
+ausencia de falsos negativos prácticos
+→ no establecida
+```
+
+La comparación humana mostró además que:
+
+```text
+recuperación de antecedentes
+        ≠
+decisión de incorporación
+```
+
+Una aportación cuyo contenido está parcial o ampliamente representado puede
+conservar utilidad por diferencias de:
+
+```text
+información;
+precisión;
+procedencia;
+evidencia;
+formulación;
+perspectiva;
+combinación de elementos;
+o utilidad para una elaboración posterior.
+```
+
+La primera prueba produjo decisiones humanas distintas:
+
+```text
+episodio de los Welser
+→ conservar
+
+juicio de residencia
+→ conservar
+
+significado social y jurídico de «blanco»
+→ conservar
+
+protección jurídica reforzada
+→ decisión no concluyente
+```
+
+La ausencia de una decisión binaria en el último caso se considera un resultado
+válido de la comparación y no una deficiencia de la observación.
+
+Los fallos corroborados proporcionan fundamento positivo para investigar, si se
+continúa esta línea, una revisión experimental localizada relativa a:
+
+```text
+priorización;
+
+tratamiento de unidades breves;
+
+candidatas de extensión variable;
+
+correspondencias distribuidas o reformuladas.
+```
+
+Esto no constituye una obligación de construir inmediatamente una segunda
+versión.
+
+No se deriva del resultado:
+
+```text
+modificación de Product
+→ no
+
+PV-002
+→ no
+
+nueva exigencia estructural
+→ no
+
+modificación de Architecture
+→ no
+
+nueva línea estratégica
+→ no
+```
+
+Por tanto, el estado estratégico global permanece:
+
+```text
+línea estratégica concreta vigente
+→ ninguna
+
+siguiente actuación automáticamente derivada
+→ ninguna
+```
+
+El documento utilizado en la primera prueba ciega queda disponible desde ahora
+como:
+
+```text
+caso diagnóstico
++
+caso de regresión
+```
+
+pero no como material ciego para una versión que haya sido modificada a partir de
+sus resultados.
+
+Si se construye una versión posterior, deberá congelarse antes de una nueva
+prueba ciega y utilizar documentación no empleada durante su diseño.
+
+La revisión experimental localizada queda justificada como posibilidad por los
+fallos observados, pero su ejecución inmediata no queda prescrita.
+
+---

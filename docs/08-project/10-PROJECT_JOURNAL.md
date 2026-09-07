@@ -7124,3 +7124,568 @@ ausencia de actuación derivada
 ```
 
 ---
+
+# Primera prueba ciega de `R-EXP-RCA-01`
+
+## Fecha
+
+07/09/2026
+
+## Situación de partida
+
+La prueba empírica de incorporación, organización y recuperación de información
+había quedado cerrada positivamente dentro de su alcance y había proporcionado:
+
+```text
+RE-IOR-01
+→ multiplicidad distinguible
+
+RE-IOR-02
+→ correspondencia de procedencia
+
+RE-IOR-03
+→ relaciones entre aportaciones
+
+RE-IOR-04
+→ pluralidad contextual
+
+RE-IOR-05
+→ recuperación desde indicios
+
+RE-IOR-06
+→ derivación distinguible
+```
+
+La actividad posterior sobre un corpus documental amplio permitió identificar una
+dificultad realizativa más concreta:
+
+```text
+nueva aportación
+        +
+corpus previo amplio
+        ↓
+necesidad de recuperar
+antecedentes pertinentes
+        ↓
+comparación previa
+        ↓
+decisión humana de incorporación
+```
+
+La dificultad no consistía únicamente en encontrar coincidencias textuales.
+
+Durante la actividad habían aparecido situaciones de:
+
+```text
+reformulación;
+cobertura parcial;
+información distribuida;
+datos contradictorios;
+ejemplos adicionales;
+y diferencias de perspectiva o formulación.
+```
+
+La cuestión fue reducida respecto de Product y de las exigencias estructurales.
+
+No se identificó una nueva vertical de Product ni una nueva exigencia
+estructural.
+
+La cuestión restante quedó situada en Realization:
+
+> comprobar si una realización experimental podía recuperar antecedentes
+> suficientemente relevantes para facilitar una comparación humana previa.
+
+## Hipótesis experimental
+
+Se formuló:
+
+```text
+H-RCA-02
+— Recuperación comparativa previa
+```
+
+según la cual una combinación de recuperación textual y recuperación por
+similitud de contenido podía presentar un conjunto manejable de antecedentes
+relevantes para apoyar una comparación humana previa a la incorporación.
+
+La hipótesis no atribuía al mecanismo la responsabilidad de decidir:
+
+```text
+verdad;
+novedad semántica;
+redundancia;
+incorporación;
+eliminación;
+redacción;
+ni posición documental.
+```
+
+Estas operaciones permanecieron fuera de la realización y bajo interpretación
+humana.
+
+## Construcción de `R-EXP-RCA-01`
+
+Se construyó:
+
+```text
+R-EXP-RCA-01
+— Recuperación previa para comparación de aportaciones
+```
+
+mediante el prototipo:
+
+```text
+experiments/r-exp-rca-01/r_exp_rca01.py
+```
+
+La realización combinaba:
+
+```text
+recuperación textual
+        +
+similitud de contenido
+        ↓
+fusión y priorización
+        ↓
+conjunto reducido
+de antecedentes
+        ↓
+comparación humana
+```
+
+Antes de realizar la prueba ciega se congeló la versión mediante:
+
+```text
+45b6f80
+experiment(realization): freeze RCA-01 retrieval prototype
+```
+
+Se conservaron además:
+
+```text
+r_exp_rca01.py
+r_exp_rca01.py.sha256
+requirements.txt
+```
+
+La huella SHA-256 fue comprobada correctamente antes de la observación.
+
+No se modificó el prototipo durante la primera pasada de la prueba.
+
+## Primera prueba ciega
+
+Se utilizó como documentación nueva:
+
+```text
+Justicia real en la américa española - César pérez guevara.md
+```
+
+La documentación no había sido utilizada durante la construcción ni durante las
+comprobaciones iniciales de la versión congelada.
+
+El corpus de comparación continuó siendo:
+
+```text
+¿Y tú de quién eres?
+```
+
+El procedimiento mantuvo separadas:
+
+```text
+calidad de recuperación
+        ≠
+decisión humana de incorporación
+```
+
+La auditoría posterior del corpus permitió comprobar si los antecedentes que no
+habían aparecido:
+
+```text
+no existían
+```
+
+o si:
+
+```text
+existían
+pero habían quedado
+demasiado abajo en el ranking.
+```
+
+## Resultados técnicos positivos
+
+La prueba proporcionó evidencia positiva local de:
+
+```text
+coincidencias textuales directas
+✔
+
+recuperación de antecedentes parciales
+✔
+
+recuperación de algunas reformulaciones
+✔
+
+recuperación de información distribuida
+✔ parcial
+
+exposición de antecedentes contradictorios
+✔
+
+utilidad del foco humano opcional
+✔
+```
+
+La recuperación previa permitió en varios casos realizar la comparación sin
+recorrer manualmente de forma extensa el corpus.
+
+## Fallos observados
+
+La prueba reveló también insuficiencias concretas que no habían quedado
+suficientemente expuestas durante las comprobaciones iniciales.
+
+### F-RCA-01 — Priorización insuficiente
+
+Se observaron antecedentes:
+
+```text
+pertinentes
++
+correctamente indexados
+```
+
+que aparecían:
+
+```text
+demasiado abajo
+        ↓
+fuera del conjunto manejable
+        ↓
+falso negativo práctico
+```
+
+### F-RCA-02 — Sobrevaloración de unidades breves
+
+Encabezados o fragmentos muy cortos podían recibir una puntuación elevada por su
+alta coincidencia léxica relativa y desplazar párrafos sustantivos más útiles.
+
+### F-RCA-03 — Unidad candidata física insuficiente
+
+La prueba mostró simultáneamente que:
+
+```text
+línea física
+→ puede ser demasiado pequeña
+```
+
+y que:
+
+```text
+párrafo completo
+→ puede ser demasiado grande
+```
+
+La unidad humana relevante para la comparación no coincide necesariamente con
+una unidad física fija del archivo.
+
+### F-RCA-04 — Correspondencia distribuida o reformulada insuficientemente priorizada
+
+En determinados casos el material pertinente existía de forma distribuida o
+mediante formulaciones distintas, pero el mecanismo no consiguió situarlo
+siempre entre los primeros resultados.
+
+## Evaluación humana de casos
+
+### Welser
+
+La nueva aportación fue conservada.
+
+El corpus ya contenía parte importante del contenido, pero la nueva documentación
+aportaba:
+
+```text
+precisión cronológica
++
+formulación más concisa
++
+utilidad expresiva
+```
+
+La decisión humana habría sido conservarla incluso con una recuperación perfecta
+de los antecedentes.
+
+### Juicio de residencia
+
+La información sobre el origen del mecanismo aportó diferencia informativa
+positiva.
+
+La enumeración posterior de funcionarios estaba ya más ampliamente representada,
+pero la nueva formulación resultó más concisa y pedagógicamente más útil.
+
+La decisión fue conservar ambas aportaciones.
+
+### Significado de «blanco»
+
+Los antecedentes trataban principalmente la posición jurídica del indígena.
+
+La nueva aportación proporcionaba una perspectiva complementaria social e
+individual sobre quién podía quedar comprendido dentro de determinadas
+categorías de igualdad.
+
+La decisión fue conservarla.
+
+### Protección jurídica reforzada
+
+El contenido principal estaba ya suficientemente representado.
+
+La diferencia se limitaba principalmente a una identificación más concreta de la
+disposición legal.
+
+Su valor fue considerado positivo pero pequeño.
+
+La decisión global quedó:
+
+```text
+no concluyente
+```
+
+porque la utilidad dependía de poder conservar únicamente el fragmento
+diferencial sin necesidad de mantener necesariamente todo el párrafo.
+
+## Resultado humano adicional
+
+La actividad mostró que:
+
+```text
+contenido ya existente
+        ≠
+aportación necesariamente inútil
+```
+
+Una aportación puede conservar utilidad por:
+
+```text
+información nueva;
+precisión;
+procedencia;
+evidencia;
+formulación;
+perspectiva;
+combinación de elementos;
+o utilidad para elaboración posterior.
+```
+
+Por tanto:
+
+```text
+recuperar antecedentes
+        ≠
+detectar duplicados
+
+detectar semejanza
+        ≠
+decidir incorporación
+```
+
+## Resultado de `H-RCA-02`
+
+La prueba proporcionó:
+
+```text
+recuperación relevante
+✔ localmente
+
+cantidad manejable
+✔ en varios casos
+
+utilidad para comparación previa
+✔
+
+reducción de búsqueda manual
+✔ en determinados casos
+
+foco humano
+✔ útil localmente
+```
+
+pero también:
+
+```text
+antecedentes pertinentes fuera del top mostrado
+✘
+
+ruido por unidades breves
+✘
+
+falsos negativos prácticos
+✘
+
+dependencia ocasional de foco humano
+✘
+```
+
+Por tanto:
+
+```text
+H-RCA-02
+→ apoyo empírico parcial
+
+suficiencia general
+→ no establecida
+```
+
+## Resultado de `R-EXP-RCA-01`
+
+El resultado global quedó establecido como:
+
+```text
+utilidad local
+✔ corroborada
+
+apoyo a comparación humana
+✔ corroborado
+
+mejora respecto de búsqueda textual simple
+✔ en casos observados
+
+fiabilidad de priorización
+→ insuficiente
+
+unidad candidata fija
+→ insuficiente
+
+ausencia de falsos negativos prácticos
+→ no establecida
+
+suficiencia de R-EXP-RCA-01
+→ no establecida
+```
+
+La realización queda caracterizada como:
+
+```text
+útil
++
+insuficiente
++
+experimentalmente informativa
+```
+
+## Consolidación documental
+
+El resultado completo quedó consolidado en:
+
+```text
+docs/06-realization/15-prueba-ciega-r-exp-rca-01.md
+```
+
+mediante:
+
+```text
+d958c7e
+docs(realization): record first blind test of R-EXP-RCA-01
+```
+
+## Reducción y consecuencias
+
+La prueba no derivó:
+
+```text
+modificación de Product
+→ no
+
+PV-002
+→ no
+
+nueva exigencia estructural
+→ no
+
+modificación de Architecture
+→ no
+
+nueva línea estratégica
+→ no
+```
+
+Los fallos observados pertenecen a la realización experimental concreta.
+
+Sí existe fundamento positivo para investigar, si se continúa esta línea, una
+revisión localizada dirigida únicamente a los fallos corroborados:
+
+```text
+priorización;
+unidades breves;
+unidad candidata variable;
+correspondencias distribuidas o reformuladas.
+```
+
+Esto no constituye obligación de construir inmediatamente una segunda versión.
+
+## Estado resultante
+
+```text
+R-EXP-RCA-01
+✔ construida
+✔ versión congelada
+✔ primera prueba ciega ejecutada
+
+utilidad local
+✔ corroborada
+
+suficiencia
+→ no establecida
+
+F-RCA-01
+✔ corroborado
+
+F-RCA-02
+✔ corroborado
+
+F-RCA-03
+✔ corroborado
+
+F-RCA-04
+✔ corroborado
+
+H-RCA-02
+→ apoyo empírico parcial
+
+revisión experimental localizada
+→ justificable
+
+construcción inmediata de v2
+→ no obligatoria
+
+Product
+→ sin modificación
+
+Architecture
+→ sin modificación
+
+línea estratégica concreta vigente
+→ ninguna
+```
+
+## Punto de reanudación
+
+El documento utilizado en esta prueba deja de ser ciego para futuras versiones de
+`R-EXP-RCA-01`.
+
+Puede utilizarse desde ahora como:
+
+```text
+caso diagnóstico
++
+caso de regresión
+```
+
+Si se construye una nueva versión, deberá congelarse antes de una segunda prueba
+ciega y utilizar documentación nueva no empleada durante su diseño.
+
+El resultado actual justifica una posible revisión localizada del prototipo, pero
+no prescribe su ejecución inmediata.
+
+Una actuación posterior deberá derivarse de los fallos corroborados o de nuevo
+fundamento positivo independiente.
+
+---
