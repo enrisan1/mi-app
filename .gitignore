@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 coverage/
+
+# Entorno virtual local de R-EXP-RCA-01
+experiments/r-exp-rca-01/.venv/
