@@ -7689,3 +7689,111 @@ Una actuación posterior deberá derivarse de los fallos corroborados o de nuevo
 fundamento positivo independiente.
 
 ---
+
+# Primera aplicación de `PM-10` — Integración de `R-U2-M1` en la entrada ordinaria del producto
+
+**Fecha:** 2026-09-09
+
+## Fundamento
+
+Tras la incorporación de `PM-10 — Desarrollo guiado por necesidad productiva`, se examinó el estado material del producto para identificar una necesidad concreta de construcción.
+
+La comprobación del punto ordinario de entrada mostró que `R-U2-M1`, primera realización contingente destinada al uso y ya validada dentro del alcance de `PV-001`, permanecía aislada del recorrido ordinario de la aplicación, que continuaba mostrando la Todo App.
+
+La diferencia material identificada fue:
+
+```text
+realización válida disponible
+        ≠
+realización accesible desde
+la entrada ordinaria del producto
+```
+
+Esta diferencia proporcionó fundamento suficiente para una construcción localizada.
+
+## Hipótesis mínima de realización
+
+Se adoptó como hipótesis mínima hacer accesible `R-U2-M1` desde el punto normal de entrada de la aplicación sin introducir navegación, router, nuevas capas, servicios, stores ni abstracciones arquitectónicas generales.
+
+La integración debía reutilizar la realización existente sin convertir sus mecanismos contingentes en requisitos generales del producto.
+
+## Actuación realizada
+
+`src/App.tsx` dejó de constituir la interfaz de la Todo App y pasó a montar directamente `ResumeExperience`.
+
+La trayectoria ejecutable quedó:
+
+```text
+main.tsx
+↓
+App
+↓
+ResumeExperience
+↓
+R-U2-M1
+```
+
+Se añadió además:
+
+```text
+src/App.test.tsx
+```
+
+para comprobar explícitamente que la entrada de la aplicación hace accesible la experiencia proporcionada por `R-U2-M1`.
+
+No fue necesario modificar `ResumeExperience`, `resumeModel`, `localStorageResumeRepository`, `PV-001`, Product ni Architecture.
+
+El código histórico de la Todo App permanece conservado, pero deja de constituir el recorrido ordinario de ejecución del producto.
+
+## Validación
+
+La suite global superó:
+
+```text
+25 archivos de test
+205 tests
+```
+
+El build de producción también fue superado.
+
+La aplicación fue ejecutada mediante su entrada ordinaria y mostró `R-U2-M1` en estado de reanudación, recuperando correctamente una aportación persistida durante una ejecución anterior.
+
+Quedó así comprobada físicamente la trayectoria:
+
+```text
+entrada ordinaria
+↓
+App
+↓
+R-U2-M1
+```
+
+## Resultado
+
+La primera diferencia material seleccionada bajo `PM-10` ha sido realizada y validada.
+
+La secuencia aplicada fue:
+
+```text
+necesidad material del producto
+        ↓
+hipótesis mínima
+        ↓
+contraste con compromisos consolidados
+        ↓
+ausencia de bloqueo material conocido
+        ↓
+construcción
+        ↓
+validación automática
+        ↓
+validación en ejecución
+```
+
+No fue necesario abrir una nueva investigación teórica, de Product o de Architecture.
+
+La actuación no establece que `R-U2-M1` constituya el producto definitivo ni convierte React, `localStorage`, su interfaz o sus mecanismos internos en decisiones arquitectónicas generales.
+
+Constituye exclusivamente la primera integración validada de una realización vigente en el recorrido ordinario del producto bajo el criterio establecido por `PM-10`.
+
+---
