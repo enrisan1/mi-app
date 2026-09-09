@@ -51,10 +51,12 @@ export function ResumeExperience() {
   if (result !== null) {
     return (
       <section>
-        <h1>De antes</h1>
+        <h1>Retomar</h1>
 
+        <h2>Aportación anterior</h2>
         <p aria-label="Antecedente">{result.previous}</p>
 
+        <h2>Qué has hecho ahora</h2>
         <p aria-label="Actuación actual">{result.current}</p>
 
         <button
@@ -71,9 +73,12 @@ export function ResumeExperience() {
 
   return (
     <section>
-      <h1>De antes</h1>
+      <h1>Retomar</h1>
 
+      <h2>Aportación anterior</h2>
       <p aria-label="Aportación anterior">{restoredPrevious}</p>
+
+      <h2>Qué puedes hacer ahora</h2>
 
       <label>
         Aportación actual

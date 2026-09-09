@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 09/09/2026
+**Fecha de actualización:** 10/09/2026
 
 ## Índice
 
@@ -137,10 +137,22 @@ El uso posterior de esta versión produjo además una petición humana de
 orientación respecto del estado del proyecto, de la actuación presente y de su
 posible contribución al proceso.
 
-La investigación actualmente abierta ha distinguido provisionalmente una
-dimensión de orientación situacional y otra de orientación evaluativa. No ha
-derivado hasta ahora un nuevo compromiso de Product, `PV-002`, una modificación
-adicional de `R-U2-M1` ni una arquitectura software.
+La investigación posterior redujo esta petición en una dimensión de orientación
+situacional y otra de orientación evaluativa.
+
+La dimensión situacional ha sido realizada y validada dentro del alcance local
+observado. La construcción incorpora orientación general en la entrada
+ordinaria del producto y una distinción visible, dentro de `R-U2-M1`, entre la
+aportación anterior y la actuación disponible o recién realizada. Esta última
+modificación quedó consolidada mediante `E-RU2M1-10`.
+
+La dimensión evaluativa permanece abierta porque todavía no se han establecido
+criterios semánticos y evaluativos suficientes para determinar legítimamente
+cómo una actuación contribuye o beneficia al proyecto.
+
+Este resultado no deriva `PV-002`, un nuevo compromiso de Product, una
+modificación de `PV-001`, una nueva responsabilidad semántica de `R-U2-M1` ni
+una arquitectura software general.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -1624,28 +1636,90 @@ El uso posterior de esta versión produjo una nueva petición humana de
 orientación respecto del estado del proyecto, de la actuación presente y de
 su posible contribución al proceso en curso.
 
-La investigación localizada de esta petición ha permitido distinguir
-provisionalmente entre:
+La investigación localizada de esta petición permitió reducirla en dos
+dimensiones diferenciadas:
 
 ```text
 orientación situacional
 → reconocer dónde se encuentra la persona
-  y qué actuación está realizando
+  y distinguir lo procedente de una actuación anterior
+  de lo que puede realizar ahora
 
 orientación evaluativa
 → determinar cómo una actuación puede
   contribuir o beneficiar al proyecto
 ```
 
-La primera diferencia no queda absorbida por `PV-001` y es compatible con los
-compromisos teóricos vigentes, aunque requiere una semántica localizada de la
-situación o proyecto.
+La orientación situacional no queda absorbida por `PV-001`, pero resultó
+compatible con los compromisos teóricos vigentes y pudo ser abordada sin
+introducir interpretación semántica de las aportaciones.
 
-La segunda es igualmente compatible en principio, pero requiere criterios
-semánticos y evaluativos todavía no establecidos para determinar legítimamente
-qué constituye una contribución o beneficio.
+La construcción mínima adoptada separó dos niveles locales de orientación.
 
-La investigación no ha derivado hasta este punto:
+En la entrada ordinaria del producto, `App` hace visible el contexto general:
+
+```text
+Dónde estás
+→ primera realización contingente destinada al uso del proyecto
+```
+
+Dentro de la situación de reanudación, `ResumeExperience` distingue
+explícitamente:
+
+```text
+Retomar
+
+Aportación anterior
+X
+
+Qué puedes hacer ahora
+
+Aportación actual
+[Y]
+```
+
+y, una vez producida la actuación:
+
+```text
+Retomar
+
+Aportación anterior
+X
+
+Qué has hecho ahora
+Y
+```
+
+La modificación de `ResumeExperience` quedó consolidada mediante
+`E-RU2M1-10`.
+
+La validación posterior obtuvo:
+
+```text
+ResumeExperience
+→ 24 / 24 tests
+
+suite global
+→ 25 archivos de test
+→ 208 / 208 tests
+
+build de producción
+→ superado
+
+git diff --check
+→ sin errores
+```
+
+La superficie fue además ejercida manualmente desde la entrada ordinaria del
+producto. La observación proporcionó evidencia positiva local de que la
+orientación general resultaba reconocible como informativa y de que la
+separación entre lo ya realizado y lo que quedaba por hacer era ahora más
+clara y distinguible.
+
+Este resultado establece únicamente suficiencia local para la situación
+observada.
+
+No establece:
 
 ```text
 PV-002
@@ -1657,25 +1731,35 @@ nuevo compromiso de Product
 modificación de PV-001
 → no
 
-modificación adicional de R-U2-M1
+nueva responsabilidad semántica de R-U2-M1
 → no
 
-arquitectura software
+necesidad general de esta presentación
+→ no
+
+arquitectura software general
 → no
 ```
 
-Durante esta investigación se comprobó además que `PROJECT_STATUS.md`, cuya
+Sí se produjo una modificación localizada de la presentación observable de
+`R-U2-M1`, sin alterar `resumeModel`, el mecanismo contingente de persistencia
+ni la estructura realizativa `X → Y`.
+
+Durante la investigación se comprobó además que `PROJECT_STATUS.md`, cuya
 responsabilidad consiste en declarar el estado vigente y servir como punto de
 referencia para retomar el desarrollo, no incorporaba todavía los resultados
 obtenidos el 09/09/2026.
 
-Su actualización queda justificada por esta dependencia material de la
+Su actualización quedó justificada por esta dependencia material de la
 orientación situacional y no por una obligación periódica de modificar la
 documentación.
 
-La situación de continuación queda por tanto abierta en esta investigación
-localizada, sin presuponer todavía su resolución realizativa ni su estatuto
-como compromiso de Product.
+La dimensión situacional de la petición queda satisfecha dentro del alcance
+local observado.
+
+La dimensión evaluativa permanece abierta: todavía no se han establecido
+criterios semánticos y evaluativos suficientes para determinar legítimamente
+qué constituye una contribución o beneficio para el proyecto.
 
 ---
 
@@ -2109,9 +2193,16 @@ No demuestra:
 Las dos primeras aplicaciones de `PM-10` quedan completadas dentro de su
 alcance.
 
-La petición humana de orientación aparecida durante el uso posterior no forma
-parte de estos objetivos completados y permanece actualmente bajo investigación
-localizada.
+La petición humana de orientación aparecida durante el uso posterior fue
+reducida en dos dimensiones.
+
+La orientación situacional ha sido realizada y validada dentro del alcance local
+observado, incluida la modificación de presentación consolidada mediante
+`E-RU2M1-10`.
+
+La orientación evaluativa permanece bajo investigación localizada porque aún
+no se han establecido criterios semánticos y evaluativos suficientes para
+determinar legítimamente cómo una actuación contribuye o beneficia al proyecto.
 
 ---
 
@@ -2443,7 +2534,7 @@ Trayectoria humana integrada
     Investigación productiva actualmente localizada
     ✔ petición humana de orientación aparecida durante uso efectivo
     ✔ no absorbida completamente por PV-001
-    ✔ reducción provisional entre orientación situacional y evaluativa
+    ✔ reducción entre orientación situacional y evaluativa establecida
     ✔ compatibilidad teórica examinada
     ✔ dependencia de una representación vigente del estado localizada
     ✔ PROJECT_STATUS.md identificado como cuerpo responsable de ese estado
@@ -2451,7 +2542,10 @@ Trayectoria humana integrada
     ✔ PROJECT_STATUS.md actualizado respecto de los resultados del 09/09/2026
     → PV-002 no derivada
     → nuevo compromiso de Product no derivado
-    → modificación adicional de R-U2-M1 no derivada
+    ✔ modificación localizada de presentación de R-U2-M1 realizada y validada
+    ✔ E-RU2M1-10 incorporada
+    → nueva responsabilidad semántica de R-U2-M1 no derivada
+    → necesidad general de esta presentación no derivada
     → arquitectura software no derivada
 
 Design Journal
@@ -2494,7 +2588,8 @@ Evolución posterior a la evaluación global de LE-001
     ✔ R-U2-M1 accesible desde la entrada ordinaria
     ✔ nueva necesidad local surgida durante uso satisfecha
     ✔ nueva petición humana de orientación localizada
-    ↺ investigación focal actualmente abierta
+    ✔ orientación situacional realizada y validada dentro del alcance local observado
+    ↺ orientación evaluativa permanece abierta
 ```
 
 La evaluación global posterior al cierre de `LE-001` examinó si el estado

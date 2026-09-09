@@ -28,7 +28,7 @@ describe("R-U2-M1 ResumeExperience", () => {
         }),
       ).toBeInTheDocument();
 
-      expect(screen.queryByText(/de antes/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/retomar/i)).not.toBeInTheDocument();
     });
 
     it("does not persist an empty X", async () => {
@@ -165,7 +165,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.queryByRole("heading", {
-          name: /de antes/i,
+          name: /retomar/i,
         }),
       ).not.toBeInTheDocument();
     });
@@ -198,7 +198,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       render(<ResumeExperience />);
 
-      expect(screen.getByText(/de antes/i)).toBeInTheDocument();
+      expect(screen.getByText(/retomar/i)).toBeInTheDocument();
 
       expect(screen.getByLabelText(/aportación anterior/i).textContent).toBe(
         "Resultado anterior",
@@ -216,7 +216,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       render(<ResumeExperience />);
 
-      expect(screen.queryByText(/de antes/i)).not.toBeInTheDocument();
+      expect(screen.queryByText(/retomar/i)).not.toBeInTheDocument();
 
       expect(
         screen.getByRole("button", {
@@ -233,6 +233,39 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(screen.getByLabelText(/aportación anterior/i).textContent).toBe(
         "  X  ",
       );
+    });
+
+    it("makes the previous contribution and the current action visibly distinguishable", () => {
+      localStorage.setItem(
+        "ru2m1.previous",
+        "Y de prueba para comprobar la reanudación",
+      );
+
+      render(<ResumeExperience />);
+
+      expect(
+        screen.getByRole("heading", {
+          name: /retomar/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(screen.getByText(/^aportación anterior$/i)).toBeInTheDocument();
+
+      expect(
+        screen.getByText("Y de prueba para comprobar la reanudación"),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.getByRole("heading", {
+          name: /qué puedes hacer ahora/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+      ).toBeInTheDocument();
     });
   });
 
@@ -296,7 +329,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.getByRole("heading", {
-          name: /de antes/i,
+          name: /retomar/i,
         }),
       ).toBeInTheDocument();
 
@@ -381,6 +414,12 @@ describe("R-U2-M1 ResumeExperience", () => {
           name: /crear/i,
         }),
       );
+
+      expect(
+        screen.getByRole("heading", {
+          name: /qué has hecho ahora/i,
+        }),
+      ).toBeInTheDocument();
 
       expect(screen.getByLabelText(/antecedente/i).textContent).toBe(
         "Se decidió auditar el documento A",
