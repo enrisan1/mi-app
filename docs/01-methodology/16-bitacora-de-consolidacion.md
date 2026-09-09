@@ -757,3 +757,101 @@ La incorporación de `PM-9` tampoco implica que deban abrirse ahora varias líne
 Toda nueva actuación seguirá requiriendo fundamento positivo independiente suficiente.
 
 ---
+
+# Ficha de bitácora
+
+## Documento: 00-protocolo-de-trabajo.md
+
+## Fecha:
+
+2026-09-09
+
+## Motivo:
+
+Incorporación del principio metodológico:
+
+`PM-10 — Desarrollo guiado por necesidad productiva`.
+
+La modificación responde a la necesidad de impedir que el crecimiento del núcleo teórico y documental se convierta en condición indefinida para el avance del producto.
+
+Se establece que el desarrollo orientado a la construcción deberá partir de necesidades materiales del producto, utilizando los compromisos teóricos, estructurales y metodológicos consolidados como marco de contraste.
+
+## Resultado:
+
+Se incorpora `PM-10` al conjunto de principios metodológicos generales.
+
+El nuevo principio establece la secuencia:
+
+```text
+necesidad de producto
+        ↓
+hipótesis mínima de realización o arquitectura
+        ↓
+contraste con compromisos consolidados
+        ↓
+¿existe un bloqueo material?
+   ├─ no → construir
+   └─ sí → investigar el conflicto
+                ↓
+          revisar producto,
+          realización/arquitectura
+          o fundamento teórico
+                ↓
+          continuar o descartar
+```
+
+La investigación deja de constituir una condición abierta e indefinida previa a la construcción.
+
+Cuando no exista un bloqueo material conocido y la propuesta resulte compatible con los compromisos consolidados, se procederá a construir.
+
+Las nuevas investigaciones deberán abrirse de forma localizada cuando una incompatibilidad o incertidumbre material impida continuar, y deberán limitarse a resolver el conflicto correspondiente.
+
+El núcleo teórico y documental conserva su función de fundamento, contraste, restricción y aprendizaje, pero deja de actuar como generador exclusivo de las actuaciones posteriores del proyecto.
+
+## Auditorías superadas:
+
+- competencia metodológica de `00-protocolo-de-trabajo.md`;
+- compatibilidad con `PM-1 — Descubrir antes de diseñar`;
+- compatibilidad con `PM-6 — Justificación de toda incorporación`;
+- compatibilidad y complementariedad con `PM-7 — Preferencia por la simplicidad`;
+- irreducibilidad respecto de `PM-9 — Separación entre dependencia lógica y orden temporal`;
+- compatibilidad con el principio de estabilidad documental;
+- compatibilidad con `CT-1 — Derivación del marco teórico`;
+- auditoría estructural de encabezados;
+- equilibrio de cercas Markdown;
+- ausencia de restos editoriales;
+- `git diff --check` sin incidencias.
+
+## Observaciones:
+
+Durante la auditoría se realizaron dos precisiones localizadas sobre la formulación inicial de `PM-10`:
+
+1. `El avance del proyecto...` se precisó como `El avance orientado a la construcción del producto...`, evitando convertir toda actuación legítima del proyecto en una actuación necesariamente originada por una necesidad productiva.
+
+2. La condición `no existe una incertidumbre material que bloquee su realización` se sustituyó por `no existe un bloqueo material conocido que impida su realización`, haciendo coincidir la formulación normativa con el criterio general de bloqueo material.
+
+No fue necesario modificar `PM-1`, `PM-6`, `PM-7`, `PM-9`, el principio de estabilidad ni `CT-1`.
+
+El protocolo resultante queda en:
+
+```text
+429 líneas
+SHA-256:
+e20625ae6d5b9daca907724c4cfc4517e029e25b02e9617113a42d06a66aa498
+```
+
+La incorporación de `PM-10` modifica el criterio operativo de avance del proyecto:
+
+```text
+necesidad material del producto
+→ propuesta mínima
+→ contraste con fundamentos consolidados
+→ construcción si no existe bloqueo
+→ investigación focalizada únicamente cuando el bloqueo aparezca
+```
+
+Este resultado no elimina la investigación previa necesaria ni subordina automáticamente la teoría al producto.
+
+Establece que teoría, producto y realización deberán contrastarse mutuamente durante el desarrollo y que la ausencia de nuevas derivaciones teóricas no constituye, por sí sola, una razón para impedir la construcción.
+
+---

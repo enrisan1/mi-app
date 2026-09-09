@@ -121,6 +121,50 @@ autoriza la apertura de líneas carentes de fundamento propio.
 
 ---
 
+## PM-10 — Desarrollo guiado por necesidad productiva
+
+El avance orientado a la construcción del producto deberá partir de necesidades materiales del producto y no de la mera posibilidad de ampliar el núcleo teórico, documental o técnico.
+
+Ante una necesidad de producto suficientemente identificada se formulará la hipótesis mínima de realización o arquitectura capaz de satisfacerla y se contrastará con los compromisos teóricos, estructurales y metodológicos ya consolidados.
+
+Si la propuesta es compatible con dichos compromisos y no existe un bloqueo material conocido que impida su realización, se procederá a construir.
+
+La ausencia de una derivación teórica adicional no constituye por sí misma un impedimento para la construcción.
+
+Cuando el contraste revele una incompatibilidad o una incertidumbre material, se abrirá únicamente la investigación necesaria para determinar si debe revisarse:
+
+- la necesidad o formulación del producto;
+- la hipótesis de realización o arquitectura;
+- o el fundamento teórico correspondiente.
+
+La investigación deberá permanecer localizada en el conflicto que impide avanzar y finalizará cuando exista fundamento suficiente para continuar la construcción o descartar la propuesta.
+
+El núcleo teórico y documental actuará como marco de contraste, restricción y aprendizaje del desarrollo, pero no como generador exclusivo de las actuaciones posteriores del proyecto.
+
+En consecuencia:
+
+```text
+necesidad de producto
+        ↓
+hipótesis mínima de realización o arquitectura
+        ↓
+contraste con compromisos consolidados
+        ↓
+¿existe un bloqueo material?
+   ├─ no → construir
+   └─ sí → investigar el conflicto
+                ↓
+          revisar producto,
+          realización/arquitectura
+          o fundamento teórico
+                ↓
+          continuar o descartar
+```
+
+La construcción podrá producir nueva evidencia relevante para el núcleo teórico. Esa evidencia se investigará y consolidará cuando corresponda, sin exigir que el núcleo anticipe exhaustivamente las situaciones que todavía no han aparecido durante el desarrollo.
+
+---
+
 # Consolidación documental
 
 La construcción, revisión, congelación, reapertura y registro
