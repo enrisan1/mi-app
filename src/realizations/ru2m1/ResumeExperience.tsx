@@ -56,6 +56,15 @@ export function ResumeExperience() {
         <p aria-label="Antecedente">{result.previous}</p>
 
         <p aria-label="Actuación actual">{result.current}</p>
+
+        <button
+          type="button"
+          onClick={() => {
+            localStorageResumeRepository.savePrevious(result.current);
+          }}
+        >
+          Terminar por ahora
+        </button>
       </section>
     );
   }

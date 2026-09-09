@@ -544,5 +544,39 @@ describe("R-U2-M1 ResumeExperience", () => {
         "Y producido posteriormente",
       );
     });
+    it("allows Y produced in S2(X) to become the antecedent of a later resumed situation", async () => {
+      const user = userEvent.setup();
+
+      localStorage.setItem("ru2m1.previous", "X");
+
+      const secondExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "Y producido posteriormente",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /crear/i,
+        }),
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      );
+
+      secondExecution.unmount();
+
+      render(<ResumeExperience />);
+
+      expect(screen.getByLabelText(/aportación anterior/i).textContent).toBe(
+        "Y producido posteriormente",
+      );
+    });
   });
 });

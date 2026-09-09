@@ -7797,3 +7797,246 @@ La actuación no establece que `R-U2-M1` constituya el producto definitivo ni co
 Constituye exclusivamente la primera integración validada de una realización vigente en el recorrido ordinario del producto bajo el criterio establecido por `PM-10`.
 
 ---
+
+# Segunda aplicación de `PM-10` — Continuidad posterior de una aportación producida
+
+**Fecha:** 2026-09-09
+
+## Fundamento
+
+Después de integrar `R-U2-M1` en la entrada ordinaria del producto, se utilizó
+la realización directamente para localizar la siguiente necesidad material
+mediante observación de uso.
+
+Con un antecedente restaurado `X`, la persona pudo producir libremente una
+nueva aportación `Y` dentro de `S2(X)`.
+
+La ejecución alcanzaba entonces el estado:
+
+```text
+S2(X)
+↓
+producción de Y
+↓
+Y observable
+↓
+estado terminal
+```
+
+Después de producir `Y` no existía ninguna actuación mediante la cual la
+persona pudiera decidir dejar esa aportación disponible para una ejecución
+posterior.
+
+La insuficiencia observada quedó formulada localmente como:
+
+```text
+NP-002
+```
+
+La necesidad consistía en permitir que una aportación producida durante una
+situación de reanudación pudiera quedar disponible para intervenir como
+antecedente en una ejecución posterior.
+
+Esta necesidad no derivaba por sí misma:
+
+- un historial;
+- una cadena automática de aportaciones;
+- navegación;
+- nuevas capas;
+- una nueva arquitectura;
+- una nueva vertical de Product;
+- ni un nuevo tipo de situación conceptual.
+
+## Hipótesis mínima de realización
+
+Se formuló como hipótesis mínima reutilizar el mecanismo contingente de
+persistencia ya existente en `R-U2-M1`.
+
+Después de producir una aportación válida `Y`, la persona debía disponer de una
+actuación explícita:
+
+```text
+[Terminar por ahora]
+```
+
+mediante la cual `Y` pudiera quedar disponible para una ejecución posterior.
+
+La trayectoria propuesta fue:
+
+```text
+S2(X)
+↓
+producción de Y
+↓
+aceptación de Y para después
+↓
+interrupción
+↓
+nueva ejecución
+↓
+Y restaurado como antecedente
+↓
+nueva situación de reanudación
+```
+
+La nueva ejecución no constituye un tercer tipo de situación.
+
+`Y` cambia de papel entre ejecuciones: pasa de aportación actual producida a
+antecedente restaurado de una nueva aplicación de la misma estructura.
+
+## Reproducción automática de la insuficiencia
+
+Antes de modificar el código se añadió una prueba que exigía que una `Y`
+producida en `S2(X)` pudiera quedar disponible para una ejecución posterior.
+
+La prueba falló exactamente en el punto observado durante el uso:
+
+```text
+Unable to find an accessible element
+with the role "button"
+and name /terminar por ahora/i
+```
+
+El estado disponible en ese momento contenía únicamente:
+
+```text
+De antes
+Antecedente: X
+Actuación actual: Y
+```
+
+La insuficiencia humana quedó así reproducida mediante una prueba automática.
+
+## Actuación realizada
+
+Se modificó exclusivamente:
+
+```text
+src/realizations/ru2m1/ResumeExperience.tsx
+```
+
+para añadir, después de la producción de `Y`, la actuación:
+
+```text
+[Terminar por ahora]
+```
+
+La actuación reutiliza:
+
+```text
+localStorageResumeRepository.savePrevious(...)
+```
+
+para conservar la aportación producida como próximo antecedente.
+
+No fue necesario introducir:
+
+- nuevas abstracciones;
+- nuevos repositorios;
+- servicios;
+- stores;
+- navegación;
+- historial;
+- ni Architecture.
+
+Se amplió además:
+
+```text
+src/realizations/ru2m1/ResumeExperience.test.tsx
+```
+
+con una prueba de la trayectoria posterior.
+
+## Validación
+
+La validación específica obtuvo:
+
+```text
+23 / 23 tests superados
+```
+
+La suite global obtuvo:
+
+```text
+25 archivos de test superados
+206 tests superados
+```
+
+El build de producción fue superado y `git diff --check` no produjo errores.
+
+La realización fue además ejercida manualmente desde la entrada ordinaria del
+producto.
+
+La secuencia observada fue:
+
+```text
+antecedente X restaurado
+↓
+producción de Y
+↓
+Terminar por ahora
+↓
+recarga / nueva ejecución
+↓
+Y aparece como Aportación anterior
+```
+
+Por tanto quedó corroborado en uso real que una aportación producida puede
+quedar disponible como antecedente de una ejecución posterior.
+
+## Incidencia documental
+
+La modificación cambió el estado vigente de `R-U2-M1`, por lo que se actualizó
+su documento canónico:
+
+```text
+docs/06-realization/00-R-U2-M1.md
+```
+
+La actualización incorporó:
+
+```text
+E-RU2M1-09 — Reaplicación local desde una aportación producida
+CP-RU2M1-12
+```
+
+Las evidencias y conclusiones históricas anteriores permanecieron intactas.
+
+En particular, `CP-RU2M1-11` continúa describiendo correctamente el alcance de
+la investigación previa de reiteración mediante composición humana.
+
+## Resultado
+
+La segunda necesidad material identificada bajo `PM-10` ha sido realizada y
+validada.
+
+La secuencia aplicada fue:
+
+```text
+uso ordinario del producto
+↓
+insuficiencia material observable
+↓
+hipótesis mínima
+↓
+prueba automática inicialmente roja
+↓
+modificación localizada
+↓
+prueba verde
+↓
+validación global
+↓
+validación humana
+↓
+actualización documental localizada
+```
+
+El resultado demuestra una reaplicación local de la estructura vigente de
+`R-U2-M1`.
+
+No demuestra reiterabilidad arbitraria, utilidad general, historial, cadena
+automática de aportaciones ni una obligación equivalente para otras
+realizaciones.
+
+---
