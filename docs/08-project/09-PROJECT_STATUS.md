@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 04/09/2026
+**Fecha de actualización:** 09/09/2026
 
 ## Índice
 
@@ -85,6 +85,62 @@ indisponibilidad de `X` no requiere necesariamente una preparación previa
 La investigación quedó cerrada sin derivar una nueva condición realizativa
 irreducible, una modificación de `R-U2-M1`, una nueva responsabilidad normativa,
 una modificación de Product ni una arquitectura software.
+
+Con posterioridad se incorporó a Methodology el principio
+`PM-10 — Desarrollo guiado por necesidad productiva`, que permite orientar la
+construcción desde necesidades materiales del producto y reservar la
+investigación adicional para los bloqueos materiales que aparezcan durante ese
+avance.
+
+La primera aplicación de `PM-10` permitió localizar que `R-U2-M1`, pese a
+constituir ya una realización contingente destinada al uso, no era accesible
+desde la entrada ordinaria del producto.
+
+La necesidad fue satisfecha mediante una integración mínima de
+`ResumeExperience` en dicha entrada, sin introducir navegación, nuevas capas ni
+una arquitectura software general.
+
+El uso efectivo posterior permitió localizar una segunda necesidad: una
+aportación `Y` producida en una situación de reanudación podía quedar disponible
+como resultado actual, pero no podía ser aceptada intencionalmente para
+constituir el antecedente de una reanudación posterior.
+
+La realización fue modificada mínimamente y validada para permitir:
+
+```text
+antecedente X restaurado
+↓
+situación de reanudación
+↓
+producción de Y
+↓
+aceptación de Y para después
+↓
+interrupción
+↓
+nueva ejecución
+↓
+Y restaurada como antecedente
+↓
+nueva situación de reanudación
+```
+
+La nueva evidencia quedó consolidada en `R-U2-M1` mediante `E-RU2M1-09` y
+`CP-RU2M1-12`.
+
+El resultado demuestra una reaplicación local desde una aportación producida,
+pero no establece reiterabilidad arbitraria o general, historial, cadena
+automática de aportaciones, una modificación de `PV-001`, una nueva vertical de
+Product ni una arquitectura software general.
+
+El uso posterior de esta versión produjo además una petición humana de
+orientación respecto del estado del proyecto, de la actuación presente y de su
+posible contribución al proceso.
+
+La investigación actualmente abierta ha distinguido provisionalmente una
+dimensión de orientación situacional y otra de orientación evaluativa. No ha
+derivado hasta ahora un nuevo compromiso de Product, `PV-002`, una modificación
+adicional de `R-U2-M1` ni una arquitectura software.
 
 El proyecto ha completado una etapa extensa de investigación, consolidación teórica, derivación arquitectónica y reorganización documental.
 
@@ -216,6 +272,35 @@ R-DX1-M1
         → witness experimental ejecutable
         → ninguna modificación de R-U2-M1 derivada
         → ninguna modificación de Product derivada
+        ↓
+PM-10
+        ✔ incorporado a Methodology
+        ↓
+primera necesidad material de producto
+        ✔ R-U2-M1 no accesible desde la entrada ordinaria
+        ↓
+integración ordinaria de R-U2-M1
+        ✔ completada
+        ✔ validada
+        ↓
+uso efectivo
+        ↓
+segunda necesidad material
+        ✔ continuidad posterior de Y localizada
+        ↓
+R-U2-M1
+        ✔ modificada mínimamente
+        ✔ E-RU2M1-09 incorporada
+        ✔ CP-RU2M1-12 incorporada
+        ✔ reaplicación local desde una aportación producida demostrada
+        → reiterabilidad arbitraria o general no demostrada
+        ↓
+petición humana de orientación
+        ✔ localizada durante uso efectivo
+        ✔ investigación focal abierta
+        → PV-002 no derivada
+        → nuevo compromiso de Product no derivado
+        → arquitectura software no derivada
 ```
 
 `R-U2-M1` constituye actualmente la primera realización contingente destinada al uso validada dentro del alcance establecido.
@@ -393,11 +478,34 @@ Proporciona procedimientos para:
 - consolidación;
 - reapertura;
 - separación documental;
-- y construcción de cuerpos teóricos.
+- construcción de cuerpos teóricos;
+- y desarrollo guiado por necesidad productiva.
 
 El principio CT-1 establece además el procedimiento para derivar marcos teóricos autónomos.
 
-**Estado:** estable.
+El principio `PM-10 — Desarrollo guiado por necesidad productiva` establece que
+el avance orientado a la construcción deberá partir de necesidades materiales
+del producto.
+
+Ante una necesidad suficientemente identificada deberá formularse la hipótesis
+mínima de realización o arquitectura capaz de satisfacerla y contrastarse con
+los compromisos consolidados.
+
+Si no existe un bloqueo material conocido, se procederá a construir.
+
+Cuando aparezca una incompatibilidad o incertidumbre material, se abrirá
+únicamente la investigación necesaria para resolver el conflicto que impide
+avanzar.
+
+La incorporación de `PM-10` no modifica los compromisos de Product ni establece
+una secuencia obligatoria entre Product, Engineering, Realization, Architecture
+o construcción.
+
+El principio ha sido ya ejercido mediante las primeras actuaciones de
+construcción orientadas por necesidades materiales del producto, incluida una
+necesidad aparecida durante su uso efectivo.
+
+**Estado:** estable; `PM-10` incorporado y ejercido.
 
 ---
 
@@ -658,6 +766,85 @@ una modificación de Product ni una arquitectura software.
 `R-DX1-M1` se conserva exclusivamente como witness experimental ejecutable
 dentro del alcance investigado.
 
+Con posterioridad, la incorporación de `PM-10` permitió orientar la construcción
+desde necesidades materiales del producto sin exigir una derivación teórica
+adicional cuando no existiera un bloqueo material conocido.
+
+La primera aplicación de este principio identificó que `R-U2-M1`, aunque ya
+constituía una realización destinada al uso validada, no era accesible desde la
+entrada ordinaria del producto.
+
+La realización fue integrada en dicha entrada mediante una modificación mínima
+que no introdujo navegación, nuevas capas ni una arquitectura software general.
+
+El uso efectivo posterior de esta versión integrada permitió identificar una
+nueva necesidad local: una aportación `Y` producida en una situación de
+reanudación podía quedar visible como resultado actual, pero no podía ser
+aceptada intencionalmente para quedar disponible después de una interrupción.
+
+La modificación mínima correspondiente reutilizó el mecanismo contingente de
+persistencia ya existente y permitió la trayectoria:
+
+```text
+situación de reanudación constituida desde X
+↓
+producción de Y
+↓
+aceptación de Y para después
+↓
+interrupción
+↓
+nueva ejecución
+↓
+restauración de Y como antecedente
+↓
+nueva situación de reanudación
+```
+
+La validación técnica posterior produjo:
+
+```text
+ResumeExperience
+→ 23/23 tests
+
+suite global
+→ 25 archivos de test
+→ 206/206 tests
+
+build de producción
+→ correcto
+
+git diff --check
+→ sin errores
+```
+
+La trayectoria fue además validada manualmente desde la entrada ordinaria del
+producto.
+
+La nueva evidencia quedó consolidada en `00-R-U2-M1.md` mediante:
+
+```text
+E-RU2M1-09
+→ Reaplicación local desde una aportación producida
+
+CP-RU2M1-12
+→ Y producida en una situación de reanudación puede ser aceptada para después
+  y restaurada como antecedente de una nueva situación de reanudación
+```
+
+Este resultado demuestra una reaplicación local de la estructura realizada por
+`R-U2-M1`.
+
+No establece:
+
+- reiterabilidad arbitraria o general;
+- una cadena automática de aportaciones;
+- un historial general;
+- una nueva situación conceptual distinta de las ya utilizadas;
+- una modificación de `PV-001`;
+- una ampliación de Product;
+- ni una arquitectura software general.
+
 Estado:
 
 ```text
@@ -670,7 +857,11 @@ R-U2-M1
 ✔ evidencia positiva local de incidencia reiterada por composición obtenida
 ✔ E-RU2M1-08 incorporada
 ✔ CP-RU2M1-11 incorporada
-✔ reiterabilidad interna no demostrada
+✔ integración en la entrada ordinaria del producto completada
+✔ E-RU2M1-09 incorporada
+✔ CP-RU2M1-12 incorporada
+✔ reaplicación local desde una aportación producida demostrada
+→ reiterabilidad arbitraria o general no demostrada
 ✔ ninguna realización autónoma R* derivada
 ✔ primera observación instrumental completada
 ✔ necesidad local derivada
@@ -816,8 +1007,28 @@ Los principales hitos han sido:
 - corroboración ejecutable de incidencia posterior de `Y` sin preparación
   previa `Y → X2`;
 - auditoría de suficiencia de la evidencia;
-- y clausura de la investigación sin nueva responsabilidad normativa ni
-  modificación de `R-U2-M1`, Product o Architecture.
+- clausura de la investigación sin nueva responsabilidad normativa ni
+  modificación de `R-U2-M1`, Product o Architecture;
+- incorporación de `PM-10 — Desarrollo guiado por necesidad productiva` a
+  Methodology;
+- primera aplicación de `PM-10` mediante la integración de `R-U2-M1` en la
+  entrada ordinaria del producto;
+- validación de dicha integración sin derivar navegación, nuevas capas ni una
+  arquitectura software general;
+- uso efectivo de la versión integrada y localización de una nueva necesidad
+  material relativa a la continuidad posterior de una aportación producida;
+- modificación mínima de `R-U2-M1` para permitir que una aportación `Y` producida
+  en una situación de reanudación pueda ser aceptada para después y restaurada
+  como antecedente tras una interrupción;
+- validación técnica y manual de esa trayectoria;
+- reconsolidación de `R-U2-M1` mediante `E-RU2M1-09` y `CP-RU2M1-12`;
+- obtención de evidencia de reaplicación local desde una aportación producida,
+  sin demostrar reiterabilidad arbitraria o general;
+- aparición durante el uso efectivo de una petición humana de orientación sobre
+  el estado del proyecto, la actuación presente y su posible contribución;
+- y apertura de una investigación focal de esa petición, sin derivar hasta el
+  momento `PV-002`, un nuevo compromiso de Product, una modificación adicional
+  de `R-U2-M1` ni una arquitectura software.
 
 La justificación completa del último cambio de fase se conserva en:
 
@@ -1099,9 +1310,13 @@ R-U2-M1
         ✔ evidencia positiva local de incidencia reiterada obtenida
         ✔ E-RU2M1-08 incorporada
         ✔ CP-RU2M1-11 incorporada
-        ✔ reiterabilidad interna no demostrada
+        ✔ integrada posteriormente en la entrada ordinaria del producto
+        ✔ E-RU2M1-09 incorporada
+        ✔ CP-RU2M1-12 incorporada
+        ✔ reaplicación local desde una aportación producida demostrada
+        → reiterabilidad arbitraria o general no demostrada
         ✔ ninguna realización autónoma R* derivada
-        ✔ reconsolidada documentalmente
+        ✔ reconsolidada documentalmente dentro de su alcance actual
 
 POU-RU2M1-01
         ✔ insuficiencia preobservacional local investigada
@@ -1357,6 +1572,110 @@ realizaciones no constituye por sí misma fundamento suficiente para actuar.
 
 Hasta que aparezca un fundamento de esa clase, no debe añadirse ninguna
 capacidad por mera continuación del desarrollo.
+
+Con posterioridad a este cierre se incorporó a Methodology el principio
+`PM-10 — Desarrollo guiado por necesidad productiva`.
+
+La incorporación de `PM-10` proporcionó un criterio adicional de avance:
+partir de necesidades materiales del producto, formular una hipótesis mínima
+de realización o arquitectura y construir cuando el contraste con los
+compromisos consolidados no revele un bloqueo material conocido.
+
+Su primera aplicación permitió localizar que `R-U2-M1` no era accesible desde
+la entrada ordinaria del producto.
+
+La necesidad fue satisfecha mediante una integración mínima de
+`ResumeExperience` en dicha entrada, sin derivar navegación, nuevas capas ni
+una arquitectura software general.
+
+El uso efectivo de la versión integrada permitió posteriormente identificar
+una nueva necesidad local: una aportación producida en una situación de
+reanudación debía poder ser aceptada para quedar disponible después de una
+interrupción.
+
+La realización fue modificada mínimamente y se obtuvo la trayectoria:
+
+```text
+antecedente X restaurado
+↓
+situación de reanudación
+↓
+producción de Y
+↓
+aceptación de Y para después
+↓
+interrupción
+↓
+nueva ejecución
+↓
+Y restaurada como antecedente
+↓
+nueva situación de reanudación
+```
+
+La nueva evidencia quedó consolidada mediante `E-RU2M1-09` y
+`CP-RU2M1-12`.
+
+Este resultado no establece reiterabilidad arbitraria o general, historial,
+cadena automática, una nueva vertical de Product ni una arquitectura software
+general.
+
+El uso posterior de esta versión produjo una nueva petición humana de
+orientación respecto del estado del proyecto, de la actuación presente y de
+su posible contribución al proceso en curso.
+
+La investigación localizada de esta petición ha permitido distinguir
+provisionalmente entre:
+
+```text
+orientación situacional
+→ reconocer dónde se encuentra la persona
+  y qué actuación está realizando
+
+orientación evaluativa
+→ determinar cómo una actuación puede
+  contribuir o beneficiar al proyecto
+```
+
+La primera diferencia no queda absorbida por `PV-001` y es compatible con los
+compromisos teóricos vigentes, aunque requiere una semántica localizada de la
+situación o proyecto.
+
+La segunda es igualmente compatible en principio, pero requiere criterios
+semánticos y evaluativos todavía no establecidos para determinar legítimamente
+qué constituye una contribución o beneficio.
+
+La investigación no ha derivado hasta este punto:
+
+```text
+PV-002
+→ no
+
+nuevo compromiso de Product
+→ no
+
+modificación de PV-001
+→ no
+
+modificación adicional de R-U2-M1
+→ no
+
+arquitectura software
+→ no
+```
+
+Durante esta investigación se comprobó además que `PROJECT_STATUS.md`, cuya
+responsabilidad consiste en declarar el estado vigente y servir como punto de
+referencia para retomar el desarrollo, no incorporaba todavía los resultados
+obtenidos el 09/09/2026.
+
+Su actualización queda justificada por esta dependencia material de la
+orientación situacional y no por una obligación periódica de modificar la
+documentación.
+
+La situación de continuación queda por tanto abierta en esta investigación
+localizada, sin presuponer todavía su resolución realizativa ni su estatuto
+como compromiso de Product.
 
 ---
 
@@ -1676,6 +1995,126 @@ responsabilidad normativa.
 
 ---
 
+## Primeras aplicaciones de `PM-10` orientadas por necesidad productiva
+
+La incorporación de `PM-10 — Desarrollo guiado por necesidad productiva`
+permitió reanudar la construcción a partir de necesidades materiales del
+producto sin exigir una derivación teórica adicional cuando no existiera un
+bloqueo material conocido.
+
+### Integración de `R-U2-M1` en la entrada ordinaria del producto
+
+La primera aplicación permitió establecer que `R-U2-M1`, aunque ya constituía
+una realización contingente destinada al uso validada, permanecía aislada de la
+entrada ordinaria del producto.
+
+La hipótesis mínima consistió en hacer que la aplicación ordinaria expusiera
+directamente `ResumeExperience`, conservando el resto de mecanismos y evitando
+introducir navegación, nuevas capas, stores adicionales o una arquitectura
+software general.
+
+La modificación fue construida y validada.
+
+El resultado fue:
+
+```text
+R-U2-M1
+→ realización destinada al uso ya existente
+↓
+entrada ordinaria del producto
+→ no accesible
+↓
+integración mínima
+↓
+R-U2-M1 accesible desde la ejecución ordinaria
+```
+
+La actuación no modificó `PV-001`, no amplió Product y no derivó una
+arquitectura software general.
+
+### Continuidad posterior de una aportación producida
+
+El uso efectivo de la versión integrada permitió localizar posteriormente una
+nueva necesidad local.
+
+Una aportación `Y` producida en una situación de reanudación podía quedar
+disponible como resultado actual, pero no podía ser aceptada intencionalmente
+para permanecer disponible después de una interrupción y constituir el
+antecedente de una reanudación posterior.
+
+La necesidad quedó formulada mediante la trayectoria:
+
+```text
+antecedente X restaurado
+↓
+situación de reanudación
+↓
+producción de Y
+↓
+aceptación de Y para después
+↓
+interrupción
+↓
+nueva ejecución
+↓
+Y restaurada como antecedente
+↓
+nueva situación de reanudación
+```
+
+La modificación mínima reutilizó el mecanismo contingente de persistencia ya
+existente.
+
+La validación posterior produjo:
+
+```text
+ResumeExperience
+→ 23/23 tests
+
+suite global
+→ 25 archivos de test
+→ 206/206 tests
+
+build de producción
+→ correcto
+
+validación manual
+→ trayectoria corroborada desde la entrada ordinaria
+```
+
+La evidencia quedó consolidada en `00-R-U2-M1.md` mediante:
+
+```text
+E-RU2M1-09
+→ Reaplicación local desde una aportación producida
+
+CP-RU2M1-12
+→ una aportación Y producida en una situación de reanudación puede ser
+  aceptada para después y restaurada como antecedente de una nueva situación
+  de reanudación
+```
+
+El resultado demuestra una reaplicación local desde una aportación producida.
+
+No demuestra:
+
+- reiterabilidad arbitraria o general;
+- una cadena automática de aportaciones;
+- un historial general;
+- una nueva situación conceptual;
+- una modificación de `PV-001`;
+- una nueva vertical de Product;
+- ni una arquitectura software general.
+
+Las dos primeras aplicaciones de `PM-10` quedan completadas dentro de su
+alcance.
+
+La petición humana de orientación aparecida durante el uso posterior no forma
+parte de estos objetivos completados y permanece actualmente bajo investigación
+localizada.
+
+---
+
 # 8. Principios consolidados
 
 La evolución del proyecto ha permitido consolidar principios procedentes tanto de su etapa de desarrollo técnico como de la investigación posterior.
@@ -1789,6 +2228,8 @@ Una modificación sólo debe propagarse cuando cambie información que sea respo
 ```text
 Methodology
     ✔ estable
+    ✔ PM-10 — Desarrollo guiado por necesidad productiva incorporado
+    ✔ PM-10 ejercido mediante construcción orientada por necesidades materiales
 
 Metatheory
     ✔ MT-001 / MT-002 / MT-003 cerradas
@@ -1852,7 +2293,11 @@ R-U2-M1
     ✔ evidencia positiva local de incidencia reiterada por composición obtenida
     ✔ E-RU2M1-08 incorporada
     ✔ CP-RU2M1-11 incorporada
-    ✔ reiterabilidad interna no demostrada
+    ✔ integrada en la entrada ordinaria del producto
+    ✔ E-RU2M1-09 incorporada
+    ✔ CP-RU2M1-12 incorporada
+    ✔ reaplicación local desde una aportación producida demostrada
+    → reiterabilidad arbitraria o general no demostrada
     ✔ ninguna realización autónoma R* derivada
 
 POU-RU2M1-01
@@ -1908,7 +2353,7 @@ Estado de continuación
     ✔ segundo ciclo de observación, atribución y reconsolidación documental completado
     ✔ investigación de reiteración por composición completada
     ✔ evidencia positiva local de incidencia reiterada por composición obtenida
-    → reiterabilidad interna de R-U2-M1 no demostrada
+    → reiterabilidad arbitraria o general no demostrada
     → ninguna realización autónoma R* derivada
     → ninguna modificación de código derivada
     ✔ investigación de incidencia posterior tras indisponibilidad del antecedente completada
@@ -1986,6 +2431,29 @@ Trayectoria humana integrada
     → ninguna nueva actuación automáticamente derivada
     → ninguna línea sucesora actualmente establecida
 
+    PM-10
+    ✔ incorporado a Methodology
+    ✔ primera aplicación completada
+    ✔ R-U2-M1 integrada en la entrada ordinaria del producto
+    ✔ segunda aplicación completada desde necesidad observada durante uso
+    ✔ continuidad posterior de una aportación producida construida y validada
+    ✔ E-RU2M1-09 incorporada
+    ✔ CP-RU2M1-12 incorporada
+
+    Investigación productiva actualmente localizada
+    ✔ petición humana de orientación aparecida durante uso efectivo
+    ✔ no absorbida completamente por PV-001
+    ✔ reducción provisional entre orientación situacional y evaluativa
+    ✔ compatibilidad teórica examinada
+    ✔ dependencia de una representación vigente del estado localizada
+    ✔ PROJECT_STATUS.md identificado como cuerpo responsable de ese estado
+    ✔ desactualización respecto del 09/09/2026 comprobada
+    ✔ PROJECT_STATUS.md actualizado respecto de los resultados del 09/09/2026
+    → PV-002 no derivada
+    → nuevo compromiso de Product no derivado
+    → modificación adicional de R-U2-M1 no derivada
+    → arquitectura software no derivada
+
 Design Journal
     ✔ responsabilidad vigente
     ✔ corpus histórico auditado respecto del alcance actual
@@ -2018,6 +2486,15 @@ Evaluación global posterior a LE-001
       una nueva línea estratégica no identificado
     → línea estratégica concreta vigente: ninguna
     → siguiente actuación automáticamente derivada: ninguna
+
+Evolución posterior a la evaluación global de LE-001
+    ✔ apareció fundamento positivo independiente posterior
+    ✔ PM-10 incorporado
+    ✔ construcción reanudada desde necesidades materiales del producto
+    ✔ R-U2-M1 accesible desde la entrada ordinaria
+    ✔ nueva necesidad local surgida durante uso satisfecha
+    ✔ nueva petición humana de orientación localizada
+    ↺ investigación focal actualmente abierta
 ```
 
 La evaluación global posterior al cierre de `LE-001` examinó si el estado
@@ -2042,7 +2519,7 @@ Las apariciones localizadas como pendientes, posibilidades o investigaciones
 abiertas pertenecen a resultados históricos, frentes no bloqueantes o
 capacidades de reapertura condicionadas a nueva evidencia.
 
-No se identificó actualmente:
+En aquella evaluación no se identificó:
 
 ```text
 pérdida concreta vigente
@@ -2076,8 +2553,9 @@ siguiente actuación automáticamente derivada
 Este resultado no establece que el proyecto haya agotado todas sus
 posibilidades futuras.
 
-Establece únicamente que el estado consolidado actual no proporciona fundamento
-positivo suficiente para seleccionar una nueva línea estratégica.
+Establece únicamente que el estado consolidado examinado en aquella evaluación
+no proporcionaba fundamento positivo suficiente para seleccionar una nueva
+línea estratégica.
 
 La ausencia de una línea estratégica concreta constituye un estado válido y no
 una pérdida que deba repararse.
