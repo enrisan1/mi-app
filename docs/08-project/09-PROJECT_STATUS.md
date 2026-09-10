@@ -656,7 +656,7 @@ Estado: corpus histórico conservado; reutilización condicionada a justificaci�
 
 La documentación de producto ha sido sometida a revisión y reconstrucción a partir de los fundamentos actualmente consolidados.
 
-`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y dos verticales consolidadas: `PV-001` y `PV-002`.
+`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y tres verticales consolidadas: `PV-001`, `PV-002` y `PV-003`.
 
 `PROJECT_STATUS.md` refleja el estado global vigente del proyecto, incluyendo los resultados posteriores a la reconstrucción de Product que hayan modificado dicho estado.
 
@@ -3487,5 +3487,59 @@ No queda derivada automáticamente una siguiente actuación del proyecto.
 La actuación posterior deberá obtener fundamento positivo a partir de una
 necesidad material de Product, nueva evidencia, una pérdida concreta, una
 dependencia necesaria demostrada o una situación de uso.
+
+---
+
+## Resultado productivo posterior: selección de `PV-003`
+
+La investigación localizada que se había denominado provisionalmente
+«orientación evaluativa» fue reducida hasta aislar el siguiente residuo:
+
+```text
+aportación presente inequívocamente reconocible
+        ↓
+reconocimiento humano de qué diferencia
+justificadamente establecida queda para las
+posibilidades posteriores del proyecto
+        o
+reconocimiento de que no existe todavía
+ninguna diferencia nueva establecida
+```
+
+La reducción eliminó como necesidades independientes «beneficio»,
+«relevancia», evaluación autónoma, `P` visible por separado, `A → B` explícito,
+trayectoria `T` explícita, relación `X ↝ B` modelada, repetición de `X`,
+«consecuencia para el proyecto» como categoría propia y separación obligatoria
+entre «resultado establecido» y «posibilidad abierta».
+
+Product seleccionó este residuo como tercera vertical y consolidó `PV-003` en
+`PRODUCT.md`.
+
+El estado actual queda ampliado así:
+
+```text
+PV-003
+✔ consolidada como compromiso de Product
+→ no evalúa autónomamente la aportación
+→ no determina ni justifica por sí misma
+  aquello que presenta como establecido
+→ no modifica PV-001 ni PV-002
+→ no deriva arquitectura, almacenamiento,
+  realización concreta ni modificación de R-U2-M1
+
+investigación de orientación evaluativa
+✔ cerrada respecto de la selección de PV-003
+→ denominación conservada únicamente como histórica o provisional
+```
+
+Cuando `PV-003` presente una diferencia como establecida, su legitimidad deberá
+proceder de una responsabilidad competente. La identificación de esa
+responsabilidad y del mecanismo por el que el resultado llegue a estar
+disponible no ha sido determinada por `PV-003`.
+
+`PV-003` no deriva por sí sola una realización concreta, arquitectura, mecanismo
+de almacenamiento ni modificación de `R-U2-M1`, pero constituye un nuevo
+compromiso de Product cuya satisfacción proporciona fundamento para determinar
+la siguiente actuación justificable dentro del cuerpo competente.
 
 ---

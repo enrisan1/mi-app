@@ -21,6 +21,11 @@
    5.2 Valor justificado
    5.3 Compromiso
 
+6. Tercera vertical — PV-003
+   6.1 Situación
+   6.2 Valor justificado
+   6.3 Compromiso
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -595,5 +600,71 @@ Product establece el resultado cuya imposibilidad constituye incumplimiento de l
 La derivación de esas condiciones corresponde a los cuerpos competentes dentro de sus respectivas competencias.
 
 El alcance de este compromiso queda limitado a `PV-002` y no modifica ni amplía el compromiso establecido por `PV-001`.
+
+---
+
+# 6. Tercera vertical — PV-003
+
+## 6.1 Situación
+
+`PV-003` selecciona una situación en la que la aportación presente ya es
+inequívocamente reconocible y en la que la persona puede reconocer si existe
+una diferencia justificadamente establecida para las posibilidades posteriores
+del proyecto en la situación de esa aportación.
+
+Cuando existe, puede reconocer cuál es; cuando no existe ninguna, puede
+reconocer también esa ausencia.
+
+## 6.2 Valor justificado
+
+El valor aparece porque reconocer la aportación presente no permite por sí
+mismo reconocer qué diferencia queda establecida para las posibilidades
+posteriores del proyecto.
+
+Hacer reconocible esa diferencia —o la ausencia de una diferencia establecida—
+permite a la persona orientar libremente su actuación posterior sin que el
+producto tenga que evaluar la aportación, priorizar actuaciones ni recomendar
+un siguiente paso.
+
+## 6.3 Compromiso
+
+Dentro del alcance de `PV-003`, Product compromete que, cuando una aportación
+presente sea ya inequívocamente reconocible, la persona pueda distinguir si
+existe una diferencia justificadamente establecida para las posibilidades
+posteriores del proyecto en la situación de esa aportación y, cuando exista,
+reconocer su contenido; cuando no exista ninguna diferencia establecida
+disponible para presentar, la persona deberá poder reconocer esa ausencia.
+
+Este compromiso no determina ni justifica por sí mismo aquello que presenta
+como establecido. Cuando se presente una diferencia como establecida, su
+legitimidad deberá proceder de una responsabilidad competente. La
+identificación de esa responsabilidad y del mecanismo por el que ese resultado
+llega a estar disponible no forman parte de `PV-003`.
+
+`PV-003` no compromete ni deriva:
+
+- evaluación autónoma de la aportación;
+- una noción general de beneficio, utilidad o relevancia;
+- interpretación semántica de la aportación;
+- causalidad entre aportación y resultado;
+- una relación general o modelada `X ↝ B`;
+- repetición obligatoria de `X` en la presentación;
+- `P`, `A` o `T` como elementos explícitos;
+- un estado general del proyecto;
+- historial o persistencia de la orientación;
+- colección de resultados;
+- comparación entre estados;
+- planificación;
+- prioridades;
+- recomendaciones;
+- determinación de la siguiente tarea;
+- explicación causal;
+- un modelo general de provenance/trazabilidad;
+- arquitectura software;
+- mecanismo de almacenamiento;
+- realización concreta;
+- modificación de `R-U2-M1`;
+- modificación de `PV-001`;
+- ni modificación de `PV-002`.
 
 ---
