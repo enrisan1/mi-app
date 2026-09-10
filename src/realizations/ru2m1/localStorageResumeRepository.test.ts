@@ -48,4 +48,12 @@ describe("R-U2-M1 localStorage resume repository", () => {
 
     expect(localStorageResumeRepository.loadPrevious()).toBe("X2");
   });
+
+  it("retains X without replacing the previous Y", () => {
+    localStorageResumeRepository.savePrevious("Y");
+    localStorageResumeRepository.saveRetained("X");
+
+    expect(localStorageResumeRepository.loadPrevious()).toBe("Y");
+    expect(localStorageResumeRepository.loadRetained()).toBe("X");
+  });
 });

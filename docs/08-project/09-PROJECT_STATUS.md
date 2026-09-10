@@ -399,8 +399,29 @@ alcance mínimo
 colecciones, relaciones semánticas, mecanismos de selección o eliminación,
 ni una solución técnica concreta.
 
-La satisfacción realizativa de `PV-002` todavía no ha sido derivada ni
-construida.
+Posteriormente, `R-U2-M1` fue reabierta de forma localizada para hacer
+practicable ese alcance mínimo.
+
+La modificación preservó `Y` como único antecedente operativo posterior y
+permitió que `X` continuara disponible adicionalmente:
+
+```text
+Y
+→ antecedente operativo posterior
+
+X
+→ otra aportación disponible
+```
+
+La trayectoria fue validada mediante pruebas automatizadas, build de
+producción y ejercicio manual desde la entrada ordinaria del producto.
+
+`PV-002` dispone así de satisfacción realizativa local dentro del alcance
+mínimo actualmente comprometido.
+
+Este resultado no establece historial, colección arbitraria, conservación
+indefinida, múltiples antecedentes operativos ni comportamiento demostrado
+para una tercera aportación.
 
 ---
 
@@ -1865,7 +1886,7 @@ El compromiso no establece historial arbitrario, conservación ilimitada,
 colecciones, relaciones semánticas, mecanismos de selección o eliminación ni
 una solución técnica concreta.
 
-El estado de reanudación queda por tanto modificado:
+El estado de reanudación queda actualmente:
 
 ```text
 PV-001
@@ -1874,19 +1895,46 @@ PV-001
 PV-002
 ✔ seleccionada
 ✔ incorporada a PRODUCT.md
+✔ satisfacción realizativa local derivada y validada
+  dentro del alcance mínimo comprometido
 
-realización de PV-002
-→ todavía no derivada
+R-U2-M1
+✔ reabierta y ampliada localmente
+✔ E-RU2M1-11 obtenida
+✔ RV-PV002-RU2M1-01 validada
 
 arquitectura general
 → no derivada
 ```
 
-La siguiente cuestión material queda localizada en determinar cuál es la mínima
-construcción real capaz de hacer practicable `PV-002` dentro del alcance
-comprometido, introduciendo únicamente las propiedades, responsabilidades y
-mecanismos que resulten necesarios y justificándolos en el punto en que la
-construcción los haga materiales.
+La cuestión material anteriormente abierta:
+
+```text
+determinar la mínima construcción real
+capaz de hacer practicable PV-002
+```
+
+queda cerrada dentro del alcance comprometido.
+
+La solución realizada mantiene:
+
+```text
+Y
+→ antecedente operativo posterior
+
+X
+→ aportación adicional disponible
+```
+
+sin introducir historial general, colección arbitraria ni una arquitectura
+software general.
+
+No queda derivada automáticamente una siguiente actuación del proyecto.
+
+La siguiente actuación deberá justificarse a partir de una necesidad material
+de Product, nueva evidencia, una pérdida concreta, una dependencia necesaria
+demostrada o una situación de uso que proporcione fundamento positivo para
+actuar.
 
 ---
 
@@ -3309,6 +3357,98 @@ mecanismos técnicos concretos de persistencia;
 arquitectura software general.
 ```
 
+Posteriormente se investigó cuál era la construcción mínima capaz de hacer
+practicable ese compromiso.
+
+El ejercicio previo había demostrado la pérdida:
+
+```text
+X disponible
++
+Y producido
+↓
+Y aceptado para después
+↓
+interrupción
+↓
+Y restaurado
+X perdido
+```
+
+La necesidad realizativa se redujo a conservar dos papeles distintos:
+
+```text
+Y
+→ antecedente operativo de la nueva situación de reanudación
+
+X
+→ aportación adicional que continúa disponible
+```
+
+No se derivó la necesidad de un historial, una colección ni múltiples
+antecedentes operativos.
+
+`R-U2-M1` fue reabierta localmente.
+
+La modificación mínima mantuvo:
+
+```text
+ru2m1.previous
+→ valor destinado al papel de antecedente operativo
+
+ru2m1.retained
+→ aportación adicional disponible
+```
+
+sin modificar resumeModel.
+
+La validación posterior obtuvo:
+
+```text
+repositorio
+→ 7 / 7 tests superados
+
+ResumeExperience
+→ 25 / 25 tests superados
+
+suite global
+→ 25 archivos de test superados
+→ 210 / 210 tests superados
+
+build de producción
+→ superado
+
+validación manual X + Y
+→ superada
+```
+
+La evidencia quedó consolidada en `00-R-U2-M1.md` mediante:
+
+```text
+E-RU2M1-11
+↓
+RV-PV002-RU2M1-01
+↓
+CP-RU2M1-13
+```
+
+Dentro del alcance actualmente comprometido, queda así demostrado:
+
+```text
+X
++
+Y
++
+una interrupción
+↓
+Y restaurado como antecedente operativo
++
+X todavía disponible
+```
+
+Esto no determina qué debe ocurrir ante una tercera aportación `Z`, ni
+establece conservación indefinida, historial o reiterabilidad arbitraria.
+
 El estado actual queda, por tanto:
 
 ```text
@@ -3318,12 +3458,16 @@ PV-001
 
 PV-002
 ✔ consolidada como compromiso de Product
-→ satisfacción realizativa todavía no derivada
+✔ dispone de satisfacción realizativa local
+  dentro del alcance mínimo comprometido
 
 R-U2-M1
-✔ permanece vigente dentro de su alcance
-→ en su configuración vigente no satisface PV-002
-  dentro de la trayectoria observada
+✔ permanece vigente
+✔ reabierta y ampliada localmente para PV-002
+✔ Y permanece como único antecedente operativo posterior
+✔ X puede continuar disponible adicionalmente
+✔ E-RU2M1-11 obtenida
+✔ RV-PV002-RU2M1-01 validada
 
 orientación situacional
 ✔ satisfecha localmente
@@ -3335,10 +3479,13 @@ arquitectura general
 → no derivada
 ```
 
-La siguiente cuestión material queda localizada en determinar cuál es la mínima
-construcción real capaz de hacer practicable `PV-002` dentro del alcance
-comprometido, introduciendo únicamente las propiedades, responsabilidades y
-mecanismos que resulten necesarios y justificándolos en el punto en que la
-construcción los haga materiales.
+La cuestión material relativa a la construcción mínima necesaria para hacer
+practicable `PV-002` queda cerrada dentro del alcance comprometido.
+
+No queda derivada automáticamente una siguiente actuación del proyecto.
+
+La actuación posterior deberá obtener fundamento positivo a partir de una
+necesidad material de Product, nueva evidencia, una pérdida concreta, una
+dependencia necesaria demostrada o una situación de uso.
 
 ---

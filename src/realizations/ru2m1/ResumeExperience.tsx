@@ -11,6 +11,10 @@ export function ResumeExperience() {
     localStorageResumeRepository.loadPrevious(),
   );
 
+  const [retainedPrevious] = useState(() =>
+    localStorageResumeRepository.loadRetained(),
+  );
+
   const [currentInput, setCurrentInput] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [result, setResult] = useState<SituatedResult | null>(null);
@@ -62,6 +66,7 @@ export function ResumeExperience() {
         <button
           type="button"
           onClick={() => {
+            localStorageResumeRepository.saveRetained(result.previous);
             localStorageResumeRepository.savePrevious(result.current);
           }}
         >
@@ -77,6 +82,13 @@ export function ResumeExperience() {
 
       <h2>Aportación anterior</h2>
       <p aria-label="Aportación anterior">{restoredPrevious}</p>
+
+      {isResumeAvailable(retainedPrevious) && (
+        <>
+          <h2>Otra aportación disponible</h2>
+          <p aria-label="Otra aportación disponible">{retainedPrevious}</p>
+        </>
+      )}
 
       <h2>Qué puedes hacer ahora</h2>
 
