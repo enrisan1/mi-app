@@ -6,7 +6,15 @@ import {
 } from "./resumeModel";
 import { localStorageResumeRepository } from "./localStorageResumeRepository";
 
-export function ResumeExperience() {
+type EstablishedResolution =
+  | { contribution: string; kind: "difference"; content: string }
+  | { contribution: string; kind: "absence" };
+
+type ResumeExperienceProps = {
+  resolution?: EstablishedResolution;
+};
+
+export function ResumeExperience({ resolution }: ResumeExperienceProps) {
   const [restoredPrevious] = useState(() =>
     localStorageResumeRepository.loadPrevious(),
   );
@@ -53,6 +61,9 @@ export function ResumeExperience() {
   }
 
   if (result !== null) {
+    const situatedResolution =
+      resolution?.contribution === result.current ? resolution : undefined;
+
     return (
       <section>
         <h1>Retomar</h1>
@@ -62,6 +73,23 @@ export function ResumeExperience() {
 
         <h2>Qué has hecho ahora</h2>
         <p aria-label="Actuación actual">{result.current}</p>
+
+        {situatedResolution && (
+          <div aria-labelledby="established-resolution-heading">
+            <h2 id="established-resolution-heading">
+              Qué ha quedado establecido para esta aportación
+            </h2>
+
+            {situatedResolution.kind === "difference" ? (
+              <p>{situatedResolution.content}</p>
+            ) : (
+              <p>
+                No hay una nueva diferencia establecida disponible para
+                presentar.
+              </p>
+            )}
+          </div>
+        )}
 
         <button
           type="button"

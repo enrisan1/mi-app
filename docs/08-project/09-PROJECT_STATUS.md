@@ -3543,3 +3543,54 @@ compromiso de Product cuya satisfacción proporciona fundamento para determinar
 la siguiente actuación justificable dentro del cuerpo competente.
 
 ---
+
+## Evidencia realizativa posterior: witness local de `PV-003`
+
+La experiencia existente de `R-U2-M1` ha proporcionado un witness realizativo
+ejecutable local de `PV-003` sin modificar su trayectoria `X/Y`, su modelo de
+reanudación ni su persistencia.
+
+El witness recibe desde fuera una resolución explícita que contiene la
+aportación concreta a la que corresponde y adopta uno de dos casos locales:
+`difference + content` o `absence` explícita. `R-U2-M1` se limita a consumir y
+manifestar esa resolución; no la determina, produce ni legitima.
+
+La asociación se conserva localmente mediante la correspondencia literal:
+
+```text
+resolution.contribution === result.current
+```
+
+Esta igualdad es un mecanismo contingente del witness y no establece identidad
+general de aportaciones, identificadores, relación general `X ↝ B`,
+interpretación semántica, causalidad, evaluación autónoma ni provenance
+general.
+
+La evidencia automatizada confirmó que la manifestación sólo aparece cuando la
+aportación correspondiente ya está constituida y visible; la falta de entrada
+permanece distinguida de una ausencia establecida, y una resolución destinada a
+otra aportación no se manifiesta.
+
+El estado vigente queda ampliado así:
+
+```text
+PV-003
+✔ dispone de un witness realizativo ejecutable local
+✔ reutiliza la experiencia existente de R-U2-M1
+→ realización autónoma no derivada
+→ arquitectura no derivada
+→ persistencia nueva no derivada
+
+entrada ordinaria del producto
+→ continúa invocando ResumeExperience sin resolución
+→ integración ordinaria de PV-003 todavía no establecida
+
+satisfacción general o completa de PV-003
+→ no establecida
+```
+
+La suficiencia local de la misma experiencia no proporciona fundamento para
+derivar una realización autónoma para este witness, pero no demuestra
+disponibilidad ordinaria ni satisfacción general de `PV-003`.
+
+---
