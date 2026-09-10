@@ -16,6 +16,11 @@
    4.2 Valor justificado
    4.3 Compromiso
 
+5. Segunda vertical — PV-002
+   5.1 Situación
+   5.2 Valor justificado
+   5.3 Compromiso
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -429,5 +434,166 @@ convierte los mecanismos concretos de la realización validada en
 requisitos de Product.
 
 La descripción, evidencia, auditoría y límites de dicha realización pertenecen al cuerpo competente de Realization y al registro histórico del proyecto.
+
+---
+
+# 5. Segunda vertical — PV-002
+
+## 5.1 Situación
+
+`PV-002` selecciona una situación en la que una persona dispone de una aportación `X` y, en una situación posterior, produce una nueva aportación `Y`.
+
+Al hacer que `Y` quede disponible para situaciones posteriores, `X` puede continuar disponible para intervenir también posteriormente.
+
+La situación seleccionada puede representarse así:
+
+```text
+X disponible
+     ↓
+situación posterior
+     ↓
+se produce Y
+     ↓
+Y queda disponible
+     ↓
+interrupción
+     ↓
+situación posterior
+     ↓
+X puede continuar disponible
++
+Y está disponible
+```
+
+La situación no exige que `Y` sustituya, contenga, continúe semánticamente o mantenga una relación determinada con `X`.
+
+Tampoco exige que toda aportación anterior permanezca disponible indefinidamente.
+
+La diferencia seleccionada consiste únicamente en que hacer disponible una nueva aportación no obligue, por sí mismo, a perder la disponibilidad de una aportación anterior.
+
+Esta diferencia no queda establecida por `PV-001`.
+
+`PV-001` compromete la posibilidad de que aquello que una situación haya hecho disponible pueda incidir posteriormente en las posibilidades de actuación de una persona.
+
+No establece que hacer disponible algo nuevo deba conservar simultáneamente disponible aquello que ya lo estaba.
+
+`PV-002` selecciona específicamente esta segunda posibilidad:
+
+```text
+algo anterior continúa disponible
+        +
+algo nuevo queda disponible
+```
+
+Las propiedades adicionales que puedan aparecer en casos particulares no forman parte de la situación seleccionada salvo que su necesidad sea demostrada de forma independiente.
+
+## 5.2 Valor justificado
+
+El valor que justifica la selección de `PV-002` aparece cuando una aportación anterior `X` continúa siendo pertinente para las posibilidades posteriores de actuación de una persona después de haberse producido una nueva aportación `Y`.
+
+Deben distinguirse dos situaciones:
+
+```text
+sustitución necesaria
+
+X disponible
+     ↓
+se produce Y
+     ↓
+Y queda disponible
+     ↓
+X deja necesariamente
+de estar disponible
+```
+
+y:
+
+```text
+disponibilidad no sustitutiva
+
+X disponible
+     ↓
+se produce Y
+     ↓
+Y queda disponible
+     ↓
+X puede continuar disponible
++
+Y está disponible
+```
+
+En la primera, hacer disponible `Y` elimina posibilidades posteriores de actuación que todavía podían depender de `X`.
+
+En la segunda, producir y hacer disponible `Y` no obliga por sí mismo a perder esas posibilidades respecto de `X`.
+
+El valor no reside en conservar una cantidad determinada de aportaciones ni en acumularlas indefinidamente.
+
+Tampoco depende de que `X` e `Y` pertenezcan a un mismo tipo semántico, formen una historia, constituyan versiones de una misma realidad o mantengan entre sí una relación previamente determinada.
+
+La diferencia humana seleccionada consiste exclusivamente en mantener abierta la posibilidad de actuación posterior respecto de una aportación anterior que continúa siendo pertinente aunque una nueva aportación haya quedado también disponible.
+
+Por tanto:
+
+```text
+X continúa siendo pertinente
+        +
+se produce Y
+        ↓
+Y queda disponible
+        ↓
+hacer disponible Y
+no obliga a perder X
+        ↓
+permanecen abiertas posibilidades
+posteriores respecto de X y de Y
+```
+
+Este valor conserva exclusivamente el alcance de `PV-002`.
+
+No establece que toda aportación deba conservarse, que toda secuencia de situaciones produzca acumulación ni que otros compromisos de Product deban compartir esta propiedad.
+
+## 5.3 Compromiso
+
+La selección de `PV-002` establece como compromiso de producto que la diferencia que justifica esta vertical sea realizable dentro de su alcance.
+
+Una realización no satisface `PV-002` si, dentro del alcance comprometido, hacer que una nueva aportación `Y` quede disponible impide que una aportación anterior `X` pueda continuar disponible en una situación posterior.
+
+El compromiso recae sobre la posibilidad de mantener disponibles ambas aportaciones dentro de la situación seleccionada, no sobre una obligación general de conservar toda aportación.
+
+El alcance mínimo actualmente comprometido comprende:
+
+```text
+una aportación anterior X
+        +
+una nueva aportación Y
+        +
+una interrupción posterior
+        ↓
+situación posterior
+        ↓
+X puede continuar disponible
++
+Y está disponible
+```
+
+`PV-002` no establece por sí mismo:
+
+- un historial arbitrario;
+- conservación ilimitada;
+- una cantidad ilimitada de aportaciones;
+- listas;
+- búsqueda;
+- ordenación;
+- colecciones;
+- relaciones semánticas entre aportaciones;
+- versiones;
+- mecanismos de selección o eliminación;
+- ni mecanismos técnicos concretos de persistencia.
+
+Product establece el resultado cuya imposibilidad constituye incumplimiento de la vertical, pero no determina las responsabilidades, estructuras, mecanismos o realizaciones necesarios para satisfacerlo.
+
+La derivación de esas condiciones corresponde a los cuerpos competentes dentro de sus respectivas competencias.
+
+El alcance de este compromiso queda limitado a `PV-002` y no modifica ni amplía el compromiso establecido por `PV-001`.
 
 ---

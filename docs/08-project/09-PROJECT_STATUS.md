@@ -337,14 +337,70 @@ Las dos observaciones permanecen como evidencia local y no demuestran
 utilidad general de `R-U2-M1`, utilidad para otras personas ni validez para
 toda situación de reanudación.
 
-La evolución observada no modifica `PV-001`, no amplía Product, no determina
-una arquitectura software y no deriva automáticamente una nueva ampliación
-de `R-U2-M1`, una segunda realización ni otra actuación posterior.
+La evolución descrita hasta este punto no modificó `PV-001`, no amplió Product
+y no determinó por sí misma una arquitectura software ni una nueva ampliación
+de `R-U2-M1`.
 
-La siguiente actuación deberá justificarse a partir de una nueva pérdida,
-una dependencia necesaria todavía no satisfecha, una incompatibilidad
-demostrada u otro fundamento positivo independiente perteneciente al cuerpo
-competente.
+Posteriormente, el ejercicio del producto actual con dos aportaciones reales
+permitió observar una pérdida material distinta:
+
+```text
+X disponible
+        ↓
+situación posterior
+        ↓
+se produce Y
+        ↓
+X e Y coexistentes durante la ejecución
+        ↓
+Y queda disponible para después
+        ↓
+interrupción
+        ↓
+Y restaurada
+        ↓
+X deja de estar disponible mediante el producto
+```
+
+La investigación de esta pérdida estableció que `Y` no sustituía a `X` dentro
+de la situación real observada y que la indisponibilidad posterior de `X`
+eliminaba posibilidades de actuación que continuaban siendo pertinentes.
+
+La situación candidata resultante fue contrastada con los resultados
+aplicables del Modelo Conceptual y con los límites de competencia conservados
+en Governance y Engineering, sin identificarse una incompatibilidad que
+impidiera su selección dentro del alcance investigado.
+
+Product seleccionó finalmente esta diferencia como un segundo compromiso:
+
+```text
+PV-002
+✔ seleccionada
+✔ incorporada a PRODUCT.md
+
+resultado comprometido
+→ hacer disponible una nueva aportación
+  no debe implicar necesariamente
+  perder la disponibilidad de una anterior
+
+alcance mínimo
+→ una aportación anterior X
+  +
+  una nueva aportación Y
+  +
+  una interrupción posterior
+  ↓
+  X puede continuar disponible
+  +
+  Y está disponible
+```
+
+`PV-002` no establece historial arbitrario, conservación ilimitada,
+colecciones, relaciones semánticas, mecanismos de selección o eliminación,
+ni una solución técnica concreta.
+
+La satisfacción realizativa de `PV-002` todavía no ha sido derivada ni
+construida.
 
 ---
 
@@ -579,7 +635,7 @@ Estado: corpus histórico conservado; reutilización condicionada a justificaci�
 
 La documentación de producto ha sido sometida a revisión y reconstrucción a partir de los fundamentos actualmente consolidados.
 
-`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y la primera vertical consolidada `PV-001`.
+`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y dos verticales consolidadas: `PV-001` y `PV-002`.
 
 `PROJECT_STATUS.md` refleja el estado global vigente del proyecto, incluyendo los resultados posteriores a la reconstrucción de Product que hayan modificado dicho estado.
 
@@ -944,9 +1000,9 @@ Deberán adaptarse cuando exista una nueva arquitectura software concreta.
 
 `06-DESIGN_JOURNAL.md` conserva su responsabilidad como espacio de incubación para ideas, hipótesis y propuestas que todavía no forman parte de la documentación normativa del proyecto.
 
-El corpus histórico reconstruido del Design Journal ha sido sometido a una auditoría sistemática respecto del Product actualmente consolidado.
+El corpus histórico reconstruido del Design Journal fue sometido a una auditoría sistemática respecto del estado de Product vigente durante aquella auditoría, en el que se encontraba consolidada `PV-001`.
 
-La auditoría no ha identificado ningún residuo positivo independiente que justifique actualmente un nuevo compromiso de Product, una modificación de `PV-001` o la derivación de `PV-002`.
+La auditoría no identificó ningún residuo positivo independiente que, dentro de aquel alcance, justificara un nuevo compromiso de Product, una modificación de `PV-001` o la derivación de `PV-002` a partir de aquel corpus histórico.
 
 Las propuestas históricas permanecen conservadas como registro de la evolución del proyecto, pero su presencia documental no les confiere vigencia normativa ni las convierte en trabajo pendiente.
 
@@ -954,7 +1010,7 @@ La justificación completa del cierre se conserva en `07-AUDITORIA_HISTORICA_DEL
 
 El Design Journal mantiene abierta su responsabilidad como espacio de incubación: nuevas propuestas podrán incorporarse y las propuestas históricas podrán reabrirse cuando aparezca un fundamento positivo independiente.
 
-**Estado:** responsabilidad vigente; corpus histórico auditado y cerrado respecto del Product actualmente consolidado.
+**Estado:** responsabilidad vigente; corpus histórico auditado y cerrado respecto del alcance examinado en aquella auditoría. La selección posterior de `PV-002` procede de evidencia independiente y no reabre por sí misma ese cierre.
 
 ---
 
@@ -1760,6 +1816,77 @@ local observado.
 La dimensión evaluativa permanece abierta: todavía no se han establecido
 criterios semánticos y evaluativos suficientes para determinar legítimamente
 qué constituye una contribución o beneficio para el proyecto.
+
+Con posterioridad a este resultado, el ejercicio del producto actual con dos
+aportaciones reales permitió observar una pérdida material distinta.
+
+Una aportación anterior `X` fue restaurada, se produjo una nueva aportación `Y`
+y ambas permanecieron simultáneamente visibles durante la ejecución. Después
+de aceptar `Y` para una situación posterior e interrumpir la ejecución, `Y`
+quedó restaurada mientras `X` dejó de estar disponible mediante el producto.
+
+La investigación posterior estableció que, dentro de la situación real
+observada, `Y` no sustituía a `X` y que la pérdida de disponibilidad de `X`
+eliminaba posibilidades posteriores de actuación que continuaban siendo
+pertinentes.
+
+La situación candidata resultante fue sometida al procedimiento establecido
+por Product:
+
+```text
+situación candidata
+        ✔ formulada
+
+compatibilidad
+        ✔ comprobada dentro del alcance investigado
+
+diferencia humana
+        ✔ identificada
+
+valor
+        ✔ justificado
+
+selección
+        ✔ realizada
+```
+
+Como resultado se ha consolidado:
+
+```text
+PV-002
+→ segundo compromiso de Product
+```
+
+`PV-002` establece, dentro de su alcance mínimo, que hacer disponible una nueva
+aportación `Y` no debe implicar necesariamente que una aportación anterior `X`
+deje de estar disponible en una situación posterior.
+
+El compromiso no establece historial arbitrario, conservación ilimitada,
+colecciones, relaciones semánticas, mecanismos de selección o eliminación ni
+una solución técnica concreta.
+
+El estado de reanudación queda por tanto modificado:
+
+```text
+PV-001
+✔ consolidada
+
+PV-002
+✔ seleccionada
+✔ incorporada a PRODUCT.md
+
+realización de PV-002
+→ todavía no derivada
+
+arquitectura general
+→ no derivada
+```
+
+La siguiente cuestión material queda localizada en determinar cuál es la mínima
+construcción real capaz de hacer practicable `PV-002` dentro del alcance
+comprometido, introduciendo únicamente las propiedades, responsabilidades y
+mecanismos que resulten necesarios y justificándolos en el punto en que la
+construcción los haga materiales.
 
 ---
 
@@ -3042,5 +3169,176 @@ prueba ciega y utilizar documentación no empleada durante su diseño.
 
 La revisión experimental localizada queda justificada como posibilidad por los
 fallos observados, pero su ejecución inmediata no queda prescrita.
+
+---
+
+## Evidencia productiva posterior: selección de `PV-002`
+
+Con posterioridad a las investigaciones anteriores, el producto vigente fue
+ejercido mediante dos aportaciones reales con el objetivo de comprobar una
+diferencia material todavía no establecida.
+
+La trayectoria observada fue:
+
+```text
+X disponible
+        ↓
+interrupción
+        ↓
+X restaurada
+        ↓
+producción de Y
+        ↓
+X e Y coexistentes durante la ejecución
+        ↓
+Y aceptada para después
+        ↓
+interrupción
+        ↓
+Y restaurada
+        ↓
+X deja de estar disponible mediante el producto
+```
+
+La observación permitió localizar una pérdida material concreta: hacer
+disponible una nueva aportación `Y` para una situación posterior provocaba,
+en la realización vigente, que la aportación anterior `X` dejara de estar
+disponible.
+
+La diferencia no quedó reducida a una mera limitación técnica.
+
+Dentro de la situación real observada:
+
+```text
+X
+≠
+Y
+
+Y no sustituye a X
+
+X continúa siendo pertinente
+para posibilidades posteriores de actuación
+```
+
+Por tanto, la pérdida de `X` elimina posibilidades humanas que permanecían
+relevantes después de producir `Y`.
+
+La situación candidata resultante fue sometida al procedimiento establecido
+en `PRODUCT.md`.
+
+La comprobación de compatibilidad no identificó ningún bloqueo dentro del
+alcance investigado:
+
+```text
+Modelo Conceptual
+→ compatible mediante discriminaciones locales
+→ sin restaurar una firma conceptual universal
+
+Governance
+→ no aplicable a la selección de esta situación
+
+Engineering
+→ ningún bloqueo vigente identificado
+→ ninguna arquitectura general exigida
+```
+
+La evaluación de Product estableció:
+
+```text
+situación candidata
+✔
+
+diferencia humana
+✔
+
+valor independiente
+✔
+
+alcance mínimo delimitado
+✔
+
+compatibilidad
+✔
+
+selección
+✔
+```
+
+Como resultado se ha consolidado una segunda vertical:
+
+```text
+PV-002
+✔ seleccionada
+✔ incorporada a PRODUCT.md
+```
+
+El compromiso establece, dentro de su alcance, que hacer disponible una nueva
+aportación no debe implicar necesariamente que una aportación anterior deje de
+estar disponible.
+
+Su alcance mínimo queda limitado a:
+
+```text
+una aportación anterior X
+        +
+una nueva aportación Y
+        +
+una interrupción posterior
+        ↓
+situación posterior
+        ↓
+X puede continuar disponible
++
+Y está disponible
+```
+
+No se derivan de `PV-002`:
+
+```text
+historial arbitrario;
+conservación ilimitada;
+cantidad ilimitada de aportaciones;
+listas;
+búsqueda;
+ordenación;
+colecciones;
+versiones;
+relaciones semánticas;
+mecanismos de selección o eliminación;
+mecanismos técnicos concretos de persistencia;
+arquitectura software general.
+```
+
+El estado actual queda, por tanto:
+
+```text
+PV-001
+✔ consolidada
+✔ dispone de realización contingente dentro del alcance validado
+
+PV-002
+✔ consolidada como compromiso de Product
+→ satisfacción realizativa todavía no derivada
+
+R-U2-M1
+✔ permanece vigente dentro de su alcance
+→ en su configuración vigente no satisface PV-002
+  dentro de la trayectoria observada
+
+orientación situacional
+✔ satisfecha localmente
+
+orientación evaluativa
+→ permanece abierta
+
+arquitectura general
+→ no derivada
+```
+
+La siguiente cuestión material queda localizada en determinar cuál es la mínima
+construcción real capaz de hacer practicable `PV-002` dentro del alcance
+comprometido, introduciendo únicamente las propiedades, responsabilidades y
+mecanismos que resulten necesarios y justificándolos en el punto en que la
+construcción los haga materiales.
 
 ---
