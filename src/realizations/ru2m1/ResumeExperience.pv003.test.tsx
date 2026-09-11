@@ -130,4 +130,122 @@ describe("PV-003 in the R-U2-M1 experience", () => {
       ),
     ).not.toBeInTheDocument();
   });
+
+  it("preserves the exercised behavior across two technical rematerializations of the same established fact", async () => {
+    const contribution = "Aportación con resolución rematerializable";
+    const difference = "Diferencia establecida para la misma aportación";
+
+    const firstMaterialization = {
+      contribution,
+      kind: "difference" as const,
+      content: difference,
+    };
+
+    const secondMaterialization = {
+      contribution,
+      kind: "difference" as const,
+      content: difference,
+    };
+
+    expect(secondMaterialization).not.toBe(firstMaterialization);
+    expect(secondMaterialization).toEqual(firstMaterialization);
+
+    const firstUser = userEvent.setup();
+    const firstRender = render(
+      <ResumeExperience resolution={firstMaterialization} />,
+    );
+
+    await firstUser.type(
+      screen.getByRole("textbox", { name: /aportación actual/i }),
+      contribution,
+    );
+    await firstUser.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      contribution,
+    );
+    expect(screen.getByText(difference)).toBeInTheDocument();
+
+    firstRender.unmount();
+
+    expect(screen.queryByText(difference)).not.toBeInTheDocument();
+
+    const secondUser = userEvent.setup();
+    render(<ResumeExperience resolution={secondMaterialization} />);
+
+    await secondUser.type(
+      screen.getByRole("textbox", { name: /aportación actual/i }),
+      contribution,
+    );
+    await secondUser.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      contribution,
+    );
+    expect(screen.getByText(difference)).toBeInTheDocument();
+  });
+
+  it("preserves established absence across two technical rematerializations of the same established fact", async () => {
+    const contribution =
+      "Aportación con ausencia establecida rematerializable";
+
+    const firstMaterialization = {
+      contribution,
+      kind: "absence" as const,
+    };
+
+    const secondMaterialization = {
+      contribution,
+      kind: "absence" as const,
+    };
+
+    expect(secondMaterialization).not.toBe(firstMaterialization);
+    expect(secondMaterialization).toEqual(firstMaterialization);
+
+    const firstUser = userEvent.setup();
+    const firstRender = render(
+      <ResumeExperience resolution={firstMaterialization} />,
+    );
+
+    await firstUser.type(
+      screen.getByRole("textbox", { name: /aportación actual/i }),
+      contribution,
+    );
+    await firstUser.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      contribution,
+    );
+    expect(
+      screen.getByText(
+        "No hay una nueva diferencia establecida disponible para presentar.",
+      ),
+    ).toBeInTheDocument();
+
+    firstRender.unmount();
+
+    expect(
+      screen.queryByText(
+        "No hay una nueva diferencia establecida disponible para presentar.",
+      ),
+    ).not.toBeInTheDocument();
+
+    const secondUser = userEvent.setup();
+    render(<ResumeExperience resolution={secondMaterialization} />);
+
+    await secondUser.type(
+      screen.getByRole("textbox", { name: /aportación actual/i }),
+      contribution,
+    );
+    await secondUser.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      contribution,
+    );
+    expect(
+      screen.getByText(
+        "No hay una nueva diferencia establecida disponible para presentar.",
+      ),
+    ).toBeInTheDocument();
+  });
 });

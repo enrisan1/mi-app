@@ -3842,3 +3842,92 @@ persistencia de resoluciones, identidad general de aportaciones, arquitectura
 general ni satisfacción general o completa de `PV-003`.
 
 ---
+
+## Evidencia realizativa posterior: rematerialización técnica de las dos formas ejercidas de `E(C,M)`
+
+Después de la prueba de invariancia ordinal se investigó si el comportamiento
+de un hecho externamente establecido `E(C,M)` dependía de conservar la identidad
+referencial de su materialización técnica.
+
+Para `Difference(B)` se construyeron dos objetos referencialmente distintos pero
+estructuralmente iguales:
+
+```text
+e1 = { contribution: C, kind: "difference", content: B }
+e2 = { contribution: C, kind: "difference", content: B }
+
+e1 !== e2 por identidad referencial
+e1 == e2 estructuralmente
+```
+
+Una primera situación recibió `e1`, constituyó `C`, manifestó `Difference(B)` y
+fue desmontada completamente. Una situación React nueva recibió `e2`, no `e1`,
+constituyó el mismo `C` y manifestó la misma `Difference(B)`.
+
+Para `EstablishedAbsence` se ejerció la misma distinción técnica:
+
+```text
+e1 = { contribution: C, kind: "absence" }
+e2 = { contribution: C, kind: "absence" }
+
+e1 !== e2 por identidad referencial
+e1 == e2 estructuralmente
+```
+
+La primera situación manifestó `EstablishedAbsence` y fue desmontada
+completamente. Una situación React nueva, constituida con `e2`, volvió a
+manifestar `EstablishedAbsence` para el mismo `C`.
+
+En ambos casos se conservaron los términos estructurales `C/M` y se presupuso el
+mismo hecho externamente establecido `E(C,M)`. El runtime no lo dedujo ni volvió
+a legitimarlo.
+
+Antes del segundo caso, H-REMAT para `Difference(B)` estaba incluida en 6 / 6
+pruebas de `ResumeExperience.pv003.test.tsx`, con suite global 224 / 224 y
+`git diff --check` correcto. Después de añadir exclusivamente H-REMAT para
+`EstablishedAbsence`, la suite global pasó 225 / 225 y `git diff --check` fue
+correcto; producción permaneció sin cambios. No se ejecutó un build nuevo porque
+sólo cambió el fichero de tests.
+
+El estado vigente incorpora:
+
+```text
+H-REMAT Difference(B)
+✔ identidad referencial distinta
+✔ términos estructurales iguales
+✔ manifestación conservada tras unmount y nueva situación
+
+H-REMAT EstablishedAbsence
+✔ identidad referencial distinta
+✔ términos estructurales iguales
+✔ manifestación conservada tras unmount y nueva situación
+
+mismo objeto JavaScript
+→ no requerido
+
+misma materialización técnica
+→ no requerida
+
+mismos términos estructurales C/M
+→ conservados
+
+mismo hecho externamente establecido E(C,M)
+→ presupuesto de la prueba
+```
+
+Para las dos formas actualmente ejercidas, la identidad referencial de la
+materialización técnica no es necesaria para reproducir el comportamiento
+observado. Esto demuestra rematerialización técnica, no persistencia semántica.
+
+La evidencia no establece que `E` persista como entidad, que `e1` y `e2` sean la
+misma entidad, continuidad histórica, destrucción física por garbage collection,
+validez permanente, imposibilidad de revocación o sustitución, versionado,
+identidad general, persistencia de resoluciones, repositorio, rehidratación ni
+comportamiento necesario de cualquier forma futura de `M`. La fuente competente
+externa sigue presuponiendo el mismo hecho establecido en ambas situaciones.
+
+Permanecen válidos y sin reescritura el witness de una resolución, la integración
+ordinaria de una `C/B`, la coexistencia de dos `C/B`, la tercera `C/B` y la
+invariancia bajo la permutación `R3/R1/R2`.
+
+---
