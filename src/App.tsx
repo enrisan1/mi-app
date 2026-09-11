@@ -1,6 +1,13 @@
-import { ResumeExperience } from "./realizations/ru2m1/ResumeExperience";
+import {
+  ResumeExperience,
+  type EstablishedResolution,
+} from "./realizations/ru2m1/ResumeExperience";
 
-function App() {
+type AppProps = {
+  resolution?: EstablishedResolution;
+};
+
+function App({ resolution }: AppProps) {
   return (
     <main>
       <section aria-labelledby="project-orientation-heading">
@@ -17,7 +24,7 @@ function App() {
         </p>
       </section>
 
-      <ResumeExperience />
+      <ResumeExperience resolution={resolution} />
     </main>
   );
 }

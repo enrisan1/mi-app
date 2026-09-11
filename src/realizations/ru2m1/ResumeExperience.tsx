@@ -6,7 +6,7 @@ import {
 } from "./resumeModel";
 import { localStorageResumeRepository } from "./localStorageResumeRepository";
 
-type EstablishedResolution =
+export type EstablishedResolution =
   | { contribution: string; kind: "difference"; content: string }
   | { contribution: string; kind: "absence" };
 

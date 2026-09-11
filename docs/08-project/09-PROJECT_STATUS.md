@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 10/09/2026
+**Fecha de actualización:** 11/09/2026
 
 ## Índice
 
@@ -3571,7 +3571,7 @@ aportación correspondiente ya está constituida y visible; la falta de entrada
 permanece distinguida de una ausencia establecida, y una resolución destinada a
 otra aportación no se manifiesta.
 
-El estado vigente queda ampliado así:
+En el estado entonces vigente quedó registrado:
 
 ```text
 PV-003
@@ -3589,8 +3589,85 @@ satisfacción general o completa de PV-003
 → no establecida
 ```
 
-La suficiencia local de la misma experiencia no proporciona fundamento para
-derivar una realización autónoma para este witness, pero no demuestra
-disponibilidad ordinaria ni satisfacción general de `PV-003`.
+En aquel momento, la suficiencia local de la misma experiencia no proporcionó
+fundamento para derivar una realización autónoma y el witness todavía no
+demostró disponibilidad ordinaria ni satisfacción general de `PV-003`.
+
+---
+
+## Integración ordinaria local posterior de una única resolución real de `PV-003`
+
+Después del witness local previo se realizó una integración mínima en la entrada
+ordinaria para una única resolución real `C/B` previamente legitimada:
+
+```text
+C =
+"PV-003 dispone de un witness realizativo ejecutable local dentro de R-U2-M1."
+
+B =
+"La suficiencia local de la misma experiencia no proporciona fundamento para
+derivar una realización autónoma para este witness."
+```
+
+La trayectoria validada fue:
+
+```text
+resolución real C/B previamente legitimada
+        ↓
+main.tsx
+        ↓
+App
+        ↓
+ResumeExperience
+        ↓
+persona constituye literalmente C
+        ↓
+resolution.contribution === result.current
+        ↓
+manifestación B
+```
+
+`main.tsx` materializa únicamente esta pareja; no deduce `B`, interpreta `C` ni
+legitima la resolución. `App` la conduce directamente a `ResumeExperience` sin
+crearla, seleccionarla, interpretarla, evaluarla ni validarla.
+`ResumeExperience` conserva su responsabilidad previa y la igualdad literal como
+mecanismo contingente local. La exportación de `EstablishedResolution` responde
+únicamente a la aparición de un consumidor externo real y no deriva un tipo
+general de dominio ni una arquitectura general.
+
+La validación obtuvo 4 / 4 tests de integración por `App`, 5 / 5 pruebas
+específicas de `PV-003`, 49 / 49 tests de `R-U2-M1`, suite global 217 / 217,
+build de producción y `git diff --check` superados. El caso positivo manifestó
+`B` al producir literalmente `C`; el control negativo constituyó normalmente
+una aportación distinta `Y` sin manifestar `B`. No se añadió una prueba del
+bootstrap de `main.tsx` porque habría requerido mocks o una abstracción
+desproporcionada; su composición quedó como evidencia directamente
+inspeccionable.
+
+El estado vigente queda ampliado así:
+
+```text
+witness local previo de PV-003
+✔ histórico y conservado
+
+integración ordinaria local de una única C/B
+✔ establecida
+→ App la conduce sin adquirir autoridad
+→ B se manifiesta sólo para C
+→ Y distinta se constituye sin recibir B
+
+integración general de PV-003
+→ no establecida
+
+satisfacción general o completa de PV-003
+→ no establecida
+```
+
+No se modificaron `resumeModel.ts`, la persistencia de `X/Y`, `PV-001`,
+`PV-002`, Product ni la semántica de `R-U2-M1`. No se derivan resolución para
+cualquier aportación, obtención automática, catálogo o colección, estado general
+del proyecto, identidad general de aportaciones, criterio general de igualdad,
+nueva arquitectura ni necesidad de proveedor, repositorio o servicio.
+`main.tsx` y `App` no son autoridades epistemológicas.
 
 ---
