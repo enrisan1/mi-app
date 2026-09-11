@@ -13,11 +13,13 @@ export type EstablishedResolution =
 type ResumeExperienceProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
+  thirdResolution?: EstablishedResolution;
 };
 
 export function ResumeExperience({
   resolution,
   secondResolution,
+  thirdResolution,
 }: ResumeExperienceProps) {
   const [restoredPrevious] = useState(() =>
     localStorageResumeRepository.loadPrevious(),
@@ -70,7 +72,9 @@ export function ResumeExperience({
         ? resolution
         : secondResolution?.contribution === result.current
           ? secondResolution
-          : undefined;
+          : thirdResolution?.contribution === result.current
+            ? thirdResolution
+            : undefined;
 
     return (
       <section>

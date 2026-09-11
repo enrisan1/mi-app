@@ -22,8 +22,20 @@ const secondResolution: EstablishedResolution = {
     "Esta conclusión no establece integración general, satisfacción general o completa de PV-003 ni resolución para cualquier aportación.",
 };
 
+const thirdResolution: EstablishedResolution = {
+  contribution:
+    "Dos resoluciones reales distintas y previamente legitimadas pueden coexistir en la misma entrada ordinaria manteniendo correspondencias independientes.",
+  kind: "difference",
+  content:
+    "La evidencia descarta imponer unicidad global de resolución, pero no establece cardinalidad arbitraria, colección ni búsqueda general de resoluciones.",
+};
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App resolution={resolution} secondResolution={secondResolution} />
+    <App
+      resolution={resolution}
+      secondResolution={secondResolution}
+      thirdResolution={thirdResolution}
+    />
   </React.StrictMode>,
 );

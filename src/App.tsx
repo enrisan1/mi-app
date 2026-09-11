@@ -6,9 +6,10 @@ import {
 type AppProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
+  thirdResolution?: EstablishedResolution;
 };
 
-function App({ resolution, secondResolution }: AppProps) {
+function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   return (
     <main>
       <section aria-labelledby="project-orientation-heading">
@@ -28,6 +29,7 @@ function App({ resolution, secondResolution }: AppProps) {
       <ResumeExperience
         resolution={resolution}
         secondResolution={secondResolution}
+        thirdResolution={thirdResolution}
       />
     </main>
   );

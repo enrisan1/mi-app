@@ -3732,3 +3732,113 @@ identidad general de aportaciones ni arquitectura general. Permanecen intactos
 `PV-001`, `PV-002`, Product y la semántica previa de `R-U2-M1`.
 
 ---
+
+## Evidencia realizativa posterior: tercera correspondencia real e invariancia ordinal localizada de `PV-003`
+
+Después de la coexistencia local de dos resoluciones se ejerció una tercera
+correspondencia real, distinta y previamente legitimada:
+
+```text
+R3 = C3/B3
+
+C3 =
+"Dos resoluciones reales distintas y previamente legitimadas pueden coexistir en
+la misma entrada ordinaria manteniendo correspondencias independientes."
+
+B3 =
+"La evidencia descarta imponer unicidad global de resolución, pero no establece
+cardinalidad arbitraria, colección ni búsqueda general de resoluciones."
+```
+
+`B3` fue suministrada ya establecida, como `B1` y `B2`; el runtime no la dedujo,
+interpretó ni legitimó. La realización conservó deliberadamente las tres props
+opcionales `resolution`, `secondResolution` y `thirdResolution`, sin introducir
+colección ni abstracción plural.
+
+Con las posiciones originales se comprobó:
+
+```text
+C1 → B1 presente; B2 y B3 ausentes
+C2 → B2 presente; B1 y B3 ausentes
+C3 → B3 presente; B1 y B2 ausentes
+C4 → B1, B2 y B3 ausentes
+```
+
+`C4` fue «Aportación sin resolución disponible» y no constituye una `absence`
+establecida. Antes de investigar la permutación pasaron 6 / 6 tests de
+`App.test.tsx`, incluidos esos cuatro casos, 5 / 5 pruebas específicas previas
+de `PV-003`, 49 / 49 tests previos de `R-U2-M1`, la suite global 219 / 219, el
+build de producción y `git diff --check`.
+
+A continuación se desplazaron las tres resoluciones en cuatro tests nuevos, sin
+modificar producción:
+
+```text
+asignación original        permutación ejercida
+resolution       = R1      resolution       = R3
+secondResolution = R2      secondResolution = R1
+thirdResolution  = R3      thirdResolution  = R2
+```
+
+Bajo esa permutación se conservaron exactamente los cuatro resultados
+`C1/C2/C3/C4`. La suite global final pasó 223 / 223, incluidos los cuatro tests
+nuevos de permutación, y `git diff --check` fue correcto. No se ejecutó un
+segundo build después de esos tests; el build ya había pasado sobre el mismo
+estado de producción, porque posteriormente sólo se modificó `App.test.tsx`.
+
+Para estas tres correspondencias reales distintas, la posición técnica no
+determina la correspondencia ni su resultado. Las posiciones `resolution`,
+`secondResolution` y `thirdResolution` no quedan justificadas por esta evidencia
+como tres papeles estructurales distintos, aunque permanecen como mecanismo
+experimental concreto implementado.
+
+El estado vigente queda ampliado así:
+
+```text
+witness local de una resolución
+✔ conservado
+
+integración ordinaria local de una C/B
+✔ conservada
+
+dos C/B reales distintas coexistentes
+✔ conservadas
+
+tercera C/B real distinta
+✔ ejercida localmente
+
+permutación R3/R1/R2
+✔ conserva C1/B1, C2/B2 y C3/B3
+
+necesidad de primera/segunda/tercera como papeles distintos
+→ no sustentada por la evidencia ejercida
+
+todas las permutaciones posibles
+→ no investigadas
+
+dos resoluciones para la misma aportación
+→ no investigado
+
+cardinalidad arbitraria
+→ no establecida
+
+colección
+→ no establecida
+
+integración general de PV-003
+→ no establecida
+
+satisfacción general o completa de PV-003
+→ no establecida
+```
+
+La evidencia sólo refuta la necesidad de la asignación ordinal original para
+las tres correspondencias distintas ejercidas. No establece que el orden nunca
+pueda importar, elimina la precedencia física ni determina el caso de dos
+resoluciones con la misma `contribution`, prioridad o conflictos. Tampoco
+establece cualquier número de resoluciones, colección, array, `Map`, `Set`,
+lista, catálogo, búsqueda o iteración general, proveedor, repositorio,
+persistencia de resoluciones, identidad general de aportaciones, arquitectura
+general ni satisfacción general o completa de `PV-003`.
+
+---
