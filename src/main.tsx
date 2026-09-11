@@ -14,8 +14,16 @@ const resolution: EstablishedResolution = {
     "La suficiencia local de la misma experiencia no proporciona fundamento para derivar una realización autónoma para este witness.",
 };
 
+const secondResolution: EstablishedResolution = {
+  contribution:
+    "Para la única pareja concreta C/B ejercida, queda establecida una integración ordinaria local de PV-003.",
+  kind: "difference",
+  content:
+    "Esta conclusión no establece integración general, satisfacción general o completa de PV-003 ni resolución para cualquier aportación.",
+};
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App resolution={resolution} />
+    <App resolution={resolution} secondResolution={secondResolution} />
   </React.StrictMode>,
 );

@@ -3671,3 +3671,64 @@ nueva arquitectura ni necesidad de proveedor, repositorio o servicio.
 `main.tsx` y `App` no son autoridades epistemológicas.
 
 ---
+
+## Coexistencia local posterior de dos resoluciones reales de `PV-003`
+
+Después de la integración ordinaria local de una única `C/B`, se ejercieron en
+la misma entrada ordinaria dos asociaciones reales distintas y previamente
+legitimadas:
+
+```text
+R1 = C1/B1
+R2 = C2/B2
+C1 ≠ C2
+
+Y = C1 → B1 y no B2
+Y = C2 → B2 y no B1
+Y ≠ C1 y Y ≠ C2 → Y constituida y no B1 y no B2
+```
+
+`main.tsx` materializa exactamente ambas parejas sin deducir, interpretar ni
+legitimar sus contenidos. `App` conduce `resolution` y `secondResolution`.
+`ResumeExperience` discrimina mediante dos correspondencias literales con
+`result.current`; si ninguna corresponde, no manifiesta resolución.
+
+La precedencia física de la primera comprobación no establece prioridad
+semántica porque la situación ejercida tiene `C1 ≠ C2`. No se ha investigado el
+caso de dos resoluciones para la misma aportación. Una `C3` sin resolución
+suministrada tampoco constituye una `absence` establecida.
+
+La validación obtuvo 5 / 5 tests de App superados, incluidos 3 / 3 casos de
+coexistencia, 5 / 5 pruebas previas
+de `PV-003`, 49 / 49 tests de `R-U2-M1`, suite global 218 / 218, build de
+producción y `git diff --check` superados. El witness de una resolución permanece
+válido porque `secondResolution` es opcional.
+
+El estado vigente pasa a incluir:
+
+```text
+witness local de una resolución
+✔ conservado
+
+integración ordinaria local de una C/B
+✔ conservada
+
+dos C/B reales distintas coexistentes
+✔ demostradas localmente
+
+resolución general
+→ no establecida
+
+satisfacción general o completa de PV-003
+→ no establecida
+```
+
+El resultado no establece cardinalidad arbitraria, colección, array, `Map`,
+catálogo, búsqueda general, prioridad semántica, resolución de conflictos,
+resolución para cualquier aportación, obtención automática, actualización
+dinámica, persistencia de resoluciones, proveedor, repositorio, estado general,
+identidad general de aportaciones ni arquitectura general. Permanecen intactos
+`resumeModel.ts`, `localStorageResumeRepository.ts`, la persistencia `X/Y`,
+`PV-001`, `PV-002`, Product y la semántica previa de `R-U2-M1`.
+
+---

@@ -3,14 +3,23 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
-const CONTRIBUTION =
+const FIRST_CONTRIBUTION =
   "PV-003 dispone de un witness realizativo ejecutable local dentro de R-U2-M1.";
-const DIFFERENCE =
+const FIRST_DIFFERENCE =
   "La suficiencia local de la misma experiencia no proporciona fundamento para derivar una realización autónoma para este witness.";
-const RESOLUTION = {
-  contribution: CONTRIBUTION,
+const FIRST_RESOLUTION = {
+  contribution: FIRST_CONTRIBUTION,
   kind: "difference" as const,
-  content: DIFFERENCE,
+  content: FIRST_DIFFERENCE,
+};
+const SECOND_CONTRIBUTION =
+  "Para la única pareja concreta C/B ejercida, queda establecida una integración ordinaria local de PV-003.";
+const SECOND_DIFFERENCE =
+  "Esta conclusión no establece integración general, satisfacción general o completa de PV-003 ni resolución para cualquier aportación.";
+const SECOND_RESOLUTION = {
+  contribution: SECOND_CONTRIBUTION,
+  kind: "difference" as const,
+  content: SECOND_DIFFERENCE,
 };
 
 describe("App", () => {
@@ -64,37 +73,76 @@ describe("App", () => {
     ).toBeInTheDocument();
   });
 
-  it("conduce una resolución hasta la aportación correspondiente", async () => {
+  it("manifiesta sólo B1 cuando la persona constituye C1", async () => {
     const user = userEvent.setup();
     localStorage.setItem("ru2m1.previous", "Aportación anterior válida");
 
-    render(<App resolution={RESOLUTION} />);
-
-    await user.type(screen.getByLabelText(/aportación actual/i), CONTRIBUTION);
-    await user.click(screen.getByRole("button", { name: /^crear$/i }));
-
-    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
-      CONTRIBUTION,
+    render(
+      <App
+        resolution={FIRST_RESOLUTION}
+        secondResolution={SECOND_RESOLUTION}
+      />,
     );
-    expect(screen.getByText(DIFFERENCE)).toBeInTheDocument();
-  });
-
-  it("no manifiesta la resolución para una aportación distinta", async () => {
-    const user = userEvent.setup();
-    const differentContribution = "Otra aportación constituida normalmente";
-    localStorage.setItem("ru2m1.previous", "Aportación anterior válida");
-
-    render(<App resolution={RESOLUTION} />);
 
     await user.type(
       screen.getByLabelText(/aportación actual/i),
-      differentContribution,
+      FIRST_CONTRIBUTION,
     );
     await user.click(screen.getByRole("button", { name: /^crear$/i }));
 
     expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
-      differentContribution,
+      FIRST_CONTRIBUTION,
     );
-    expect(screen.queryByText(DIFFERENCE)).not.toBeInTheDocument();
+    expect(screen.getByText(FIRST_DIFFERENCE)).toBeInTheDocument();
+    expect(screen.queryByText(SECOND_DIFFERENCE)).not.toBeInTheDocument();
+  });
+
+  it("manifiesta sólo B2 cuando la persona constituye C2", async () => {
+    const user = userEvent.setup();
+    localStorage.setItem("ru2m1.previous", "Aportación anterior válida");
+
+    render(
+      <App
+        resolution={FIRST_RESOLUTION}
+        secondResolution={SECOND_RESOLUTION}
+      />,
+    );
+
+    await user.type(
+      screen.getByLabelText(/aportación actual/i),
+      SECOND_CONTRIBUTION,
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      SECOND_CONTRIBUTION,
+    );
+    expect(screen.getByText(SECOND_DIFFERENCE)).toBeInTheDocument();
+    expect(screen.queryByText(FIRST_DIFFERENCE)).not.toBeInTheDocument();
+  });
+
+  it("no manifiesta B1 ni B2 cuando la persona constituye C3", async () => {
+    const user = userEvent.setup();
+    const thirdContribution = "Aportación sin resolución disponible";
+    localStorage.setItem("ru2m1.previous", "Aportación anterior válida");
+
+    render(
+      <App
+        resolution={FIRST_RESOLUTION}
+        secondResolution={SECOND_RESOLUTION}
+      />,
+    );
+
+    await user.type(
+      screen.getByLabelText(/aportación actual/i),
+      thirdContribution,
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent(
+      thirdContribution,
+    );
+    expect(screen.queryByText(FIRST_DIFFERENCE)).not.toBeInTheDocument();
+    expect(screen.queryByText(SECOND_DIFFERENCE)).not.toBeInTheDocument();
   });
 });

@@ -5,9 +5,10 @@ import {
 
 type AppProps = {
   resolution?: EstablishedResolution;
+  secondResolution?: EstablishedResolution;
 };
 
-function App({ resolution }: AppProps) {
+function App({ resolution, secondResolution }: AppProps) {
   return (
     <main>
       <section aria-labelledby="project-orientation-heading">
@@ -24,7 +25,10 @@ function App({ resolution }: AppProps) {
         </p>
       </section>
 
-      <ResumeExperience resolution={resolution} />
+      <ResumeExperience
+        resolution={resolution}
+        secondResolution={secondResolution}
+      />
     </main>
   );
 }
