@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 11/09/2026
+**Fecha de actualización:** 12/09/2026
 
 ## Índice
 
@@ -146,9 +146,12 @@ ordinaria del producto y una distinción visible, dentro de `R-U2-M1`, entre la
 aportación anterior y la actuación disponible o recién realizada. Esta última
 modificación quedó consolidada mediante `E-RU2M1-10`.
 
-La dimensión evaluativa permanece abierta porque todavía no se han establecido
-criterios semánticos y evaluativos suficientes para determinar legítimamente
-cómo una actuación contribuye o beneficia al proyecto.
+La línea denominada históricamente orientación evaluativa condujo después a
+`PV-003`. La investigación reductiva posterior a `H-REMAT` queda
+cerrada con la evidencia actualmente disponible: la estructura situacional
+articulada sobre `Sₕᴾ(C)` basta para reconstruir los casos ejercidos sin
+atribuir al runtime evaluación semántica ni
+la legitimación de aquello que manifiesta.
 
 Este resultado no deriva `PV-002`, un nuevo compromiso de Product, una
 modificación de `PV-001`, una nueva responsabilidad semántica de `R-U2-M1` ni
@@ -3929,5 +3932,84 @@ externa sigue presuponiendo el mismo hecho establecido en ambas situaciones.
 Permanecen válidos y sin reescritura el witness de una resolución, la integración
 ordinaria de una `C/B`, la coexistencia de dos `C/B`, la tercera `C/B` y la
 invariancia bajo la permutación `R3/R1/R2`.
+
+---
+
+## Cierre de la investigación reductiva posterior a `H-REMAT`
+
+La investigación reductiva de `PV-003` queda cerrada con la evidencia
+actualmente disponible.
+
+Las estructuras candidatas `E(C,M)`, `M`, `D/A`, `Est`, `Δ`, `⟨C,B⟩`,
+`R(C,K)`, hecho de orientación, admisión, manifestabilidad, alcance,
+consecuencia, determinación y dimensión proyectual no quedan justificadas como
+componentes estructurales autónomos.
+
+El residuo mínimo actualmente suficiente es la estructura situacional articulada sobre:
+
+```text
+Sₕᴾ(C)
+
+persona reconoce la aportación situada C
+        +
+respecto de C:
+  diferencia específica reconocible
+  o ausencia explícitamente establecida y reconocible
+  o ningún reconocimiento adicional disponible
+```
+
+`Sₕᴾ(C)` es únicamente una abreviatura expositiva de la situación humana del
+proyecto constituida por `C`; no introduce una entidad estructural adicional.
+
+Debe conservarse:
+
+```text
+reconocer explícitamente una ausencia
+≠
+no disponer de resolución
+```
+
+La forma mínima reconstruye la evidencia ya ejercida: `C` debe estar
+constituida antes de la orientación; una resolución para otra `C` no se
+manifiesta para la presente; `C1/C2/C3` conservan sus correspondencias
+concretas; `first/second/third` no son papeles estructurales; la conservación
+de la identidad referencial o de una misma materialización técnica del objeto
+no es necesaria; y diferencia positiva, ausencia explícitamente establecida y
+falta de resolución permanecen distinguibles.
+
+La legitimación de aquello que puede reconocerse sigue perteneciendo a la
+responsabilidad competente externa. La realización no lo deduce, interpreta,
+legitima ni evalúa autónomamente.
+
+El cierre no establece ontología definitiva, colección o cardinalidad general,
+identidad, persistencia, historial, `provenance` o versión de resoluciones,
+causalidad, beneficio como propiedad, estado futuro determinado, roadmap o
+siguiente paso, evaluación semántica autónoma del runtime ni generalización a
+todos los casos
+futuros de `PV-003`. Tampoco modifica el compromiso vigente de Product.
+
+La investigación sólo deberá reabrirse ante nueva evidencia que no pueda
+reconstruirse mediante la estructura situacional articulada sobre
+`Sₕᴾ(C)`, que haga indistinguibles situaciones
+humanamente distintas o que exija positivamente nueva estructura.
+
+El estado vigente queda registrado así:
+
+```text
+investigación reductiva posterior a H-REMAT
+✔ cerrada con la evidencia actualmente disponible
+
+estructura situacional articulada sobre Sₕᴾ(C)
+✔ residuo mínimo actualmente suficiente
+
+estructuras candidatas examinadas
+→ no justificadas como componentes autónomos
+
+responsabilidad competente externa
+✔ conserva la legitimación de lo reconocible
+
+Product PV-003
+✔ compromiso conservado sin reescritura
+```
 
 ---
