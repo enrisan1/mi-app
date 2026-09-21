@@ -35,3 +35,27 @@ correspondan: tests afectados, suite global cuando proceda, build y
 `git diff --check`. Informa de los archivos modificados, los controles
 ejecutados, sus resultados y cualquier incertidumbre que requiera decisión
 humana.
+
+## Investigación multiagente experimental
+
+La V0 es un mecanismo operativo experimental, no metodología canónica.
+Los agentes `reductor`, `falsificador`, `auditor_corpus` y `analista_product`,
+definidos en `.codex/agents/`, son instrumentos de análisis de sólo lectura,
+no autoridades de decisión. `.codex/config.toml` permite cuatro subagentes
+simultáneos.
+
+Cuando se solicite expresamente investigar una hipótesis mediante el grafo,
+el agente principal debe lanzar los cuatro de forma independiente y, cuando
+sea posible, en paralelo. Todos deben recibir la misma formulación congelada
+de la hipótesis; ninguno debe recibir como premisa las conclusiones
+preliminares de otro.
+
+El agente principal reunirá después coincidencias, desacuerdos, reducciones,
+falsificaciones, evidencia documental e incertidumbres. La síntesis no puede
+consolidar la hipótesis ni generar automáticamente la siguiente actuación.
+Después de la síntesis existe un **HUMAN GATE obligatorio**: detenerse y
+esperar decisión humana explícita.
+
+Ningún agente escritor, planner automático, modificación del producto,
+documentación conceptual ni commit forma parte de V0. Su regla operativa es:
+**muchos lectores, ningún escritor durante la investigación**.
