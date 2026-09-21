@@ -855,3 +855,50 @@ Este resultado no elimina la investigación previa necesaria ni subordina autom�
 Establece que teoría, producto y realización deberán contrastarse mutuamente durante el desarrollo y que la ausencia de nuevas derivaciones teóricas no constituye, por sí sola, una razón para impedir la construcción.
 
 ---
+
+# Ficha de bitácora — PV-004 y R-PV004-M1
+
+## Fecha y documentos
+
+21/09/2026.
+
+- [PRODUCT](../08-project/02-PRODUCT.md): incorporación de `PV-004` y su
+  delimitación como compromiso de Product.
+- [PROJECT_STATUS](../08-project/09-PROJECT_STATUS.md): registro de la
+  formulación reducida aceptada de `R-PV004-M1`, del primer testigo físico
+  suficiente y de su evidencia y estado actual.
+
+## Motivo y resultado
+
+El HUMAN GATE aceptó `PV-004`, `R-PV004-M1` en su formulación reducida y la
+implementación actual de `src/App.tsx` y `src/App.test.tsx` como primer testigo
+físico suficiente. Esta ficha registra esa decisión explícita y su traslado a
+los documentos competentes, sin reabrir su investigación.
+
+La aceptación incluye los controles consignados en `PROJECT_STATUS`, el
+carácter preexistente de TS2375 y la falta de cobertura de lint sobre los TSX.
+Incluye también que la restricción sobre la asistencia no exige ocultar ni
+modificar antecedentes humanos cuyo contenido coincida incidentalmente con P.
+
+## Estado documental y controles de consolidación
+
+Las formulaciones y la evidencia cuentan con aceptación humana previa. El
+HUMAN GATE final ha aceptado la versión documental completa.
+
+Se comprueba la correspondencia con las formulaciones autorizadas, la
+separación entre compromiso de Product y testigo contingente, la conservación
+de la historia y la localización de los cambios por responsabilidad.
+
+Esta ficha aporta la trazabilidad de `PCD-5`; la versión documental completa
+ha sido aceptada y queda congelada conforme a `PCD-3` y `PCD-4`.
+
+## Consecuencias y límites
+
+Esta consolidación documental no introduce nuevas modificaciones en código ni
+tests. `src/App.tsx` y `src/App.test.tsx` contienen el primer testigo físico
+ya aceptado y registrado por esta ficha.
+No se modifica `R-U2-M1`, `PV-001`, `PV-002` ni `PV-003`.
+No se deriva arquitectura general, ninguna vertical adicional, roadmap ni
+siguiente actuación. Los registros históricos conservan su estatuto y contenido.
+
+---

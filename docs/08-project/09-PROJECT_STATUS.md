@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 12/09/2026
+**Fecha de actualización:** 21/09/2026
 
 ## Índice
 
@@ -16,6 +16,12 @@
 ---
 
 # 1. Resumen ejecutivo
+
+El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
+y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
+El registro de la formulación, su alcance y la evidencia aceptada se encuentra
+en «PV-004 y primer testigo físico aceptado de R-PV004-M1», al final de este
+documento. Esta aceptación no deriva una siguiente actuación.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
@@ -659,7 +665,7 @@ Estado: corpus histórico conservado; reutilización condicionada a justificaci�
 
 La documentación de producto ha sido sometida a revisión y reconstrucción a partir de los fundamentos actualmente consolidados.
 
-`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y tres verticales consolidadas: `PV-001`, `PV-002` y `PV-003`.
+`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y cuatro verticales consolidadas: `PV-001`, `PV-002`, `PV-003` y `PV-004`.
 
 `PROJECT_STATUS.md` refleja el estado global vigente del proyecto, incluyendo los resultados posteriores a la reconstrucción de Product que hayan modificado dicho estado.
 
@@ -4011,5 +4017,72 @@ responsabilidad competente externa
 Product PV-003
 ✔ compromiso conservado sin reescritura
 ```
+
+---
+
+## PV-004 y primer testigo físico aceptado de R-PV004-M1
+
+**Fecha de registro:** 21/09/2026.
+
+El HUMAN GATE ha aceptado el compromiso `PV-004 — Elaboración previa a la
+asistencia`, recogido en [PRODUCT](02-PRODUCT.md#7-cuarta-vertical--pv-004),
+la siguiente formulación reducida y la implementación actual de
+`src/App.tsx` y `src/App.test.tsx` como primer testigo físico suficiente.
+Este apartado registra el resultado aceptado y su estado realizativo local.
+
+### R-PV004-M1 — Elaboración previa bajo iniciativa humana
+
+Dentro del alcance de PV-004, la persona puede iniciar y continuar una primera
+elaboración sobre el material o problema sin que el sistema le comunique una
+determinación pertinente —ni contenido equivalente— mientras no exista una
+actuación suya que solicite su introducción.
+
+Cuando la asistencia correspondiente esté disponible, esa actuación puede
+producirse desde el inicio o posteriormente, sin exigir que la persona haya
+realizado, exteriorizado, almacenado o acreditado una elaboración previa.
+
+### Alcance del testigo
+
+La no presentación de P se refiere a la introducción de la determinación por el
+sistema como asistencia dentro de esta actividad. No exige ocultar, filtrar ni
+modificar aportaciones humanas previamente disponibles aunque incidentalmente
+contengan contenido coincidente o equivalente. No corresponde modificar
+`R-U2-M1` para ocultar esos antecedentes.
+
+El ejemplo del cuaderno y el lápiz es material contingente del testigo; no
+constituye un concepto del dominio. `R-PV004-M1` no establece una arquitectura
+general ni modifica `PV-001`, `PV-002` o `PV-003`.
+
+### Evidencia aceptada
+
+- Sin solicitud, el problema está disponible y la asistencia está ausente.
+- La asistencia puede solicitarse inmediatamente, sin elaboración previa.
+- Tras actuaciones ordinarias que no solicitan asistencia, ésta sigue ausente
+  y puede solicitarse posteriormente.
+- La elaboración previa de esta actividad no se representa ni se persiste.
+- El único estado nuevo indica si se solicitó asistencia.
+- No se incorpora IA externa, temporizador, tracking ni arquitectura nueva.
+
+Los tres casos de `src/App.test.tsx` verifican la asistencia concreta de este
+testigo a nivel de App, incluyendo texto, nombres y descripciones accesibles,
+valores, títulos y placeholders. No demuestran equivalencia semántica general.
+La ausencia de representación o persistencia de la elaboración se refiere a
+esta actividad; no elimina la captura y conservación de aportaciones humanas
+ya existentes en `R-U2-M1`.
+
+### Controles aceptados por el HUMAN GATE
+
+| Control | Resultado |
+| --- | --- |
+| Tests afectados | 13/13 PASS |
+| Suite global | 228/228 PASS |
+| Build | PASS |
+| `git diff --check` | PASS |
+| TypeScript | TS2375 preexistente, reproducido también con `App.tsx` de HEAD |
+| Lint | Sin cobertura aplicable a los dos TSX modificados |
+
+Estos resultados corresponden a la validación del testigo aceptado, no a una
+nueva ejecución durante su registro documental. La aceptación conserva ese
+alcance local y no deriva nuevas verticales, roadmap ni siguiente actuación.
 
 ---

@@ -26,6 +26,10 @@
    6.2 Valor justificado
    6.3 Compromiso
 
+7. Cuarta vertical — PV-004
+   7.1 Compromiso
+   7.2 Delimitación
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -666,5 +670,35 @@ llega a estar disponible no forman parte de `PV-003`.
 - modificación de `R-U2-M1`;
 - modificación de `PV-001`;
 - ni modificación de `PV-002`.
+
+---
+
+# 7. Cuarta vertical — PV-004
+
+## 7.1 Compromiso
+
+**PV-004 — Elaboración previa a la asistencia**
+
+Cuando una actividad intelectual incluye como parte de su valor la realización
+de una primera elaboración antes de conocer una determinación pertinente del
+sistema todavía desconocida por la persona, la plataforma deberá poder preservar
+la posibilidad de realizar esa elaboración antes de presentar dicha
+determinación.
+
+## 7.2 Delimitación
+
+- No exige utilizar esa posibilidad.
+- No obliga a comenzar sin ayuda.
+- No impide solicitar asistencia desde el inicio.
+- No prohíbe delegación completa.
+- No prohíbe trabajo intelectual interno del sistema.
+- No exige conocer el estado mental de la persona.
+- No prescribe interfaz concreta.
+- No introduce una teoría general sobre sesgo o deterioro cognitivo.
+
+La no presentación de la determinación se refiere a su introducción por el
+sistema como asistencia dentro de esta actividad. No exige ocultar, filtrar ni
+modificar aportaciones humanas previamente disponibles aunque incidentalmente
+contengan contenido coincidente o equivalente.
 
 ---

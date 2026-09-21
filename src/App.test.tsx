@@ -36,6 +36,79 @@ describe("App", () => {
     localStorage.clear();
   });
 
+  // Fragmentos literales de la asistencia de este testigo, no paráfrasis de P.
+  const assistance =
+    /El lápiz cuesta 1 euro|2 euros que corresponden a dos veces el precio del lápiz/;
+  const assistanceText =
+    "El lápiz cuesta 1 euro: al restar los 3 euros de diferencia, quedan " +
+    "2 euros que corresponden a dos veces el precio del lápiz.";
+
+  function expectAssistanceAbsent() {
+    // Los antecedentes y entradas de estos casos no contienen la asistencia.
+    // El ámbito global incluye contenido fuera de la región del problema.
+    expect(document.body).not.toHaveTextContent(assistance);
+    expect(screen.queryByDisplayValue(assistance)).not.toBeInTheDocument();
+    expect(screen.queryByPlaceholderText(assistance)).not.toBeInTheDocument();
+    expect(screen.queryByTitle(assistance)).not.toBeInTheDocument();
+    for (const element of document.body.querySelectorAll("*")) {
+      expect(element).not.toHaveAccessibleName(assistance);
+      expect(element).not.toHaveAccessibleDescription(assistance);
+    }
+  }
+
+  it("ofrece el problema sin presentar la asistencia en la App antes de solicitarla", () => {
+    localStorage.setItem("ru2m1.previous", "Aportación anterior");
+    render(<App />);
+
+    const problem = screen.getByRole("region", { name: "Un problema para pensar" });
+    expect(problem).toHaveTextContent("Un cuaderno y un lápiz cuestan juntos 5 euros");
+    expect(problem).toHaveTextContent("3 euros más que el lápiz");
+    expect(screen.getByRole("button", { name: "Solicitar asistencia" })).toBeEnabled();
+    expectAssistanceAbsent();
+  });
+
+  it("presenta la asistencia ante una solicitud inmediata sin elaboración previa", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    expect(screen.getByLabelText("Aportación actual")).toHaveValue("");
+    expectAssistanceAbsent();
+    await user.click(screen.getByRole("button", { name: "Solicitar asistencia" }));
+
+    expect(screen.getByRole("status")).toBeVisible();
+    expect(screen.getByRole("status")).toHaveTextContent(assistanceText);
+    expect(screen.getByLabelText("Aportación actual")).toHaveValue("");
+    expect(localStorage.length).toBe(0);
+  });
+
+  it("mantiene ausente la asistencia tras actuaciones ordinarias y permite solicitarla después", async () => {
+    const user = userEvent.setup();
+    localStorage.setItem("ru2m1.previous", "Aportación anterior");
+    const { rerender } = render(<App />);
+
+    expectAssistanceAbsent();
+    await user.click(screen.getByText(/Un cuaderno y un lápiz cuestan/));
+    expectAssistanceAbsent();
+    await user.tab();
+    expect(screen.getByRole("button", { name: "Solicitar asistencia" })).toHaveFocus();
+    expectAssistanceAbsent();
+
+    await user.type(screen.getByLabelText("Aportación actual"), "Continuar");
+    expectAssistanceAbsent();
+    await user.click(screen.getByRole("button", { name: "Crear" }));
+    expect(screen.getByLabelText("Actuación actual")).toHaveTextContent("Continuar");
+    expectAssistanceAbsent();
+    await user.click(screen.getByRole("button", { name: "Terminar por ahora" }));
+    expectAssistanceAbsent();
+    rerender(<App />);
+    expectAssistanceAbsent();
+
+    await user.click(screen.getByRole("button", { name: "Solicitar asistencia" }));
+
+    expect(screen.getByRole("status")).toBeVisible();
+    expect(screen.getByRole("status")).toHaveTextContent(assistanceText);
+  });
+
   it("hace accesible R-U2-M1 desde el punto normal de entrada del producto", () => {
     render(<App />);
 
