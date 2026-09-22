@@ -38,30 +38,37 @@ export function ResumeExperience({
       <section>
         <h1>Ahora</h1>
 
-        <label>
-          Aportación actual
-          <input
-            value={currentInput}
-            onChange={(event) => {
-              setCurrentInput(event.target.value);
-              setAccepted(false);
-            }}
-          />
-        </label>
+        {accepted ? (
+          <div role="status">
+            <h2>Lo que has aportado</h2>
+            <p>{currentInput}</p>
+          </div>
+        ) : (
+          <>
+            <label>
+              Aportación actual
+              <input
+                value={currentInput}
+                onChange={(event) => {
+                  setCurrentInput(event.target.value);
+                  setAccepted(false);
+                }}
+              />
+            </label>
 
-        <button
-          type="button"
-          onClick={() => {
-            if (isResumeAvailable(currentInput)) {
-              localStorageResumeRepository.savePrevious(currentInput);
-              setAccepted(true);
-            }
-          }}
-        >
-          Crear
-        </button>
-
-        {accepted && <p role="status">Aportación preparada para después.</p>}
+            <button
+              type="button"
+              onClick={() => {
+                if (isResumeAvailable(currentInput)) {
+                  localStorageResumeRepository.savePrevious(currentInput);
+                  setAccepted(true);
+                }
+              }}
+            >
+              Crear
+            </button>
+          </>
+        )}
       </section>
     );
   }

@@ -134,9 +134,13 @@ describe("R-U2-M1 ResumeExperience", () => {
         "X preparado para después",
       );
 
-      expect(
-        screen.getByText(/aportación preparada para después/i),
-      ).toBeInTheDocument();
+      expect(screen.getByRole("status")).toHaveTextContent(
+        /lo que has aportado/i,
+      );
+
+      expect(screen.getByRole("status")).toHaveTextContent(
+        "X preparado para después",
+      );
     });
 
     it("remains in S1 after accepting X during the current execution", async () => {
@@ -218,6 +222,50 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(screen.getByLabelText(/aportación anterior/i)).toHaveTextContent(
         "X",
       );
+    });
+
+    it("distinguishes an accepted X from the pending contribution in S1", async () => {
+      const user = userEvent.setup();
+
+      render(<ResumeExperience />);
+
+      const input = screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      });
+
+      await user.type(input, "X");
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      expect(
+        screen.getByRole("heading", {
+          name: /ahora/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.queryByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+      ).not.toBeInTheDocument();
+
+      expect(
+        screen.queryByRole("button", {
+          name: /^crear$/i,
+        }),
+      ).not.toBeInTheDocument();
+
+      expect(
+        screen.getByRole("heading", {
+          name: /lo que has aportado/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(screen.getByText("X")).toBeInTheDocument();
     });
   });
 
