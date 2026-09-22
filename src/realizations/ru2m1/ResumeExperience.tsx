@@ -58,7 +58,7 @@ export function ResumeExperience({
             }
           }}
         >
-          Terminar por ahora
+          Crear
         </button>
 
         {accepted && <p role="status">Aportación preparada para después.</p>}
@@ -102,16 +102,6 @@ export function ResumeExperience({
             )}
           </div>
         )}
-
-        <button
-          type="button"
-          onClick={() => {
-            localStorageResumeRepository.saveRetained(result.previous);
-            localStorageResumeRepository.savePrevious(result.current);
-          }}
-        >
-          Terminar por ahora
-        </button>
       </section>
     );
   }
@@ -144,7 +134,17 @@ export function ResumeExperience({
         type="button"
         onClick={() => {
           try {
-            setResult(createFromPrevious(restoredPrevious, currentInput));
+            const nextResult = createFromPrevious(
+              restoredPrevious,
+              currentInput,
+            );
+
+            if (!isResumeAvailable(retainedPrevious)) {
+              localStorageResumeRepository.saveRetained(nextResult.previous);
+            }
+
+            localStorageResumeRepository.savePrevious(nextResult.current);
+            setResult(nextResult);
           } catch {
             // Un Y inválido no constituye X → Y.
           }

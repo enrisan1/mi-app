@@ -60,10 +60,16 @@ describe("App", () => {
     localStorage.setItem("ru2m1.previous", "Aportación anterior");
     render(<App />);
 
-    const problem = screen.getByRole("region", { name: "Un problema para pensar" });
-    expect(problem).toHaveTextContent("Un cuaderno y un lápiz cuestan juntos 5 euros");
+    const problem = screen.getByRole("region", {
+      name: "Un problema para pensar",
+    });
+    expect(problem).toHaveTextContent(
+      "Un cuaderno y un lápiz cuestan juntos 5 euros",
+    );
     expect(problem).toHaveTextContent("3 euros más que el lápiz");
-    expect(screen.getByRole("button", { name: "Solicitar asistencia" })).toBeEnabled();
+    expect(
+      screen.getByRole("button", { name: "Solicitar asistencia" }),
+    ).toBeEnabled();
     expectAssistanceAbsent();
   });
 
@@ -73,7 +79,9 @@ describe("App", () => {
 
     expect(screen.getByLabelText("Aportación actual")).toHaveValue("");
     expectAssistanceAbsent();
-    await user.click(screen.getByRole("button", { name: "Solicitar asistencia" }));
+    await user.click(
+      screen.getByRole("button", { name: "Solicitar asistencia" }),
+    );
 
     expect(screen.getByRole("status")).toBeVisible();
     expect(screen.getByRole("status")).toHaveTextContent(assistanceText);
@@ -90,20 +98,25 @@ describe("App", () => {
     await user.click(screen.getByText(/Un cuaderno y un lápiz cuestan/));
     expectAssistanceAbsent();
     await user.tab();
-    expect(screen.getByRole("button", { name: "Solicitar asistencia" })).toHaveFocus();
+    expect(
+      screen.getByRole("button", { name: "Solicitar asistencia" }),
+    ).toHaveFocus();
     expectAssistanceAbsent();
 
     await user.type(screen.getByLabelText("Aportación actual"), "Continuar");
     expectAssistanceAbsent();
     await user.click(screen.getByRole("button", { name: "Crear" }));
-    expect(screen.getByLabelText("Actuación actual")).toHaveTextContent("Continuar");
+    expect(screen.getByLabelText("Actuación actual")).toHaveTextContent(
+      "Continuar",
+    );
     expectAssistanceAbsent();
-    await user.click(screen.getByRole("button", { name: "Terminar por ahora" }));
-    expectAssistanceAbsent();
+
     rerender(<App />);
     expectAssistanceAbsent();
 
-    await user.click(screen.getByRole("button", { name: "Solicitar asistencia" }));
+    await user.click(
+      screen.getByRole("button", { name: "Solicitar asistencia" }),
+    );
 
     expect(screen.getByRole("status")).toBeVisible();
     expect(screen.getByRole("status")).toHaveTextContent(assistanceText);
@@ -116,9 +129,7 @@ describe("App", () => {
 
     expect(screen.getByLabelText("Aportación actual")).toBeInTheDocument();
 
-    expect(
-      screen.getByRole("button", { name: "Terminar por ahora" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Crear" })).toBeInTheDocument();
   });
 
   it("proporciona orientación situacional junto a la realización en uso", () => {

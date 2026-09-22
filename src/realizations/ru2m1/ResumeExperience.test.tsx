@@ -24,7 +24,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       ).toBeInTheDocument();
 
@@ -38,7 +38,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -59,7 +59,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -80,7 +80,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -89,7 +89,7 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(screen.queryByRole("status")).not.toBeInTheDocument();
     });
 
-    it("persists a valid X when the current activity is ended", async () => {
+    it("persists a valid X when the first contribution is created", async () => {
       const user = userEvent.setup();
 
       render(<ResumeExperience />);
@@ -103,7 +103,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -126,7 +126,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -153,7 +153,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -184,11 +184,40 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
       expect(localStorage.getItem("ru2m1.previous")).toBe("  X  ");
+    });
+
+    it("allows the first contribution to be created without an explicit ending action", async () => {
+      const user = userEvent.setup();
+
+      const firstExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "X",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      expect(localStorage.getItem("ru2m1.previous")).toBe("X");
+
+      firstExecution.unmount();
+
+      render(<ResumeExperience />);
+
+      expect(screen.getByLabelText(/aportación anterior/i)).toHaveTextContent(
+        "X",
+      );
     });
   });
 
@@ -220,7 +249,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       ).toBeInTheDocument();
     });
@@ -270,7 +299,7 @@ describe("R-U2-M1 ResumeExperience", () => {
   });
 
   describe("real interruption and resumption", () => {
-    it("restores X in a new render after the first execution has ended", async () => {
+    it("restores X in a new render after the first execution is interrupted", async () => {
       const user = userEvent.setup();
 
       const firstExecution = render(<ResumeExperience />);
@@ -284,7 +313,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -311,7 +340,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -364,10 +393,26 @@ describe("R-U2-M1 ResumeExperience", () => {
       render(<ResumeExperience />);
 
       expect(
-        screen.queryByRole("button", {
-          name: /^crear$/i,
+        screen.getByRole("heading", {
+          name: /ahora/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.queryByRole("heading", {
+          name: /retomar/i,
         }),
       ).not.toBeInTheDocument();
+
+      expect(
+        screen.queryByLabelText(/aportación anterior/i),
+      ).not.toBeInTheDocument();
+
+      expect(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      ).toBeInTheDocument();
     });
 
     it("does not treat the mere display of X as sufficient evidence of resumption", () => {
@@ -550,7 +595,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.click(
         screen.getByRole("button", {
-          name: /terminar por ahora/i,
+          name: /^crear$/i,
         }),
       );
 
@@ -604,12 +649,6 @@ describe("R-U2-M1 ResumeExperience", () => {
         }),
       );
 
-      await user.click(
-        screen.getByRole("button", {
-          name: /terminar por ahora/i,
-        }),
-      );
-
       secondExecution.unmount();
 
       render(<ResumeExperience />);
@@ -639,12 +678,6 @@ describe("R-U2-M1 ResumeExperience", () => {
         }),
       );
 
-      await user.click(
-        screen.getByRole("button", {
-          name: /terminar por ahora/i,
-        }),
-      );
-
       secondExecution.unmount();
 
       render(<ResumeExperience />);
@@ -656,6 +689,97 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(
         screen.getByLabelText(/otra aportación disponible/i).textContent,
       ).toBe("X");
+    });
+
+    it("keeps the retained X when a later contribution becomes the new antecedent", async () => {
+      const user = userEvent.setup();
+
+      localStorage.setItem("ru2m1.previous", "A");
+
+      const secondExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "B",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      secondExecution.unmount();
+
+      expect(localStorage.getItem("ru2m1.previous")).toBe("B");
+      expect(localStorage.getItem("ru2m1.retained")).toBe("A");
+
+      const thirdExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "C",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      thirdExecution.unmount();
+
+      expect(localStorage.getItem("ru2m1.previous")).toBe("C");
+      expect(localStorage.getItem("ru2m1.retained")).toBe("A");
+    });
+
+    it("allows a created Y to resume later without an explicit ending action", async () => {
+      const user = userEvent.setup();
+
+      localStorage.setItem("ru2m1.previous", "X");
+
+      const secondExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "Y",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      expect(screen.getByLabelText(/antecedente/i)).toHaveTextContent("X");
+      expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent("Y");
+
+      expect(localStorage.getItem("ru2m1.previous")).toBe("Y");
+      expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+
+      expect(
+        screen.queryByRole("button", {
+          name: /terminar por ahora/i,
+        }),
+      ).not.toBeInTheDocument();
+
+      // Interrupción real, sin pulsar "Terminar por ahora".
+      secondExecution.unmount();
+
+      render(<ResumeExperience />);
+
+      expect(screen.getByLabelText(/aportación anterior/i)).toHaveTextContent(
+        "Y",
+      );
+      expect(
+        screen.getByLabelText(/otra aportación disponible/i),
+      ).toHaveTextContent("X");
     });
   });
 });

@@ -19,9 +19,19 @@
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
-El registro de la formulación, su alcance y la evidencia aceptada se encuentra
-en «PV-004 y primer testigo físico aceptado de R-PV004-M1», al final de este
-documento. Esta aceptación no deriva una siguiente actuación.
+
+Con posterioridad, una investigación reductiva de la realización vigente
+`R-U2-M1` demostró que la actuación humana explícita `Terminar por ahora`
+no constituye la interrupción efectiva y es eliminable sin perder las
+diferencias actualmente validadas de la realización.
+
+La responsabilidad técnica que desempeñaba quedó absorbida por la constitución
+mediante `Crear`, mientras la interrupción permanece como fenómeno posterior e
+independiente. El resultado quedó consolidado mediante `E-RU2M1-18` y
+`CP-RU2M1-21`.
+
+Esta reducción no modifica `PV-001`, `PV-002`, `PV-003` ni `PV-004`, no deriva
+`PV-005` y no determina una siguiente actuación.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
@@ -1908,9 +1918,15 @@ PV-002
   dentro del alcance mínimo comprometido
 
 R-U2-M1
-✔ reabierta y ampliada localmente
+✔ reabierta y ampliada localmente para PV-002
 ✔ E-RU2M1-11 obtenida
 ✔ RV-PV002-RU2M1-01 validada
+✔ investigación reductiva posterior de la terminación explícita cerrada
+✔ E-RU2M1-18 obtenida
+✔ CP-RU2M1-21 consolidada
+✔ Terminar por ahora eliminado de la superficie vigente
+✔ constitución mediante Crear distinguida de la interrupción
+
 
 arquitectura general
 → no derivada
@@ -2357,10 +2373,13 @@ E-RU2M1-09
 → Reaplicación local desde una aportación producida
 
 CP-RU2M1-12
-→ una aportación Y producida en una situación de reanudación puede ser
-  aceptada para después y restaurada como antecedente de una nueva situación
-  de reanudación
+→ conclusión correspondiente, en su formulación entonces vigente,
+  sobre la disponibilidad posterior de Y y su restauración como
+  antecedente de una nueva situación de reanudación
 ```
+
+La formulación vigente de `CP-RU2M1-12` fue posteriormente reconsolidada tras
+la reducción documentada en `E-RU2M1-18`.
 
 El resultado demuestra una reaplicación local desde una aportación producida.
 
@@ -4072,17 +4091,184 @@ ya existentes en `R-U2-M1`.
 
 ### Controles aceptados por el HUMAN GATE
 
-| Control | Resultado |
-| --- | --- |
-| Tests afectados | 13/13 PASS |
-| Suite global | 228/228 PASS |
-| Build | PASS |
-| `git diff --check` | PASS |
-| TypeScript | TS2375 preexistente, reproducido también con `App.tsx` de HEAD |
-| Lint | Sin cobertura aplicable a los dos TSX modificados |
+| Control            | Resultado                                                      |
+| ------------------ | -------------------------------------------------------------- |
+| Tests afectados    | 13/13 PASS                                                     |
+| Suite global       | 228/228 PASS                                                   |
+| Build              | PASS                                                           |
+| `git diff --check` | PASS                                                           |
+| TypeScript         | TS2375 preexistente, reproducido también con `App.tsx` de HEAD |
+| Lint               | Sin cobertura aplicable a los dos TSX modificados              |
 
 Estos resultados corresponden a la validación del testigo aceptado, no a una
 nueva ejecución durante su registro documental. La aceptación conserva ese
 alcance local y no deriva nuevas verticales, roadmap ni siguiente actuación.
+
+---
+
+## Reducción posterior de `R-U2-M1`: eliminabilidad de la terminación explícita
+
+**Fecha de registro:** 22/09/2026.
+
+Con posterioridad a la aceptación de `PV-004`, se sometió a investigación
+reductiva la actuación humana explícita:
+
+```text
+Terminar por ahora
+```
+
+La revisión independiente de Product estableció que ninguno de los compromisos
+vigentes `PV-001`, `PV-002`, `PV-003` o `PV-004` exige dicha actuación.
+
+El contraste realizativo estableció además que `Terminar por ahora` no
+constituía la interrupción efectiva.
+
+La estructura observada era:
+
+```text
+Terminar por ahora
+↓
+preparación o persistencia técnica
+↓
+la ejecución continúa
+↓
+interrupción real posterior
+↓
+nueva ejecución
+```
+
+La interrupción efectiva permanece asociada al límite entre ejecuciones.
+
+Se contrastó entonces la eliminabilidad de la actuación adicional.
+
+Primero se ejerció `S2(X)`:
+
+```text
+S2(X)
+↓
+Crear Y
+↓
+X → Y constituido
++
+Y preparado como posible antecedente posterior
++
+X conservado adicionalmente dentro del alcance de PV-002
+↓
+interrupción
+↓
+nueva ejecución
+↓
+Y restaurado como antecedente operativo
++
+X todavía disponible
+```
+
+La trayectoria se conservó sin una actuación humana posterior de terminación.
+
+Después se contrastó independientemente `S1`:
+
+```text
+S1
+↓
+Crear X
+↓
+X persistido y aceptado de forma observable
+↓
+S1 continúa
+↓
+interrupción
+↓
+nueva ejecución
+↓
+X restaurado
+↓
+S2(X)
+```
+
+Tampoco esta trayectoria requirió una actuación humana adicional de
+terminación.
+
+La realización vigente queda por tanto reducida de modo que:
+
+```text
+Crear
+≠
+terminar
+
+Crear
+≠
+interrumpir
+
+constitución o preparación de una aportación
+≠
+interrupción de la ejecución
+```
+
+La diferencia entre `S1` y `S2(X)` depende de la ausencia o presencia de un
+antecedente válido restaurado al comienzo de la ejecución, no de utilizar
+actuaciones humanas con nombres distintos.
+
+La evidencia y conclusión correspondientes quedaron consolidadas en
+`docs/06-realization/00-R-U2-M1.md` mediante:
+
+```text
+E-RU2M1-18
+→ Eliminabilidad de la terminación humana explícita
+
+CP-RU2M1-21
+→ Terminar por ahora es eliminable dentro de la realización vigente
+  y del alcance actualmente ejercido
+```
+
+La validación posterior obtuvo:
+
+```text
+ResumeExperience.test.tsx
+→ 28/28 PASS
+
+R-U2-M1
+→ 59/59 PASS
+
+App.test.tsx
+→ 13/13 PASS
+
+suite global
+→ 26 archivos
+→ 231/231 PASS
+
+build de producción
+→ PASS
+
+git diff --check
+→ PASS
+```
+
+El resultado constituye una reducción de mecanismo contingente de realización.
+
+No convierte `Crear` en una exigencia de Product, no establece una definición
+universal de interrupción, no prescribe el mismo mecanismo para otras
+realizaciones y no deriva arquitectura general, historial, colección,
+conservación ilimitada ni reiterabilidad arbitraria.
+
+El estado vigente queda:
+
+```text
+R-U2-M1
+✔ Terminar por ahora eliminado
+✔ Crear constituye y prepara la aportación
+✔ interrupción conservada como fenómeno independiente
+✔ E-RU2M1-18 obtenida
+✔ CP-RU2M1-21 consolidada
+
+Product
+✔ PV-001 conservada
+✔ PV-002 conservada
+✔ PV-003 conservada
+✔ PV-004 conservada
+→ PV-005 no derivada
+
+siguiente actuación
+→ no derivada automáticamente
+```
 
 ---
