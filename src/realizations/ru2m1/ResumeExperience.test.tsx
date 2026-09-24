@@ -18,7 +18,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
       ).toBeInTheDocument();
 
@@ -28,7 +28,11 @@ describe("R-U2-M1 ResumeExperience", () => {
         }),
       ).toBeInTheDocument();
 
-      expect(screen.queryByText(/retomar/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("heading", {
+          name: /^retomar$/i,
+        }),
+      ).not.toBeInTheDocument();
     });
 
     it("does not persist an empty X", async () => {
@@ -52,7 +56,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "   ",
       );
@@ -73,7 +77,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "   ",
       );
@@ -96,7 +100,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "Resultado alcanzado anteriormente",
       );
@@ -119,7 +123,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X preparado para después",
       );
@@ -150,7 +154,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X preparado para después",
       );
@@ -181,7 +185,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "  X  ",
       );
@@ -195,6 +199,39 @@ describe("R-U2-M1 ResumeExperience", () => {
       expect(localStorage.getItem("ru2m1.previous")).toBe("  X  ");
     });
 
+    it("makes the available input recognizable before creating X in S1", () => {
+      render(<ResumeExperience />);
+
+      expect(
+        screen.getByRole("textbox", {
+          name: /texto/i,
+        }),
+      ).toBeInTheDocument();
+
+      expect(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      ).toBeInTheDocument();
+    });
+
+    it("exposes a free-text cue before creating X in S1", () => {
+      render(<ResumeExperience />);
+
+      expect(
+        screen.getByRole("textbox", {
+          name: /texto libre/i,
+        }),
+      ).toBeInTheDocument();
+    });
+
+    it("exposes a later-availability cue before creating X in S1", () => {
+      render(<ResumeExperience />);
+
+      expect(screen.getByText(/disponible/i)).toBeInTheDocument();
+      expect(screen.getByText(/retom/i)).toBeInTheDocument();
+    });
+
     it("allows the first contribution to be created without an explicit ending action", async () => {
       const user = userEvent.setup();
 
@@ -202,7 +239,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X",
       );
@@ -230,7 +267,7 @@ describe("R-U2-M1 ResumeExperience", () => {
       render(<ResumeExperience />);
 
       const input = screen.getByRole("textbox", {
-        name: /aportación actual/i,
+        name: /texto/i,
       });
 
       await user.type(input, "X");
@@ -249,7 +286,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(
         screen.queryByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
       ).not.toBeInTheDocument();
 
@@ -266,6 +303,16 @@ describe("R-U2-M1 ResumeExperience", () => {
       ).toBeInTheDocument();
 
       expect(screen.getByText("X")).toBeInTheDocument();
+    });
+
+    it("uses the selected multiline text mechanism in initial S1", () => {
+      render(<ResumeExperience />);
+
+      const textbox = screen.getByRole("textbox", {
+        name: /texto libre/i,
+      });
+
+      expect(textbox.tagName).toBe("TEXTAREA");
     });
   });
 
@@ -293,7 +340,11 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       render(<ResumeExperience />);
 
-      expect(screen.queryByText(/retomar/i)).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("heading", {
+          name: /^retomar$/i,
+        }),
+      ).not.toBeInTheDocument();
 
       expect(
         screen.getByRole("button", {
@@ -354,7 +405,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X producido en S1",
       );
@@ -381,7 +432,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X preparado para después",
       );
@@ -636,7 +687,7 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       await user.type(
         screen.getByRole("textbox", {
-          name: /aportación actual/i,
+          name: /texto/i,
         }),
         "X producido anteriormente",
       );

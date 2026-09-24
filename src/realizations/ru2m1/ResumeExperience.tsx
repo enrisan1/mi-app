@@ -46,8 +46,8 @@ export function ResumeExperience({
         ) : (
           <>
             <label>
-              Aportación actual
-              <input
+              Introduce un texto libre
+              <textarea
                 value={currentInput}
                 onChange={(event) => {
                   setCurrentInput(event.target.value);
@@ -55,6 +55,10 @@ export function ResumeExperience({
                 }}
               />
             </label>
+
+            <p>
+              Al crear, este texto quedará disponible para retomarlo después.
+            </p>
 
             <button
               type="button"

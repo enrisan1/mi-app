@@ -77,7 +77,7 @@ describe("App", () => {
     const user = userEvent.setup();
     render(<App />);
 
-    expect(screen.getByLabelText("Aportación actual")).toHaveValue("");
+    expect(screen.getByLabelText("Introduce un texto libre")).toHaveValue("");
     expectAssistanceAbsent();
     await user.click(
       screen.getByRole("button", { name: "Solicitar asistencia" }),
@@ -85,7 +85,7 @@ describe("App", () => {
 
     expect(screen.getByRole("status")).toBeVisible();
     expect(screen.getByRole("status")).toHaveTextContent(assistanceText);
-    expect(screen.getByLabelText("Aportación actual")).toHaveValue("");
+    expect(screen.getByLabelText("Introduce un texto libre")).toHaveValue("");
     expect(localStorage.length).toBe(0);
   });
 
@@ -127,7 +127,7 @@ describe("App", () => {
 
     expect(screen.getByRole("heading", { name: "Ahora" })).toBeInTheDocument();
 
-    expect(screen.getByLabelText("Aportación actual")).toBeInTheDocument();
+    expect(screen.getByLabelText("Introduce un texto libre")).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: "Crear" })).toBeInTheDocument();
   });
