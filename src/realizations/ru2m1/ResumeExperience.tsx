@@ -41,7 +41,7 @@ export function ResumeExperience({
         {accepted ? (
           <div role="status">
             <h2>Lo que has aportado</h2>
-            <p>{currentInput}</p>
+            <p className="preserve-whitespace">{currentInput}</p>
           </div>
         ) : (
           <>
@@ -92,7 +92,7 @@ export function ResumeExperience({
         <h1>Retomar</h1>
 
         <h2>Aportación anterior</h2>
-        <p aria-label="Antecedente">{result.previous}</p>
+        <p className="preserve-whitespace" aria-label="Antecedente">{result.previous}</p>
 
         <h2>Qué has hecho ahora</h2>
         <p aria-label="Actuación actual">{result.current}</p>
@@ -122,12 +122,12 @@ export function ResumeExperience({
       <h1>Retomar</h1>
 
       <h2>Aportación anterior</h2>
-      <p aria-label="Aportación anterior">{restoredPrevious}</p>
+      <p className="preserve-whitespace" aria-label="Aportación anterior">{restoredPrevious}</p>
 
       {isResumeAvailable(retainedPrevious) && (
         <>
           <h2>Otra aportación disponible</h2>
-          <p aria-label="Otra aportación disponible">{retainedPrevious}</p>
+          <p className="preserve-whitespace" aria-label="Otra aportación disponible">{retainedPrevious}</p>
         </>
       )}
 

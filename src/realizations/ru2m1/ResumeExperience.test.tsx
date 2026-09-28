@@ -2,6 +2,25 @@ import { describe, expect, it, beforeEach } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { ResumeExperience } from "./ResumeExperience";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+const indexCss = readFileSync(
+  resolve(process.cwd(), "src/index.css"),
+  "utf-8",
+);
+
+const preserveWhitespaceRule = indexCss.match(
+  /\.preserve-whitespace\s*\{[^}]*\}/,
+)?.[0];
+
+if (!preserveWhitespaceRule) {
+  throw new Error("No se encontró .preserve-whitespace en index.css");
+}
+
+const style = document.createElement("style");
+style.textContent = preserveWhitespaceRule;
+document.head.appendChild(style);
 
 describe("R-U2-M1 ResumeExperience", () => {
   beforeEach(() => {
@@ -834,6 +853,70 @@ describe("R-U2-M1 ResumeExperience", () => {
 
       expect(localStorage.getItem("ru2m1.previous")).toBe("C");
       expect(localStorage.getItem("ru2m1.retained")).toBe("A");
+    });
+
+    it("preserves multiline X observably across the complete trajectory", async () => {
+      const user = userEvent.setup();
+
+      const multilineX =
+        "Historia de Roma\n\nRepública\nSenado y magistraturas\n\nImperio\nAugusto";
+
+      const firstExecution = render(<ResumeExperience />);
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /texto/i,
+        }),
+        multilineX,
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      const acceptedX = screen.getByRole("status").querySelector("p");
+
+      expect(acceptedX).not.toBeNull();
+      expect(acceptedX?.textContent).toBe(multilineX);
+      expect(getComputedStyle(acceptedX!).whiteSpace).toBe("pre-wrap");
+
+      firstExecution.unmount();
+
+      const resumedExecution = render(<ResumeExperience />);
+
+      const restoredX = screen.getByLabelText(/aportación anterior/i);
+
+      expect(restoredX.textContent).toBe(multilineX);
+      expect(getComputedStyle(restoredX).whiteSpace).toBe("pre-wrap");
+
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /aportación actual/i,
+        }),
+        "Comprar leche mañana.",
+      );
+
+      await user.click(
+        screen.getByRole("button", {
+          name: /^crear$/i,
+        }),
+      );
+
+      const previousInResult = screen.getByLabelText(/antecedente/i);
+
+      expect(previousInResult.textContent).toBe(multilineX);
+      expect(getComputedStyle(previousInResult).whiteSpace).toBe("pre-wrap");
+
+      resumedExecution.unmount();
+
+      render(<ResumeExperience />);
+
+      const retainedX = screen.getByLabelText(/otra aportación disponible/i);
+
+      expect(retainedX.textContent).toBe(multilineX);
+      expect(getComputedStyle(retainedX).whiteSpace).toBe("pre-wrap");
     });
 
     it("allows a created Y to resume later without an explicit ending action", async () => {
