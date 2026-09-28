@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 21/09/2026
+**Fecha de actualización:** 28/09/2026
 
 ## Índice
 
@@ -32,6 +32,26 @@ independiente. El resultado quedó consolidado mediante `E-RU2M1-18` y
 
 Esta reducción no modifica `PV-001`, `PV-002`, `PV-003` ni `PV-004`, no deriva
 `PV-005` y no determina una siguiente actuación.
+
+Posteriormente, una investigación independiente de practicabilidad de
+disponibilidad de `PV-002` detectó que una aportación multilínea podía
+conservarse y recuperarse técnicamente sin pérdida de contenido, pero perder
+en su presentación observable los saltos de línea y la separación entre
+bloques que la propia realización había permitido guardar.
+
+La investigación distinguió conservación técnica, recuperabilidad práctica y
+fidelidad reconstructiva observable, derivó `MR-PV002-01` y realizó una
+corrección mínima de presentación en `R-U2-M1`.
+
+La corrección quedó validada mediante una regresión de trayectoria completa,
+34 / 34 tests de `ResumeExperience`, 237 / 237 tests de la suite global,
+build de producción satisfactorio y validación directa en navegador de las
+cuatro superficies ejercidas.
+
+`RV-PV002-RU2M1-01` se conserva como resultado positivo local con fundamento
+de validación rectificado. `PV-002` permanece sin modificación, `PV-005` no
+queda derivada y la investigación no deja una actuación material pendiente
+dentro de su alcance.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
@@ -1926,6 +1946,10 @@ R-U2-M1
 ✔ CP-RU2M1-21 consolidada
 ✔ Terminar por ahora eliminado de la superficie vigente
 ✔ constitución mediante Crear distinguida de la interrupción
+✔ investigación de practicabilidad de disponibilidad de PV-002 cerrada
+✔ MR-PV002-01 derivada y satisfecha localmente en el caso multilínea ejercido
+✔ fidelidad observable multilínea validada en las cuatro superficies ejercidas
+✔ RV-PV002-RU2M1-01 conservada con fundamento de validación rectificado
 
 
 arquitectura general
@@ -2406,6 +2430,46 @@ observado, incluida la modificación de presentación consolidada mediante
 La orientación evaluativa permanece bajo investigación localizada porque aún
 no se han establecido criterios semánticos y evaluativos suficientes para
 determinar legítimamente cómo una actuación contribuye o beneficia al proyecto.
+
+
+## Investigación de practicabilidad de disponibilidad de PV-002
+
+Una observación posterior de uso real mostró que una aportación multilínea podía
+permanecer conservada exactamente en persistencia y, sin embargo, perder en su
+presentación observable los saltos de línea y la separación entre bloques que
+la propia realización había permitido introducir.
+
+La investigación distinguió:
+
+- conservación técnica;
+- recuperabilidad práctica;
+- fidelidad reconstructiva observable.
+
+Se derivó `MR-PV002-01` y se realizó una corrección mínima de presentación,
+limitada a las superficies competentes de `R-U2-M1`.
+
+La validación produjo:
+
+- regresión específica de trayectoria completa: 1 / 1 PASS;
+- `ResumeExperience.test.tsx`: 34 / 34 PASS;
+- suite global: 26 archivos, 237 / 237 tests PASS;
+- build de producción: PASS;
+- validación directa en navegador de las cuatro superficies ejercidas: PASS;
+- `git diff --check`: PASS.
+
+La investigación confirmó localmente que la estructura multilínea admitida
+puede conservarse y reconstruirse observablemente sin pérdida en la trayectoria
+ejercida.
+
+`RV-PV002-RU2M1-01` se conserva como resultado positivo local con fundamento
+de validación rectificado.
+
+El resultado no establece fidelidad general para propiedades no admitidas o no
+ejercidas, no amplía `PV-002`, no deriva `PV-005`, no prescribe el mecanismo
+CSS utilizado y no deriva arquitectura general.
+
+La investigación quedó cerrada sin actuación material pendiente dentro de su
+alcance.
 
 ---
 
