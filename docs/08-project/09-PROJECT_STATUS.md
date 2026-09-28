@@ -2427,9 +2427,11 @@ La orientación situacional ha sido realizada y validada dentro del alcance loca
 observado, incluida la modificación de presentación consolidada mediante
 `E-RU2M1-10`.
 
-La orientación evaluativa permanece bajo investigación localizada porque aún
-no se han establecido criterios semánticos y evaluativos suficientes para
-determinar legítimamente cómo una actuación contribuye o beneficia al proyecto.
+La línea denominada entonces orientación evaluativa fue posteriormente reducida
+hasta aislar el residuo que condujo a la selección de `PV-003`.
+
+La investigación quedó cerrada respecto de esa selección y la denominación
+«orientación evaluativa» se conserva únicamente como histórica o provisional.
 
 
 ## Investigación de practicabilidad de disponibilidad de PV-002
