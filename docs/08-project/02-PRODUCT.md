@@ -30,6 +30,10 @@
    7.1 Compromiso
    7.2 Delimitación
 
+8. Quinta vertical — PV-005
+   8.1 Compromiso
+   8.2 Delimitación
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -700,5 +704,41 @@ La no presentación de la determinación se refiere a su introducción por el
 sistema como asistencia dentro de esta actividad. No exige ocultar, filtrar ni
 modificar aportaciones humanas previamente disponibles aunque incidentalmente
 contengan contenido coincidente o equivalente.
+
+---
+
+# 8. Quinta vertical — PV-005
+
+## 8.1 Compromiso
+
+**PV-005 — Determinación humana efectiva**
+
+Cuando una actividad incluya una decisión relevante cuya resolución
+corresponda a la persona y permanezcan alternativas todavía disponibles, la
+plataforma deberá poder preservar la posibilidad efectiva de que la persona
+determine esa resolución.
+
+## 8.2 Delimitación
+
+- No establece que toda decisión de una actividad corresponda a la persona.
+- No exige que la persona decida directamente cada operación.
+- No exige que una determinación suficientemente encomendada deba volver a ser
+  determinada personalmente.
+- No exige intervención humana en operaciones técnicas ya suficientemente
+  determinadas.
+- No exige mantener alternativas que hayan dejado de estar disponibles por
+  condiciones externas o constitutivas.
+- No exige proporcionar posibilidades ajenas al alcance de aquello que el
+  producto hace practicable.
+- No prescribe una interfaz concreta.
+- No prescribe un mecanismo de confirmación.
+- No establece una política general de advertencias.
+- No introduce una teoría general de propiedad o autoría.
+- No introduce una teoría general para determinar qué decisiones corresponden
+  a la persona.
+
+La determinación de que una resolución corresponde a la persona constituye una
+condición de la situación seleccionada. `PV-005` no atribuye por sí mismo al
+runtime autoridad general para establecer esa correspondencia.
 
 ---
