@@ -2,7 +2,7 @@
 
 **Fecha de apertura:** 28/09/2026
 
-**Estado:** En progreso
+**Estado:** Cerrada
 
 ## 1. Origen de la investigación
 
@@ -6437,3 +6437,98 @@ PV-006 — Continuidad de posibilidades pertinentes
 La independencia demostrada entre `PV-005` y `PV-006` permanece conservada.
 
 ---
+
+## 78. Cierre de la investigación
+
+**Fecha de cierre:** 30/09/2026.
+
+### 78.1 Comprobación del alcance investigado
+
+La condición empírica establecida en la apertura fue satisfecha mediante casos
+reales de aportaciones sonoras.
+
+La investigación no ha derivado una obligación general de conservar audio,
+producir transcripciones, mantener una representación concreta ni introducir
+una arquitectura multimedia.
+
+La reducción progresiva mostró que las diferencias relevantes observadas no
+dependían específicamente del audio y permitió aislar dos núcleos independientes:
+
+```text
+N-I28-01 — Autoridad humana efectiva
+    ↓ reducción y falsación
+PV-005 — Determinación humana efectiva
+    ✔ consolidada en Product
+
+N-I28-02 — Fidelidad del estado relevante
+    ↓ reducción y falsación
+PV-006 — Continuidad de posibilidades pertinentes
+    ✔ consolidada en Product
+```
+
+Los candidatos de Product derivados de ambos núcleos fueron sometidos a
+falsación, auditoría de nivel Product, selección mediante HUMAN GATE y
+consolidación en el documento competente.
+
+### 78.2 Cuestión independiente sobre advertencias
+
+Durante la investigación se identificó una cuestión distinta relativa a la
+posible conveniencia o necesidad de advertir a la persona cuando, durante la
+ejecución de una actuación suficientemente encomendada, aparezcan consecuencias
+relevantes que pudieran no haber sido contempladas al realizar la encomienda.
+
+La investigación distinguió:
+
+```text
+determinación o encomienda
+≠
+advertencia preventiva
+≠
+nueva solicitud de autorización
+```
+
+Esta cuestión:
+
+- no forma parte de `PV-005`;
+- no forma parte de `PV-006`;
+- no ha sido demostrada como condición necesaria para responder la pregunta de
+  esta investigación;
+- y no se abre automáticamente como una nueva investigación.
+
+Podrá investigarse separadamente si una necesidad posterior lo justifica.
+
+### 78.3 No derivaciones del cierre
+
+El cierre de esta investigación no deriva por sí mismo:
+
+- una realización concreta de audio;
+- transcripción automática o manual obligatoria;
+- conservación universal del audio original;
+- una entidad conceptual `Audio`, `File`, `Transcript` o equivalente;
+- almacenamiento, versionado, historial o colección;
+- una política general de advertencias;
+- una nueva arquitectura;
+- una nueva modificación de código;
+- ni una siguiente actuación de Product.
+
+### 78.4 Estado final
+
+No se ha identificado ninguna cuestión necesaria abierta cuya resolución sea
+condición para responder la pregunta de investigación dentro del alcance
+ejercido.
+
+Por tanto:
+
+```text
+28-investigacion-incorporacion-aportacion-sonora.md
+    ✔ condición empírica inicial ejercida
+    ✔ reducción completada
+    ✔ N-I28-01 resuelto mediante PV-005
+    ✔ N-I28-02 resuelto mediante PV-006
+    ✔ cuestiones independientes delimitadas
+    ✔ cerrada dentro del alcance investigado
+```
+
+Este cierre no generaliza los resultados más allá de los compromisos
+expresamente consolidados en Product ni convierte cuestiones futuras posibles
+en obligaciones actuales.

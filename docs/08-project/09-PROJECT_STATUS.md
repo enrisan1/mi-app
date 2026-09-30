@@ -108,6 +108,20 @@ representación, formato, estructura, soporte, almacenamiento, mecanismo de
 recuperación ni teoría general de pertinencia, y mantiene su independencia
 respecto de `PV-005`.
 
+Tras la consolidación en Product de los resultados derivados de ambos
+núcleos, la investigación 28 fue sometida a
+auditoría final de cierre. La condición empírica establecida en su apertura
+había sido ejercida mediante casos reales y no se identificó ninguna cuestión
+necesaria pendiente para responder su pregunta dentro del alcance investigado.
+
+La posible necesidad de advertencias preventivas ante consecuencias no
+contempladas de actuaciones suficientemente encomendadas permanece como
+cuestión independiente: no forma parte de `PV-005` ni de `PV-006`, no bloquea
+el cierre de la investigación 28 y no queda abierta automáticamente como nueva
+investigación.
+
+La investigación 28 queda por tanto cerrada dentro de su alcance documentado.
+
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
 Su responsabilidad consiste exclusivamente en declarar el estado vigente.
