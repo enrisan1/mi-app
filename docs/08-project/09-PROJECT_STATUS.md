@@ -1942,9 +1942,10 @@ documentación.
 La dimensión situacional de la petición queda satisfecha dentro del alcance
 local observado.
 
-La dimensión evaluativa permanece abierta: todavía no se han establecido
-criterios semánticos y evaluativos suficientes para determinar legítimamente
-qué constituye una contribución o beneficio para el proyecto.
+En ese punto, la dimensión denominada provisionalmente «orientación
+evaluativa» permanecía abierta: todavía no se habían establecido criterios
+semánticos y evaluativos suficientes para determinar legítimamente qué
+constituía una contribución o beneficio para el proyecto.
 
 Con posterioridad a este resultado, el ejercicio del producto actual con dos
 aportaciones reales permitió observar una pérdida material distinta.
@@ -1994,7 +1995,7 @@ El compromiso no establece historial arbitrario, conservación ilimitada,
 colecciones, relaciones semánticas, mecanismos de selección o eliminación ni
 una solución técnica concreta.
 
-El estado de reanudación queda actualmente:
+En ese punto, el estado de reanudación quedaba:
 
 ```text
 PV-001
@@ -2053,6 +2054,63 @@ La siguiente actuación deberá justificarse a partir de una necesidad material
 de Product, nueva evidencia, una pérdida concreta, una dependencia necesaria
 demostrada o una situación de uso que proporcione fundamento positivo para
 actuar.
+
+---
+
+## Estado de reanudación vigente
+
+Tras las investigaciones y consolidaciones posteriores, el estado desde el que
+debe retomarse actualmente el proyecto es:
+
+```text
+Product
+    ✔ PV-001 consolidada
+    ✔ PV-002 consolidada
+    ✔ PV-003 consolidada
+    ✔ PV-004 consolidada
+    ✔ PV-005 consolidada
+    ✔ PV-006 consolidada
+
+R-U2-M1 / PV-002
+    ✔ realización contingente vigente
+    ✔ satisfacción realizativa local validada dentro del alcance mínimo ejercido
+    ✔ fidelidad observable multilínea corregida y validada
+
+PV-003
+    ✔ witness realizativo local conservado
+    ✔ integración ordinaria local ejercida
+    ✔ coexistencia de resoluciones ejercida
+    ✔ tercera correspondencia e invariancia ordinal localizadas
+    ✔ investigación reductiva posterior cerrada
+    ✘ integración general no establecida
+    ✘ satisfacción general o completa no establecida
+
+PV-004
+    ✔ R-PV004-M1 aceptada como primer testigo físico suficiente
+    ✘ no deriva por sí misma una siguiente actuación
+
+PV-005
+    ✔ consolidada en Product
+    → no prescribe realización, arquitectura ni mecanismo concreto
+
+PV-006
+    ✔ consolidada en Product
+    → no prescribe realización, arquitectura ni mecanismo concreto
+
+investigación 28
+    ✔ cerrada dentro del alcance documentado
+
+advertencias preventivas
+    → cuestión independiente identificada
+    → no forma parte de PV-005 ni PV-006
+    → no queda abierta automáticamente como nueva investigación
+```
+
+No queda derivada automáticamente una siguiente actuación sustantiva.
+
+Cualquier actuación posterior deberá obtener fundamento positivo a partir de
+una necesidad material de Product, nueva evidencia, una pérdida concreta, una
+dependencia necesaria demostrada o una situación de uso que justifique actuar.
 
 ---
 
