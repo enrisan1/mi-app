@@ -34,6 +34,10 @@
    8.1 Compromiso
    8.2 Delimitación
 
+9. Sexta vertical — PV-006
+   9.1 Compromiso
+   9.2 Delimitación
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -740,5 +744,61 @@ determine esa resolución.
 La determinación de que una resolución corresponde a la persona constituye una
 condición de la situación seleccionada. `PV-005` no atribuye por sí mismo al
 runtime autoridad general para establecer esa correspondencia.
+
+---
+
+# 9. Sexta vertical — PV-006
+
+## 9.1 Compromiso
+
+**PV-006 — Continuidad de posibilidades pertinentes**
+
+Cuando la plataforma introduzca un cambio que afecte a un material o trabajo,
+deberá preservar suficientemente en la situación resultante las posibilidades
+que sigan siendo pertinentes.
+
+## 9.2 Delimitación
+
+- No exige conservar todas las posibilidades técnicamente existentes.
+- No exige conservar toda diferencia que haya existido históricamente.
+- No exige conservar la misma representación, formato, estructura, soporte,
+  localización, redundancia o ejemplar material.
+- No exige que cada representación o derivado preserve por separado todas las
+  posibilidades pertinentes.
+- Permite que la preservación quede distribuida entre distintos elementos de
+  la situación resultante.
+- No considera por sí misma pérdida la sustitución de una realización por otra
+  suficientemente equivalente respecto de las posibilidades pertinentes.
+- No exige conservar posibilidades que hayan agotado su papel, hayan sido
+  suficientemente sustituidas o hayan sido legítimamente abandonadas.
+- La mera falta de uso actual no establece por sí misma que una posibilidad
+  haya dejado de ser pertinente.
+- La ausencia de un uso futuro previsto no establece por sí misma que una
+  posibilidad haya dejado de ser pertinente.
+- Una estimación de baja utilidad no establece por sí misma que una posibilidad
+  haya dejado de ser pertinente.
+- No introduce una teoría general para determinar cuándo una posibilidad deja
+  de ser pertinente.
+- No determina por sí misma quién puede decidir el abandono de una posibilidad.
+- No prescribe interfaz, almacenamiento, versionado, copias de seguridad,
+  formato, estructura de datos, mecanismo de recuperación ni otra realización
+  técnica concreta.
+- No exige acceso humano inmediato o irrestricto cuando la capacidad
+  correspondiente continúa efectivamente preservada.
+- No establece una garantía absoluta frente a contingencias externas ajenas a
+  cambios introducidos por la plataforma.
+
+La suficiencia de la preservación no exige identidad literal. Una posibilidad
+puede permanecer suficientemente preservada cuando la situación resultante
+mantiene efectivamente aquello necesario para que continúe existiendo o pueda
+ser restaurada de manera determinada.
+
+La mera supervivencia física de residuos o una posibilidad hipotética de
+reconstrucción no bastan por sí mismas.
+
+Cuando el abandono de una posibilidad implique una decisión cuya resolución
+corresponda a la persona, podrá resultar aplicable `PV-005`. `PV-006` no
+establece por sí misma que toda decisión sobre conservación o abandono
+corresponda a la persona.
 
 ---

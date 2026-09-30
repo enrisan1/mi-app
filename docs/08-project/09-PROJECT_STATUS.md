@@ -80,6 +80,34 @@ general para determinar qué decisiones corresponden a la persona.
 `N-I28-02 — Fidelidad del estado relevante` permanece como cuestión
 independiente y no queda resuelta por la consolidación de `PV-005`.
 
+La investigación posterior de `N-I28-02` distinguió conservación literal,
+representación, accesibilidad y preservación funcional, y sometió el residuo
+obtenido a contrastes sobre datos estructurados, fotografías, formatos,
+derivados, fragmentación, almacenamiento externo, recuperación y restricciones
+de acceso.
+
+La reducción estableció que la pérdida pertinente no depende de conservar una
+representación, soporte, estructura o ejemplar determinados, sino de si las
+posibilidades que continúan siendo pertinentes permanecen suficientemente
+preservadas después de un cambio introducido por la plataforma.
+
+El residuo fue reducido a Product como
+`C-PV-I28-02 — Continuidad de posibilidades pertinentes`, se demostró
+independiente de `PV-001`–`PV-005`, superó falsación integral y auditoría de
+nivel y abstracción de Product, y fue propuesto para selección deliberada.
+
+El HUMAN GATE aceptó su selección como sexta vertical y el compromiso quedó
+consolidado en `PRODUCT.md` como:
+
+`PV-006 — Continuidad de posibilidades pertinentes`.
+
+`PV-006` establece que, cuando la plataforma introduzca un cambio que afecte a
+un material o trabajo, deberá preservar suficientemente en la situación
+resultante las posibilidades que sigan siendo pertinentes. No prescribe una
+representación, formato, estructura, soporte, almacenamiento, mecanismo de
+recuperación ni teoría general de pertinencia, y mantiene su independencia
+respecto de `PV-005`.
+
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
 Su responsabilidad consiste exclusivamente en declarar el estado vigente.
@@ -722,7 +750,7 @@ Estado: corpus histórico conservado; reutilización condicionada a justificaci�
 
 La documentación de producto ha sido sometida a revisión y reconstrucción a partir de los fundamentos actualmente consolidados.
 
-`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y cinco verticales consolidadas: `PV-001`, `PV-002`, `PV-003`, `PV-004` y `PV-005`.
+`PRODUCT.md` ha sido reconstruido y auditado, y establece actualmente la competencia de Product, el mecanismo de establecimiento de compromisos y seis verticales consolidadas: `PV-001`, `PV-002`, `PV-003`, `PV-004`, `PV-005` y `PV-006`.
 
 `PROJECT_STATUS.md` refleja el estado global vigente del proyecto, incluyendo los resultados posteriores a la reconstrucción de Product que hayan modificado dicho estado.
 

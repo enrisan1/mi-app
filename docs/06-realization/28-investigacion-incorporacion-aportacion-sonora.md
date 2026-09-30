@@ -5887,3 +5887,553 @@ La cuestión independiente:
 permanece sin resolver mediante esta consolidación.
 
 ---
+
+## 75. Propuesta de selección deliberada de C-PV-I28-02 como sexta vertical de Product
+
+**Fecha:** 30/09/2026.
+
+### 75.1 Objeto
+
+Esta sección registra la propuesta de selección deliberada de:
+
+`C-PV-I28-02 — Continuidad de posibilidades pertinentes`
+
+como posible sexta vertical de Product.
+
+La propuesta no modifica todavía:
+
+`docs/08-project/02-PRODUCT.md`.
+
+La eventual selección requiere aceptación expresa mediante HUMAN GATE.
+
+---
+
+### 75.2 Situación seleccionable
+
+La investigación ha identificado una situación general en la que:
+
+```text
+material o trabajo
+↓
+hace posibles determinadas interpretaciones,
+utilizaciones o actuaciones pertinentes
+↓
+la plataforma introduce un cambio
+↓
+pueden modificarse:
+representación
+formato
+estructura
+soporte
+localización
+distribución
+relaciones
+o incluso la existencia de alguna parte
+↓
+situación resultante
+```
+
+La diferencia relevante no consiste en conservar necesariamente ninguna de
+esas realizaciones particulares.
+
+Consiste en si las posibilidades que siguen siendo pertinentes continúan
+suficientemente preservadas después del cambio introducido por la plataforma.
+
+---
+
+### 75.3 Valor humano demostrado
+
+La investigación ha mostrado que pueden conservarse materialmente datos,
+elementos o representaciones y, sin embargo, desaparecer capacidades humanas
+pertinentes.
+
+Entre los contrastes ejercidos se encuentran:
+
+- conservación de valores con pérdida de su correspondencia con la
+  procedencia `medido / estimado`;
+- conservación de fragmentos con pérdida de las relaciones necesarias para
+  recomponer pertinentemente el conjunto;
+- eliminación de columnas no utilizadas en la operación inmediata aunque el
+  material continúe conservándose para usos posteriores;
+- pérdida de partes de una fotografía familiar aunque no exista una
+  utilización futura determinada;
+- pérdida de capacidades de edición cuando el original correspondiente sigue
+  siendo pertinente;
+- pérdida de referencias necesarias para recuperar inequívocamente un estado
+  previamente conservado;
+- sustitución de una copia suficientemente preservada por una dependencia
+  externa cuya continuidad no está suficientemente asegurada.
+
+En estos casos, la pérdida relevante no depende de la desaparición literal de
+un objeto o representación.
+
+Depende de que deje de existir una posibilidad que todavía pertenecía
+pertinentemente a la situación.
+
+La investigación ha mostrado también el caso inverso: pueden desaparecer
+propiedades, representaciones o soportes sin pérdida pertinente cuando las
+funciones correspondientes permanecen suficientemente preservadas mediante
+la situación resultante.
+
+---
+
+### 75.4 Reducción obtenida
+
+La investigación ha descartado como fundamentales:
+
+```text
+conservación literal
+conservación del mismo objeto
+conservación del mismo formato
+conservación de la misma estructura física
+conservación local
+conservación de redundancias
+conservación de toda posibilidad técnicamente existente
+preservación dentro de cada derivado individual
+acceso humano inmediato
+```
+
+También ha establecido que:
+
+```text
+falta de uso actual
+≠ agotamiento
+
+ausencia de uso futuro previsto
+≠ ausencia de pertinencia
+
+baja probabilidad estimada de uso
+≠ abandono
+
+cambio de representación
+≠ pérdida
+
+existencia física residual
+≠ preservación suficiente
+```
+
+El residuo estable es la continuidad de las posibilidades que siguen siendo
+pertinentes después de un cambio introducido por la plataforma.
+
+---
+
+### 75.5 Compromiso candidato
+
+**C-PV-I28-02 — Continuidad de posibilidades pertinentes**
+
+> Cuando la plataforma introduzca un cambio que afecte a un material o trabajo,
+> deberá preservar suficientemente en la situación resultante las posibilidades
+> que sigan siendo pertinentes.
+
+La formulación compromete un resultado de Product.
+
+No prescribe el mecanismo mediante el que debe realizarse.
+
+---
+
+### 75.6 Delimitación
+
+La candidata:
+
+- no exige conservar todas las posibilidades técnicamente existentes;
+- no exige conservar toda diferencia que haya existido históricamente;
+- no exige conservar la misma representación, formato, estructura, soporte,
+  localización, redundancia o ejemplar material;
+- no exige que cada representación o derivado preserve por separado todas las
+  posibilidades pertinentes;
+- permite que la preservación quede distribuida entre distintos elementos de
+  la situación resultante;
+- no considera por sí misma pérdida la sustitución de una realización por otra
+  suficientemente equivalente respecto de las posibilidades pertinentes;
+- no exige conservar posibilidades que hayan agotado su papel, hayan sido
+  suficientemente sustituidas o hayan sido legítimamente abandonadas;
+- no considera que la mera falta de uso actual establezca por sí misma que una
+  posibilidad haya dejado de ser pertinente;
+- no considera que la ausencia de un uso futuro previsto establezca por sí
+  misma que una posibilidad haya dejado de ser pertinente;
+- no considera que una estimación de baja utilidad establezca por sí misma que
+  una posibilidad haya dejado de ser pertinente;
+- no introduce una teoría general para determinar cuándo una posibilidad deja
+  de ser pertinente;
+- no determina por sí misma quién puede decidir el abandono de una
+  posibilidad;
+- no prescribe interfaz, almacenamiento, versionado, copias de seguridad,
+  formato, estructura de datos, mecanismo de recuperación ni otra realización
+  técnica concreta;
+- no exige acceso humano inmediato o irrestricto cuando la capacidad
+  correspondiente continúa efectivamente preservada;
+- no establece una garantía absoluta frente a contingencias externas ajenas a
+  cambios introducidos por la plataforma.
+
+La suficiencia de la preservación no equivale a identidad literal.
+
+Una posibilidad puede considerarse suficientemente preservada cuando la
+situación resultante mantiene efectivamente aquello necesario para que siga
+existiendo o pueda ser restaurada de manera determinada.
+
+La mera supervivencia física de residuos o una reconstrucción hipotética no
+bastan por sí mismas.
+
+---
+
+### 75.7 Independencia respecto de PV-001–PV-005
+
+La investigación ha ejercido un contraejemplo en el que una plataforma puede
+satisfacer:
+
+```text
+PV-001 ✔
+PV-002 ✔
+PV-003 ✔
+PV-004 ✔
+PV-005 ✔
+```
+
+y, sin embargo, perder durante una migración técnica la correspondencia entre
+cada valor y su procedencia `medido / estimado`.
+
+En esa situación:
+
+```text
+valores
+✔ conservados
+
+procedencias
+✔ conservadas
+
+correspondencia valor ↔ procedencia
+✘ perdida
+
+posibilidades de interpretación y utilización
+✘ reducidas
+```
+
+Ninguno de los compromisos `PV-001`–`PV-005` obliga por sí mismo a preservar
+esa continuidad funcional a través del cambio.
+
+Por tanto, no se ha demostrado absorción de `C-PV-I28-02` por las verticales
+actualmente consolidadas.
+
+---
+
+### 75.8 Independencia respecto de PV-005
+
+`PV-005 — Determinación humana efectiva` y `C-PV-I28-02` protegen diferencias
+distintas.
+
+Puede satisfacerse `PV-005` y violarse `C-PV-I28-02`:
+
+```text
+la persona determina correctamente:
+«no eliminar»
+
+↓
+una migración posterior pierde igualmente
+la información pertinente
+
+PV-005
+✔
+
+C-PV-I28-02
+✘
+```
+
+También puede ocurrir lo contrario:
+
+```text
+la plataforma preserva perfectamente
+todas las posibilidades pertinentes
+
+↓
+pero impide a la persona realizar una reducción
+cuya determinación le corresponde
+
+C-PV-I28-02
+✔
+
+PV-005
+✘
+```
+
+Por tanto, no existe absorción mutua.
+
+Cuando el abandono de una posibilidad implique una decisión cuya resolución
+corresponda a la persona, `PV-005` podrá resultar aplicable.
+
+`C-PV-I28-02` no establece por sí misma que toda decisión sobre conservación o
+abandono corresponda a la persona.
+
+---
+
+### 75.9 Auditoría de nivel y abstracción de Product
+
+La formulación candidata ha sido auditada respecto del nivel de abstracción de
+Product.
+
+El resultado es:
+
+```text
+situación de Product
+✔
+
+valor humano identificable
+✔
+
+resultado comprometido
+✔
+
+mecanismo técnico
+✘ no prescrito
+
+interfaz
+✘ no prescrita
+
+modelo de almacenamiento
+✘ no prescrito
+
+formato o estructura concretos
+✘ no prescritos
+
+teoría general de pertinencia
+✘ no introducida
+
+dependencia circular de PV-005
+✘ no obtenida
+
+absorción por PV-001–PV-005
+✘ no obtenida
+```
+
+La formulación permanece en el nivel:
+
+```text
+qué diferencia humana debe preservarse
+```
+
+y no deriva:
+
+```text
+cómo debe realizarse técnicamente esa preservación
+```
+
+---
+
+### 75.10 Propuesta de decisión de Product
+
+A la vista de los resultados obtenidos, existe fundamento positivo para
+proponer que Product seleccione la situación y el valor documentados en esta
+sección y establezca como sexta vertical:
+
+`PV-006 — Continuidad de posibilidades pertinentes`
+
+con el compromiso:
+
+> Cuando la plataforma introduzca un cambio que afecte a un material o trabajo,
+> deberá preservar suficientemente en la situación resultante las posibilidades
+> que sigan siendo pertinentes.
+
+La propuesta incluye las delimitaciones consignadas en la sección 75.6.
+
+La selección no se considera realizada mediante esta sección.
+
+Requiere aceptación expresa mediante HUMAN GATE.
+
+---
+
+### 75.11 Estado previo al HUMAN GATE
+
+El estado queda:
+
+```text
+N-I28-02 — Fidelidad del estado relevante
+    ↓ reducción
+C-PV-I28-02 — Continuidad de posibilidades pertinentes
+    ✔ diferencia independiente
+    ✔ valor humano demostrado
+    ✔ no absorbida por PV-001–PV-005
+    ✔ falsación integral superada
+    ✔ auditoría de nivel Product superada
+    ↓
+propuesta de selección como PV-006
+    → pendiente de HUMAN GATE
+```
+
+Hasta que exista aceptación expresa:
+
+```text
+PV-006
+✘ no establecida
+
+docs/08-project/02-PRODUCT.md
+✘ no modificado por esta propuesta
+```
+
+---
+
+## 76. HUMAN GATE — aceptación de PV-006
+
+**Fecha:** 30/09/2026.
+
+### 76.1 Decisión
+
+El HUMAN GATE acepta que Product seleccione la situación y el valor
+documentados en la sección 75 como sexta vertical de Product.
+
+El compromiso aceptado es:
+
+`PV-006 — Continuidad de posibilidades pertinentes`
+
+con la formulación:
+
+> Cuando la plataforma introduzca un cambio que afecte a un material o trabajo,
+> deberá preservar suficientemente en la situación resultante las posibilidades
+> que sigan siendo pertinentes.
+
+La aceptación incluye las delimitaciones consignadas en la sección 75.6.
+
+---
+
+### 76.2 Efecto de la aceptación
+
+`C-PV-I28-02 — Continuidad de posibilidades pertinentes` deja de ser
+únicamente una candidata de Product.
+
+La trayectoria queda:
+
+```text
+N-I28-02 — Fidelidad del estado relevante
+    ↓ reducción
+C-PV-I28-02 — Continuidad de posibilidades pertinentes
+    ↓ falsación integral
+    ↓ auditoría de nivel Product
+    ↓ propuesta deliberada de selección
+    ↓ HUMAN GATE aceptado
+PV-006 — Continuidad de posibilidades pertinentes
+```
+
+La selección de `PV-006` queda aceptada.
+
+---
+
+### 76.3 Delimitación conservada
+
+La aceptación no modifica las delimitaciones de la sección 75.6.
+
+En particular, `PV-006`:
+
+- no exige conservar todas las posibilidades técnicamente existentes;
+- no exige conservar toda diferencia histórica;
+- no exige identidad de representación, formato, estructura, soporte,
+  localización, redundancia o ejemplar material;
+- no exige que cada derivado preserve individualmente todas las posibilidades
+  pertinentes;
+- permite preservación distribuida en la situación resultante;
+- permite sustituciones suficientemente equivalentes;
+- no exige conservar posibilidades agotadas, suficientemente sustituidas o
+  legítimamente abandonadas;
+- no considera la mera falta de uso, la ausencia de un uso futuro previsto o
+  una estimación de baja utilidad como prueba suficiente de pérdida de
+  pertinencia;
+- no introduce una teoría general de pertinencia;
+- no determina por sí misma quién puede decidir el abandono de una
+  posibilidad;
+- no prescribe interfaz, almacenamiento, versionado, copias de seguridad,
+  formato, estructura de datos ni mecanismo de recuperación;
+- no exige acceso humano inmediato o irrestricto cuando la capacidad sigue
+  efectivamente preservada;
+- no establece una garantía absoluta frente a contingencias externas ajenas a
+  cambios introducidos por la plataforma.
+
+---
+
+### 76.4 Relación con PV-001–PV-005
+
+La aceptación de `PV-006`:
+
+- no modifica `PV-001`;
+- no modifica `PV-002`;
+- no modifica `PV-003`;
+- no modifica `PV-004`;
+- no modifica `PV-005`;
+- no elimina la independencia demostrada entre `PV-005` y `PV-006`;
+- no deriva arquitectura, realización, interfaz ni mecanismo técnico.
+
+Cuando el abandono de una posibilidad implique una decisión cuya resolución
+corresponda a la persona, `PV-005` podrá resultar aplicable.
+
+`PV-006` no establece por sí misma que toda decisión sobre conservación o
+abandono corresponda a la persona.
+
+---
+
+### 76.5 Estado documental
+
+La selección ha sido aceptada mediante HUMAN GATE.
+
+La consolidación de esa decisión en el documento competente:
+
+`docs/08-project/02-PRODUCT.md`
+
+permanece pendiente.
+
+Por tanto, el estado actual es:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+    ✔ situación seleccionada
+    ✔ valor justificado
+    ✔ compromiso aceptado por HUMAN GATE
+    ✔ delimitación aceptada
+    → pendiente de consolidación documental en PRODUCT.md
+
+docs/08-project/02-PRODUCT.md
+    → todavía sin modificar respecto de PV-006
+```
+
+---
+
+## 77. Consolidación documental de PV-006 en PRODUCT.md
+
+**Fecha:** 30/09/2026.
+
+Tras la aceptación registrada en el HUMAN GATE de la sección 76, el compromiso:
+
+`PV-006 — Continuidad de posibilidades pertinentes`
+
+ha sido incorporado al documento competente:
+
+`docs/08-project/02-PRODUCT.md`.
+
+La consolidación mantiene la formulación aceptada:
+
+> Cuando la plataforma introduzca un cambio que afecte a un material o trabajo,
+> deberá preservar suficientemente en la situación resultante las posibilidades
+> que sigan siendo pertinentes.
+
+También incorpora las delimitaciones aceptadas, sin prescribir arquitectura,
+realización, interfaz, almacenamiento, formato, estructura, localización ni
+mecanismo técnico de preservación.
+
+La incorporación no modifica `PV-001`, `PV-002`, `PV-003`, `PV-004` o
+`PV-005`.
+
+El estado pasa de:
+
+```text
+PV-006
+    ✔ aceptada por HUMAN GATE
+    → pendiente de consolidación en PRODUCT.md
+```
+
+a:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+    ✔ seleccionada por Product
+    ✔ aceptada por HUMAN GATE
+    ✔ consolidada en PRODUCT.md
+```
+
+La independencia demostrada entre `PV-005` y `PV-006` permanece conservada.
+
+---
