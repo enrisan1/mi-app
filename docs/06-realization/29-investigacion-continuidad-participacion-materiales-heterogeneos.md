@@ -338,3 +338,130 @@ modificación de código
 
 La apertura establece únicamente que existe fundamento positivo suficiente para
 investigar la situación humana planteada.
+
+---
+
+## 11. Primer caso — transformación de una fuente audiovisual en material de trabajo
+
+### 11.1 Propósito del caso
+
+El primer caso de investigación consistirá en partir de un vídeo real y
+utilizarlo como fuente para construir un material de trabajo intelectual.
+
+El objetivo no es producir un resultado audiovisual determinado ni demostrar la
+necesidad de un editor multimedia.
+
+El objetivo es observar qué posibilidades necesita mantener la persona durante
+la transformación de la fuente en material de trabajo y durante la reutilización
+posterior de los resultados obtenidos.
+
+### 11.2 Trayectoria inicial a observar
+
+La trayectoria candidata es:
+
+```text
+vídeo original V0
+        │
+        ├──→ audio
+        │
+        ├──→ transcripción T1
+        │
+        ├──→ fragmentos F1...
+        │
+        ├──→ imágenes o fotogramas I1...
+        │
+        └──→ comentarios o anotaciones N1...
+                     │
+                     ↓
+             material de trabajo
+                     │
+                     ↓
+       nuevas transformaciones,
+       combinaciones o reutilizaciones
+```
+
+### 11.3 Finalidad humana
+
+La finalidad del caso será convertir el vídeo en material de trabajo para una
+investigación o actividad intelectual real.
+
+Durante el ejercicio podrán aparecer conjuntamente:
+
+- el vídeo original;
+- fragmentos audiovisuales;
+- audio;
+- transcripción;
+- imágenes o fotogramas;
+- comentarios;
+- anotaciones;
+- resultados derivados de combinaciones entre ellos.
+
+La investigación observará cuáles de estos elementos continúan siendo
+pertinentes, cuáles necesitan transformarse y cuáles necesitan volver a
+participar en actuaciones posteriores.
+
+### 11.4 Pregunta específica de C1
+
+> Cuando una persona convierte un vídeo real en material de trabajo
+> intelectual, ¿qué posibilidades debe conservar para poder extraer,
+> transformar, anotar, combinar y reutilizar los resultados obtenidos sin que
+> la forma de origen limite artificialmente la continuación de la actividad?
+
+### 11.5 Contrastes principales
+
+Durante el ejercicio se comprobará, entre otras cuestiones:
+
+1. si el vídeo original debe permanecer disponible;
+2. si el audio necesita poder utilizarse independientemente;
+3. si una transcripción puede participar en actuaciones posteriores;
+4. si un fragmento audiovisual necesita conservar capacidad de reutilización;
+5. si una imagen extraída necesita continuar siendo material independiente;
+6. si comentarios y anotaciones deben poder relacionarse con distintas formas;
+7. si un resultado obtenido de una forma necesita poder volver a intervenir en
+   otra;
+8. si los originales y los derivados necesitan coexistir;
+9. si alguna pérdida observada queda ya cubierta por `PV-006`;
+10. si alguna decisión observada queda ya cubierta por `PV-005`;
+11. y si permanece alguna diferencia independiente.
+
+### 11.6 Criterio de no presuposición
+
+El ejercicio no deberá considerarse satisfactorio por haber conseguido
+implementar una determinada herramienta.
+
+La evidencia relevante será la trayectoria humana efectivamente realizada y las
+posibilidades cuya conservación o pérdida pueda demostrarse en ella.
+
+No se derivará por anticipado:
+
+- editor de vídeo;
+- edición no destructiva;
+- timeline;
+- pistas;
+- clips;
+- capas;
+- conversión universal;
+- interoperabilidad universal;
+- procedencia obligatoria;
+- versionado;
+- almacenamiento concreto;
+- arquitectura;
+- realización;
+- implementación;
+- ni una nueva vertical de Product.
+
+### 11.7 Estado de C1
+
+```text
+C1 — Transformación de una fuente audiovisual en material de trabajo
+
+    ✔ caso seleccionado como primera situación de ejercicio
+    ✔ pregunta específica definida
+    ✔ trayectoria inicial definida
+    → vídeo real concreto todavía pendiente de selección
+    → ejercicio todavía pendiente
+    → resultados todavía no establecidos
+```
+
+El ejercicio de C1 comenzará únicamente cuando se disponga de un vídeo real
+concreto que la persona quiera convertir efectivamente en material de trabajo.
