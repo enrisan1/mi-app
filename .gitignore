@@ -26,3 +26,7 @@ coverage/
 
 # Entorno virtual local de R-EXP-RCA-01
 experiments/r-exp-rca-01/.venv/
+
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
