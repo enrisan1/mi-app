@@ -122,7 +122,7 @@ investigación.
 
 La investigación 28 queda por tanto cerrada dentro de su alcance documentado.
 
-Con posterioridad, una nueva situación humana proporcionó fundamento positivo independiente para abrir la investigación 29 sobre trabajo intelectual con materiales de distintas formas. La investigación parte de `H-I29-01 — Continuidad de participación` como hipótesis provisional y no deriva todavía una nueva vertical de Product, Realization, Architecture ni modificación de código.
+Con posterioridad, una nueva situación humana proporcionó fundamento positivo independiente para abrir la investigación 29 sobre trabajo intelectual con materiales de distintas formas. La investigación se ejerció mediante `C1 — Transformación de una fuente audiovisual en material de trabajo` y quedó cerrada dentro de su alcance documentado tras reducir las pérdidas observadas frente a `PV-005` y `PV-006`. No se demostró un residuo independiente, no se derivó un segundo caso y no se derivaron una nueva vertical de Product, Realization, Architecture ni modificación de código.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
@@ -2108,24 +2108,24 @@ advertencias preventivas
     → no queda abierta automáticamente como nueva investigación
 
 investigación 29
-    ✔ abierta por fundamento positivo independiente
-    → situación inicial: trabajo intelectual con materiales de formas distintas
-    → H-I29-01 — Continuidad de participación, provisional
-    → independencia respecto de PV-006 todavía no demostrada
-    → nueva vertical de Product no derivada
-    → Realization no derivada
-    → Architecture no derivada
-    → modificación de código no derivada
+    ✔ cerrada dentro del alcance documentado
+    ✔ C1 cerrado como primer caso empírico
+    ✔ continuidad de participación observada
+    ✔ reducción frente a PV-005 / PV-006 completada
+    ✘ residuo independiente demostrado
+    ✘ C2 derivado
+    ✘ nueva vertical de Product derivada
+    ✘ Realization derivada
+    ✘ Architecture derivada
+    ✘ modificación de código derivada
 ```
 
-La actuación actualmente justificada es continuar la investigación 29 mediante
-reducción y falsación de la situación humana que fundamentó su apertura.
+No queda actualmente derivada automáticamente una siguiente actuación del
+proyecto.
 
-No queda derivada automáticamente una actuación material o técnica posterior.
-Cualquier actuación posterior deberá obtener fundamento positivo de los
-resultados de esta investigación, de nueva evidencia, de una pérdida concreta,
-de una dependencia necesaria demostrada o de otra situación de uso que
-justifique actuar.
+Cualquier actuación posterior deberá obtener fundamento positivo independiente
+a partir de nueva evidencia, de una pérdida concreta, de una dependencia
+necesaria demostrada o de otra situación de uso que justifique actuar.
 
 ---
 
