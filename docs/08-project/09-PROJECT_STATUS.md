@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 30/09/2026
+**Fecha de actualización:** 21/10/2026
 
 ## Índice
 
@@ -115,14 +115,23 @@ había sido ejercida mediante casos reales y no se identificó ninguna cuestión
 necesaria pendiente para responder su pregunta dentro del alcance investigado.
 
 La posible necesidad de advertencias preventivas ante consecuencias no
-contempladas de actuaciones suficientemente encomendadas permanece como
-cuestión independiente: no forma parte de `PV-005` ni de `PV-006`, no bloquea
-el cierre de la investigación 28 y no queda abierta automáticamente como nueva
-investigación.
+contempladas de actuaciones suficientemente encomendadas quedó identificada al
+cerrar la investigación 28 como cuestión independiente: no formaba parte de
+`PV-005` ni de `PV-006`, no bloqueaba el cierre de aquella investigación y no
+quedaba abierta automáticamente como nueva investigación.
 
 La investigación 28 queda por tanto cerrada dentro de su alcance documentado.
 
 Con posterioridad, una nueva situación humana proporcionó fundamento positivo independiente para abrir la investigación 29 sobre trabajo intelectual con materiales de distintas formas. La investigación se ejerció mediante `C1 — Transformación de una fuente audiovisual en material de trabajo` y quedó cerrada dentro de su alcance documentado tras reducir las pérdidas observadas frente a `PV-005` y `PV-006`. No se demostró un residuo independiente, no se derivó un segundo caso y no se derivaron una nueva vertical de Product, Realization, Architecture ni modificación de código.
+
+Con posterioridad al cierre de la investigación 29, aquella cuestión obtuvo
+fundamento positivo propio y fue examinada mediante la investigación 30. La
+investigación contrastó casos reales, redujo los casos ejercidos frente a los
+compromisos existentes y sometió a falsación un residuo de oportunidad
+temporal. Con la evidencia disponible no se demostró una diferencia humana
+independiente suficiente para derivar un nuevo compromiso de Product. La
+investigación 30 quedó cerrada dentro de su alcance documentado sin derivar una
+nueva vertical de Product, Realization, Architecture ni modificación de código.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
@@ -2102,11 +2111,6 @@ PV-006
 investigación 28
     ✔ cerrada dentro del alcance documentado
 
-advertencias preventivas
-    → cuestión independiente identificada
-    → no forma parte de PV-005 ni PV-006
-    → no queda abierta automáticamente como nueva investigación
-
 investigación 29
     ✔ cerrada dentro del alcance documentado
     ✔ C1 cerrado como primer caso empírico
@@ -2114,6 +2118,18 @@ investigación 29
     ✔ reducción frente a PV-005 / PV-006 completada
     ✘ residuo independiente demostrado
     ✘ C2 derivado
+    ✘ nueva vertical de Product derivada
+    ✘ Realization derivada
+    ✘ Architecture derivada
+    ✘ modificación de código derivada
+
+investigación 30
+    ✔ cerrada dentro del alcance documentado
+    ✔ C-A sometido a reconstrucción reductiva
+    ✘ pérdida humana independiente por conocimiento tardío demostrada
+    ✘ pertenencia de C-B al mismo fenómeno demostrada
+    → oportunidad temporal conservada como residuo lógico provisional
+    ✘ oportunidad temporal empíricamente demostrada
     ✘ nueva vertical de Product derivada
     ✘ Realization derivada
     ✘ Architecture derivada
@@ -2574,7 +2590,6 @@ hasta aislar el residuo que condujo a la selección de `PV-003`.
 
 La investigación quedó cerrada respecto de esa selección y la denominación
 «orientación evaluativa» se conserva únicamente como histórica o provisional.
-
 
 ## Investigación de practicabilidad de disponibilidad de PV-002
 
