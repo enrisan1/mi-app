@@ -567,7 +567,7 @@ sincronización correcta tras cambiar el nombre
 ✘ no demostrada con la evidencia recuperada
 
 capacidad de constituir instancia de H-I30-01
-? pendiente
+✘ no demostrada
 
 ---
 
@@ -610,7 +610,8 @@ C-A — Consumo de cuota durante una actuación multiagente
     ✔ experiencia real localizada
     ✔ consecuencia posterior observada
     ✔ cambio posterior de política de uso observado
-    → reconstrucción reductiva pendiente
+    → reconstrucción reductiva realizada
+    → pérdida humana independiente por conocimiento tardío no demostrada
 
 
 C-B — Archivo local y fallo posterior de sincronización
@@ -620,17 +621,391 @@ C-B — Archivo local y fallo posterior de sincronización
     ✔ fallo posterior de sincronización observado
     ✘ causa exacta no demostrada
     ✘ efecto de un cambio de nombre no demostrado
-    ? pertenencia al mismo fenómeno que C-A todavía no establecida
+    ✘ pertenencia al mismo fenómeno que C-A no demostrada
 
 
 coincidencia estructural entre C-A y C-B
 
-    ? todavía no demostrada
+    ✘ no demostrada con la evidencia disponible
 ```
 
-La investigación comenzará por reconstruir C-A y C-B con suficiente precisión
-para determinar si C-B llega realmente a satisfacer las condiciones de la
-hipótesis y, sólo después, si ambos casos permiten establecer una coincidencia
-estructural independiente.
+La reconstrucción posterior de C-A y C-B no ha permitido demostrar que C-B
+satisfaga las condiciones de la hipótesis ni que ambos casos establezcan una
+coincidencia estructural independiente.
+
+---
+
+# 12. Reducción y cierre de I30
+
+## 12.1 Resultado de C-A
+
+La reconstrucción reductiva de `C-A` permitió separar dos niveles.
+
+Por una parte, el caso contiene propiedades contingentes de la modalidad de uso
+ejercida:
+
+```text
+cuota
+ventana temporal concreta
+número de agentes
+coste relativo del grafo completo
+avisos de consumo
+interrupciones por límite
+```
+
+Estas propiedades explican la política local posterior de uso selectivo, pero no
+constituyen por sí mismas una diferencia humana general.
+
+Después de eliminarlas permanece únicamente el siguiente residuo:
+
+```text
+una actuación correctamente encomendada
+        ↓
+produce una consecuencia adicional
+        ↓
+la consecuencia no forma parte del resultado principal
+        ↓
+su conocimiento posterior modifica de hecho
+la forma de encomendar actuaciones semejantes
+```
+
+Sin embargo, la investigación no ha demostrado que, en el primer ejercicio, el
+conocimiento tardío eliminara una posibilidad humana concreta que no pudiera
+recuperarse después.
+
+El caso puede reconstruirse suficientemente como:
+
+```text
+primer ejercicio
+        ↓
+descubrimiento de una propiedad práctica
+        ↓
+aprendizaje
+        ↓
+adaptación de actuaciones posteriores
+```
+
+Por tanto:
+
+```text
+C-A
+→ demuestra aprendizaje práctico
+→ demuestra relevancia posterior de la consecuencia
+→ no demuestra todavía pérdida humana independiente
+  por conocimiento tardío
+```
+
+---
+
+## 12.2 Resultado de C-B
+
+`C-B` conserva únicamente los siguientes hechos demostrados:
+
+```text
+archivo válido y disponible localmente
+✔
+
+trayectoria de sincronización intentada
+✔
+
+fallo posterior de sincronización
+✔
+```
+
+No ha quedado demostrado:
+
+```text
+causa exacta del fallo
+✘
+
+atribución del fallo al nombre del archivo
+✘
+
+sincronización correcta del mismo archivo tras cambiar el nombre
+✘
+
+condición de expiración conocida antes de la actuación
+✘
+
+oportunidad temporal perdida
+✘
+```
+
+La revisión específica del componente temporal no ha localizado una estructura
+de la forma:
+
+```text
+posibilidad disponible
+        ↓
+condición temporal de expiración
+        ↓
+persona desconoce esa condición
+        ↓
+expiración
+        ↓
+posibilidad deja definitivamente de poder ejercerse
+```
+
+La evidencia disponible muestra, en cambio, una incidencia técnica posterior en
+una trayectoria de sincronización que continuó siendo reintentable.
+
+Por tanto:
+
+```text
+C-B
+→ incidente técnico real
+→ causa todavía indeterminada
+→ no constituye una instancia demostrada de oportunidad temporal expirada
+→ no satisface todavía H-I30-01
+```
+
+---
+
+## 12.3 Contraste con pérdidas ya absorbidas
+
+Durante la reducción se examinó además un caso histórico en el que:
+
+```text
+X y Y
+→ permanecían simultáneamente disponibles
+
+después de aceptar Y e interrumpir
+→ Y permanecía disponible
+→ X dejaba de estar disponible
+```
+
+La pérdida de `X` eliminaba posibilidades posteriores todavía pertinentes.
+
+Ese caso demuestra que puede existir una pérdida humana real descubierta después
+de una actuación.
+
+Sin embargo, esa diferencia quedó absorbida por el compromiso ya consolidado de
+`PV-002`.
+
+Por tanto:
+
+```text
+pérdida real
+✔
+
+independencia para I30
+✘
+```
+
+La mera existencia de una pérdida posterior no basta para justificar una nueva
+diferencia relativa a consecuencias previas.
+
+---
+
+## 12.4 Contraejemplo de oportunidad temporal
+
+Para intentar falsar la reducción se construyó deliberadamente el siguiente caso
+lógico:
+
+```text
+existe una actuación P
+ya determinada por la persona
+
++
+
+P sólo conserva el valor buscado
+si se realiza antes de T
+
++
+
+T es conocido o determinable
+por la plataforma antes de ocurrir
+
++
+
+la persona no dispone suficientemente de T
+
++
+
+T ocurre
+
++
+
+P deja de poder realizarse
+con el valor que dependía de ser anterior a T
+```
+
+El caso se formuló de forma que:
+
+```text
+la decisión humana sobre P
+→ ya está resuelta
+
+la ocurrencia de T
+→ no corresponde decidirla a la persona
+
+la posibilidad P
+→ no puede preservarse después de T
+  porque su valor es constitutivamente anterior a T
+```
+
+Este contraejemplo resiste provisionalmente una reducción directa a:
+
+```text
+PV-005
+→ porque la decisión ya estaba tomada
+
+PV-006
+→ porque la oportunidad no continúa existiendo después de T
+
+practicabilidad local de PV-002
+→ porque aquella investigación se refería a disponibilidad posterior
+  de una aportación y no estableció una teoría general de oportunidades
+```
+
+---
+
+## 12.5 Búsqueda empírica del contraejemplo temporal
+
+Se buscó en el material histórico disponible una situación real que satisficiera
+simultáneamente:
+
+```text
+1. posibilidad P disponible y practicable;
+2. persona ya decidida a ejercer P;
+3. condición T de expiración;
+4. T conocida o determinable por la plataforma;
+5. T no disponible suficientemente para la persona;
+6. ocurrencia de T;
+7. pérdida efectiva de P;
+8. descubrimiento posterior;
+9. diferencia no absorbida por compromisos existentes.
+```
+
+No se localizó un caso histórico que satisfaga simultáneamente todas estas
+condiciones.
+
+Los candidatos examinados se reducen respectivamente a:
+
+```text
+C-A
+→ aprendizaje legítimo y gestión local de recursos
+
+C-B
+→ incidencia técnica sin causa ni expiración demostradas
+
+caso X/Y
+→ pérdida real ya absorbida por PV-002
+
+otros casos preventivos
+→ riesgos conocidos que fueron neutralizados antes de producir pérdida
+```
+
+Por tanto:
+
+```text
+oportunidad temporal
+→ residuo lógico provisional
+
+caso empírico real
+→ no localizado
+
+fundamento positivo independiente
+→ insuficiente
+```
+
+---
+
+## 12.6 Resultado reductivo final
+
+La hipótesis:
+
+```text
+H-I30-01 — Consideración previa de consecuencias relevantes
+```
+
+no queda confirmada como diferencia humana independiente con la evidencia
+actualmente disponible.
+
+La investigación permite establecer:
+
+```text
+diferencia descriptiva entre conocer antes y conocer después
+✔ posible
+
+pérdida humana independiente demostrada por C-A
+✘
+
+pertenencia demostrada de C-B al mismo fenómeno
+✘
+
+oportunidad temporal no reducida
+por los contrastes realizados
+✔ provisionalmente
+
+oportunidad temporal empíricamente demostrada
+✘
+
+nuevo compromiso de Product
+✘ no derivado
+
+nueva Realization
+✘ no derivada
+
+Architecture
+✘ no derivada
+
+modificación de código
+✘ no derivada
+```
+
+La evidencia ejercida no demuestra que la consideración previa de consecuencias
+constituya por sí misma una necesidad humana independiente de los compromisos ya
+consolidados.
+
+Cuando aparece una pérdida humana real demostrada en los casos estudiados, ésta resulta absorbible por compromisos existentes.
+
+Cuando aparece un residuo conceptualmente no absorbido, falta todavía evidencia
+empírica que lo establezca como diferencia humana real.
+
+---
+
+## 12.7 Condición de cierre o reapertura
+
+I30 no deberá avanzar hacia Product, Realization, Architecture o código mientras
+no aparezca fundamento positivo independiente.
+
+Una reapertura material requerirá como mínimo evidencia empírica de una situación
+en la que:
+
+```text
+una consecuencia sea suficientemente conocida
+o determinable antes de actuar
+
++
+
+su disponibilidad previa permita ejercer
+una posibilidad humana concreta
+
++
+
+esa posibilidad deje efectivamente
+de estar disponible después
+
++
+
+la pérdida no quede absorbida
+por compromisos ya consolidados
+```
+
+La mera existencia de:
+
+```text
+riesgo
+previsibilidad abstracta
+irreversibilidad
+coste
+advertencia posible
+o utilidad hipotética
+```
+
+no será suficiente.
+
+Con la evidencia actualmente disponible, I30 queda cerrada dentro de su alcance documentado, sin derivar una nueva vertical de Product, una nueva Realization, Architecture ni modificación de código.
 
 ---
