@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 21/10/2026
+**Fecha de actualización:** 22/10/2026
 
 ## Índice
 
@@ -132,6 +132,21 @@ temporal. Con la evidencia disponible no se demostró una diferencia humana
 independiente suficiente para derivar un nuevo compromiso de Product. La
 investigación 30 quedó cerrada dentro de su alcance documentado sin derivar una
 nueva vertical de Product, Realization, Architecture ni modificación de código.
+
+Con posterioridad al cierre de la investigación 30 se ejerció una trayectoria
+experimental de interoperabilidad entre materiales y aplicaciones heterogéneas.
+Las pruebas distinguieron supervivencia formal, practicabilidad,
+correspondencia, acceso, procedencia y agencia. Los contrastes sobre
+`PV-006` mostraron que la mera conservación de una representación o de una
+acción practicable no basta cuando deja de preservarse la posibilidad
+pertinente, mientras que un contraste controlado de agencia demostró que pueden
+conservarse las posibilidades posteriores identificadas y permanecer una
+diferencia relevante respecto de quién resolvió una decisión mientras las
+alternativas seguían abiertas. Ese residuo frente a `PV-006` quedó absorbido
+por `PV-005`, reforzando experimentalmente la independencia funcional entre
+ambos compromisos. La delimitación fue consolidada en `PRODUCT.md` sin
+modificar sus compromisos, sin derivar una nueva vertical y sin abrir una nueva
+investigación formal.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
