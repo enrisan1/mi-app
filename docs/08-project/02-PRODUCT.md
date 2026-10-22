@@ -745,6 +745,14 @@ La determinación de que una resolución corresponde a la persona constituye una
 condición de la situación seleccionada. `PV-005` no atribuye por sí mismo al
 runtime autoridad general para establecer esa correspondencia.
 
+La relevancia protegida por `PV-005` no depende de que la intervención de la
+plataforma produzca después una pérdida material o una reducción de
+posibilidades posteriores. Dos situaciones pueden mantener el mismo resultado
+y las mismas posibilidades posteriores y seguir diferenciándose respecto de
+`PV-005` si, mientras permanecían alternativas abiertas, en una resolvió la
+persona y en la otra resolvió la plataforma una decisión que correspondía a la
+persona.
+
 ---
 
 # 9. Sexta vertical — PV-006
@@ -800,5 +808,14 @@ Cuando el abandono de una posibilidad implique una decisión cuya resolución
 corresponda a la persona, podrá resultar aplicable `PV-005`. `PV-006` no
 establece por sí misma que toda decisión sobre conservación o abandono
 corresponda a la persona.
+
+La evaluación de `PV-006` atiende a la continuidad efectiva de las
+posibilidades pertinentes y no a la mera supervivencia formal de una
+representación, relación o acción. Que una relación siga existiendo o pueda
+ejercerse no basta si ya no permite realizar la posibilidad pertinente que
+sostenía. A la inversa, la conservación de todas las posibilidades posteriores
+pertinentes no absorbe por sí misma diferencias relativas a quién ejerció una
+decisión mientras permanecían alternativas abiertas; esas diferencias
+pertenecen al ámbito específico de `PV-005`.
 
 ---
