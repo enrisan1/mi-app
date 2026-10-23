@@ -144,9 +144,10 @@ conservarse las posibilidades posteriores identificadas y permanecer una
 diferencia relevante respecto de quién resolvió una decisión mientras las
 alternativas seguían abiertas. Ese residuo frente a `PV-006` quedó absorbido
 por `PV-005`, reforzando experimentalmente la independencia funcional entre
-ambos compromisos. La delimitación fue consolidada en `PRODUCT.md` sin
-modificar sus compromisos, sin derivar una nueva vertical y sin abrir una nueva
-investigación formal.
+ambos compromisos. La trayectoria y su reducción quedan documentadas en
+`docs/06-realization/34-registro-experimental-interoperabilidad-delimitacion-pv005-pv006.md`.
+La delimitación fue consolidada en `PRODUCT.md` sin modificar sus compromisos,
+sin derivar una nueva vertical y sin abrir una nueva investigación formal.
 
 Este documento ofrece una visión actualizada del estado del proyecto y constituye el punto de referencia para retomar su desarrollo.
 
