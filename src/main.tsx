@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
+import { IntegratedExperience } from "./realizations/integrated/IntegratedExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
 
 import "./index.css";
@@ -30,12 +31,20 @@ const thirdResolution: EstablishedResolution = {
     "La evidencia descarta imponer unicidad global de resolución, pero no establece cardinalidad arbitraria, colección ni búsqueda general de resoluciones.",
 };
 
+const realization = new URLSearchParams(window.location.search).get(
+  "realization",
+);
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App
-      resolution={resolution}
-      secondResolution={secondResolution}
-      thirdResolution={thirdResolution}
-    />
+    {realization === "integrated" ? (
+      <IntegratedExperience />
+    ) : (
+      <App
+        resolution={resolution}
+        secondResolution={secondResolution}
+        thirdResolution={thirdResolution}
+      />
+    )}
   </React.StrictMode>,
 );
