@@ -1225,3 +1225,83 @@ Una entrada podrá utilizar la siguiente estructura:
 
 ### Condición de evaluación
 ```
+
+---
+
+## `NP-001 — Ingeniería inversa asistida por IA como recurso auxiliar de investigación`
+
+### Fecha
+
+26 de octubre de 2026.
+
+### Situación u origen
+
+La propuesta surge del análisis de un vídeo dedicado a REA (_Reverse Engineering Anything_), herramienta que permite a agentes de inteligencia artificial utilizar recursos de ingeniería inversa para investigar el funcionamiento de aplicaciones existentes.
+
+Fuente audiovisual: https://youtu.be/4NH9mpw_CdA
+
+El vídeo presenta una comparación entre la construcción de una aplicación de mensajería inspirada en Telegram utilizando REA y otra realizada sin esta herramienta.
+
+La comparación muestra diferencias funcionales entre las implementaciones, especialmente en persistencia y gestión de archivos. Sin embargo, no demuestra una superioridad general de REA, puesto que no constituye una evaluación experimental suficientemente controlada y reproducida.
+
+### Propuesta
+
+Conservar la ingeniería inversa asistida por inteligencia artificial como posible recurso auxiliar para investigaciones futuras de `mi-app`.
+
+Su utilización podría considerarse cuando resulte necesario comprender mecanismos de aplicaciones existentes que no puedan caracterizarse suficientemente mediante documentación pública, observación funcional o experimentación directa.
+
+Entre los posibles objetos de investigación se encuentran:
+
+- persistencia y recuperación de información;
+- continuidad de actuaciones interrumpidas;
+- conservación y recuperación de relaciones entre materiales;
+- mecanismos de historial y reconstrucción de estados;
+- comportamiento de funcionalidades cuya implementación interna resulte relevante para una investigación concreta.
+
+REA constituye una herramienta candidata para este propósito, sin exclusividad respecto a otras alternativas.
+
+La investigación de un mecanismo existente no implica la adopción de su implementación ni modifica las exigencias previamente establecidas para el producto.
+
+### Razón para conservarla
+
+La propuesta merece conservarse porque podría proporcionar un procedimiento adicional para obtener evidencia técnica cuando los métodos de investigación habituales resulten insuficientes.
+
+Su interés no reside en reproducir aplicaciones completas, sino en permitir el estudio acotado de mecanismos cuya comprensión pueda contribuir a resolver problemas previamente identificados.
+
+El análisis también permite ilustrar la diferencia entre apariencia funcional, comportamiento observable e implementación efectiva.
+
+Esta distinción no constituye por sí misma una nueva exigencia de producto ni implica que los procedimientos actuales del proyecto sean insuficientes.
+
+La utilidad específica de REA para `mi-app` no ha sido demostrada experimentalmente.
+
+### Estatuto
+
+**Propuesta exploratoria no normativa.**
+
+REA no se ha instalado ni utilizado experimentalmente en el proyecto.
+
+Su incorporación a este documento no establece:
+
+- un nuevo compromiso de Product;
+- una modificación de los compromisos existentes;
+- una nueva exigencia arquitectónica;
+- una dependencia tecnológica;
+- una obligación de investigación;
+- una prioridad de desarrollo;
+- ni una actuación pendiente de implementación.
+
+La propuesta tampoco modifica los resultados de las investigaciones cerradas ni justifica su reapertura.
+
+### Condición de evaluación
+
+La utilización de ingeniería inversa asistida podrá evaluarse si una investigación concreta identifica:
+
+1. Un problema relevante cuya resolución requiera conocer el funcionamiento de una aplicación existente.
+2. Una insuficiencia demostrable de los procedimientos de observación, documentación o experimentación disponibles.
+3. Una razón fundada para considerar que el análisis interno podría aportar evidencia necesaria.
+4. Un objeto de análisis delimitado y jurídicamente autorizado.
+5. Un procedimiento de prueba que permita evaluar la utilidad de la herramienta sin alterar el entorno estable del proyecto.
+
+La aparición de estas condiciones justificaría estudiar la conveniencia de realizar un experimento, pero no implicaría automáticamente adoptar REA.
+
+La propuesta permanecerá en evaluación mientras conserve una razón identificable para su consideración futura.
