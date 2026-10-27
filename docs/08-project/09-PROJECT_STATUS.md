@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 22/10/2026
+**Fecha de actualización:** 27/10/2026
 
 ## Índice
 
@@ -4509,5 +4509,293 @@ Product
 siguiente actuación
 → no derivada automáticamente
 ```
+
+---
+
+# Actualización del estado vigente — 27/10/2026
+
+## Realization integrada posterior
+
+Con posterioridad a los estados registrados anteriormente se derivó y ejercitó una Realization integrada destinada a comprobar conjuntamente diferencias ya consolidadas sin convertir su composición en una nueva responsabilidad normativa.
+
+La Realization quedó implementada mediante:
+
+```text
+src/realizations/integrated/IntegratedExperience.tsx
+```
+
+con su suite correspondiente y acceso experimental separado desde la entrada técnica del producto.
+
+La actuación quedó cerrada y consolidada en Git mediante:
+
+```text
+95f6472
+feat(realization): close integrated realization
+```
+
+El cierre no derivó por sí mismo:
+
+- un nuevo Product Value;
+- Architecture;
+- una generalización de la Realization;
+- ni una siguiente actuación obligatoria.
+
+---
+
+## Investigación 31 — De exploración a resultado defendible
+
+Posteriormente apareció fundamento positivo independiente para investigar si un resultado podía continuar disponible mientras se perdía la posibilidad efectiva de defenderlo.
+
+La investigación distinguió:
+
+```text
+resultado disponible
+≠
+resultado defendible
+```
+
+y redujo la condición funcional ejercitada a:
+
+```text
+C  = criterio pertinente
+
+E* = base justificativa suficientemente
+     conservada o transformada
+
+R  = resultado
+```
+
+con la relación:
+
+```text
+C + E*
+↓
+posibilidad humana efectiva
+de comprobar la inferencia pertinente
+↓
+R defendible
+```
+
+La investigación mostró que la defendibilidad no exige conservar literalmente toda la exploración, los datos brutos completos ni la representación original.
+
+Sí requiere preservar suficientemente aquello desde lo que la persona pueda comprobar la relación pertinente entre criterio, base justificativa y resultado, sin depender de reconstrucción externa ni de aceptar simplemente una conclusión del sistema.
+
+El resultado quedó comprendido por:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+```
+
+sin derivar un nuevo Product Value ni modificar `PV-005`.
+
+La investigación quedó cerrada y consolidada mediante:
+
+```text
+74ba475
+docs(realization): close investigation 31
+```
+
+Su resultado dejó justificada una diferencia realizativa todavía no ejercitada.
+
+---
+
+## Realization mínima de conservación de defendibilidad
+
+A partir del cierre de I31 se derivó una trayectoria realizativa mínima:
+
+```text
+S-RD-0
+C + E + R
+
+↓ transformación
+
+S-RD-1
+C + E* + R
+
+↓ reducción
+
+S-RD-2
+E* + R
+```
+
+La derivación se ejercitó primero mediante el protocolo manual:
+
+```text
+M0 → M4
+```
+
+y posteriormente mediante un contrato RED mínimo.
+
+Se construyó:
+
+```text
+src/realizations/defendability/DefendabilityExperience.tsx
+```
+
+con:
+
+```text
+src/realizations/defendability/DefendabilityExperience.test.tsx
+```
+
+La implementación se limitó a:
+
+```text
+representar
++
+transicionar
++
+retirar controladamente información
+```
+
+sin introducir:
+
+```text
+persistencia
+historial
+versionado
+provenance
+motor de inferencia
+explicación automática
+backend
+Architecture
+```
+
+La evidencia automática final fue:
+
+```text
+suite específica
+→ 4 / 4
+
+suite global
+→ 28 archivos
+→ 250 / 250 tests
+
+build
+→ PASS
+
+git diff --check
+→ PASS
+```
+
+La validación humana `TECH-HUMAN-RD-01` produjo:
+
+```text
+S-RD-0
+C + E + R
+→ defendible ✓
+
+S-RD-1
+C + E* + R
+→ defendible ✓
+
+S-RD-2
+E* + R
+→ defendible ✗
+```
+
+mientras `R` permaneció disponible durante toda la trayectoria.
+
+La Realization reprodujo así, dentro del alcance ejercitado:
+
+```text
+resultado disponible
+≠
+resultado defendible
+```
+
+y mostró además que:
+
+```text
+conservación funcional
+≠
+conservación literal
+```
+
+porque `E → E*` pudo conservar la defendibilidad sin conservar literalmente la representación original.
+
+La derivación y la Realization quedaron cerradas mediante:
+
+```text
+9fb343b
+feat(realization): close defendability realization
+```
+
+---
+
+## Estado de reanudación posterior
+
+El estado vigente queda ampliado así:
+
+```text
+Realization integrada
+    ✔ construida
+    ✔ validada
+    ✔ cerrada
+
+I31 — De exploración a resultado defendible
+    ✔ fundamento positivo independiente
+    ✔ diferencia funcional demostrada
+    ✔ residuo funcional reducido
+    ✔ resultado absorbido por PV-006
+    ✔ nuevo Product Value no derivado
+    ✔ cerrada
+
+Realization de conservación de defendibilidad
+    ✔ derivación realizativa completada
+    ✔ protocolo M0→M4 validado
+    ✔ contrato RED ejercitado
+    ✔ RED-RD-01 / RED-RD-02 / RED-RD-03 completados
+    ✔ RD-INTEGRATION-01 completada
+    ✔ TECH-HUMAN-RD-01 completada
+    ✔ 4 / 4 tests específicos
+    ✔ 250 / 250 tests globales
+    ✔ build satisfactorio
+    ✔ cerrada en el alcance ejercitado
+
+Product
+    ✔ PV-001 ... PV-006 conservados
+    → nuevo Product Value no derivado
+
+Architecture
+    → no derivada
+
+siguiente actuación automáticamente derivada
+    → ninguna
+```
+
+---
+
+## Punto de reanudación vigente
+
+Los cierres anteriores no establecen una actuación sucesora obligatoria.
+
+En particular:
+
+```text
+I31
+→ cerrada
+
+Realization de defendibilidad
+→ cerrada
+
+Architecture
+→ no derivada
+
+nueva investigación
+→ no derivada automáticamente
+
+nueva Realization
+→ no derivada automáticamente
+
+Implementation adicional
+→ no derivada automáticamente
+```
+
+La ausencia de una actuación automáticamente derivada constituye un estado válido del proyecto.
+
+Una actuación posterior deberá obtener fundamento positivo independiente mediante nueva evidencia, una pérdida, una necesidad, una incompatibilidad, una oportunidad suficientemente justificada u otro resultado capaz de modificar una decisión relevante.
+
+No debe reabrirse I31, la Realization integrada ni la Realization de conservación de defendibilidad únicamente para mantener continuidad de actividad.
 
 ---
