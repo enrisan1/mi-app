@@ -8286,3 +8286,543 @@ Antes de modificar código deberán determinarse:
 6. y si la diferencia requiere una nueva Realization o puede ejercitarse mediante una ampliación separada de mecanismos existentes sin alterar su cierre histórico.
 
 ---
+
+# Cierre de la Realization mínima — Conservación de defendibilidad
+
+## Fundamento
+
+El cierre de `I31 — De exploración a resultado defendible` había identificado una diferencia realizativa todavía no ejercitada:
+
+```text
+resultado
++
+criterio justificativo
++
+base justificativa
++
+transformación o reducción
++
+conservación de defendibilidad
+```
+
+La investigación había establecido, dentro del alcance ejercitado:
+
+```text
+resultado disponible
+≠
+resultado defendible
+```
+
+y había reducido la condición funcional pertinente a:
+
+```text
+C  = criterio pertinente
+
+E* = base justificativa suficientemente
+     conservada o transformada
+
+R  = resultado
+```
+
+con la relación:
+
+```text
+C + E*
+↓
+posibilidad humana efectiva
+de comprobar la inferencia pertinente
+↓
+R defendible
+```
+
+El resultado estaba comprendido por:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+```
+
+sin justificar un nuevo Product Value ni modificar `PV-005`.
+
+A partir de ese cierre se abrió exclusivamente una derivación de Realization mínima.
+
+---
+
+## Derivación realizativa
+
+La diferencia pendiente se redujo a una trayectoria donde:
+
+```text
+R permanece disponible
++
+la base justificativa cambia
++
+la persona conserva capacidad efectiva
+de comprobar por qué R sigue justificado
+```
+
+frente al contraste:
+
+```text
+R permanece disponible
++
+se pierde una condición justificativa necesaria
++
+R deja de poder defenderse desde el estado conservado
+```
+
+Se fijó una trayectoria manual mínima:
+
+```text
+M0
+C + E + R
+
+M1
+E → E*
+
+M2
+C + E* + R
+
+M3
+eliminación de C
+
+M4
+E* + R
+```
+
+El protocolo `M0→M4` fue ejercitado manualmente antes de modificar código.
+
+Resultado:
+
+```text
+M0
+→ defendible
+
+M2
+→ defendible
+
+M4
+→ no defendible
+```
+
+La eliminación del criterio produjo la diferencia causal buscada sin alterar el resultado.
+
+La ejecución manual mostró también que la representación literal original de `E` no era necesaria mientras `E*` permitiera todavía realizar la inferencia pertinente.
+
+---
+
+## Derivación técnica
+
+La ejecución manual no justificó:
+
+- persistencia;
+- `localStorage`;
+- historial;
+- versionado;
+- provenance;
+- backend;
+- repositorios;
+- stores;
+- motor de inferencia;
+- explicación automática;
+- Architecture.
+
+El soporte técnico mínimo quedó reducido a:
+
+```text
+representar
++
+transicionar
++
+retirar controladamente información
+```
+
+A partir de esta reducción se derivó un contrato RED previo a implementación.
+
+---
+
+## Contrato RED
+
+Se fijaron tres estados observables:
+
+```text
+S-RD-0
+C + E + R
+
+↓ Transformar
+
+S-RD-1
+C + E* + R
+
+↓ Reducir
+
+S-RD-2
+E* + R
+```
+
+Caso experimental:
+
+```text
+C:
+Seleccionar la alternativa con menor índice Q.
+
+E:
+Alternativa A: Q = 72
+Alternativa B: Q = 61
+
+E*:
+Q(A) − Q(B) = +11
+
+R:
+Seleccionar B.
+```
+
+La suite se construyó mediante:
+
+```text
+RED-RD-01
+RED-RD-02
+RED-RD-03
+RD-INTEGRATION-01
+```
+
+siguiendo ciclos RED → GREEN mínimos y separados.
+
+---
+
+## Realization construida
+
+Se creó:
+
+```text
+src/realizations/defendability/DefendabilityExperience.tsx
+```
+
+con su suite específica:
+
+```text
+src/realizations/defendability/DefendabilityExperience.test.tsx
+```
+
+La Realization distingue únicamente:
+
+```text
+initial
+transformed
+reduced
+```
+
+y reproduce las transiciones derivadas.
+
+Se añadió acceso experimental desde:
+
+```text
+src/main.tsx
+```
+
+mediante:
+
+```text
+?realization=defendability
+```
+
+sin sustituir la Realization integrada ni la entrada ordinaria de la aplicación.
+
+---
+
+## Evidencia automática
+
+La suite específica finalizó con:
+
+```text
+4 / 4 tests superados
+```
+
+Después se ejecutó la suite global.
+
+Resultado registrado:
+
+```text
+28 archivos de test superados
+250 tests superados
+```
+
+sin regresiones conocidas en esa ejecución.
+
+Los tests comprobaron únicamente:
+
+- contenido observable;
+- estados;
+- transiciones;
+- permanencia de `R`;
+- sustitución de `E` por `E*`;
+- permanencia de `E*`;
+- retirada de `C`;
+- no reaparición de información eliminada.
+
+No intentaron decidir automáticamente si un resultado era defendible.
+
+---
+
+## Validación humana `TECH-HUMAN-RD-01`
+
+Después de estabilizar la Realization se ejercitó manualmente la trayectoria técnica real.
+
+### `S-RD-0`
+
+Estado disponible:
+
+```text
+C + E + R
+```
+
+La persona pudo justificar `R` usando:
+
+```text
+criterio
++
+valores Q visibles
+```
+
+Resultado:
+
+```text
+defendible ✓
+```
+
+### `S-RD-1`
+
+Después de transformar:
+
+```text
+E → E*
+```
+
+los valores absolutos:
+
+```text
+72
+61
+```
+
+dejaron de estar disponibles.
+
+Permanecieron:
+
+```text
+C + E* + R
+```
+
+La persona confirmó que podía seguir justificando `R` mediante:
+
+```text
+Q(A) − Q(B) = +11
+```
+
+sin recordar los valores originales y sin limitarse a aceptar una conclusión del sistema.
+
+Resultado:
+
+```text
+defendible ✓
+```
+
+### `S-RD-2`
+
+Después de retirar `C`, permanecieron únicamente:
+
+```text
+E* + R
+```
+
+La persona indicó que sólo podía aceptar `R` por indicación del sistema y que no podía defenderlo suficientemente desde el estado visible.
+
+Identificó como ausentes:
+
+```text
+datos suficientes
++
+un protocolo o criterio de actuación
+```
+
+y distinguió explícitamente el criterio recordado de una etapa anterior de la información perteneciente al estado actual.
+
+Resultado:
+
+```text
+defendible ✗
+```
+
+---
+
+## Resultado consolidado
+
+La trayectoria completa quedó:
+
+```text
+S-RD-0
+C + E + R
+→ defendible ✓
+
+↓ transformación
+
+S-RD-1
+C + E* + R
+→ defendible ✓
+
+↓ reducción
+
+S-RD-2
+E* + R
+→ defendible ✗
+```
+
+mientras:
+
+```text
+R
+```
+
+permaneció disponible durante toda la trayectoria.
+
+Por tanto, la Realization reprodujo técnicamente la diferencia derivada de I31:
+
+```text
+resultado disponible
+≠
+resultado defendible
+```
+
+y mostró además que:
+
+```text
+conservación funcional
+≠
+conservación literal
+```
+
+porque la transformación:
+
+```text
+E → E*
+```
+
+conservó la defendibilidad sin conservar la representación original de la evidencia.
+
+---
+
+## Relación con Product
+
+El resultado no deriva un nuevo Product Value.
+
+La capacidad ejercitada permanece comprendida por:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+```
+
+como caso específico de conservación de una posibilidad pertinente después de una transformación.
+
+No se modifica `PV-005`.
+
+---
+
+## Alcance
+
+La Realization no demuestra:
+
+- defendibilidad universal;
+- criterios arbitrarios;
+- evidencias arbitrarias;
+- resultados arbitrarios;
+- autenticidad de datos;
+- provenance;
+- persistencia temporal;
+- recuperación después de interrupciones;
+- explicación automática;
+- inferencia automática.
+
+No se deriva de este resultado:
+
+```text
+Architecture
+```
+
+ni ninguna ampliación técnica general.
+
+---
+
+## Estado resultante
+
+La derivación iniciada tras I31 queda:
+
+```text
+CERRADA
+```
+
+La Realization mínima queda:
+
+```text
+CERRADA EN EL ALCANCE EJERCITADO
+```
+
+Clasificación:
+
+```text
+protocolo manual
+→ validado
+
+contrato RED
+→ ejercitado
+
+suite específica
+→ 4 / 4
+
+suite global registrada
+→ 250 / 250
+
+validación humana
+→ completada
+
+diferencia funcional
+→ reproducida técnicamente
+
+soporte técnico mínimo
+→ suficiente
+
+nuevo Product Value
+→ no justificado
+
+Architecture
+→ no derivada
+
+ampliación técnica
+→ no justificada
+```
+
+El cierre completo queda documentado en:
+
+```text
+docs/06-realization/39-derivacion-realization-conservacion-defendibilidad.md
+```
+
+---
+
+## Punto de reanudación
+
+No queda pendiente ninguna actuación interna de esta Realization.
+
+La siguiente actuación es exclusivamente operativa:
+
+```text
+verificar estado final del repositorio
+↓
+comprobar diferencias
+↓
+ejecutar validaciones técnicas finales
+↓
+consolidar en Git mediante selección explícita de archivos
+```
+
+No debe abrirse automáticamente una nueva investigación, Realization, Architecture o Implementation como consecuencia de este cierre.
+
+---

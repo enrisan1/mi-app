@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
+import { DefendabilityExperience } from "./realizations/defendability/DefendabilityExperience";
 import { IntegratedExperience } from "./realizations/integrated/IntegratedExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
 
@@ -39,6 +40,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     {realization === "integrated" ? (
       <IntegratedExperience />
+    ) : realization === "defendability" ? (
+      <DefendabilityExperience />
     ) : (
       <App
         resolution={resolution}
