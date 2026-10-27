@@ -8040,3 +8040,249 @@ automática de aportaciones ni una obligación equivalente para otras
 realizaciones.
 
 ---
+
+# Cierre de `I31` — De exploración a resultado defendible
+
+**Fecha:** 2026-10-27
+
+## Fundamento
+
+Después del cierre de la Realization integrada se examinó un conjunto de casos de actividad intelectual para determinar si permanecía alguna diferencia funcional no ejercitada por las investigaciones y realizaciones ya cerradas.
+
+El caso:
+
+```text
+de exploración a resultado defendible
+```
+
+mostró una diferencia candidata:
+
+```text
+resultado disponible
+        ≠
+resultado defendible
+```
+
+La investigación `I31` se abrió para determinar si un resultado podía permanecer disponible y operativo mientras desaparecía la posibilidad efectiva de justificar por qué había sido obtenido.
+
+La investigación no presuponía la necesidad de conservar toda la historia de exploración, todas las evidencias ni una representación técnica determinada.
+
+## Desarrollo experimental
+
+La investigación se ejercitó mediante la serie:
+
+```text
+CM-I31-02
+CM-I31-03
+CM-I31-04
+CM-I31-05
+CM-I31-06
+```
+
+`CM-I31-02` demostró que un resultado podía permanecer disponible mientras desaparecía su defendibilidad.
+
+La reducción posterior mostró que no era necesario conservar:
+
+- toda la historia de exploración;
+- los datos brutos completos;
+- una justificación textual explícita;
+- los valores absolutos originales;
+- ni la representación original de la evidencia.
+
+`CM-I31-04` mostró que una transformación reductiva de la evidencia podía mantener la defendibilidad siempre que conservara información suficiente para realizar la inferencia pertinente.
+
+`CM-I31-05` distinguió entre:
+
+```text
+poder comprobar la inferencia
+        ≠
+tener que aceptar una conclusión del sistema
+```
+
+Finalmente, `CM-I31-06` aisló la función del criterio de decisión.
+
+En su instancia discriminante se mantuvieron exactamente los mismos datos y el mismo resultado.
+
+Con el criterio disponible:
+
+```text
+criterio + evidencia + resultado
+→ defendible
+```
+
+Al eliminar únicamente el criterio:
+
+```text
+evidencia + resultado
+→ no defendible
+```
+
+La primera instancia de `CM-I31-06`, basada en tiempo y precisión, fue descartada como caso no discriminante porque introducía una segunda dimensión legítimamente pertinente para la decisión.
+
+No se corrigió retrospectivamente.
+
+## Resultado consolidado
+
+La investigación identificó, dentro del alcance ejercitado, un residuo funcional estable:
+
+```text
+C  = criterio pertinente
+
+E* = base justificativa suficientemente
+     conservada o transformada
+
+R  = resultado
+```
+
+con la relación:
+
+```text
+C + E*
+↓
+posibilidad humana efectiva
+de comprobar la inferencia pertinente
+↓
+R defendible
+```
+
+La defendibilidad no exige conservar literalmente la exploración original.
+
+Sí exige preservar suficientemente aquello que permite a la persona comprobar por qué la base pertinente conduce al resultado, sin depender de reconstrucción externa ni de la mera aceptación de una conclusión proporcionada por el sistema.
+
+## Relación con Product
+
+El resultado de `I31` no justifica un nuevo Product Value.
+
+La posibilidad identificada:
+
+```text
+defender posteriormente un resultado
+```
+
+constituye una posibilidad pertinente cuya pérdida puede producirse durante una transformación aunque el resultado continúe disponible.
+
+Por tanto, el resultado queda comprendido por:
+
+```text
+PV-006 — Continuidad de posibilidades pertinentes
+```
+
+`I31` no amplía el compromiso general de Product.
+
+Lo que aporta es la identificación y reducción de una posibilidad funcional concreta cubierta por ese compromiso.
+
+La investigación tampoco modifica `PV-005`.
+
+La diferencia observada entre comprobar una inferencia y aceptar una conclusión del sistema es compatible con la determinación humana efectiva, pero `I31` no investigó una nueva distribución de autoridad decisoria.
+
+## Incidencia en Realization
+
+La Realization integrada cerrada había ejercitado:
+
+- incorporación;
+- elaboración;
+- evolución;
+- decisión humana;
+- interrupción;
+- recuperación;
+- continuación;
+- reutilización en un contexto distinto.
+
+No había ejercitado específicamente:
+
+```text
+resultado
++
+criterio justificativo
++
+base justificativa
++
+transformación o reducción
++
+conservación de defendibilidad
+```
+
+Por tanto:
+
+```text
+nuevo Product Value
+→ no
+
+nueva investigación inmediata
+→ no
+
+diferencia realizativa no ejercitada
+→ sí
+```
+
+Existe fundamento positivo para una derivación de Realization mínima centrada en la conservación de defendibilidad.
+
+Esta derivación deberá partir de la diferencia funcional obtenida y no de una solución técnica predeterminada.
+
+No se derivan todavía:
+
+- Architecture;
+- Implementation;
+- historial;
+- versionado;
+- provenance;
+- grafos argumentales;
+- explicaciones automáticas;
+- almacenamiento completo de la exploración;
+- ni una representación técnica determinada.
+
+## Estado resultante
+
+`I31` queda:
+
+```text
+CERRADA EN EL ALCANCE EJERCITADO
+```
+
+Clasificación:
+
+```text
+diferencia funcional
+→ demostrada
+
+residuo funcional
+→ identificado en el alcance ejercitado
+
+nuevo Product Value
+→ no justificado
+
+resultado respecto de PV-006
+→ absorbido
+
+nueva investigación inmediata
+→ no justificada
+
+derivación de Realization
+→ justificada
+```
+
+## Punto de reanudación
+
+La siguiente actuación justificable consiste en derivar la mínima Realization capaz de ejercer:
+
+```text
+constitución de criterio + base justificativa + resultado
+↓
+transformación o reducción
+↓
+resultado permanece disponible
+↓
+la persona conserva capacidad efectiva
+de comprobar por qué sigue justificado
+```
+
+Antes de modificar código deberán determinarse:
+
+1. la diferencia mínima que debe ejercitarse;
+2. el caso mínimo;
+3. los estados necesarios;
+4. los invariantes;
+5. el criterio de éxito y falsación;
+6. y si la diferencia requiere una nueva Realization o puede ejercitarse mediante una ampliación separada de mecanismos existentes sin alterar su cierre histórico.
+
+---
