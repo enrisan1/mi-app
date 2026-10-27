@@ -10,6 +10,8 @@
 
    3.2 Principio de continuidad de uso
 
+   3.3 Determinación humana efectiva
+
 4. Capacidades generales perseguidas
 
    4.1 Evolución de los contenidos y conservación de estados
@@ -22,7 +24,7 @@
 
    4.5 Colaboración y publicación
 
-   4.6 Preservación y continuidad
+   4.6 Preservación y continuidad de posibilidades pertinentes
 
 5. Frontera entre visión e investigación
 
@@ -144,6 +146,16 @@ Este enfoque favorece una evolución continua del producto y evita que el crecim
 ### 3.2 Principio de continuidad de uso
 
 El usuario debe poder empezar de la forma más sencilla posible y crecer hacia modelos más complejos sin tener que cambiar de herramienta ni de forma de trabajar.
+
+### 3.3 Determinación humana efectiva
+
+La evolución de la plataforma deberá preservar la participación efectiva de las personas en aquellas decisiones cuya resolución continúe correspondiéndoles.
+
+Cuando una actividad mantenga abiertas alternativas pertinentes y la determinación entre ellas pertenezca a la persona, la incorporación de asistencia, automatización, transformación u otras capacidades de la plataforma no deberá convertir esa decisión humana en una aceptación meramente formal de una resolución ya determinada por el sistema.
+
+Este principio no establece una interfaz concreta, un mecanismo general de confirmación ni una clasificación universal de las decisiones que corresponden a la persona.
+
+La identificación de las situaciones en las que esta exigencia resulte aplicable y de las estructuras necesarias para realizarla deberá justificarse en el ámbito competente.
 
 ---
 
@@ -269,6 +281,10 @@ Cuando resulte pertinente, podrán hacerse visibles elementos como:
 
 Estos mecanismos deberán favorecer el juicio crítico de las personas sin sustituirlo por una valoración universal impuesta por la plataforma.
 
+Cuando la evaluación posterior de un resultado requiera comprender o defender suficientemente por qué fue obtenido frente a alternativas pertinentes, la plataforma podrá necesitar conservar o hacer accesibles las bases, criterios, relaciones o evidencias necesarias para que la persona pueda realizar esa evaluación por sí misma.
+
+Esta posibilidad no implica que la plataforma deba imponer una conclusión, conservar literalmente toda la información original ni proporcionar un mecanismo universal de explicación. La suficiencia de aquello que deba permanecer disponible dependerá de las posibilidades pertinentes que deban preservarse en cada situación.
+
 Los criterios de evaluación podrán variar entre comunidades, actividades o contextos cuando Product justifique esa diversidad.
 
 ### 4.5 Colaboración y publicación
@@ -281,13 +297,47 @@ Del mismo modo, la publicación deberá poder constituir un acto identificable d
 
 La existencia de colaboración o publicación no determina por sí misma el modelo de participantes, permisos, gobierno, estados o procesos que deberá adoptarse.
 
-### 4.6 Preservación y continuidad
+### 4.6 Preservación y continuidad de posibilidades pertinentes
 
-La plataforma aspira a conservar aquello que resulte necesario para que los contenidos y sus contextos relevantes puedan seguir siendo localizables, interpretables y utilizables a lo largo del tiempo.
+La plataforma aspira a acompañar actividades que evolucionan mediante incorporaciones, reorganizaciones, transformaciones, reducciones, relaciones y otras modificaciones introducidas durante el trabajo.
 
-La preservación podrá requerir conservar no sólo determinados contenidos, sino también información necesaria para comprender su procedencia, relaciones, estados o evolución.
+Cuando la plataforma introduzca una modificación que afecte a un material, resultado o trabajo existente, deberá poder preservarse suficientemente aquello que continúe siendo necesario para mantener las posibilidades pertinentes de la situación resultante.
 
-Esta visión no presupone qué estructuras conceptuales o técnicas serán necesarias para proporcionar dicha continuidad.
+Esta preservación no exige necesariamente conservar literalmente todos los materiales, representaciones, estados o relaciones anteriores.
+
+Según el contexto, podrá requerir conservar o hacer accesibles elementos necesarios para:
+
+- localizar;
+- interpretar;
+- continuar;
+- comparar;
+- relacionar;
+- reutilizar;
+- revisar;
+- justificar;
+- o actuar posteriormente sobre el trabajo realizado.
+
+La suficiencia de la conservación dependerá de las posibilidades que continúen siendo pertinentes en la situación correspondiente y no de una obligación general de mantener intacto todo estado anterior.
+
+Por tanto:
+
+```text
+preservación suficiente
+        ≠
+conservación literal de todo
+```
+
+y:
+
+```text
+resultado todavía disponible
+        ⇏
+todas las posibilidades pertinentes preservadas
+```
+
+La visión no presupone qué estructuras conceptuales, representaciones, mecanismos de persistencia o soluciones técnicas serán necesarias para proporcionar esta continuidad.
+
+Cuando resulte necesario determinar qué debe preservarse, con qué grado de fidelidad o mediante qué transformación puede mantenerse una posibilidad pertinente, la cuestión deberá justificarse mediante Product y, cuando corresponda, investigarse en el cuerpo competente.
 
 ## 5. Frontera entre visión e investigación
 
