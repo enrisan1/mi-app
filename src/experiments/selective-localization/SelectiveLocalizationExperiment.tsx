@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Phase = "setup" | "experiment";
+type Phase = "exposure" | "separation" | "experiment";
 type Condition = "positive" | "negative";
 type CandidateId = "A" | "B" | "C" | "D";
 
@@ -35,7 +35,7 @@ const need =
   "Necesito volver a considerar el material anterior que desarrollaba el argumento γ.";
 
 export function SelectiveLocalizationExperiment() {
-  const [phase, setPhase] = useState<Phase>("setup");
+  const [phase, setPhase] = useState<Phase>("exposure");
   const [condition, setCondition] = useState<Condition | null>(null);
   const [inspectionOpen, setInspectionOpen] = useState(false);
   const [selectedCandidate, setSelectedCandidate] =
@@ -50,20 +50,35 @@ export function SelectiveLocalizationExperiment() {
     setDirectControlOpen(false);
   };
 
-  if (phase === "setup") {
+  if (phase === "exposure") {
     return (
       <section>
         <h1>Experimento de localización selectiva posterior</h1>
 
-        <p>Materiales constituidos:</p>
+        <p>Exposición previa a cuatro materiales:</p>
 
         <ul>
           {candidates.map((candidate) => (
-            <li key={candidate.id}>
-              <strong>{candidate.cue}</strong>: {candidate.content}
-            </li>
+            <li key={candidate.id}>{candidate.content}</li>
           ))}
         </ul>
+
+        <button type="button" onClick={() => setPhase("separation")}>
+          Terminar exposición
+        </button>
+      </section>
+    );
+  }
+
+  if (phase === "separation") {
+    return (
+      <section>
+        <h1>Experimento de localización selectiva posterior</h1>
+
+        <p>
+          La exposición previa ha terminado. Los cuatro materiales permanecen
+          conservados.
+        </p>
 
         <button type="button" onClick={() => start("positive")}>
           Iniciar condición positiva

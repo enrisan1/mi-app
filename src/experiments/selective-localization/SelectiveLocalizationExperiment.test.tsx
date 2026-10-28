@@ -10,10 +10,54 @@ const candidateCContent =
   "Un material anterior que desarrolla el argumento γ necesario para reconsiderar la cuestión actual.";
 
 describe("SelectiveLocalizationExperiment", () => {
+  it("[S0-SEPARATION-01] separates prior exposure from the later need without revealing candidate ids", async () => {
+    const user = userEvent.setup();
+
+    render(<SelectiveLocalizationExperiment />);
+
+    expect(
+      screen.getByText(
+        "Un material anterior que desarrolla el argumento γ necesario para reconsiderar la cuestión actual.",
+        { exact: true },
+      ),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByText("Material C", { exact: true }),
+    ).not.toBeInTheDocument();
+
+    expect(screen.queryByText(need, { exact: true })).not.toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
+
+    expect(
+      screen.queryByText(
+        "Un material anterior que desarrolla el argumento γ necesario para reconsiderar la cuestión actual.",
+        { exact: true },
+      ),
+    ).not.toBeInTheDocument();
+
+    expect(screen.queryByText(need, { exact: true })).not.toBeInTheDocument();
+
+    expect(
+      screen.getByRole("button", { name: /iniciar condición positiva/i }),
+    ).toBeEnabled();
+
+    expect(
+      screen.getByRole("button", { name: /iniciar condición negativa/i }),
+    ).toBeEnabled();
+  });
+
   it("[T-IE-01] starts S+ without exposing or preselecting C", async () => {
     const user = userEvent.setup();
 
     render(<SelectiveLocalizationExperiment />);
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
 
     await user.click(
       screen.getByRole("button", { name: /iniciar condición positiva/i }),
@@ -40,6 +84,10 @@ describe("SelectiveLocalizationExperiment", () => {
     render(<SelectiveLocalizationExperiment />);
 
     await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
+
+    await user.click(
       screen.getByRole("button", { name: /iniciar condición positiva/i }),
     );
 
@@ -57,6 +105,10 @@ describe("SelectiveLocalizationExperiment", () => {
     const user = userEvent.setup();
 
     render(<SelectiveLocalizationExperiment />);
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
 
     await user.click(
       screen.getByRole("button", { name: /iniciar condición positiva/i }),
@@ -89,6 +141,10 @@ describe("SelectiveLocalizationExperiment", () => {
     render(<SelectiveLocalizationExperiment />);
 
     await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
+
+    await user.click(
       screen.getByRole("button", { name: /iniciar condición negativa/i }),
     );
 
@@ -111,6 +167,10 @@ describe("SelectiveLocalizationExperiment", () => {
     const user = userEvent.setup();
 
     render(<SelectiveLocalizationExperiment />);
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
 
     await user.click(
       screen.getByRole("button", { name: /iniciar condición negativa/i }),
@@ -137,18 +197,14 @@ describe("SelectiveLocalizationExperiment", () => {
     ).toBeInTheDocument();
   });
 
-  it("[T-IE-06] exposes the same C content in setup, S+, and S−R", async () => {
+  it("[T-IE-06] exposes the same C content in S+ and S−R", async () => {
     const user = userEvent.setup();
 
-    const setupRender = render(<SelectiveLocalizationExperiment />);
-
-    expect(
-      screen.getByText(/Un material anterior que desarrolla el argumento γ/i),
-    ).toBeInTheDocument();
-
-    setupRender.unmount();
-
     const positiveRender = render(<SelectiveLocalizationExperiment />);
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
 
     await user.click(
       screen.getByRole("button", { name: /iniciar condición positiva/i }),
@@ -165,6 +221,10 @@ describe("SelectiveLocalizationExperiment", () => {
     positiveRender.unmount();
 
     render(<SelectiveLocalizationExperiment />);
+
+    await user.click(
+      screen.getByRole("button", { name: /terminar exposición/i }),
+    );
 
     await user.click(
       screen.getByRole("button", { name: /iniciar condición negativa/i }),
