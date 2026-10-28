@@ -952,14 +952,15 @@ Por tanto, no se mantiene un criterio global independiente de satisfacción de d
 
 ---
 
-# 18. CG-V1-02 — Compatibilidad transversal
+# 18. CG-V1-02 — Compatibilidad transversal de la realización aceptada
 
-En toda situación utilizada para validar V1 en la que se active el supuesto de C-V1-08 o C-V1-09, la realización operativa deberá mantener satisfecha la condición transversal correspondiente.
+En toda situación perteneciente al comportamiento aceptado de V1 en la que se active el supuesto de C-V1-08 o C-V1-09, la realización deberá mantener satisfecha la condición transversal correspondiente.
 
 Por tanto:
 
 ```text
 si se activa C-V1-08
+dentro del comportamiento aceptado de V1
 ↓
 debe preservarse
 determinación humana efectiva
@@ -969,6 +970,7 @@ y:
 
 ```text
 si se activa C-V1-09
+dentro del comportamiento aceptado de V1
 ↓
 deben preservarse suficientemente
 las posibilidades todavía pertinentes
@@ -990,9 +992,77 @@ pero:
 activación
 +
 violación
+dentro del comportamiento aceptado de V1
 =
 incompatibilidad con finalización de V1
 ```
+
+Un contraejemplo conocido dentro del comportamiento aceptado de V1 impide considerar satisfecho este criterio.
+
+Los controles negativos, estados experimentales o situaciones construidas exclusivamente para comprobar causalidad, detectar falsos positivos o demostrar una pérdida no constituyen por sí mismos incumplimientos de CG-V1-02, salvo que el comportamiento que representan forme parte de la realización aceptada de V1 o pueda alcanzarse mediante su uso válido.
+
+Por tanto:
+
+```text
+control negativo experimental
+→
+no invalida V1 por sí mismo
+```
+
+pero:
+
+```text
+mismo comportamiento
+alcanzable mediante uso válido de V1
++
+violación de C-V1-08 o C-V1-09
+→
+CG-V1-02 no satisfecho
+```
+
+La satisfacción de este criterio no exige demostrar exhaustivamente que ninguna violación podrá producirse en cualquier situación futura imaginable.
+
+Exige:
+
+```text
+evidencia positiva suficiente
+de C-V1-08 y C-V1-09
++
+ausencia de contraejemplos conocidos
+dentro del comportamiento aceptado de V1
+```
+
+Por tanto:
+
+```text
+caso positivo de activación
+=
+evidencia de capacidad
+```
+
+mientras que:
+
+```text
+contraejemplo válido
+dentro del comportamiento aceptado
+=
+evidencia suficiente de incumplimiento
+```
+
+
+La modificación esencial es:
+
+```text
+situación utilizada para validar V1
+```
+
+→
+
+```text
+situación perteneciente al comportamiento aceptado de V1
+```
+
+Eso evita que un control negativo experimental, como `S-RD-2`, invalide por sí mismo V1.
 
 ---
 
@@ -1250,9 +1320,12 @@ V1 podrá considerarse suficientemente realizada cuando concurran simultáneamen
    en situaciones donde sus supuestos
    se activan;
 
-6. toda situación de validación en la que
+6. toda situación perteneciente al
+   comportamiento aceptado de V1 en la que
    se active una condición transversal
-   permanece compatible con CG-V1-02.
+   permanece compatible con CG-V1-02,
+   sin existir contraejemplos conocidos
+   dentro de ese comportamiento aceptado.
 ```
 
 De forma reducida:
@@ -1279,7 +1352,7 @@ V1 suficientemente realizada
 
 La condición de finalización de V1 puede expresarse así:
 
-> **V1 podrá considerarse suficientemente realizada cuando se satisfagan los catorce criterios observables mínimos correspondientes a sus nueve capacidades esenciales; sus dependencias funcionales estén satisfechas; exista al menos una trayectoria longitudinal funcionalmente continua que integre incorporación, transformación, constitución de resultado, interrupción, recuperación y continuación; la pluralidad contextual quede efectivamente realizada mediante relación y reutilización pertinentes; y las realizaciones utilizadas para validar V1 preserven la determinación humana efectiva y la continuidad suficiente de posibilidades pertinentes siempre que sus respectivos supuestos se activen.**
+> **V1 podrá considerarse suficientemente realizada cuando se satisfagan los catorce criterios observables mínimos correspondientes a sus nueve capacidades esenciales; sus dependencias funcionales estén satisfechas; exista al menos una trayectoria longitudinal funcionalmente continua que integre incorporación, transformación, constitución de resultado, interrupción, recuperación y continuación; la pluralidad contextual quede efectivamente realizada mediante relación y reutilización pertinentes; y el comportamiento aceptado de V1 preserve la determinación humana efectiva y la continuidad suficiente de posibilidades pertinentes siempre que sus respectivos supuestos se activen, sin que exista ningún contraejemplo conocido dentro de ese comportamiento aceptado.**
 
 ---
 
