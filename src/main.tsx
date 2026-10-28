@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
+import { SelectiveLocalizationExperiment } from "./experiments/selective-localization/SelectiveLocalizationExperiment";
 import { DefendabilityExperience } from "./realizations/defendability/DefendabilityExperience";
 import { IntegratedExperience } from "./realizations/integrated/IntegratedExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
@@ -32,13 +33,16 @@ const thirdResolution: EstablishedResolution = {
     "La evidencia descarta imponer unicidad global de resolución, pero no establece cardinalidad arbitraria, colección ni búsqueda general de resoluciones.",
 };
 
-const realization = new URLSearchParams(window.location.search).get(
-  "realization",
-);
+const searchParams = new URLSearchParams(window.location.search);
+
+const experiment = searchParams.get("experiment");
+const realization = searchParams.get("realization");
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    {realization === "integrated" ? (
+    {experiment === "selective-localization" ? (
+      <SelectiveLocalizationExperiment />
+    ) : realization === "integrated" ? (
       <IntegratedExperience />
     ) : realization === "defendability" ? (
       <DefendabilityExperience />
