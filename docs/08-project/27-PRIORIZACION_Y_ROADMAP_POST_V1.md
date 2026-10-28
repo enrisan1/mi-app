@@ -1736,3 +1736,102 @@ próxima actuación
 ```
 
 ---
+
+# 48. Cierre de P1
+
+La Realization `R-P1-S1` ha sido implementada y validada en el alcance definido por `CR-P1-01`.
+
+Evidencia automática:
+
+```text
+T-P1-01..08
+→ 8/8 tests OK
+
+suite completa
+→ 275/275 tests OK
+```
+
+Evidencia humana:
+
+```text
+Trabajo actual
+→ Texto C
+
+Identificador de referencia
+→ S1
+
+Contenido de referencia estable
+→ Texto A
+
+Botón "Conservar como referencia estable"
+→ deshabilitado
+```
+
+La trayectoria ejercida fue:
+
+```text
+Texto A
+↓
+constituir trabajo
+↓
+conservar como referencia estable S1
+↓
+evolucionar a Texto B
+↓
+evolucionar a Texto C
+↓
+recargar
+```
+
+Resultado:
+
+```text
+current = Texto C
+stable.id = S1
+stable.content = Texto A
+```
+
+Por tanto:
+
+```text
+R-P1-S1
+→ REALIZADA MÍNIMAMENTE
+
+CR-P1-01
+→ SATISFECHA
+
+P1 — Estado significativo estable
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+Queda demostrado que el producto dispone de una diferencia funcional efectiva entre:
+
+```text
+resultado recuperable
+```
+
+y:
+
+```text
+estado significativo estable
+```
+
+No se deriva mediante este cierre:
+
+```text
+versionado general
+historial
+múltiples estados estables
+restauración
+ramificación
+publicación
+Architecture
+```
+
+La siguiente cuestión estratégica pasa a ser:
+
+```text
+P2 — Publicación individual mínima
+```
+
+---

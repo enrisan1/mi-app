@@ -6,6 +6,7 @@ import { SelectiveLocalizationExperiment } from "./experiments/selective-localiz
 import { DefendabilityExperience } from "./realizations/defendability/DefendabilityExperience";
 import { IntegratedExperience } from "./realizations/integrated/IntegratedExperience";
 import { SelectiveLocalizationExperience } from "./realizations/selective-localization/SelectiveLocalizationExperience";
+import { StableStateExperience } from "./realizations/stable-state/StableStateExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
 
 import "./index.css";
@@ -49,6 +50,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <IntegratedExperience />
     ) : realization === "defendability" ? (
       <DefendabilityExperience />
+    ) : realization === "stable-state" ? (
+      <StableStateExperience />
     ) : (
       <App
         resolution={resolution}
