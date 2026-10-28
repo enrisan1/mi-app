@@ -5,6 +5,7 @@ import App from "./App";
 import { SelectiveLocalizationExperiment } from "./experiments/selective-localization/SelectiveLocalizationExperiment";
 import { DefendabilityExperience } from "./realizations/defendability/DefendabilityExperience";
 import { IntegratedExperience } from "./realizations/integrated/IntegratedExperience";
+import { SelectiveLocalizationExperience } from "./realizations/selective-localization/SelectiveLocalizationExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
 
 import "./index.css";
@@ -42,6 +43,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     {experiment === "selective-localization" ? (
       <SelectiveLocalizationExperiment />
+    ) : realization === "selective-localization" ? (
+      <SelectiveLocalizationExperience />
     ) : realization === "integrated" ? (
       <IntegratedExperience />
     ) : realization === "defendability" ? (
