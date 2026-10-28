@@ -818,14 +818,18 @@ pluralidad contextual
 condiciones transversales
 ```
 
-y deberá distinguir:
+y deberá identificar y organizar las capacidades esenciales necesarias para realizar V1, distinguiendo cuando resulte pertinente:
 
 ```text
-capacidades esenciales
-capacidades ya realizadas total o parcialmente
-capacidades todavía ausentes
-capacidades posteriores a V1
+capacidades operativas esenciales
+
+y
+
+condiciones transversales esenciales
+de activación condicionada
 ```
+
+La determinación de qué capacidades se encuentran ya realizadas, parcialmente realizadas o ausentes corresponderá a una fase posterior, una vez establecidos el mapa, sus dependencias y los criterios de finalización de V1.
 
 Una vez construido ese mapa, la actuación posterior consistirá en determinar las dependencias existentes entre las capacidades identificadas.
 
