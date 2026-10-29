@@ -2491,3 +2491,127 @@ próxima actuación
 ```
 
 ---
+
+# 68. Cierre de P2
+
+La Realization `R-P2-P1` ha sido implementada y validada en el alcance definido por `CR-P2-01`.
+
+## Evidencia automática
+
+```text
+T-P2-01..08
+→ 8/8 tests OK
+
+suite completa
+→ 283/283 tests OK
+```
+
+## Evidencia humana
+
+La trayectoria ejercida fue:
+
+```text
+R1
+→ "Esta es una prueba para avanzar en el proyecto."
+
+↓ constituir referencia estable
+
+S1
+→ "Esta es una prueba para avanzar en el proyecto."
+
+↓ publicar referencia estable
+
+P1
+→ "Esta es una prueba para avanzar en el proyecto."
+
+↓ continuar trabajando
+
+R2
+→ "Las pruebas deben ser recuperables."
+
+↓ continuar trabajando
+
+R3
+→ "En caso de error se debe avisar del mismo."
+
+↓ recargar
+```
+
+El estado final observado fue:
+
+```text
+Trabajo actual
+→ En caso de error se debe avisar del mismo.
+
+Referencia estable
+→ S1
+→ Esta es una prueba para avanzar en el proyecto.
+
+Estado publicado
+→ P1
+→ Esta es una prueba para avanzar en el proyecto.
+
+Botón "Publicar referencia estable"
+→ deshabilitado
+```
+
+La prueba demuestra conjuntamente:
+
+```text
+current = R3
+
+stable.id = S1
+stable.content = R1
+
+published.id = P1
+published.content = R1
+```
+
+después de evoluciones posteriores y de una interrupción efectiva.
+
+Por tanto:
+
+```text
+R-P2-P1
+→ REALIZADA MÍNIMAMENTE
+
+CR-P2-01
+→ SATISFECHA
+
+P2 — Publicación individual mínima
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+Queda establecida la diferencia funcional:
+
+```text
+estado significativo estable
+≠
+estado publicado
+```
+
+sin haber introducido todavía:
+
+```text
+URL pública
+servidor
+backend
+usuarios
+audiencia
+permisos
+compartición
+comentarios
+colaboración
+múltiples publicaciones
+historial de publicación
+```
+
+La siguiente cuestión estratégica del roadmap pasa a ser:
+
+```text
+P3 — Publicación evaluable
+```
+
+Antes de derivar una nueva Realization deberá auditarse si el producto actual ya dispone de evidencia suficiente para que una persona pueda evaluar pertinentemente un resultado publicado mediante información relativa a procedencia, fundamentación, evolución, contexto, limitaciones o relaciones.
+
+---
