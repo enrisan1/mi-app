@@ -3997,3 +3997,829 @@ P5 — Intercambio / difusión
 Antes de derivar una nueva Realization deberá auditarse si el producto actual permite que un resultado, publicación o trayectoria pueda ponerse funcionalmente a disposición de otra instancia o destinatario de forma distinguible y recuperable, sin confundir difusión con mera persistencia local o coexistencia interna.
 
 ---
+
+# 104. Auditoría de P5 — Intercambio / difusión mínima
+
+La siguiente cuestión estratégica es:
+
+> ¿Permite ya el producto actual que un resultado, publicación o trayectoria pueda ponerse funcionalmente a disposición de otra instancia o destinatario de forma distinguible y recuperable, sin confundir difusión con mera persistencia local o coexistencia interna?
+
+El producto actual ya dispone de:
+
+```text
+persistencia local;
+estado publicado;
+publicación evaluable;
+colaboración mínima.
+```
+
+Sin embargo, estas capacidades operan todavía dentro de la misma aplicación y del mismo ámbito local.
+
+La diferencia fundamental es:
+
+```text
+persistir
+≠
+difundir
+
+publicar localmente
+≠
+poner a disposición de otra instancia
+
+colaboración interna
+≠
+intercambio entre instancias
+```
+
+El producto todavía no constituye una representación transferible que pueda mediar entre un estado de origen y un estado recibido en destino.
+
+# 105. Hipótesis de auditoría P5
+
+Se consideran:
+
+```text
+H-P5-EXISTE
+→ el producto actual ya realiza
+  intercambio / difusión mínima
+
+H-P5-GAP
+→ existe una diferencia funcional
+  entre conservar o publicar internamente
+  y poner un resultado a disposición
+  de otra instancia o destinatario
+```
+
+Resultado:
+
+```text
+H-P5-EXISTE
+→ REFUTADA
+
+H-P5-GAP
+→ CONFIRMADA
+```
+
+El gap específico es:
+
+> El producto puede conservar, publicar y trabajar colaborativamente sobre resultados dentro de la misma instancia, pero todavía no constituye una representación transferible que pueda salir funcionalmente del estado de origen y ser recibida y reconocida por otra instancia o destinatario.
+
+# 106. Diferencia mínima de P5
+
+La diferencia mínima que deberá realizarse es:
+
+```text
+persistencia local
+≠
+intercambio entre instancias
+```
+
+No basta con:
+
+```text
+Origen
+→ R1
+
+Destino
+→ R1
+```
+
+si ambos estados derivan directamente de la misma representación interna.
+
+La discriminación mínima exige:
+
+```text
+OriginState
+↓
+ExchangeArtifact X1
+↓
+DestinationState
+```
+
+con una mediación funcional explícita entre origen y destino.
+
+# 107. Realization derivada
+
+Se deriva:
+
+```text
+R-P5-X1
+— Realization mínima de intercambio / difusión
+```
+
+Su objetivo es demostrar que:
+
+```text
+una instancia origen
+↓
+constituye un estado difundible
+↓
+genera una representación transferible X1
+↓
+una instancia destino funcionalmente distinta
+recibe X1
+↓
+constituye un estado recibido
+```
+
+sin introducir todavía infraestructura de red real.
+
+# 108. Instancias funcionales mínimas
+
+La Realization utilizará exactamente dos instancias simuladas:
+
+```text
+Instancia origen
+
+Instancia destino
+```
+
+La distinción es funcional.
+
+No representa todavía:
+
+```text
+dos dispositivos reales
+dos navegadores reales
+dos usuarios reales
+red
+servidor
+```
+
+La reducción sólo debe demostrar:
+
+```text
+origen
+≠
+destino
+```
+
+y que el destino se constituye a partir de un artefacto transferible.
+
+# 109. Artefacto mínimo de intercambio
+
+Se utilizará un único artefacto:
+
+```text
+X1
+```
+
+con una estructura conceptual mínima:
+
+```text
+ExchangeArtifact
+→ id
+→ sourcePublishedId
+→ content
+```
+
+equivalente a:
+
+```text
+id = X1
+sourcePublishedId = P1
+content = R1
+```
+
+El campo `sourcePublishedId` mantiene una trazabilidad mínima con el estado publicado de origen sin introducir todavía un sistema general de procedencia.
+
+# 110. Modelo funcional mínimo
+
+El modelo conceptual mínimo es:
+
+```text
+OriginState
+→ published
+
+ExchangeArtifact
+→ id
+→ sourcePublishedId
+→ content
+
+DestinationState
+→ received
+```
+
+con:
+
+```text
+published.content = R1
+
+artifact.content = R1
+
+received.content = R1
+```
+
+La condición crítica es:
+
+```text
+received
+se constituye desde artifact
+```
+
+y no directamente desde el estado interno del origen.
+
+# 111. Trayectoria mínima de R-P5-X1
+
+La trayectoria mínima será:
+
+```text
+Origen:
+R1
+↓
+constituir P1
+↓
+generar X1
+
+Transferencia simulada:
+X1
+↓
+poner X1 a disposición del destino
+
+Destino:
+recibir X1
+↓
+constituir D1
+```
+
+El estado final deberá satisfacer:
+
+```text
+P1.content = R1
+
+X1.content = R1
+
+D1.content = R1
+```
+
+manteniendo distinguibles:
+
+```text
+estado interno del origen
+artefacto de intercambio
+estado recibido en destino
+```
+
+# 112. Separación funcional entre origen y destino
+
+No bastará con que origen y destino muestren el mismo contenido.
+
+La condición discriminante será:
+
+```text
+DestinationState
+```
+
+debe constituirse únicamente a partir de:
+
+```text
+ExchangeArtifact
+```
+
+Por tanto, no deberá existir una transición funcional equivalente a:
+
+```text
+OriginState
+→ DestinationState
+```
+
+sin la mediación de `X1`.
+
+La relación exigida es:
+
+```text
+OriginState
+↓
+X1
+↓
+DestinationState
+```
+
+# 113. Persistencia mínima
+
+La Realization podrá mantener separados:
+
+```text
+exchange.originPublished
+exchange.artifact
+exchange.destinationReceived
+```
+
+Esto permite distinguir persistentemente:
+
+```text
+estado interno del origen
+artefacto transferible
+estado interno del destino
+```
+
+El destino no deberá depender de acceder al estado interno persistido del origen.
+
+# 114. CR-P5-01 — Condición mínima de realización
+
+`R-P5-X1` quedará realizada mínimamente si se demuestra que:
+
+```text
+a. existe un estado difundible P1/R1;
+
+b. la instancia origen puede constituir
+   un artefacto X1;
+
+c. X1 es distinguible
+   del estado interno del origen;
+
+d. X1 conserva exactamente
+   el contenido difundido;
+
+e. existe una instancia destino
+   funcionalmente distinguible;
+
+f. el destino puede recibir/importar X1;
+
+g. el estado recibido se constituye
+   a partir de X1 y no mediante lectura directa
+   del estado interno del origen;
+
+h. el contenido recibido conserva exactamente
+   el contenido de X1;
+
+i. el destino puede reconocer
+   qué contenido ha recibido;
+
+j. tras una interrupción efectiva del destino,
+   el estado recibido continúa recuperable.
+```
+
+Los discriminantes principales son:
+
+```text
+c
+e
+g
+j
+```
+
+# 115. Control contra falso positivo
+
+No bastará con mostrar simultáneamente:
+
+```text
+Origen
+→ R1
+
+Destino
+→ R1
+```
+
+porque eso podría constituir mera duplicación interna.
+
+Tampoco bastará con:
+
+```text
+DestinationState = OriginState
+```
+
+La condición positiva será:
+
+```text
+OriginState
+↓
+generar X1
+↓
+hacer X1 disponible
+↓
+recibir X1
+↓
+DestinationState
+```
+
+con operaciones funcionalmente distinguibles de generación y recepción.
+
+# 116. Transferencia simulada
+
+La Realization no necesita todavía un canal físico de transporte.
+
+La transferencia podrá modelarse mediante:
+
+```text
+exchangeArtifact
+```
+
+como estado intermedio explícito.
+
+La trayectoria será:
+
+```text
+originPublished
+↓
+exchangeArtifact
+↓
+destinationReceived
+```
+
+El punto discriminante es que:
+
+```text
+destinationReceived
+```
+
+no derive directamente de:
+
+```text
+originPublished
+```
+
+# 117. Recuperabilidad del destino
+
+P5 no quedará satisfecha si el contenido recibido sólo permanece visible durante la ejecución actual.
+
+Deberá demostrarse:
+
+```text
+destino recibe X1
+↓
+se constituye D1
+↓
+interrupción
+↓
+reanudar
+↓
+D1 sigue disponible
+```
+
+Esto diferencia:
+
+```text
+recepción transitoria
+```
+
+de:
+
+```text
+resultado recibido recuperable
+```
+
+# 118. Alcance negativo de R-P5-X1
+
+`R-P5-X1` no deberá introducir todavía:
+
+```text
+Internet
+servidor
+backend
+API
+cuentas
+login
+email
+mensajería
+URL pública
+QR
+portapapeles real
+descarga de archivos
+subida de archivos
+cloud
+sincronización
+red
+WebSocket
+permisos
+destinatarios reales
+cifrado
+firmas
+versionado de artefactos
+múltiples artefactos
+múltiples destinos
+```
+
+Tampoco deberá integrar todavía dentro de `X1` el soporte evaluativo de P3 ni la trayectoria colaborativa de P4.
+
+Para P5 mínimo basta con transferir un único contenido publicado.
+
+# 119. Intervención técnica mínima candidata
+
+La intervención técnica mínima candidata es:
+
+```text
+src/realizations/exchange/
+    ExchangeExperience.tsx
+    ExchangeExperience.test.tsx
+```
+
+con acceso mediante:
+
+```text
+?realization=exchange
+```
+
+La Realization mantendrá separados los estados de origen, artefacto y destino.
+
+# 120. Tests mínimos de R-P5-X1
+
+La suite mínima candidata es:
+
+```text
+T-P5-01
+constituye un estado de origen P1/R1
+
+T-P5-02
+genera un artefacto X1 desde el origen
+
+T-P5-03
+X1 queda distinguible del estado interno del origen
+
+T-P5-04
+el destino no recibe nada antes de existir X1
+
+T-P5-05
+el destino recibe X1 y constituye D1
+
+T-P5-06
+D1 conserva exactamente el contenido de X1
+
+T-P5-07
+D1 sobrevive a un remount del destino
+
+T-P5-08
+ejercita la trayectoria completa
+origen → X1 → destino
+```
+
+# 121. Trayectoria integrada de aceptación
+
+La trayectoria integrada mínima deberá realizar:
+
+```text
+crear R1
+↓
+constituir P1
+↓
+generar X1
+↓
+hacer X1 disponible al destino
+↓
+recibir X1
+↓
+constituir D1
+↓
+interrumpir
+↓
+reanudar
+```
+
+y comprobar finalmente:
+
+```text
+originPublished.id = P1
+originPublished.content = R1
+
+artifact.id = X1
+artifact.sourcePublishedId = P1
+artifact.content = R1
+
+destinationReceived.content = R1
+```
+
+Además:
+
+```text
+destinationReceived
+no depende directamente de originPublished
+```
+
+# 122. Resultado esperado
+
+Si `CR-P5-01` queda satisfecha:
+
+```text
+R-P5-X1
+→ REALIZADA MÍNIMAMENTE
+
+P5 — Intercambio / difusión
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+La diferencia demostrada será:
+
+```text
+publicación local
+≠
+intercambio / difusión mínima
+```
+
+sin haber introducido todavía infraestructura de red.
+
+# 123. Próxima actuación actualizada
+
+La próxima actuación justificable pasa a ser:
+
+> **implementar `R-P5-X1` en el alcance mínimo definido por `CR-P5-01`, con una instancia origen, una instancia destino simulada, un único estado publicado de origen, un único artefacto transferible `X1`, recepción constituida exclusivamente desde ese artefacto, conservación exacta del contenido y recuperabilidad del estado recibido después de una interrupción efectiva, sin introducir infraestructura de red real.**
+
+---
+
+# 124. Cierre de P5
+
+La Realization `R-P5-X1` ha sido implementada y validada en el alcance definido por `CR-P5-01`.
+
+## Evidencia automática
+
+```text
+T-P5-01..08
+→ 8/8 tests OK
+
+suite completa
+→ 307/307 tests OK
+```
+
+## Evidencia humana
+
+La trayectoria ejercida fue:
+
+```text
+R1
+→ constituir estado publicado de origen
+
+P1
+→ R1
+
+↓ generar artefacto de intercambio
+
+X1
+→ sourcePublishedId = P1
+→ content = R1
+
+↓ poner X1 a disposición del destino
+
+Instancia destino
+→ recibe X1
+
+↓ constituir estado recibido
+
+D1
+→ sourceArtifactId = X1
+→ content = R1
+
+↓ recargar
+```
+
+Antes de existir `X1`, el destino mostró:
+
+```text
+No hay ningún artefacto disponible para recibir.
+```
+
+Esto hace observable que el destino no constituye su estado directamente desde el estado interno del origen.
+
+Después de generar `X1`, el estado observable fue:
+
+```text
+Instancia origen
+→ P1
+→ R1
+
+Artefacto de intercambio
+→ X1
+→ P1
+→ R1
+
+Instancia destino
+→ todavía sin estado recibido
+```
+
+Tras recibir el artefacto:
+
+```text
+Instancia destino
+→ X1
+→ R1
+```
+
+La prueba demuestra conjuntamente:
+
+```text
+originPublished.id = P1
+originPublished.content = R1
+
+exchangeArtifact.id = X1
+exchangeArtifact.sourcePublishedId = P1
+exchangeArtifact.content = R1
+
+destinationReceived.sourceArtifactId = X1
+destinationReceived.content = R1
+```
+
+después de una interrupción efectiva.
+
+También queda observado que:
+
+```text
+sin X1
+→ el destino no puede recibir contenido
+
+P1
+→ no constituye directamente el estado destino
+
+X1
+→ media funcionalmente entre origen y destino
+
+R1
+→ se conserva exactamente en X1
+
+R1
+→ se conserva exactamente en el estado recibido
+
+estado recibido
+→ permanece recuperable después de recarga
+```
+
+Por tanto:
+
+```text
+R-P5-X1
+→ REALIZADA MÍNIMAMENTE
+
+CR-P5-01
+→ SATISFECHA
+
+P5 — Intercambio / difusión
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+Queda establecida la diferencia funcional:
+
+```text
+publicación local
+≠
+intercambio / difusión mínima
+```
+
+La Realization demuestra que un estado publicado puede constituir una representación transferible funcionalmente distinta, y que una instancia destino puede constituir un estado recibido exclusivamente a partir de esa representación.
+
+No se han introducido todavía:
+
+```text
+Internet
+servidor
+backend
+API
+cuentas
+login
+email
+mensajería
+URL pública
+QR
+portapapeles real
+descarga de archivos
+subida de archivos
+cloud
+sincronización
+red
+WebSocket
+permisos
+destinatarios reales
+cifrado
+firmas
+versionado de artefactos
+múltiples artefactos
+múltiples destinos
+```
+
+Con P5 quedan realizados, en su alcance mínimo, los cinco hitos priorizados del roadmap post-V1:
+
+```text
+P1 — Estado significativo estable
+→ SATISFECHO
+
+P2 — Publicación individual mínima
+→ SATISFECHO
+
+P3 — Publicación evaluable
+→ SATISFECHO
+
+P4 — Colaboración mínima
+→ SATISFECHO
+
+P5 — Intercambio / difusión
+→ SATISFECHO
+```
+
+La siguiente cuestión ya no deberá asumirse automáticamente como una nueva Realization.
+
+Deberá auditarse el estado global post-P5 para determinar si:
+
+```text
+a. el roadmap post-V1 queda materialmente completado;
+
+b. existe alguna diferencia funcional todavía necesaria
+   dentro del alcance originalmente priorizado;
+
+c. procede abrir una nueva prioridad;
+
+d. procede integrar, reducir o consolidar las Realizations existentes;
+
+e. procede detener la expansión funcional
+   hasta que aparezca nueva evidencia o necesidad.
+```
+
+La próxima actuación justificable pasa a ser:
+
+> **realizar una auditoría global post-P5 del roadmap post-V1 antes de derivar nuevas capacidades, con el objetivo de determinar si los cinco hitos realizados constituyen un cierre suficiente del ciclo priorizado o si existe alguna diferencia funcional residual que justifique una actuación posterior.**
+
+---

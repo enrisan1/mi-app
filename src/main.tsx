@@ -11,6 +11,7 @@ import { StableStateExperience } from "./realizations/stable-state/StableStateEx
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
 import { EvaluablePublicationExperience } from "./realizations/evaluable-publication/EvaluablePublicationExperience";
 import { CollaborationExperience } from "./realizations/collaboration/CollaborationExperience";
+import { ExchangeExperience } from "./realizations/exchange/ExchangeExperience";
 
 import "./index.css";
 
@@ -61,6 +62,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <EvaluablePublicationExperience />
     ) : realization === "collaboration" ? (
       <CollaborationExperience />
+    ) : realization === "exchange" ? (
+      <ExchangeExperience />
     ) : (
       <App
         resolution={resolution}
