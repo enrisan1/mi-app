@@ -1835,3 +1835,659 @@ P2 — Publicación individual mínima
 ```
 
 ---
+
+# 49. Auditoría de P2 — Publicación individual mínima
+
+La siguiente cuestión del roadmap es:
+
+> **¿Puede el producto actual realizar un acto explícito de publicación sobre un estado estable, mantener ese estado identificable como publicado y continuar el trabajo posterior sin alterar retrospectivamente lo ya publicado?**
+
+Se consideran necesarias:
+
+```text
+P2-a
+existe previamente un estado estable S1;
+
+P2-b
+la persona puede realizar
+un acto explícito de publicación sobre S1;
+
+P2-c
+después del acto,
+S1 queda identificable como publicado;
+
+P2-d
+el trabajo puede continuar
+después de la publicación;
+
+P2-e
+la evolución posterior no altera
+retrospectivamente el estado publicado.
+```
+
+---
+
+# 50. Resultado de la auditoría P2
+
+La dependencia previa:
+
+```text
+P2-a
+→ satisfecha mediante P1
+```
+
+Sin embargo, el producto actual no dispone de:
+
+```text
+acto explícito de publicación
+→ ausente
+
+estado identificable como publicado
+→ ausente
+
+continuación posterior a una publicación
+→ no demostrada
+
+invariancia de un estado publicado
+→ no demostrada
+```
+
+Aunque P1 ya proporciona una base técnica importante:
+
+```text
+estado estable
++
+continuación posterior
++
+no alteración retrospectiva
+```
+
+esa propiedad todavía no se aplica a un estado con estatuto funcional de publicación.
+
+Se consideran:
+
+```text
+H-P2-EXISTE
+→ el producto actual ya realiza
+   publicación individual mínima
+
+H-P2-GAP
+→ existe una diferencia funcional
+   entre estado estable y estado publicado
+```
+
+Resultado:
+
+```text
+H-P2-EXISTE
+→ REFUTADA
+
+H-P2-GAP
+→ CONFIRMADA
+```
+
+---
+
+# 51. Gap P2
+
+El gap queda formulado como:
+
+> **El producto puede constituir una referencia estable e inalterada mientras el trabajo continúa, pero no permite todavía que una persona realice un acto explícito mediante el cual esa referencia adquiera el estatuto identificable de estado publicado.**
+
+La diferencia funcional es:
+
+```text
+REFERENCIA ESTABLE
+
+S1
+Texto A
+```
+
+frente a:
+
+```text
+ESTADO PUBLICADO
+
+P1
+Texto A
+```
+
+---
+
+# 52. No derivaciones del gap P2
+
+El gap no deriva todavía:
+
+```text
+URL pública
+servidor
+backend
+usuarios
+cuentas
+audiencia
+permisos
+compartición
+despublicación
+republicación
+ediciones
+historial de publicación
+comentarios
+colaboración
+```
+
+La publicación mínima se reduce a:
+
+```text
+estado estable
+↓
+acto humano explícito
+↓
+estado constituido como publicado
+```
+
+---
+
+# 53. Derivación de R-P2-P1
+
+Se deriva:
+
+```text
+R-P2-P1
+— Realization mínima de publicación individual
+```
+
+Su función consiste en comprobar si una persona puede:
+
+```text
+constituir una referencia estable
+↓
+publicarla explícitamente
+↓
+continuar trabajando
+↓
+mantener lo publicado identificable
+e inalterado
+```
+
+---
+
+# 54. Trayectoria mínima de R-P2-P1
+
+La trayectoria requerida es:
+
+```text
+R1
+↓
+constituir S1
+↓
+publicar S1
+↓
+P1 = S1
+↓
+continuar
+↓
+R2
+↓
+R3
+```
+
+El estado final deberá distinguir:
+
+```text
+Trabajo actual
+→ R3
+
+Referencia estable
+→ S1 = R1
+
+Estado publicado
+→ P1 = R1
+```
+
+---
+
+# 55. Determinación humana
+
+La publicación debe depender de una actuación humana explícita.
+
+No se admite:
+
+```text
+constituir S1
+→ publicación automática
+```
+
+La secuencia mínima será:
+
+```text
+S1
+↓
+Publicar referencia estable
+↓
+P1
+```
+
+La decisión:
+
+```text
+conservar como referencia estable
+```
+
+debe permanecer funcionalmente distinta de:
+
+```text
+publicar
+```
+
+---
+
+# 56. Modelo funcional mínimo
+
+La Realization deberá distinguir:
+
+```text
+current
+→ trabajo operativo actual
+
+stable
+→ referencia estable
+
+published
+→ estado publicado
+```
+
+Conceptualmente:
+
+```text
+PublishedState
+{
+  id
+  content
+}
+```
+
+No se deriva:
+
+```text
+PublishedState[]
+```
+
+La cardinalidad mínima será:
+
+```text
+0..1 estado publicado
+```
+
+---
+
+# 57. Relación entre stable y published
+
+En esta primera Realization:
+
+```text
+published.content
+=
+stable.content
+```
+
+Lo publicado deberá proceder de la referencia estable.
+
+No se publica directamente:
+
+```text
+current
+```
+
+porque la dependencia estratégica establecida es:
+
+```text
+current
+↓
+stable
+↓
+published
+```
+
+---
+
+# 58. Persistencia mínima
+
+Los tres estados deberán persistir independientemente:
+
+```text
+current
+stable
+published
+```
+
+La propiedad discriminante consiste en que:
+
+```text
+published
+```
+
+permanece inalterado cuando:
+
+```text
+current
+```
+
+continúa evolucionando.
+
+La trayectoria deberá sobrevivir a una interrupción efectiva:
+
+```text
+R1
+↓
+S1
+↓
+P1
+↓
+R2
+↓
+R3
+↓
+interrupción
+↓
+reanudar
+```
+
+y mantener:
+
+```text
+current = R3
+stable = R1
+published = R1
+```
+
+---
+
+# 59. CR-P2-01 — Condición mínima de realización
+
+La Realization deberá satisfacer:
+
+```text
+a. existe una referencia estable S1;
+
+b. la persona puede realizar
+   un acto explícito de publicación sobre S1;
+
+c. después del acto existe
+   un estado publicado P1;
+
+d. P1 queda distinguible de S1
+   y del trabajo actual;
+
+e. P1 conserva exactamente
+   el contenido de S1 publicado;
+
+f. después de publicar,
+   la persona puede continuar trabajando;
+
+g. el trabajo puede evolucionar
+   al menos a R2 y R3;
+
+h. esas evoluciones no modifican P1;
+
+i. tras una interrupción efectiva,
+   P1 continúa identificable y recuperable;
+
+j. la persona puede reconocer
+   qué es trabajo actual,
+   qué es referencia estable
+   y qué es estado publicado.
+```
+
+Los criterios discriminantes principales son:
+
+```text
+b
+c
+h
+i
+```
+
+---
+
+# 60. Control contra falso positivo
+
+No bastará con renombrar la referencia estable como publicada.
+
+La Realization deberá demostrar:
+
+```text
+S1 = "Texto A"
+P1 = "Texto A"
+
+current = "Texto B"
+↓
+current = "Texto C"
+```
+
+y finalmente:
+
+```text
+stable === "Texto A"
+published === "Texto A"
+current === "Texto C"
+```
+
+Además deberán permanecer observables como estados funcionalmente distintos:
+
+```text
+Referencia estable
+→ S1
+
+Estado publicado
+→ P1
+```
+
+---
+
+# 61. Alcance negativo de R-P2-P1
+
+R-P2-P1 no deberá intentar realizar:
+
+```text
+múltiples publicaciones
+historial de publicaciones
+versionado
+ediciones
+despublicación
+republicación
+URLs públicas
+servidor
+backend
+usuarios
+audiencias
+permisos
+compartición
+comentarios
+colaboración
+```
+
+Tampoco deberá resolver todavía:
+
+```text
+quién accede
+desde dónde
+por qué canal
+mediante qué protocolo
+```
+
+---
+
+# 62. Intervención técnica mínima candidata
+
+La Realization deberá mantenerse separada de `R-P1-S1`.
+
+Se deriva como candidata:
+
+```text
+src/realizations/publication/
+    PublicationExperience.tsx
+    PublicationExperience.test.tsx
+```
+
+más una entrada independiente:
+
+```text
+?realization=publication
+```
+
+No se modificará funcionalmente:
+
+```text
+StableStateExperience
+ResumeExperience
+IntegratedExperience
+R-DX1-M1
+```
+
+---
+
+# 63. Tests mínimos
+
+La Realization deberá cubrir:
+
+```text
+T-P2-01
+parte de una referencia estable S1
+
+T-P2-02
+permite publicar S1 explícitamente
+
+T-P2-03
+distingue estado publicado de referencia estable
+
+T-P2-04
+permite continuar trabajando después de publicar
+
+T-P2-05
+mantiene P1 inalterado después de R2
+
+T-P2-06
+mantiene P1 inalterado después de R3
+
+T-P2-07
+recupera current, stable y published tras remount
+
+T-P2-08
+ejercita la trayectoria integrada completa
+```
+
+---
+
+# 64. Trayectoria integrada de aceptación
+
+La prueba principal deberá realizar:
+
+```text
+crear R1
+↓
+constituir S1
+↓
+publicar S1 como P1
+↓
+evolucionar a R2
+↓
+evolucionar a R3
+↓
+interrumpir
+↓
+reanudar
+```
+
+y comprobar:
+
+```text
+current = R3
+
+stable = R1
+
+published = R1
+```
+
+---
+
+# 65. Resultado esperado
+
+Si `CR-P2-01` queda satisfecha:
+
+```text
+R-P2-P1
+→ realizada mínimamente
+
+P2 — Publicación individual mínima
+→ satisfecho en su alcance mínimo
+```
+
+y quedará establecida la diferencia:
+
+```text
+estado significativo estable
+≠
+estado publicado
+```
+
+---
+
+# 66. Próxima actuación actualizada
+
+La auditoría de P2 queda completada:
+
+```text
+auditar P2
+→ COMPLETADO
+
+resultado
+→ GAP P2 CONFIRMADO
+```
+
+La siguiente actuación estratégicamente justificada es:
+
+> **implementar `R-P2-P1` en el alcance mínimo definido por `CR-P2-01`, con un único estado publicado, acto humano explícito de publicación, persistencia independiente y comprobación de invariancia durante evoluciones posteriores y después de una interrupción efectiva.**
+
+---
+
+# 67. Estado resultante actualizado
+
+```text
+V1
+→ suficientemente realizada
+
+OBJETIVO POST-V1-01
+→ cerrado
+
+P1 — Estado significativo estable
+→ cerrado en su alcance mínimo
+
+R-P1-S1
+→ realizada mínimamente
+
+P2 — Publicación individual mínima
+→ gap confirmado
+
+R-P2-P1
+→ derivada
+
+CR-P2-01
+→ establecido
+
+alcance R-P2-P1
+→ una referencia estable
+  + un estado publicado
+  + trabajo actual mutable
+  + persistencia independiente
+
+Architecture
+→ no derivada
+
+P3
+→ todavía no abierto
+
+próxima actuación
+→ implementar R-P2-P1
+```
+
+---
