@@ -2615,3 +2615,632 @@ P3 — Publicación evaluable
 Antes de derivar una nueva Realization deberá auditarse si el producto actual ya dispone de evidencia suficiente para que una persona pueda evaluar pertinentemente un resultado publicado mediante información relativa a procedencia, fundamentación, evolución, contexto, limitaciones o relaciones.
 
 ---
+
+# 69. Auditoría de P3 — Publicación evaluable
+
+La cuestión estratégica siguiente es:
+
+> ¿Dispone ya el producto actual, asociado a un estado publicado, de información suficiente y pertinente para que una persona pueda evaluar críticamente ese resultado en términos de procedencia, fundamentación, evolución, contexto, limitaciones o relaciones, sin que la plataforma sustituya su juicio?
+
+La auditoría distingue entre:
+
+```text
+estado publicado
+```
+
+y:
+
+```text
+estado publicado evaluable
+```
+
+P2 ya realiza un estado publicado estable:
+
+```text
+published.id = P1
+published.content = R1
+```
+
+Sin embargo, el estado publicado actual no dispone todavía de información evaluativa asociada que permita examinar pertinentemente ese resultado.
+
+Existen antecedentes realizativos relevantes.
+
+`DefendabilityExperience` ya demuestra la coexistencia y distinción entre:
+
+```text
+criterio
++
+evidencia
++
+resultado
+```
+
+y `ResumeExperience` ya demuestra que puede presentarse información establecida para una aportación concreta.
+
+No obstante, estas capacidades existen en Realizations separadas y no están asociadas funcionalmente al estado publicado `P1`.
+
+Por tanto:
+
+```text
+información evaluativa existente en el proyecto
+≠
+publicación evaluable
+```
+
+# 70. Hipótesis de auditoría P3
+
+Se consideran las hipótesis:
+
+```text
+H-P3-EXISTE
+→ el producto actual ya dispone
+  de publicación evaluable mínima
+
+H-P3-GAP
+→ existe una diferencia funcional
+  entre publicar un resultado
+  y publicar un resultado acompañado
+  de información pertinente para evaluarlo
+```
+
+Resultado:
+
+```text
+H-P3-EXISTE
+→ REFUTADA
+
+H-P3-GAP
+→ CONFIRMADA
+```
+
+El gap no consiste en la incapacidad general de mostrar criterio o evidencia.
+
+Tampoco consiste en la incapacidad general de presentar información relativa a una aportación concreta.
+
+El gap específico es:
+
+> El producto puede publicar un estado estable y dispone de antecedentes capaces de exponer criterio, evidencia o información situada, pero todavía no existe una experiencia en la que información evaluativa pertinente quede asociada al estado publicado y disponible para que una persona lo examine sin que la plataforma sustituya su juicio.
+
+# 71. Diferencia mínima de P3
+
+La diferencia funcional mínima es:
+
+```text
+estado publicado
+≠
+estado publicado evaluable
+```
+
+P2 realiza:
+
+```text
+P1
+→ contenido
+```
+
+P3 deberá realizar mínimamente:
+
+```text
+P1
+→ contenido
+
++
+información evaluativa asociada
+→ criterio
+→ evidencia
+```
+
+No se exige todavía realizar conjuntamente:
+
+```text
+procedencia
+fundamentación
+evolución
+contexto
+limitaciones
+relaciones
+```
+
+Para la discriminación mínima de P3 basta una dimensión evaluativa suficiente y observable.
+
+Se selecciona como reducción mínima:
+
+```text
+criterio
++
+evidencia
+```
+
+por existir ya antecedentes realizativos capaces de distinguir ambos elementos de un resultado.
+
+# 72. Realization derivada
+
+Se deriva:
+
+```text
+R-P3-E1
+— Realization mínima de publicación evaluable
+```
+
+Su objetivo es demostrar que una persona puede:
+
+```text
+publicar un estado
+↓
+disponer junto a él
+de información pertinente para examinarlo
+↓
+distinguir resultado publicado
+de soporte evaluativo
+↓
+formar su propio juicio
+```
+
+sin que la plataforma emita una conclusión evaluativa final.
+
+# 73. Trayectoria mínima de R-P3-E1
+
+La trayectoria mínima es:
+
+```text
+R1
+↓
+constituir S1
+↓
+publicar S1 como P1
+↓
+asociar criterio C1
+↓
+asociar evidencia E1
+↓
+mostrar conjuntamente:
+
+P1
++
+C1
++
+E1
+```
+
+Después del acto evaluativo mínimo, el trabajo deberá poder continuar:
+
+```text
+R2
+↓
+R3
+```
+
+sin modificar:
+
+```text
+P1
+C1
+E1
+```
+
+La asociación deberá sobrevivir además a una interrupción efectiva.
+
+# 74. Modelo funcional mínimo
+
+El soporte evaluativo mínimo puede expresarse conceptualmente como:
+
+```text
+EvaluationSupport
+→ criterion
+→ evidence
+```
+
+La relación funcional requerida es:
+
+```text
+P1
+↔
+EvaluationSupport
+```
+
+La persona deberá poder reconocer:
+
+```text
+este criterio y esta evidencia
+sirven para examinar este estado publicado
+```
+
+No basta con que los tres textos aparezcan simultáneamente sin asociación observable.
+
+# 75. Determinación humana
+
+La Realization no deberá sustituir el juicio de la persona.
+
+Por tanto, podrá exponer:
+
+```text
+Estado publicado
+→ P1
+
+Criterio asociado
+→ C1
+
+Evidencia asociada
+→ E1
+```
+
+pero no deberá emitir:
+
+```text
+P1 es correcto
+P1 es verdadero
+P1 está aprobado
+P1 debe aceptarse
+```
+
+La plataforma presenta información pertinente.
+
+La valoración final permanece abierta a la persona.
+
+# 76. CR-P3-01 — Condición mínima de realización
+
+`R-P3-E1` quedará realizada mínimamente si se demuestra que:
+
+```text
+a. existe un estado publicado P1;
+
+b. existe información evaluativa pertinente E1;
+
+c. E1 está asociada específicamente a P1;
+
+d. la persona puede distinguir
+   el contenido publicado
+   de la información evaluativa;
+
+e. la información evaluativa incluye
+   al menos un criterio y una evidencia;
+
+f. la plataforma no emite
+   una conclusión evaluativa final;
+
+g. el trabajo puede continuar
+   después de publicar;
+
+h. P1 y su soporte evaluativo
+   permanecen inalterados
+   durante evoluciones posteriores;
+
+i. tras una interrupción efectiva,
+   P1 y su soporte evaluativo
+   continúan recuperables;
+
+j. la persona puede reconocer
+   qué está publicado
+   y qué información sirve para evaluarlo.
+```
+
+Los criterios discriminantes principales son:
+
+```text
+c
+d
+f
+i
+```
+
+# 77. Control contra falso positivo
+
+No bastará con mostrar simultáneamente:
+
+```text
+P1
+C1
+E1
+```
+
+si no puede reconocerse que `C1` y `E1` pertenecen al soporte evaluativo de `P1`.
+
+Tampoco bastará con mostrar evidencia si la plataforma transforma esa evidencia en un veredicto obligatorio.
+
+La condición positiva será:
+
+```text
+P1
++
+soporte evaluativo asociado
++
+juicio humano abierto
+```
+
+# 78. Alcance negativo de R-P3-E1
+
+`R-P3-E1` no deberá intentar realizar todavía:
+
+```text
+procedencia general
+grafo de procedencia
+fuentes externas
+autores
+timestamps
+historial completo
+limitaciones estructuradas
+relaciones generales
+trazabilidad universal
+rating
+scoring
+veredicto automático
+IA evaluadora
+múltiples soportes evaluativos
+sistema general de metadata
+```
+
+Tampoco deberá modificar las Realizations cerradas:
+
+```text
+PublicationExperience
+DefendabilityExperience
+ResumeExperience
+```
+
+# 79. Intervención técnica mínima candidata
+
+La intervención técnica mínima candidata es:
+
+```text
+src/realizations/evaluable-publication/
+    EvaluablePublicationExperience.tsx
+    EvaluablePublicationExperience.test.tsx
+```
+
+con acceso mediante:
+
+```text
+?realization=evaluable-publication
+```
+
+La Realization deberá mantener su estado de forma independiente y persistente.
+
+# 80. Tests mínimos de R-P3-E1
+
+La suite mínima candidata es:
+
+```text
+T-P3-01
+parte de un estado publicado P1
+
+T-P3-02
+muestra un criterio asociado a P1
+
+T-P3-03
+muestra una evidencia asociada a P1
+
+T-P3-04
+distingue publicación de soporte evaluativo
+
+T-P3-05
+no emite veredicto automático
+
+T-P3-06
+mantiene P1 y soporte
+tras evolución posterior
+
+T-P3-07
+recupera P1 y soporte
+tras remount
+
+T-P3-08
+ejercita la trayectoria integrada completa
+```
+
+# 81. Trayectoria integrada de aceptación
+
+La trayectoria integrada mínima deberá realizar:
+
+```text
+crear R1
+↓
+constituir S1
+↓
+publicar S1 como P1
+↓
+asociar C1
+↓
+asociar E1
+↓
+continuar a R2
+↓
+continuar a R3
+↓
+interrumpir
+↓
+reanudar
+```
+
+y comprobar finalmente:
+
+```text
+current = R3
+
+published.id = P1
+published.content = R1
+
+evaluation.criterion = C1
+evaluation.evidence = E1
+```
+
+sin que la plataforma añada una valoración final.
+
+# 82. Resultado esperado
+
+Si `CR-P3-01` queda satisfecha:
+
+```text
+R-P3-E1
+→ REALIZADA MÍNIMAMENTE
+
+P3 — Publicación evaluable
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+La diferencia demostrada será:
+
+```text
+estado publicado
+≠
+estado publicado evaluable
+```
+
+sin haber introducido todavía un sistema general de transparencia, procedencia o trazabilidad.
+
+# 83. Próxima actuación actualizada
+
+La próxima actuación justificable pasa a ser:
+
+> **implementar `R-P3-E1` en el alcance mínimo definido por `CR-P3-01`, con un único estado publicado, un único soporte evaluativo asociado formado por criterio y evidencia, persistencia independiente, continuidad posterior e invariancia después de una interrupción efectiva, sin emitir un veredicto automático.**
+
+---
+
+# 84. Cierre de P3
+
+La Realization `R-P3-E1` ha sido implementada y validada en el alcance definido por `CR-P3-01`.
+
+## Evidencia automática
+
+```text
+T-P3-01..08
+→ 8/8 tests OK
+
+suite completa
+→ 291/291 tests OK
+```
+
+## Evidencia humana
+
+La trayectoria ejercida fue:
+
+```text
+R1
+→ "Seleccionar B"
+
+↓ constituir referencia estable
+
+S1
+→ "Seleccionar B"
+
+↓ publicar referencia estable
+
+P1
+→ "Seleccionar B"
+
+↓ asociar soporte evaluativo
+
+C1
+→ "Seleccionar la alternativa con menor índice Q"
+
+E1
+→ "Alternativa A: Q=72; Alternativa B: Q=61"
+
+↓ continuar trabajando
+
+R2
+→ "Revisar selección con nueva información."
+
+↓ continuar trabajando
+
+R3
+→ "Continuar con el análisis sin modificar la publicación."
+
+↓ recargar
+```
+
+El estado final observado fue:
+
+```text
+Trabajo actual
+→ Continuar con el análisis sin modificar la publicación.
+
+Referencia estable
+→ S1
+→ Seleccionar B
+
+Estado publicado
+→ P1
+→ Seleccionar B
+
+Soporte evaluativo
+→ Estado publicado evaluado: P1
+
+Criterio asociado
+→ Seleccionar la alternativa con menor índice Q
+
+Evidencia asociada
+→ Alternativa A: Q=72; Alternativa B: Q=61
+```
+
+La prueba demuestra conjuntamente:
+
+```text
+current = R3
+
+stable.id = S1
+stable.content = R1
+
+published.id = P1
+published.content = R1
+
+evaluation.publishedId = P1
+evaluation.criterion = C1
+evaluation.evidence = E1
+```
+
+después de evoluciones posteriores y de una interrupción efectiva.
+
+También queda observado que la plataforma no emite un veredicto automático sobre el estado publicado.
+
+Por tanto:
+
+```text
+R-P3-E1
+→ REALIZADA MÍNIMAMENTE
+
+CR-P3-01
+→ SATISFECHA
+
+P3 — Publicación evaluable
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+Queda establecida la diferencia funcional:
+
+```text
+estado publicado
+≠
+estado publicado evaluable
+```
+
+La realización demuestra que un estado publicado puede quedar acompañado por información evaluativa pertinente y asociada, manteniendo abierta la valoración final de la persona.
+
+No se han introducido todavía:
+
+```text
+procedencia general
+grafo de procedencia
+fuentes externas
+autores
+timestamps
+historial completo
+limitaciones estructuradas
+relaciones generales
+trazabilidad universal
+rating
+scoring
+veredicto automático
+IA evaluadora
+múltiples soportes evaluativos
+sistema general de metadata
+```
+
+La siguiente cuestión estratégica del roadmap pasa a ser:
+
+```text
+P4 — Colaboración
+```
+
+Antes de derivar una nueva Realization deberá auditarse si el producto actual ya permite que más de una persona participe de forma funcionalmente distinguible sobre un mismo resultado, manteniendo continuidad, atribución o relación entre aportaciones sin reducir la colaboración a mera coexistencia de contenidos.
+
+---

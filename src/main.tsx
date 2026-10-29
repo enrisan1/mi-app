@@ -9,6 +9,7 @@ import { PublicationExperience } from "./realizations/publication/PublicationExp
 import { SelectiveLocalizationExperience } from "./realizations/selective-localization/SelectiveLocalizationExperience";
 import { StableStateExperience } from "./realizations/stable-state/StableStateExperience";
 import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperience";
+import { EvaluablePublicationExperience } from "./realizations/evaluable-publication/EvaluablePublicationExperience";
 
 import "./index.css";
 
@@ -55,6 +56,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <StableStateExperience />
     ) : realization === "publication" ? (
       <PublicationExperience />
+    ) : realization === "evaluable-publication" ? (
+      <EvaluablePublicationExperience />
     ) : (
       <App
         resolution={resolution}
