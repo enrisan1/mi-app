@@ -12,6 +12,7 @@ import type { EstablishedResolution } from "./realizations/ru2m1/ResumeExperienc
 import { EvaluablePublicationExperience } from "./realizations/evaluable-publication/EvaluablePublicationExperience";
 import { CollaborationExperience } from "./realizations/collaboration/CollaborationExperience";
 import { ExchangeExperience } from "./realizations/exchange/ExchangeExperience";
+import { PostV1IntegratedExperience } from "./realizations/post-v1-integrated/PostV1IntegratedExperience";
 
 import "./index.css";
 
@@ -64,6 +65,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <CollaborationExperience />
     ) : realization === "exchange" ? (
       <ExchangeExperience />
+    ) : realization === "post-v1-integrated" ? (
+      <PostV1IntegratedExperience />
     ) : (
       <App
         resolution={resolution}

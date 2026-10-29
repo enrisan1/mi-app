@@ -4823,3 +4823,1741 @@ La próxima actuación justificable pasa a ser:
 > **realizar una auditoría global post-P5 del roadmap post-V1 antes de derivar nuevas capacidades, con el objetivo de determinar si los cinco hitos realizados constituyen un cierre suficiente del ciclo priorizado o si existe alguna diferencia funcional residual que justifique una actuación posterior.**
 
 ---
+
+# 125. Auditoría global post-P5
+
+El cierre de P5 completa materialmente el roadmap post-V1 en el alcance mínimo priorizado.
+
+Los cinco hitos quedan realizados:
+
+```text
+P1 — Estado significativo estable
+→ SATISFECHO
+
+P2 — Publicación individual mínima
+→ SATISFECHO
+
+P3 — Publicación evaluable
+→ SATISFECHO
+
+P4 — Colaboración mínima
+→ SATISFECHO
+
+P5 — Intercambio / difusión
+→ SATISFECHO
+```
+
+La finalización de estos cinco hitos no demuestra, sin embargo, que las cinco diferencias funcionales formen actualmente una única trayectoria de producto.
+
+Las Realizations existentes prueban por separado:
+
+```text
+StableStateExperience
+→ P1
+
+PublicationExperience
+→ P2
+
+EvaluablePublicationExperience
+→ P3
+
+CollaborationExperience
+→ P4
+
+ExchangeExperience
+→ P5
+```
+
+pero no prueban todavía:
+
+```text
+P1 → P2 → P3 → P4 → P5
+```
+
+como una única secuencia funcional continua.
+
+Por tanto:
+
+```text
+roadmap post-V1 materialmente completado
+→ SÍ
+
+gap funcional residual dentro de P1–P5
+→ NO DEMOSTRADO
+
+nueva prioridad P6
+→ NO JUSTIFICADA
+
+cuestión transversal de integración
+→ ABIERTA
+
+expansión funcional
+→ DETENIDA hasta nueva evidencia
+```
+
+La actuación justificable posterior al cierre de P5 consiste, por tanto, en auditar si las capacidades ya realizadas pueden componerse sin introducir una nueva capacidad funcional.
+
+---
+
+# 126. Pregunta de integración post-P5
+
+La pregunta discriminante queda formulada como:
+
+> **¿Pueden P1–P5 coexistir en una única trayectoria funcional sin perder ninguna de las diferencias ya realizadas?**
+
+No basta con que las cinco Realizations:
+
+```text
+coexistan en el mismo repositorio;
+dispongan de rutas distintas;
+compartan conceptos semejantes;
+muestren contenidos textualmente iguales.
+```
+
+La integración sólo quedará demostrada si existe una misma trayectoria en la que los estados posteriores procedan funcionalmente de los anteriores.
+
+Por tanto, deberá evitarse el falso positivo:
+
+```text
+[P1]
+
+[P2]
+
+[P3]
+
+[P4]
+
+[P5]
+```
+
+como mera coexistencia visual o técnica.
+
+La trayectoria que deberá demostrarse es:
+
+```text
+S1
+↓
+P1
+↓
+EvaluationSupport
+↓
+Collaboration
+↓
+X1
+↓
+D1
+```
+
+manteniendo relaciones explícitas entre los estados.
+
+---
+
+# 127. Auditoría estructural de las Realizations P1–P5
+
+La auditoría estructural muestra que las cinco Realizations actuales no forman todavía una cadena contractual única.
+
+La estructura observada es:
+
+```text
+P1
+R1 → S1
+
+P2
+R1 → S1 → P1
+
+P3
+R1 → S1 → P1 → EvaluationSupport
+
+P4
+R1 → A1 → B1
+
+P5
+P1 → X1 → D1
+```
+
+Por tanto existen cuatro discontinuidades de composición.
+
+## P1 → P2
+
+`PublicationExperience` no consume el `S1` constituido previamente por `StableStateExperience`.
+
+Reconstruye internamente otro antecedente estable.
+
+Se identifica:
+
+```text
+G-INT-02
+— duplicación del antecedente estable
+```
+
+No requiere información nueva para resolverse.
+
+La integración deberá reutilizar el `S1` ya constituido.
+
+## P2 → P3
+
+`EvaluablePublicationExperience` no consume el `P1` constituido previamente por `PublicationExperience`.
+
+Reconstruye internamente:
+
+```text
+R1 → S1 → P1
+```
+
+antes de añadir soporte evaluativo.
+
+Se identifica:
+
+```text
+G-INT-03
+— duplicación de la publicación antecedente
+```
+
+Tampoco requiere información nueva.
+
+La integración deberá reutilizar el `P1` ya constituido.
+
+## P3 → P4
+
+`CollaborationExperience` trabaja actualmente sobre:
+
+```text
+sharedResult: string
+```
+
+y no conserva una referencia explícita al estado publicado del que procede ese resultado.
+
+Se pierde por tanto la relación:
+
+```text
+CollaborativeState
+→ P1
+```
+
+aunque el contenido textual permanezca.
+
+Se identifica:
+
+```text
+G-INT-01
+— pérdida de continuidad identificativa
+  al entrar en P4
+```
+
+Ésta constituye la discontinuidad discriminante.
+
+La igualdad:
+
+```text
+sharedResult === published.content
+```
+
+no basta para demostrar que el resultado colaborativo es funcionalmente el mismo `P1`.
+
+La integración deberá conservar explícitamente esa relación.
+
+## P4 → P5
+
+`ExchangeExperience` utiliza su propio:
+
+```text
+exchange.originPublished
+```
+
+y no consume actualmente el mismo `P1` atravesado por la colaboración.
+
+Se identifica:
+
+```text
+G-INT-04
+— duplicación/desconexión del estado publicado
+  utilizado para el intercambio
+```
+
+Tampoco requiere información nueva.
+
+La integración deberá generar `X1` desde el mismo `P1` ya existente.
+
+---
+
+# 128. Resultado de la auditoría estructural
+
+Las cuatro discontinuidades no tienen la misma naturaleza.
+
+```text
+G-INT-02
+→ duplicación
+
+G-INT-03
+→ duplicación
+
+G-INT-01
+→ pérdida de relación identificativa
+
+G-INT-04
+→ duplicación/desconexión
+```
+
+La auditoría no demuestra que sea necesaria una nueva capacidad funcional.
+
+No aparece ninguna necesidad de:
+
+```text
+nuevo dato aportado por la persona;
+nuevo participante;
+nuevo tipo de evaluación;
+nuevo mecanismo de publicación;
+nuevo mecanismo de colaboración;
+nuevo mecanismo de intercambio.
+```
+
+La información necesaria para componer P1–P5 ya existe en los propios estados realizados.
+
+Por tanto:
+
+```text
+H-INT-GAP-FUNCIONAL
+→ NO APOYADA POR LA EVIDENCIA ACTUAL
+```
+
+y permanece abierta la hipótesis:
+
+```text
+H-INT-COMP
+```
+
+formulada como:
+
+> **P1–P5 pueden componerse en una única trayectoria sin introducir una nueva capacidad funcional si los antecedentes existentes se reutilizan y las relaciones de procedencia necesarias se conservan explícitamente.**
+
+---
+
+# 129. Contrato integrado mínimo
+
+Se define el siguiente contrato integrado mínimo:
+
+```ts
+type StableState = {
+  id: "S1";
+  content: string;
+};
+
+type PublishedState = {
+  id: "P1";
+  sourceStableId: "S1";
+  content: string;
+};
+
+type EvaluationSupport = {
+  publishedId: "P1";
+  criterion: string;
+  evidence: string;
+};
+
+type Contribution = {
+  participant: "A" | "B";
+  content: string;
+};
+
+type CollaborativeState = {
+  sourcePublishedId: "P1";
+  sharedResult: string;
+  firstContribution: Contribution;
+  secondContribution: Contribution | null;
+};
+
+type ExchangeArtifact = {
+  id: "X1";
+  sourcePublishedId: "P1";
+  content: string;
+};
+
+type ReceivedState = {
+  sourceArtifactId: "X1";
+  content: string;
+};
+
+type PostV1IntegratedState = {
+  current: string | null;
+  stable: StableState | null;
+  published: PublishedState | null;
+  evaluation: EvaluationSupport | null;
+  collaboration: CollaborativeState | null;
+  artifact: ExchangeArtifact | null;
+  received: ReceivedState | null;
+};
+```
+
+`current` conserva la diferencia ya demostrada por P1 entre:
+
+```text
+trabajo actual
+≠
+estado estable
+```
+
+La integración deberá permitir que el trabajo actual continúe evolucionando después de constituir S1, sin sustituir ni modificar el estado estable ni los estados posteriores derivados de él.
+
+El contrato no introduce información funcional nueva.
+
+Las relaciones:
+
+```text
+published.sourceStableId
+collaboration.sourcePublishedId
+```
+
+hacen explícitas relaciones ya disponibles en la trayectoria y evitan su pérdida durante la composición.
+
+---
+
+# 130. Suficiencia informacional del contrato
+
+La procedencia de cada elemento es:
+
+```text
+Current
+→ aportación inicial y evoluciones propias de P1
+
+StableState.id
+→ P1
+
+StableState.content
+→ P1
+
+PublishedState.id
+→ P2
+
+PublishedState.content
+→ contenido de S1
+
+PublishedState.sourceStableId
+→ StableState.id
+
+EvaluationSupport.publishedId
+→ PublishedState.id
+
+EvaluationSupport.criterion
+→ aportación propia de P3
+
+EvaluationSupport.evidence
+→ aportación propia de P3
+
+CollaborativeState.sourcePublishedId
+→ PublishedState.id
+
+CollaborativeState.sharedResult
+→ PublishedState.content
+
+Contribution A1
+→ aportación propia de P4
+
+Contribution B1
+→ aportación propia de P4
+
+ExchangeArtifact.id
+→ P5
+
+ExchangeArtifact.sourcePublishedId
+→ PublishedState.id
+
+ExchangeArtifact.content
+→ PublishedState.content
+
+ReceivedState.sourceArtifactId
+→ ExchangeArtifact.id
+
+ReceivedState.content
+→ ExchangeArtifact.content
+```
+
+Por tanto:
+
+```text
+dato externo adicional exigido exclusivamente por la integración
+→ NINGUNO
+
+nueva información funcional
+→ NINGUNA
+
+nueva capacidad funcional
+→ NINGUNA
+```
+
+La integración requiere exclusivamente:
+
+```text
+reutilizar estados existentes
++
+preservar relaciones ya disponibles
+```
+
+---
+
+# 131. Invariantes de integración
+
+Se fijan las siguientes invariantes:
+
+## I-INT-01
+
+```text
+published.sourceStableId
+=
+stable.id
+```
+
+## I-INT-02
+
+```text
+published.content
+=
+stable.content
+```
+
+## I-INT-03
+
+```text
+evaluation.publishedId
+=
+published.id
+```
+
+## I-INT-04
+
+```text
+collaboration.sourcePublishedId
+=
+published.id
+```
+
+## I-INT-05
+
+```text
+collaboration.sharedResult
+=
+published.content
+```
+
+## I-INT-06
+
+```text
+artifact.sourcePublishedId
+=
+published.id
+```
+
+## I-INT-07
+
+```text
+artifact.content
+=
+published.content
+```
+
+## I-INT-08
+
+```text
+received.sourceArtifactId
+=
+artifact.id
+```
+
+## I-INT-09
+
+```text
+received.content
+=
+artifact.content
+```
+
+## I-INT-10
+
+La evolución del trabajo actual y la creación de:
+
+```text
+evaluation
+collaboration
+artifact
+received
+```
+
+no deberán modificar retrospectivamente:
+
+```text
+stable
+published
+```
+
+Una vez constituidos S1 y P1, deberá poder evolucionar:
+
+```text
+current
+R1 → R2 → R3
+```
+
+manteniendo invariantes:
+
+```text
+stable
+published
+evaluation
+collaboration
+artifact
+received
+```
+
+cuando esos estados ya existan.
+
+## I-INT-11
+
+Ninguna etapa deberá volver a constituir un antecedente que ya exista.
+
+Por tanto:
+
+```text
+S1
+→ se constituye una sola vez
+
+P1
+→ se constituye una sola vez
+```
+
+y las etapas posteriores deberán reutilizarlos.
+
+---
+
+# 132. Trayectoria integrada mínima
+
+La trayectoria a realizar queda definida como:
+
+```text
+current = R1
+↓ constituir estado estable
+
+S1 {
+  id: S1
+  content: R1
+}
+
+↓ publicar
+
+P1 {
+  id: P1
+  sourceStableId: S1
+  content: R1
+}
+
+↓ asociar soporte evaluativo
+
+EvaluationSupport {
+  publishedId: P1
+  criterion: C1
+  evidence: E1
+}
+
+↓ colaborar
+
+CollaborativeState {
+  sourcePublishedId: P1
+  sharedResult: R1
+
+  firstContribution:
+    participant: A
+    content: A1
+
+  secondContribution:
+    participant: B
+    content: B1
+}
+
+↓ generar artefacto
+
+X1 {
+  id: X1
+  sourcePublishedId: P1
+  content: R1
+}
+
+↓ recibir
+
+D1 {
+  sourceArtifactId: X1
+  content: R1
+}
+```
+
+La cadena identificativa deberá permanecer observable como:
+
+```text
+S1
+↓
+P1
+↓
+EvaluationSupport(P1)
+
+P1
+↓
+Collaboration(P1)
+
+P1
+↓
+X1(P1)
+↓
+D1(X1)
+```
+
+```text
+↓ continuar trabajando
+
+current = R2
+```
+
+La evolución posterior del trabajo actual deberá conservar:
+
+```text
+S1
+P1
+EvaluationSupport
+CollaborativeState
+X1
+D1
+```
+
+sin volver a constituir ninguno de esos antecedentes.
+
+La cadena de contenido que ya existe:
+
+```text
+stable.content
+=
+published.content
+=
+collaboration.sharedResult
+=
+artifact.content
+=
+received.content
+```
+
+se mantiene.
+
+y la conservación de contenido como:
+
+```text
+stable.content
+=
+published.content
+=
+collaboration.sharedResult
+=
+artifact.content
+=
+received.content
+```
+
+---
+
+# 133. Derivación de R-INT-01
+
+Se deriva:
+
+```text
+R-INT-01
+— Realization mínima de integración post-V1
+```
+
+Su objetivo no consiste en introducir P6.
+
+Consiste en demostrar que las capacidades ya realizadas en P1–P5 son componibles en una única trayectoria funcional.
+
+La Realization deberá:
+
+```text
+constituir un trabajo actual R1;
+constituir S1 una sola vez desde ese trabajo actual;
+publicar P1 desde ese S1;
+asociar EvaluationSupport al mismo P1;
+realizar colaboración sobre el mismo P1;
+generar X1 desde ese mismo P1;
+constituir D1 exclusivamente desde X1;
+permitir que el trabajo actual continúe evolucionando
+sin modificar S1 ni los estados derivados de S1;
+mantener observables los estados anteriores;
+conservar I-INT-01..11.
+```
+
+La integración no deberá añadir ninguna diferencia funcional distinta de las ya realizadas por P1–P5.
+
+---
+
+# 134. Antecedente IntegratedExperience
+
+Existe previamente:
+
+```text
+src/realizations/integrated/IntegratedExperience.tsx
+src/realizations/integrated/IntegratedExperience.test.tsx
+```
+
+cerrada mediante:
+
+```text
+95f6472 feat(realization): close integrated realization
+```
+
+Esta Realization corresponde a una integración anterior vinculada a:
+
+```text
+RED-IR-01..08
+IR-INTEGRATION-01
+```
+
+y a la trayectoria:
+
+```text
+X
+↓
+Y
+↓
+evolución
+↓
+decisión humana de suficiencia
+↓
+reutilización
+↓
+Z
+```
+
+Por tanto:
+
+```text
+IntegratedExperience histórica
+≠
+R-INT-01
+```
+
+No deberá modificarse ni reinterpretarse retrospectivamente como realización de la integración post-V1.
+
+La nueva Realization deberá mantenerse independiente.
+
+Se adopta como candidato de identificación:
+
+```text
+PostV1IntegratedExperience
+```
+
+con ubicación:
+
+```text
+src/realizations/post-v1-integrated/
+```
+
+y eventual acceso experimental:
+
+```text
+?realization=post-v1-integrated
+```
+
+---
+
+# 135. Persistencia candidata
+
+La prueba integrada no deberá reproducir la fragmentación de las cinco Realizations independientes mediante claves inconexas.
+
+Se adopta como persistencia mínima candidata:
+
+```text
+post-v1-integrated.state
+```
+
+que contendrá:
+
+```text
+current
+stable
+published
+evaluation
+collaboration
+artifact
+received
+```
+
+La persistencia única tiene como finalidad probar una trayectoria integrada recuperable, no introducir un nuevo sistema general de estado.
+
+---
+
+# 136. CR-INT-01 — Condición mínima de realización
+
+`R-INT-01` quedará realizada mínimamente si se demuestra que:
+
+```text
+a. se constituye un trabajo actual R1;
+
+b. se constituye un único S1 desde ese mismo R1;
+
+c. P1 se deriva de ese mismo S1;
+
+d. EvaluationSupport se asocia
+   a ese mismo P1;
+
+e. Collaboration conserva referencia explícita
+   a ese mismo P1;
+
+f. A1 y B1 permanecen distinguibles
+   y vinculados al mismo resultado compartido;
+
+g. X1 se genera desde ese mismo P1;
+
+h. D1 se constituye exclusivamente desde X1;
+
+i. el trabajo actual puede evolucionar
+   después de constituir los estados anteriores
+   sin modificarlos;
+
+j. se satisfacen I-INT-01..11;
+
+k. la trayectoria completa es recuperable
+   después de una interrupción efectiva;
+
+l. ninguna etapa reconstruye un antecedente
+   ya constituido;
+
+m. no se introduce ninguna capacidad funcional
+   adicional a P1–P5.
+```
+
+Los discriminantes principales son:
+
+```text
+c
+e
+g
+i
+l
+m
+```
+
+porque distinguen una integración real de una mera coexistencia de demostraciones independientes.
+
+---
+
+# 137. Control contra falsos positivos
+
+No constituirá realización de `R-INT-01`:
+
+```text
+mostrar juntas las cinco Realizations existentes;
+
+copiar el mismo contenido entre ellas
+sin conservar identidad;
+
+crear un nuevo S1 para P2;
+
+crear un nuevo P1 para P3;
+
+reducir P1 a un string al entrar en P4;
+
+crear otro P1 independiente para P5;
+
+hacer que D1 lea directamente el estado del origen;
+
+constituir S1 directamente desde una entrada
+sin representar previamente el trabajo actual;
+
+eliminar la posibilidad de continuar evolucionando
+el trabajo actual después de constituir S1 o P1;
+
+introducir una nueva función para resolver
+una discontinuidad que puede resolverse
+reutilizando información ya disponible.
+```
+
+Sí constituirá evidencia pertinente:
+
+```text
+un único S1
+↓
+un único P1
+↓
+EvaluationSupport(P1)
+↓
+Collaboration(P1)
+↓
+X1(P1)
+↓
+D1(X1)
+```
+
+manteniendo todas las relaciones observables después de completar la trayectoria.
+
+---
+
+# 138. Alcance negativo de R-INT-01
+
+`R-INT-01` no deberá introducir:
+
+```text
+P6;
+nueva prioridad funcional;
+usuarios reales;
+cuentas;
+autenticación;
+roles;
+permisos;
+backend;
+servidor;
+API;
+red;
+WebSocket;
+sincronización;
+historial general;
+provenance general;
+versionado;
+timestamps;
+identificadores globales nuevos;
+múltiples publicaciones;
+múltiples artefactos;
+múltiples destinos;
+generalización de IntegratedExperience;
+refactorización general de todas las Realizations.
+```
+
+La prueba deberá permanecer estrictamente limitada a la composición mínima de P1–P5.
+
+---
+
+# 139. Tests mínimos candidatos de R-INT-01
+
+Antes de implementar se fijan los siguientes tests candidatos:
+
+```text
+T-INT-01
+constituye R1 como trabajo actual
+y deriva un único S1 desde R1
+
+T-INT-02
+publica P1 desde ese mismo S1
+
+T-INT-03
+asocia criterion + evidence al mismo P1
+
+T-INT-04
+realiza A1 y B1 conservando P1
+como origen del resultado compartido
+
+T-INT-05
+genera X1 desde ese mismo P1
+
+T-INT-06
+constituye D1 exclusivamente desde X1
+
+T-INT-07
+evoluciona current de R1 a R2
+sin modificar S1, P1 ni los estados
+posteriores ya constituidos
+
+T-INT-08
+recupera después de remount
+la trayectoria integrada completa,
+incluyendo current evolucionado
+y los antecedentes invariantes
+```
+
+Estos tests no deberán demostrar nuevamente de forma exhaustiva cada Realization individual.
+
+Su función será demostrar la composición entre ellas.
+
+---
+
+# 140. Resultado esperado de R-INT-01
+
+Si `CR-INT-01` queda satisfecha:
+
+```text
+H-INT-COMP
+→ CONFIRMADA EN EL ALCANCE PROBADO
+```
+
+y podrá establecerse que:
+
+```text
+P1–P5
+→ son funcionalmente componibles
+  en una única trayectoria mínima
+```
+
+sin derivar:
+
+```text
+P6
+```
+
+ni introducir:
+
+```text
+una nueva capacidad funcional.
+```
+
+Si la implementación requiere algún dato, operación o capacidad no derivable de P1–P5, deberá detenerse la Realization y reabrirse la auditoría.
+
+---
+
+# 141. Próxima actuación actualizada
+
+La próxima actuación justificable pasa a ser:
+
+> implementar R-INT-01 mediante una nueva PostV1IntegratedExperience, independiente de la IntegratedExperience histórica, realizando una única trayectoria current R1 → S1 → P1 → EvaluationSupport → Collaboration → X1 → D1 → current R2, satisfaciendo I-INT-01..11 y CR-INT-01, conservando invariantes los estados derivados de S1 durante la evolución posterior del trabajo actual y sin introducir ninguna capacidad funcional adicional a P1–P5.
+
+---
+
+# 142. Cierre de R-INT-01
+
+La Realization `R-INT-01` ha sido implementada y validada en el alcance definido por `CR-INT-01`.
+
+Su objetivo consistía en demostrar que las capacidades ya realizadas en P1–P5 podían componerse en una única trayectoria funcional sin introducir una nueva prioridad ni una nueva capacidad funcional.
+
+La trayectoria ejercida fue:
+
+```text
+current R1
+↓
+S1
+↓
+P1
+↓
+EvaluationSupport
+↓
+Collaboration
+↓
+X1
+↓
+D1
+↓
+current R2
+```
+
+manteniendo invariantes los antecedentes derivados de `S1`.
+
+## Evidencia automática
+
+La suite focalizada de `PostV1IntegratedExperience` terminó con:
+
+```text
+Test Files
+→ 1 passed (1)
+
+Tests
+→ 8 passed (8)
+```
+
+correspondientes a:
+
+```text
+T-INT-01
+→ constituye R1 como trabajo actual
+  y deriva un único S1 desde R1
+
+T-INT-02
+→ publica P1 desde ese mismo S1
+
+T-INT-03
+→ asocia criterion + evidence
+  al mismo P1
+
+T-INT-04
+→ realiza A1 y B1 conservando P1
+  como origen del resultado compartido
+
+T-INT-05
+→ genera X1 desde ese mismo P1
+
+T-INT-06
+→ constituye D1 exclusivamente desde X1
+
+T-INT-07
+→ evoluciona current de R1 a R2
+  sin modificar los antecedentes integrados
+
+T-INT-08
+→ recupera después de remount
+  la trayectoria integrada completa
+```
+
+La suite completa del repositorio terminó con:
+
+```text
+Test Files
+→ 36 passed (36)
+
+Tests
+→ 315 passed (315)
+```
+
+Por tanto:
+
+```text
+regresiones observadas
+→ NINGUNA
+```
+
+---
+
+# 143. Evidencia humana de la trayectoria integrada
+
+La prueba humana comenzó constituyendo:
+
+```text
+current
+→ R1
+```
+
+A continuación se constituyó:
+
+```text
+S1
+→ R1
+```
+
+desde ese mismo trabajo actual.
+
+Después se constituyó:
+
+```text
+P1
+→ sourceStableId = S1
+→ content = R1
+```
+
+sin volver a constituir otro estado estable.
+
+Se añadió soporte evaluativo:
+
+```text
+EvaluationSupport
+→ publishedId = P1
+→ criterion = C1
+→ evidence = E1
+```
+
+Después se realizó la colaboración sobre ese mismo estado publicado:
+
+```text
+CollaborativeState
+→ sourcePublishedId = P1
+→ sharedResult = R1
+
+firstContribution
+→ participant = A
+→ content = A1
+
+secondContribution
+→ participant = B
+→ content = B1
+```
+
+A continuación se generó:
+
+```text
+X1
+→ sourcePublishedId = P1
+→ content = R1
+```
+
+y el destino constituyó:
+
+```text
+D1
+→ sourceArtifactId = X1
+→ content = R1
+```
+
+La trayectoria observada fue por tanto:
+
+```text
+R1
+↓
+S1(R1)
+↓
+P1(S1, R1)
+↓
+EvaluationSupport(P1, C1, E1)
+↓
+Collaboration(P1, R1, A1, B1)
+↓
+X1(P1, R1)
+↓
+D1(X1, R1)
+```
+
+---
+
+# 144. Evolución posterior del trabajo actual
+
+Después de completar la trayectoria hasta `D1`, el trabajo actual evolucionó:
+
+```text
+current
+R1 → R2
+```
+
+La evolución modificó únicamente:
+
+```text
+current
+```
+
+y permanecieron invariantes:
+
+```text
+S1
+P1
+EvaluationSupport
+CollaborativeState
+X1
+D1
+```
+
+El estado observable después de la evolución fue:
+
+```text
+current
+→ R2
+
+stable
+→ S1
+→ R1
+
+published
+→ P1
+→ S1
+→ R1
+
+evaluation
+→ P1
+→ C1
+→ E1
+
+collaboration
+→ P1
+→ R1
+→ A / A1
+→ B / B1
+
+artifact
+→ X1
+→ P1
+→ R1
+
+received
+→ X1
+→ R1
+```
+
+Por tanto queda observada la diferencia:
+
+```text
+current = R2
+
+mientras:
+
+stable.content = R1
+published.content = R1
+collaboration.sharedResult = R1
+artifact.content = R1
+received.content = R1
+```
+
+La evolución del trabajo actual no sustituyó ninguno de los antecedentes integrados.
+
+---
+
+# 145. Recuperabilidad después de interrupción efectiva
+
+Después de completar la trayectoria y evolucionar `current` a `R2`, se realizó una recarga efectiva de la experiencia.
+
+Tras la recarga se recuperó:
+
+```text
+current
+→ R2
+
+stable
+→ S1 / R1
+
+published
+→ P1 / S1 / R1
+
+evaluation
+→ P1 / C1 / E1
+
+collaboration
+→ P1 / R1 / A / A1 / B / B1
+
+artifact
+→ X1 / P1 / R1
+
+received
+→ X1 / R1
+```
+
+Por tanto, la interrupción no rompió:
+
+```text
+la identidad de S1;
+la procedencia de P1 desde S1;
+la asociación del soporte evaluativo con P1;
+la relación de Collaboration con P1;
+la procedencia de X1 desde P1;
+la procedencia de D1 desde X1;
+la distinción entre current evolucionado
+y los antecedentes invariantes.
+```
+
+---
+
+# 146. Verificación de I-INT-01..11
+
+La evidencia automática y humana permite establecer:
+
+```text
+I-INT-01
+published.sourceStableId = stable.id
+→ SATISFECHA
+
+I-INT-02
+published.content = stable.content
+→ SATISFECHA
+
+I-INT-03
+evaluation.publishedId = published.id
+→ SATISFECHA
+
+I-INT-04
+collaboration.sourcePublishedId = published.id
+→ SATISFECHA
+
+I-INT-05
+collaboration.sharedResult = published.content
+→ SATISFECHA
+
+I-INT-06
+artifact.sourcePublishedId = published.id
+→ SATISFECHA
+
+I-INT-07
+artifact.content = published.content
+→ SATISFECHA
+
+I-INT-08
+received.sourceArtifactId = artifact.id
+→ SATISFECHA
+
+I-INT-09
+received.content = artifact.content
+→ SATISFECHA
+
+I-INT-10
+la evolución de current y la creación
+de estados posteriores no modifican
+retrospectivamente stable ni published
+→ SATISFECHA
+
+I-INT-11
+ninguna etapa vuelve a constituir
+un antecedente ya existente
+→ SATISFECHA
+```
+
+No se observó ninguna necesidad de reconstruir:
+
+```text
+S1
+P1
+```
+
+una vez constituidos.
+
+---
+
+# 147. Verificación de CR-INT-01
+
+`CR-INT-01` queda evaluada como sigue:
+
+```text
+a. se constituye un trabajo actual R1
+→ ✓
+
+b. se constituye un único S1
+   desde ese mismo R1
+→ ✓
+
+c. P1 se deriva de ese mismo S1
+→ ✓
+
+d. EvaluationSupport se asocia
+   a ese mismo P1
+→ ✓
+
+e. Collaboration conserva referencia explícita
+   a ese mismo P1
+→ ✓
+
+f. A1 y B1 permanecen distinguibles
+   y vinculados al mismo resultado compartido
+→ ✓
+
+g. X1 se genera desde ese mismo P1
+→ ✓
+
+h. D1 se constituye exclusivamente desde X1
+→ ✓
+
+i. el trabajo actual puede evolucionar
+   después de constituir los estados anteriores
+   sin modificarlos
+→ ✓
+
+j. se satisfacen I-INT-01..11
+→ ✓
+
+k. la trayectoria completa es recuperable
+   después de una interrupción efectiva
+→ ✓
+
+l. ninguna etapa reconstruye
+   un antecedente ya constituido
+→ ✓
+
+m. no se introduce ninguna capacidad funcional
+   adicional a P1–P5
+→ ✓
+```
+
+Por tanto:
+
+```text
+CR-INT-01
+→ SATISFECHA
+```
+
+---
+
+# 148. Resultado de H-INT-COMP
+
+La hipótesis:
+
+```text
+H-INT-COMP
+
+P1–P5 pueden componerse en una única
+trayectoria sin introducir una nueva
+capacidad funcional si los antecedentes
+existentes se reutilizan y las relaciones
+de procedencia necesarias se conservan
+explícitamente.
+```
+
+queda confirmada en el alcance probado.
+
+Por tanto:
+
+```text
+H-INT-COMP
+→ CONFIRMADA EN EL ALCANCE PROBADO
+```
+
+y puede establecerse:
+
+```text
+P1
+P2
+P3
+P4
+P5
+→ FUNCIONALMENTE COMPONIBLES
+  EN UNA ÚNICA TRAYECTORIA MÍNIMA
+```
+
+---
+
+# 149. Resolución de G-INT-01..04
+
+Las discontinuidades detectadas durante la auditoría quedan resueltas en la Realization integrada.
+
+## G-INT-02
+
+```text
+duplicación del antecedente estable
+→ RESUELTA
+```
+
+`S1` se constituye una sola vez y P1 reutiliza ese mismo estado.
+
+## G-INT-03
+
+```text
+duplicación de la publicación antecedente
+→ RESUELTA
+```
+
+`P1` se constituye una sola vez y `EvaluationSupport` reutiliza esa misma publicación.
+
+## G-INT-01
+
+```text
+pérdida de continuidad identificativa
+al entrar en P4
+→ RESUELTA
+```
+
+`CollaborativeState` conserva:
+
+```text
+sourcePublishedId = P1
+```
+
+por lo que la colaboración no reduce la publicación a mera igualdad textual.
+
+## G-INT-04
+
+```text
+duplicación/desconexión del estado publicado
+utilizado para el intercambio
+→ RESUELTA
+```
+
+`X1` se genera desde el mismo `P1` que atraviesa la trayectoria integrada.
+
+---
+
+# 150. Alcance del resultado
+
+La prueba no establece:
+
+```text
+P6;
+una nueva prioridad funcional;
+integración universal de todas las Realizations;
+arquitectura definitiva;
+modelo general de workflow;
+backend;
+red;
+multiusuario real;
+publicación web real;
+intercambio real por red;
+provenance general;
+historial general;
+versionado general.
+```
+
+Establece exclusivamente que:
+
+```text
+las cinco capacidades priorizadas
+en el roadmap post-V1
+pueden coexistir y componerse
+en una única trayectoria mínima
+sin perder sus diferencias funcionales
+ni requerir una capacidad nueva.
+```
+
+---
+
+# 151. Cierre de R-INT-01
+
+Por tanto:
+
+```text
+R-INT-01
+→ REALIZADA MÍNIMAMENTE
+
+CR-INT-01
+→ SATISFECHA
+
+I-INT-01..11
+→ SATISFECHAS EN EL ALCANCE PROBADO
+
+H-INT-COMP
+→ CONFIRMADA EN EL ALCANCE PROBADO
+
+G-INT-01..04
+→ RESUELTAS EN LA REALIZATION INTEGRADA
+
+suite focalizada
+→ 8/8 tests OK
+
+suite completa
+→ 315/315 tests OK
+```
+
+No se deriva:
+
+```text
+P6
+```
+
+ni se demuestra la necesidad de ninguna nueva capacidad funcional.
+
+La integración post-V1 queda cerrada en el alcance documentado.
+
+---
+
+# 152. Estado del roadmap post-V1 después de R-INT-01
+
+El estado consolidado queda:
+
+```text
+P1 — Estado significativo estable
+→ SATISFECHO
+
+P2 — Publicación individual mínima
+→ SATISFECHO
+
+P3 — Publicación evaluable
+→ SATISFECHO
+
+P4 — Colaboración mínima
+→ SATISFECHO
+
+P5 — Intercambio / difusión
+→ SATISFECHO
+
+R-INT-01 — Integración post-V1
+→ SATISFECHA
+```
+
+Por tanto:
+
+```text
+roadmap post-V1
+→ MATERIALMENTE COMPLETADO
+
+componibilidad P1–P5
+→ DEMOSTRADA EN EL ALCANCE MÍNIMO
+
+gap funcional residual
+→ NO DEMOSTRADO
+
+nueva prioridad
+→ NO JUSTIFICADA
+
+expansión funcional
+→ DETENIDA
+  hasta nueva evidencia o necesidad
+```
+
+La siguiente actuación ya no deberá consistir automáticamente en implementar otra Realization.
+
+Deberá decidirse, a partir del estado consolidado, si procede:
+
+```text
+cierre formal del ciclo post-V1;
+consolidación documental;
+reducción o limpieza técnica;
+integración arquitectónica ulterior;
+o suspensión activa de nuevas actuaciones
+hasta que aparezca una nueva diferencia
+funcionalmente justificada.
+```
+
+---
