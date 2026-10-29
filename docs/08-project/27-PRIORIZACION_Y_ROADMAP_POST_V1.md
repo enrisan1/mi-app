@@ -3244,3 +3244,756 @@ P4 — Colaboración
 Antes de derivar una nueva Realization deberá auditarse si el producto actual ya permite que más de una persona participe de forma funcionalmente distinguible sobre un mismo resultado, manteniendo continuidad, atribución o relación entre aportaciones sin reducir la colaboración a mera coexistencia de contenidos.
 
 ---
+
+# 85. Auditoría de P4 — Colaboración mínima
+
+La siguiente cuestión estratégica es:
+
+> ¿Permite ya el producto actual que más de una persona participe de forma funcionalmente distinguible sobre un mismo resultado, manteniendo relación entre aportaciones y continuidad del trabajo, sin reducir la colaboración a mera coexistencia de contenidos?
+
+El producto actual dispone ya de antecedentes relevantes.
+
+Existen mecanismos capaces de:
+
+```text
+mantener continuidad entre aportaciones;
+preservar aportaciones anteriores;
+mantener varias correspondencias independientes;
+distinguir diferentes estados o resultados.
+```
+
+Sin embargo, estas capacidades no representan todavía participantes distintos.
+
+La diferencia fundamental es:
+
+```text
+varias aportaciones
+≠
+varios participantes
+
+pluralidad estructural
+≠
+colaboración
+```
+
+El producto distingue actualmente contenidos y estados, pero no atribuye todavía aportaciones distintas a participantes funcionalmente distintos que trabajen sobre un mismo resultado compartido.
+
+# 86. Hipótesis de auditoría P4
+
+Se consideran:
+
+```text
+H-P4-EXISTE
+→ el producto actual ya realiza
+  colaboración mínima entre participantes distinguibles
+
+H-P4-GAP
+→ existe una diferencia funcional
+  entre continuidad individual de aportaciones
+  y colaboración entre participantes
+```
+
+Resultado:
+
+```text
+H-P4-EXISTE
+→ REFUTADA
+
+H-P4-GAP
+→ CONFIRMADA
+```
+
+El gap específico es:
+
+> El producto ya puede preservar continuidad entre aportaciones y mantener pluralidad de resultados o correspondencias relacionadas, pero todavía no representa a más de un participante ni permite atribuir aportaciones distintas a participantes distintos sobre un mismo resultado compartido.
+
+# 87. Diferencia mínima de P4
+
+La diferencia mínima que deberá realizarse es:
+
+```text
+continuidad individual
+≠
+colaboración mínima
+```
+
+No basta con:
+
+```text
+R1
+↓
+A1
+↓
+B1
+```
+
+si `A1` y `B1` son únicamente contenidos sucesivos.
+
+La discriminación mínima exige:
+
+```text
+R1
+↓
+Participante A → A1
+↓
+Participante B → B1
+```
+
+manteniendo observablemente:
+
+```text
+R1
+→ resultado compartido
+
+A1
+→ aportación de A
+
+B1
+→ aportación de B
+
+B1
+→ continúa sobre el estado que ya contiene R1 + A1
+```
+
+# 88. Realization derivada
+
+Se deriva:
+
+```text
+R-P4-C1
+— Realization mínima de colaboración
+```
+
+Su objetivo es demostrar que dos participantes funcionalmente distinguibles pueden contribuir sucesivamente sobre un mismo resultado compartido manteniendo:
+
+```text
+atribución
++
+continuidad
++
+relación entre aportaciones
++
+persistencia
+```
+
+sin introducir todavía infraestructura multiusuario real.
+
+# 89. Participantes mínimos
+
+La Realization utilizará exactamente dos participantes fijos:
+
+```text
+Participante A
+
+Participante B
+```
+
+La identidad de ambos es funcional.
+
+No representa todavía:
+
+```text
+cuentas reales
+identidades personales
+usuarios autenticados
+perfiles
+```
+
+La reducción permite probar:
+
+```text
+pluralidad de participantes
++
+atribución de aportaciones
+```
+
+sin incorporar todavía gestión de identidad.
+
+# 90. Trayectoria mínima de R-P4-C1
+
+La trayectoria mínima será:
+
+```text
+R1
+→ constituir resultado compartido
+
+Participante A
+→ aportar A1 sobre R1
+
+estado colaborativo intermedio:
+R1 + A1
+
+Participante B
+→ continuar desde R1 + A1
+
+Participante B
+→ aportar B1
+
+estado colaborativo final:
+R1 + A1 + B1
+```
+
+La aportación de B no deberá poder producirse antes de existir A1.
+
+Por tanto:
+
+```text
+sin R1
+→ no existe trayectoria colaborativa
+
+sin A1
+→ B todavía no puede continuar
+```
+
+Esto hace observable la relación:
+
+```text
+A1
+↓
+B1
+```
+
+en lugar de presentar dos contenidos independientes.
+
+# 91. Modelo funcional mínimo
+
+El modelo conceptual mínimo puede expresarse como:
+
+```text
+ParticipantId
+→ A | B
+```
+
+```text
+Contribution
+→ participant
+→ content
+```
+
+```text
+CollaborativeState
+→ sharedResult
+→ firstContribution
+→ secondContribution
+```
+
+con cardinalidad:
+
+```text
+1 resultado compartido
+
+2 participantes fijos
+
+1 aportación de A
+
+0..1 aportación de B
+```
+
+Una representación equivalente sería:
+
+```text
+sharedResult = R1
+
+firstContribution.participant = A
+firstContribution.content = A1
+
+secondContribution.participant = B
+secondContribution.content = B1
+```
+
+# 92. Relación colaborativa mínima
+
+La relación mínima no requiere todavía un grafo general.
+
+Basta una estructura observable:
+
+```text
+R1
+└── A1 — Participante A
+    └── B1 — Participante B
+```
+
+La condición discriminante es que `B1` se produzca sobre el estado colaborativo que ya contiene:
+
+```text
+R1 + A1
+```
+
+y no como contenido independiente.
+
+Por tanto:
+
+```text
+A1
++
+B1
+```
+
+no basta.
+
+Debe existir:
+
+```text
+R1
+↓
+A1 atribuida a A
+↓
+B1 atribuida a B
+```
+
+# 93. Persistencia mínima
+
+El estado colaborativo deberá sobrevivir a una interrupción efectiva.
+
+Podrá conservarse conceptualmente mediante una única unidad persistente:
+
+```text
+collaboration.state
+```
+
+que contenga:
+
+```text
+sharedResult
+firstContribution
+secondContribution
+```
+
+La persistencia conjunta hace explícito que las aportaciones pertenecen a la misma trayectoria colaborativa.
+
+# 94. CR-P4-01 — Condición mínima de realización
+
+`R-P4-C1` quedará realizada mínimamente si se demuestra que:
+
+```text
+a. existe un único resultado compartido R1;
+
+b. existen dos participantes
+   funcionalmente distinguibles A y B;
+
+c. A puede realizar una aportación A1 sobre R1;
+
+d. A1 conserva explícitamente su atribución a A;
+
+e. B sólo puede continuar desde el estado
+   que ya contiene R1 + A1;
+
+f. B puede realizar una aportación B1;
+
+g. B1 conserva explícitamente su atribución a B;
+
+h. A1 y B1 permanecen relacionadas
+   con el mismo R1;
+
+i. A1 y B1 siguen siendo distinguibles
+   después de la aportación de B;
+
+j. tras una interrupción efectiva
+   se recuperan R1, A1 y B1
+   junto con sus atribuciones respectivas.
+```
+
+Los discriminantes principales son:
+
+```text
+b
+e
+h
+j
+```
+
+# 95. Control contra falso positivo
+
+No bastará con mostrar:
+
+```text
+Participante A
+→ Texto A
+
+Participante B
+→ Texto B
+```
+
+si ambos textos pueden existir independientemente.
+
+Tampoco bastará con añadir las etiquetas `A` y `B` de forma decorativa después de crear las aportaciones.
+
+La atribución deberá formar parte del estado funcional persistido.
+
+La condición positiva será:
+
+```text
+un mismo R1
+
++
+A1 atribuida funcionalmente a A
+
++
+B1 atribuida funcionalmente a B
+
++
+B1 constituida en continuidad desde R1 + A1
+```
+
+# 96. Contenido y juicio
+
+La Realization no deberá interpretar semánticamente las aportaciones.
+
+Podrá ejercitarse, por ejemplo, con:
+
+```text
+R1
+→ "Seleccionar B."
+
+A1
+→ "La evidencia favorece B."
+
+B1
+→ "Añado una limitación a esa conclusión."
+```
+
+pero el sistema no deberá decidir:
+
+```text
+si A1 es correcta;
+si B1 mejora A1;
+si existe acuerdo;
+si existe desacuerdo;
+si el resultado final debe aceptarse.
+```
+
+P4 realiza:
+
+```text
+participación distinguible
++
+continuidad compartida
+```
+
+no evaluación automática.
+
+# 97. Alcance negativo de R-P4-C1
+
+`R-P4-C1` no deberá introducir todavía:
+
+```text
+cuentas
+login
+autenticación
+autorización
+roles
+permisos
+invitaciones
+correo
+servidor
+backend
+red
+WebSocket
+sincronización en tiempo real
+edición simultánea
+conflictos concurrentes
+presencia online
+cursores remotos
+comentarios
+notificaciones
+historial general
+más de dos participantes
+nombres configurables
+perfiles
+moderación
+```
+
+Tampoco deberá modificar funcionalmente las Realizations ya cerradas de P1, P2 o P3.
+
+# 98. Intervención técnica mínima candidata
+
+La intervención técnica mínima candidata es:
+
+```text
+src/realizations/collaboration/
+    CollaborationExperience.tsx
+    CollaborationExperience.test.tsx
+```
+
+con acceso mediante:
+
+```text
+?realization=collaboration
+```
+
+La Realization mantendrá su estado de forma independiente.
+
+# 99. Tests mínimos de R-P4-C1
+
+La suite mínima candidata es:
+
+```text
+T-P4-01
+constituye un resultado compartido R1
+
+T-P4-02
+A realiza A1 y queda atribuida a A
+
+T-P4-03
+B sólo puede continuar después de A1
+
+T-P4-04
+B realiza B1 y queda atribuida a B
+
+T-P4-05
+A1 y B1 permanecen relacionadas con R1
+
+T-P4-06
+A y B siguen siendo distinguibles
+después de completar la colaboración
+
+T-P4-07
+R1, A1, B1 y sus atribuciones
+sobreviven a un remount
+
+T-P4-08
+ejercita la trayectoria colaborativa completa
+```
+
+# 100. Trayectoria integrada de aceptación
+
+La trayectoria integrada mínima deberá realizar:
+
+```text
+crear R1
+↓
+A aporta A1
+↓
+estado = R1 + A1
+↓
+B continúa desde ese estado
+↓
+B aporta B1
+↓
+estado = R1 + A1 + B1
+↓
+interrumpir
+↓
+reanudar
+```
+
+y comprobar finalmente:
+
+```text
+sharedResult = R1
+
+firstContribution.participant = A
+firstContribution.content = A1
+
+secondContribution.participant = B
+secondContribution.content = B1
+```
+
+Además:
+
+```text
+B1 no reemplaza A1
+
+A1 conserva su atribución
+
+B1 conserva su atribución
+
+A1 y B1 permanecen vinculadas
+al mismo R1
+```
+
+# 101. Resultado esperado
+
+Si `CR-P4-01` queda satisfecha:
+
+```text
+R-P4-C1
+→ REALIZADA MÍNIMAMENTE
+
+P4 — Colaboración mínima
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+La diferencia demostrada será:
+
+```text
+continuidad individual
+≠
+colaboración mínima entre participantes
+```
+
+sin haber introducido todavía multiusuario real.
+
+# 102. Próxima actuación actualizada
+
+La próxima actuación justificable pasa a ser:
+
+> **implementar `R-P4-C1` en el alcance mínimo definido por `CR-P4-01`, con un único resultado compartido, exactamente dos participantes funcionales fijos, una aportación atribuida a cada participante, continuidad obligatoria de B desde el estado `R1 + A1`, persistencia conjunta e invariancia de atribución y relación después de una interrupción efectiva, sin introducir infraestructura multiusuario real.**
+
+---
+
+# 103. Cierre de P4
+
+La Realization `R-P4-C1` ha sido implementada y validada en el alcance definido por `CR-P4-01`.
+
+## Evidencia automática
+
+```text
+T-P4-01..08
+→ 8/8 tests OK
+
+suite completa
+→ 299/299 tests OK
+```
+
+## Evidencia humana
+
+La trayectoria ejercida fue:
+
+```text
+R1
+→ constituir resultado compartido
+
+↓ participación de A
+
+Participante A
+→ A1
+
+estado intermedio
+→ R1 + A1
+
+↓ continuidad de B
+
+Participante B
+→ recibe como contexto:
+   R1
+   A1
+
+↓ participación de B
+
+Participante B
+→ B1
+
+estado colaborativo final
+→ R1 + A1 + B1
+
+↓ recargar
+```
+
+El estado final observado fue:
+
+```text
+Resultado compartido
+→ R1
+
+Participante A
+→ A
+→ A1
+
+Participante B
+→ B
+→ B1
+
+Estado colaborativo
+→ R1
+→ Participante A: A1
+→ Participante B: B1
+```
+
+La prueba demuestra conjuntamente:
+
+```text
+sharedResult = R1
+
+firstContribution.participant = A
+firstContribution.content = A1
+
+secondContribution.participant = B
+secondContribution.content = B1
+```
+
+después de una interrupción efectiva.
+
+También queda observado que:
+
+```text
+sin A1
+→ B no puede continuar
+
+con R1 + A1
+→ B dispone del contexto colaborativo
+
+B1
+→ no reemplaza A1
+
+A1
+→ conserva su atribución a A
+
+B1
+→ conserva su atribución a B
+
+A1 y B1
+→ permanecen vinculadas al mismo R1
+```
+
+Por tanto:
+
+```text
+R-P4-C1
+→ REALIZADA MÍNIMAMENTE
+
+CR-P4-01
+→ SATISFECHA
+
+P4 — Colaboración mínima
+→ SATISFECHO EN SU ALCANCE MÍNIMO
+```
+
+Queda establecida la diferencia funcional:
+
+```text
+continuidad individual
+≠
+colaboración mínima entre participantes
+```
+
+La Realization demuestra que un mismo resultado puede mantener una trayectoria compartida con dos participantes funcionalmente distinguibles, aportaciones atribuidas y continuidad entre ellas.
+
+No se han introducido todavía:
+
+```text
+cuentas
+login
+autenticación
+autorización
+roles
+permisos
+invitaciones
+correo
+servidor
+backend
+red
+WebSocket
+sincronización en tiempo real
+edición simultánea
+conflictos concurrentes
+presencia online
+cursores remotos
+comentarios
+notificaciones
+historial general
+más de dos participantes
+nombres configurables
+perfiles
+moderación
+```
+
+La siguiente cuestión estratégica del roadmap pasa a ser:
+
+```text
+P5 — Intercambio / difusión
+```
+
+Antes de derivar una nueva Realization deberá auditarse si el producto actual permite que un resultado, publicación o trayectoria pueda ponerse funcionalmente a disposición de otra instancia o destinatario de forma distinguible y recuperable, sin confundir difusión con mera persistencia local o coexistencia interna.
+
+---
