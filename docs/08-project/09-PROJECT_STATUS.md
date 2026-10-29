@@ -4799,3 +4799,404 @@ Una actuación posterior deberá obtener fundamento positivo independiente media
 No debe reabrirse I31, la Realization integrada ni la Realization de conservación de defendibilidad únicamente para mantener continuidad de actividad.
 
 ---
+
+# Actualización del estado vigente — 29/10/2026
+
+La evolución posterior al punto de reanudación anterior produjo un ciclo de priorización, realización e integración funcional post-V1 documentado en:
+
+```text
+docs/08-project/27-PRIORIZACION_Y_ROADMAP_POST_V1.md
+```
+
+Esta actualización no modifica retrospectivamente los estados históricos anteriores.
+
+Establece exclusivamente el estado vigente alcanzado después de completar dicho ciclo.
+
+---
+
+## Cierre material del roadmap post-V1
+
+El roadmap post-V1 priorizó y ejerció cinco diferencias funcionales:
+
+```text
+P1 — Estado significativo estable
+→ SATISFECHO
+
+P2 — Publicación individual mínima
+→ SATISFECHO
+
+P3 — Publicación evaluable
+→ SATISFECHO
+
+P4 — Colaboración mínima
+→ SATISFECHO
+
+P5 — Intercambio / difusión
+→ SATISFECHO
+```
+
+Cada prioridad fue realizada en alcance mínimo antes de derivar la siguiente.
+
+El cierre de P5 dejó:
+
+```text
+P1–P5
+→ realizados en su alcance priorizado
+
+gap funcional residual dentro de P1–P5
+→ no demostrado
+
+P6
+→ no derivado
+```
+
+La ausencia de `P6` no constituye una carencia pendiente.
+
+Una prioridad posterior sólo podrá derivarse si aparece una diferencia funcional adicional con fundamento propio.
+
+---
+
+## Auditoría de componibilidad posterior
+
+Después de cerrar P1–P5 se examinó una cuestión distinta de la expansión funcional:
+
+```text
+¿pueden las capacidades realizadas
+coexistir en una única trayectoria
+sin reconstruir sus antecedentes
+ni perder las relaciones relevantes?
+```
+
+La auditoría identificó cuatro discontinuidades estructurales en las Realizations independientes:
+
+```text
+G-INT-01
+→ pérdida de continuidad identificativa
+  entre publicación y colaboración
+
+G-INT-02
+→ reconstrucción del antecedente estable
+
+G-INT-03
+→ reconstrucción del antecedente publicado
+
+G-INT-04
+→ desconexión entre publicación e intercambio
+```
+
+Estas discontinuidades no demostraron una nueva capacidad funcional.
+
+Demostraron exclusivamente la necesidad de comprobar si P1–P5 podían componerse reutilizando los mismos antecedentes.
+
+---
+
+## R-INT-01 — Integración post-V1
+
+La comprobación se realizó mediante:
+
+```text
+src/realizations/post-v1-integrated/
+    PostV1IntegratedExperience.tsx
+    PostV1IntegratedExperience.test.tsx
+```
+
+con acceso mediante:
+
+```text
+?realization=post-v1-integrated
+```
+
+La trayectoria integrada ejercida fue:
+
+```text
+current R1
+↓
+S1
+↓
+P1
+↓
+EvaluationSupport
+↓
+Collaboration
+↓
+X1
+↓
+D1
+↓
+current R2
+```
+
+sin constituir de nuevo `S1` ni `P1`.
+
+La Realization conserva explícitamente:
+
+```text
+P1.sourceStableId
+→ S1
+
+EvaluationSupport.publishedId
+→ P1
+
+Collaboration.sourcePublishedId
+→ P1
+
+X1.sourcePublishedId
+→ P1
+
+D1.sourceArtifactId
+→ X1
+```
+
+La evolución posterior:
+
+```text
+current
+R1 → R2
+```
+
+no modifica los estados derivados anteriormente.
+
+Después de dicha evolución permanecen:
+
+```text
+S1
+→ R1
+
+P1
+→ S1
+→ R1
+
+EvaluationSupport
+→ P1
+→ C1
+→ E1
+
+Collaboration
+→ P1
+→ R1
+→ A / A1
+→ B / B1
+
+X1
+→ P1
+→ R1
+
+D1
+→ X1
+→ R1
+```
+
+La misma estructura fue recuperada después de una recarga efectiva.
+
+---
+
+## Resultado de R-INT-01
+
+La validación automática produjo:
+
+```text
+suite focalizada
+→ 8 / 8 tests
+
+suite global
+→ 36 archivos
+→ 315 / 315 tests
+
+git diff --check
+→ PASS
+```
+
+La validación humana ejerció la trayectoria completa:
+
+```text
+R1
+→ S1
+→ P1
+→ EvaluationSupport
+→ Collaboration
+→ X1
+→ D1
+→ current R2
+```
+
+y confirmó que la evolución de `current` no modifica retrospectivamente los antecedentes integrados.
+
+Por tanto:
+
+```text
+R-INT-01
+→ REALIZADA MÍNIMAMENTE
+
+CR-INT-01
+→ SATISFECHA
+
+I-INT-01..11
+→ SATISFECHAS EN EL ALCANCE PROBADO
+
+H-INT-COMP
+→ CONFIRMADA EN EL ALCANCE PROBADO
+
+G-INT-01..04
+→ RESUELTAS EN LA REALIZATION INTEGRADA
+```
+
+La integración quedó consolidada mediante:
+
+```text
+6ad46bb
+feat(realization): close post-v1 integration
+```
+
+---
+
+## Resultado del ciclo post-V1
+
+El ciclo permite establecer:
+
+```text
+P1
+P2
+P3
+P4
+P5
+→ funcionalmente componibles
+  en una única trayectoria mínima
+
+roadmap post-V1
+→ materialmente completado
+
+integración post-V1
+→ cerrada en el alcance probado
+
+gap funcional residual
+→ no demostrado
+
+P6
+→ no derivado
+```
+
+Este resultado no implica que el producto completo esté terminado.
+
+Tampoco establece una arquitectura definitiva, un backend, una red, multiusuario real, publicación web real, intercambio real por red, versionado general, historial general ni una teoría universal de procedencia.
+
+Establece exclusivamente el cierre del ciclo funcional post-V1 que había sido efectivamente derivado.
+
+---
+
+## Estado de reanudación actualizado
+
+El estado vigente queda ampliado así:
+
+```text
+Product
+    ✔ PV-001 ... PV-006 conservados
+    → nuevo Product Value no derivado
+
+roadmap post-V1
+    ✔ P1 satisfecha
+    ✔ P2 satisfecha
+    ✔ P3 satisfecha
+    ✔ P4 satisfecha
+    ✔ P5 satisfecha
+    ✔ materialmente completado
+
+integración post-V1
+    ✔ R-INT-01 realizada
+    ✔ CR-INT-01 satisfecha
+    ✔ I-INT-01..11 satisfechas en el alcance probado
+    ✔ H-INT-COMP confirmada en el alcance probado
+    ✔ G-INT-01..04 resueltas
+    ✔ 8 / 8 tests focalizados
+    ✔ 315 / 315 tests globales
+    ✔ validación humana completada
+    ✔ cerrada
+
+P6
+    → no derivado
+
+Architecture
+    → no derivada automáticamente
+
+nueva investigación
+    → no derivada automáticamente
+
+nueva Realization
+    → no derivada automáticamente
+
+Implementation adicional
+    → no derivada automáticamente
+
+siguiente actuación funcional automáticamente derivada
+    → ninguna
+```
+
+---
+
+## Punto de reanudación vigente después del cierre post-V1
+
+El cierre del roadmap y de su integración no prescribe una actuación funcional sucesora.
+
+En particular:
+
+```text
+P1–P5
+→ cerradas en su alcance
+
+R-INT-01
+→ cerrada
+
+P6
+→ no derivado
+
+nueva capacidad funcional
+→ no derivada
+
+nueva Realization
+→ no derivada
+
+Architecture
+→ no derivada
+
+Implementation adicional
+→ no derivada
+```
+
+No deberá abrirse una nueva prioridad únicamente porque P1–P5 hayan terminado.
+
+No deberá derivarse una nueva Realization únicamente para mantener continuidad de actividad.
+
+No deberá iniciarse una refactorización general, una integración arquitectónica adicional ni una nueva fase técnica únicamente porque exista código susceptible de reorganización.
+
+La expansión funcional queda suspendida mientras no aparezca un fundamento nuevo capaz de justificarla.
+
+Una actuación posterior deberá obtener fundamento positivo independiente mediante, entre otros posibles casos:
+
+```text
+nueva evidencia;
+una pérdida observada;
+una necesidad material;
+una incompatibilidad;
+un fallo relevante;
+una diferencia funcional no realizada;
+una oportunidad suficientemente justificada;
+o cualquier otro resultado capaz de modificar
+una decisión actualmente consolidada.
+```
+
+La ausencia de una siguiente actuación automáticamente derivada constituye un estado válido del proyecto.
+
+Por tanto:
+
+```text
+CICLO POST-V1
+→ CERRADO EN EL ALCANCE DOCUMENTADO
+
+EXPANSIÓN FUNCIONAL
+→ SUSPENDIDA
+  HASTA NUEVO FUNDAMENTO POSITIVO
+
+SIGUIENTE ACTUACIÓN FUNCIONAL AUTOMÁTICA
+→ NINGUNA
+```
+
+---
