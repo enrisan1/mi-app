@@ -63,14 +63,17 @@ R-INT-01 — INTEGRACIÓN POST-V1
 ↓
 T1 — REEVALUACIÓN DE V1
 ↓
-ESTADO VIGENTE
-↓
 COMPARACIÓN CON PLATFORM VISION
 ↓
-SIGUIENTE HORIZONTE JUSTIFICABLE
+REDUCCIÓN D-00…D-05
+↓
+CONSOLIDACIÓN GLOBAL POST-T1
+↓
+ESTADO DE SUFICIENCIA
+SIN SIGUIENTE HORIZONTE DERIVADO
 ```
 
-No debe introducirse automáticamente una nueva prioridad, P6 o una nueva Realization antes de completar la comparación con `PLATFORM_VISION`.
+La comparación con `PLATFORM_VISION` ha sido completada en el alcance `D-00…D-05`. No debe introducirse automáticamente una nueva prioridad, `P6`, un nuevo Product Value, una nueva capacidad, una nueva Realization, Architecture o Implementation sin nueva evidencia suficiente.
 
 ---
 
@@ -88,6 +91,14 @@ No debe introducirse automáticamente una nueva prioridad, P6 o una nueva Realiz
 27-PRIORIZACION_Y_ROADMAP_POST_V1.md
 28-REEVALUACION_T1_DE_V1.md
 29-TABLERO_MAESTRO_DEL_PROYECTO.md
+30-REDUCCION_DIFERENCIAS_D00_D01_POST_T1.md
+31-PRIORIZACION_REDUCTIVA_D02_D05_POST_T1.md
+32-DERIVACION_PRUEBA_D03A_PROCEDENCIA_PERTINENTE.md
+33-RESULTADO_Y_CIERRE_REDUCTIVO_D03A_POST_T1.md
+34-RESULTADO_Y_CIERRE_REDUCTIVO_D04_POST_T1.md
+35-RESULTADO_Y_CIERRE_REDUCTIVO_D05_POST_T1.md
+36-RESULTADO_Y_CIERRE_REDUCTIVO_D02_POST_T1.md
+37-CONSOLIDACION_GLOBAL_D00_D05_POST_T1.md
 ```
 
 ---
@@ -478,27 +489,48 @@ Por tanto, el cierre de V1 no autoriza por sí solo a elegir la siguiente actuac
 
 ---
 
-# 15. Próxima actuación estratégica
+# 15. Resultado de la comparación estratégica
 
-La siguiente actuación justificable es:
+La comparación sistemática entre el estado alcanzado después de T1 y `PLATFORM_VISION` ha sido completada en el alcance actualmente aislado.
 
-> **comparar sistemáticamente el estado alcanzado del producto —incluidos V1, P1–P5, R-INT-01 y T1— con `PLATFORM_VISION`, identificar únicamente las diferencias estratégicas todavía relevantes y, a partir de ellas, determinar el siguiente horizonte justificable sin presuponer P6, una nueva capacidad ni una nueva Realization.**
-
-La secuencia inmediata es:
+La secuencia ejecutada fue:
 
 ```text
-TABLERO MAESTRO ACTUALIZADO
+T1
 ↓
-PLATFORM_VISION
+comparación con PLATFORM_VISION
 ↓
-comparación sistemática
+D-00 / D-01
 ↓
-diferencias estratégicas reales
+priorización reductiva D-02…D-05
 ↓
-priorización
+D-03a
 ↓
-siguiente horizonte justificable
+D-04
+↓
+D-05
+↓
+D-02
+↓
+consolidación global
 ```
+
+
+Resultado consolidado:
+
+```text
+D-00 → reformulada / no discriminable
+D-01 → reducida
+D-02 → reducida
+D-03a → reducida
+D-04 → reducida
+D-05 → reducida
+
+P6 → no derivado
+siguiente horizonte → no derivado
+```
+
+La justificación completa queda consolidada en `37-CONSOLIDACION_GLOBAL_D00_D05_POST_T1.md`.
 
 ---
 
@@ -509,16 +541,44 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 ```text
 1. leer 29-TABLERO_MAESTRO_DEL_PROYECTO.md;
 
-2. confirmar que T1 sigue siendo el estado vigente;
+2. leer 37-CONSOLIDACION_GLOBAL_D00_D05_POST_T1.md;
 
-3. comprobar si existe evidencia posterior a T1;
+3. comprobar si existe evidencia posterior
+   que obligue a revisar el estado consolidado;
 
-4. si no existe evidencia que obligue a revisar T1,
-   continuar con la comparación sistemática
-   frente a PLATFORM_VISION;
+4. si aparece una candidata nueva,
+   comprobar primero GATE-NH-01;
 
-5. no abrir automáticamente P6
-   ni una nueva Realization.
+5. sólo si existe fundamento suficiente,
+   abrir una nueva investigación estratégica;
+
+6. no abrir automáticamente P6,
+   nuevo Product Value,
+   nueva capacidad,
+   nueva Realization,
+   Architecture
+   ni Implementation.
+```
+
+Condición provisional de reapertura:
+
+```text
+GATE-NH-01
+— Gate de nuevo horizonte
+```
+
+Para justificar una nueva investigación estratégica deberá existir al menos:
+
+```text
+caso concreto
++
+actuación humana identificable
++
+pérdida observable o falsable
++
+indicio razonable de insuficiencia actual
++
+posibilidad de discriminación no circular
 ```
 
 ---
@@ -527,13 +587,14 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 
 ```text
 CHARTER
-✓
+✓ vigente
 
 PLATFORM VISION
-✓ vigente como horizonte
+✓ vigente como horizonte orientador
 
 V1
 ✓ delimitada
+✓ suficientemente realizada
 
 9 capacidades esenciales
 ✓ definidas
@@ -553,10 +614,65 @@ R-INT-01
 T1
 ✓ cerrado
 
+COMPARACIÓN T1 ↔ PLATFORM_VISION
+✓ completada en el alcance D-00…D-05
+
+D-00
+✓ reformulada / no discriminable
+
+D-01
+✓ reducida
+
+D-02
+✓ reducida
+
+D-03a
+✓ reducida
+
+D-04
+✓ reducida
+
+D-05
+✓ reducida
+
+CONSOLIDACIÓN GLOBAL D-00…D-05
+✓ cerrada
+
+residuo humano independiente
+→ no demostrado
+
+P6
+→ no derivado
+
+nuevo Product Value
+→ no derivado
+
+nueva capacidad
+→ no derivada
+
+nueva Realization
+→ no derivada
+
+Architecture
+→ no derivada automáticamente
+
+Implementation
+→ no derivada
+
+estado estratégico
+→ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+
+condición de reapertura
+→ GATE-NH-01
+
 TABLERO MAESTRO
 ✓ actualizado
 ```
 
-Próxima cuestión:
+No existe actualmente una próxima actuación funcional obligatoria derivada.
 
-> **¿Qué diferencias estratégicas reales permanecen entre el estado alcanzado del producto en T1 y `PLATFORM_VISION`, y cuál de ellas, si existe, justifica el siguiente horizonte de desarrollo?**
+La siguiente actuación estratégica sólo estará justificada cuando nueva evidencia satisfaga suficientemente `GATE-NH-01`.
+
+Próxima cuestión condicionada:
+
+> **¿Ha aparecido nueva evidencia concreta que revele una pérdida humana no cubierta por el estado actual y que justifique reabrir la investigación estratégica?**
