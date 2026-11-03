@@ -164,6 +164,13 @@ export function CollaborationExperience() {
 
           {state.secondContribution === null ? (
             <>
+              <h3>Qué puedes hacer ahora</h3>
+
+              <p>
+                Continúa el trabajo a partir del resultado compartido y la
+                aportación de A.
+              </p>
+
               <label>
                 Aportación de B
                 <textarea

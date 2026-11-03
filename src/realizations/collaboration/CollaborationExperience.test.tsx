@@ -149,6 +149,24 @@ describe("R-P4-C1 CollaborationExperience", () => {
     ).toHaveTextContent("A1");
   });
 
+  it("[T-P4-09] makes B's available action explicit before B contributes", async () => {
+    const user = await constituteSharedResult("R1");
+
+    await contributeAsA(user, "A1");
+
+    expect(
+      screen.getByRole("heading", {
+        name: /qué puedes hacer ahora/i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText(
+        /continúa el trabajo a partir del resultado compartido y la aportación de a/i,
+      ),
+    ).toBeInTheDocument();
+  });
+
   it("[T-P4-04] attributes B1 explicitly to participant B", async () => {
     const user = await constituteSharedResult("R1");
 
