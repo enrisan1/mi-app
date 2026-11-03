@@ -543,16 +543,19 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 
 2. leer 37-CONSOLIDACION_GLOBAL_D00_D05_POST_T1.md;
 
-3. comprobar si existe evidencia posterior
+3. leer 38-PRUEBA_PROSPECTIVA_PARTICIPACION_HUMANA_REAL_POST_T1.md
+   como primera evaluación prospectiva posterior al cierre D-00…D-05;
+
+4. comprobar si existe evidencia posterior
    que obligue a revisar el estado consolidado;
 
-4. si aparece una candidata nueva,
+5. si aparece una candidata nueva,
    comprobar primero GATE-NH-01;
 
-5. sólo si existe fundamento suficiente,
+6. sólo si existe fundamento suficiente,
    abrir una nueva investigación estratégica;
 
-6. no abrir automáticamente P6,
+7. no abrir automáticamente P6,
    nuevo Product Value,
    nueva capacidad,
    nueva Realization,
@@ -579,6 +582,45 @@ pérdida observable o falsable
 indicio razonable de insuficiencia actual
 +
 posibilidad de discriminación no circular
+```
+
+La primera aplicación prospectiva posterior al cierre `D-00…D-05` quedó documentada en:
+
+```text
+38-PRUEBA_PROSPECTIVA_PARTICIPACION_HUMANA_REAL_POST_T1.md
+```
+
+Resultado de esa aplicación:
+
+```text
+frontera ejercitada
+→ dos personas humanas reales
+→ mismo dispositivo
+→ participación sucesiva
+→ interrupción efectiva
+
+F-PROS-MU-01
+→ orientación insuficiente de la actuación de B
+
+reducción
+→ atribuida a orientación situacional ya consolidada
+
+corrección mínima
+→ aplicada en CollaborationExperience
+
+PROS-MU-Q03-R
+→ E — suficiencia en el caso ejercitado
+
+residuo humano independiente
+→ no demostrado
+
+GATE-NH-01
+→ ejercitado
+→ NO SUPERADO
+
+estado estratégico
+→ se mantiene
+→ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
 ```
 
 ---
@@ -637,6 +679,21 @@ D-05
 
 CONSOLIDACIÓN GLOBAL D-00…D-05
 ✓ cerrada
+
+PRUEBA PROSPECTIVA DE PARTICIPACIÓN HUMANA REAL
+✓ realizada en el alcance ejercitado
+
+F-PROS-MU-01
+→ detectada
+→ absorbida por orientación situacional existente
+→ resuelta localmente
+
+PROS-MU-Q03-R
+→ E — suficiencia en el caso ejercitado
+
+GATE-NH-01
+→ ejercitado
+→ NO SUPERADO
 
 residuo humano independiente
 → no demostrado
