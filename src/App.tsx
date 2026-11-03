@@ -47,9 +47,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
       </section>
 
       <ResumeExperience
-        resolution={resolution}
-        secondResolution={secondResolution}
-        thirdResolution={thirdResolution}
+        {...(resolution !== undefined ? { resolution } : {})}
+        {...(secondResolution !== undefined ? { secondResolution } : {})}
+        {...(thirdResolution !== undefined ? { thirdResolution } : {})}
       />
     </main>
   );

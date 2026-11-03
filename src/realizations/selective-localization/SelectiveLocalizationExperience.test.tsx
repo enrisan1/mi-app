@@ -7,7 +7,7 @@ const materials = [
   "Material uno sobre una cuestión anterior",
   "Material dos con el contenido que después será necesario",
   "Material tres sobre otra cuestión",
-];
+] as const;
 
 async function createThreeMaterials(user: ReturnType<typeof userEvent.setup>) {
   for (const content of materials) {
