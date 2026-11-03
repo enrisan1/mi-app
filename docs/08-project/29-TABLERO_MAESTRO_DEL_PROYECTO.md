@@ -425,6 +425,18 @@ R-INT-01
 
 T1
 → cerrado
+
+PROS-MU-Q04
+→ D — diferencia positiva observada
+
+F-PROS-MU-02
+→ diferencia humana independiente demostrada
+
+GATE-NH-01
+→ SUPERADO
+
+derivación estratégica
+→ reabierta
 ```
 
 No existe actualmente un hueco identificado que obligue a reabrir V1.
@@ -617,10 +629,49 @@ residuo humano independiente
 GATE-NH-01
 → ejercitado
 → NO SUPERADO
+```
+
+La aplicación prospectiva posterior quedó documentada en:
+
+```text
+39-PRUEBA_PROSPECTIVA_CONTINUIDAD_COLABORATIVA_INTERDISPOSITIVO_POST_T1.md
+```
+
+Resultado:
+
+```text
+frontera ejercitada
+→ dos personas humanas reales
+→ dos dispositivos reales
+→ misma trayectoria colaborativa pretendida
+→ participación sucesiva
+→ sin transferencia externa compensatoria
+
+PROS-MU-Q04
+→ D — diferencia positiva observada
+
+R1 — recepción
+→ FALLA
+
+F-PROS-MU-02
+→ indisponibilidad del estado colaborativo necesario
+  para la continuación entre instancias reales distintas
+
+reducción
+→ no absorbida por orientación situacional
+→ no absorbida por P4 — colaboración mínima
+→ no absorbida por P5 — intercambio / difusión mínima
+→ no absorbida por la integración existente
+
+F-PROS-MU-02
+→ DIFERENCIA HUMANA INDEPENDIENTE DEMOSTRADA
+
+GATE-NH-01
+→ SUPERADO
 
 estado estratégico
-→ se mantiene
-→ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ derivación estratégica reabierta
+→ sin P6, nueva Realization ni Architecture todavía derivados
 ```
 
 ---
@@ -692,23 +743,39 @@ PROS-MU-Q03-R
 → E — suficiencia en el caso ejercitado
 
 GATE-NH-01
-→ ejercitado
-→ NO SUPERADO
+→ ejercitado inicialmente
+→ NO SUPERADO en PROS-MU-Q03-R
+
+PROS-MU-Q04
+→ D — diferencia positiva observada
+
+R1 — recepción interdispositivo
+→ FALLA
+
+F-PROS-MU-02
+→ indisponibilidad del estado colaborativo necesario
+  para la continuación entre instancias reales distintas
+
+F-PROS-MU-02
+→ DIFERENCIA HUMANA INDEPENDIENTE DEMOSTRADA
+
+GATE-NH-01
+→ SUPERADO
 
 residuo humano independiente
-→ no demostrado
+→ demostrado en F-PROS-MU-02
 
 P6
-→ no derivado
+→ no derivado todavía
 
 nuevo Product Value
-→ no derivado
+→ no derivado todavía
 
 nueva capacidad
-→ no derivada
+→ no derivada todavía
 
 nueva Realization
-→ no derivada
+→ no derivada todavía
 
 Architecture
 → no derivada automáticamente
@@ -717,19 +784,34 @@ Implementation
 → no derivada
 
 estado estratégico
-→ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ DERIVACIÓN ESTRATÉGICA REABIERTA
 
-condición de reapertura
-→ GATE-NH-01
+siguiente obligación
+→ reducir F-PROS-MU-02
+  antes de derivar nueva Realization
+  o decisión arquitectónica
+
+reapertura estratégica
+→ producida mediante GATE-NH-01
 
 TABLERO MAESTRO
 ✓ actualizado
 ```
 
-No existe actualmente una próxima actuación funcional obligatoria derivada.
+La derivación estratégica se encuentra reabierta por nueva evidencia prospectiva.
 
-La siguiente actuación estratégica sólo estará justificada cuando nueva evidencia satisfaga suficientemente `GATE-NH-01`.
+Esto no implica todavía:
 
-Próxima cuestión condicionada:
+```text
+P6 derivado
+nueva capacidad derivada
+nueva Realization derivada
+Architecture derivada
+Implementation derivada
+```
 
-> **¿Ha aparecido nueva evidencia concreta que revele una pérdida humana no cubierta por el estado actual y que justifique reabrir la investigación estratégica?**
+La siguiente actuación justificable consiste en reducir `F-PROS-MU-02` para determinar cuál es la mínima diferencia funcional necesaria para que una segunda persona pueda continuar, desde una instancia real distinta, la trayectoria colaborativa iniciada por otra.
+
+Próxima cuestión estratégica:
+
+> **¿Cuál es la mínima información y la mínima mediación necesarias para hacer disponible a B el antecedente colaborativo suficiente para continuar la misma trayectoria desde una instancia real distinta, sin presuponer todavía la solución técnica?**
