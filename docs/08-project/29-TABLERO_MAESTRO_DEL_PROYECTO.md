@@ -430,16 +430,37 @@ PROS-MU-Q04
 → D — diferencia positiva observada
 
 F-PROS-MU-02
-→ diferencia humana independiente demostrada
+→ diferencia humana independiente demostrada en Q04
 
 GATE-NH-01
-→ SUPERADO
+→ SUPERADO en Q04
+
+PROS-MU-Q05
+→ E — suficiencia demostrada en el alcance ensayado
+
+MIN-CC-01
+→ suficiente en el caso ensayado
+
+MED-CC-01
+→ suficiente en el caso ensayado
+
+F-PROS-MU-02
+→ reducida en el caso ensayado
+
+nueva pérdida humana independiente derivada de Q05
+→ no demostrada
 
 derivación estratégica
-→ reabierta
+→ reabierta históricamente por Q04
+→ pendiente de reevaluación posterior a Q05
+
+siguiente horizonte
+→ no derivado
 ```
 
 No existe actualmente un hueco identificado que obligue a reabrir V1.
+
+Q05 no invalida que `GATE-NH-01` fuese superado en Q04; demuestra posteriormente que la diferencia que provocó esa reapertura puede reducirse, en el caso ensayado, mediante un antecedente colaborativo mínimo y una mediación explícita.
 
 ---
 
@@ -558,21 +579,30 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 3. leer 38-PRUEBA_PROSPECTIVA_PARTICIPACION_HUMANA_REAL_POST_T1.md
    como primera evaluación prospectiva posterior al cierre D-00…D-05;
 
-4. comprobar si existe evidencia posterior
-   que obligue a revisar el estado consolidado;
+4. leer 39-PRUEBA_PROSPECTIVA_CONTINUIDAD_COLABORATIVA_INTERDISPOSITIVO_POST_T1.md
+   como demostración de F-PROS-MU-02 y superación de GATE-NH-01;
 
-5. si aparece una candidata nueva,
+5. leer 40-REDUCCION_F_PROS_MU_02_Y_DERIVACION_PROS_MU_Q05.md
+   como reducción previa y derivación de PROS-MU-Q05;
+
+6. leer 41-CIERRE_PROS_MU_Q05_CONTINUIDAD_COLABORATIVA_INTERDISPOSITIVO.md
+   como cierre experimental vigente de Q05;
+
+7. comprobar si existe evidencia posterior
+   que obligue a revisar este estado consolidado;
+
+8. si aparece una candidata nueva,
    comprobar primero GATE-NH-01;
 
-6. sólo si existe fundamento suficiente,
+9. sólo si existe fundamento suficiente,
    abrir una nueva investigación estratégica;
 
-7. no abrir automáticamente P6,
-   nuevo Product Value,
-   nueva capacidad,
-   nueva Realization,
-   Architecture
-   ni Implementation.
+10. no abrir automáticamente P6,
+    nuevo Product Value,
+    nueva capacidad,
+    nueva Realization,
+    Architecture
+    ni Implementation.
 ```
 
 Condición provisional de reapertura:
@@ -674,6 +704,50 @@ estado estratégico
 → sin P6, nueva Realization ni Architecture todavía derivados
 ```
 
+La reducción posterior quedó documentada en:
+
+```text
+40-REDUCCION_F_PROS_MU_02_Y_DERIVACION_PROS_MU_Q05.md
+```
+
+y su ejecución y cierre en:
+
+```text
+41-CIERRE_PROS_MU_Q05_CONTINUIDAD_COLABORATIVA_INTERDISPOSITIVO.md
+```
+
+Resultado:
+
+```text
+PROS-MU-Q05
+→ E — suficiencia demostrada en el alcance ensayado
+
+R1–R6
+→ 6/6 PASAN
+
+H-Q05-SUF
+→ SOSTENIDA EN EL ALCANCE ENSAYADO
+
+H-Q05-GAP
+→ NO SOSTENIDA EN EL CASO ENSAYADO
+
+MIN-CC-01
+→ SUFICIENTE EN EL CASO ENSAYADO
+
+MED-CC-01
+→ SUFICIENTE EN EL CASO ENSAYADO
+
+F-PROS-MU-02
+→ REDUCIDA EN EL CASO ENSAYADO
+
+nueva pérdida humana independiente derivada de Q05
+→ no demostrada
+
+estado estratégico
+→ pendiente de reevaluación posterior a Q05
+→ sin P6, nueva capacidad, nueva Realization ni Architecture derivados
+```
+
 ---
 
 # 17. Estado resultante
@@ -763,19 +837,43 @@ GATE-NH-01
 → SUPERADO
 
 residuo humano independiente
-→ demostrado en F-PROS-MU-02
+→ demostrado en Q04 mediante F-PROS-MU-02
+
+PROS-MU-Q05
+→ E — suficiencia demostrada en el alcance ensayado
+
+R1–R6
+→ 6/6 PASAN
+
+H-Q05-SUF
+→ SOSTENIDA EN EL ALCANCE ENSAYADO
+
+H-Q05-GAP
+→ NO SOSTENIDA EN EL CASO ENSAYADO
+
+MIN-CC-01
+→ SUFICIENTE EN EL CASO ENSAYADO
+
+MED-CC-01
+→ SUFICIENTE EN EL CASO ENSAYADO
+
+F-PROS-MU-02
+→ REDUCIDA EN EL CASO ENSAYADO
+
+nueva pérdida humana independiente derivada de Q05
+→ no demostrada
 
 P6
-→ no derivado todavía
+→ no derivado
 
 nuevo Product Value
-→ no derivado todavía
+→ no derivado
 
 nueva capacidad
-→ no derivada todavía
+→ no derivada
 
 nueva Realization
-→ no derivada todavía
+→ no derivada
 
 Architecture
 → no derivada automáticamente
@@ -784,23 +882,39 @@ Implementation
 → no derivada
 
 estado estratégico
-→ DERIVACIÓN ESTRATÉGICA REABIERTA
+→ REAPERTURA HISTÓRICA POR Q04
+→ DIFERENCIA REDUCIDA EN Q05
+→ PENDIENTE DE REEVALUACIÓN POSTERIOR A Q05
 
 siguiente obligación
-→ reducir F-PROS-MU-02
-  antes de derivar nueva Realization
-  o decisión arquitectónica
+→ determinar si queda alguna pérdida humana independiente
+  que justifique un nuevo horizonte
 
 reapertura estratégica
-→ producida mediante GATE-NH-01
+→ producida mediante GATE-NH-01 en Q04
+→ no equivale por sí sola a un nuevo horizonte
 
 TABLERO MAESTRO
 ✓ actualizado
 ```
 
-La derivación estratégica se encuentra reabierta por nueva evidencia prospectiva.
+La derivación estratégica fue reabierta legítimamente por Q04 mediante `GATE-NH-01`.
 
-Esto no implica todavía:
+Q05 ha reducido posteriormente `F-PROS-MU-02` en el caso ensayado y no ha demostrado una nueva pérdida humana independiente.
+
+Por tanto, el estado vigente no equivale todavía ni a:
+
+```text
+nuevo horizonte derivado
+```
+
+ni a:
+
+```text
+retorno formal a suficiencia sin siguiente horizonte
+```
+
+Esto tampoco implica:
 
 ```text
 P6 derivado
@@ -810,8 +924,8 @@ Architecture derivada
 Implementation derivada
 ```
 
-La siguiente actuación justificable consiste en reducir `F-PROS-MU-02` para determinar cuál es la mínima diferencia funcional necesaria para que una segunda persona pueda continuar, desde una instancia real distinta, la trayectoria colaborativa iniciada por otra.
+La siguiente actuación justificable consiste en reevaluar el residuo posterior a Q05 para determinar si permanece alguna pérdida humana independiente y discriminable que justifique mantener abierta la derivación estratégica.
 
 Próxima cuestión estratégica:
 
-> **¿Cuál es la mínima información y la mínima mediación necesarias para hacer disponible a B el antecedente colaborativo suficiente para continuar la misma trayectoria desde una instancia real distinta, sin presuponer todavía la solución técnica?**
+> **Después de demostrar que `F-PROS-MU-02` puede reducirse mediante `MIN-CC-01 + MED-CC-01` en una prueba real, ¿queda alguna pérdida humana independiente y discriminable que justifique un nuevo horizonte, o debe restablecerse una situación de suficiencia sin siguiente horizonte derivado?**
