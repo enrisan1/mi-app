@@ -452,15 +452,26 @@ nueva pérdida humana independiente derivada de Q05
 
 derivación estratégica
 → reabierta históricamente por Q04
-→ pendiente de reevaluación posterior a Q05
+→ cerrada post-Q05
+
+residuo humano independiente post-Q05
+→ no demostrado
+
+nueva candidata para GATE-NH-01
+→ no identificada
 
 siguiente horizonte
 → no derivado
+
+suficiencia sin siguiente horizonte derivado
+→ restablecida
 ```
 
 No existe actualmente un hueco identificado que obligue a reabrir V1.
 
 Q05 no invalida que `GATE-NH-01` fuese superado en Q04; demuestra posteriormente que la diferencia que provocó esa reapertura puede reducirse, en el caso ensayado, mediante un antecedente colaborativo mínimo y una mediación explícita.
+
+La reevaluación posterior documentada en `42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md` determina que no queda demostrado un residuo humano independiente que justifique mantener abierta la derivación estratégica, por lo que se restablece la situación de suficiencia sin siguiente horizonte derivado.
 
 ---
 
@@ -588,16 +599,19 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 6. leer 41-CIERRE_PROS_MU_Q05_CONTINUIDAD_COLABORATIVA_INTERDISPOSITIVO.md
    como cierre experimental vigente de Q05;
 
-7. comprobar si existe evidencia posterior
+7. leer 42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md
+   como cierre de la reevaluación post-Q05 y restauración de suficiencia;
+
+8. comprobar si existe evidencia posterior
    que obligue a revisar este estado consolidado;
 
-8. si aparece una candidata nueva,
+9. si aparece una candidata nueva,
    comprobar primero GATE-NH-01;
 
-9. sólo si existe fundamento suficiente,
+10. sólo si existe fundamento suficiente,
    abrir una nueva investigación estratégica;
 
-10. no abrir automáticamente P6,
+11. no abrir automáticamente P6,
     nuevo Product Value,
     nueva capacidad,
     nueva Realization,
@@ -881,18 +895,27 @@ Architecture
 Implementation
 → no derivada
 
+residuo humano independiente post-Q05
+→ NO DEMOSTRADO
+
+nueva candidata para GATE-NH-01
+→ NO IDENTIFICADA
+
 estado estratégico
 → REAPERTURA HISTÓRICA POR Q04
 → DIFERENCIA REDUCIDA EN Q05
-→ PENDIENTE DE REEVALUACIÓN POSTERIOR A Q05
+→ REEVALUACIÓN POST-Q05 CERRADA
+→ DERIVACIÓN ESTRATÉGICA CERRADA POST-Q05
 
-siguiente obligación
-→ determinar si queda alguna pérdida humana independiente
-  que justifique un nuevo horizonte
+siguiente horizonte
+→ NO DERIVADO
+
+suficiencia sin siguiente horizonte derivado
+→ RESTABLECIDA
 
 reapertura estratégica
 → producida mediante GATE-NH-01 en Q04
-→ no equivale por sí sola a un nuevo horizonte
+→ cerrada tras la reducción y reevaluación post-Q05
 
 TABLERO MAESTRO
 ✓ actualizado
@@ -900,23 +923,28 @@ TABLERO MAESTRO
 
 La derivación estratégica fue reabierta legítimamente por Q04 mediante `GATE-NH-01`.
 
-Q05 ha reducido posteriormente `F-PROS-MU-02` en el caso ensayado y no ha demostrado una nueva pérdida humana independiente.
+Q05 redujo posteriormente `F-PROS-MU-02` en el caso ensayado y no demostró una nueva pérdida humana independiente.
 
-Por tanto, el estado vigente no equivale todavía ni a:
+La reevaluación posterior documentada en `42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md` determina que no queda demostrado ningún residuo humano independiente y discriminable que justifique mantener abierta esa derivación.
+
+Por tanto:
 
 ```text
-nuevo horizonte derivado
+DERIVACIÓN ESTRATÉGICA
+→ CERRADA POST-Q05
+
+SIGUIENTE HORIZONTE
+→ NO DERIVADO
+
+SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ RESTABLECIDA
 ```
 
-ni a:
+Esto no implica:
 
 ```text
-retorno formal a suficiencia sin siguiente horizonte
-```
-
-Esto tampoco implica:
-
-```text
+proyecto terminado
+PLATFORM_VISION completamente realizada
 P6 derivado
 nueva capacidad derivada
 nueva Realization derivada
@@ -924,8 +952,8 @@ Architecture derivada
 Implementation derivada
 ```
 
-La siguiente actuación justificable consiste en reevaluar el residuo posterior a Q05 para determinar si permanece alguna pérdida humana independiente y discriminable que justifique mantener abierta la derivación estratégica.
+`GATE-NH-01` permanece disponible como condición de futura reapertura si aparece nueva evidencia que satisfaga nuevamente sus requisitos.
 
 Próxima cuestión estratégica:
 
-> **Después de demostrar que `F-PROS-MU-02` puede reducirse mediante `MIN-CC-01 + MED-CC-01` en una prueba real, ¿queda alguna pérdida humana independiente y discriminable que justifique un nuevo horizonte, o debe restablecerse una situación de suficiencia sin siguiente horizonte derivado?**
+> **No existe actualmente una siguiente cuestión estratégica derivada que obligue a abrir un nuevo horizonte. Una nueva derivación deberá originarse únicamente si aparece nueva evidencia humana independiente y discriminable que satisfaga nuevamente `GATE-NH-01`.**
