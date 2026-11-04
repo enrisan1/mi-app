@@ -14,6 +14,11 @@ type CollaborativeState = {
   secondContribution: Contribution | null;
 };
 
+type MinimalCollaborativeAntecedent = {
+  sharedResult: string;
+  firstContribution: Contribution;
+};
+
 const INITIAL_STATE: CollaborativeState = {
   sharedResult: "",
   firstContribution: null,
@@ -22,6 +27,60 @@ const INITIAL_STATE: CollaborativeState = {
 
 function hasContent(value: string): boolean {
   return value.trim().length > 0;
+}
+
+function parseMinimalCollaborativeAntecedent(
+  value: string,
+): MinimalCollaborativeAntecedent | null {
+  try {
+    const parsed: unknown = JSON.parse(value);
+
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      !("sharedResult" in parsed) ||
+      !("firstContribution" in parsed)
+    ) {
+      return null;
+    }
+
+    const candidate = parsed as {
+      sharedResult?: unknown;
+      firstContribution?: unknown;
+    };
+
+    if (
+      typeof candidate.sharedResult !== "string" ||
+      !hasContent(candidate.sharedResult) ||
+      typeof candidate.firstContribution !== "object" ||
+      candidate.firstContribution === null
+    ) {
+      return null;
+    }
+
+    const contribution = candidate.firstContribution as {
+      participant?: unknown;
+      content?: unknown;
+    };
+
+    if (
+      contribution.participant !== "A" ||
+      typeof contribution.content !== "string" ||
+      !hasContent(contribution.content)
+    ) {
+      return null;
+    }
+
+    return {
+      sharedResult: candidate.sharedResult,
+      firstContribution: {
+        participant: "A",
+        content: contribution.content,
+      },
+    };
+  } catch {
+    return null;
+  }
 }
 
 export function CollaborationExperience() {
@@ -34,6 +93,10 @@ export function CollaborationExperience() {
   const [firstContributionInput, setFirstContributionInput] =
     useState("");
   const [secondContributionInput, setSecondContributionInput] =
+    useState("");
+  const [transferableAntecedent, setTransferableAntecedent] =
+    useState("");
+  const [receivedAntecedentInput, setReceivedAntecedentInput] =
     useState("");
 
   const hasSharedResult = hasContent(state.sharedResult);
@@ -65,6 +128,40 @@ export function CollaborationExperience() {
           }
         >
           Constituir resultado compartido
+        </button>
+
+        <hr />
+
+        <label>
+          Antecedente transferible recibido
+          <textarea
+            value={receivedAntecedentInput}
+            onChange={(event) =>
+              setReceivedAntecedentInput(event.target.value)
+            }
+          />
+        </label>
+
+        <button
+          type="button"
+          disabled={!hasContent(receivedAntecedentInput)}
+          onClick={() => {
+            const antecedent = parseMinimalCollaborativeAntecedent(
+              receivedAntecedentInput,
+            );
+
+            if (antecedent === null) {
+              return;
+            }
+
+            setState({
+              sharedResult: antecedent.sharedResult,
+              firstContribution: antecedent.firstContribution,
+              secondContribution: null,
+            });
+          }}
+        >
+          Recibir antecedente transferible
         </button>
       </main>
     );
@@ -161,6 +258,33 @@ export function CollaborationExperience() {
               <span>{state.firstContribution.content}</span>
             </p>
           </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              const firstContribution = state.firstContribution;
+
+              if (firstContribution === null) {
+                return;
+              }
+
+              const antecedent: MinimalCollaborativeAntecedent = {
+                sharedResult: state.sharedResult,
+                firstContribution,
+              };
+
+              setTransferableAntecedent(JSON.stringify(antecedent));
+            }}
+          >
+            Generar antecedente transferible
+          </button>
+
+          {transferableAntecedent !== "" && (
+            <label>
+              Antecedente transferible X-CC-01
+              <textarea readOnly value={transferableAntecedent} />
+            </label>
+          )}
 
           {state.secondContribution === null ? (
             <>
