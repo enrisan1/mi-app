@@ -602,16 +602,22 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
 7. leer 42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md
    como cierre de la reevaluación post-Q05 y restauración de suficiencia;
 
-8. comprobar si existe evidencia posterior
-   que obligue a revisar este estado consolidado;
+8. leer 54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md
+   como restauración explícita de la convergencia planificada post-T1;
 
-9. si aparece una candidata nueva,
-   comprobar primero GATE-NH-01;
+9. comprobar si existe alguna dependencia necesaria todavía abierta
+   de un objetivo o compromiso estratégico vigente;
 
-10. sólo si existe fundamento suficiente,
-   abrir una nueva investigación estratégica;
+10. comprobar si existe evidencia posterior
+    que obligue a revisar el estado consolidado;
 
-11. no abrir automáticamente P6,
+11. si aparece una candidata nueva por evidencia emergente,
+    comprobar primero GATE-NH-01;
+
+12. sólo si existe fundamento positivo suficiente,
+    derivar la actuación estratégica que corresponda;
+
+13. no abrir automáticamente P6,
     nuevo Product Value,
     nueva capacidad,
     nueva Realization,
@@ -619,14 +625,14 @@ Si el trabajo se interrumpe después de este punto, la reanudación deberá come
     ni Implementation.
 ```
 
-Condición provisional de reapertura:
+Condición de reapertura por evidencia emergente:
 
 ```text
 GATE-NH-01
 — Gate de nuevo horizonte
 ```
 
-Para justificar una nueva investigación estratégica deberá existir al menos:
+Para justificar una reapertura estratégica por evidencia emergente deberá existir al menos:
 
 ```text
 caso concreto
@@ -956,7 +962,7 @@ Implementation derivada
 
 Próxima cuestión estratégica:
 
-> **No existe actualmente una siguiente cuestión estratégica derivada que obligue a abrir un nuevo horizonte. Una nueva derivación deberá originarse únicamente si aparece nueva evidencia humana independiente y discriminable que satisfaga nuevamente `GATE-NH-01`.**
+> **No existe actualmente una siguiente cuestión estratégica derivada que obligue a abrir un nuevo horizonte. `GATE-NH-01` permanece como condición de reapertura ante nueva evidencia humana independiente y discriminable. Esto no excluye actuaciones estratégicamente derivadas desde objetivos, compromisos, dependencias o requisitos vigentes cuando exista fundamento positivo suficiente.**
 
 # 18. Actualización tras el cierre del panorama externo
 
@@ -1082,6 +1088,15 @@ PANORAMA EXTERNO PRIORITARIO
 → COMPLETADO EN L-EXT-01…L-EXT-05
 ```
 
-La siguiente cuestión estratégica permanece sin derivar.
+El cierre del panorama externo no deriva por sí mismo un nuevo horizonte.
 
-Una nueva derivación deberá originarse únicamente si aparece nueva evidencia humana independiente y discriminable que satisfaga nuevamente las condiciones de reapertura de `GATE-NH-01`.
+`GATE-NH-01` permanece disponible para una futura reapertura basada en nueva
+evidencia humana independiente y discriminable.
+
+La continuidad estratégica también puede proceder, sin embargo, de una
+dependencia necesaria de un objetivo o compromiso vigente cuando exista
+fundamento positivo suficiente.
+
+La estrategia global post-T1 y la próxima dependencia actualmente identificada
+quedan consolidadas en
+`54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md`.

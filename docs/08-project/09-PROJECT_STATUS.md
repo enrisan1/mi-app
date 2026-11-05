@@ -5350,9 +5350,48 @@ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
 
 No existe actualmente una siguiente actuación funcional o estratégica automáticamente derivada.
 
-Una actuación posterior deberá obtener fundamento positivo independiente mediante nueva evidencia, una pérdida observada, una necesidad material, una incompatibilidad, un fallo relevante, una oportunidad suficientemente justificada u otro resultado capaz de modificar una decisión actualmente consolidada.
+Una actuación posterior deberá disponer de fundamento positivo suficiente.
 
-La ausencia de una siguiente actuación automáticamente derivada constituye un estado válido del proyecto.
+Ese fundamento puede proceder de dos ramas distintas:
+
+```text
+CONVERGENCIA PLANIFICADA
+→ dependencia necesaria de un objetivo o compromiso estratégico vigente
+→ requisito necesario para un hito previamente justificado
+→ oportunidad suficientemente fundamentada
+
+EVIDENCIA EMERGENTE
+→ nueva evidencia
+→ pérdida observada
+→ necesidad material
+→ incompatibilidad
+→ fallo relevante
+→ otra diferencia suficientemente discriminable
+```
+
+En la segunda rama, `GATE-NH-01` permanece disponible cuando corresponda una
+reapertura por nueva evidencia humana independiente y discriminable.
+
+La ausencia de una siguiente actuación automáticamente derivada continúa siendo
+un estado válido del proyecto.
+
+Sin embargo, no implica ausencia de toda actuación estratégicamente derivable.
+
+La estrategia global de continuidad post-T1 queda consolidada en:
+
+```text
+54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md
+```
+
+La próxima dependencia actualmente identificada es:
+
+```text
+DEP-PV005-01
+
+Determinar si existe ya una realización suficiente
+para satisfacer el mínimo comprometido por PV-005
+o si permanece una insuficiencia realizativa concreta.
+```
 
 Por tanto:
 
@@ -5361,8 +5400,11 @@ EXPANSIÓN FUNCIONAL
 → NO DERIVADA
 
 NUEVA INVESTIGACIÓN ESTRATÉGICA
-→ NO DERIVADA
+→ NO DERIVADA AUTOMÁTICAMENTE
 
 SIGUIENTE ACTUACIÓN AUTOMÁTICA
 → NINGUNA
+
+SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
+→ DEP-PV005-01
 ```
