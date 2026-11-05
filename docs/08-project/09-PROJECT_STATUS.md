@@ -5200,3 +5200,158 @@ SIGUIENTE ACTUACIÓN FUNCIONAL AUTOMÁTICA
 ```
 
 ---
+
+# Actualización del estado vigente — 05/11/2026
+
+## Reevaluación posterior a Q04 y Q05
+
+Después del cierre post-V1 se realizó una prueba prospectiva adicional sobre continuidad colaborativa entre instancias reales distintas.
+
+En `Q04` se demostró una diferencia humana independiente:
+
+```text
+F-PROS-MU-02
+→ indisponibilidad del estado colaborativo necesario
+  para la continuación entre instancias reales distintas
+```
+
+La diferencia superó legítimamente `GATE-NH-01` en ese momento y reabrió la derivación estratégica.
+
+Posteriormente, `Q05` demostró que la diferencia podía reducirse en el alcance ensayado mediante:
+
+```text
+MIN-CC-01
++
+MED-CC-01
+```
+
+La reevaluación consolidada en:
+
+```text
+42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md
+```
+
+determinó que no quedaba demostrado un residuo humano independiente y discriminable que justificara mantener abierta la derivación.
+
+Por tanto:
+
+```text
+DERIVACIÓN ESTRATÉGICA
+→ CERRADA POST-Q05
+
+SIGUIENTE HORIZONTE
+→ NO DERIVADO
+
+SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ RESTAURADA
+```
+
+## Cierre del panorama externo
+
+Después de la restauración de suficiencia se examinó sistemáticamente el panorama externo en `43–53`.
+
+Las cinco líneas priorizadas quedaron cerradas:
+
+```text
+L-EXT-01 — PROV-O
+→ CERRADA CON RESULTADO FAVORABLE LIMITADO
+
+L-EXT-02 — Web Annotation
+→ CERRADA CON RESULTADO FAVORABLE LIMITADO
+
+L-EXT-03 — RO-Crate
+→ CERRADA CON RESULTADO FAVORABLE LIMITADO
+
+L-EXT-04 — objetos tipados
+→ CERRADA CON RESULTADO FAVORABLE LIMITADO
+
+L-EXT-05 — IA verificable
+→ CERRADA CON RESULTADO FAVORABLE LIMITADO
+```
+
+Estos resultados amplían el repertorio conceptual y experimental disponible, pero no constituyen por sí mismos nuevas capacidades derivadas del producto.
+
+No se ha demostrado mediante ellos:
+
+```text
+nueva pérdida humana independiente
+nuevo residuo humano independiente
+nueva candidata para GATE-NH-01
+P6
+nueva capacidad
+nueva Realization
+Architecture
+Implementation
+nuevo horizonte estratégico
+```
+
+## Estado estratégico vigente
+
+El estado estratégico consolidado se encuentra en:
+
+```text
+29-TABLERO_MAESTRO_DEL_PROYECTO.md
+```
+
+Ese documento constituye la referencia principal para el estado estratégico vigente.
+
+El estado actual puede resumirse como:
+
+```text
+PROJECT CHARTER
+→ vigente
+
+PLATFORM_VISION
+→ vigente como horizonte orientador
+
+V1
+→ suficientemente realizada
+
+T1
+→ cerrado
+
+Q04
+→ diferencia humana independiente históricamente demostrada
+→ GATE-NH-01 históricamente superado
+
+Q05
+→ diferencia reducida en el alcance ensayado
+
+post-Q05
+→ suficiencia restaurada
+
+L-EXT-01…L-EXT-05
+→ cerradas con resultado favorable limitado
+
+DERIVACIÓN ESTRATÉGICA
+→ CERRADA
+
+SIGUIENTE HORIZONTE
+→ NO DERIVADO
+
+SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ MANTENIDA
+```
+
+`GATE-NH-01` permanece disponible para una futura reapertura si aparece nueva evidencia humana independiente y discriminable.
+
+## Punto de reanudación vigente
+
+No existe actualmente una siguiente actuación funcional o estratégica automáticamente derivada.
+
+Una actuación posterior deberá obtener fundamento positivo independiente mediante nueva evidencia, una pérdida observada, una necesidad material, una incompatibilidad, un fallo relevante, una oportunidad suficientemente justificada u otro resultado capaz de modificar una decisión actualmente consolidada.
+
+La ausencia de una siguiente actuación automáticamente derivada constituye un estado válido del proyecto.
+
+Por tanto:
+
+```text
+EXPANSIÓN FUNCIONAL
+→ NO DERIVADA
+
+NUEVA INVESTIGACIÓN ESTRATÉGICA
+→ NO DERIVADA
+
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+```
