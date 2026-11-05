@@ -957,3 +957,120 @@ Implementation derivada
 Próxima cuestión estratégica:
 
 > **No existe actualmente una siguiente cuestión estratégica derivada que obligue a abrir un nuevo horizonte. Una nueva derivación deberá originarse únicamente si aparece nueva evidencia humana independiente y discriminable que satisfaga nuevamente `GATE-NH-01`.**
+
+# 18. Actualización tras el cierre del panorama externo
+
+Después de la restauración de suficiencia post-Q05 se realizó un examen externo sistemático documentado en `43–53`.
+
+El examen abordó cinco líneas:
+
+```text
+L-EXT-01 — PROV-O
+→ procedencia y reconstrucción de trayectoria
+
+L-EXT-02 — Web Annotation
+→ anclaje granular de partes concretas
+
+L-EXT-03 — RO-Crate
+→ composición, autodescripción y portabilidad
+
+L-EXT-04 — objetos tipados
+→ estructura semántica consultable
+
+L-EXT-05 — IA verificable
+→ propuesta asistida sometida a evidencia y validación
+```
+
+Las cinco líneas han quedado cerradas con resultado favorable limitado.
+
+Su resultado no consiste en cinco nuevas capacidades derivadas del producto.
+
+Consiste en un repertorio conceptual y experimental disponible para futuras derivaciones si una necesidad propia del proyecto vuelve a requerir alguno de estos mecanismos.
+
+El efecto estratégico del panorama externo es:
+
+```text
+nueva pérdida humana independiente
+→ NO DEMOSTRADA
+
+nuevo residuo humano independiente
+→ NO IDENTIFICADO
+
+nueva candidata para GATE-NH-01
+→ NO IDENTIFICADA
+
+reapertura de GATE-NH-01
+→ NO PRODUCIDA
+
+P6
+→ NO DERIVADO
+
+nueva capacidad
+→ NO DERIVADA
+
+nueva Realization
+→ NO DERIVADA
+
+Architecture
+→ NO DERIVADA
+
+Implementation
+→ NO DERIVADA
+
+siguiente horizonte
+→ NO DERIVADO
+```
+
+Los resultados externos no invalidan la restauración de suficiencia documentada en `42-REEVALUACION_RESIDUO_POST_Q05_Y_RESTAURACION_DE_SUFICIENCIA.md`.
+
+Debe mantenerse la dirección de derivación:
+
+```text
+necesidad o pérdida propia demostrada
+→ selección del mecanismo externo pertinente
+→ prueba específica
+→ eventual derivación
+```
+
+y no la dirección inversa:
+
+```text
+tecnología o estándar disponible
+→ búsqueda posterior de una función que justifique incorporarlo
+```
+
+`GATE-NH-01` conserva su historia:
+
+```text
+Q04
+→ GATE-NH-01 SUPERADO legítimamente
+
+Q05
+→ F-PROS-MU-02 reducida en el alcance ensayado
+
+post-Q05
+→ derivación estratégica cerrada
+
+panorama externo 43–53
+→ no produce nueva reapertura
+```
+
+Por tanto, el estado estratégico vigente después del cierre completo del panorama externo es:
+
+```text
+DERIVACIÓN ESTRATÉGICA
+→ CERRADA
+
+SIGUIENTE HORIZONTE
+→ NO DERIVADO
+
+SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
+→ MANTENIDA
+
+PANORAMA EXTERNO PRIORITARIO
+→ COMPLETADO EN L-EXT-01…L-EXT-05
+```
+
+La siguiente cuestión estratégica permanece sin derivar.
+
+Una nueva derivación deberá originarse únicamente si aparece nueva evidencia humana independiente y discriminable que satisfaga nuevamente las condiciones de reapertura de `GATE-NH-01`.
