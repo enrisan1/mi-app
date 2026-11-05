@@ -5250,6 +5250,17 @@ SUFICIENCIA SIN SIGUIENTE HORIZONTE DERIVADO
 
 Después de la restauración de suficiencia se examinó sistemáticamente el panorama externo en `43–53`.
 
+El conocimiento externo reutilizable resultante se conserva de forma sintética en:
+
+```text
+EXTERNAL_RADAR.md
+→ referencia estratégica auxiliar
+→ no canónica para derivación
+→ punto de seguimiento y eventual reactivación de líneas externas
+```
+
+El radar no sustituye al Tablero Maestro ni a los documentos fuente 43–53.
+
 Las cinco líneas priorizadas quedaron cerradas:
 
 ```text

@@ -962,6 +962,17 @@ Próxima cuestión estratégica:
 
 Después de la restauración de suficiencia post-Q05 se realizó un examen externo sistemático documentado en `43–53`.
 
+El conocimiento externo reutilizable resultante se mantiene de forma sintética en:
+
+```text
+EXTERNAL_RADAR.md
+→ referencia estratégica auxiliar
+→ no canónica para derivación
+→ memoria operativa de oportunidades externas y condiciones de reactivación
+```
+
+El radar no modifica el estado estratégico por sí mismo y no sustituye los documentos fuente 43–53.
+
 El examen abordó cinco líneas:
 
 ```text
