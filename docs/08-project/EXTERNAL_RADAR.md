@@ -69,6 +69,93 @@ RESULTADO EXTERNO FAVORABLE
 NECESIDAD ACTUAL DEL PRODUCTO
 ```
 
+## 2.1. Nivel de autoridad
+
+`EXTERNAL_RADAR.md` pertenece al cuerpo estratégico del proyecto en sentido amplio, pero no constituye una fuente estratégica canónica de derivación.
+
+Su nivel de autoridad es:
+
+```text
+REFERENCIA ESTRATÉGICA AUXILIAR
+→ operativa
+→ informativa
+→ no normativa para derivación
+```
+
+El radar se encuentra subordinado a los documentos que establecen o consolidan el marco estratégico del proyecto, entre ellos:
+
+```text
+00-PROJECT_CHARTER.md
+→ marco constitutivo
+
+01-PLATFORM_VISION.md
+→ horizonte de producto
+
+11-ESTRATEGIA_DE_CONVERGENCIA_AL_PRODUCTO_FINAL.md
+→ estrategia de convergencia
+
+12-DELIMITACION_DE_V1.md
+→ alcance de V1
+
+13-MAPA_DE_CAPACIDADES_DE_V1.md
+→ capacidades de V1
+
+14-MAPA_DE_DEPENDENCIAS_DE_V1.md
+→ dependencias de V1
+
+15-CRITERIOS_DE_FINALIZACION_DE_V1.md
+→ criterios de finalización
+
+16-ESTADO_ACTUAL_DE_V1.md
+→ estado consolidado de V1
+
+29-TABLERO_MAESTRO_DEL_PROYECTO.md
+→ estado estratégico vigente e integración de resultados
+```
+
+Por tanto, una contradicción entre el radar y una fuente estratégica canónica no deberá resolverse otorgando prioridad al radar por ser más reciente.
+
+Deberá revisarse la entrada del radar y determinar si:
+
+```text
+la oportunidad externa
+→ continúa siendo compatible con el marco estratégico vigente
+
+o
+
+el marco estratégico
+→ ha sido modificado legítimamente mediante una derivación independiente
+```
+
+La presencia de una entrada en este documento tampoco puede utilizarse como fundamento suficiente para modificar por sí sola:
+
+```text
+PROJECT_CHARTER
+PLATFORM_VISION
+Product Value
+V1
+capacidades
+criterios
+roadmap
+Realization
+Architecture
+Implementation
+nuevo horizonte estratégico
+```
+
+En síntesis:
+
+```text
+EXTERNAL_RADAR
+→ conserva conocimiento externo reutilizable
+
+DOCUMENTOS ESTRATÉGICOS CANÓNICOS
+→ establecen el marco y los compromisos del proyecto
+
+TABLERO MAESTRO
+→ consolida el estado estratégico vigente
+```
+
 ---
 
 # 3. Dirección de derivación
