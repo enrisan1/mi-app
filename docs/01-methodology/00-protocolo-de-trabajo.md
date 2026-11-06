@@ -10,6 +10,17 @@ disciplina documental específica dentro de esta metodología y se
 define de forma independiente en
 `99-protocolo-de-consolidacion-documental.md`.
 
+El procedimiento de continuidad estratégica posterior al cierre de una
+investigación, prueba, reducción, Realization o actuación estratégica se define
+de forma específica en:
+
+`17-manual-de-continuidad-estrategica.md`
+
+Este manual determina cómo comprobar, después de cada cierre, si existe una
+actuación automáticamente derivada, una actuación estratégicamente derivada o
+un estado legítimo sin nueva actuación, sin sustituir los principios generales
+de este protocolo.
+
 Su objetivo consiste en garantizar que todas las investigaciones, auditorías y documentos consolidados se elaboren siguiendo un procedimiento uniforme, trazable y reproducible.
 
 El protocolo no pertenece a una investigación concreta.

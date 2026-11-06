@@ -58,6 +58,9 @@ La relación de autoridad se conserva del siguiente modo:
 02-PRODUCT.md
 → compromisos de producto deliberadamente seleccionados
 
+docs/01-methodology/17-manual-de-continuidad-estrategica.md
+→ procedimiento operativo de continuidad después de cada cierre
+
 11-ESTRATEGIA_DE_CONVERGENCIA_AL_PRODUCTO_FINAL.md
 → metodología general de convergencia
 
