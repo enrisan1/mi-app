@@ -1100,3 +1100,254 @@ fundamento positivo suficiente.
 La estrategia global post-T1 y la próxima dependencia actualmente identificada
 quedan consolidadas en
 `54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md`.
+
+---
+
+# 19. Actualización estratégica post-H2
+
+La estrategia global post-T1 consolidada en:
+
+```text
+54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md
+```
+
+identificó una dependencia estratégica todavía pendiente y derivó la secuencia:
+
+```text
+DEP-PV005-01
+↓
+H1
+↓
+H2
+```
+
+La dependencia realizativa de `PV-005` fue examinada posteriormente en:
+
+```text
+55-INVESTIGACION_SUFICIENCIA_REALIZATIVA_PV005.md
+```
+
+con el resultado:
+
+```text
+PV-005
+→ satisfacción realizativa suficiente establecida
+  dentro del alcance comprometido
+
+DEP-PV005-01
+→ CERRADA
+
+H1
+→ COMPLETADO
+```
+
+La actuación restante:
+
+```text
+H2
+→ reevaluación de la matriz de satisfacción de Product
+```
+
+fue completada en:
+
+```text
+56-REEVALUACION_MATRIZ_SATISFACCION_PRODUCT_POST_I55.md
+```
+
+La reevaluación estableció:
+
+```text
+PV-001
+→ satisfacción suficiente conservada
+
+PV-002
+→ satisfacción suficiente conservada
+
+PV-003
+→ satisfacción suficiente dentro del alcance comprometido
+
+PV-004
+→ satisfacción suficiente dentro del alcance comprometido
+
+PV-005
+→ satisfacción realizativa suficiente conservada después de I55
+
+PV-006
+→ satisfacción suficiente dentro del alcance comprometido
+```
+
+Por tanto:
+
+```text
+H2
+→ CERRADO
+
+PRODUCT VIGENTE
+→ seis compromisos suficientemente satisfechos
+  dentro de sus respectivos alcances comprometidos
+
+BRECHA REALIZATIVA EFECTIVA
+→ NO DEMOSTRADA
+
+INCERTIDUMBRE DOCUMENTAL BLOQUEANTE
+→ NO IDENTIFICADA
+```
+
+El cierre de H2 no significa:
+
+```text
+proyecto terminado
+Product universalmente realizado
+plataforma final completada
+PLATFORM_VISION completamente realizada
+imposibilidad de nueva evidencia futura
+```
+
+---
+
+## 19.1 Reaplicación del Manual de continuidad estratégica
+
+Después del cierre de H2 se reaplicó:
+
+```text
+17-manual-de-continuidad-estrategica.md
+```
+
+desde el estado estratégico actualizado.
+
+La rama de convergencia planificada fue comprobada respecto de:
+
+```text
+PROJECT_CHARTER
++
+PLATFORM_VISION
++
+PRODUCT
++
+estado actual
+```
+
+sin que quedara demostrada actualmente:
+
+```text
+obligación estratégica realizativa pendiente
+dependencia necesaria pendiente
+criterio de Product todavía no satisfecho
+hito previamente justificado todavía pendiente
+```
+
+Por tanto:
+
+```text
+RAMA A — CONVERGENCIA PLANIFICADA
+→ ninguna actuación estratégicamente derivada
+  actualmente demostrada
+```
+
+La rama de evidencia emergente tampoco identifica una nueva diferencia que
+justifique reapertura:
+
+```text
+RAMA B — EVIDENCIA EMERGENTE
+→ ninguna nueva diferencia independiente identificada
+
+GATE-NH-01
+→ DISPONIBLE
+→ NO REABIERTO
+```
+
+El Roadmap conserva además:
+
+```text
+línea estratégica concreta vigente
+→ ninguna actualmente establecida
+```
+
+sin que esa ausencia obligue a generar preventivamente una nueva línea.
+
+---
+
+## 19.2 Estado estratégico resultante
+
+La aplicación conjunta del Manual produce:
+
+```text
+COMPROMISOS VIGENTES
+→ examinados
+
+CRITERIOS TODAVÍA NO SATISFECHOS
+→ ninguno actualmente demostrado dentro del Product vigente
+
+DEPENDENCIAS NECESARIAS PENDIENTES
+→ ninguna actualmente demostrada
+
+HITOS PENDIENTES
+→ ninguno actualmente identificado
+
+INCERTIDUMBRES QUE BLOQUEEN UNA DECISIÓN ESTRATÉGICA
+→ ninguna actualmente identificada
+
+NUEVA EVIDENCIA EMERGENTE
+→ ninguna actualmente identificada
+```
+
+Por tanto:
+
+```text
+DERIVACIÓN ESTRATÉGICA ABIERTA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
+→ NINGUNA ACTUALMENTE DEMOSTRADA
+
+SIGUIENTE HORIZONTE
+→ NO DERIVADO
+
+GATE-NH-01
+→ DISPONIBLE
+→ NO REABIERTO
+
+ESTADO DE CONTINUIDAD
+→ ESTABLE SIN NUEVA ACTUACIÓN JUSTIFICADA
+```
+
+Este estado no cierra el proyecto.
+
+La ausencia actual de una actuación derivada tampoco impide una continuidad
+futura cuando aparezca fundamento positivo suficiente.
+
+---
+
+## 19.3 Punto de reanudación
+
+El proyecto queda actualmente en estado estable sin actuación estratégica
+abierta.
+
+La continuidad deberá reevaluarse mediante el Manual de continuidad estratégica
+cuando aparezca fundamento positivo nuevo procedente, entre otras
+posibilidades, de:
+
+```text
+nueva evidencia relevante
+
+nuevo compromiso u objetivo suficientemente justificado
+
+modificación de Product
+
+hito previamente justificado
+
+dependencia necesaria antes no demostrada
+
+incertidumbre que bloquee una decisión estratégica
+```
+
+En ausencia de ese fundamento:
+
+```text
+no inventar artificialmente una nueva actuación
+```
+
+continúa siendo la regla operativa de continuidad.
