@@ -2078,16 +2078,239 @@ posible siguiente horizonte
 
 ---
 
+# 23. Actualización posterior — cierre de DEP-PV005-01 mediante I55
+
+Con posterioridad al cierre inicial de este documento se ejecutó la actuación
+estratégicamente derivada que aquí había quedado identificada:
+
+```text
+DEP-PV005-01
+```
+
+La investigación quedó documentada en:
+
+```text
+55-INVESTIGACION_SUFICIENCIA_REALIZATIVA_PV005.md
+```
+
+## 23.1 Resultado de I55
+
+I55 reconstruyó la cadena documental y realizativa:
+
+```text
+PV-005
+↓
+C-V1-08
+↓
+CF-V1-08
+↓
+H3 / IR-HUMAN-01
+↓
+CF-V1-08 SATISFECHO
+↓
+T1 conserva y refuerza la satisfacción
+```
+
+La evidencia permite establecer:
+
+```text
+PV-005
+→ satisfacción realizativa suficiente establecida
+  dentro del alcance comprometido
+
+DEP-PV005-01
+→ RESUELTA POR H0
+```
+
+Por tanto, la clasificación provisional de este documento:
+
+```text
+PV-005
+→ satisfacción realizativa suficiente no establecida
+```
+
+queda superada por evidencia ya existente en el corpus que I55 reconstruyó
+como una cadena completa de satisfacción.
+
+## 23.2 Naturaleza de la corrección
+
+La corrección no invalida la derivación realizada en las secciones anteriores.
+
+En el momento de elaboración de este documento era correcto afirmar:
+
+```text
+evidencia de satisfacción
+→ todavía no reconstruida suficientemente
+
+DEP-PV005-01
+→ dependencia legítimamente derivada
+```
+
+I55 resolvió posteriormente esa incertidumbre.
+
+Por tanto:
+
+```text
+derivación de DEP-PV005-01
+→ válida
+
+resultado posterior
+→ dependencia cerrada
+
+brecha aparente de PV-005
+→ reducida
+
+brecha efectiva de Product por PV-005
+→ no demostrada
+```
+
+Las secciones anteriores se conservan como trazabilidad de la derivación y no
+deben interpretarse como descripción del estado vigente después de I55.
+
+## 23.3 Matriz de Product actualizada
+
+El estado posterior a I55 queda:
+
+| Vertical | Estado actualmente establecido                                                                    |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| `PV-001` | criterio de realizabilidad satisfecho en el alcance comprometido                                  |
+| `PV-002` | satisfecho en el alcance mínimo comprometido                                                      |
+| `PV-003` | satisfacción parcial o local demostrada; mínimo comprometido pendiente de reevaluación específica |
+| `PV-004` | testigo físico suficiente y validado; mínimo comprometido pendiente de reevaluación específica    |
+| `PV-005` | satisfacción realizativa suficiente establecida en el alcance comprometido                        |
+| `PV-006` | satisfacción local demostrada; mínimo comprometido pendiente de reevaluación específica           |
+
+La expresión:
+
+```text
+pendiente de reevaluación específica
+```
+
+no significa:
+
+```text
+brecha demostrada
+```
+
+Significa únicamente que, después del resultado de I55, debe aplicarse a esas
+verticales el mismo criterio reductivo:
+
+> ¿está satisfecho el mínimo realmente comprometido por Product?
+
+## 23.4 Hito H1
+
+El hito definido anteriormente queda completado:
+
+```text
+H1 — Estado de satisfacción de PV-005
+→ COMPLETADO
+
+resultado
+→ PV-005 suficientemente satisfecha
+  dentro del alcance comprometido
+```
+
+Por tanto:
+
+```text
+DEP-PV005-01
+→ deja de ser dependencia pendiente
+```
+
+y el roadmap avanza al hito que este mismo documento ya había previsto:
+
+```text
+H2
+→ reevaluación completa de Product
+```
+
+## 23.5 Próxima actuación vigente
+
+La próxima actuación estratégicamente derivada ya no es `DEP-PV005-01`.
+
+Es:
+
+```text
+H2 — Reevaluación de la matriz de satisfacción de Product
+```
+
+con atención específica a:
+
+```text
+PV-003
+PV-004
+PV-006
+```
+
+La finalidad es determinar en cada caso:
+
+```text
+compromiso exacto de Product
+↓
+mínimo realizativo exigido
+↓
+evidencia ya existente
+↓
+¿mínimo satisfecho?
+```
+
+Esta actuación no presupone que exista una brecha.
+
+Tampoco deriva todavía:
+
+```text
+nueva capacidad
+nueva Realization
+Architecture
+Implementation
+P6
+nuevo horizonte
+```
+
+## 23.6 Estado estratégico posterior a I55
+
+```text
+PV-005
+→ satisfacción realizativa suficiente establecida
+
+DEP-PV005-01
+→ CERRADA
+
+H1
+→ COMPLETADO
+
+H2
+→ ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
+
+GATE-NH-01
+→ no reabierto
+
+P6
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+```
+
+---
+
 ## Estado del documento
 
-**Cerrado como estrategia global de convergencia post-T1.**
+**Cerrado como estrategia global de convergencia post-T1 y actualizado tras el
+cierre de I55.**
 
-El documento no cierra el proyecto.
+El documento conserva la derivación histórica de `DEP-PV005-01` y registra su
+resolución posterior.
+
+No cierra el proyecto.
 
 No declara alcanzado el producto final.
 
 No declara completamente realizada `PLATFORM_VISION`.
 
-Sí restablece el mecanismo estratégico mediante el cual el proyecto puede
-continuar deliberadamente hacia ellos sin abandonar las exigencias de
-justificación, reducción, falsación y validación.
+La actuación estratégica vigente pasa a ser:
+
+```text
+H2
+→ reevaluar la matriz restante de Product
+```

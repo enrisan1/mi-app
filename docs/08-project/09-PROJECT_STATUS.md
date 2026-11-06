@@ -5383,15 +5383,78 @@ La estrategia global de continuidad post-T1 queda consolidada en:
 54-ESTRATEGIA_GLOBAL_DE_CONVERGENCIA_POST_T1_AL_PRODUCTO_FINAL.md
 ```
 
-La próxima dependencia actualmente identificada es:
+---
+
+La dependencia estratégica identificada por esa estrategia global quedó
+posteriormente resuelta mediante:
 
 ```text
-DEP-PV005-01
-
-Determinar si existe ya una realización suficiente
-para satisfacer el mínimo comprometido por PV-005
-o si permanece una insuficiencia realizativa concreta.
+55-INVESTIGACION_SUFICIENCIA_REALIZATIVA_PV005.md
 ```
+
+El resultado establecido fue:
+
+```text
+PV-005
+→ satisfacción realizativa suficiente establecida
+  dentro del alcance comprometido
+
+DEP-PV005-01
+→ CERRADA POR H0
+
+H1
+→ COMPLETADO
+```
+
+La evidencia mostró que el mínimo realizativo de `PV-005` ya estaba satisfecho
+mediante la cadena:
+
+```text
+PV-005
+↓
+C-V1-08
+↓
+CF-V1-08
+↓
+H3 / IR-HUMAN-01
+↓
+CF-V1-08 SATISFECHO
+↓
+T1 conserva y refuerza la satisfacción
+```
+
+Por tanto, la siguiente actuación estratégicamente derivada pasa a ser el hito
+ya previsto por la estrategia global:
+
+```text
+H2
+→ reevaluación de la matriz de satisfacción de Product
+```
+
+La comprobación deberá aplicarse especialmente a:
+
+```text
+PV-003
+PV-004
+PV-006
+```
+
+y deberá preguntar en cada caso:
+
+```text
+compromiso exacto de Product
+↓
+mínimo realizativo exigido
+↓
+evidencia ya existente
+↓
+¿mínimo satisfecho?
+```
+
+Esta reevaluación no presupone una brecha.
+
+Tampoco deriva todavía una nueva capacidad, Realization, Architecture,
+Implementation, P6 ni nuevo horizonte.
 
 Por tanto:
 
@@ -5405,6 +5468,12 @@ NUEVA INVESTIGACIÓN ESTRATÉGICA
 SIGUIENTE ACTUACIÓN AUTOMÁTICA
 → NINGUNA
 
+DEP-PV005-01
+→ CERRADA
+
+H1
+→ COMPLETADO
+
 SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
-→ DEP-PV005-01
+→ H2 — REEVALUACIÓN DE LA MATRIZ DE SATISFACCIÓN DE PRODUCT
 ```
