@@ -127,7 +127,9 @@ describe("App", () => {
 
     expect(screen.getByRole("heading", { name: "Ahora" })).toBeInTheDocument();
 
-    expect(screen.getByLabelText("Introduce un texto libre")).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("Introduce un texto libre"),
+    ).toBeInTheDocument();
 
     expect(screen.getByRole("button", { name: "Crear" })).toBeInTheDocument();
   });
@@ -374,5 +376,170 @@ describe("App", () => {
     expect(screen.queryByText(FIRST_DIFFERENCE)).not.toBeInTheDocument();
     expect(screen.queryByText(SECOND_DIFFERENCE)).not.toBeInTheDocument();
     expect(screen.queryByText(THIRD_DIFFERENCE)).not.toBeInTheDocument();
+  });
+});
+
+describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  it("permite continuar explícitamente desde Y como trabajo actual sin constituir S1 automáticamente", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "X");
+
+    render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      }),
+      "Y",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/actuación actual/i)).toHaveTextContent("Y");
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).toHaveTextContent("Y");
+
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y");
+    expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+  });
+
+  it("mantiene disponible después de una interrupción la continuación post-V1 desde Y", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "X");
+
+    const firstExecution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      }),
+      "Y",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y");
+    expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+
+    firstExecution.unmount();
+
+    render(<App />);
+
+    expect(screen.getByLabelText(/aportación anterior/i)).toHaveTextContent(
+      "Y",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).toHaveTextContent("Y");
+
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y");
+    expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+  });
+
+  it("preserva y retoma una trayectoria post-V1 existente sin sobrescribirla con el nuevo trabajo disponible", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify({
+        current: "R2 existente",
+        stable: {
+          id: "S1",
+          content: "R1 existente",
+        },
+        published: {
+          id: "P1",
+          sourceStableId: "S1",
+          content: "R1 existente",
+        },
+        evaluation: {
+          publishedId: "P1",
+          criterion: "C1",
+          evidence: "E1",
+        },
+        collaboration: {
+          sourcePublishedId: "P1",
+          sharedResult: "R1 existente",
+          firstContribution: {
+            participant: "A",
+            content: "A1",
+          },
+          secondContribution: {
+            participant: "B",
+            content: "B1",
+          },
+        },
+        artifact: {
+          id: "X1",
+          sourcePublishedId: "P1",
+          content: "R1 existente",
+        },
+        received: {
+          sourceArtifactId: "X1",
+          content: "R1 existente",
+        },
+      }),
+    );
+
+    render(<App />);
+
+    expect(
+      screen.queryByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    ).not.toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).toHaveTextContent("R2 existente");
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).not.toHaveTextContent("Y nuevo");
   });
 });

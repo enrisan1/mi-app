@@ -5693,3 +5693,190 @@ no inventar artificialmente una nueva actuación
 ```
 
 continúa siendo la regla operativa de continuidad.
+
+---
+
+## Reevaluación correctiva de la continuidad post-H2
+
+La conclusión anterior:
+
+```text
+ESTADO DE CONTINUIDAD
+→ ESTABLE SIN NUEVA ACTUACIÓN JUSTIFICADA
+```
+
+queda conservada como resultado histórico de la reaplicación del Manual realizada
+inmediatamente después del cierre de H2.
+
+No queda, sin embargo, conservada como descripción suficiente del estado material
+posteriormente auditado.
+
+La reevaluación desarrollada en:
+
+```text
+57-REEVALUACION_CORRECTIVA_CONTINUIDAD_POST_H2_Y_CONVERGENCIA_MATERIAL_PM10.md
+```
+
+discriminó una diferencia que la reaplicación anterior no había aislado:
+
+```text
+realización funcional válida disponible
+≠
+realización materialmente convergida
+  al recorrido ordinario del producto
+```
+
+En particular:
+
+```text
+R-U2-M1
+→ participaba en la entrada ordinaria
+
+R-INT-01 / trayectoria post-V1 integrada
+→ válida y realizada
+→ pero segregada del recorrido ordinario
+```
+
+La diferencia no constituye:
+
+```text
+brecha realizativa de Product
+P6
+nuevo Product Value
+nuevo horizonte
+nueva capacidad funcional
+reapertura de H2
+reapertura de R-INT-01
+```
+
+Constituye una necesidad material localizada de convergencia susceptible de
+tratamiento mediante:
+
+```text
+PM-10 — Desarrollo guiado por necesidad productiva
+```
+
+La hipótesis mínima realizada fue:
+
+```text
+resultado disponible en R-U2-M1
+↓
+decisión humana explícita
+↓
+trayectoria post-V1 integrada
+```
+
+con dos casos materialmente distintos.
+
+Cuando no existe una trayectoria post-V1 persistida:
+
+```text
+trabajo disponible Y
+↓
+“Continuar con este trabajo”
+↓
+Y pasa a ser current inicial
+↓
+S1 no se constituye automáticamente
+```
+
+Cuando ya existe una trayectoria post-V1 persistida:
+
+```text
+“Retomar trayectoria integrada existente”
+↓
+se recupera la trayectoria previa
+↓
+Y no la sobrescribe
+```
+
+La continuidad desde R-U2-M1 permanece disponible también después de una
+interrupción, mediante la recuperación del último resultado persistido.
+
+La actuación ha sido validada mediante:
+
+```text
+suites directamente afectadas
+→ 4 archivos
+→ 67 tests superados
+
+suite global
+→ 37 archivos
+→ 323 tests superados
+
+build de producción
+→ correcto
+```
+
+Por tanto, el estado vigente pasa a distinguir:
+
+```text
+H2
+→ CERRADO
+
+Product vigente
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+conclusión histórica post-H2
+→ “estable sin nueva actuación justificada”
+→ conservada como registro de aquella reaplicación
+
+reevaluación correctiva posterior
+→ demuestra una necesidad material de convergencia
+  no discriminada anteriormente
+
+PM-10
+→ aplicado
+
+convergencia mínima R-U2-M1 → post-V1
+→ REALIZADA Y VALIDADA
+
+P6
+→ NO DERIVADO
+
+nuevo Product Value
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+```
+
+## Punto de reanudación vigente después de la reevaluación correctiva
+
+El proyecto ya no se encuentra descrito suficientemente por:
+
+```text
+esperar nueva evidencia antes de cualquier nueva actuación
+```
+
+porque la actuación de convergencia material identificada ha sido ya realizada.
+
+El estado vigente requiere ahora:
+
+```text
+incorporar esta reevaluación al Tablero Maestro
+↓
+actualizar la estrategia global de convergencia
+↓
+verificar coherencia documental conjunta
+↓
+consolidar la actuación
+↓
+determinar posteriormente la siguiente diferencia material justificable
+   desde el nuevo estado resultante
+```
+
+No deberá presuponerse como siguiente actuación:
+
+```text
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+nueva investigación
+```
+
+La siguiente actuación estratégica deberá derivarse desde el estado material ya
+actualizado y no desde la conclusión post-H2 que ha quedado corregida en su
+alcance.

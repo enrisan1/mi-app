@@ -14,12 +14,14 @@ type ResumeExperienceProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
   thirdResolution?: EstablishedResolution;
+  onResult?: (result: SituatedResult) => void;
 };
 
 export function ResumeExperience({
   resolution,
   secondResolution,
   thirdResolution,
+  onResult,
 }: ResumeExperienceProps) {
   const [restoredPrevious] = useState(() =>
     localStorageResumeRepository.loadPrevious(),
@@ -156,6 +158,7 @@ export function ResumeExperience({
 
             localStorageResumeRepository.savePrevious(nextResult.current);
             setResult(nextResult);
+            onResult?.(nextResult);
           } catch {
             // Un Y inválido no constituye X → Y.
           }

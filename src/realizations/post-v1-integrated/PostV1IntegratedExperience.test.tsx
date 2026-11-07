@@ -437,4 +437,87 @@ describe("R-INT-01 PostV1IntegratedExperience", () => {
       screen.getByLabelText("Contenido recibido"),
     ).toHaveTextContent("R1");
   });
+
+  it("starts a new integrated trajectory from an externally available current work without constituting S1", () => {
+    render(<PostV1IntegratedExperience initialCurrent="Y" />);
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).toHaveTextContent("Y");
+
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.getByRole("button", {
+        name: /constituir s1 desde r1/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("preserves an existing integrated trajectory instead of replacing it with a new initial current", () => {
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify({
+        current: "R2 existente",
+        stable: {
+          id: "S1",
+          content: "R1 existente",
+        },
+        published: {
+          id: "P1",
+          sourceStableId: "S1",
+          content: "R1 existente",
+        },
+        evaluation: {
+          publishedId: "P1",
+          criterion: "C1",
+          evidence: "E1",
+        },
+        collaboration: {
+          sourcePublishedId: "P1",
+          sharedResult: "R1 existente",
+          firstContribution: {
+            participant: "A",
+            content: "A1",
+          },
+          secondContribution: {
+            participant: "B",
+            content: "B1",
+          },
+        },
+        artifact: {
+          id: "X1",
+          sourcePublishedId: "P1",
+          content: "R1 existente",
+        },
+        received: {
+          sourceArtifactId: "X1",
+          content: "R1 existente",
+        },
+      }),
+    );
+
+    render(<PostV1IntegratedExperience initialCurrent="Y nuevo" />);
+
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).toHaveTextContent("R2 existente");
+
+    expect(
+      screen.getByLabelText("Contenido del estado estable"),
+    ).toHaveTextContent("R1 existente");
+
+    expect(
+      screen.getByLabelText("Contenido publicado"),
+    ).toHaveTextContent("R1 existente");
+
+    expect(
+      screen.getByLabelText("Contenido recibido"),
+    ).toHaveTextContent("R1 existente");
+
+    expect(document.body).not.toHaveTextContent("Y nuevo");
+  });
+
 });

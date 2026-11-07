@@ -290,22 +290,22 @@ estado revalidado de V1
 
 Resultado individual:
 
-| Criterio | T1 |
-|---|---|
-| CF-V1-01 | SATISFECHO |
-| CF-V1-02 | SATISFECHO |
+| Criterio   | T1         |
+| ---------- | ---------- |
+| CF-V1-01   | SATISFECHO |
+| CF-V1-02   | SATISFECHO |
 | CF-V1-03.a | SATISFECHO |
 | CF-V1-03.b | SATISFECHO |
 | CF-V1-04.a | SATISFECHO |
 | CF-V1-04.b | SATISFECHO |
-| CF-V1-05 | SATISFECHO |
+| CF-V1-05   | SATISFECHO |
 | CF-V1-06.a | SATISFECHO |
 | CF-V1-06.b | SATISFECHO |
 | CF-V1-06.c | SATISFECHO |
 | CF-V1-07.a | SATISFECHO |
 | CF-V1-07.b | SATISFECHO |
-| CF-V1-08 | SATISFECHO |
-| CF-V1-09 | SATISFECHO |
+| CF-V1-08   | SATISFECHO |
+| CF-V1-09   | SATISFECHO |
 
 Resultado global:
 
@@ -558,7 +558,6 @@ D-02
 ↓
 consolidación global
 ```
-
 
 Resultado consolidado:
 
@@ -1351,3 +1350,251 @@ no inventar artificialmente una nueva actuación
 ```
 
 continúa siendo la regla operativa de continuidad.
+
+---
+
+# 20. Reevaluación correctiva post-H2 y convergencia material
+
+La conclusión registrada en `19.2`:
+
+```text
+ESTADO DE CONTINUIDAD
+→ ESTABLE SIN NUEVA ACTUACIÓN JUSTIFICADA
+```
+
+queda conservada como resultado histórico de la reaplicación del Manual realizada
+inmediatamente después del cierre de H2.
+
+La auditoría posterior registrada en:
+
+```text
+57-REEVALUACION_CORRECTIVA_CONTINUIDAD_POST_H2_Y_CONVERGENCIA_MATERIAL_PM10.md
+```
+
+demostró que aquella reaplicación no había discriminado una diferencia material
+entre:
+
+```text
+realización funcional válida disponible
+```
+
+y:
+
+```text
+realización convergida al recorrido ordinario del producto
+```
+
+La diferencia identificada fue:
+
+```text
+R-U2-M1
+→ accesible desde la entrada ordinaria
+
+trayectoria post-V1 integrada
+→ válida
+→ realizada
+→ persistente
+→ pero segregada del recorrido ordinario
+```
+
+La diferencia no constituye:
+
+```text
+brecha realizativa de Product
+P6
+nuevo Product Value
+nuevo horizonte
+nueva capacidad funcional
+reapertura de H2
+reapertura de R-INT-01
+```
+
+Constituye una necesidad material localizada de convergencia tratable mediante:
+
+```text
+PM-10 — Desarrollo guiado por necesidad productiva
+```
+
+---
+
+## 20.1 Realización mínima de convergencia
+
+La actuación realizada establece:
+
+```text
+resultado disponible en R-U2-M1
+↓
+decisión humana explícita
+↓
+trayectoria post-V1 integrada
+```
+
+Cuando no existe una trayectoria post-V1 persistida:
+
+```text
+trabajo disponible Y
+↓
+“Continuar con este trabajo”
+↓
+Y se utiliza como current inicial
+↓
+S1 no se constituye automáticamente
+```
+
+La posibilidad de continuar permanece disponible después de una interrupción
+mediante la recuperación del último resultado persistido de R-U2-M1.
+
+Cuando ya existe una trayectoria post-V1 persistida:
+
+```text
+“Retomar trayectoria integrada existente”
+↓
+se recupera la trayectoria previa
+↓
+Y no sobrescribe ese estado
+```
+
+Por tanto, se conservan simultáneamente:
+
+```text
+continuidad ordinaria hacia post-V1
++
+persistencia de R-U2-M1
++
+persistencia de la trayectoria post-V1 existente
++
+decisión humana explícita
+```
+
+---
+
+## 20.2 Validación técnica
+
+La actuación ha sido comprobada mediante:
+
+```text
+suites directamente afectadas
+→ 4 archivos
+→ 67 tests superados
+
+suite global
+→ 37 archivos
+→ 323 tests superados
+
+build de producción
+→ correcto
+```
+
+No se ha observado regresión automática en la suite disponible.
+
+---
+
+## 20.3 Estado maestro actualizado
+
+El estado resultante del proyecto pasa a ser:
+
+```text
+PROJECT CHARTER
+→ vigente
+
+PLATFORM VISION
+→ vigente
+
+PRODUCT
+→ vigente
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+T0
+→ cerrado
+
+P1–P5
+→ realizados
+
+R-INT-01
+→ realizada
+→ preservada
+
+H2
+→ cerrado
+
+conclusión histórica post-H2
+→ “estable sin nueva actuación justificada”
+→ conservada como resultado de aquella reaplicación
+
+reevaluación correctiva post-H2
+→ cerrada
+
+PM-10
+→ aplicado a una necesidad material de convergencia
+
+R-U2-M1 → post-V1
+→ continuidad ordinaria mínima realizada y validada
+
+P6
+→ no derivado
+
+nuevo Product Value
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+
+GATE-NH-01
+→ disponible
+→ no reabierto
+```
+
+La satisfacción suficiente de Product y la convergencia material del producto
+ordinario permanecen como cuestiones distintas.
+
+---
+
+## 20.4 Punto de reanudación vigente
+
+El tablero ya no debe utilizar como estado operativo suficiente:
+
+```text
+ESTABLE SIN NUEVA ACTUACIÓN JUSTIFICADA
+```
+
+sin incorporar la reevaluación correctiva posterior.
+
+La secuencia vigente es:
+
+```text
+H2 cerrado
+↓
+reevaluación correctiva post-H2
+↓
+necesidad material de convergencia discriminada
+↓
+PM-10 aplicado
+↓
+construcción mínima realizada
+↓
+validación técnica satisfactoria
+```
+
+La siguiente actuación consiste en:
+
+```text
+actualizar la estrategia global de convergencia
+↓
+verificar coherencia documental conjunta
+↓
+consolidar la actuación
+↓
+determinar posteriormente la siguiente diferencia material justificable
+   desde el nuevo estado resultante
+```
+
+No queda automáticamente derivado:
+
+```text
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+nueva investigación
+```

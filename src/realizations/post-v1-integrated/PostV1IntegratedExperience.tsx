@@ -65,11 +65,25 @@ function hasContent(value: string): boolean {
   return value.trim().length > 0;
 }
 
-export function PostV1IntegratedExperience() {
+type PostV1IntegratedExperienceProps = {
+  initialCurrent?: string;
+};
+
+export function PostV1IntegratedExperience({
+  initialCurrent,
+}: PostV1IntegratedExperienceProps) {
+  const initialState: PostV1IntegratedState =
+    initialCurrent !== undefined && hasContent(initialCurrent)
+      ? {
+          ...INITIAL_STATE,
+          current: initialCurrent,
+        }
+      : INITIAL_STATE;
+
   const [state, setState] =
     useLocalStorage<PostV1IntegratedState>(
       "post-v1-integrated.state",
-      INITIAL_STATE,
+      initialState,
     );
 
   const [currentInput, setCurrentInput] = useState("");

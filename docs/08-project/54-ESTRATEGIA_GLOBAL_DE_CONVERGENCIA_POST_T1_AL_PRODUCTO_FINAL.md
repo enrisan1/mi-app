@@ -1039,14 +1039,14 @@ cerrado globalmente `PV-006`.
 
 El estado reconstruido queda:
 
-| Vertical | Estado respecto del compromiso |
-| --- | --- |
-| `PV-001` | criterio de realizabilidad satisfecho en el alcance comprometido |
-| `PV-002` | satisfecho en el alcance mínimo comprometido |
+| Vertical | Estado respecto del compromiso                                         |
+| -------- | ---------------------------------------------------------------------- |
+| `PV-001` | criterio de realizabilidad satisfecho en el alcance comprometido       |
+| `PV-002` | satisfecho en el alcance mínimo comprometido                           |
 | `PV-003` | satisfacción parcial o local demostrada; cierre general no establecido |
-| `PV-004` | testigo físico suficiente y validado; cierre global no declarado |
+| `PV-004` | testigo físico suficiente y validado; cierre global no declarado       |
 | `PV-005` | compromiso vigente; satisfacción realizativa suficiente no establecida |
-| `PV-006` | satisfacción local demostrada; cierre general no establecido |
+| `PV-006` | satisfacción local demostrada; cierre general no establecido           |
 
 Esta matriz no deriva todavía un nuevo horizonte.
 
@@ -1242,14 +1242,14 @@ PV-006
 
 La reducción provisional queda:
 
-| Vertical | Brecha de Product actualmente demostrada |
-| --- | --- |
-| `PV-001` | no |
-| `PV-002` | no |
-| `PV-003` | no demostrada; suficiencia general abierta |
-| `PV-004` | no demostrada; suficiencia local validada |
+| Vertical | Brecha de Product actualmente demostrada       |
+| -------- | ---------------------------------------------- |
+| `PV-001` | no                                             |
+| `PV-002` | no                                             |
+| `PV-003` | no demostrada; suficiencia general abierta     |
+| `PV-004` | no demostrada; suficiencia local validada      |
 | `PV-005` | candidata pendiente de comprobación específica |
-| `PV-006` | no demostrada; satisfacción local establecida |
+| `PV-006` | no demostrada; satisfacción local establecida  |
 
 Por tanto, la matriz no justifica todavía un nuevo horizonte completo.
 
@@ -2492,3 +2492,274 @@ No declara completamente realizada `PLATFORM_VISION`.
 
 La actuación estratégica siguiente queda pendiente de derivación mediante el
 Manual de continuidad estratégica.
+
+---
+
+# 25. Actualización posterior a la reevaluación correctiva post-H2
+
+Después del cierre de H2, la siguiente actuación había quedado pendiente de
+derivación mediante el Manual de continuidad estratégica.
+
+La auditoría posterior registrada en:
+
+```text
+57-REEVALUACION_CORRECTIVA_CONTINUIDAD_POST_H2_Y_CONVERGENCIA_MATERIAL_PM10.md
+```
+
+reexaminó esa continuidad desde el estado físico efectivo del producto.
+
+La reevaluación distinguió una diferencia que no había quedado aislada en la
+reaplicación inmediatamente posterior a H2:
+
+```text
+realización funcional válida disponible
+≠
+realización materialmente convergida
+  al recorrido ordinario del producto
+```
+
+En el estado auditado:
+
+```text
+R-U2-M1
+→ participaba en la entrada ordinaria
+
+R-INT-01 / trayectoria post-V1 integrada
+→ válida
+→ realizada
+→ persistente
+→ pero segregada del recorrido ordinario
+```
+
+Esta diferencia no constituye:
+
+```text
+brecha realizativa efectiva de Product
+incumplimiento de H2
+P6
+nuevo Product Value
+nuevo horizonte
+nueva capacidad funcional
+reapertura de R-INT-01
+```
+
+Constituye una necesidad material localizada de convergencia.
+
+---
+
+## 25.1 Aplicación de PM-10
+
+La necesidad material fue tratada mediante:
+
+```text
+PM-10 — Desarrollo guiado por necesidad productiva
+```
+
+siguiendo la secuencia:
+
+```text
+necesidad material
+→ trayectoria post-V1 segregada del recorrido ordinario
+
+↓
+hipótesis mínima
+→ reutilizar un resultado disponible de R-U2-M1
+  como current inicial posterior
+
+↓
+contraste con compromisos consolidados
+→ compatible con R-U2-M1
+→ compatible con R-INT-01
+→ compatible con Product
+→ compatible con PLATFORM_VISION
+
+↓
+bloqueo material conocido
+→ NO identificado
+
+↓
+construcción localizada
+→ realizada
+
+↓
+validación técnica
+→ satisfactoria
+```
+
+No fue necesaria una nueva derivación teórica, una nueva capacidad ni una nueva
+capa arquitectónica para ejecutar esta actuación localizada.
+
+---
+
+## 25.2 Convergencia material realizada
+
+La construcción resultante establece una continuidad explícita desde el
+recorrido ordinario hacia la trayectoria post-V1 integrada.
+
+Cuando no existe una trayectoria post-V1 persistida:
+
+```text
+trabajo disponible Y
+↓
+“Continuar con este trabajo”
+↓
+Y se utiliza como current inicial
+↓
+S1 no se constituye automáticamente
+```
+
+La posibilidad de continuar permanece disponible después de una interrupción,
+mediante la recuperación del último resultado persistido por R-U2-M1.
+
+Cuando ya existe una trayectoria post-V1 persistida:
+
+```text
+“Retomar trayectoria integrada existente”
+↓
+se recupera la trayectoria previa
+↓
+Y no sobrescribe ese estado
+```
+
+La actuación conserva, por tanto:
+
+```text
+R-U2-M1
++
+persistencia de sus resultados
++
+R-INT-01
++
+persistencia de la trayectoria post-V1
++
+decisión humana explícita
+```
+
+sin convertir `Y` automáticamente en:
+
+```text
+S1
+P1
+EvaluationSupport
+Collaboration
+X1
+D1
+```
+
+---
+
+## 25.3 Validación
+
+La construcción ha sido validada mediante:
+
+```text
+suites directamente afectadas
+→ 4 archivos
+→ 67 tests superados
+
+suite global
+→ 37 archivos
+→ 323 tests superados
+
+build de producción
+→ correcto
+```
+
+No se ha observado regresión automática en la suite disponible.
+
+---
+
+## 25.4 Consecuencia para la estrategia global de convergencia
+
+La secuencia estratégica queda ahora ampliada:
+
+```text
+derivación histórica de DEP-PV005-01
+↓
+cierre de I55
+↓
+derivación de H2
+↓
+cierre de H2
+↓
+reevaluación correctiva de continuidad
+↓
+necesidad material de convergencia discriminada
+↓
+PM-10 aplicado
+↓
+construcción mínima R-U2-M1 → post-V1
+↓
+validación técnica satisfactoria
+```
+
+Esto no altera retrospectivamente:
+
+```text
+el cierre de H2
+la satisfacción suficiente de Product
+el cierre de R-INT-01
+la realización de P1–P5
+```
+
+Sí modifica el estado material de convergencia del producto ordinario.
+
+La estrategia debe distinguir desde ahora:
+
+```text
+satisfacción suficiente de Product
+≠
+convergencia material completa hacia el producto final
+```
+
+La primera permanece demostrada dentro del alcance comprometido.
+
+La segunda continúa siendo una cuestión progresiva que debe evaluarse desde el
+estado físico resultante.
+
+---
+
+## Estado del documento después de la reevaluación correctiva
+
+**Cerrado como estrategia global de convergencia post-T1, actualizado tras H2 y
+tras la reevaluación correctiva de continuidad material.**
+
+El estado resultante es:
+
+```text
+H2
+→ CERRADO
+
+Product
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+reevaluación correctiva post-H2
+→ CERRADA
+
+PM-10
+→ APLICADO
+
+continuidad ordinaria mínima R-U2-M1 → post-V1
+→ REALIZADA Y VALIDADA
+
+P6
+→ NO DERIVADO
+
+nuevo Product Value
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+
+producto final
+→ NO declarado alcanzado
+
+PLATFORM_VISION
+→ NO declarada completamente realizada
+```
+
+La siguiente cuestión estratégica deberá determinarse desde este nuevo estado
+material, sin restaurar como vigente la conclusión anterior a la reevaluación
+correctiva y sin presuponer P6, Architecture, nuevo Product Value, nuevo
+horizonte o nueva investigación.
