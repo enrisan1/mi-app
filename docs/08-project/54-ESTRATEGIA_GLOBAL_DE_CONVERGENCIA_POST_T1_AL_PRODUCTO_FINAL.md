@@ -2763,3 +2763,408 @@ La siguiente cuestión estratégica deberá determinarse desde este nuevo estado
 material, sin restaurar como vigente la conclusión anterior a la reevaluación
 correctiva y sin presuponer P6, Architecture, nuevo Product Value, nuevo
 horizonte o nueva investigación.
+
+---
+
+# 26. Actualización posterior a la reducción de localización selectiva
+
+Después de la convergencia material registrada en el bloque 25 se realizó una nueva auditoría desde el estado físico resultante.
+
+La actuación quedó documentada en:
+
+```text
+58-REDUCCION_DIFERENCIA_MATERIAL_LOCALIZACION_SELECTIVA_EN_RECORRIDO_ORDINARIO.md
+```
+
+La auditoría aplicó nuevamente la distinción:
+
+```text
+Realization técnica separada
+≠
+diferencia material necesariamente pendiente
+```
+
+y exigió simultáneamente:
+
+```text
+capacidad o relación ya justificada
++
+existencia material demostrada
++
+participación insuficiente
+en el recorrido ordinario
++
+pérdida funcional efectiva
+↓
+diferencia material discriminable
+```
+
+La diferencia identificada fue:
+
+```text
+resultados producidos
+por el recorrido ordinario
+→ podían continuar individualmente
+
+localización selectiva
+→ ya estaba justificada y realizada
+  en su alcance histórico
+
+pero
+
+resultados ordinarios
+→ no componían todavía
+  una pluralidad persistente
+  susceptible de localización
+  y selección posterior
+```
+
+Esta diferencia no constituye:
+
+```text
+brecha realizativa de Product
+incumplimiento de H2
+reapertura de CPV1-01
+reapertura de R-PV1-LS1
+P6
+nuevo Product Value
+nuevo horizonte
+nueva capacidad funcional
+Architecture
+Search
+Library
+Workspace
+```
+
+Constituye una segunda necesidad material localizada de convergencia.
+
+---
+
+## 26.1 Aplicación localizada de PM-10
+
+La necesidad se trató mediante:
+
+```text
+PM-10 — Desarrollo guiado por necesidad productiva
+```
+
+siguiendo:
+
+```text
+necesidad material
+→ resultados ordinarios desacoplados
+  de la localización selectiva posterior
+
+↓
+hipótesis mínima
+→ composición externa en App
+
+↓
+contraste
+→ compatible con R-U2-M1
+→ compatible con CPV1-01
+→ compatible con Product
+→ compatible con PLATFORM_VISION
+
+↓
+bloqueo material
+→ NO identificado
+
+↓
+construcción
+→ M1 + M2a + M2b
+
+↓
+validación
+→ satisfactoria
+```
+
+No fue necesario:
+
+```text
+modificar el contrato interno de R-U2-M1
+reabrir la Realization histórica
+crear una nueva infraestructura general
+derivar Architecture
+```
+
+---
+
+## 26.2 Convergencia material realizada
+
+La construcción establece ahora:
+
+```text
+resultado ordinario válido
+↓
+pluralidad persistente
+↓
+necesidad posterior explícita
+↓
+inspección
+↓
+selección humana
+↓
+reactivación en un nuevo trabajo
+```
+
+La pluralidad se compone fuera de `R-U2-M1`.
+
+Por tanto:
+
+```text
+ru2m1.previous
+→ conserva su papel
+
+ru2m1.retained
+→ conserva su papel
+
+R-U2-M1
+→ NO se convierte en historial
+→ NO se convierte en colección general
+```
+
+La localización selectiva tampoco se convierte en:
+
+```text
+Search
+ranking
+recomendación automática
+Library
+Workspace
+```
+
+La pertinencia continúa determinada por la persona.
+
+---
+
+## 26.3 Alcance de la pluralidad ejercida
+
+La actuación utiliza:
+
+```text
+2 materiales
+```
+
+porque:
+
+```text
+2
+→ pluralidad no trivial
+```
+
+es suficiente para demostrar:
+
+```text
+inspección
+selección
+ausencia de preselección
+```
+
+Esto no establece:
+
+```text
+cardinalidad general = 2
+```
+
+ni transfiere como requisito general:
+
+```text
+cardinalidad = 3
+```
+
+utilizada en la Realization histórica.
+
+---
+
+## 26.4 Validación
+
+La actuación ha sido validada mediante:
+
+```text
+App.test.tsx
+→ 20 / 20 tests superados
+
+suite global
+→ 37 archivos
+→ 327 tests superados
+
+build de producción
+→ correcto
+
+git diff --check
+→ sin incidencias
+
+documento 58
+→ comprobado mediante
+  git diff --no-index --check
+→ sin incidencias
+```
+
+No se ha observado regresión automática en la suite disponible.
+
+---
+
+## 26.5 Consecuencia para la estrategia global de convergencia
+
+La secuencia estratégica queda ampliada:
+
+```text
+derivación histórica de DEP-PV005-01
+↓
+cierre de I55
+↓
+derivación de H2
+↓
+cierre de H2
+↓
+reevaluación correctiva de continuidad
+↓
+primera necesidad material de convergencia
+↓
+R-U2-M1 → post-V1
+↓
+validación satisfactoria
+↓
+nueva auditoría material
+↓
+segunda diferencia discriminada
+↓
+resultados ordinarios
+→ localización selectiva posterior
+↓
+PM-10 aplicado
+↓
+M1 + M2a + M2b
+↓
+validación satisfactoria
+```
+
+Esto no altera retrospectivamente:
+
+```text
+cierre de H2
+satisfacción suficiente de Product
+cierre de R-INT-01
+cierre histórico de CPV1-01
+realización de P1–P5
+```
+
+Sí reduce una nueva separación entre:
+
+```text
+capacidades ya demostradas
+```
+
+y:
+
+```text
+producto ordinario materialmente compuesto
+```
+
+La estrategia global debe conservar la distinción:
+
+```text
+satisfacción suficiente de Product
+≠
+convergencia material completa
+hacia el producto final
+```
+
+La primera permanece demostrada.
+
+La segunda continúa siendo progresiva y debe determinarse mediante auditorías materiales concretas, no mediante la integración indiscriminada de todas las Realizations.
+
+---
+
+## Estado del documento después de la actuación 58
+
+**Cerrado como estrategia global de convergencia post-T1, actualizado tras H2, la reevaluación correctiva post-H2 y la reducción posterior de la diferencia material de localización selectiva.**
+
+El estado resultante es:
+
+```text
+H2
+→ CERRADO
+
+Product
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+reevaluación correctiva post-H2
+→ CERRADA
+
+PM-10
+→ APLICADO
+
+continuidad ordinaria mínima
+R-U2-M1 → post-V1
+→ REALIZADA Y VALIDADA
+
+resultados ordinarios
+→ pueden formar pluralidad persistente
+
+localización selectiva posterior
+→ convergida,
+  en el alcance probado,
+  con resultados producidos
+  por el recorrido ordinario
+
+pertinencia
+→ determinada por la persona
+
+Search / Library / Workspace
+→ NO derivados
+
+P6
+→ NO DERIVADO
+
+nuevo Product Value
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+
+producto final
+→ NO declarado alcanzado
+
+PLATFORM_VISION
+→ NO declarada completamente realizada
+```
+
+La diferencia examinada queda:
+
+```text
+REDUCIDA EN EL ALCANCE PROBADO
+```
+
+La siguiente cuestión estratégica deberá determinarse desde este nuevo estado físico.
+
+No deberá abrirse una nueva construcción porque exista simplemente otra Realization técnica separada.
+
+Cualquier actuación posterior deberá demostrar de nuevo:
+
+```text
+capacidad ya justificada
++
+separación material efectiva
++
+pérdida funcional real
+↓
+necesidad justificable de convergencia
+```
+
+sin presuponer:
+
+```text
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+Search
+Library
+Workspace
+nueva investigación
+```
+
+---

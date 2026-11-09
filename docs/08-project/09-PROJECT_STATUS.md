@@ -5880,3 +5880,248 @@ nueva investigación
 La siguiente actuación estratégica deberá derivarse desde el estado material ya
 actualizado y no desde la conclusión post-H2 que ha quedado corregida en su
 alcance.
+
+---
+
+## Reducción posterior de diferencia material: localización selectiva en el recorrido ordinario
+
+La auditoría material posterior al cierre de la actuación 57 examinó nuevamente:
+
+```text
+capacidades ya justificadas y realizadas
+↓
+participación material efectiva
+en el recorrido ordinario del producto
+```
+
+sin considerar como diferencia suficiente la mera existencia de:
+
+```text
+rutas técnicas separadas
+Realizations históricas independientes
+componentes distintos
+organización documental distinta
+```
+
+cuando esa separación no producía una pérdida funcional real.
+
+La actuación registrada en:
+
+```text
+58-REDUCCION_DIFERENCIA_MATERIAL_LOCALIZACION_SELECTIVA_EN_RECORRIDO_ORDINARIO.md
+```
+
+identificó una diferencia material adicional:
+
+```text
+resultados válidos producidos
+por el recorrido ordinario
+→ podían continuar individualmente
+
+localización selectiva
+→ ya estaba justificada y realizada
+  en su alcance histórico
+
+pero
+
+resultados ordinarios
+→ no componían todavía
+  una pluralidad persistente
+  sobre la que ejercer posteriormente
+  esa localización selectiva
+```
+
+La diferencia no constituye:
+
+```text
+brecha realizativa de Product
+reapertura de CPV1-01
+reapertura de R-PV1-LS1
+P6
+nuevo Product Value
+nuevo horizonte
+nueva capacidad funcional
+Architecture
+Search
+Library
+Workspace
+```
+
+La hipótesis mínima seleccionada preserva el contrato interno de `R-U2-M1` y compone externamente en `App`:
+
+```text
+resultado ordinario válido
+↓
+pluralidad persistente
+↓
+necesidad posterior explícita
+↓
+inspección
+↓
+selección humana
+↓
+reactivación del material seleccionado
+en un nuevo trabajo
+```
+
+La realización quedó dividida en:
+
+```text
+M1
+→ formación y persistencia
+  de pluralidad ordinaria
+
+M2a
+→ necesidad posterior
+→ inspección
+→ selección humana
+
+M2b
+→ material seleccionado
+→ nuevo trabajo posterior
+```
+
+La cardinalidad ejercida fue:
+
+```text
+2 materiales
+```
+
+únicamente porque:
+
+```text
+2
+→ pluralidad no trivial
+```
+
+sin derivar una cardinalidad general del producto ni transferir como requisito normativo los tres materiales utilizados por la Realization histórica de localización selectiva.
+
+La actuación conserva expresamente:
+
+```text
+R-U2-M1
+→ semántica interna intacta
+
+ru2m1.previous
+→ no convertido en colección
+
+ru2m1.retained
+→ no convertido en historial o array
+
+CPV1-01
+→ NO reabierta
+
+SelectiveLocalizationExperience
+→ NO integrada íntegramente en App
+```
+
+La validación final produjo:
+
+```text
+App.test.tsx
+→ 20 / 20 tests superados
+
+suite global
+→ 37 archivos
+→ 327 tests superados
+
+build de producción
+→ correcto
+
+git diff --check
+→ sin incidencias
+
+comprobación específica del documento 58
+mediante git diff --no-index --check
+→ sin incidencias
+```
+
+Por tanto, el estado vigente se amplía con:
+
+```text
+H2
+→ CERRADO
+
+Product vigente
+→ suficientemente satisfecho
+  dentro de sus alcances comprometidos
+
+convergencia mínima R-U2-M1 → post-V1
+→ REALIZADA Y VALIDADA
+
+resultados ordinarios
+→ pueden formar una pluralidad persistente
+
+localización selectiva posterior
+→ convergida ahora,
+  en el alcance probado,
+  con resultados producidos
+  por el recorrido ordinario
+
+pertinencia
+→ continúa determinada por la persona
+
+infraestructura general de búsqueda o biblioteca
+→ NO derivada
+
+P6
+→ NO DERIVADO
+
+nuevo Product Value
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+```
+
+La conclusión adecuada es:
+
+```text
+diferencia material examinada
+→ REDUCIDA EN EL ALCANCE PROBADO
+```
+
+y no:
+
+```text
+localización selectiva universalmente generalizada
+producto final completado
+todas las Realizations necesariamente integrables
+```
+
+## Punto de reanudación vigente después de la actuación 58
+
+La actuación 58 no determina automáticamente una nueva funcionalidad.
+
+El siguiente paso inmediato es documental:
+
+```text
+incorporar el resultado al Tablero Maestro
+↓
+actualizar la estrategia global de convergencia
+↓
+verificar coherencia conjunta de 09 / 29 / 54 / 58
+↓
+consolidar mediante commit explícito
+```
+
+Una vez consolidado ese estado, cualquier actuación material posterior deberá volver a responder a la pregunta:
+
+> **¿Existe todavía una capacidad, relación o continuidad ya justificada y realizada cuya separación respecto del recorrido ordinario produzca una pérdida material real frente al producto final?**
+
+No deberá derivarse una nueva construcción por la mera existencia de una Realization técnica todavía separada.
+
+Tampoco deberá presuponerse:
+
+```text
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+Search
+Library
+Workspace
+nueva investigación
+```
+
+sin una diferencia material nueva e independientemente demostrada.

@@ -1598,3 +1598,309 @@ nuevo horizonte
 Architecture
 nueva investigación
 ```
+
+---
+
+# 21. Reducción posterior de diferencia material de localización selectiva
+
+Después de la reevaluación correctiva registrada en el bloque 20, se realizó una nueva auditoría material desde el estado físico resultante.
+
+La actuación quedó documentada en:
+
+```text
+58-REDUCCION_DIFERENCIA_MATERIAL_LOCALIZACION_SELECTIVA_EN_RECORRIDO_ORDINARIO.md
+```
+
+La auditoría no trató como diferencia pendiente la mera existencia de Realizations técnicas separadas.
+
+El criterio aplicado fue:
+
+```text
+capacidad o relación ya justificada
++
+existencia material demostrada
++
+participación insuficiente
+en el recorrido ordinario
++
+pérdida funcional efectiva
+↓
+diferencia material discriminable
+```
+
+La diferencia identificada fue:
+
+```text
+resultados válidos producidos
+por el recorrido ordinario
+→ podían continuar individualmente
+
+localización selectiva
+→ ya estaba justificada y realizada
+  en su alcance histórico
+
+pero
+
+resultados ordinarios
+→ no componían todavía
+  una pluralidad persistente
+  sobre la que ejercer posteriormente
+  esa localización selectiva
+```
+
+La diferencia no constituye:
+
+```text
+brecha realizativa de Product
+reapertura de CPV1-01
+reapertura de R-PV1-LS1
+nueva capacidad funcional
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+Search
+Library
+Workspace
+```
+
+---
+
+## 21.1 Realización mínima
+
+La hipótesis seleccionada conserva el contrato interno de `R-U2-M1` y compone externamente los resultados ordinarios en `App`.
+
+La secuencia realizada queda:
+
+```text
+resultado ordinario válido
+↓
+pluralidad persistente
+↓
+necesidad posterior explícita
+↓
+inspección
+↓
+selección humana
+↓
+reactivación del material seleccionado
+en un nuevo trabajo
+```
+
+La realización se dividió en:
+
+```text
+M1
+→ formación de pluralidad ordinaria persistente
+
+M2a
+→ necesidad posterior
+→ inspección
+→ selección humana
+
+M2b
+→ material seleccionado
+→ nuevo trabajo posterior
+```
+
+La actuación preserva:
+
+```text
+R-U2-M1
+→ contrato interno intacto
+
+ru2m1.previous
+→ no convertido en colección
+
+ru2m1.retained
+→ no convertido en historial o array
+
+CPV1-01
+→ no reabierta
+
+SelectiveLocalizationExperience
+→ no integrada íntegramente en App
+```
+
+La pluralidad ejercida utiliza:
+
+```text
+2 materiales
+```
+
+como mínimo suficiente para demostrar:
+
+```text
+pluralidad no trivial
+```
+
+sin derivar una cardinalidad general del producto.
+
+---
+
+## 21.2 Validación técnica
+
+La actuación ha sido comprobada mediante:
+
+```text
+App.test.tsx
+→ 20 / 20 tests superados
+
+suite global
+→ 37 archivos
+→ 327 tests superados
+
+build de producción
+→ correcto
+
+git diff --check
+→ sin incidencias
+
+documento 58
+→ comprobado mediante
+  git diff --no-index --check
+→ sin incidencias
+```
+
+No se ha observado regresión automática en la suite disponible.
+
+---
+
+## 21.3 Estado maestro actualizado
+
+El estado resultante del proyecto pasa a incorporar:
+
+```text
+PROJECT CHARTER
+→ vigente
+
+PLATFORM VISION
+→ vigente
+
+PRODUCT
+→ vigente
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+T0
+→ cerrado
+
+P1–P5
+→ realizados
+
+R-INT-01
+→ realizada
+→ preservada
+
+H2
+→ cerrado
+
+reevaluación correctiva post-H2
+→ cerrada
+
+convergencia mínima R-U2-M1 → post-V1
+→ realizada y validada
+
+localización selectiva
+→ resultado histórico preservado
+
+resultados ordinarios
+→ pueden formar pluralidad persistente
+
+localización selectiva posterior
+→ convergida,
+  en el alcance probado,
+  con resultados producidos
+  por el recorrido ordinario
+
+pertinencia
+→ continúa determinada por la persona
+
+infraestructura general de búsqueda o biblioteca
+→ no derivada
+
+P6
+→ no derivado
+
+nuevo Product Value
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+
+GATE-NH-01
+→ disponible
+→ no reabierto
+```
+
+Por tanto:
+
+```text
+diferencia material examinada
+→ REDUCIDA EN EL ALCANCE PROBADO
+```
+
+sin que ello implique:
+
+```text
+generalización ilimitada
+producto final completado
+integración obligatoria
+de todas las Realizations
+```
+
+---
+
+## 21.4 Punto de reanudación vigente
+
+El punto de reanudación del bloque 20 queda conservado como estado histórico anterior a esta nueva auditoría.
+
+El estado vigente pasa a ser:
+
+```text
+H2 cerrado
+↓
+primera convergencia material
+R-U2-M1 → post-V1
+↓
+nueva auditoría material
+↓
+diferencia entre resultados ordinarios
+y localización selectiva discriminada
+↓
+PM-10 aplicado
+↓
+M1 + M2a + M2b realizados
+↓
+validación técnica satisfactoria
+```
+
+La siguiente actuación inmediata es:
+
+```text
+actualizar la estrategia global de convergencia
+↓
+verificar coherencia documental
+09 / 29 / 54 / 58
+↓
+consolidar mediante commit explícito
+```
+
+Después de esa consolidación, cualquier nueva actuación material deberá derivarse nuevamente mediante la pregunta:
+
+> **¿Existe todavía una capacidad, relación o continuidad ya justificada y realizada cuya separación respecto del recorrido ordinario produzca una pérdida material real frente al producto final?**
+
+No queda automáticamente derivado:
+
+```text
+P6
+nuevo Product Value
+nuevo horizonte
+Architecture
+Search
+Library
+Workspace
+nueva investigación
+```
+
+La mera existencia de una Realization técnica todavía separada no constituye por sí sola fundamento suficiente para una nueva construcción.

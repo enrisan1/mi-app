@@ -542,4 +542,261 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
       screen.getByLabelText("Contenido del trabajo actual"),
     ).not.toHaveTextContent("Y nuevo");
   });
+
+  it("conserva como pluralidad externa resultados producidos en reanudaciones ordinarias sucesivas", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "X");
+
+    const firstExecution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      }),
+      "Y",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y");
+    expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+
+    firstExecution.unmount();
+
+    const secondExecution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      }),
+      "Z",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Z");
+    expect(localStorage.getItem("ru2m1.retained")).toBe("X");
+
+    secondExecution.unmount();
+
+    expect(
+      JSON.parse(localStorage.getItem("ordinary.materials") ?? "[]"),
+    ).toEqual([
+      { id: "m1", content: "Y" },
+      { id: "m2", content: "Z" },
+    ]);
+  });
+
+  it("permite localizar y seleccionar humanamente un material ordinario ante una necesidad posterior", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "Trabajo actual");
+
+    localStorage.setItem(
+      "ordinary.materials",
+      JSON.stringify([
+        { id: "m1", content: "Material anterior A" },
+        { id: "m2", content: "Material anterior B" },
+      ]),
+    );
+
+    render(<App />);
+
+    expect(
+      screen.queryByText("Material anterior A", { exact: true }),
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.queryByText("Material anterior B", { exact: true }),
+    ).not.toBeInTheDocument();
+
+    const inspectButton = screen.getByRole("button", {
+      name: /examinar materiales anteriores/i,
+    });
+
+    expect(inspectButton).toBeDisabled();
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /qué necesitas considerar ahora/i,
+      }),
+      "Necesito recuperar una aportación pertinente para este trabajo.",
+    );
+
+    expect(inspectButton).toBeEnabled();
+
+    await user.click(inspectButton);
+
+    expect(
+      screen.getByText("Material anterior A", { exact: true }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText("Material anterior B", { exact: true }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.queryByRole("heading", {
+        name: /material seleccionado/i,
+      }),
+    ).not.toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /usar este material 2/i,
+      }),
+    );
+
+    expect(
+      screen.getByRole("heading", {
+        name: /material seleccionado/i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(screen.getByLabelText(/contenido seleccionado/i)).toHaveTextContent(
+      "Material anterior B",
+    );
+  });
+
+  it("reactiva el material ordinario seleccionado en un nuevo trabajo posterior", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "Trabajo actual");
+
+    localStorage.setItem(
+      "ordinary.materials",
+      JSON.stringify([
+        { id: "m1", content: "Material anterior A" },
+        { id: "m2", content: "Material anterior B" },
+      ]),
+    );
+
+    render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /qué necesitas considerar ahora/i,
+      }),
+      "Necesito recuperar el material pertinente para continuar.",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /examinar materiales anteriores/i,
+      }),
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /usar este material 2/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/contenido seleccionado/i)).toHaveTextContent(
+      "Material anterior B",
+    );
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /nuevo trabajo/i,
+      }),
+      "Resultado posterior producido con el material recuperado",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este material/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText(/nuevo trabajo constituido/i),
+    ).toHaveTextContent(
+      "Resultado posterior producido con el material recuperado",
+    );
+  });
+
+  it("no arrastra a otra selección el nuevo trabajo constituido desde un material anterior", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem("ru2m1.previous", "Trabajo actual");
+    localStorage.setItem(
+      "ordinary.materials",
+      JSON.stringify([
+        { id: "m1", content: "Material anterior A" },
+        { id: "m2", content: "Material anterior B" },
+      ]),
+    );
+
+    render(<App />);
+
+    const need = screen.getByRole("textbox", {
+      name: /qué necesitas considerar ahora/i,
+    });
+
+    await user.type(need, "Primera necesidad");
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /examinar materiales anteriores/i,
+      }),
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /usar este material 2/i,
+      }),
+    );
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /nuevo trabajo/i,
+      }),
+      "Trabajo constituido desde B",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este material/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText(/nuevo trabajo constituido/i),
+    ).toHaveTextContent("Trabajo constituido desde B");
+
+    await user.clear(need);
+    await user.type(need, "Segunda necesidad");
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /examinar materiales anteriores/i,
+      }),
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /usar este material 1/i,
+      }),
+    );
+
+    expect(
+      screen.getByRole("textbox", {
+        name: /nuevo trabajo/i,
+      }),
+    ).toHaveValue("");
+
+    expect(
+      screen.queryByLabelText(/nuevo trabajo constituido/i),
+    ).not.toBeInTheDocument();
+  });
 });
