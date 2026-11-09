@@ -3168,3 +3168,229 @@ nueva investigación
 ```
 
 ---
+
+# 27. Actualización posterior a la actuación 59
+
+El estado registrado después de la actuación 58 dejaba pendiente determinar la siguiente cuestión estratégica desde el nuevo estado físico alcanzado.
+
+Esa determinación ha sido realizada en:
+
+```text
+59-REEVALUACION_PRODUCT_PLATFORM_VISION_POST_58_Y_REDUCCION_ORGANIZACION_ENRIQUECIMIENTO.md
+```
+
+La actuación 59 reaplicó el Manual de continuidad estratégica y reevaluó la relación:
+
+```text
+Product
+↔
+PLATFORM_VISION
+```
+
+sin tratar `PLATFORM_VISION` como una lista automática de requisitos pendientes.
+
+La primera diferencia candidata examinada fue:
+
+```text
+organización
++
+recuperación
++
+enriquecimiento progresivo
+```
+
+La reconstrucción de la evidencia histórica mostró que:
+
+```text
+organización / recuperación
+→ ya ejercidas y absorbidas
+  respecto de una nueva exigencia de Product
+
+enriquecimiento como diferencia
+humana independiente
+→ no demostrado
+```
+
+Después fueron comprobadas las restantes direcciones relevantes de `PLATFORM_VISION` frente a:
+
+```text
+P1–P5
+
+Realization integrada
+
+IR-HUMAN-02
+
+I31
+
+Realization de defendibilidad
+
+D-00…D-05
+
+Q04 → Q05
+
+PV-001…PV-006
+
+actuaciones 57–58
+```
+
+La comprobación no identificó:
+
+```text
+obligación vigente insatisfecha
+
+dependencia estratégica pendiente
+
+incertidumbre bloqueante
+
+pérdida humana independiente
+y discriminable actualmente demostrada
+```
+
+Por tanto:
+
+```text
+Product
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+Product ↔ PLATFORM_VISION
+→ reevaluación completa cerrada
+
+nuevo Product Value
+→ NO DERIVADO
+
+P6
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+
+nueva Realization
+→ NO DERIVADA
+
+Architecture
+→ NO DERIVADA
+
+Implementation
+→ NO DERIVADA
+```
+
+Este resultado no modifica la afirmación histórica de que:
+
+```text
+PLATFORM_VISION
+→ continúa vigente
+→ no ha sido declarada completamente realizada
+```
+
+Lo que queda determinado después de la actuación 59 es:
+
+```text
+con la evidencia actualmente disponible
+
+nueva actuación estratégica justificable
+→ NO DERIVADA
+```
+
+La estrategia global queda por tanto cerrada también respecto de la cuestión que permanecía abierta después de la actuación 58.
+
+---
+
+## Estado del documento después de la actuación 59
+
+**Cerrado como estrategia global de convergencia post-T1, actualizado tras H2, la reevaluación correctiva post-H2, las actuaciones materiales 57–58 y la reevaluación completa Product ↔ PLATFORM_VISION de la actuación 59.**
+
+El estado resultante es:
+
+```text
+H2
+→ CERRADO
+
+Product
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+actuación 57
+→ CERRADA
+
+actuación 58
+→ CERRADA
+
+actuación 59
+→ CERRADA
+
+Product ↔ PLATFORM_VISION
+→ REEVALUACIÓN COMPLETA CERRADA
+
+PLATFORM_VISION
+→ vigente como horizonte de largo plazo
+→ NO declarada completamente realizada
+→ NO constituye una lista automática
+  de trabajo pendiente
+
+dependencia estratégica vigente insatisfecha
+→ NINGUNA DEMOSTRADA
+
+incertidumbre bloqueante
+→ NINGUNA IDENTIFICADA
+
+nuevo Product Value
+→ NO DERIVADO
+
+P6
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+
+producto final
+→ NO declarado alcanzado
+
+estado estratégico
+→ ESTABLE SIN ACTUACIÓN ESTRATÉGICA ABIERTA
+```
+
+Una actuación futura deberá volver a demostrar fundamento positivo suficiente.
+
+No bastará por sí sola:
+
+```text
+feature ausente
+
+capacidad general de PLATFORM_VISION
+
+Realization técnica separada
+
+generalización todavía no realizada
+
+sofisticación técnica posible
+```
+
+La reapertura deberá apoyarse en una diferencia suficientemente fundada, por ejemplo:
+
+```text
+situación concreta
++
+pérdida observable o falsable
++
+insuficiencia actual
++
+independencia respecto de capacidades
+y compromisos ya satisfechos
++
+criterio verificable de cierre
+```
+
+Hasta entonces:
+
+```text
+GATE-NH-01
+→ disponible
+→ no reabierto
+
+siguiente actuación estratégica
+→ NINGUNA DERIVADA
+
+estado
+→ ESTABLE
+```

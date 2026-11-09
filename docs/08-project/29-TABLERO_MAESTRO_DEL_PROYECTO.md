@@ -1904,3 +1904,355 @@ nueva investigación
 ```
 
 La mera existencia de una Realization técnica todavía separada no constituye por sí sola fundamento suficiente para una nueva construcción.
+
+---
+
+# 22. Reevaluación completa Product ↔ PLATFORM_VISION posterior a la actuación 58
+
+Después del cierre de la actuación 58 se reaplicó el Manual de continuidad estratégica desde el nuevo estado material alcanzado.
+
+La actuación quedó documentada en:
+
+```text
+59-REEVALUACION_PRODUCT_PLATFORM_VISION_POST_58_Y_REDUCCION_ORGANIZACION_ENRIQUECIMIENTO.md
+```
+
+La reevaluación no tomó `PLATFORM_VISION` como una lista automática de funcionalidades pendientes.
+
+El criterio aplicado fue:
+
+```text
+capacidad ya justificada
++
+separación material efectiva
++
+pérdida funcional real
+↓
+necesidad justificable de convergencia
+```
+
+---
+
+## 22.1 Reducción del residuo organización / recuperación / enriquecimiento
+
+El primer residuo examinado fue:
+
+```text
+organización
++
+recuperación
++
+enriquecimiento progresivo
+```
+
+La reconstrucción de la evidencia histórica mostró que organización, recuperación, procedencia, relaciones, pluralidad contextual y derivación distinguible ya habían sido ejercitadas y sometidas a reducción mediante las líneas IOR y RCA.
+
+La limitación organizativa local observada en `R-EXP-RCA-01 v2` no derivó una nueva exigencia de Product.
+
+Las actuaciones documentales derivadas de RCA quedaron posteriormente cerradas.
+
+El resultado fue:
+
+```text
+organización / recuperación
+→ absorbidas respecto de nuevo Product
+
+enriquecimiento como diferencia
+humana independiente
+→ no demostrado
+
+nuevo Product Value
+→ no derivado
+
+P6
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+```
+
+---
+
+## 22.2 Comprobación de las restantes direcciones de PLATFORM_VISION
+
+Después de reducir el residuo anterior, se comprobaron las restantes direcciones estratégicas frente a la evidencia ya consolidada.
+
+El resultado es:
+
+```text
+evolución sin sustitución
+→ sin residuo estratégico independiente demostrado
+
+continuidad de uso
+→ convergida materialmente
+  por las actuaciones 57–58
+
+determinación humana efectiva
+→ absorbida por PV-005
+→ satisfacción realizativa suficiente
+
+evolución de contenidos
+y estados significativos
+→ ejercida mediante P1 / P2
+→ sin residuo independiente posterior demostrado
+
+relaciones y reutilización
+→ ejercidas y validadas
+  en el alcance pertinente
+
+evaluación crítica / transparencia
+→ diferencia de defendibilidad
+  aislada y ejercitada
+→ absorbida por PV-006
+
+colaboración / publicación / intercambio
+→ ejercidos mediante P2 / P4 / P5
+→ diferencias prospectivas posteriores reducidas
+→ sin residuo humano independiente actual
+
+continuidad de posibilidades pertinentes
+→ absorbida por PV-006
+→ satisfacción suficiente
+```
+
+---
+
+## 22.3 Contraste con D-00…D-05 y Q04 → Q05
+
+La consolidación global posterior a T1 ya había establecido:
+
+```text
+P1 ✓
+P2 ✓
+P3 ✓
+P4 ✓
+P5 ✓
+```
+
+y que ninguna de las diferencias `D-00…D-05` dejaba un residuo humano independiente suficiente para derivar un nuevo horizonte.
+
+La secuencia prospectiva posterior detectó posteriormente una diferencia real en `Q04`, pero esa diferencia fue reducida en `Q05`.
+
+Después fueron examinados como posibles residuos:
+
+```text
+canal externo
+
+familiaridad previa
+
+trayectoria más larga
+
+más de dos participantes
+
+concurrencia
+
+identidad real
+
+persistencia remota
+
+sincronización automática
+
+tiempo real
+
+cuentas, autenticación y permisos
+```
+
+Ninguno quedó demostrado como:
+
+```text
+pérdida humana independiente
++
+insuficiencia actual
++
+diferencia discriminable
+```
+
+Por tanto:
+
+```text
+residuo humano independiente post-Q05
+→ NO demostrado
+```
+
+---
+
+## 22.4 Estado maestro actualizado
+
+El estado canónico del proyecto pasa a ser:
+
+```text
+PROJECT CHARTER
+→ vigente
+
+PLATFORM VISION
+→ vigente
+→ no completamente realizada
+
+PRODUCT
+→ vigente
+→ seis compromisos suficientemente satisfechos
+  dentro de sus alcances comprometidos
+
+T0
+→ cerrado
+
+T1
+→ cerrado
+
+P1–P5
+→ realizados
+
+R-INT-01
+→ realizada
+→ preservada
+
+H2
+→ cerrado
+
+reevaluación correctiva post-H2
+→ cerrada
+
+actuación 57
+→ cerrada
+
+actuación 58
+→ cerrada
+
+actuación 59
+→ cerrada
+
+convergencia mínima R-U2-M1 → post-V1
+→ realizada y validada
+
+pluralidad ordinaria persistente
+→ realizada en alcance mínimo
+
+localización selectiva posterior
+→ convergida en el alcance probado
+
+Product ↔ PLATFORM_VISION
+→ reevaluación completa cerrada
+
+dependencia vigente insatisfecha
+→ ninguna demostrada
+
+incertidumbre estratégica bloqueante
+→ ninguna identificada
+
+nuevo Product Value
+→ no derivado
+
+P6
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+
+Search / Library / Workspace
+→ no derivados
+```
+
+---
+
+## 22.5 Estado estratégico vigente
+
+La actuación 59 no declara:
+
+```text
+producto final alcanzado
+PLATFORM_VISION completamente realizada
+suficiencia universal
+imposibilidad de nueva evidencia futura
+```
+
+Declara:
+
+```text
+con la evidencia actualmente disponible
+
+diferencia humana independiente,
+discriminable y actualmente insatisfecha
+que justifique nueva actuación estratégica
+→ NO DEMOSTRADA
+```
+
+Por tanto:
+
+```text
+estado estratégico
+→ ESTABLE SIN ACTUACIÓN ESTRATÉGICA ABIERTA
+```
+
+---
+
+## 22.6 Punto de reanudación vigente
+
+El punto de reanudación del bloque 21 queda conservado como estado histórico anterior a la actuación 59.
+
+El punto de reanudación vigente pasa a ser:
+
+```text
+H2 cerrado
+↓
+reevaluación correctiva post-H2 cerrada
+↓
+actuación 57 cerrada
+↓
+actuación 58 cerrada
+↓
+actuación 59 cerrada
+↓
+Product ↔ PLATFORM_VISION
+reevaluación completa cerrada
+↓
+sin dependencia estratégica pendiente demostrada
+↓
+sin incertidumbre bloqueante
+↓
+ESTADO ESTABLE
+```
+
+No existe actualmente una siguiente actuación estratégica derivada.
+
+Una reapertura deberá apoyarse en fundamento positivo suficiente:
+
+```text
+situación concreta
++
+pérdida observable o falsable
++
+insuficiencia actual
++
+independencia respecto de capacidades
+y compromisos ya satisfechos
++
+criterio verificable de cierre
+```
+
+No bastará por sí sola:
+
+```text
+feature ausente
+
+capacidad general de PLATFORM_VISION
+
+Realization técnica separada
+
+generalización no realizada
+
+mayor sofisticación posible
+```
+
+Hasta que aparezca ese fundamento:
+
+```text
+GATE-NH-01
+→ disponible
+→ no reabierto
+
+siguiente actuación estratégica
+→ NINGUNA DERIVADA
+
+estado maestro
+→ ESTABLE
+```
