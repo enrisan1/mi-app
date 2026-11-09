@@ -902,3 +902,197 @@ No se deriva arquitectura general, ninguna vertical adicional, roadmap ni
 siguiente actuación. Los registros históricos conservan su estatuto y contenido.
 
 ---
+
+---
+
+# Ficha de bitácora — Protocolo operativo agéntico
+
+## Fecha y documentos
+
+09/11/2026.
+
+- `docs/01-methodology/18-protocolo-operativo-agentico.md`: construcción inicial de la norma metodológica especializada sobre autonomía operativa y trabajo agéntico.
+- `docs/01-methodology/00-protocolo-de-trabajo.md`: incorporación de la referencia canónica al nuevo protocolo y delimitación de su responsabilidad respecto del protocolo general y del Manual de continuidad estratégica.
+- `AGENTS.md`: incorporación de una regla ejecutiva de autonomía operativa y trabajo por lotes para los agentes que actúan sobre el repositorio.
+
+## Motivo
+
+El procedimiento histórico de trabajo utilizaba con frecuencia al usuario como intermediario para operaciones ordinarias de lectura, búsqueda y validación:
+
+```text
+agente
+↓
+propone consulta
+↓
+usuario ejecuta
+↓
+usuario devuelve resultado
+↓
+agente continúa
+```
+
+Aunque este mecanismo preservaba la comprobación explícita de los resultados, introducía una latencia operativa innecesaria cuando el agente disponía o podía disponer de acceso directo al recurso pertinente.
+
+Se hizo necesario distinguir entre:
+
+```text
+necesidad de evidencia
+```
+
+y:
+
+```text
+necesidad de intervención humana
+```
+
+sin reducir la trazabilidad, el control de cambios ni la autoridad metodológica del proyecto.
+
+## Resultado
+
+Se crea:
+
+```text
+18-protocolo-operativo-agentico.md
+```
+
+como norma especializada que determina cómo ejecutar actuaciones ya justificadas cuando intervienen agentes, herramientas conectadas, repositorios o entornos de desarrollo.
+
+El protocolo establece:
+
+- autonomía para operaciones de lectura e inspección cuando exista acceso directo;
+- autonomía para validaciones no destructivas pertinentes;
+- clasificación de operaciones en niveles 0–4 según su impacto;
+- trabajo por lotes de evidencia;
+- continuidad técnica interna sin interrupciones humanas innecesarias;
+- gates humanos para decisiones sustantivas, cambios relevantes y consolidación o publicación;
+- regla de intervención humana mínima cuando el recurso no sea accesible directamente;
+- uso de GitHub como infraestructura de consulta sin convertir los permisos técnicos de escritura en autorización automática;
+- preferencia por agentes con acceso directo al repositorio local cuando estén disponibles;
+- compatibilidad con la investigación multiagente experimental y sus HUMAN GATE;
+- trazabilidad centrada en decisiones, evidencia, cambios y resultados, no en ruido operativo accidental.
+
+El principio rector queda:
+
+> la persona debe intervenir cuando sea necesario su juicio, autoridad o autorización, no cuando únicamente sea necesario ejecutar mecánicamente una consulta que el agente puede realizar directamente.
+
+## Relación con la metodología vigente
+
+La nueva norma no sustituye ni amplía la autoridad de:
+
+```text
+00-protocolo-de-trabajo.md
+17-manual-de-continuidad-estrategica.md
+99-protocolo-de-consolidacion-documental.md
+```
+
+La distribución de responsabilidades queda:
+
+```text
+00-protocolo-de-trabajo.md
+→ metodología transversal
+
+17-manual-de-continuidad-estrategica.md
+→ determina QUÉ actuación está justificada
+
+18-protocolo-operativo-agentico.md
+→ determina CÓMO ejecutar eficientemente
+  una actuación ya justificada
+
+99-protocolo-de-consolidacion-documental.md
+→ regula su consolidación documental
+```
+
+La autonomía operativa no constituye autonomía estratégica:
+
+```text
+capacidad técnica de ejecutar
+≠
+fundamento para ejecutar
+```
+
+## Auditoría y revisión
+
+La versión completa de `18-protocolo-operativo-agentico.md` fue revisada íntegramente antes de su aceptación.
+
+Durante la revisión se realizaron cuatro precisiones localizadas:
+
+1. se evitó declarar la norma vigente antes de superar la aceptación explícita;
+2. `lote de investigación` se precisó como `lote de trabajo o verificación`;
+3. la preferencia por agente local se condicionó a que dicho agente esté disponible;
+4. la trazabilidad de cambios se precisó mediante `cuando los hubo`.
+
+También se comprobó:
+
+- compatibilidad con `00-protocolo-de-trabajo.md`;
+- compatibilidad con `17-manual-de-continuidad-estrategica.md`;
+- compatibilidad con `99-protocolo-de-consolidacion-documental.md`;
+- compatibilidad con las reglas existentes de `AGENTS.md`;
+- conservación del HUMAN GATE de la investigación multiagente experimental;
+- ausencia de autorización automática para escrituras remotas;
+- separación entre autonomía operativa y autoridad metodológica;
+- `git diff --check` sin incidencias.
+
+## Aceptación
+
+El HUMAN GATE metodológico aceptó explícitamente:
+
+> **Acepto el Protocolo operativo agéntico como norma metodológica operativa vigente del proyecto.**
+
+Después de esta aceptación, el estado de `18-protocolo-operativo-agentico.md` fue actualizado a:
+
+```text
+Norma metodológica operativa vigente.
+```
+
+## Estado documental
+
+La actuación corresponde principalmente a:
+
+```text
+TD-1 — Construcción inicial
+```
+
+para `18-protocolo-operativo-agentico.md`.
+
+La incorporación localizada de su referencia en `00-protocolo-de-trabajo.md` y de su regla ejecutiva en `AGENTS.md` no altera las responsabilidades sustantivas de esos documentos.
+
+Con la aceptación explícita, la versión completa queda congelada provisionalmente conforme a `PCD-4`.
+
+Esta ficha completa:
+
+```text
+PCD-5 — Registro en bitácora
+```
+
+y deja el nuevo protocolo incorporado al sistema metodológico del proyecto.
+
+## Consecuencias
+
+Desde esta consolidación, el modo ordinario de trabajo pasa a ser:
+
+```text
+derivación rigurosa
++
+ejecución agéntica autónoma
++
+validación verificable
++
+gates humanos sólo donde aporten valor
+```
+
+El usuario no deberá utilizarse como intermediario para operaciones rutinarias de lectura, inspección o validación cuando el agente disponga de acceso directo suficiente.
+
+Esta modificación no deriva por sí misma:
+
+```text
+nuevo horizonte
+P6
+nuevo Product Value
+Architecture
+Realization
+Implementation
+```
+
+ni modifica el alcance material del producto.
+
+Su efecto es exclusivamente metodológico y operativo: reducir latencia sin disminuir evidencia, trazabilidad ni control.

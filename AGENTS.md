@@ -28,6 +28,40 @@ no las sustituye.
   `untracked` preexistentes salvo instrucción explícita.
 - No ejecutes `git add` ni `git commit` salvo petición explícita.
 
+## Autonomía operativa y trabajo por lotes
+
+Cuando el agente disponga de acceso directo al recurso necesario, deberá realizar autónomamente las operaciones de lectura, inspección y validación no destructiva pertinentes a la actuación.
+
+Esto incluye, entre otras:
+
+```text
+búsquedas
+lectura de archivos
+inspección de estructura
+git status / log / diff
+análisis estático
+tests
+build
+comprobaciones documentales
+```
+
+No deberá utilizar al usuario como intermediario para ejecutar y devolver estas operaciones salvo que el recurso sólo sea accesible desde un entorno al que el agente no tenga acceso.
+
+Las comprobaciones relacionadas con una misma pregunta deberán agruparse en lotes y devolverse como evidencia consolidada.
+
+La intervención humana deberá reservarse principalmente para:
+
+```text
+cambio de alcance
+decisión conceptual o estratégica
+alternativas materialmente distintas
+riesgo relevante
+acción externa significativa
+consolidación o publicación cuando requieran autorización
+```
+
+La autonomía operativa no amplía la autoridad del agente: poder ejecutar una comprobación o modificación no constituye fundamento para realizarla.
+
 ## Cierre
 
 Antes de finalizar una modificación, ejecuta los controles disponibles que

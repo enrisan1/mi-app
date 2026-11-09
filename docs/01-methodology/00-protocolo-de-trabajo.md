@@ -21,6 +21,17 @@ actuación automáticamente derivada, una actuación estratégicamente derivada 
 un estado legítimo sin nueva actuación, sin sustituir los principios generales
 de este protocolo.
 
+La ejecución operativa de actuaciones ya justificadas cuando intervienen
+agentes, herramientas conectadas, repositorios o entornos de desarrollo se
+regula de forma específica en:
+
+`18-protocolo-operativo-agentico.md`
+
+Este protocolo determina el grado de autonomía operativa, los niveles de
+intervención, el trabajo por lotes de evidencia y los gates humanos aplicables,
+sin modificar la autoridad de este protocolo general ni del Manual de
+continuidad estratégica para derivar actuaciones.
+
 Su objetivo consiste en garantizar que todas las investigaciones, auditorías y documentos consolidados se elaboren siguiendo un procedimiento uniforme, trazable y reproducible.
 
 El protocolo no pertenece a una investigación concreta.
