@@ -6407,3 +6407,376 @@ siguiente actuación estratégica
 estado de reanudación
 → ESTABLE
 ```
+
+---
+
+# Actualización posterior a las actuaciones 60–61 — Clausura del producto final
+
+El punto de reanudación posterior a la actuación 59 queda conservado como estado histórico anterior.
+
+Después de ese estado se realizaron dos actuaciones adicionales:
+
+```text
+60-AUDITORIA_CIERRE_CONVERGENCIA_MATERIAL_Y_DETERMINACION_PRODUCTO_FINAL.md
+
+61-DETERMINACION_CRITERIO_CANONICO_CLAUSURA_PRODUCTO_FINAL.md
+```
+
+---
+
+## Resultado de la actuación 60
+
+La actuación 60 auditó de forma explícita si permanecía, dentro del alcance comprometido, alguna capacidad, relación o continuidad ya justificada y realizada cuya separación respecto del recorrido ordinario produjera una pérdida material real pendiente.
+
+Los candidatos materiales fueron clasificados como:
+
+```text
+A
+→ convergidos
+
+B
+→ separación legítima
+  sin pérdida material demostrada
+
+C
+→ residuo material pendiente
+```
+
+El resultado fue:
+
+```text
+A
+→ 10
+
+B
+→ 4
+
+C
+→ 0
+```
+
+La comprobación incluyó exhaustividad técnica y estratégica.
+
+Por tanto:
+
+```text
+convergencia material pendiente
+→ AGOTADA SUFICIENTEMENTE
+  dentro del alcance comprometido
+
+dependencia material pendiente
+→ NINGUNA DEMOSTRADA
+```
+
+La actuación no declaró todavía alcanzado el producto final.
+
+Identificó una incertidumbre distinta:
+
+```text
+INCERTIDUMBRE DE CLAUSURA
+```
+
+consistente en determinar qué criterio positivo, mínimo y suficientemente justificado permitía decidir si el estado material alcanzado constituía el producto final perseguido por el proyecto.
+
+La actuación 60 quedó:
+
+```text
+CERRADA
+```
+
+y derivó estratégicamente la actuación 61 exclusivamente para resolver esa incertidumbre normativa.
+
+---
+
+## Resultado de la actuación 61
+
+La actuación 61 reconstruyó el criterio canónico de clausura a partir de:
+
+```text
+PROJECT_CHARTER
++
+PRODUCT
++
+PLATFORM_VISION
++
+estrategia de convergencia
++
+Manual de continuidad estratégica
++
+estrategia global post-T1
++
+estado material consolidado
+```
+
+El criterio resultante fue:
+
+```text
+K1
+→ criterio canónico de clausura
+  suficientemente reconstruido
+```
+
+La aplicación de `K1` comprobó:
+
+```text
+K1-01
+→ compromisos Product satisfechos
+
+K1-02
+→ capacidades y condiciones necesarias realizadas
+
+K1-03
+→ integración material suficiente
+
+K1-04
+→ validación suficiente
+
+K1-05
+→ dependencias obligatorias abiertas
+→ ninguna
+
+K1-06
+→ criterios vigentes insatisfechos
+→ ninguno
+
+K1-07
+→ hitos obligatorios pendientes
+→ ninguno
+
+K1-08
+→ pérdida material pendiente
+→ ninguna demostrada
+
+K1-09
+→ incertidumbre bloqueante restante
+→ ninguna identificada
+
+K1-10
+→ condición adicional competente
+→ ninguna identificada
+```
+
+Por tanto:
+
+```text
+K1
+→ SATISFECHO
+```
+
+y el resultado de la actuación 61 es:
+
+```text
+PRODUCTO FINAL
+→ ALCANZADO
+  respecto del alcance
+  legítimamente vigente
+  y suficientemente demostrado
+```
+
+---
+
+## Alcance de la declaración
+
+La declaración anterior no significa:
+
+```text
+PLATFORM_VISION
+→ completamente realizada
+
+todas las posibilidades históricas
+→ implementadas
+
+todos los alcances posibles
+→ generalizados
+
+todas las Realizations
+→ integradas
+
+producto
+→ universalmente completo
+
+producto
+→ inmutable
+
+proyecto
+→ incapaz de evolucionar
+```
+
+`PLATFORM_VISION` conserva su estatuto de:
+
+```text
+visión de largo plazo
++
+dirección de evolución
+```
+
+y permanece:
+
+```text
+vigente
++
+no completamente realizada
++
+no constituye backlog automático
+```
+
+El carácter evolutivo del proyecto es compatible con la clausura del producto alcanzada.
+
+Una evolución posterior requerirá nuevo fundamento positivo suficiente.
+
+---
+
+## Estado estratégico vigente después de la actuación 61
+
+El estado vigente pasa a ser:
+
+```text
+PROJECT_CHARTER
+→ vigente
+
+PLATFORM_VISION
+→ vigente como horizonte de largo plazo
+→ no completamente realizada
+→ no constituye trabajo pendiente automático
+
+Product
+→ seis compromisos suficientemente satisfechos
+  dentro de sus respectivos alcances
+
+V1
+→ suficientemente realizada
+
+T1
+→ cerrado
+
+H2
+→ cerrado
+
+P1–P5
+→ realizados
+
+R-INT-01
+→ cerrada
+
+actuación 57
+→ cerrada
+
+actuación 58
+→ cerrada
+
+actuación 59
+→ cerrada
+
+actuación 60
+→ cerrada
+
+actuación 61
+→ cerrada
+
+convergencia material pendiente
+→ agotada suficientemente
+  dentro del alcance comprometido
+
+K1
+→ criterio canónico de clausura
+  suficientemente reconstruido
+  y satisfecho
+
+producto final
+→ ALCANZADO
+  respecto del alcance
+  legítimamente vigente
+  y suficientemente demostrado
+
+nuevo Product Value
+→ no derivado
+
+P6
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+
+Architecture
+→ no derivada
+
+Implementation
+→ no derivada
+```
+
+---
+
+## Punto de reanudación vigente
+
+La aplicación del Manual de continuidad estratégica después de la actuación 61 establece:
+
+```text
+compromisos vigentes insatisfechos
+→ ninguno demostrado
+
+criterios pendientes
+→ ninguno demostrado
+
+dependencias necesarias pendientes
+→ ninguna demostrada
+
+hitos obligatorios pendientes
+→ ninguno identificado
+
+incertidumbre bloqueante
+→ ninguna restante identificada
+
+nueva evidencia emergente
+que exija actuación
+→ ninguna identificada
+```
+
+Por tanto:
+
+```text
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN
+ESTRATÉGICAMENTE DERIVADA
+→ NINGUNA
+
+NUEVO HORIZONTE
+→ NO DERIVADO
+```
+
+El estado de reanudación queda:
+
+```text
+PRODUCTO FINAL ALCANZADO
++
+PROYECTO ESTABLE
++
+SIN ACTUACIÓN ABIERTA
+```
+
+Una reapertura futura deberá demostrar nuevamente fundamento positivo suficiente.
+
+No bastará por sí sola:
+
+```text
+una feature ausente
+
+una capacidad general de PLATFORM_VISION
+
+una Realization técnica separada
+
+una generalización no realizada
+
+una sofisticación posible
+
+la mera posibilidad de seguir desarrollando el producto
+```
+
+La pregunta de reanudación pasa a ser:
+
+```text
+¿existe nueva evidencia
+o fundamento positivo suficiente
+para modificar el estado actualmente cerrado?
+```

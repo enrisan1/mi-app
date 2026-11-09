@@ -3394,3 +3394,287 @@ siguiente actuación estratégica
 estado
 → ESTABLE
 ```
+
+---
+
+---
+
+# 28. Actualización final posterior a las actuaciones 60–61
+
+El bloque 27 queda conservado como estado histórico posterior a la actuación 59.
+
+Las actuaciones posteriores completaron las dos cuestiones que todavía permanecían separadas:
+
+```text
+satisfacción suficiente de Product
++
+convergencia material suficiente
++
+criterio canónico de clausura
+↓
+determinación del producto final
+```
+
+## 28.1 Actuación 60 — cierre de la convergencia material pendiente
+
+La actuación 60 realizó la auditoría explícita de las capacidades, relaciones y continuidades ya justificadas y realizadas que podían permanecer separadas del recorrido ordinario.
+
+El resultado fue:
+
+```text
+candidatos materiales C
+→ 0
+
+dependencia material pendiente
+→ ninguna demostrada
+
+convergencia material pendiente
+→ AGOTADA SUFICIENTEMENTE
+  dentro del alcance comprometido
+```
+
+La actuación no declaró todavía alcanzado el producto final.
+
+Identificó como única incertidumbre restante:
+
+```text
+INCERTIDUMBRE DE CLAUSURA
+→ relevante
+→ bloqueante
+```
+
+y derivó una comprobación exclusivamente normativa.
+
+La actuación 60 quedó:
+
+```text
+CERRADA
+```
+
+## 28.2 Actuación 61 — criterio canónico de clausura
+
+La actuación 61 reconstruyó:
+
+```text
+K1
+→ criterio canónico de clausura
+  suficientemente reconstruido
+```
+
+a partir de los cuerpos canónicos y del estado material consolidado.
+
+Su aplicación comprobó conjuntamente:
+
+```text
+compromisos Product
+→ satisfechos
+
+capacidades y condiciones necesarias
+→ suficientemente realizadas
+
+integración material pertinente
+→ suficiente
+
+validación
+→ suficiente
+
+dependencias obligatorias abiertas
+→ ninguna
+
+criterios vigentes insatisfechos
+→ ninguno
+
+hitos obligatorios pendientes
+→ ninguno
+
+pérdida material pendiente
+→ ninguna demostrada
+
+incertidumbre bloqueante restante
+→ ninguna identificada
+
+condición adicional competente
+→ ninguna identificada
+```
+
+Por tanto:
+
+```text
+K1
+→ SATISFECHO
+```
+
+y el resultado es:
+
+```text
+PRODUCTO FINAL
+→ ALCANZADO
+  respecto del alcance
+  legítimamente vigente
+  y suficientemente demostrado
+```
+
+## 28.3 Relación con PLATFORM_VISION
+
+La clausura del producto no modifica el estatuto de `PLATFORM_VISION`.
+
+Permanece:
+
+```text
+PLATFORM_VISION
+→ vigente como visión de largo plazo
+→ no completamente realizada
+→ no constituye backlog automático
+```
+
+Por tanto:
+
+```text
+producto final alcanzado
+≠
+PLATFORM_VISION completamente realizada
+```
+
+y tampoco implica:
+
+```text
+agotamiento de toda evolución futura
+
+implementación de toda posibilidad histórica
+
+generalización de todos los alcances
+
+integración de todas las Realizations
+
+inmutabilidad del producto
+
+clausura absoluta del proyecto
+```
+
+## 28.4 Resultado final de la estrategia global
+
+La estrategia global iniciada post-T1 puede considerarse completada respecto de su finalidad:
+
+```text
+convergencia deliberada
+desde el estado post-T1
+hasta el producto final
+```
+
+La trayectoria consolidada queda:
+
+```text
+T1
+→ cerrado
+
+↓ estrategia global post-T1
+
+H2
+→ cerrado
+
+↓ reevaluación correctiva
+
+57
+→ primera convergencia material
+
+58
+→ segunda convergencia material
+
+59
+→ reevaluación completa
+  Product ↔ PLATFORM_VISION
+
+60
+→ auditoría final
+  de convergencia material
+
+61
+→ reconstrucción y aplicación
+  del criterio canónico K1
+
+↓
+
+PRODUCTO FINAL
+→ ALCANZADO
+```
+
+La distinción histórica:
+
+```text
+satisfacción suficiente de Product
+≠
+convergencia material completa
+hacia el producto final
+```
+
+ha quedado resuelta mediante las actuaciones 57–61.
+
+## 28.5 Estado estratégico resultante
+
+```text
+Product
+→ seis compromisos suficientemente satisfechos
+
+convergencia material pendiente
+→ agotada suficientemente
+
+K1
+→ reconstruido
+→ satisfecho
+
+producto final
+→ ALCANZADO
+  respecto del alcance
+  legítimamente vigente
+  y suficientemente demostrado
+
+PLATFORM_VISION
+→ vigente
+→ no completamente realizada
+→ no constituye backlog
+
+nuevo Product Value
+→ no derivado
+
+P6
+→ no derivado
+
+nuevo horizonte
+→ no derivado
+
+nueva Realization
+→ no derivada
+
+Architecture
+→ no derivada
+
+Implementation
+→ no derivada
+
+siguiente actuación automática
+→ ninguna
+
+siguiente actuación estratégicamente derivada
+→ ninguna
+```
+
+El estado resultante es:
+
+```text
+PRODUCTO FINAL ALCANZADO
++
+PROYECTO ESTABLE
++
+EVOLUCIÓN FUTURA POSIBLE
+SÓLO BAJO NUEVO FUNDAMENTO SUFICIENTE
+```
+
+---
+
+## Estado final de la estrategia global
+
+**Cerrada — estrategia global de convergencia post-T1 completada mediante las actuaciones 57–61, con producto final alcanzado respecto del alcance legítimamente vigente y suficientemente demostrado.**
+
+No queda ninguna actuación pendiente derivada de esta estrategia.
+
+Una evolución posterior deberá comenzar mediante una nueva aplicación del Manual de continuidad estratégica y demostrar fundamento positivo suficiente.

@@ -8826,3 +8826,260 @@ consolidar en Git mediante selección explícita de archivos
 No debe abrirse automáticamente una nueva investigación, Realization, Architecture o Implementation como consecuencia de este cierre.
 
 ---
+
+# Cierre de la convergencia material y determinación del producto final
+
+Después del cierre de la actuación 59, el proyecto permanecía en estado estable sin actuación estratégica abierta, pero todavía no se había declarado alcanzado el producto final.
+
+La cuestión restante no procedía de una insuficiencia demostrada de Product ni de una diferencia humana independiente ya identificada, sino de la separación histórica entre:
+
+```text
+Product suficientemente satisfecho
+≠
+convergencia material completa
+hacia el producto final
+```
+
+y de la necesidad de determinar si permanecía alguna pérdida material real antes de efectuar una clausura positiva.
+
+## Actuación 60 — auditoría final de convergencia material
+
+Se realizó una auditoría exhaustiva de las capacidades, relaciones y continuidades ya justificadas y realizadas que podían permanecer separadas del recorrido ordinario.
+
+La clasificación utilizada fue:
+
+```text
+A
+→ convergido
+
+B
+→ separación legítima
+  sin pérdida material demostrada
+
+C
+→ residuo material pendiente
+```
+
+El resultado fue:
+
+```text
+A
+→ 10
+
+B
+→ 4
+
+C
+→ 0
+```
+
+La auditoría concluyó:
+
+```text
+dependencia material pendiente
+→ ninguna demostrada
+
+convergencia material pendiente
+→ AGOTADA SUFICIENTEMENTE
+  dentro del alcance comprometido
+```
+
+La actuación 60 no declaró todavía alcanzado el producto final.
+
+La única incertidumbre restante fue clasificada como:
+
+```text
+INCERTIDUMBRE DE CLAUSURA
+→ relevante
+→ bloqueante
+```
+
+y consistía en determinar qué criterio positivo, mínimo, verificable y canónicamente compatible permitía decidir si el estado alcanzado constituía el producto final perseguido por el proyecto.
+
+La actuación 60 quedó cerrada y derivó exclusivamente la actuación 61.
+
+## Actuación 61 — criterio canónico de clausura
+
+La actuación 61 reconstruyó el criterio:
+
+```text
+K1
+→ criterio canónico de clausura
+  suficientemente reconstruido
+```
+
+a partir de `PROJECT_CHARTER`, `PRODUCT`, `PLATFORM_VISION`, el Manual de continuidad estratégica, las estrategias de convergencia y el estado material consolidado.
+
+La aplicación de `K1` comprobó:
+
+```text
+K1-01
+→ compromisos Product satisfechos
+
+K1-02
+→ capacidades y condiciones necesarias realizadas
+
+K1-03
+→ integración material suficiente
+
+K1-04
+→ validación suficiente
+
+K1-05
+→ dependencias obligatorias abiertas
+→ ninguna
+
+K1-06
+→ criterios vigentes insatisfechos
+→ ninguno
+
+K1-07
+→ hitos obligatorios pendientes
+→ ninguno
+
+K1-08
+→ pérdida material pendiente
+→ ninguna demostrada
+
+K1-09
+→ incertidumbre bloqueante restante
+→ ninguna identificada
+
+K1-10
+→ condición adicional competente
+→ ninguna identificada
+```
+
+Por tanto:
+
+```text
+K1
+→ SATISFECHO
+```
+
+y se estableció:
+
+```text
+PRODUCTO FINAL
+→ ALCANZADO
+  respecto del alcance
+  legítimamente vigente
+  y suficientemente demostrado
+```
+
+## Alcance del cierre
+
+La declaración no equivale a:
+
+```text
+PLATFORM_VISION completamente realizada
+
+todas las posibilidades históricas implementadas
+
+todos los alcances posibles generalizados
+
+todas las Realizations integradas
+
+producto universalmente completo
+
+producto inmutable
+
+proyecto definitivamente terminado
+```
+
+`PLATFORM_VISION` permanece vigente como dirección de largo plazo y no constituye por sí misma una lista automática de trabajo pendiente.
+
+La posibilidad de evolución futura se conserva, pero cualquier nueva actuación deberá demostrar de nuevo fundamento positivo suficiente.
+
+## Estado resultante
+
+La trayectoria final queda:
+
+```text
+T1
+→ cerrado
+
+H2
+→ cerrado
+
+57
+→ convergencia material
+
+58
+→ convergencia material
+
+59
+→ reevaluación completa
+  Product ↔ PLATFORM_VISION
+
+60
+→ auditoría final
+  de convergencia material
+
+61
+→ reconstrucción y aplicación
+  del criterio canónico K1
+
+↓
+
+PRODUCTO FINAL
+→ ALCANZADO
+```
+
+La aplicación posterior del Manual de continuidad estratégica establece:
+
+```text
+compromisos vigentes insatisfechos
+→ ninguno demostrado
+
+criterios pendientes
+→ ninguno demostrado
+
+dependencias necesarias pendientes
+→ ninguna demostrada
+
+hitos obligatorios pendientes
+→ ninguno identificado
+
+incertidumbre bloqueante
+→ ninguna restante identificada
+
+nueva evidencia emergente
+que exija actuación
+→ ninguna identificada
+```
+
+Por tanto:
+
+```text
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN
+ESTRATÉGICAMENTE DERIVADA
+→ NINGUNA
+
+NUEVO HORIZONTE
+→ NO DERIVADO
+```
+
+El estado del proyecto queda registrado como:
+
+```text
+PRODUCTO FINAL ALCANZADO
++
+PROYECTO ESTABLE
++
+SIN ACTUACIÓN ABIERTA
++
+EVOLUCIÓN FUTURA POSIBLE
+SÓLO BAJO NUEVO FUNDAMENTO SUFICIENTE
+```
+
+La pregunta de reanudación pasa a ser:
+
+```text
+¿existe nueva evidencia
+o fundamento positivo suficiente
+para modificar el estado actualmente cerrado?
+```
