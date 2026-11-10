@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === "build" || isPreview ? "/mi-app/" : "/",
   test: {
     environment: "jsdom",
     globals: true,
@@ -12,4 +13,4 @@ export default defineConfig({
       reportsDirectory: "./coverage",
     },
   },
-});
+}));
