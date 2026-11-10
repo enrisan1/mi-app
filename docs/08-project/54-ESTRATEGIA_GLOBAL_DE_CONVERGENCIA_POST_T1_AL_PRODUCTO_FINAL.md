@@ -2,7 +2,7 @@
 
 ## Estado
 
-**En construcción.**
+**Cerrada — estrategia global de convergencia post-T1 completada mediante las actuaciones 57–61, con producto final alcanzado respecto del alcance legítimamente vigente y suficientemente demostrado.**
 
 Este documento reaplica, desde el estado estratégico vigente posterior a T1, Q05
 y el cierre del panorama externo, la metodología general establecida en
