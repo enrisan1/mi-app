@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 27/10/2026
+**Fecha de actualización:** 10/11/2026
 
 ## Índice
 
@@ -16,6 +16,8 @@
 ---
 
 # 1. Resumen ejecutivo
+
+**Estado vigente al 10/11/2026:** producto final alcanzado en 61 respecto del alcance legítimamente vigente y suficientemente demostrado; actuación 62 cerrada, preparación operativa del primer lanzamiento satisfecha y producto públicamente desplegado y usable en el recorrido mínimo validado en <https://enrisan1.github.io/mi-app/>. Proyecto estable, sin actuación abierta salvo nuevo fundamento positivo suficiente. El detalle vigente figura en la actualización post-62 al final de este documento; los bloques previos conservan sus respectivos contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -6780,3 +6782,81 @@ La pregunta de reanudación pasa a ser:
 o fundamento positivo suficiente
 para modificar el estado actualmente cerrado?
 ```
+
+---
+
+# Actualización del estado vigente — 10/11/2026 — Cierre de la actuación 62
+
+El bloque posterior a 60–61 se conserva como estado histórico correcto. La actuación 61 declaró alcanzado el producto final respecto del alcance legítimamente vigente y suficientemente demostrado, con proyecto estable y sin actuación abierta.
+
+Posteriormente, un objetivo humano explícito de comprobar el lanzamiento real del producto proporcionó nuevo fundamento positivo. La reaplicación del Manual derivó la actuación 62, independiente de la estrategia global 54 y sin reabrir 60, 61, K1 ni Product.
+
+Fuente competente del resultado y sus límites:
+
+`62-AUDITORIA_PREPARACION_OPERATIVA_Y_LANZAMIENTO_PRODUCTO_FINAL.md`.
+
+## Resultado operativo vigente
+
+Lanzamiento se definió humanamente como aplicación web pública accesible mediante una URL: entrada en navegador, sin instalación local, y uso del recorrido ordinario. GitHub Pages fue elegido como primer destino reversible.
+
+URL pública validada humanamente:
+
+<https://enrisan1.github.io/mi-app/>
+
+La preparación mínima quedó en el commit `255ade5`, `ci(pages): prepare manual GitHub Pages deployment`, con base `/mi-app/` en build/preview y workflow exclusivamente manual. El push se completó y, según la evidencia operativa aportada para el cierre, `Deploy to GitHub Pages #2` terminó en SUCCESS sobre ese commit. Se resolvieron previamente la autenticación de push y la regla antigua del environment. El detalle histórico permanece en 62 y en el diario.
+
+Los controles locales dieron código 0: typecheck, 37 archivos / 327 tests pasados / 0 fallidos, lint dentro de su cobertura configurada y build. Tras preparar Pages se repitieron satisfactoriamente diff check, typecheck, 327 tests y build; las rutas y assets de producción bajo `/mi-app/` fueron comprobados.
+
+La validación humana pública acreditó carga inicial, creación de «este es un texto de prueba.», resultado visible, recarga, recuperación del texto y continuación hacia «Integración post-V1» con el trabajo preservado. Es evidencia de un caso real, no una garantía de compatibilidad o disponibilidad universal.
+
+```text
+L62-01 … L62-08
+→ SATISFECHOS dentro del alcance adoptado
+
+ACTUACIÓN 62
+→ CERRADA
+
+PRODUCTO FINAL
+→ ALCANZADO EN 61
+
+PREPARACIÓN OPERATIVA DE PRIMER LANZAMIENTO
+→ SATISFECHA EN 62
+
+PRODUCTO
+→ PÚBLICAMENTE DESPLEGADO Y USABLE
+  en el recorrido mínimo validado
+
+PRODUCTO ENDURECIDO PARA TODO ESCENARIO POSIBLE
+→ NO DEMOSTRADO
+```
+
+## Carencias conservadas y alcance de la decisión
+
+Permanecen defectos de recuperación ante localStorage corrupto/incompatible, almacenamiento denegado y manejo de cuota; ESLint sin TS/TSX; ausencia de CI general más allá del deployment manual, medición de cobertura y automatización de navegador real; README desactualizado y declaración MIT sin LICENSE; runtime sin fijación global mediante engines/archivo específico. El workflow manual se conserva como decisión operativa deliberada.
+
+Los fallos de persistencia fueron reproducidos bajo condiciones aisladas/simuladas. No se demostró que el recorrido ordinario válido de esta versión produzca esos estados corruptos. Por decisión humana quedan como carencias reales no bloqueantes del primer lanzamiento, salvo nueva evidencia durante el uso ordinario válido. No se declaran corregidos.
+
+Este inventario no constituye backlog obligatorio ni deriva actuaciones automáticamente. No se afirma robustez universal, compatibilidad universal, ausencia absoluta de defectos, SLA, madurez empresarial o seguridad absoluta. No se incorporan backend, autenticación, sincronización interdispositivo ni persistencia multiusuario.
+
+## Punto de reanudación final post-62
+
+La reaplicación de las dos ramas y las seis fuentes del Manual se registra en 62: se conserva la satisfacción de Product y K1; el objetivo adicional de lanzamiento queda satisfecho; no se identifica dependencia, criterio, hito o incertidumbre bloqueante pendiente dentro de ese alcance ni nueva evidencia que obligue a otra actuación.
+
+```text
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
+→ NINGUNA
+
+NUEVO HORIZONTE
+→ NO DERIVADO
+
+PUNTO DE REANUDACIÓN
+→ PRODUCTO FINAL ALCANZADO
+  + PRODUCTO PÚBLICAMENTE DESPLEGADO Y USABLE
+  + PROYECTO ESTABLE, SIN ACTUACIÓN ABIERTA
+  salvo nuevo fundamento positivo suficiente
+```
+
+No se reabre Product ni se deriva P6, nuevo Product Value, Architecture, Realization o Implementation. La actuación 62 no se incorpora retroactivamente a 54 y no cambia los resultados de 60–61.

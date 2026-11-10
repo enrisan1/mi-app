@@ -9083,3 +9083,59 @@ La pregunta de reanudación pasa a ser:
 o fundamento positivo suficiente
 para modificar el estado actualmente cerrado?
 ```
+
+---
+
+# 10/11/2026 — Actuación 62 y primer lanzamiento público funcional
+
+## Fundamento posterior a 61
+
+La actuación 61 había cerrado correctamente la clausura del producto final respecto del alcance legítimamente vigente y suficientemente demostrado, dejando el proyecto estable sin actuación abierta. Después apareció el objetivo humano explícito de comprobar si podía lanzarse realmente antes de seguir creciendo y quedar obsoleto.
+
+La reaplicación del Manual derivó la actuación 62: auditoría de preparación operativa y de lanzamiento del producto final. Fue una actuación nueva e independiente de la estrategia 54, sin reabrir 60, 61 o Product.
+
+Se definió lanzamiento como aplicación web pública accesible mediante una URL, sin instalación local y con recorrido ordinario utilizable en navegador. Se eligió GitHub Pages como primer destino, reversible.
+
+## Auditoría y preparación local
+
+La auditoría comenzó en `feature/task-filters`, HEAD `2010b46`, con árbol limpio. Typecheck, lint dentro de su cobertura y build terminaron con código 0; Vitest registró 37 archivos y 327 tests pasados, ninguno fallido. Vite resolvió la entrada `.jsx` hacia `.tsx`. Se confirmó que ESLint no cubría los 99 archivos TS/TSX de src.
+
+El bundle renderizó con almacenamiento vacío en jsdom. La restricción de puertos del sandbox impidió entonces comprobar HTTP local; no se atribuyó al producto. La auditoría reprodujo fallos con localStorage corrupto/incompatible y almacenamiento denegado, sin demostrar que la propia versión generara esos estados durante su uso ordinario válido. La decisión humana posterior los mantuvo como carencias reales no bloqueantes del primer lanzamiento en el alcance adoptado.
+
+La preparación mínima modificó sólo Vite y el nuevo workflow: base local `/`, build/preview `/mi-app/`, ejecución exclusivamente manual mediante workflow_dispatch, instalación reproducible con npm ci, build y acciones oficiales de Pages fijadas por SHA. Los controles posteriores repitieron satisfactoriamente diff check, typecheck, 327 tests y build; se verificaron rutas y recursos de producción.
+
+Se creó el commit `255ade5`, `ci(pages): prepare manual GitHub Pages deployment`.
+
+## Obstáculos reales y resolución operativa
+
+Los intentos iniciales de push del agente fallaron por resolución de red en el sandbox y después por falta de autenticación HTTPS. Esos intentos no constituyeron publicación ni push completado.
+
+La evidencia operativa posterior, comunicada por la persona responsable para este cierre, registra:
+
+- Creación de un PAT classic válido con scopes repo + workflow para subir el workflow; no se conserva su valor. El push a origin/feature/task-filters se completó.
+- Comprobación de que feature/task-filters estaba 238 commits por delante y 0 por detrás de feature/project-structure, sin PRs abiertos. La rama por defecto se cambió a feature/task-filters.
+- Activación de Pages con source GitHub Actions.
+- Primer workflow bloqueado por la protección antigua de github-pages, que sólo autorizaba feature/project-structure. Se actualizó la regla a feature/task-filters.
+- Segundo workflow, **Deploy to GitHub Pages #2**, en **SUCCESS** sobre `255ade5`, con artefacto generado y despliegue completado.
+
+Las incidencias de autenticación y protección quedaron resueltas como obstáculos operativos. El PAT personal no constituye una dependencia runtime de la aplicación.
+
+## Primera URL pública funcional y evidencia humana
+
+<https://enrisan1.github.io/mi-app/>
+
+La persona responsable verificó en navegador real: carga con «Dónde estás», «Un problema para pensar» y «Ahora»; creación de «este es un texto de prueba.»; visualización bajo «Lo que has aportado»; recarga; aparición de «Retomar» y «Aportación anterior» con el mismo texto; uso de «Continuar con este trabajo» y transición a «Integración post-V1», con el texto conservado como «Trabajo actual».
+
+Quedó así acreditada por validación humana la cadena repositorio → build → deployment → URL pública → carga real → creación → persistencia → recarga → recuperación → continuación post-V1. Esta entrada registra la evidencia humana aportada, no una nueva prueba remota del agente durante su redacción.
+
+## Resultado, límites y continuidad
+
+La actuación 62 queda **cerrada** con L62-01…L62-08 satisfechos dentro del criterio adoptado. El producto final ya estaba alcanzado en 61; ahora se añade preparación operativa satisfecha y producto públicamente desplegado y usable en el recorrido mínimo validado. No se acredita endurecimiento universal ni disponibilidad continua.
+
+Se conservan como no bloqueantes las carencias de robustez de almacenamiento, ESLint sin TS/TSX, ausencia de CI general, medición de cobertura y automatización de navegador real, README desactualizado, MIT sin LICENSE y runtime sin fijación global. El deployment sigue siendo manual por decisión explícita. Nada de ello se transforma automáticamente en backlog.
+
+La lección operativa es distinguir clausura del producto, publicación funcional y robustez para escenarios adicionales, manteniendo la procedencia y el alcance de cada evidencia. No se reabre retrospectivamente 61 ni se extiende la estrategia 54.
+
+La reaplicación del Manual deja siguiente actuación automática: ninguna; siguiente actuación estratégicamente derivada: ninguna; nuevo horizonte: no derivado. El proyecto queda estable, sin actuación abierta salvo nuevo fundamento positivo suficiente, sin P6, nuevo Product Value, Architecture, Realization o Implementation derivados.
+
+El resultado detallado, sus criterios, clasificación y límites quedan en `62-AUDITORIA_PREPARACION_OPERATIVA_Y_LANZAMIENTO_PRODUCTO_FINAL.md`.

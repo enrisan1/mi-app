@@ -4,6 +4,8 @@
 
 **Vigente.**
 
+**Actualización vigente: 10/11/2026, bloque 24.** Actuación 62 cerrada; producto final alcanzado, preparación operativa de lanzamiento satisfecha y producto públicamente desplegado y usable en <https://enrisan1.github.io/mi-app/> dentro del recorrido mínimo validado. Sin actuación abierta salvo nuevo fundamento positivo suficiente. Los bloques anteriores conservan sus contextos históricos.
+
 Este documento constituye el tablero maestro sintético del estado estratégico del proyecto.
 
 No sustituye los documentos canónicos de detalle.
@@ -2464,3 +2466,79 @@ SIN ACTUACIÓN ABIERTA
 ```
 
 Una reapertura futura requerirá nuevo fundamento positivo suficiente.
+
+---
+
+# 24. Actualización post-61 — Actuación 62 y primer lanzamiento público
+
+**Estado vigente al 10/11/2026.** El bloque 23 conserva el estado histórico posterior a 60–61. La actuación 62 surgió después por nuevo fundamento positivo: el objetivo humano explícito de verificar un lanzamiento real. No forma parte retroactiva de la estrategia 54 ni reabre 60, 61, K1 o Product.
+
+Fuente de evidencia y cierre:
+
+`62-AUDITORIA_PREPARACION_OPERATIVA_Y_LANZAMIENTO_PRODUCTO_FINAL.md`.
+
+## 24.1 Secuencia posterior y estado maestro
+
+```text
+61
+→ CERRADA
+→ PRODUCTO FINAL ALCANZADO
+  respecto del alcance legítimamente vigente
+  y suficientemente demostrado
+
+↓ nuevo objetivo humano de lanzamiento público
+↓ reaplicación del Manual
+
+62
+→ auditoría de preparación operativa y lanzamiento
+→ CERRADA
+→ L62-01 … L62-08 SATISFECHOS
+
+PREPARACIÓN OPERATIVA DE LANZAMIENTO
+→ SATISFECHA
+
+PRODUCTO
+→ PÚBLICAMENTE DESPLEGADO Y USABLE
+  en el recorrido mínimo validado
+```
+
+La aplicación pública está en <https://enrisan1.github.io/mi-app/>. GitHub Pages es el primer destino elegido de forma reversible, no un requisito universal del producto.
+
+El commit de preparación `255ade5` configura build/preview bajo `/mi-app/` y deployment exclusivamente manual. El workflow #2 terminó en SUCCESS según la evidencia operativa aportada; la persona responsable verificó carga pública, creación, persistencia tras recarga, recuperación y continuidad post-V1 con el contenido preservado. No se afirma haber validado todos los navegadores ni todos los escenarios de fallo.
+
+## 24.2 Carencias conservadas sin derivación automática
+
+Permanecen recuperación ante localStorage corrupto/incompatible, manejo de almacenamiento denegado/cuota, ESLint sin TS/TSX, ausencia de CI general más allá del deployment manual, medición de cobertura y automatización de navegador real, README desactualizado, MIT sin LICENSE y runtime sin fijación global. El workflow manual se conserva como decisión operativa deliberada.
+
+Los defectos de persistencia fueron reproducidos bajo condiciones aisladas/simuladas, sin demostrar que el recorrido ordinario válido de esta versión genere esos estados. Por decisión humana no bloquean el primer lanzamiento dentro del criterio adoptado, salvo nueva evidencia de aparición en uso ordinario válido. No se declaran corregidos.
+
+Este registro no constituye backlog obligatorio ni deriva trabajo por sí mismo. El producto no se declara endurecido para todo escenario posible.
+
+## 24.3 Punto de reanudación vigente post-62
+
+La reaplicación del Manual conserva Product y K1 satisfechos, da por satisfecho el objetivo adicional de lanzamiento y no identifica una dependencia necesaria, criterio, hito o incertidumbre bloqueante restante en ese alcance. Las carencias registradas no proporcionan automáticamente fundamento para otra actuación.
+
+```text
+SIGUIENTE ACTUACIÓN AUTOMÁTICA
+→ NINGUNA
+
+SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA
+→ NINGUNA
+
+NUEVO HORIZONTE
+→ NO DERIVADO
+
+P6 / NUEVO PRODUCT VALUE
+→ NO DERIVADOS
+
+ARCHITECTURE / REALIZATION / IMPLEMENTATION
+→ NO DERIVADAS
+
+ESTADO MAESTRO
+→ PRODUCTO FINAL ALCANZADO
+  + PREPARACIÓN OPERATIVA DE LANZAMIENTO SATISFECHA
+  + PRODUCTO PÚBLICAMENTE DESPLEGADO Y USABLE
+  + PROYECTO ESTABLE, SIN ACTUACIÓN ABIERTA
+```
+
+Una nueva actuación requerirá nuevo fundamento positivo suficiente. La estrategia 54 y los cierres 60–61 permanecen intactos.
