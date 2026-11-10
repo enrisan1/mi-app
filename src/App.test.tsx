@@ -725,6 +725,189 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     );
   });
 
+  it("conserva tras interrupción el trabajo constituido desde material recuperado y permite producir una aportación posterior desde él", async () => {
+    const user = userEvent.setup();
+
+    localStorage.setItem(
+      "ordinary.materials",
+      JSON.stringify([
+        { id: "m1", content: "Material anterior A" },
+        { id: "m2", content: "Material anterior B" },
+      ]),
+    );
+    localStorage.setItem("ru2m1.previous", "Trabajo previo");
+
+    const firstExecution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /qué necesitas considerar ahora/i,
+      }),
+      "Necesito recuperar el material pertinente para continuar.",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /examinar materiales anteriores/i,
+      }),
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /usar este material 2/i,
+      }),
+    );
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /nuevo trabajo/i,
+      }),
+      "Trabajo nuevo desde material recuperado",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este material/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText(/^nuevo trabajo constituido$/i).textContent,
+    ).toBe("Trabajo nuevo desde material recuperado");
+
+    firstExecution.unmount();
+
+    render(<App />);
+
+    expect(
+      screen.getByLabelText(/^aportación anterior$/i).textContent,
+    ).toBe("Trabajo nuevo desde material recuperado");
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /^aportación actual$/i,
+      }),
+      "Continuación posterior",
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/^antecedente$/i).textContent).toBe(
+      "Trabajo nuevo desde material recuperado",
+    );
+    expect(screen.getByLabelText(/^actuación actual$/i).textContent).toBe(
+      "Continuación posterior",
+    );
+  });
+
+  it("preserva un trabajo constituido desde material recuperado cuando otro trabajo posterior lo sustituye como antecedente", async () => {
+    const user = userEvent.setup();
+
+    localStorage.clear();
+
+    async function inspectMaterials(need: string) {
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /^qué necesitas considerar ahora$/i,
+        }),
+        need,
+      );
+      await user.click(
+        screen.getByRole("button", {
+          name: /^examinar materiales anteriores$/i,
+        }),
+      );
+    }
+
+    async function constituteRecoveredWork(work: string) {
+      await inspectMaterials("Necesito continuar desde el material B.");
+      await user.click(
+        screen.getByRole("button", {
+          name: /^usar este material 2$/i,
+        }),
+      );
+      await user.type(
+        screen.getByRole("textbox", {
+          name: /^nuevo trabajo$/i,
+        }),
+        work,
+      );
+      await user.click(
+        screen.getByRole("button", {
+          name: /^continuar con este material$/i,
+        }),
+      );
+      expect(
+        screen.getByLabelText(/^nuevo trabajo constituido$/i).textContent,
+      ).toBe(work);
+    }
+
+    let execution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", { name: /^introduce un texto libre$/i }),
+      "X",
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    execution.unmount();
+    execution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", { name: /^aportación actual$/i }),
+      "Material anterior A",
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    execution.unmount();
+    execution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", { name: /^aportación actual$/i }),
+      "Material anterior B",
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Material anterior B");
+
+    await constituteRecoveredWork("Trabajo recuperado W1");
+
+    execution.unmount();
+    execution = render(<App />);
+
+    expect(
+      screen.getByLabelText(/^aportación anterior$/i).textContent,
+    ).toBe("Trabajo recuperado W1");
+
+    await constituteRecoveredWork("Trabajo recuperado W2");
+
+    execution.unmount();
+    render(<App />);
+
+    expect(
+      screen.getByLabelText(/^aportación anterior$/i).textContent,
+    ).toBe("Trabajo recuperado W2");
+
+    await inspectMaterials("Necesito recuperar el trabajo W1.");
+
+    const inspectableContents = screen
+      .getAllByLabelText(/^contenido de material \d+$/i)
+      .map((element) => element.textContent);
+
+    expect(
+      inspectableContents,
+      `Estado persistido final: ${JSON.stringify({
+        previous: localStorage.getItem("ru2m1.previous"),
+        retained: localStorage.getItem("ru2m1.retained"),
+        materials: JSON.parse(localStorage.getItem("ordinary.materials") ?? "[]"),
+      })}`,
+    ).toContain("Trabajo recuperado W1");
+  });
+
   it("no arrastra a otra selección el nuevo trabajo constituido desde un material anterior", async () => {
     const user = userEvent.setup();
 

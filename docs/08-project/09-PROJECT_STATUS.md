@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 10/11/2026:** producto final alcanzado en 61 respecto del alcance legítimamente vigente y suficientemente demostrado; actuación 62 cerrada, preparación operativa del primer lanzamiento satisfecha y producto públicamente desplegado y usable en el recorrido mínimo validado en <https://enrisan1.github.io/mi-app/>. Proyecto estable, sin actuación abierta salvo nuevo fundamento positivo suficiente. El detalle vigente figura en la actualización post-62 al final de este documento; los bloques previos conservan sus respectivos contextos históricos.
+**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 dispone de cierre técnico local mediante H65-C mínima, con C65-01 y C65-02 satisfechos técnicamente; su publicación y validación humana post-despliegue están pendientes. El detalle vigente figura en la actualización post-65 al final de este documento. Los bloques anteriores conservan sus respectivos contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -6860,3 +6860,55 @@ PUNTO DE REANUDACIÓN
 ```
 
 No se reabre Product ni se deriva P6, nuevo Product Value, Architecture, Realization o Implementation. La actuación 62 no se incorpora retroactivamente a 54 y no cambia los resultados de 60–61.
+
+---
+
+# Actualización posterior — Actuación 65, cierre técnico previo a publicación
+
+**Registro: 10/11/2026.** El estado posterior a 62 se conserva como histórico. Nueva evidencia humana de uso post-lanzamiento mostró que el trabajo constituido desde un material recuperado desaparecía tras recargar. Esa pérdida, N64-02, fundamentó una corrección local de continuidad persistente respecto de PV-006, sin modificar Product ni el cierre histórico de 58.
+
+Fuente competente:
+
+`65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.
+
+## Resultado técnico actual
+
+H65-A, guardar sólo como ru2m1.previous, corrigió la recuperación inmediata pero quedó refutada: después de constituir W1 y W2, W1 desaparecía. Una segunda prueba roja reprodujo esa pérdida mediante UI desde almacenamiento vacío.
+
+H65-C mínima guarda el trabajo como nuevo antecedente y lo incorpora a ordinary.materials, persistiendo la colección y actualizando su estado React antes de confirmar visiblemente la constitución. La implementación está localizada en src/App.tsx, con dos tests nuevos en src/App.test.tsx.
+
+```text
+C65-01
+→ recuperación tras interrupción
+  y actuación posterior desde el trabajo recuperado
+→ SATISFECHO TÉCNICAMENTE
+
+C65-02
+→ W1 continúa localizable cuando W2 pasa a ser previous
+→ SATISFECHO TÉCNICAMENTE
+
+estado reproducido
+→ previous = W2
+→ retained = X
+→ ordinary.materials = [A, B, W1, W2]
+```
+
+Validaciones locales observadas: App 22/22; suite global 37 archivos, 329/329 tests y 0 fallidos; typecheck, build y diff check satisfactorios, con código 0. La reproducción efímera confirmó además selección de W1, conservación de A/B y retained=X, sin escrituras por mero montaje o inspección/selección.
+
+## Pendiente de cierre final
+
+La corrección está demostrada localmente; no se declara publicada ni validada humanamente en producción. El cierre final exige repetir en la aplicación pública <https://enrisan1.github.io/mi-app/> la constitución desde material recuperado, recarga, recuperación y actuación posterior, y comprobar que W1 sigue localizable después de constituir W2. Debe registrarse la revisión desplegada y la evidencia humana.
+
+```text
+ACTUACIÓN 65
+→ CIERRE TÉCNICO ALCANZADO
+→ PUBLICACIÓN Y VALIDACIÓN HUMANA POST-DESPLIEGUE PENDIENTES
+
+PUNTO DE REANUDACIÓN
+→ revisión y consolidación explícitas cuando se autoricen
+→ publicación autorizada de la corrección
+→ contraste humano público de C65-01 y C65-02
+→ cierre final sólo después de esa evidencia
+```
+
+No se modifican retained, availablePostV1Current, R-U2-M1 ni PostV1IntegratedExperience. No se resuelve la elección Y/R ni se deriva historial general, persistencia ilimitada, deduplicación, nueva Architecture, P6, nuevo Product Value o nuevo horizonte. La ausencia de esos resultados no se convierte en trabajo adicional derivado.

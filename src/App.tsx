@@ -183,7 +183,25 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
               <button
                 type="button"
                 disabled={newWork.trim().length === 0}
-                onClick={() => setConstitutedWork(newWork)}
+                onClick={() => {
+                  localStorageResumeRepository.savePrevious(newWork);
+
+                  const nextMaterials = [
+                    ...ordinaryMaterials,
+                    {
+                      id: `m${ordinaryMaterials.length + 1}`,
+                      content: newWork,
+                    },
+                  ];
+
+                  setOrdinaryMaterials(nextMaterials);
+                  localStorage.setItem(
+                    "ordinary.materials",
+                    JSON.stringify(nextMaterials),
+                  );
+
+                  setConstitutedWork(newWork);
+                }}
               >
                 Continuar con este material
               </button>

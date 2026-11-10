@@ -9139,3 +9139,41 @@ La lección operativa es distinguir clausura del producto, publicación funciona
 La reaplicación del Manual deja siguiente actuación automática: ninguna; siguiente actuación estratégicamente derivada: ninguna; nuevo horizonte: no derivado. El proyecto queda estable, sin actuación abierta salvo nuevo fundamento positivo suficiente, sin P6, nuevo Product Value, Architecture, Realization o Implementation derivados.
 
 El resultado detallado, sus criterios, clasificación y límites quedan en `62-AUDITORIA_PREPARACION_OPERATIVA_Y_LANZAMIENTO_PRODUCTO_FINAL.md`.
+
+---
+
+# 10/11/2026 — Actuación 65, continuidad persistente del trabajo recuperado
+
+## Origen y relación con el alcance histórico
+
+Después del lanzamiento, una persona produjo trabajo real desde un material localizado y seleccionado. La aplicación mostró «Nuevo trabajo constituido», pero una recarga normal hizo desaparecer el resultado. El código sólo lo conservaba en estado React.
+
+La pérdida N64-02 proporcionó fundamento adicional para una corrección local respecto de PV-006. La actuación 58 había dejado expresamente sin derivar la incorporación de ese resultado a previous, materiales o PostV1 current hasta que existiera tal fundamento. Su cierre se conserva; Product permanece sin modificación. La cuestión Y/R de N64-01 no se resuelve aquí.
+
+## Primer ciclo rojo/verde y refutación
+
+Se añadió un test de constitución desde material recuperado, desmontaje/remontaje y actuación posterior. Falló al recuperar: esperaba «Trabajo nuevo desde material recuperado» y obtenía «Trabajo previo».
+
+H65-A añadió savePrevious(newWork) antes de la confirmación visible. El test pasó completo; App obtuvo 21/21 y la suite global 328/328, con typecheck, build y diff check satisfactorios.
+
+La auditoría semántica posterior encontró que ese verde no garantizaba conservación bajo repetición. Desde vacío, la UI producía X → A → B, con previous=B, retained=X y materiales=[A,B]. Constituir W1 lo guardaba sólo en previous; constituir después W2 desplazaba W1 sin conservarlo por otra vía.
+
+Una reproducción efímera confirmó el contraejemplo. Se añadió un segundo test desde almacenamiento vacío, sin precargar claves: tras W1, recarga, W2 y recarga, exigió localizar W1 entre materiales. Después de corregir una ambigüedad de selector del propio test, falló por la pérdida esperada: materiales=[A,B], previous=W2, retained=X. H65-A quedó descartada como solución suficiente.
+
+## Solución y evidencia técnica final
+
+H65-C mínima mantiene el guardado en previous y añade el trabajo a ordinary.materials con el mecanismo localizado de identificadores existente, actualizando estado React y persistencia antes de confirmar el resultado visible. No añade helpers de producción ni política de deduplicación.
+
+Los dos tests pasaron sin modificarse durante este último verde. App: 22/22; suite global: 37 archivos, 329/329 pasados, 0 fallidos; typecheck, build y diff check: código 0. En una reproducción efímera del código fuente actual, con almacenamiento en memoria y DOM simulado, se observó previous=W2, retained=X y materiales=[A,B,W1,W2]. W1 siguió inspeccionable y seleccionable; W2 se recuperó como aportación anterior. No hubo escrituras por mero montaje o inspección/selección.
+
+C65-01 queda satisfecho técnicamente: el nuevo trabajo se recupera y puede actuar como antecedente de otra aportación. C65-02 también: W1 no desaparece al ocupar W2 el papel de antecedente operativo. Los tests históricos de selección humana y limpieza local permanecieron verdes.
+
+## Estado del hito y pendiente
+
+**Cierre técnico alcanzado; publicación y validación humana post-despliegue pendientes.** La corrección no se registra todavía como publicada ni se cierra finalmente la actuación.
+
+El contraste final deberá repetir humanamente en la aplicación pública la secuencia material recuperado → nuevo trabajo → recarga → recuperación y actuación posterior, y comprobar que un trabajo anterior continúa localizable después de constituir otro. Se deberá identificar la revisión desplegada y registrar la evidencia humana.
+
+No se cambian retained, availablePostV1Current, ResumeExperience ni PostV1IntegratedExperience. No se deriva historial general, persistencia ilimitada, deduplicación, Architecture, P6, nuevo Product Value ni nuevo horizonte.
+
+La lección local es que recuperar el último resultado no demuestra preservar el anterior bajo sucesivas constituciones. El detalle de ambas pruebas rojas, la refutación y los límites está en `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.
