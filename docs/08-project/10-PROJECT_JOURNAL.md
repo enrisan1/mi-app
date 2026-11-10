@@ -9197,3 +9197,22 @@ La recuperación y conservación bajo sustitución quedaron así contrastadas p�
 **Actuación 65 → CERRADA.** El criterio de finalización queda satisfecho en el alcance probado y N64-02 queda corregida como insuficiencia local respecto de PV-006. La publicación y la validación humana de la corrección dejan de estar pendientes.
 
 El cierre no resuelve ni absorbe la cuestión Y/R, la elección entre trabajo ordinario e integración previa, la inteligibilidad de R1/S1 ni otras diferencias de 64 que sigan abiertas. No declara cierre global de PV-006 o de la actuación 64 y no deriva P6, nuevo Product Value, Architecture, Realization ni nuevo horizonte. Se conserva el alcance negativo documentado en `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.
+
+
+---
+
+# 10/11/2026 — Actuación 67, determinación humana Y/R y cierre técnico local
+
+Después del cierre público de 65 y de N64-02 permanecía la coexistencia Y/R de N64-01. La prueba discriminante humana estableció que decidir qué ruta continuar correspondía a la persona. La ocultación anterior de la continuación de Y cuando existía R quedó discriminada como insuficiencia local respecto de PV-005, sin declarar incumplimiento global del compromiso.
+
+La reducción seleccionó H67-C: antes de decidir, conservar Y ordinariamente y R en su clave integrada, ofreciendo ambas rutas; elegir R la recupera íntegra sin eliminar Y; elegir Y sustituye sólo el estado integrado y comienza desde Y, sin S1 automático. No se necesitan dos trayectorias persistentes, colección, historial ni backup general de R. PV-006 no exige preservar indefinidamente una posibilidad legítimamente abandonada.
+
+El primer rojo añadió sólo T67-01 y T67-06: 24 tests, 22 PASS y 2 FAIL por ausencia del botón para continuar el trabajo actual, con todos los históricos verdes. El verde de producción dejó 23 PASS y el único rojo del contrato histórico que exigía ocultar ese botón. T67-06 alcanzó current=«W recién constituido», no «Y anterior», ejercitando la sincronización de availablePostV1Current añadida al constituir trabajo recuperado. El rojo inicial no aisló dinámicamente el snapshot; su defecto se identificó por lectura y quedó protegido por las aserciones finales.
+
+El segundo tramo rojo/verde actualizó deliberadamente sólo la expectativa obsoleta del contrato histórico, manteniendo su protección válida: elegir R la restaura y conserva Y en previous. Resultado: 24/24. Después se añadieron los cuatro contrastes restantes, sin nuevos cambios de producción: T67-02 conservación íntegra de R, T67-03 sustitución explícita por Y, T67-04 persistencia tras elegir Y y T67-05 ausencia de modificación antes de decidir. Junto con T67-01 y T67-06, el fichero obtuvo 28/28 PASS.
+
+La validación focal fue observada en esta sesión. La persona responsable comunica la validación global ya realizada: 37/37 archivos y 335/335 tests; npm run typecheck → tsc --noEmit, código 0 y sin errores; npm run build → Vite 8.0.16, 30 módulos transformados y build satisfactorio; git diff --check → código 0, sin salida. No se repitieron esas validaciones de código durante la redacción documental. El notice de actualización de npm fue informativo y no se alteró el entorno.
+
+**Actuación 67 → CIERRE TÉCNICO LOCAL ALCANZADO.** Publicación y validación humana post-despliegue pendientes; no se declara cierre final ni corrección pública de N64-01. El cierre requiere revisión publicada identificable y contraste humano público de ambas alternativas, conservación de R al elegirla, sustitución explícita por Y sin S1 automático y recuperación posterior de Y tras recarga.
+
+La actuación 65 permanece cerrada. No se cierra globalmente PV-005, PV-006 ni 64, y la inteligibilidad R1/S1 permanece separada. No se deriva P6, nuevo Product Value, nueva Architecture ni nuevo horizonte. El detalle, los límites y el criterio final constan en `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.

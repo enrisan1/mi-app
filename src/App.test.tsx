@@ -473,6 +473,332 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     expect(localStorage.getItem("ru2m1.retained")).toBe("X");
   });
 
+  const persistedTrajectoryR = {
+    current: "R2 existente",
+    stable: { id: "S1", content: "R1 existente" },
+    published: { id: "P1", sourceStableId: "S1", content: "R1 existente" },
+    evaluation: { publishedId: "P1", criterion: "C1", evidence: "E1" },
+    collaboration: {
+      sourcePublishedId: "P1",
+      sharedResult: "R1 existente",
+      firstContribution: { participant: "A", content: "A1" },
+      secondContribution: { participant: "B", content: "B1" },
+    },
+    artifact: { id: "X1", sourcePublishedId: "P1", content: "R1 existente" },
+    received: { sourceArtifactId: "X1", content: "R1 existente" },
+  };
+
+  it("[T67-02] conserva íntegramente la trayectoria existente cuando la persona elige retomarla", async () => {
+    const user = userEvent.setup();
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify(persistedTrajectoryR),
+    );
+
+    render(<App />);
+
+    expect(
+      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+    ).toBeInTheDocument();
+    const resumeExisting = screen.getByRole("button", {
+      name: /retomar trayectoria integrada existente/i,
+    });
+    expect(resumeExisting).toBeInTheDocument();
+    await user.click(resumeExisting);
+
+    expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
+      "R2 existente",
+    );
+    expect(screen.getByLabelText("Contenido del estado estable").textContent).toBe(
+      "R1 existente",
+    );
+    expect(screen.getByLabelText("Contenido publicado").textContent).toBe(
+      "R1 existente",
+    );
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
+    expect(JSON.parse(localStorage.getItem("post-v1-integrated.state")!)).toEqual(
+      persistedTrajectoryR,
+    );
+  });
+
+  it("[T67-03] sustituye la trayectoria existente por Y sólo al elegir continuar el trabajo actual", async () => {
+    const user = userEvent.setup();
+    const storedR = JSON.stringify(persistedTrajectoryR);
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+    localStorage.setItem("post-v1-integrated.state", storedR);
+
+    render(<App />);
+
+    expect(localStorage.getItem("post-v1-integrated.state")).toBe(storedR);
+    await user.click(
+      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+    );
+
+    expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
+      "Y nuevo",
+    );
+    expect(screen.getByLabelText("Contenido del trabajo actual")).not.toHaveTextContent(
+      "R2 existente",
+    );
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+    expect(JSON.parse(localStorage.getItem("post-v1-integrated.state")!)).toEqual({
+      current: "Y nuevo",
+      stable: null,
+      published: null,
+      evaluation: null,
+      collaboration: null,
+      artifact: null,
+      received: null,
+    });
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
+  });
+
+  it("[T67-04] restaura después de una interrupción la trayectoria iniciada desde Y", async () => {
+    const user = userEvent.setup();
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify(persistedTrajectoryR),
+    );
+
+    const firstExecution = render(<App />);
+    await user.click(
+      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+    );
+    expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
+      "Y nuevo",
+    );
+
+    firstExecution.unmount();
+    render(<App />);
+
+    expect(
+      screen.queryByRole("heading", { name: /^integración post-v1$/i }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /^dónde estás$/i }),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    );
+
+    expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
+      "Y nuevo",
+    );
+    expect(screen.getByLabelText("Contenido del trabajo actual")).not.toHaveTextContent(
+      "R2 existente",
+    );
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+  });
+
+  it("[T67-05] no modifica ninguna alternativa al presentar la elección Y/R", () => {
+    const storedR = JSON.stringify(persistedTrajectoryR);
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+    localStorage.setItem("post-v1-integrated.state", storedR);
+
+    render(<App />);
+
+    expect(
+      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: /^integración post-v1$/i }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByLabelText("Identificador del estado estable"),
+    ).not.toBeInTheDocument();
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
+    expect(localStorage.getItem("post-v1-integrated.state")).toBe(storedR);
+    expect(JSON.parse(localStorage.getItem("post-v1-integrated.state")!)).toEqual(
+      persistedTrajectoryR,
+    );
+  });
+
+  it("[T67-01] preserva la elección humana entre el trabajo ordinario actual y una trayectoria integrada existente", () => {
+    const existingTrajectory = {
+      current: "R2 existente",
+      stable: {
+        id: "S1",
+        content: "R1 existente",
+      },
+      published: {
+        id: "P1",
+        sourceStableId: "S1",
+        content: "R1 existente",
+      },
+      evaluation: {
+        publishedId: "P1",
+        criterion: "C1",
+        evidence: "E1",
+      },
+      collaboration: {
+        sourcePublishedId: "P1",
+        sharedResult: "R1 existente",
+        firstContribution: {
+          participant: "A",
+          content: "A1",
+        },
+        secondContribution: {
+          participant: "B",
+          content: "B1",
+        },
+      },
+      artifact: {
+        id: "X1",
+        sourcePublishedId: "P1",
+        content: "R1 existente",
+      },
+      received: {
+        sourceArtifactId: "X1",
+        content: "R1 existente",
+      },
+    };
+
+    localStorage.setItem("ru2m1.previous", "Y nuevo");
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify(existingTrajectory),
+    );
+
+    render(<App />);
+
+    expect(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", {
+        name: /^integración post-v1$/i,
+      }),
+    ).not.toBeInTheDocument();
+    expect(localStorage.getItem("post-v1-integrated.state")).toBe(
+      JSON.stringify(existingTrajectory),
+    );
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
+    expect(
+      screen.getByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("[T67-06] ofrece para integración el trabajo recién constituido desde material recuperado", async () => {
+    const user = userEvent.setup();
+
+    const existingTrajectory = {
+      current: "R2 existente",
+      stable: {
+        id: "S1",
+        content: "R1 existente",
+      },
+      published: {
+        id: "P1",
+        sourceStableId: "S1",
+        content: "R1 existente",
+      },
+      evaluation: {
+        publishedId: "P1",
+        criterion: "C1",
+        evidence: "E1",
+      },
+      collaboration: {
+        sourcePublishedId: "P1",
+        sharedResult: "R1 existente",
+        firstContribution: {
+          participant: "A",
+          content: "A1",
+        },
+        secondContribution: {
+          participant: "B",
+          content: "B1",
+        },
+      },
+      artifact: {
+        id: "X1",
+        sourcePublishedId: "P1",
+        content: "R1 existente",
+      },
+      received: {
+        sourceArtifactId: "X1",
+        content: "R1 existente",
+      },
+    };
+
+    localStorage.setItem("ru2m1.previous", "Y anterior");
+    localStorage.setItem(
+      "ordinary.materials",
+      JSON.stringify([
+        { id: "m1", content: "Material A" },
+        { id: "m2", content: "Material B" },
+      ]),
+    );
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      JSON.stringify(existingTrajectory),
+    );
+
+    render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /^qué necesitas considerar ahora$/i,
+      }),
+      "Necesito continuar desde el material B.",
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^examinar materiales anteriores$/i,
+      }),
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^usar este material 2$/i,
+      }),
+    );
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /^nuevo trabajo$/i,
+      }),
+      "W recién constituido",
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^continuar con este material$/i,
+      }),
+    );
+
+    expect(
+      screen.getByLabelText(/^nuevo trabajo constituido$/i).textContent,
+    ).toBe("W recién constituido");
+    expect(localStorage.getItem("ru2m1.previous")).toBe("W recién constituido");
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    );
+
+    expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
+      "W recién constituido",
+    );
+    expect(
+      screen.getByLabelText("Contenido del trabajo actual"),
+    ).not.toHaveTextContent("Y anterior");
+  });
+
   it("preserva y retoma una trayectoria post-V1 existente sin sobrescribirla con el nuevo trabajo disponible", async () => {
     const user = userEvent.setup();
 
@@ -523,10 +849,16 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     render(<App />);
 
     expect(
-      screen.queryByRole("button", {
+      screen.getByRole("button", {
         name: /continuar con este trabajo/i,
       }),
-    ).not.toBeInTheDocument();
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    ).toBeInTheDocument();
 
     await user.click(
       screen.getByRole("button", {
@@ -541,6 +873,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     expect(
       screen.getByLabelText("Contenido del trabajo actual"),
     ).not.toHaveTextContent("Y nuevo");
+    expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
   });
 
   it("conserva como pluralidad externa resultados producidos en reanudaciones ordinarias sucesivas", async () => {

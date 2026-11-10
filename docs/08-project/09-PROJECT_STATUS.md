@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 está cerrada: H65-C mínima fue desplegada mediante GitHub Pages #4 sobre `fffb1eb` y C65-01/C65-02 obtuvieron PASS público según la validación humana comunicada. N64-02 queda corregida en el alcance probado. Las cuestiones Y/R, inteligibilidad de R1/S1 y demás diferencias pendientes de 64 no quedan resueltas por este cierre. El detalle vigente figura en el cierre final de 65 al final de este documento; los bloques anteriores conservan sus contextos históricos.
+**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 permanece cerrada: H65-C mínima fue desplegada mediante GitHub Pages #4 sobre `fffb1eb` y C65-01/C65-02 obtuvieron PASS público; N64-02 queda corregida en el alcance probado. La actuación 67 alcanza cierre técnico local: N64-01 ha sido discriminada como insuficiencia local respecto de PV-005 y la corrección H67-C de elección humana Y/R está implementada y técnicamente validada. Su publicación y validación humana pública siguen pendientes. No se declara cierre global de PV-005, PV-006 o 64; la inteligibilidad R1/S1 conserva su estatuto separado. No se derivan P6, nueva Architecture ni nuevo horizonte. El detalle vigente figura en la actualización de 67 al final; los bloques anteriores conservan sus contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -6948,3 +6948,30 @@ El detalle y la procedencia de la evidencia quedan en `65-CORRECCION_CONTINUIDAD
 Permanecen fuera de este cierre la cuestión Y/R, la elección entre trabajo ordinario actual y trayectoria integrada previa, la inteligibilidad de R1/S1 y cualquier otra diferencia de 64 que siga pendiente. N64-01 conserva su estatuto indeterminado respecto de PV-006 y PV-005 en el contraste realizado; no se convierte aquí en incumplimiento demostrado ni en cuestión resuelta.
 
 El punto de reanudación deja de ser publicar o validar 65. Las cuestiones restantes de 64 conservan su propio alcance y requieren su contraste específico; no se deriva una solución ni se declara el proyecto globalmente sin cuestiones abiertas. No se deriva P6, nuevo Product Value, Architecture, Realization ni nuevo horizonte. Se conservan los demás límites de la actuación 65.
+
+
+---
+
+# Actualización posterior — Actuación 67, cierre técnico local
+
+**Registro: 10/11/2026.** Después del cierre de 65, la determinación humana explícita de que elegir entre Y ordinario actual y R integrada previa corresponde a la persona discrimina N64-01 respecto de PV-005. Deja de estar indeterminada en este caso: la priorización anterior de R constituía una insuficiencia realizativa local. Las afirmaciones del cierre de 65 conservan su contexto histórico anterior a esta discriminación.
+
+Fuente competente: `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.
+
+H67-C presenta ambas alternativas sin modificar sus persistencias antes de elegir. Elegir R restaura íntegramente R y conserva Y; elegir Y sustituye únicamente el estado integrado por una nueva trayectoria desde Y, sin S1 automático. El trabajo recién constituido desde material recuperado sincroniza además availablePostV1Current para evitar utilizar un snapshot anterior en la misma sesión. No se modifican PostV1IntegratedExperience, useLocalStorage ni ResumeExperience.
+
+Validación focal observada: App.test.tsx 28/28, incluidos T67-01…T67-06 y el contrato histórico actualizado. Validación global comunicada por la persona responsable: 37/37 archivos, 335/335 tests; typecheck sin errores, código 0; build Vite 8.0.16 con 30 módulos, satisfactorio; diff check código 0 y sin salida. La procedencia y los ciclos rojo/verde constan en 67.
+
+```text
+ACTUACIÓN 65 → CERRADA
+N64-02 → CORREGIDA EN EL ALCANCE PROBADO
+
+ACTUACIÓN 67 → CIERRE TÉCNICO LOCAL ALCANZADO
+N64-01 → INSUFICIENCIA LOCAL DEMOSTRADA RESPECTO DE PV-005
+       → CORRECCIÓN LOCAL IMPLEMENTADA Y TÉCNICAMENTE VALIDADA
+PUBLICACIÓN Y VALIDACIÓN HUMANA POST-DESPLIEGUE → PENDIENTES
+```
+
+N64-01 no se declara todavía corregida públicamente. No se cierra globalmente PV-005, PV-006 ni la actuación 64. La inteligibilidad R1/S1 conserva su estatuto separado; no se deriva su resolución por arrastre. No se derivan P6, nuevo Product Value, nueva Architecture ni nuevo horizonte.
+
+**Punto de reanudación:** revisión y consolidación autorizadas de 67, publicación y validación humana pública de ambas elecciones y de la recuperación tras recarga, registrando commit desplegado y evidencia. Es continuidad de la actuación 67, no una nueva actuación automáticamente derivada. El criterio final completo figura en 67.

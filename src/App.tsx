@@ -11,6 +11,8 @@ type OrdinaryMaterial = {
   content: string;
 };
 
+type IntegrationChoice = null | "existing" | "current";
+
 type AppProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
@@ -29,7 +31,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [availablePostV1Current, setAvailablePostV1Current] = useState<
     string | null
   >(() => localStorageResumeRepository.loadPrevious());
-  const [continuePostV1, setContinuePostV1] = useState(false);
+  const [integrationChoice, setIntegrationChoice] =
+    useState<IntegrationChoice>(null);
   const [hasPersistedPostV1] = useState(
     () => localStorage.getItem("post-v1-integrated.state") !== null,
   );
@@ -41,16 +44,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
     null,
   );
 
-  if (continuePostV1) {
-    if (hasPersistedPostV1) {
-      return <PostV1IntegratedExperience />;
-    }
+  if (integrationChoice === "existing") {
+    return <PostV1IntegratedExperience />;
+  }
 
-    if (availablePostV1Current !== null) {
-      return (
-        <PostV1IntegratedExperience initialCurrent={availablePostV1Current} />
-      );
-    }
+  if (integrationChoice === "current" && availablePostV1Current !== null) {
+    return (
+      <PostV1IntegratedExperience initialCurrent={availablePostV1Current} />
+    );
   }
 
   return (
@@ -200,6 +201,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     JSON.stringify(nextMaterials),
                   );
 
+                  setAvailablePostV1Current(newWork);
                   setConstitutedWork(newWork);
                 }}
               >
@@ -214,16 +216,26 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         </section>
       )}
 
-      {hasPersistedPostV1 ? (
-        <button type="button" onClick={() => setContinuePostV1(true)}>
+      {availablePostV1Current !== null && (
+        <button
+          type="button"
+          onClick={() => {
+            if (hasPersistedPostV1) {
+              localStorage.removeItem("post-v1-integrated.state");
+            }
+            setIntegrationChoice("current");
+          }}
+        >
+          {hasPersistedPostV1
+            ? "Continuar con este trabajo sustituyendo la trayectoria integrada anterior"
+            : "Continuar con este trabajo"}
+        </button>
+      )}
+
+      {hasPersistedPostV1 && (
+        <button type="button" onClick={() => setIntegrationChoice("existing")}>
           Retomar trayectoria integrada existente
         </button>
-      ) : (
-        availablePostV1Current !== null && (
-          <button type="button" onClick={() => setContinuePostV1(true)}>
-            Continuar con este trabajo
-          </button>
-        )
       )}
     </main>
   );
