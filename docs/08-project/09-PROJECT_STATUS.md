@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 dispone de cierre técnico local mediante H65-C mínima, con C65-01 y C65-02 satisfechos técnicamente; su publicación y validación humana post-despliegue están pendientes. El detalle vigente figura en la actualización post-65 al final de este documento. Los bloques anteriores conservan sus respectivos contextos históricos.
+**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 está cerrada: H65-C mínima fue desplegada mediante GitHub Pages #4 sobre `fffb1eb` y C65-01/C65-02 obtuvieron PASS público según la validación humana comunicada. N64-02 queda corregida en el alcance probado. Las cuestiones Y/R, inteligibilidad de R1/S1 y demás diferencias pendientes de 64 no quedan resueltas por este cierre. El detalle vigente figura en el cierre final de 65 al final de este documento; los bloques anteriores conservan sus contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -6865,13 +6865,15 @@ No se reabre Product ni se deriva P6, nuevo Product Value, Architecture, Realiza
 
 # Actualización posterior — Actuación 65, cierre técnico previo a publicación
 
+Este bloque conserva el estado histórico previo al despliegue; el cierre final figura en la actualización posterior.
+
 **Registro: 10/11/2026.** El estado posterior a 62 se conserva como histórico. Nueva evidencia humana de uso post-lanzamiento mostró que el trabajo constituido desde un material recuperado desaparecía tras recargar. Esa pérdida, N64-02, fundamentó una corrección local de continuidad persistente respecto de PV-006, sin modificar Product ni el cierre histórico de 58.
 
 Fuente competente:
 
 `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.
 
-## Resultado técnico actual
+## Resultado técnico previo al despliegue
 
 H65-A, guardar sólo como ru2m1.previous, corrigió la recuperación inmediata pero quedó refutada: después de constituir W1 y W2, W1 desaparecía. Una segunda prueba roja reprodujo esa pérdida mediante UI desde almacenamiento vacío.
 
@@ -6895,7 +6897,7 @@ estado reproducido
 
 Validaciones locales observadas: App 22/22; suite global 37 archivos, 329/329 tests y 0 fallidos; typecheck, build y diff check satisfactorios, con código 0. La reproducción efímera confirmó además selección de W1, conservación de A/B y retained=X, sin escrituras por mero montaje o inspección/selección.
 
-## Pendiente de cierre final
+## Pendiente al cierre técnico
 
 La corrección está demostrada localmente; no se declara publicada ni validada humanamente en producción. El cierre final exige repetir en la aplicación pública <https://enrisan1.github.io/mi-app/> la constitución desde material recuperado, recarga, recuperación y actuación posterior, y comprobar que W1 sigue localizable después de constituir W2. Debe registrarse la revisión desplegada y la evidencia humana.
 
@@ -6912,3 +6914,37 @@ PUNTO DE REANUDACIÓN
 ```
 
 No se modifican retained, availablePostV1Current, R-U2-M1 ni PostV1IntegratedExperience. No se resuelve la elección Y/R ni se deriva historial general, persistencia ilimitada, deduplicación, nueva Architecture, P6, nuevo Product Value o nuevo horizonte. La ausencia de esos resultados no se convierte en trabajo adicional derivado.
+
+---
+
+# Cierre final de la actuación 65 — Corrección desplegada y validada públicamente
+
+**Registro: 10/11/2026.** La publicación y validación humana que permanecían pendientes en el bloque anterior se han completado, según la evidencia operativa y humana aportada por la persona responsable.
+
+- Commit: `fffb1eb`, `fix(product): preserve recovered work continuity`.
+- Push: completado a `origin/feature/task-filters`.
+- Despliegue: **Deploy to GitHub Pages #4 → Success**, rama `feature/task-filters`, commit `fffb1eb`.
+- URL pública: <https://enrisan1.github.io/mi-app/>.
+
+C65-01 obtuvo PASS público: selección humana de un material, constitución de «Trabajo público W1» y recuperación como «Aportación anterior» tras recargar. C65-02 obtuvo PASS público: constitución posterior de «Trabajo público W2», recuperación de W2 como aportación anterior y nueva inspección en la que W1 y W2 siguen disponibles entre los materiales. La actuación ordinaria posterior desde el antecedente recuperado permanece acreditada por el test técnico de C65-01.
+
+```text
+ACTUACIÓN 65
+→ CERRADA
+
+N64-02
+→ INSUFICIENCIA LOCAL CORREGIDA
+  en el alcance probado
+
+C65-01 / C65-02
+→ PASS TÉCNICO Y PÚBLICO
+
+PUBLICACIÓN Y VALIDACIÓN HUMANA DE 65
+→ COMPLETADAS
+```
+
+El detalle y la procedencia de la evidencia quedan en `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`. El criterio de finalización de 65 queda satisfecho; no se declara cerrado globalmente PV-006 ni la actuación 64.
+
+Permanecen fuera de este cierre la cuestión Y/R, la elección entre trabajo ordinario actual y trayectoria integrada previa, la inteligibilidad de R1/S1 y cualquier otra diferencia de 64 que siga pendiente. N64-01 conserva su estatuto indeterminado respecto de PV-006 y PV-005 en el contraste realizado; no se convierte aquí en incumplimiento demostrado ni en cuestión resuelta.
+
+El punto de reanudación deja de ser publicar o validar 65. Las cuestiones restantes de 64 conservan su propio alcance y requieren su contraste específico; no se deriva una solución ni se declara el proyecto globalmente sin cuestiones abiertas. No se deriva P6, nuevo Product Value, Architecture, Realization ni nuevo horizonte. Se conservan los demás límites de la actuación 65.

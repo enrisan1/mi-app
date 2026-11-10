@@ -9177,3 +9177,23 @@ El contraste final deberá repetir humanamente en la aplicación pública la sec
 No se cambian retained, availablePostV1Current, ResumeExperience ni PostV1IntegratedExperience. No se deriva historial general, persistencia ilimitada, deduplicación, Architecture, P6, nuevo Product Value ni nuevo horizonte.
 
 La lección local es que recuperar el último resultado no demuestra preservar el anterior bajo sucesivas constituciones. El detalle de ambas pruebas rojas, la refutación y los límites está en `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.
+
+---
+
+# 10/11/2026 — Despliegue, validación humana pública y cierre de la actuación 65
+
+El hito técnico anterior dejó pendientes publicación y validación humana. La evidencia posterior comunicada por la persona responsable acredita su resolución:
+
+- La corrección se consolidó en `fffb1eb`, `fix(product): preserve recovered work continuity`, y el push a `origin/feature/task-filters` se completó.
+- **Deploy to GitHub Pages #4 → Success**, sobre `feature/task-filters` y el commit `fffb1eb`.
+- La validación humana se realizó en <https://enrisan1.github.io/mi-app/>.
+
+**C65-01 → PASS público:** material anterior → selección humana → constitución de «Trabajo público W1» mediante «Continuar con este material» → recarga → W1 recuperado como «Aportación anterior».
+
+**C65-02 → PASS público:** W1 persistido → nueva localización → constitución de «Trabajo público W2» → recarga → aportación anterior=W2 → nueva inspección → W1 continúa disponible y W2 también aparece entre los materiales.
+
+La recuperación y conservación bajo sustitución quedaron así contrastadas públicamente. La capacidad de producir una aportación ordinaria posterior desde el antecedente recuperado ya estaba demostrada por el test de C65-01. Este registro distingue esa evidencia automatizada de la secuencia humana efectivamente comunicada.
+
+**Actuación 65 → CERRADA.** El criterio de finalización queda satisfecho en el alcance probado y N64-02 queda corregida como insuficiencia local respecto de PV-006. La publicación y la validación humana de la corrección dejan de estar pendientes.
+
+El cierre no resuelve ni absorbe la cuestión Y/R, la elección entre trabajo ordinario e integración previa, la inteligibilidad de R1/S1 ni otras diferencias de 64 que sigan abiertas. No declara cierre global de PV-006 o de la actuación 64 y no deriva P6, nuevo Product Value, Architecture, Realization ni nuevo horizonte. Se conserva el alcance negativo documentado en `65-CORRECCION_CONTINUIDAD_PERSISTENTE_TRABAJO_RECUPERADO.md`.

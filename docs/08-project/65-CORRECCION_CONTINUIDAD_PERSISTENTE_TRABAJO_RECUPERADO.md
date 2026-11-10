@@ -2,11 +2,13 @@
 
 ## Estado
 
-**Cierre técnico alcanzado — publicación y validación humana post-despliegue pendientes.**
+**Cerrada — corrección técnica desplegada y validada humanamente en la aplicación pública.**
 
 **Fecha del registro técnico:** 10/11/2026.
 
-Este documento registra la derivación, refutación y corrección técnica local de la actuación 65. No declara su cierre final ni que la corrección esté disponible en la aplicación pública.
+**Fecha del cierre final:** 10/11/2026.
+
+Este documento registra la derivación, refutación, corrección técnica y validación pública de la actuación 65. La publicación y la validación humana que estaban pendientes al cierre técnico se completaron posteriormente, según la evidencia comunicada por la persona responsable para este cierre.
 
 # 1. Origen empírico y pérdida N64-02
 
@@ -175,7 +177,9 @@ Los controles positivos se limitan a los recorridos válidos ejercidos. No estab
 
 58 y Product permanecen intactos. La evidencia posterior justifica una corrección local adicional; no reescribe los cierres históricos.
 
-# 9. Estado actual y criterio de cierre final
+# 9. Estado histórico al cierre técnico y criterio de finalización
+
+Antes del despliegue, el estado registrado era:
 
 ```text
 CORRECCIÓN TÉCNICA LOCAL
@@ -194,7 +198,7 @@ CIERRE FINAL DE LA ACTUACIÓN 65
 → PENDIENTE
 ```
 
-El cierre final requiere publicar la revisión autorizada y repetir humanamente en la aplicación pública <https://enrisan1.github.io/mi-app/>:
+El criterio de cierre entonces pendiente requería publicar la revisión autorizada y contrastar humanamente en la aplicación pública <https://enrisan1.github.io/mi-app/> la recuperación del trabajo constituido y su conservación al producir otro. La secuencia de comprobación prevista era:
 
 1. Recuperar y seleccionar un material ordinario.
 2. Constituir un nuevo trabajo W1 y comprobar su resultado visible.
@@ -202,10 +206,48 @@ El cierre final requiere publicar la revisión autorizada y repetir humanamente 
 4. Constituir después otro trabajo W2 y recargar; comprobar W2 como aportación anterior.
 5. Expresar una necesidad y examinar materiales: W1 debe seguir localizable; seleccionar W1 y comprobar su contenido.
 
-Debe registrarse la revisión realmente desplegada y la evidencia humana obtenida. Un build local o los tests actuales no sustituyen esa validación pública.
+La revisión desplegada y la evidencia humana se registran en el apartado siguiente. El build y los tests locales no se utilizaron como sustitutos de esa validación pública.
 
-# 10. Continuidad de la actuación
+# 10. Despliegue y validación humana pública
 
-La aplicación del Manual conserva separados el resultado técnico alcanzado y la validación todavía necesaria. La actuación 65 permanece pendiente únicamente de su publicación autorizada y contraste humano posterior; no se declara proyecto sin actuación abierta ni se deriva otra actuación estratégica por este registro.
+La evidencia operativa y humana aportada para el cierre establece:
 
-La documentación y el código están preparados localmente para revisión. Este registro no autoriza por sí mismo git add, commit, push, ejecución de workflow ni publicación.
+- Commit: `fffb1eb`, `fix(product): preserve recovered work continuity`.
+- Push a `origin/feature/task-filters`: completado. La inspección local al registrar el cierre muestra HEAD y esa referencia en `fffb1eb`.
+- Despliegue: **Deploy to GitHub Pages #4 → Success**, rama `feature/task-filters`, commit desplegado `fffb1eb`.
+- Aplicación pública: <https://enrisan1.github.io/mi-app/>.
+
+No se presenta esta evidencia comunicada como una ejecución remota o prueba humana realizada por el agente durante la edición documental.
+
+| Criterio | Evidencia humana pública comunicada | Resultado |
+| --- | --- | --- |
+| C65-01 | Material anterior → selección humana → «Trabajo público W1» → «Continuar con este material» → recarga → W1 reaparece como «Aportación anterior» | PASS PÚBLICO |
+| C65-02 | W1 persistido → nueva localización → constitución de «Trabajo público W2» → recarga → aportación anterior=W2 → nueva inspección → W1 y W2 aparecen entre los materiales | PASS PÚBLICO |
+
+El contraste público acredita recuperación y conservación localizable bajo constituciones sucesivas. La capacidad de producir una aportación ordinaria posterior desde el trabajo recuperado quedó además demostrada por el test de C65-01 del apartado 6; no se atribuye a la secuencia humana una interacción adicional no descrita. La selección posterior de W1 se había comprobado en la reproducción técnica del mismo apartado.
+
+Con la revisión publicada, los resultados técnicos y los PASS públicos expresamente confirmados por la persona responsable, **el criterio de finalización queda satisfecho en el alcance probado**. No permanece pendiente la publicación ni la validación humana de esta corrección.
+
+# 11. Resultado final y continuidad
+
+```text
+ACTUACIÓN 65
+→ CERRADA
+
+N64-02
+→ INSUFICIENCIA LOCAL CORREGIDA
+  en el alcance probado
+
+C65-01
+→ PASS TÉCNICO Y PÚBLICO
+
+C65-02
+→ PASS TÉCNICO Y PÚBLICO
+
+PUBLICACIÓN Y VALIDACIÓN HUMANA DE LA CORRECCIÓN
+→ COMPLETADAS
+```
+
+Se conserva íntegramente el alcance negativo del apartado 8. Este cierre no resuelve ni absorbe N64-01, la coexistencia o elección Y/R entre trabajo ordinario y trayectoria integrada previa, la inteligibilidad de R1/S1 ni otras diferencias de la actuación 64 que permanezcan abiertas. No declara cerrado globalmente PV-006 ni la actuación 64.
+
+La aplicación del Manual distingue la dependencia concreta satisfecha de las cuestiones ajenas a ella: la publicación y el contraste humano de 65 dejan de estar pendientes; las restantes cuestiones de 64 conservan su estatuto y no se cierran por arrastre. No se deriva P6, nuevo Product Value, Architecture, Realization ni nuevo horizonte.
