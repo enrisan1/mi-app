@@ -9216,3 +9216,20 @@ La validación focal fue observada en esta sesión. La persona responsable comun
 **Actuación 67 → CIERRE TÉCNICO LOCAL ALCANZADO.** Publicación y validación humana post-despliegue pendientes; no se declara cierre final ni corrección pública de N64-01. El cierre requiere revisión publicada identificable y contraste humano público de ambas alternativas, conservación de R al elegirla, sustitución explícita por Y sin S1 automático y recuperación posterior de Y tras recarga.
 
 La actuación 65 permanece cerrada. No se cierra globalmente PV-005, PV-006 ni 64, y la inteligibilidad R1/S1 permanece separada. No se deriva P6, nuevo Product Value, nueva Architecture ni nuevo horizonte. El detalle, los límites y el criterio final constan en `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.
+
+
+---
+
+# 10/11/2026 — Despliegue, validación humana pública y cierre final de 67
+
+La evidencia posterior comunicada por la persona responsable completa el hito técnico anterior: push de `4f5f6bc`, `fix(product): preserve human choice between Y and R`, a origin/feature/task-filters, con HEAD y origin en esa revisión. **Deploy to GitHub Pages #5 → Success**, rama `feature/task-filters`, commit desplegado `4f5f6bc`. La aplicación validada fue <https://enrisan1.github.io/mi-app/>.
+
+Con aportación anterior «Trabajo público W2», se observaron simultáneamente ambas alternativas Y/R sin integración automática: T67-01 y T67-05 obtuvieron PASS público. Elegir R recuperó «este es un texto de prueba.» como trabajo actual y como S1 previo; tras recarga W2 seguía como aportación anterior y ambas acciones reaparecieron: T67-02 obtuvo PASS público y Y no fue destruido.
+
+Elegir Y desde el estado equivalente mostró W2 como trabajo integrado actual, estado estable todavía no constituido y la acción «Constituir S1 desde R1»: T67-03 obtuvo PASS público. Después de recargar y retomar la integración, W2 se recuperó sin reaparecer R anterior ni constituirse S1 automáticamente: T67-04 obtuvo PASS público.
+
+T67-01…T67-05 quedan con PASS técnico y público, delimitando la evidencia humana a lo observado; la igualdad exacta de serialización y la conservación completa de campos permanecen acreditadas por tests. T67-06 conserva PASS técnico: el uso público de W2 ejerció indirectamente la coherencia, pero no se repitió desde cero material recuperado → W recién constituido → integración inmediata sin recarga. No se le atribuye PASS público independiente.
+
+**Actuación 67 → CERRADA.** El criterio de finalización queda satisfecho y N64-01, insuficiencia local respecto de PV-005, queda corregida en el alcance probado, desplegada y validada humanamente en producción. El cierre no declara satisfacción global de PV-005 ni PV-006; 65 ya había corregido N64-02 en su propio alcance.
+
+No se cierra automáticamente 64. La siguiente cuestión es reexaminar su residuo, especialmente inteligibilidad R1/S1, y decidir si puede cerrarse o requiere actuación propia. No se identifica aquí otra diferencia demostrada pendiente ni se deriva una solución por anticipación, P6, nueva Architecture, nuevo Product Value o nuevo horizonte. El detalle de publicación, evidencia, límites y cierre está en el apartado 11 de `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.

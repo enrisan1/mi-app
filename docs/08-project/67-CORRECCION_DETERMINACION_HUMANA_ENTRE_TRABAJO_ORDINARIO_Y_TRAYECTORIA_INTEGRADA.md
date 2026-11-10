@@ -2,11 +2,11 @@
 
 ## Estado
 
-**Actuación 67 — cierre técnico local alcanzado; publicación y validación humana post-despliegue pendientes.**
+**Actuación 67 — CERRADA: corrección desplegada y validada humanamente en la aplicación pública.**
 
 **Fecha:** 10/11/2026.
 
-N64-01 constituye una insuficiencia realizativa local demostrada respecto de PV-005 en el caso ejercido. Su corrección está implementada y técnicamente validada localmente. No se declara todavía corregida públicamente ni cerrada finalmente la actuación: quedan pendientes consolidación, push, despliegue y validación humana pública de esta revisión.
+N64-01, insuficiencia realizativa local demostrada respecto de PV-005, queda corregida en el alcance probado, desplegada y validada humanamente en producción. La evidencia de publicación y validación pública comunicada por la persona responsable cierra el criterio de finalización, según el apartado 11. Los apartados 1–10 conservan el proceso y el cierre técnico previo en su contexto histórico.
 
 # 1. Origen y discriminación humana de N64-01
 
@@ -119,7 +119,7 @@ El resultado focal 28/28 y los ciclos anteriores fueron observados durante esta 
 
 Antes de documentar, los únicos cambios eran `src/App.test.tsx` y `src/App.tsx`. El notice informativo de npm 10.8.2 a npm 12.2.2 no fue una incidencia ni motivó actualizar npm o alterar el entorno.
 
-# 9. Estado resultante y criterio de cierre final
+# 9. Estado histórico al cierre técnico y criterio de cierre final
 
 **Corrección técnica local implementada y validada; publicación y validación humana pública pendientes.** No se declara cierre final de 67 ni corrección pública de N64-01.
 
@@ -133,10 +133,68 @@ El cierre final requiere:
 6. Recargar y comprobar recuperación de la trayectoria iniciada desde Y.
 7. Registrar el commit desplegado y la evidencia humana.
 
-# 10. Límites y continuidad
+# 10. Límites y continuidad al cierre técnico
 
 No se declara satisfacción universal ni cierre global de PV-005 o PV-006, ni resolución general de conflictos entre trayectorias. No se introduce colección, historial integrado, backup de trayectorias abandonadas, sincronización entre pestañas o resistencia general a corrupción/cuota de localStorage.
 
 No se resuelve la primera aportación sin antecedente ni se deriva nueva Architecture, P6, nuevo Product Value o nuevo horizonte. Tampoco se cierra por arrastre la actuación 64: la inteligibilidad R1/S1 conserva su estatuto separado y requiere evidencia específica.
 
 La actuación 65 permanece cerrada y N64-02 corregida en su alcance probado. Para 67 la dependencia pendiente es su publicación autorizada y contraste humano público, dentro de esta misma actuación. La reaplicación del Manual no transforma este cierre técnico en cierre final ni deriva otra actuación por continuidad automática. El punto de reanudación es revisar y consolidar cuando se autorice, publicar y ejercer el criterio anterior; no abrir otra línea estratégica.
+
+
+# 11. Publicación, validación humana pública y cierre final
+
+**Fecha del cierre final: 10/11/2026.** Este apartado actualiza el estado técnico previo sin reescribir las fases roja/verde. La publicación y las observaciones de navegador siguientes son evidencia comunicada por la persona responsable; no constituyen una nueva ejecución remota ni un test automatizado durante esta edición.
+
+## Publicación
+
+- Commit técnico-documental: `4f5f6bc`, `fix(product): preserve human choice between Y and R`.
+- Push a `origin/feature/task-filters`: completado; HEAD y origin/feature/task-filters quedaron en `4f5f6bc` según la evidencia aportada.
+- **Deploy to GitHub Pages #5 → Success**.
+- Rama: `feature/task-filters`; commit desplegado: `4f5f6bc`.
+- Aplicación pública: <https://enrisan1.github.io/mi-app/>.
+
+## Coexistencia antes de elegir
+
+La entrada ordinaria mostraba «Aportación anterior: Trabajo público W2». Estaban disponibles simultáneamente «Continuar con este trabajo sustituyendo la trayectoria integrada anterior» y «Retomar trayectoria integrada existente», sin montaje automático de la integración. T67-01 y T67-05 obtuvieron PASS público en esa observación humana. La igualdad exacta de la serialización de R antes de elegir conserva además su prueba técnica; no se atribuye a la observación visual una inspección completa de localStorage.
+
+## Ruta R
+
+Al pulsar «Retomar trayectoria integrada existente» apareció Integración post-V1 con trabajo actual «este es un texto de prueba.» y estado estable S1 con ese mismo contenido. Se recuperó R; Trabajo público W2 no la sustituyó y el S1 previo siguió presente.
+
+Tras recarga normal, la entrada ordinaria volvió a mostrar «Aportación anterior: Trabajo público W2» y ambas alternativas. T67-02 obtuvo PASS público y se comprobó que elegir R no destruye Y ordinario. La conservación íntegra de todos los campos de R, incluidos los no inspeccionados visualmente, permanece acreditada por el test técnico.
+
+## Ruta Y y persistencia tras recarga
+
+Desde el estado equivalente, elegir «Continuar con este trabajo sustituyendo la trayectoria integrada anterior» mostró trabajo actual «Trabajo público W2», estado estable todavía no constituido y la acción «Constituir S1 desde R1». Y pasó a current integrado, R dejó de ser la trayectoria integrada activa y S1 no se constituyó automáticamente: **T67-03 → PASS público**.
+
+Después de recargar, la aplicación volvió a la entrada ordinaria. Al pulsar «Retomar trayectoria integrada existente» se recuperó «Trabajo público W2»; no reapareció «este es un texto de prueba.» y seguía sin existir S1 constituido automáticamente: **T67-04 → PASS público**.
+
+## Resultado y criterio final satisfecho
+
+| Contraste | Resultado final |
+| --- | --- |
+| T67-01 | PASS técnico y público. |
+| T67-02 | PASS técnico y público. |
+| T67-03 | PASS técnico y público. |
+| T67-04 | PASS técnico y público. |
+| T67-05 | PASS técnico y público, con la observación humana delimitada arriba. |
+| T67-06 | PASS técnico; coherencia ejercida indirectamente en producción, sin prueba pública independiente del recorrido completo. |
+
+T67-06 no se repitió humanamente desde cero como material recuperado → W recién constituido → integración inmediata sin recarga. Utilizar Trabajo público W2 como Y ordinario actual no demuestra por sí solo ese recorrido aislado. No se declara PASS público independiente de T67-06.
+
+El criterio del apartado 9 queda satisfecho: revisión consolidada y publicada, coexistencia visible, elección R con conservación observable de R y Y, elección Y con sustitución explícita sin S1 automático, recuperación de Y tras recarga y registro de commit desplegado y evidencia humana.
+
+```text
+ACTUACIÓN 67 → CERRADA
+N64-01 → INSUFICIENCIA LOCAL RESPECTO DE PV-005
+       → CORREGIDA EN EL ALCANCE PROBADO
+       → DESPLEGADA
+       → VALIDADA HUMANAMENTE EN PRODUCCIÓN
+```
+
+## Límites y punto de reanudación
+
+No se cierra globalmente PV-005 ni PV-006. N64-02 fue resuelta por 65 respecto de PV-006 y N64-01 por 67 respecto de PV-005, cada una en su alcance; no se fusionan en satisfacción universal. Permanecen todos los límites materiales del apartado 10.
+
+La actuación 64 no se cierra automáticamente. La inteligibilidad R1/S1 conserva su estatuto separado hasta contraste específico. En el alcance aquí documentado no se identifica otra diferencia demostrada pendiente además de esa cuestión; el siguiente paso es reexaminar el residuo de 64 y decidir si permite cerrarla o si requiere actuación propia. Esa reevaluación no presupone una solución ni deriva automáticamente P6, nueva Architecture, nuevo Product Value o nuevo horizonte.

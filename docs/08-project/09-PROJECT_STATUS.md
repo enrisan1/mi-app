@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el primer lanzamiento público validado en 62. La actuación 65 permanece cerrada: H65-C mínima fue desplegada mediante GitHub Pages #4 sobre `fffb1eb` y C65-01/C65-02 obtuvieron PASS público; N64-02 queda corregida en el alcance probado. La actuación 67 alcanza cierre técnico local: N64-01 ha sido discriminada como insuficiencia local respecto de PV-005 y la corrección H67-C de elección humana Y/R está implementada y técnicamente validada. Su publicación y validación humana pública siguen pendientes. No se declara cierre global de PV-005, PV-006 o 64; la inteligibilidad R1/S1 conserva su estatuto separado. No se derivan P6, nueva Architecture ni nuevo horizonte. El detalle vigente figura en la actualización de 67 al final; los bloques anteriores conservan sus contextos históricos.
+**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el lanzamiento público validado en 62. Las actuaciones 65 y 67 están cerradas. N64-02 queda corregida por 65 en el alcance probado; N64-01, insuficiencia local respecto de PV-005, queda corregida por 67, desplegada en `4f5f6bc` mediante GitHub Pages #5 y validada humanamente en la aplicación pública. T67-01…T67-05 tienen PASS técnico y público; T67-06 conserva PASS técnico, sin prueba pública independiente de su recorrido completo. El pendiente real es reevaluar el residuo de 64, especialmente la inteligibilidad R1/S1. No se cierra globalmente PV-005, PV-006 ni automáticamente 64; no se derivan P6, nueva Architecture, nuevo Product Value o nuevo horizonte. El detalle vigente figura en el cierre final de 67 al final; los bloques anteriores conservan sus contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -6954,6 +6954,8 @@ El punto de reanudación deja de ser publicar o validar 65. Las cuestiones resta
 
 # Actualización posterior — Actuación 67, cierre técnico local
 
+Este bloque conserva el estado histórico previo a publicación; el cierre final figura en la actualización posterior.
+
 **Registro: 10/11/2026.** Después del cierre de 65, la determinación humana explícita de que elegir entre Y ordinario actual y R integrada previa corresponde a la persona discrimina N64-01 respecto de PV-005. Deja de estar indeterminada en este caso: la priorización anterior de R constituía una insuficiencia realizativa local. Las afirmaciones del cierre de 65 conservan su contexto histórico anterior a esta discriminación.
 
 Fuente competente: `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.
@@ -6975,3 +6977,28 @@ PUBLICACIÓN Y VALIDACIÓN HUMANA POST-DESPLIEGUE → PENDIENTES
 N64-01 no se declara todavía corregida públicamente. No se cierra globalmente PV-005, PV-006 ni la actuación 64. La inteligibilidad R1/S1 conserva su estatuto separado; no se deriva su resolución por arrastre. No se derivan P6, nuevo Product Value, nueva Architecture ni nuevo horizonte.
 
 **Punto de reanudación:** revisión y consolidación autorizadas de 67, publicación y validación humana pública de ambas elecciones y de la recuperación tras recarga, registrando commit desplegado y evidencia. Es continuidad de la actuación 67, no una nueva actuación automáticamente derivada. El criterio final completo figura en 67.
+
+
+---
+
+# Cierre final de la actuación 67 — Corrección desplegada y validada públicamente
+
+**Registro: 10/11/2026.** Según la evidencia operativa y humana comunicada por la persona responsable, el push de `4f5f6bc` (`fix(product): preserve human choice between Y and R`) a origin/feature/task-filters se completó y HEAD/origin quedaron en esa revisión. **Deploy to GitHub Pages #5 → Success**, rama feature/task-filters, commit desplegado `4f5f6bc`, aplicación <https://enrisan1.github.io/mi-app/>.
+
+La validación humana pública observó ambas alternativas con Y=«Trabajo público W2» sin entrada automática en integración (T67-01/T67-05). Elegir R recuperó «este es un texto de prueba.» y su S1 previo; tras recarga Y seguía disponible ordinariamente (T67-02). Elegir Y convirtió W2 en trabajo integrado actual, sin S1 automático (T67-03). Recargar y retomar recuperó W2, sin reaparecer R anterior (T67-04).
+
+```text
+ACTUACIÓN 65 → CERRADA
+N64-02 → CORREGIDA EN EL ALCANCE PROBADO POR 65
+ACTUACIÓN 67 → CERRADA
+N64-01 → CORREGIDA EN EL ALCANCE PROBADO POR 67
+       → DESPLEGADA Y VALIDADA HUMANAMENTE EN PRODUCCIÓN
+T67-01…T67-05 → PASS TÉCNICO Y PÚBLICO
+T67-06 → PASS TÉCNICO
+```
+
+T67-06 tuvo coherencia ejercida indirectamente con W2 en producción, pero no se repitió como recorrido público aislado material recuperado → trabajo recién constituido → integración inmediata sin recarga. No se registra PASS público independiente. Las verificaciones completas de serialización y campos conservan su evidencia automatizada; la observación humana se limita a las superficies efectivamente ejercidas.
+
+El criterio final de 67 queda satisfecho según su apartado 11. Publicación y validación humana dejan de estar pendientes para esa actuación. No se cierra globalmente PV-005 o PV-006 ni se cierra automáticamente 64 por los resultados de 65 y 67.
+
+**Punto de reanudación:** reevaluar el residuo de 64, especialmente inteligibilidad R1/S1, que mantiene su estatuto hasta contraste específico. En el alcance documentado no se identifica otra diferencia demostrada pendiente; debe decidirse si 64 puede cerrarse o requiere actuación propia, sin presumir el resultado. No se derivan automáticamente P6, nueva Architecture, nuevo Product Value ni nuevo horizonte.
