@@ -2,9 +2,9 @@
 
 **Registro documental:** 11/11/2026.
 
-**Estado:** CIERRE TÉCNICO LOCAL ALCANZADO. Pendientes consolidación Git, push, despliegue público y validación humana post-despliegue.
+**Estado:** CERRADA — corrección desplegada y validada humanamente en producción. El cierre final y la precisión de evidencia figuran en el apartado 12.
 
-Este documento registra la derivación, los dos ciclos RED/GREEN, la auditoría del diff y las validaciones técnica global y humana local comunicadas por la persona responsable en el encargo. No presenta esos resultados históricos como comandos ni observaciones humanas ejecutados durante esta edición documental. La inspección actual del diff permite contrastar la implementación final; no reconstruye por sí sola los RED anteriores.
+Este documento registra la derivación, los dos ciclos RED/GREEN, la auditoría del diff y las validaciones técnica global y humana local comunicadas por la persona responsable en el encargo. No presenta esos resultados históricos como comandos ni observaciones humanas ejecutados durante esta edición documental. La inspección del diff realizada durante la documentación del cierre técnico permitió contrastar la implementación final; no reconstruyó por sí sola los RED anteriores.
 
 # 1. Origen y fundamento local
 
@@ -106,7 +106,7 @@ stable: {
 }
 ```
 
-En tests se añadieron T68-01…T68-04 y se actualizaron cuatro selectores durante el primer GREEN. Uno corresponde a T68-02 recién añadido; los otros tres son históricos. Ninguna aserción histórica funcional fue eliminada o relajada. La inspección del diff actual confirma estos cambios finales y la conservación de la lógica.
+En tests se añadieron T68-01…T68-04 y se actualizaron cuatro selectores durante el primer GREEN. Uno corresponde a T68-02 recién añadido; los otros tres son históricos. Ninguna aserción histórica funcional fue eliminada o relajada. La inspección del diff durante la documentación del cierre técnico confirmó estos cambios finales y la conservación de la lógica.
 
 # 9. Segunda validación humana local
 
@@ -127,7 +127,9 @@ C68-02 → PASS HUMANO LOCAL
 
 Esta evidencia procede de la validación humana local comunicada; no constituye validación pública post-despliegue.
 
-# 10. Estado, relación con 64 y continuidad
+# 10. Estado histórico al cierre técnico local, relación con 64 y continuidad
+
+Este apartado conserva el estado previo al despliegue; el apartado 12 registra el cierre final y sustituye sus pendientes como estado vigente.
 
 ```text
 ACTUACIÓN 68 → CIERRE TÉCNICO LOCAL ALCANZADO
@@ -148,3 +150,47 @@ El punto de reanudación es la consolidación y publicación autorizadas de 68 y
 No se derivan P6, nuevo Product Value, nueva Architecture, nueva Realization general, historial/versionado, sistema general de ayuda ni teoría general de UX. No se declara cierre global de PV-005 ni de PV-006.
 
 Esta actuación documental crea este registro y actualiza únicamente estado y bitácora. Conserva las fases y afirmaciones históricas en su contexto; no modifica código ni tests, ni ejecuta git add, commit, push o deployment.
+
+
+# 12. Publicación, validación humana pública y cierre final
+
+**Fecha: 11/11/2026.** La persona responsable comunica la publicación y las observaciones humanas públicas siguientes. Este registro no constituye una nueva ejecución de push, deployment ni prueba de navegador por el agente. La consulta local de Git durante esta edición confirma la revisión de HEAD y de la referencia remota local; no equivale a consultar nuevamente el servidor remoto.
+
+## Publicación
+
+- Commit: `f52c176`, `fix(product): clarify stable reference action`.
+- Push a `origin/feature/task-filters`: completado según la evidencia aportada.
+- HEAD y `origin/feature/task-filters`: `f52c176`.
+- **Deploy to GitHub Pages #6 → Success**.
+- Rama: `feature/task-filters`; commit desplegado: `f52c176`.
+- Aplicación pública: <https://enrisan1.github.io/mi-app/>.
+
+## Validación humana pública y precisión de evidencia
+
+Se accedió desde el recorrido ordinario mediante «Continuar con este trabajo sustituyendo la trayectoria integrada anterior». La superficie integrada desplegada mostró «Conservar trabajo actual como referencia estable» y «Podrás seguir trabajando después y esta referencia permanecerá sin cambios.».
+
+La persona confirmó públicamente qué trabajo se conserva, que puede seguir trabajando después y que la referencia no cambiará. **C68-01 → PASS HUMANO PÚBLICO.** T68-01…T68-04 conservan **PASS TÉCNICO**.
+
+C68-02 conserva **PASS técnico y PASS humano local, sin evidencia pública contradictoria posterior**. La validación local estableció que no induce finalización, imposibilidad de seguir trabajando ni historial/versionado general, y que conservar y continuar no implica por sí mismo publicación. Las cuatro comprobaciones negativas no se repitieron públicamente como cuestionario independiente; no se atribuye a C68-02 un PASS público independiente.
+
+La superficie pública desplegada corresponde a la misma corrección validada localmente. Esa correspondencia permite mantener la conclusión local sin contradicción posterior, pero no constituye una nueva comprobación pública directa de cada consecuencia negativa. Se conserva la distinción entre evidencia directa e inferencia.
+
+## Resultado final
+
+```text
+ACTUACIÓN 68 → CERRADA — corrección desplegada y validada humanamente en producción
+N64-03 → INSUFICIENCIA LOCAL RESPECTO DE PV-005
+       → CORREGIDA EN EL ALCANCE PROBADO
+       → DESPLEGADA
+       → VALIDADA HUMANAMENTE EN PRODUCCIÓN
+```
+
+La publicación y validación humana dejan de estar pendientes para 68, con el alcance de evidencia delimitado arriba. Los RED, GREEN, refutación humana parcial, validación técnica global y validación humana local se conservan como historia de la corrección.
+
+## Límites y residuo de 64
+
+N64-01 queda corregida por 67, N64-02 por 65 y N64-03 por 68, cada una en su alcance probado. Esta suma no cierra automáticamente la actuación 64.
+
+**Punto de reanudación: reevaluación final del residuo de 64.** La pregunta pendiente es: ¿queda alguna diferencia humana independiente y demostrada de 64 después de 65, 67 y 68? Si no queda ninguna, podrá derivarse el cierre de 64 mediante contraste explícito. Si queda alguna, deberá aislarse antes de cualquier cierre. No se presupone el resultado.
+
+No se declara cierre global de PV-005 ni PV-006, ni se modifica Product. No se derivan automáticamente P6, nuevo Product Value, Architecture, Realization general o nuevo horizonte. Se mantienen los demás límites del apartado 11.

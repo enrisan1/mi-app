@@ -9254,3 +9254,20 @@ La segunda validación humana local, con ambos textos visibles, confirmó qué t
 N64-01 está corregida por 67 y N64-02 por 65 en sus alcances probados. N64-03 alcanza corrección técnica/local por 68 con cierre público pendiente; 64 todavía no está cerrada definitivamente. Si 68 supera publicación y validación humana pública, deberá reexaminarse si queda otro residuo demostrado de 64, sin presuponerlo.
 
 El detalle y el punto de reanudación constan en [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md). No se derivan P6, nuevo Product Value, nueva Architecture, nueva Realization general, historial/versionado, sistema general de ayuda ni teoría general de UX; no se cierra globalmente PV-005 ni PV-006. Esta edición sólo crea ese documento y actualiza estado y bitácora; no modifica código/tests ni ejecuta git add, commit, push o deployment.
+
+
+---
+
+# 11/11/2026 — Despliegue y cierre público de Actuación 68
+
+La persona responsable comunica el push completado de `f52c176`, `fix(product): clarify stable reference action`, a `origin/feature/task-filters`, con HEAD y origin/feature/task-filters en esa revisión. **Deploy to GitHub Pages #6 → Success**, rama `feature/task-filters`, commit desplegado `f52c176`. La consulta local de Git confirma esas referencias; este registro no ejecuta nuevamente push ni deployment.
+
+La validación humana en la aplicación pública accedió por «Continuar con este trabajo sustituyendo la trayectoria integrada anterior». La integración mostró «Conservar trabajo actual como referencia estable» y «Podrás seguir trabajando después y esta referencia permanecerá sin cambios.». La persona confirmó qué trabajo se conserva, que puede seguir trabajando después y que la referencia no cambiará: **C68-01 → PASS HUMANO PÚBLICO**. T68-01…T68-04 conservan PASS TÉCNICO.
+
+**C68-02 conserva PASS técnico y PASS humano local, sin evidencia pública contradictoria posterior.** La validación local estableció que no induce finalización, imposibilidad de continuar ni historial/versionado general, y que conservar y continuar no implica por sí mismo publicación. Las cuatro comprobaciones negativas no se repitieron públicamente como cuestionario independiente. Aunque la superficie desplegada es la misma corrección validada localmente, no se registra PASS público independiente de C68-02 ni se confunde correspondencia con evidencia directa.
+
+**ACTUACIÓN 68 → CERRADA — corrección desplegada y validada humanamente en producción.** N64-03, insuficiencia local respecto de PV-005, queda corregida en el alcance probado, desplegada y validada humanamente en producción. Los pendientes de publicación y validación humana de 68 quedan resueltos dentro de ese alcance. Se conserva íntegra la historia de RED/GREEN y validación técnica y humana local.
+
+N64-01 está corregida por 67, N64-02 por 65 y N64-03 por 68. La siguiente cuestión es la **reevaluación final del residuo de 64**: ¿queda alguna diferencia humana independiente y demostrada después de 65, 67 y 68? Si no queda ninguna, podrá derivarse el cierre mediante contraste explícito; si queda alguna, deberá aislarse antes. No se cierra 64 por simple suma ni se presupone el resultado.
+
+No se cierra globalmente PV-005 ni PV-006, no se modifica Product ni se derivan automáticamente P6, nuevo Product Value, Architecture, Realization general o nuevo horizonte. La publicación y la observación pública son evidencia comunicada, no una prueba remota repetida por el agente. El detalle final figura en el apartado 12 de [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md).

@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 11/11/2026:** se conservan el producto final de 61 y el lanzamiento público de 62. Las actuaciones 65 y 67 están cerradas: N64-02 y N64-01 quedan corregidas por ellas en sus respectivos alcances probados. La actuación 68 alcanza cierre técnico local de N64-03, insuficiencia local de inteligibilidad de la constitución del estado estable respecto de PV-005: corrección mínima implementada, validación técnica completa y C68-01/C68-02 con PASS humano local. Quedan pendientes consolidación Git, push, despliegue público y validación humana post-despliegue de 68; no se declara cerrada finalmente ni corregida públicamente N64-03. La actuación 64 todavía no está cerrada definitivamente. El detalle vigente figura en la actualización de 68 al final; los bloques anteriores conservan sus contextos históricos. No se cierra globalmente PV-005 ni PV-006 ni se derivan nuevos compromisos.
+**Estado vigente al 11/11/2026:** se conservan el producto final de 61 y el lanzamiento público de 62. Las actuaciones 65, 67 y 68 están cerradas; N64-02, N64-01 y N64-03 quedan corregidas por ellas, respectivamente, en sus alcances probados. La corrección de 68 está desplegada en `f52c176` mediante Deploy to GitHub Pages #6 → Success y validada humanamente en producción: C68-01 tiene PASS humano público; C68-02 conserva PASS técnico y humano local, sin evidencia pública contradictoria posterior y sin PASS público independiente. El pendiente es la reevaluación final del residuo de 64, que no se cierra automáticamente. El cierre final de 68 figura al final; los bloques anteriores conservan sus contextos históricos. No se cierra globalmente PV-005 ni PV-006 ni se derivan nuevos compromisos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7008,6 +7008,8 @@ El criterio final de 67 queda satisfecho según su apartado 11. Publicación y v
 
 # Actualización posterior — Actuación 68, cierre técnico local
 
+Este bloque conserva el estado histórico previo al despliegue; el cierre final posterior actualiza sus pendientes.
+
 **Registro: 11/11/2026.** Fuente del detalle y de la trazabilidad: [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md). La evidencia RED/GREEN, técnica global y humana local fue comunicada por la persona responsable para este registro; la inspección actual del diff confirma la implementación final.
 
 El residuo separado de inteligibilidad R1/S1 queda discriminado como N64-03 respecto de PV-005: la persona no reconocía suficientemente la consecuencia de una decisión que le correspondía ejercer. La terminología técnica por sí sola no funda la insuficiencia. PV-003 y PV-006 no fueron necesarios para esta fundamentación.
@@ -7029,3 +7031,29 @@ VALIDACIÓN HUMANA POST-DESPLIEGUE → PENDIENTES
 N64-01 queda corregida por 67 y N64-02 por 65 en sus alcances; N64-03 sólo alcanza corrección técnica/local por 68, con cierre público pendiente. No se declara cierre final de 68 ni corrección pública de N64-03. La actuación 64 todavía no está cerrada definitivamente.
 
 **Punto de reanudación:** consolidación y publicación autorizadas de 68 y validación humana pública de C68-01/C68-02, identificando revisión desplegada y evidencia. Si se superan, reexaminar si queda algún otro residuo demostrado de 64, sin presuponer el resultado. No se derivan P6, nuevo Product Value, nueva Architecture, nueva Realization general, historial/versionado, sistema general de ayuda ni teoría general de UX. No se cierra globalmente PV-005 ni PV-006.
+
+
+---
+
+# Cierre final de la actuación 68 — Corrección desplegada y validada humanamente en producción
+
+**Registro: 11/11/2026.** Según la evidencia operativa y humana comunicada por la persona responsable, el push de `f52c176` (`fix(product): clarify stable reference action`) a `origin/feature/task-filters` se completó; HEAD y origin/feature/task-filters quedaron en esa revisión. **Deploy to GitHub Pages #6 → Success**, rama `feature/task-filters`, commit desplegado `f52c176`. La consulta local de Git confirma ambas referencias; publicación y observación humana se registran como evidencia aportada.
+
+En la aplicación pública se accedió mediante «Continuar con este trabajo sustituyendo la trayectoria integrada anterior». Se mostraron «Conservar trabajo actual como referencia estable» y «Podrás seguir trabajando después y esta referencia permanecerá sin cambios.». La persona confirmó qué trabajo se conserva, que podrá continuar y que la referencia no cambiará: **C68-01 → PASS HUMANO PÚBLICO**. T68-01…T68-04 conservan PASS TÉCNICO.
+
+**C68-02 → PASS técnico y PASS humano local, sin evidencia pública contradictoria posterior.** Las cuatro comprobaciones negativas no se repitieron públicamente como cuestionario independiente. La misma corrección está desplegada, pero no se convierte esa correspondencia en PASS público independiente de C68-02.
+
+```text
+ACTUACIÓN 65 → CERRADA
+ACTUACIÓN 67 → CERRADA
+ACTUACIÓN 68 → CERRADA — corrección desplegada y validada humanamente en producción
+N64-01 → CORREGIDA EN EL ALCANCE PROBADO POR 67
+N64-02 → CORREGIDA EN EL ALCANCE PROBADO POR 65
+N64-03 → INSUFICIENCIA LOCAL RESPECTO DE PV-005
+       → CORREGIDA EN EL ALCANCE PROBADO POR 68
+       → DESPLEGADA Y VALIDADA HUMANAMENTE EN PRODUCCIÓN
+```
+
+Publicación y validación humana dejan de estar pendientes para 68 dentro del alcance registrado. El detalle de evidencia y cierre figura en el apartado 12 de [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md).
+
+**Punto de reanudación: reevaluación final del residuo de Actuación 64.** ¿Queda alguna diferencia humana independiente y demostrada de 64 después de 65, 67 y 68? Si no queda ninguna, podrá derivarse su cierre mediante contraste explícito; si queda alguna, deberá aislarse antes de cualquier cierre. No se cierra 64 por simple suma ni se presupone el resultado. No se cierra globalmente PV-005 ni PV-006; no se modifica Product ni se derivan automáticamente P6, nuevo Product Value, Architecture, Realization general o nuevo horizonte.
