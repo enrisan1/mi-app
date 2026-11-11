@@ -9,6 +9,51 @@ describe("R-INT-01 PostV1IntegratedExperience", () => {
     cleanup();
   });
 
+  it("[T68-01] hace reconocible la acción de conservar el trabajo actual como referencia estable antes de actuar", () => {
+    render(
+      <PostV1IntegratedExperience initialCurrent="Trabajo actual de prueba" />,
+    );
+
+    expect(
+      screen.getByRole("button", {
+        name: /(?=.*(?:conservar|guardar))(?=.*(?:referencia|estable))/i,
+      }),
+    ).toBeInTheDocument();
+  });
+
+  it("[T68-02] permite reconocer la acción de conservación sin comprender R1 o S1", () => {
+    render(
+      <PostV1IntegratedExperience initialCurrent="Trabajo actual de prueba" />,
+    );
+
+    const conservationAction = screen.getByRole("button", {
+      name: /conservar trabajo actual como referencia estable/i,
+    });
+
+    expect(conservationAction).toBeInTheDocument();
+    expect(conservationAction).not.toHaveAccessibleName(/\b(?:R1|S1)\b/i);
+  });
+
+  it("[T68-03] comunica antes de conservar la referencia que se puede seguir trabajando", () => {
+    render(
+      <PostV1IntegratedExperience initialCurrent="Trabajo actual de prueba" />,
+    );
+
+    expect(
+      screen.getByText(/(?:seguir|continuar).*trabaj/i),
+    ).toBeVisible();
+  });
+
+  it("[T68-04] comunica antes de actuar que la referencia quedará sin cambios", () => {
+    render(
+      <PostV1IntegratedExperience initialCurrent="Trabajo actual de prueba" />,
+    );
+
+    expect(
+      screen.getByText(/referencia.*(?:no cambiar|sin cambios|intacta)/i),
+    ).toBeVisible();
+  });
+
   async function constituteR1(content = "R1") {
     const user = userEvent.setup();
 
@@ -35,7 +80,7 @@ describe("R-INT-01 PostV1IntegratedExperience", () => {
   ) {
     await user.click(
       screen.getByRole("button", {
-        name: /constituir s1 desde r1/i,
+        name: /conservar trabajo actual como referencia estable/i,
       }),
     );
   }
@@ -156,7 +201,7 @@ describe("R-INT-01 PostV1IntegratedExperience", () => {
 
     expect(
       screen.queryByRole("button", {
-        name: /constituir s1 desde r1/i,
+        name: /conservar trabajo actual como referencia estable/i,
       }),
     ).not.toBeInTheDocument();
   });
@@ -451,7 +496,7 @@ describe("R-INT-01 PostV1IntegratedExperience", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /constituir s1 desde r1/i,
+        name: /conservar trabajo actual como referencia estable/i,
       }),
     ).toBeInTheDocument();
   });

@@ -179,20 +179,25 @@ export function PostV1IntegratedExperience({
           <h2 id="stable-heading">Estado estable</h2>
 
           {stable === null ? (
-            <button
-              type="button"
-              onClick={() =>
-                setState({
-                  ...state,
-                  stable: {
-                    id: "S1",
-                    content: current,
-                  },
-                })
-              }
-            >
-              Constituir S1 desde R1
-            </button>
+            <>
+              <p>
+                Podrás seguir trabajando después y esta referencia permanecerá sin cambios.
+              </p>
+              <button
+                type="button"
+                onClick={() =>
+                  setState({
+                    ...state,
+                    stable: {
+                      id: "S1",
+                      content: current,
+                    },
+                  })
+                }
+              >
+                Conservar trabajo actual como referencia estable
+              </button>
+            </>
           ) : (
             <>
               <p aria-label="Identificador del estado estable">

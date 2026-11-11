@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 10/11/2026
+**Fecha de actualización:** 11/11/2026
 
 ## Índice
 
@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 10/11/2026:** se conservan el producto final alcanzado en 61 y el lanzamiento público validado en 62. Las actuaciones 65 y 67 están cerradas. N64-02 queda corregida por 65 en el alcance probado; N64-01, insuficiencia local respecto de PV-005, queda corregida por 67, desplegada en `4f5f6bc` mediante GitHub Pages #5 y validada humanamente en la aplicación pública. T67-01…T67-05 tienen PASS técnico y público; T67-06 conserva PASS técnico, sin prueba pública independiente de su recorrido completo. El pendiente real es reevaluar el residuo de 64, especialmente la inteligibilidad R1/S1. No se cierra globalmente PV-005, PV-006 ni automáticamente 64; no se derivan P6, nueva Architecture, nuevo Product Value o nuevo horizonte. El detalle vigente figura en el cierre final de 67 al final; los bloques anteriores conservan sus contextos históricos.
+**Estado vigente al 11/11/2026:** se conservan el producto final de 61 y el lanzamiento público de 62. Las actuaciones 65 y 67 están cerradas: N64-02 y N64-01 quedan corregidas por ellas en sus respectivos alcances probados. La actuación 68 alcanza cierre técnico local de N64-03, insuficiencia local de inteligibilidad de la constitución del estado estable respecto de PV-005: corrección mínima implementada, validación técnica completa y C68-01/C68-02 con PASS humano local. Quedan pendientes consolidación Git, push, despliegue público y validación humana post-despliegue de 68; no se declara cerrada finalmente ni corregida públicamente N64-03. La actuación 64 todavía no está cerrada definitivamente. El detalle vigente figura en la actualización de 68 al final; los bloques anteriores conservan sus contextos históricos. No se cierra globalmente PV-005 ni PV-006 ni se derivan nuevos compromisos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7002,3 +7002,30 @@ T67-06 tuvo coherencia ejercida indirectamente con W2 en producción, pero no se
 El criterio final de 67 queda satisfecho según su apartado 11. Publicación y validación humana dejan de estar pendientes para esa actuación. No se cierra globalmente PV-005 o PV-006 ni se cierra automáticamente 64 por los resultados de 65 y 67.
 
 **Punto de reanudación:** reevaluar el residuo de 64, especialmente inteligibilidad R1/S1, que mantiene su estatuto hasta contraste específico. En el alcance documentado no se identifica otra diferencia demostrada pendiente; debe decidirse si 64 puede cerrarse o requiere actuación propia, sin presumir el resultado. No se derivan automáticamente P6, nueva Architecture, nuevo Product Value ni nuevo horizonte.
+
+
+---
+
+# Actualización posterior — Actuación 68, cierre técnico local
+
+**Registro: 11/11/2026.** Fuente del detalle y de la trazabilidad: [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md). La evidencia RED/GREEN, técnica global y humana local fue comunicada por la persona responsable para este registro; la inspección actual del diff confirma la implementación final.
+
+El residuo separado de inteligibilidad R1/S1 queda discriminado como N64-03 respecto de PV-005: la persona no reconocía suficientemente la consecuencia de una decisión que le correspondía ejercer. La terminología técnica por sí sola no funda la insuficiencia. PV-003 y PV-006 no fueron necesarios para esta fundamentación.
+
+El botón «Conservar trabajo actual como referencia estable» y la explicación «Podrás seguir trabajando después y esta referencia permanecerá sin cambios.» realizan la corrección mínima de presentación, sin alterar lógica, estado, persistencia ni flujo. Sólo la etiqueta resultó parcialmente suficiente en la primera validación humana; ambos textos obtuvieron después C68-01 y C68-02 → PASS HUMANO LOCAL. C68-02 evita inducir publicación, finalización, bloqueo de continuidad, historial/versionado o dependencia de R1/S1; no exige negar explícitamente publicación.
+
+Validación técnica final comunicada: focal 14/14 PASS; global 37/37 archivos y 339/339 tests PASS; typecheck (`tsc --noEmit`) PASS; build Vite 8.0.16, 30 módulos, PASS; diff check código 0, limpio. No se repiten estas ejecuciones de código en la edición documental.
+
+```text
+ACTUACIÓN 68 → CIERRE TÉCNICO LOCAL ALCANZADO
+N64-03 → INSUFICIENCIA LOCAL DEMOSTRADA RESPECTO DE PV-005
+       → CORRECCIÓN MÍNIMA IMPLEMENTADA
+       → VALIDACIÓN TÉCNICA COMPLETA
+       → VALIDACIÓN HUMANA LOCAL SATISFACTORIA
+CONSOLIDACIÓN GIT / PUSH / DESPLIEGUE PÚBLICO /
+VALIDACIÓN HUMANA POST-DESPLIEGUE → PENDIENTES
+```
+
+N64-01 queda corregida por 67 y N64-02 por 65 en sus alcances; N64-03 sólo alcanza corrección técnica/local por 68, con cierre público pendiente. No se declara cierre final de 68 ni corrección pública de N64-03. La actuación 64 todavía no está cerrada definitivamente.
+
+**Punto de reanudación:** consolidación y publicación autorizadas de 68 y validación humana pública de C68-01/C68-02, identificando revisión desplegada y evidencia. Si se superan, reexaminar si queda algún otro residuo demostrado de 64, sin presuponer el resultado. No se derivan P6, nuevo Product Value, nueva Architecture, nueva Realization general, historial/versionado, sistema general de ayuda ni teoría general de UX. No se cierra globalmente PV-005 ni PV-006.

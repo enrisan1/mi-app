@@ -9233,3 +9233,24 @@ T67-01…T67-05 quedan con PASS técnico y público, delimitando la evidencia hu
 **Actuación 67 → CERRADA.** El criterio de finalización queda satisfecho y N64-01, insuficiencia local respecto de PV-005, queda corregida en el alcance probado, desplegada y validada humanamente en producción. El cierre no declara satisfacción global de PV-005 ni PV-006; 65 ya había corregido N64-02 en su propio alcance.
 
 No se cierra automáticamente 64. La siguiente cuestión es reexaminar su residuo, especialmente inteligibilidad R1/S1, y decidir si puede cerrarse o requiere actuación propia. No se identifica aquí otra diferencia demostrada pendiente ni se deriva una solución por anticipación, P6, nueva Architecture, nuevo Product Value o nuevo horizonte. El detalle de publicación, evidencia, límites y cierre está en el apartado 11 de `67-CORRECCION_DETERMINACION_HUMANA_ENTRE_TRABAJO_ORDINARIO_Y_TRAYECTORIA_INTEGRADA.md`.
+
+
+---
+
+# 11/11/2026 — Actuación 68, inteligibilidad del estado estable y cierre técnico local
+
+Tras los cierres de N64-02 por 65 y N64-01 por 67 se discriminó el residuo R1/S1 como **N64-03 — Insuficiencia local de inteligibilidad de la constitución del estado estable**. Ante trabajo actual W2 o equivalente y «Constituir S1 desde R1», la persona no entendía la nomenclatura ni reconocía suficientemente qué ocurriría al pulsar. La pérdida afectaba a una decisión humana explícita históricamente atribuida a la persona: conservar el trabajo como referencia estable mientras puede seguir evolucionando. Queda fundada localmente respecto de PV-005; no por la mera presencia de términos técnicos. PV-003 y PV-006 no fueron necesarios.
+
+El primer RED añadió T68-01 y T68-02: 12 tests, 10 PASS y 2 FAIL. Al principio compartían punto de fallo; T68-02 se refinó para localizar la etiqueta vigente y fallar independientemente por depender de R1/S1. El primer GREEN cambió únicamente la etiqueta a «Conservar trabajo actual como referencia estable». La ejecución sin adaptar selectores obtuvo 2 PASS y 10 FAIL por el selector anterior, sin alcanzar las aserciones funcionales; T68-01 pasó. Se actualizaron cuatro selectores (tres históricos y T68-02), conservando todas las aserciones funcionales históricas: 12/12 PASS.
+
+La primera validación humana H68-G1 entendió qué trabajo se conservaría, pero no la posibilidad de seguir trabajando ni la permanencia sin cambios de la referencia. Sólo la etiqueta fue parcialmente suficiente y no cerró C68-01. El segundo RED añadió T68-03 y T68-04: 14 tests, 12 PASS y ambos nuevos FAIL, con históricos verdes. Se añadió una única explicación visible: «Podrás seguir trabajando después y esta referencia permanecerá sin cambios.» Segundo GREEN: 14/14 PASS.
+
+La validación técnica global final comunicada fue 37/37 archivos y 339/339 tests PASS; npm run typecheck → tsc --noEmit → PASS; npm run build → Vite 8.0.16, 30 módulos transformados → PASS; git diff --check → código 0, limpio. Estos resultados y ciclos son evidencia aportada para el registro, no ejecuciones repetidas durante esta edición documental. La inspección actual del diff confirma que producción sólo cambia esos dos textos, con reindentación por Fragment JSX y lógica stable={id: "S1", content: current} idéntica; los tests añaden T68-01…T68-04 sin eliminar ni relajar aserciones históricas.
+
+La segunda validación humana local, con ambos textos visibles, confirmó qué trabajo se conserva, que podrá continuar trabajando y que la referencia no cambiará aunque continúe. **C68-01 → PASS HUMANO LOCAL. C68-02 → PASS HUMANO LOCAL:** la superficie no induce publicación, finalización, imposibilidad de continuar, historial/versionado general ni exige R1/S1. No afirma explícitamente que no haya publicación; C68-02 tampoco lo exige.
+
+**ACTUACIÓN 68 → CIERRE TÉCNICO LOCAL ALCANZADO.** N64-03 queda como insuficiencia local demostrada respecto de PV-005, con corrección mínima implementada, validación técnica completa y validación humana local satisfactoria. Pendientes consolidación Git, push, despliegue público y validación humana post-despliegue. No se declara cierre final de 68 ni corrección pública de N64-03.
+
+N64-01 está corregida por 67 y N64-02 por 65 en sus alcances probados. N64-03 alcanza corrección técnica/local por 68 con cierre público pendiente; 64 todavía no está cerrada definitivamente. Si 68 supera publicación y validación humana pública, deberá reexaminarse si queda otro residuo demostrado de 64, sin presuponerlo.
+
+El detalle y el punto de reanudación constan en [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md). No se derivan P6, nuevo Product Value, nueva Architecture, nueva Realization general, historial/versionado, sistema general de ayuda ni teoría general de UX; no se cierra globalmente PV-005 ni PV-006. Esta edición sólo crea ese documento y actualiza estado y bitácora; no modifica código/tests ni ejecuta git add, commit, push o deployment.
