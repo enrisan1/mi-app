@@ -557,10 +557,217 @@ COMPROBAR RAMA B
      ↓
 reevaluar relación Product ↔ PLATFORM_VISION
      ↓
-¿existe nuevo objetivo estratégico justificable?
-├── SÍ → derivarlo
-└── NO → estado estable sin nueva actuación
+¿existe fundamento suficiente para estudiar
+un posible nuevo objetivo estratégico?
+├── SÍ
+│    → aplicar 13.1 — Formación estratégica post-clausura
+└── NO
+     → estado estable sin nueva actuación
 ```
+
+## 13.1. Formación estratégica post-clausura
+
+Este apartado especializa únicamente el nodo anterior cuando concurren simultáneamente:
+
+```text
+Product vigente suficientemente satisfecho o clausurado
++
+cierres anteriores conservados
++
+ausencia de obligación pendiente que determine por sí sola la continuación
++
+fundamento humano explícito para estudiar una evolución posterior
+```
+
+La decisión de continuar justifica **formar y contrastar candidatas**. No constituye por sí sola un nuevo compromiso de Product, una capacidad, un horizonte, Architecture, Realization ni Implementation.
+
+### 13.1.1. Cobertura decisional
+
+La formación no debe intentar agotar todas las posibilidades imaginables. Debe identificar la decisión estratégica abierta y contrastar las perspectivas actualmente reconocidas cuya evidencia pueda cambiar materialmente esa decisión.
+
+Siempre deberá contrastarse:
+
+```text
+PROJECT_CHARTER
++
+PLATFORM_VISION
++
+PRODUCT
++
+estado y cierres vigentes
+```
+
+Además deberán examinarse, cuando sean materialmente pertinentes:
+
+- evidencia de uso real;
+- patrimonio e investigaciones previas del proyecto;
+- contraste externo con productos, estándares, investigación o patrones;
+- y aptitud técnica de candidatas ya suficientemente formadas.
+
+La aptitud o deuda técnica no constituye por sí sola una fuente primaria de horizonte.
+
+Una perspectiva podrá omitirse cuando se justifique por qué su examen no puede razonablemente cambiar la decisión actual.
+
+La cobertura será suficiente cuando no permanezca identificada una perspectiva pertinente no contrastada con una pregunta concreta capaz de cambiar la selección o la salida negativa.
+
+### 13.1.2. Ficha mínima de candidata
+
+Toda candidata que pretenda entrar en comparación estratégica deberá permitir reconstruir, al menos:
+
+```text
+1. identificación y procedencia;
+2. situación candidata, sin presuponer solución técnica;
+3. diferencia humana;
+4. valor y alcance;
+5. compatibilidad con los cuerpos competentes;
+6. novedad e independencia frente a cierres vigentes;
+7. hechos, inferencias, hipótesis y evidencia pendiente;
+8. discriminabilidad y posible falsación o reducción;
+9. relación con otras candidatas;
+10. implicaciones técnicas materialmente relevantes, si existen;
+11. decisión estratégica que podría cambiar;
+12. estado de reducción.
+```
+
+La comparación será cualitativa y reductiva. No deberá sustituirse por una suma de puntuaciones o pesos que simule conmensurabilidad entre dimensiones heterogéneas.
+
+Una candidata podrá quedar:
+
+```text
+absorbida
+reducida
+descartada
+pendiente de evidencia
+pendiente de reducción
+apta para profundización
+apta para comparación final
+seleccionable por Product
+```
+
+La necesidad de evidencia adicional sólo justifica nueva investigación cuando exista una comprobación concreta cuya respuesta pueda cambiar una decisión relevante.
+
+### 13.1.3. Gate de clausura de la formación
+
+La formación podrá cerrarse cuando se cumplan conjuntamente:
+
+```text
+cobertura decisional suficiente
++
+candidatas supervivientes suficientemente formuladas
++
+reducción de duplicaciones, agregaciones,
+solapamientos y posibilidades meramente técnicas
++
+relaciones entre candidatas identificadas
++
+ausencia de comprobación concreta pendiente
+capaz de cambiar materialmente la decisión
+```
+
+Las salidas legítimas son:
+
+```text
+CONTINUAR
+→ sólo ante incertidumbre concreta
+→ actuación mínima con criterio de cierre
+
+CERRAR SIN HORIZONTE
+→ ninguna candidata o conjunto posee fundamento suficiente
+→ estado estable
+
+FORMULAR HORIZONTE
+→ existe candidata o conjunto suficientemente justificado
+→ todavía no equivale a horizonte aceptado
+```
+
+Cerrar sin horizonte no significa que ningún horizonte futuro pueda existir. Significa únicamente que, con la cobertura y evidencia actuales, no está justificado abrirlo ahora.
+
+### 13.1.4. Gate constitutivo del horizonte
+
+Un horizonte candidato sólo podrá aceptarse cuando queden establecidos antes de abrirlo:
+
+```text
+objetivo final
++
+fundamento positivo
++
+alcance
++
+no-alcance
++
+resultado o compromiso Product correspondiente
++
+dependencias conocidas materialmente relevantes
++
+criterio verificable de finalización
++
+posibles resultados de cierre
+```
+
+Por tanto:
+
+```text
+FORMULAR HORIZONTE
+≠
+ACEPTAR HORIZONTE
+```
+
+Si falta alguna condición constitutiva:
+
+- deberá resolverse únicamente la incertidumbre concreta capaz de cambiar la decisión, cuando exista;
+- o deberá cerrarse sin horizonte cuando no exista fundamento para continuar.
+
+Un horizonte aceptado debe ser finito y verificablemente cerrable. Una dirección indefinida de mejora continua puede pertenecer a PLATFORM_VISION, pero no constituye por sí sola un horizonte operativo.
+
+### 13.1.5. Relevo después de aceptar un horizonte
+
+Cuando el horizonte quede aceptado, termina esta especialización y toma el relevo la metodología vigente de convergencia:
+
+```text
+horizonte aceptado
+↓
+alcance
+↓
+capacidades
+↓
+dependencias
+↓
+criterios de finalización
+↓
+estado actual
+↓
+huecos
+↓
+prioridades
+↓
+hitos
+↓
+roadmap
+↓
+actuaciones
+```
+
+La investigación podrá intervenir sólo donde exista una incertidumbre capaz de modificar una decisión relevante.
+
+Cuando exista una necesidad de producto suficientemente identificada, **PM-10** gobernará el tránsito hacia la hipótesis mínima de realización o arquitectura y la construcción o investigación localizada correspondiente.
+
+La ejecución práctica de actuaciones ya justificadas se regirá por el **Protocolo operativo agéntico 18**. La autonomía operativa no confiere autoridad para crear por iniciativa técnica nuevos compromisos de Product ni nuevos horizontes.
+
+La aceptación de un nuevo horizonte constituye una decisión estratégica sustantiva y requiere control humano significativo.
+
+### 13.1.6. Regla de no infinitud
+
+La clausura de un horizonte no obliga a abrir otro.
+
+```text
+horizonte cerrado
+↓
+¿existe nuevo fundamento suficiente para continuar?
+├── NO → estado estable
+└── SÍ → nueva formación estratégica
+```
+
+Cada nueva formación deberá volver a satisfacer este apartado; el horizonte anterior no se convierte automáticamente en fundamento del siguiente.
 
 ---
 
