@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 12/11/2026:** el producto del alcance anterior y el lanzamiento permanecen satisfechos; 64, 65, 67, 68 y 69 permanecen cerradas, sin residuo demostrado pendiente de 64. La ausencia de siguiente actuación derivada desde ese alcance conserva su validez histórica. Posteriormente, la persona responsable decide explícitamente continuar evolucionando el proyecto: ese fundamento abre 70, actuación metodológica de derivación y validación del protocolo de evolución estratégica post-clausura, exclusivamente en fase de apertura y delimitación. No se ha abierto ni derivado nuevo horizonte, V2, P6 o Product Value. H70-A es hipótesis pendiente de contraste; el protocolo definitivo todavía no existe y la insuficiencia del Manual no está demostrada. El siguiente trabajo es contrastar las fuentes y derivar/refutar el protocolo, preservando los cierres anteriores. El detalle figura en 70 y en la actualización final de este estado.
+**Estado vigente al 12/11/2026:** el producto del alcance anterior y el lanzamiento permanecen satisfechos; 64, 65, 67, 68 y 69 permanecen cerradas, sin residuo demostrado pendiente de 64. La decisión humana posterior de continuar abrió 70 sin reabrir esos cierres. El contraste de 70 ha quedado sustantivamente completado: H70-A fue reformulada como H70-B, R70-B-01…04 quedaron derivados, C70-01…C70-10 resultaron 10/10 satisfechos y el resultado A —protocolo derivable— quedó confirmado. La especialización mínima ya está incorporada en el apartado 13.1 del Manual 17 y la verificación conjunta 70 ↔ Manual 17 confirma correspondencia material completa, sin contradicción normativa. No se ha abierto ni derivado todavía nuevo horizonte, V2, P6 o Product Value. Actuación 70 queda en condición de cierre formal; el siguiente estado posterior a su cierre será aplicar, si se mantiene la decisión de continuar, la formación estratégica post-clausura desde R70-B-01, sin presuponer que deba resultar un horizonte.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7100,3 +7100,32 @@ La referencia previa es `24f05eb`, `docs(project): close actuation 64 residual r
 H70-A, formación triangular mediante exploración estratégica, madurez técnica y uso real intensivo, es una hipótesis pendiente de contraste, susceptible de reducción, reformulación, división o rechazo. C70-01…C70-10 son criterios provisionales; ninguno se declara validado. El protocolo definitivo todavía no existe. No se crea ni modifica documentación de Methodology en esta fase.
 
 Fuente: [apertura de 70](70-DERIVACION_Y_VALIDACION_PROTOCOLO_EVOLUCION_ESTRATEGICA_POST_CLAUSURA.md), con pregunta, riesgos, resultados A/B/C/D y criterio de finalización. **Punto de reanudación:** realizar el contraste de fuentes y derivar/refutar el protocolo, incluida la alternativa de suficiencia del Manual actual. No se abre V2, P6, nuevo Product Value, Architecture, Realization, funcionalidad ni horizonte; no se modifica código/tests.
+
+---
+
+# 12/11/2026 — Incorporación normativa de H70-B y verificación conjunta 70 ↔ Manual 17
+
+El contraste sustantivo de la Actuación 70 redujo la laguna inicialmente considerada a una necesidad metodológica localizada: operacionalizar la cobertura, comparación y clausura de la formación estratégica posterior a la clausura legítima del Product vigente. H70-A no sobrevivió en su forma triangular simétrica y fue reformulada como **H70-B — formación estratégica post-clausura con fuentes diferenciadas, síntesis comparativa y gates de clausura**.
+
+Se derivaron R70-B-01…04: cobertura decisional, ficha comparativa común, gate de clausura/gate constitutivo de horizonte y auditoría de compatibilidad/relevo metodológico. La evaluación final produjo **C70-01…C70-10 → 10/10 SATISFECHOS** y **Resultado A — protocolo derivable → CONFIRMADO**.
+
+La solución mínima no crea una metodología paralela. Se incorporó en `docs/01-methodology/17-manual-de-continuidad-estrategica.md`, apartado `13.1 — Formación estratégica post-clausura`, especializando el nodo:
+
+```text
+Product satisfecho
+↓
+reevaluar Product ↔ PLATFORM_VISION
+↓
+¿existe fundamento suficiente para estudiar
+un posible nuevo objetivo estratégico?
+├── SÍ → aplicar 13.1
+└── NO → estado estable
+```
+
+La incorporación conserva las piezas validadas: cobertura decisional no exhaustiva, ficha mínima cualitativa de candidata, salida `CONTINUAR / CERRAR SIN HORIZONTE / FORMULAR HORIZONTE`, gate constitutivo previo a `ACEPTAR HORIZONTE`, relevo a Estrategia 11/54, subordinación técnica a PM-10 y ejecución de actuaciones justificadas bajo Protocolo 18. La aceptación de horizonte conserva control humano sustantivo.
+
+La verificación conjunta entre 70 y Manual 17 comprobó materialmente 18/18 propiedades esperadas. Un control textual automático marcó inicialmente un falso negativo en el relevo a convergencia por diferencia de formulación; la lectura directa confirmó que 70 exige terminar H70-B al aceptar horizonte y Manual 17 reproduce exactamente ese relevo hacia la metodología vigente de convergencia, PM-10 y Protocolo 18. No se identifica contradicción, omisión material ni obligación nueva no validada.
+
+**Resultado de continuidad documental:** las diez condiciones de finalización de 70 están materialmente satisfechas y la actuación queda en condición de cierre formal. No se abre por ello ningún horizonte. El producto anterior y sus cierres permanecen válidos; V2, P6, nuevo Product Value, Architecture y Realization siguen no derivados.
+
+**Punto de reanudación posterior al cierre de 70:** si se mantiene la decisión humana de continuar evolucionando el proyecto, aplicar el apartado 13.1 del Manual 17 comenzando por la cobertura decisional de la formación estratégica post-clausura. Esa aplicación deberá poder concluir tanto en un horizonte suficientemente justificado como en cierre sin horizonte.
