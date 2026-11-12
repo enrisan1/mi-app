@@ -38,6 +38,11 @@
    9.1 Compromiso
    9.2 Delimitación
 
+10. Compromiso post-clausura — C-PV-POST-01
+   10.1 Situación y valor justificado
+   10.2 Compromiso
+   10.3 Delimitación
+
 # 1. Propósito
 
 `PRODUCT.md` establece los compromisos de producto que orientan la realización práctica de la plataforma.
@@ -819,3 +824,49 @@ decisión mientras permanecían alternativas abiertas; esas diferencias
 pertenecen al ámbito específico de `PV-005`.
 
 ---
+
+# 10. Compromiso post-clausura — C-PV-POST-01
+
+## 10.1 Situación y valor justificado
+
+**C-PV-POST-01 — Continuidad del contexto intelectual provisional**
+
+La situación seleccionada aparece cuando una actividad intelectual en curso
+produce contexto provisional que continúa siendo pertinente para su
+continuación y cuya pérdida obligaría a reconstruir desde cero parte relevante
+del trabajo ya realizado.
+
+La diferencia humana no consiste en conservar todo lo ocurrido ni en convertir
+todo antecedente en memoria permanente. Consiste en que aquello que sigue
+siendo contextualmente pertinente pueda volver a participar suficientemente en
+la continuación efectiva del trabajo.
+
+## 10.2 Compromiso
+
+Cuando una actividad intelectual en curso produzca contexto provisional que
+siga siendo pertinente para continuarla, la plataforma deberá poder preservar
+suficientemente su participación efectiva en la continuación del trabajo,
+incluido el paso entre participantes operativos, sin exigir reconstruir desde
+cero la parte relevante del contexto ya elaborado.
+
+## 10.3 Delimitación
+
+- El compromiso se limita al contexto provisional que continúa siendo
+  pertinente para la actividad en curso.
+- No exige conservar todo lo ocurrido ni convertir todo antecedente en memoria
+  permanente.
+- No exige identidad literal de representación ni conservación exhaustiva de
+  cada intercambio; la suficiencia se evalúa respecto de la continuación
+  efectiva del trabajo.
+- La mera conservación física de información no demuestra por sí sola que el
+  contexto pueda volver a participar suficientemente en esa continuación.
+- No determina una arquitectura, mecanismo de almacenamiento, interfaz,
+  automatización ni realización concreta.
+- No establece por sí solo una política general de memoria o un historial
+  universal.
+
+Se conserva el identificador **C-PV-POST-01**. Su selección por Product no
+constituye una renumeración automática como PV-007 ni modifica retrospectivamente
+los compromisos y cierres del alcance anterior. La delimitación operativa del
+horizonte y la derivación de capacidades corresponden al proceso de convergencia
+posterior a su aceptación estratégica.

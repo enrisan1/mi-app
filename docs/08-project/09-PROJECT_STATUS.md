@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 12/11/2026:** el producto del alcance anterior y el lanzamiento permanecen satisfechos; 64, 65, 67, 68 y 69 permanecen cerradas, sin residuo demostrado pendiente de 64. La decisión humana posterior de continuar abrió 70 sin reabrir esos cierres. El contraste de 70 ha quedado sustantivamente completado: H70-A fue reformulada como H70-B, R70-B-01…04 quedaron derivados, C70-01…C70-10 resultaron 10/10 satisfechos y el resultado A —protocolo derivable— quedó confirmado. La especialización mínima ya está incorporada en el apartado 13.1 del Manual 17 y la verificación conjunta 70 ↔ Manual 17 confirma correspondencia material completa, sin contradicción normativa. No se ha abierto ni derivado todavía nuevo horizonte, V2, P6 o Product Value. Actuación 70 queda formalmente cerrada; el siguiente trabajo justificable, mientras se mantenga la decisión de continuar, es aplicar la formación estratégica post-clausura de Manual 17 §13.1 comenzando por R70-B-01, sin presuponer que deba resultar un horizonte.
+**Estado vigente al 12/11/2026:** el producto del alcance anterior, su lanzamiento y los cierres de 64/65/67/68/69 permanecen válidos. 70 permanece cerrada, con la especialización metodológica incorporada en Manual 17 §13.1. Su aplicación posterior alcanza G70-FORM-01 → FORMULAR HORIZONTE; C-PV-POST-01 — Continuidad del contexto intelectual provisional → SELECCIONADO POR PRODUCT; G70-HOR-01 → HOR-01…HOR-08 = 8/8 SATISFECHOS; HUMAN GATE → ACEPTAR H-POST-01 — Continuidad del contexto intelectual en curso entre participantes operativos. La formación estratégica post-clausura queda cerrada y toma el relevo la metodología de convergencia, comenzando por alcance y después capacidades. Estos resultados se registran conforme a la decisión comunicada por la persona responsable en el encargo de materialización; no se presenta una nueva evaluación independiente de los gates. No se derivan automáticamente PV-007, P6, Architecture, Realization, Implementation ni backlog técnico. El compromiso se consolida en Product §10 y el detalle de la transición figura al final de este estado.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7129,3 +7129,50 @@ La verificación conjunta entre 70 y Manual 17 comprobó materialmente 18/18 pro
 **Resultado de continuidad documental:** las diez condiciones de finalización de 70 están materialmente satisfechas y **ACTUACIÓN 70 → CERRADA**. No se abre por ello ningún horizonte. El producto anterior y sus cierres permanecen válidos; V2, P6, nuevo Product Value, Architecture y Realization siguen no derivados.
 
 **Punto de reanudación tras el cierre de 70:** si se mantiene la decisión humana de continuar evolucionando el proyecto, aplicar el apartado 13.1 del Manual 17 comenzando por la cobertura decisional de la formación estratégica post-clausura. Esa aplicación deberá poder concluir tanto en un horizonte suficientemente justificado como en cierre sin horizonte.
+
+
+---
+
+# 12/11/2026 — Formación post-clausura, selección Product y aceptación de H-POST-01
+
+Después del cierre metodológico de 70 se registra la siguiente secuencia,
+comunicada por la persona responsable para su materialización documental:
+
+1. **Formación estratégica:** G70-FORM-01 → FORMULAR HORIZONTE. Esta salida
+   permite formular y no equivale todavía a aceptación estratégica.
+2. **Selección Product:** C-PV-POST-01 — Continuidad del contexto intelectual
+   provisional → SELECCIONADO POR PRODUCT. El compromiso queda consolidado en
+   [Product §10](02-PRODUCT.md#10-compromiso-post-clausura--c-pv-post-01), con su
+   identificador propio, situación, compromiso y delimitación.
+3. **Constitución del horizonte:** G70-HOR-01 → HOR-01…HOR-08 = 8/8 SATISFECHOS.
+   Se registra el resultado comunicado para objetivo final, fundamento positivo,
+   alcance, no-alcance, resultado o compromiso Product, dependencias conocidas,
+   criterio verificable de finalización y posibles resultados de cierre. Este
+   registro no reconstruye una evaluación independiente ni inventa los detalles
+   materiales de cada condición.
+4. **Aceptación estratégica:** HUMAN GATE → ACEPTAR **H-POST-01 — Continuidad del
+   contexto intelectual en curso entre participantes operativos**. La aceptación
+   humana es distinta tanto de formular horizonte como de seleccionar el
+   compromiso por Product.
+
+```text
+G70-FORM-01 → FORMULAR HORIZONTE
+C-PV-POST-01 → SELECCIONADO POR PRODUCT
+G70-HOR-01 → HOR-01…HOR-08 = 8/8 SATISFECHOS
+HUMAN GATE → ACEPTAR H-POST-01
+FORMACIÓN ESTRATÉGICA POST-CLAUSURA → CERRADA
+RELEVO → METODOLOGÍA DE CONVERGENCIA
+```
+
+**Punto de reanudación:** aplicar Manual 17 §13.1.5 a H-POST-01, comenzando por
+**alcance y después capacidades**. Los pasos posteriores de dependencias,
+criterios, estado actual, huecos, prioridades, hitos, roadmap y actuaciones se
+abordarán conforme a esa metodología; no quedan ejecutados por este registro.
+El horizonte está aceptado, no realizado ni cerrado como resultado de producto.
+
+70 y los cierres anteriores permanecen intactos en su contexto histórico. La
+formación cerrada aquí es la aplicación estratégica posterior, no una reapertura
+de la derivación metodológica de 70. No se renombra C-PV-POST-01 como PV-007 ni
+se derivan automáticamente P6, Architecture, Realization, Implementation o
+backlog técnico. La unidad actual sólo materializa Product, estado y bitácora;
+queda para revisión humana, sin git add, commit ni push.
