@@ -2,9 +2,9 @@
 
 **Fecha de apertura:** 12/11/2026.
 
-**Estado:** ACTUACIÓN 70 → ABIERTA.
+**Estado:** ACTUACIÓN 70 → CERRADA.
 
-**Fase actual:** contraste sustantivo completado. H70-A ha sido reformulada como H70-B; R70-B-01…04 han sido derivados y C70-01…C70-10 quedan satisfechos en el alcance metodológico de esta actuación. Permanece pendiente la incorporación normativa mínima al Manual 17 y el cierre documental formal de 70.
+**Fase actual:** cerrada. H70-B ha sido validada en el alcance de 70, incorporada normativamente en `Manual 17 §13.1` y verificada conjuntamente contra esta actuación; C70-01…C70-10 quedan satisfechos y no permanece condición de cierre pendiente.
 
 # 1. Estado de partida y preservación de los cierres
 
@@ -575,3 +575,108 @@ decidir cierre formal de Actuación 70
 
 Esta conclusión no autoriza todavía a aplicar el protocolo para seleccionar un horizonte concreto hasta que su incorporación normativa mínima quede consolidada.
 
+# 19. Verificación de incorporación normativa y cierre formal
+
+La especialización validada en esta actuación fue incorporada en `docs/01-methodology/17-manual-de-continuidad-estrategica.md`, apartado `13.1 — Formación estratégica post-clausura`.
+
+La verificación conjunta posterior comparó esta especificación con el Manual incorporado y confirmó materialmente:
+
+```text
+decisión humana → formación, no horizonte automático
+dirección estratégica interna obligatoria
+uso real y contraste externo condicionados por pertinencia
+aptitud técnica como filtro y no fuente primaria
+cobertura decisional no exhaustiva
+ficha común de 12 dimensiones
+comparación cualitativa no numérica
+gate de formación con CONTINUAR / CERRAR / FORMULAR
+continuación sólo ante incertidumbre concreta
+gate constitutivo con ocho condiciones
+FORMULAR HORIZONTE ≠ ACEPTAR HORIZONTE
+relevo a convergencia
+entrada posterior de PM-10
+Protocolo 18 limitado a ejecución de actuaciones justificadas
+control humano sustantivo en aceptación de horizonte
+regla de no infinitud
+preservación de cierres anteriores
+```
+
+El control focal automatizado obtuvo inicialmente 17/18 por una diferencia textual en la detección del relevo a convergencia. La inspección directa de `§15.4` de este documento y `Manual 17 §13.1.5` confirmó que se trataba de un falso negativo del patrón: ambas fuentes establecen que la especialización termina al aceptar horizonte y que desde ese punto toma el relevo la metodología vigente de convergencia, seguida por PM-10 y Protocolo 18 dentro de sus competencias.
+
+Resultado material final:
+
+```text
+VERIFICACIÓN 70 ↔ MANUAL 17
+→ 18 / 18 PASS
+→ sin contradicción normativa
+→ sin omisión material detectada
+→ sin ampliación de autoridad
+```
+
+Las diez condiciones de finalización definidas en el apartado 11 quedan satisfechas:
+
+```text
+1. laguna metodológica localizada → DETERMINADA
+2. H70-A → CONTRASTADA Y REFORMULADA
+3. funciones de exploración / técnica / uso → DETERMINADAS
+4. regla de formación y selección → DEFINIDA E INCORPORADA
+5. salida negativa → DEFINIDA
+6. criterio previo de clausura de horizonte → EXIGIDO
+7. paso a convergencia → DEFINIDO
+8. compatibilidad → VERIFICADA
+9. aplicabilidad al estado actual → DEMOSTRADA
+10. siguiente estado tras 70 → DETERMINADO
+```
+
+Por tanto:
+
+```text
+ACTUACIÓN 70
+→ CERRADA
+
+H70-A
+→ REFORMULADA
+
+H70-B
+→ VALIDADA EN EL ALCANCE DE 70
+→ INCORPORADA EN MANUAL 17 §13.1
+
+C70-01…C70-10
+→ 10 / 10 SATISFECHOS
+
+RESULTADO A
+→ PROTOCOLO DERIVABLE
+→ CONFIRMADO
+
+NUEVO HORIZONTE
+→ NO ABIERTO
+→ NO DERIVADO POR EL CIERRE DE 70
+```
+
+El apartado 18 queda conservado como estado intermedio previo a la incorporación normativa; este apartado 19 lo sustituye como estado final de la actuación.
+
+# 20. Punto de reanudación posterior a 70
+
+El cierre de 70 no obliga a abrir un horizonte. Dado que permanece la decisión humana explícita de continuar evolucionando el proyecto, el siguiente trabajo justificable es **aplicar** la especialización ya vigente de `Manual 17 §13.1`, comenzando por su cobertura decisional.
+
+```text
+ACTUACIÓN 70 CERRADA
+↓
+MANUAL 17 §13.1 VIGENTE
+↓
+FORMACIÓN ESTRATÉGICA POST-CLAUSURA
+↓
+R70-B-01 / cobertura decisional
+↓
+formación y comparación de candidatas
+↓
+G70-FORM-01
+├── CERRAR SIN HORIZONTE
+└── FORMULAR HORIZONTE
+     ↓
+     G70-HOR-01
+     ├── NO ACEPTAR
+     └── ACEPTAR HORIZONTE
+```
+
+Esta aplicación deberá conservar los cierres anteriores y podrá concluir legítimamente sin nuevo horizonte. No se presuponen V2, P6, nuevo Product Value, Architecture, Realization, Implementation ni backlog técnico.
