@@ -9309,3 +9309,19 @@ Se registró H70-A — formación triangular mediante exploración estratégica,
 Se verificó la existencia y denominación de las fuentes mínimas; PM-10 se localizó en `docs/01-methodology/00-protocolo-de-trabajo.md`, «Desarrollo guiado por necesidad productiva». El contraste completo de compatibilidad queda pendiente. El siguiente trabajo es contrastar fuentes y derivar/refutar el protocolo, admitiendo como resultado la suficiencia de la metodología vigente sin crear norma redundante.
 
 El detalle queda en [Actuación 70](70-DERIVACION_Y_VALIDACION_PROTOCOLO_EVOLUCION_ESTRATEGICA_POST_CLAUSURA.md). Esta apertura sólo afecta a ese documento, estado y bitácora; no modifica Methodology ni Manual 17, no abre horizonte, V2, P6 o Product Value y no cambia código/tests. No se ejecutan git add, commit, push ni deployment.
+
+---
+
+# 12/11/2026 — Actuación 70, incorporación normativa y condición de cierre
+
+Tras completar el contraste sustantivo de 70 se confirmó una laguna metodológica localizada, no una ausencia general de continuidad estratégica. H70-A fue reformulada como H70-B; R70-B-01…04 quedaron derivados y C70-01…C70-10 resultaron 10/10 satisfechos. El resultado final de las alternativas iniciales es **A — protocolo derivable → CONFIRMADO**; B y C quedan rechazados y D queda como resultado intermedio resuelto por la reformulación.
+
+La solución se incorporó de forma mínima al Manual 17 mediante `13.1 — Formación estratégica post-clausura`. El árbol operativo ahora deriva a esa especialización cuando Product está satisfecho y existe fundamento suficiente para estudiar un posible nuevo objetivo estratégico. La sección añadida conserva cobertura decisional, ficha cualitativa común, gate de clausura de formación, gate constitutivo de horizonte, relevo a convergencia, PM-10 y Protocolo 18, y regla de no infinitud.
+
+Se realizó después una verificación conjunta `70 ↔ Manual 17`. El control focal comprobó 18 propiedades materiales: fuente humana sin horizonte automático; dirección interna obligatoria; uso real y contraste externo condicionales; técnica como filtro; cobertura decisional no exhaustiva; 12 campos de candidata; comparación no numérica; tres salidas del gate de formación; continuidad sólo ante incertidumbre concreta; ocho condiciones constitutivas del horizonte; separación FORMULAR/ACEPTAR; relevo a convergencia; entrada posterior de PM-10; Protocolo 18 limitado a ejecución; control humano en aceptación; no infinitud y preservación de cierres previos.
+
+El control automático produjo inicialmente 17/18 por una diferencia textual en el relevo a convergencia. La inspección directa de `70 §15.4` y `Manual 17 §13.1.5` confirmó que se trataba de un falso negativo: ambos establecen que H70-B termina al aceptar horizonte y que desde ese punto toma el relevo la metodología vigente de convergencia, seguida por PM-10 cuando exista necesidad Product y por Protocolo 18 para la ejecución de actuaciones ya justificadas. Resultado material final: **18/18 PASS**.
+
+No se detecta contradicción normativa, omisión material ni expansión de autoridad. La incorporación no abre V2, P6, nuevo Product Value, Architecture, Realization ni horizonte concreto. Producto y lanzamiento del alcance anterior, así como 64/65/67/68/69, permanecen cerrados en sus alcances.
+
+Las diez condiciones de finalización definidas por 70 están ya materialmente satisfechas y la norma derivada está incorporada y verificada. **Actuación 70 queda en condición de cierre formal.** El siguiente punto de reanudación, una vez cerrado 70, será aplicar `Manual 17 §13.1` al estado actual empezando por la cobertura decisional de la formación post-clausura, admitiendo como salida tanto un horizonte suficientemente justificado como cierre sin horizonte.
