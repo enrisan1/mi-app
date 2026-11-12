@@ -4,7 +4,7 @@
 
 **Estado:** ACTUACIÓN 70 → ABIERTA.
 
-**Fase actual:** apertura y delimitación del problema. H70-A y C70-* son provisionales; el protocolo definitivo todavía no existe ni queda aceptado por este documento.
+**Fase actual:** contraste sustantivo completado. H70-A ha sido reformulada como H70-B; R70-B-01…04 han sido derivados y C70-01…C70-10 quedan satisfechos en el alcance metodológico de esta actuación. Permanece pendiente la incorporación normativa mínima al Manual 17 y el cierre documental formal de 70.
 
 # 1. Estado de partida y preservación de los cierres
 
@@ -205,3 +205,373 @@ PUNTO DE REANUDACIÓN
 → CONTRASTAR FUENTES Y DERIVAR O REFUTAR EL PROTOCOLO,
   SIN PRESUPONER LA LAGUNA NI LA SOLUCIÓN TRIANGULAR
 ```
+
+# 13. Resultado del contraste sustantivo
+
+Las secciones 1–12 conservan el registro de apertura y las hipótesis provisionales con las que comenzó la actuación. No deben reinterpretarse como estado final. El contraste posterior produjo una reducción progresiva de la cuestión metodológica.
+
+La hipótesis de una laguna amplia en la continuidad estratégica quedó refutada. La metodología vigente ya contiene:
+
+- separación entre cierre local y terminación del proyecto;
+- fundamento positivo;
+- convergencia planificada y evidencia emergente;
+- formulación, evaluación y selección de situaciones candidatas en Product;
+- reducción de diferencias;
+- criterios previos de finalización;
+- salida estable sin actuación;
+- reglas para no derivar automáticamente un nuevo horizonte;
+- convergencia desde un horizonte aceptado;
+- PM-10 para pasar desde necesidad de producto suficientemente identificada a realización o arquitectura mínima;
+- y protocolo operativo agéntico para ejecutar actuaciones ya justificadas.
+
+La laguna superviviente quedó reducida a:
+
+> **L70-01R — Suficiencia y clausura de la formación estratégica post-clausura.**
+
+Su núcleo es determinar cuándo la exploración posterior a una clausura ha formado y contrastado un conjunto suficiente de alternativas para seleccionar una dirección estratégica o concluir legítimamente que ninguna justifica abrir un nuevo horizonte.
+
+La laguna no consiste, por tanto, en ausencia de metodología general de continuidad ni de convergencia. Consiste en una falta localizada de operacionalización entre:
+
+```text
+Product vigente satisfecho
+↓
+reevaluar Product ↔ PLATFORM_VISION
+↓
+¿existe nuevo objetivo estratégico justificable?
+```
+
+y la constitución suficientemente cerrable de ese posible nuevo objetivo.
+
+# 14. Resultado de H70-A y reformulación como H70-B
+
+H70-A no supera el contraste en su forma original.
+
+La estructura:
+
+```text
+exploración estratégica
++
+madurez técnica
++
+uso real intensivo
+```
+
+trataba provisionalmente los tres carriles como componentes aproximadamente equivalentes. El contraste demostró que no poseen la misma función ni autoridad.
+
+Resultado:
+
+```text
+H70-A
+→ REFORMULADA
+```
+
+La hipótesis superviviente se formula como:
+
+> **H70-B — Formación estratégica post-clausura con fuentes diferenciadas, síntesis comparativa y gates de clausura.**
+
+Su estructura consolidada es:
+
+```text
+DECISIÓN HUMANA EXPLÍCITA DE CONTINUAR
+↓
+DELIMITACIÓN
+→ Charter + cierres vigentes
+↓
+FORMACIÓN DE CANDIDATAS
+├── exploración estratégica deliberada
+└── evidencia de uso real
+↓
+REDUCCIÓN INICIAL
+↓
+EVALUACIÓN PRODUCT
+→ situación
+→ compatibilidad
+→ diferencia humana
+→ valor
+↓
+APTITUD TÉCNICA CONDICIONAL
+→ sólo cuando viabilidad, dependencia, alcance,
+  sostenibilidad o riesgo sean materialmente relevantes
+↓
+SÍNTESIS COMPARATIVA
+↓
+GATE DE CLAUSURA DE FORMACIÓN
+├── CONTINUAR localizadamente
+├── CERRAR SIN HORIZONTE
+└── FORMULAR HORIZONTE
+     ↓
+     GATE CONSTITUTIVO
+     ├── NO ACEPTAR
+     └── ACEPTAR HORIZONTE
+          ↓
+          CONVERGENCIA VIGENTE
+```
+
+La madurez técnica no constituye fuente primaria equivalente de horizonte. Una deuda, limitación o posibilidad técnica sólo adquiere relevancia estratégica cuando afecta materialmente a una candidata de Product suficientemente formada o puede traducirse independientemente a una diferencia humana justificable.
+
+Tampoco se establece una obligación de «uso real intensivo». El uso real deberá aportar únicamente la evidencia necesaria para resolver las incertidumbres materialmente capaces de cambiar la decisión.
+
+# 15. Especificación consolidada del procedimiento
+
+## 15.1. R70-B-01 — Cobertura de formación
+
+La cobertura es **decisional, no exhaustiva**.
+
+Se considera suficiente cuando:
+
+1. está identificada la decisión estratégica abierta;
+2. se ha contrastado siempre la dirección estratégica interna del proyecto;
+3. cada perspectiva adicional actualmente identificada capaz de cambiar materialmente la decisión ha sido examinada o excluida con justificación explícita;
+4. las candidatas no proceden únicamente de posibilidad técnica o atractivo de implementación;
+5. no permanece identificada una perspectiva omitida con una pregunta concreta cuya respuesta pueda cambiar materialmente la selección o la salida negativa.
+
+Las perspectivas de referencia son:
+
+- **P70-COV-1 — Dirección estratégica interna:** PROJECT_CHARTER + PLATFORM_VISION + PRODUCT + estado y cierres vigentes. Obligatoria.
+- **P70-COV-2 — Evidencia de uso real:** pertinente cuando exista producto utilizable y una cuestión empírica capaz de informar la decisión.
+- **P70-COV-3 — Contraste externo:** condicional; se incluye cuando plataformas, estándares, investigación o patrones externos puedan materialmente cambiar la valoración.
+- **P70-COV-4 — Patrimonio y evidencia histórica:** investigaciones, experimentos, diferencias reducidas, oportunidades no derivadas y realizaciones históricas pertinentes, sin convertir existencia histórica en vigencia automática.
+- **P70-COV-5 — Aptitud técnica:** filtro condicionado, no fuente primaria obligatoria de horizonte.
+
+Se formaliza:
+
+> **G70-COV-01 — Cobertura suficiente de formación.**
+
+No exige demostrar que no existe ninguna otra posibilidad imaginable. Exige que no permanezca identificada una perspectiva pertinente no contrastada cuya respuesta pueda cambiar materialmente la decisión actual.
+
+## 15.2. R70-B-02 — Ficha comparativa común de candidata
+
+Toda candidata que pretenda entrar en síntesis comparativa deberá permitir reconstruir, como mínimo:
+
+1. **FC-01 — Identificación y procedencia.**
+2. **FC-02 — Situación candidata**, formulada sin presuponer una solución técnica.
+3. **FC-03 — Diferencia humana** que produciría hacer practicable la situación.
+4. **FC-04 — Valor y alcance:** para quién, por qué y con qué alcance.
+5. **FC-05 — Compatibilidad y perímetro:** Charter, Platform Vision, Product y demás cuerpos aplicables.
+6. **FC-06 — Novedad e independencia:** qué parte ya está satisfecha, absorbida, reducida o cerrada.
+7. **FC-07 — Evidencia:** hechos, inferencias, hipótesis, contradicciones y pendientes.
+8. **FC-08 — Discriminabilidad:** qué variable podría aislarse y qué observación podría apoyar, reducir o falsar la candidata.
+9. **FC-09 — Relación con otras candidatas:** independencia, solapamiento, complementariedad, alternativa o dependencia.
+10. **FC-10 — Aptitud técnica relevante**, sólo cuando afecte materialmente a viabilidad, sostenibilidad, riesgo, alcance o dependencia.
+11. **FC-11 — Capacidad para cambiar una decisión estratégica.**
+12. **FC-12 — Estado de reducción:** absorbida, reducida, descartada, pendiente de evidencia, pendiente de reducción, apta para profundización, apta para comparación final o seleccionable por Product.
+
+La comparación es cualitativa y reductiva. No se adopta una suma de puntos ni pesos numéricos que simulen conmensurabilidad entre dimensiones heterogéneas.
+
+Se formaliza:
+
+> **G70-CMP-01 — Aptitud para síntesis comparativa.**
+
+Una candidata sólo entra en comparación final cuando su situación, diferencia humana, valor, compatibilidad, novedad, evidencia, discriminabilidad, relaciones y efecto decisional estén suficientemente formulados o cuando la incertidumbre restante sea concreta y resoluble.
+
+## 15.3. R70-B-03 — Clausura de formación y constitución de horizonte
+
+Se distinguen dos gates.
+
+### G70-FORM-01 — Clausura de la formación estratégica
+
+Se supera cuando:
+
+1. G70-COV-01 está satisfecho;
+2. toda candidata superviviente posee ficha comparable suficiente;
+3. candidatas absorbidas, duplicadas, agregadas, meramente técnicas o sin fundamento suficiente han sido reducidas;
+4. las relaciones entre candidatas están identificadas;
+5. no queda una comprobación concreta pendiente cuya respuesta pueda cambiar materialmente la existencia, valor, selección o relación de una candidata, ni la salida negativa.
+
+Sus salidas son:
+
+```text
+CONTINUAR
+→ sólo ante incertidumbre concreta
+→ actuación mínima
+→ criterio de cierre previo
+
+CERRAR SIN HORIZONTE
+→ formación cerrada
+→ nuevo horizonte no derivado
+→ estado estable
+
+FORMULAR HORIZONTE
+→ existe candidata o conjunto suficientemente justificado
+→ todavía no implica horizonte aceptado
+```
+
+### G70-HOR-01 — Constitución suficiente de nuevo horizonte
+
+Un horizonte candidato sólo puede aceptarse cuando se establezcan previamente:
+
+1. **HOR-01 — Objetivo final.**
+2. **HOR-02 — Fundamento positivo.**
+3. **HOR-03 — Alcance.**
+4. **HOR-04 — No-alcance.**
+5. **HOR-05 — Resultado o compromiso Product correspondiente.**
+6. **HOR-06 — Dependencias conocidas materialmente relevantes.**
+7. **HOR-07 — Criterio verificable de finalización.**
+8. **HOR-08 — Posibles resultados de cierre**, incluidos satisfacción, reducción, falsación o aparición de dependencia material nueva.
+
+La secuencia completa queda:
+
+```text
+FORMACIÓN
+↓
+G70-FORM-01
+├── CONTINUAR
+├── CERRAR SIN HORIZONTE
+└── FORMULAR HORIZONTE
+     ↓
+     G70-HOR-01
+     ├── NO ACEPTAR
+     │    ├── CONTINUAR localizadamente, si existe
+     │    │   incertidumbre concreta capaz de cambiar la decisión
+     │    └── CERRAR SIN HORIZONTE, en otro caso
+     └── ACEPTAR HORIZONTE
+          ↓
+          CONVERGENCIA
+```
+
+Un horizonte aceptado debe ser cerrable. Una dirección indefinida como «mejorar continuamente la plataforma» puede pertenecer a la visión de largo plazo, pero no constituye por sí sola un horizonte operativo suficiente.
+
+## 15.4. R70-B-04 — Compatibilidad y relevo metodológico
+
+La auditoría final no identifica contradicción normativa.
+
+La distribución de responsabilidades queda:
+
+| Cuerpo | Responsabilidad |
+| --- | --- |
+| PROJECT_CHARTER | Identidad, propósito y perímetro superior. |
+| PLATFORM_VISION | Dirección estratégica y espacio de posibilidades; no backlog. |
+| PRODUCT | Formulación, compatibilidad, valor, selección y delimitación de compromisos. |
+| Manual 17 | Continuidad estratégica y derivación del siguiente estado justificable. |
+| H70-B | Especialización del nodo post-clausura para formar, comparar y clausurar posibles horizontes. |
+| Estrategia 11 / 54 | Convergencia deliberada desde un horizonte aceptado. |
+| PM-10 | Desde necesidad de producto suficientemente identificada hacia hipótesis mínima de realización o arquitectura y construcción/investigación localizada. |
+| Protocolo 18 | Ejecución operativa de actuaciones ya justificadas, con trazabilidad, reversibilidad y gates humanos sustantivos. |
+
+H70-B no sustituye ninguno de esos cuerpos. Su competencia termina cuando G70-HOR-01 permite **ACEPTAR HORIZONTE**. Desde ese punto toma el relevo la metodología vigente de convergencia.
+
+La decisión de aceptar un horizonte constituye decisión estratégica sustantiva y permanece bajo control humano. El trabajo agéntico puede preparar evidencia, lecturas, comparaciones y validaciones dentro de una actuación ya justificada, pero autonomía operativa no equivale a autoridad para crear compromisos u horizontes.
+
+# 16. Evaluación final C70-01…C70-10
+
+Con R70-B-01…04 incorporados, el resultado final es:
+
+| Criterio | Resultado | Fundamento consolidado |
+| --- | --- | --- |
+| C70-01 — Separación de clausuras | **SATISFECHO** | El producto anterior permanece cerrado; la continuación parte de una decisión posterior y un eventual horizonte no reabre retrospectivamente el alcance anterior. |
+| C70-02 — Fuente legítima de exploración | **SATISFECHO** | La decisión humana de continuar justifica formar candidatas, pero no selecciona por sí sola Product, capacidad ni horizonte. |
+| C70-03 — No arbitrariedad | **SATISFECHO** | R70-B-01 exige cobertura decisional y R70-B-02 fundamento, reducción y comparación reconstruibles. |
+| C70-04 — Triangulación | **SATISFECHO** | H70-A fue reformulada: exploración estratégica y uso real son fuentes; madurez técnica es filtro condicionado. |
+| C70-05 — Salida negativa | **SATISFECHO** | G70-FORM-01 permite cerrar legítimamente sin horizonte y volver a estado estable. |
+| C70-06 — Clausura previa del horizonte | **SATISFECHO** | G70-HOR-01 impide aceptar un horizonte sin objetivo, alcance, no-alcance y criterio verificable de finalización. |
+| C70-07 — Convergencia | **SATISFECHO** | Un horizonte aceptado pasa a Estrategia 11/54 y no depende exclusivamente de pérdidas espontáneas. |
+| C70-08 — Evolución no infinita | **SATISFECHO** | Ni la formación obliga a producir horizonte ni cerrar un horizonte obliga a abrir el siguiente. |
+| C70-09 — Compatibilidad | **SATISFECHO** | R70-B-04 verifica encaje con los cuerpos competentes sin invasión de responsabilidades. |
+| C70-10 — Operacionalidad | **SATISFECHO** | El procedimiento ya determina cobertura, ficha, comparación, continuidad, salida negativa, formulación, aceptación y relevo posterior. |
+
+Resultado:
+
+```text
+C70-01 … C70-10
+→ 10 / 10 SATISFECHOS
+```
+
+# 17. Resultado A/B/C/D y estado de las hipótesis
+
+La actuación resuelve sus alternativas iniciales:
+
+```text
+B — Manual actual completamente suficiente
+→ RECHAZADO
+```
+
+La metodología vigente proporciona la mayor parte de las reglas, pero no operacionaliza suficientemente la cobertura, comparación y clausura de la formación post-clausura.
+
+```text
+C — necesidad real pero protocolo no derivable
+→ RECHAZADO
+```
+
+La pieza faltante ha podido derivarse.
+
+```text
+D — H70-A inadecuada
+→ CONFIRMADO COMO RESULTADO INTERMEDIO
+```
+
+H70-A no sobrevive en su forma triangular simétrica, pero su insuficiencia queda resuelta mediante H70-B.
+
+Resultado final:
+
+```text
+A — PROTOCOLO DERIVABLE
+→ CONFIRMADO
+```
+
+Más precisamente:
+
+> Existe una necesidad metodológica localizada, pero no justifica una metodología paralela completa. La solución mínima es especializar el Manual 17 para operacionalizar la formación, comparación y clausura de un posible nuevo horizonte después de la clausura legítima del Product vigente.
+
+H70-B queda:
+
+```text
+H70-B
+→ NO REFUTADA
+→ REDUCIDA
+→ OPERACIONALIZADA
+→ COMPATIBLE
+→ C70-01…C70-10 SATISFECHOS
+→ VALIDADA EN EL ALCANCE DE ACTUACIÓN 70
+```
+
+# 18. Estado resultante y siguiente actuación documental
+
+La investigación sustantiva de 70 queda resuelta. Esto no equivale todavía al cierre documental formal de la actuación, porque la norma derivada aún no ha sido incorporada a Methodology.
+
+Estado actual:
+
+```text
+PRODUCTO DEL ALCANCE ANTERIOR
+→ PERMANECE CERRADO
+
+ACTUACIONES 64, 65, 67, 68 Y 69
+→ PERMANECEN CERRADAS
+
+ACTUACIÓN 70
+→ ABIERTA
+→ CONTRASTE SUSTANTIVO COMPLETADO
+
+H70-A
+→ REFORMULADA
+
+H70-B
+→ VALIDADA EN EL ALCANCE DE 70
+
+C70-01…C70-10
+→ 10 / 10 SATISFECHOS
+
+RESULTADO A
+→ CONFIRMADO
+
+NUEVO HORIZONTE
+→ NO ABIERTO
+→ NO DERIVADO TODAVÍA
+```
+
+La siguiente actuación documental mínima es:
+
+```text
+incorporar en Manual 17
+únicamente la especialización operativa consolidada
+↓
+sin trasladar la investigación histórica completa
+↓
+verificar compatibilidad documental
+↓
+actualizar estado y bitácora
+↓
+decidir cierre formal de Actuación 70
+```
+
+Esta conclusión no autoriza todavía a aplicar el protocolo para seleccionar un horizonte concreto hasta que su incorporación normativa mínima quede consolidada.
+
