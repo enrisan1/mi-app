@@ -9292,3 +9292,20 @@ La reaplicación del Manual a las ramas A/B y sus seis fuentes no identifica obl
 No se cierran globalmente PV-005 ni PV-006 ni se declaran Product libre de defectos o plataforma universalmente terminada. No se derivan P6, nuevo Product Value, Architecture, nueva Realization, horizonte o backlog técnico general. LocalStorage, concurrencia/multitab, cuota, corrupción, CI, ESLint, cobertura, README, LICENSE y otras carencias no bloqueantes no se convierten en brechas sin nueva evidencia. La ausencia documental de otra diferencia no impide actuaciones futuras justificadas ni autoriza reabrir 64 por una mejora imaginable.
 
 El resultado, la trazabilidad y los límites quedan en [Actuación 69](69-REEVALUACION_FINAL_Y_CIERRE_RESIDUO_ACTUACION_64.md). Sólo se crean/actualizan los tres documentos autorizados; no se modifican código o tests ni se ejecutan git add, commit, push o deployment.
+
+
+---
+
+# 12/11/2026 — Apertura de Actuación 70, evolución estratégica post-clausura
+
+Después del cierre de 69, consolidado en `24f05eb` (`docs(project): close actuation 64 residual review`), la persona responsable adoptó explícitamente la decisión estratégica de continuar evolucionando el proyecto. El HEAD y el árbol limpio se comprobaron antes de editar. Producto y lanzamiento del alcance anterior permanecen satisfechos; 64/65/67/68/69 permanecen cerradas y el residuo demostrado de 64 sigue siendo ninguno. La ausencia anterior de actuación derivada no se reinterpreta retrospectivamente.
+
+La nueva decisión fundamenta una actuación metodológica para determinar cómo formar o descartar legítimamente un posible horizonte, sin aportar por sí sola V2, P6, Product Value, Architecture, Realization, funcionalidad u horizonte concreto. **ACTUACIÓN 70 → ABIERTA**, sólo apertura y delimitación del problema.
+
+La lectura inicial del Manual 17 verificó las ramas A/B, la salida estable y las condiciones de apertura y clausura; también su árbol prevé reevaluar Product ↔ PLATFORM_VISION después de Product satisfecho. No se afirma que ignore toda evolución post-clausura. Queda pendiente contrastar si sus reglas y los demás cuerpos competentes bastan para formar y comparar candidatas desde la decisión humana de continuar, o si existe una laguna real.
+
+Se registró H70-A — formación triangular mediante exploración estratégica, madurez técnica y uso real intensivo — como hipótesis susceptible de aceptación, reformulación, reducción, división o rechazo. Se delimitaron provisionalmente sus carriles, riesgos R70-01…R70-09, criterios C70-01…C70-10, resultados posibles A/B/C/D y las diez condiciones de cierre. No se valida todavía H70-A ni se redacta protocolo definitivo.
+
+Se verificó la existencia y denominación de las fuentes mínimas; PM-10 se localizó en `docs/01-methodology/00-protocolo-de-trabajo.md`, «Desarrollo guiado por necesidad productiva». El contraste completo de compatibilidad queda pendiente. El siguiente trabajo es contrastar fuentes y derivar/refutar el protocolo, admitiendo como resultado la suficiencia de la metodología vigente sin crear norma redundante.
+
+El detalle queda en [Actuación 70](70-DERIVACION_Y_VALIDACION_PROTOCOLO_EVOLUCION_ESTRATEGICA_POST_CLAUSURA.md). Esta apertura sólo afecta a ese documento, estado y bitácora; no modifica Methodology ni Manual 17, no abre horizonte, V2, P6 o Product Value y no cambia código/tests. No se ejecutan git add, commit, push ni deployment.

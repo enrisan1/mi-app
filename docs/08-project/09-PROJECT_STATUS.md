@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 12/11/2026:** las actuaciones 65, 67 y 68 permanecen cerradas; N64-02, N64-01 y N64-03 están corregidas por ellas, respectivamente, en sus alcances probados, desplegadas y validadas humanamente en producción con los límites de evidencia registrados. La actuación 69 completa la reevaluación documental final: 64 → CERRADA dentro de su alcance documentado; 69 → CERRADA. No queda residuo independiente y demostrado ni dependencia pendiente demostrada de 64 en el corpus contrastado. Se conservan el producto final de 61 y el lanzamiento de 62. La reaplicación del Manual no deriva siguiente actuación automática ni estratégica ni nuevo horizonte: estado estable salvo nuevo fundamento positivo suficiente. No se cierra globalmente PV-005 ni PV-006. El contraste y sus límites figuran en 69 y en la actualización final de este estado; los bloques anteriores conservan sus contextos históricos.
+**Estado vigente al 12/11/2026:** el producto del alcance anterior y el lanzamiento permanecen satisfechos; 64, 65, 67, 68 y 69 permanecen cerradas, sin residuo demostrado pendiente de 64. La ausencia de siguiente actuación derivada desde ese alcance conserva su validez histórica. Posteriormente, la persona responsable decide explícitamente continuar evolucionando el proyecto: ese fundamento abre 70, actuación metodológica de derivación y validación del protocolo de evolución estratégica post-clausura, exclusivamente en fase de apertura y delimitación. No se ha abierto ni derivado nuevo horizonte, V2, P6 o Product Value. H70-A es hipótesis pendiente de contraste; el protocolo definitivo todavía no existe y la insuficiencia del Manual no está demostrada. El siguiente trabajo es contrastar las fuentes y derivar/refutar el protocolo, preservando los cierres anteriores. El detalle figura en 70 y en la actualización final de este estado.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7085,3 +7085,18 @@ Se conservan los límites de las fuentes: T67-06 sin PASS público independiente
 La reaplicación de ambas ramas y las seis fuentes del Manual no identifica obligación, criterio, dependencia, hito, incertidumbre bloqueante ni nueva evidencia emergente que derive otra actuación. **Siguiente actuación automática: ninguna. Siguiente actuación estratégicamente derivada: ninguna. Nuevo horizonte: no derivado. Punto de reanudación: estado estable salvo nuevo fundamento positivo suficiente.**
 
 No se cierran globalmente PV-005 ni PV-006, no se modifica Product ni se declara perfección universal. No se derivan P6, nuevo Product Value, Architecture, nueva Realization, nuevo horizonte ni backlog técnico general. Se conservan las carencias no bloqueantes sin convertirlas en brechas ni declararlas corregidas. Evidencia futura positiva podrá justificar otra actuación; una mejora imaginable no reabre retrospectivamente 64.
+
+
+---
+
+# 12/11/2026 — Apertura de 70 por decisión estratégica posterior a la clausura
+
+La referencia previa es `24f05eb`, `docs(project): close actuation 64 residual review`, comprobada localmente. 69 y los cierres de 64/65/67/68 permanecen vigentes; no queda residuo demostrado de 64 y no se reinterpreta como incorrecta la ausencia anterior de actuación derivada.
+
+**Hecho posterior:** la persona responsable adopta explícitamente la decisión de continuar evolucionando el proyecto. Ese hecho justifica estudiar cómo formar o descartar un nuevo horizonte, sin seleccionarlo ni convertir posibilidades de PLATFORM_VISION o madurez técnica en obligaciones.
+
+**ACTUACIÓN 70 → ABIERTA**, exclusivamente como apertura y delimitación metodológica. La lectura inicial de 17 confirma ramas A/B, salida estable, exigencias de fundamento y clausura y, además, su árbol de reevaluación Product ↔ PLATFORM_VISION tras Product satisfecho. No se da por probada una laguna: falta contrastar si las reglas vigentes operacionalizan suficientemente la formación y comparación de candidatas desde la decisión humana de continuar.
+
+H70-A, formación triangular mediante exploración estratégica, madurez técnica y uso real intensivo, es una hipótesis pendiente de contraste, susceptible de reducción, reformulación, división o rechazo. C70-01…C70-10 son criterios provisionales; ninguno se declara validado. El protocolo definitivo todavía no existe. No se crea ni modifica documentación de Methodology en esta fase.
+
+Fuente: [apertura de 70](70-DERIVACION_Y_VALIDACION_PROTOCOLO_EVOLUCION_ESTRATEGICA_POST_CLAUSURA.md), con pregunta, riesgos, resultados A/B/C/D y criterio de finalización. **Punto de reanudación:** realizar el contraste de fuentes y derivar/refutar el protocolo, incluida la alternativa de suficiencia del Manual actual. No se abre V2, P6, nuevo Product Value, Architecture, Realization, funcionalidad ni horizonte; no se modifica código/tests.
