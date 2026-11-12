@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 11/11/2026
+**Fecha de actualización:** 12/11/2026
 
 ## Índice
 
@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 11/11/2026:** se conservan el producto final de 61 y el lanzamiento público de 62. Las actuaciones 65, 67 y 68 están cerradas; N64-02, N64-01 y N64-03 quedan corregidas por ellas, respectivamente, en sus alcances probados. La corrección de 68 está desplegada en `f52c176` mediante Deploy to GitHub Pages #6 → Success y validada humanamente en producción: C68-01 tiene PASS humano público; C68-02 conserva PASS técnico y humano local, sin evidencia pública contradictoria posterior y sin PASS público independiente. El pendiente es la reevaluación final del residuo de 64, que no se cierra automáticamente. El cierre final de 68 figura al final; los bloques anteriores conservan sus contextos históricos. No se cierra globalmente PV-005 ni PV-006 ni se derivan nuevos compromisos.
+**Estado vigente al 12/11/2026:** las actuaciones 65, 67 y 68 permanecen cerradas; N64-02, N64-01 y N64-03 están corregidas por ellas, respectivamente, en sus alcances probados, desplegadas y validadas humanamente en producción con los límites de evidencia registrados. La actuación 69 completa la reevaluación documental final: 64 → CERRADA dentro de su alcance documentado; 69 → CERRADA. No queda residuo independiente y demostrado ni dependencia pendiente demostrada de 64 en el corpus contrastado. Se conservan el producto final de 61 y el lanzamiento de 62. La reaplicación del Manual no deriva siguiente actuación automática ni estratégica ni nuevo horizonte: estado estable salvo nuevo fundamento positivo suficiente. No se cierra globalmente PV-005 ni PV-006. El contraste y sus límites figuran en 69 y en la actualización final de este estado; los bloques anteriores conservan sus contextos históricos.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7057,3 +7057,31 @@ N64-03 → INSUFICIENCIA LOCAL RESPECTO DE PV-005
 Publicación y validación humana dejan de estar pendientes para 68 dentro del alcance registrado. El detalle de evidencia y cierre figura en el apartado 12 de [Actuación 68](68-CORRECCION_INTELIGIBILIDAD_CONSTITUCION_ESTADO_ESTABLE.md).
 
 **Punto de reanudación: reevaluación final del residuo de Actuación 64.** ¿Queda alguna diferencia humana independiente y demostrada de 64 después de 65, 67 y 68? Si no queda ninguna, podrá derivarse su cierre mediante contraste explícito; si queda alguna, deberá aislarse antes de cualquier cierre. No se cierra 64 por simple suma ni se presupone el resultado. No se cierra globalmente PV-005 ni PV-006; no se modifica Product ni se derivan automáticamente P6, nuevo Product Value, Architecture, Realization general o nuevo horizonte.
+
+
+---
+
+# 12/11/2026 — Reevaluación final y cierre de 64; cierre de 69
+
+Fuente competente: [Actuación 69](69-REEVALUACION_FINAL_Y_CIERRE_RESIDUO_ACTUACION_64.md). La reevaluación reconstruye el contraste post-lanzamiento de 64 desde 65/67/68, estado y bitácora; no existe un documento autónomo 64 ni se inventa retrospectivamente.
+
+La búsqueda del corpus y lectura de los contextos sólo identificaron N64-01, N64-02 y N64-03. No se encontró N64-04, otra pérdida humana independiente atribuida a 64, otro criterio pendiente ni otra dependencia necesaria abierta por ella. 67 dejaba únicamente la inteligibilidad R1/S1 como residuo demostrado tras resolver N64-01/N64-02; 68 la formalizó y resolvió como N64-03. El Paso 5 del Manual confirma satisfechas las tres obligaciones locales y no identifica otra brecha real pendiente. El cierre resulta de ese contraste explícito, no de la simple suma de correcciones.
+
+```text
+ACTUACIÓN 65 → CERRADA
+ACTUACIÓN 67 → CERRADA
+ACTUACIÓN 68 → CERRADA
+N64-01 → CORREGIDA POR 67 EN EL ALCANCE PROBADO
+N64-02 → CORREGIDA POR 65 EN EL ALCANCE PROBADO
+N64-03 → CORREGIDA POR 68 EN EL ALCANCE PROBADO
+ACTUACIÓN 64 → CERRADA DENTRO DE SU ALCANCE DOCUMENTADO
+ACTUACIÓN 69 → CERRADA — REEVALUACIÓN FINAL COMPLETADA
+RESIDUO INDEPENDIENTE Y DEMOSTRADO DE 64 → NINGUNO
+DEPENDENCIA PENDIENTE DE 64 → NINGUNA DEMOSTRADA
+```
+
+Se conservan los límites de las fuentes: T67-06 sin PASS público independiente del recorrido completo; C68-02 con PASS técnico y humano local, sin evidencia pública contradictoria posterior ni PASS público independiente. No queda otra diferencia independiente y demostrada en el corpus y alcance actualmente contrastados; esto no demuestra ausencia universal de defectos futuros.
+
+La reaplicación de ambas ramas y las seis fuentes del Manual no identifica obligación, criterio, dependencia, hito, incertidumbre bloqueante ni nueva evidencia emergente que derive otra actuación. **Siguiente actuación automática: ninguna. Siguiente actuación estratégicamente derivada: ninguna. Nuevo horizonte: no derivado. Punto de reanudación: estado estable salvo nuevo fundamento positivo suficiente.**
+
+No se cierran globalmente PV-005 ni PV-006, no se modifica Product ni se declara perfección universal. No se derivan P6, nuevo Product Value, Architecture, nueva Realization, nuevo horizonte ni backlog técnico general. Se conservan las carencias no bloqueantes sin convertirlas en brechas ni declararlas corregidas. Evidencia futura positiva podrá justificar otra actuación; una mejora imaginable no reabre retrospectivamente 64.
