@@ -197,6 +197,16 @@ T-KGV-02 → PASS
 T-KGV-03 → PASS
 ```
 
+Tras la revisión del diff, `T-KGV-03` se reforzó sin modificar producción y quedó ejecutado contra cinco variantes no válidas del mismo contrato:
+
+- JSON mal formado;
+- `sharedResult` vacío;
+- `firstContribution` ausente;
+- `firstContribution.participant` distinto de `"A"`;
+- `firstContribution.content` vacío.
+
+Las cinco fueron rechazadas sin constituir contexto colaborativo.
+
 **CR-KGV-01 → SATISFECHO EN EL ALCANCE FIJADO.**
 
 # 10. Verificación de no regresión
