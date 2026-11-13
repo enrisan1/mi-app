@@ -54,6 +54,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [receivedAntecedentInput, setReceivedAntecedentInput] = useState("");
   const [receivedCollaborativeAntecedent, setReceivedCollaborativeAntecedent] =
     useState<ReceivedCollaborativeAntecedent | null>(null);
+  const [participantBContribution, setParticipantBContribution] = useState("");
+  const [constitutedParticipantBContribution, setConstitutedParticipantBContribution] =
+    useState<string | null>(null);
 
   if (integrationChoice === "existing") {
     return <PostV1IntegratedExperience />;
@@ -183,6 +186,32 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
               Continúa el trabajo a partir del resultado compartido y la
               aportación de A.
             </p>
+
+            <label>
+              Aportación actual de B
+              <textarea
+                value={participantBContribution}
+                onChange={(event) =>
+                  setParticipantBContribution(event.target.value)
+                }
+              />
+            </label>
+
+            <button
+              type="button"
+              disabled={participantBContribution.trim().length === 0}
+              onClick={() =>
+                setConstitutedParticipantBContribution(participantBContribution)
+              }
+            >
+              Continuar trabajo compartido
+            </button>
+
+            {constitutedParticipantBContribution !== null && (
+              <p aria-label="Continuación de B">
+                {constitutedParticipantBContribution}
+              </p>
+            )}
           </div>
         )}
       </section>
