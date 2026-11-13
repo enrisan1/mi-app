@@ -13,6 +13,14 @@ type OrdinaryMaterial = {
 
 type IntegrationChoice = null | "existing" | "current";
 
+type ReceivedCollaborativeAntecedent = {
+  sharedResult: string;
+  firstContribution: {
+    participant: string;
+    content: string;
+  };
+};
+
 type AppProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
@@ -43,6 +51,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [selectedMaterialId, setSelectedMaterialId] = useState<string | null>(
     null,
   );
+  const [receivedAntecedentInput, setReceivedAntecedentInput] = useState("");
+  const [receivedCollaborativeAntecedent, setReceivedCollaborativeAntecedent] =
+    useState<ReceivedCollaborativeAntecedent | null>(null);
 
   if (integrationChoice === "existing") {
     return <PostV1IntegratedExperience />;
@@ -109,6 +120,72 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
           );
         }}
       />
+
+      <section aria-labelledby="shared-antecedent-heading">
+        <h2 id="shared-antecedent-heading">Continuidad compartida</h2>
+
+        <label>
+          Antecedente compartido recibido
+          <textarea
+            value={receivedAntecedentInput}
+            onChange={(event) => setReceivedAntecedentInput(event.target.value)}
+          />
+        </label>
+
+        <button
+          type="button"
+          disabled={receivedAntecedentInput.trim().length === 0}
+          onClick={() => {
+            try {
+              const parsed = JSON.parse(receivedAntecedentInput) as {
+                sharedResult?: unknown;
+                firstContribution?: {
+                  participant?: unknown;
+                  content?: unknown;
+                };
+              };
+
+              setReceivedCollaborativeAntecedent({
+                sharedResult:
+                  typeof parsed.sharedResult === "string"
+                    ? parsed.sharedResult
+                    : "",
+                firstContribution: {
+                  participant:
+                    typeof parsed.firstContribution?.participant === "string"
+                      ? parsed.firstContribution.participant
+                      : "",
+                  content:
+                    typeof parsed.firstContribution?.content === "string"
+                      ? parsed.firstContribution.content
+                      : "",
+                },
+              });
+            } catch {
+              // La validación de antecedentes inválidos se deriva en T-KGV-03.
+            }
+          }}
+        >
+          Recibir antecedente compartido
+        </button>
+
+        {receivedCollaborativeAntecedent !== null && (
+          <div aria-label="Contexto compartido recibido">
+            <p aria-label="Resultado compartido">
+              {receivedCollaborativeAntecedent.sharedResult}
+            </p>
+            <p aria-label="Aportación de A">
+              {receivedCollaborativeAntecedent.firstContribution.content}
+            </p>
+
+            <h3>Qué puedes hacer ahora</h3>
+            <p>
+              Continúa el trabajo a partir del resultado compartido y la
+              aportación de A.
+            </p>
+          </div>
+        )}
+      </section>
 
       {ordinaryMaterials.length >= 2 && (
         <section aria-labelledby="ordinary-localization-heading">
