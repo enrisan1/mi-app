@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 13/11/2026:** H-POST-01 — Continuidad del contexto intelectual en curso entre participantes operativos → **CERRADO EN EL ALCANCE ACEPTADO Y DEMOSTRADO**. R4 aporta MHPOST-01…MHPOST-10 → 10/10 PASS humanos; HITO-HPOST-01 → SATISFECHO. La reevaluación separada establece CF-HPOST-01 → SATISFECHO; GAP-HPOST-01 → CERRADO; PR-HPOST-01 → AGOTADA. R1/R2 completados, R3 cerrado técnicamente y R4 cerrado humanamente. Obligaciones pendientes del alcance: ninguna demostrada; dependencias independientes pendientes: ninguna. La evidencia, incluido el primer control negativo inválido excluido de MHPOST-09 y su repetición válida, queda en [71 §§20–23](71-CONVERGENCIA_HPOST01_Y_VALIDACION_RELEVO_CONTEXTUAL.md#20-r4--resultado-humano-y-trazabilidad-de-la-observación). El producto anterior y los cierres 64/65/67/68/69/70 conservan su validez. **CIERRE VIGENTE / NO CONTINUAR POR AHORA.** La reaplicación posterior y separada del Manual 17 ya se realizó: rama A sin obligación positiva pendiente demostrada, dependencia necesaria pendiente ni fundamento positivo nuevo; rama B sin evidencia emergente que obligue a continuar. No queda siguiente actuación automática ni estratégicamente derivada. **Punto de reanudación:** sólo ante fundamento positivo nuevo, reaplicar la rama correspondiente del Manual antes de abrir cualquier actuación. No se declara continuidad contextual universalmente resuelta, Product universalmente realizado ni plataforma final completada; no se derivan P6, nueva Architecture, Realization, Implementation ni backlog nuevo.
+**Estado vigente al 13/11/2026:** H-POST-01 — Continuidad del contexto intelectual en curso entre participantes operativos → **CERRADO EN EL ALCANCE ACEPTADO Y DEMOSTRADO**. R4 aporta MHPOST-01…MHPOST-10 → 10/10 PASS humanos; HITO-HPOST-01 → SATISFECHO. La reevaluación separada establece CF-HPOST-01 → SATISFECHO; GAP-HPOST-01 → CERRADO; PR-HPOST-01 → AGOTADA. R1/R2 completados, R3 cerrado técnicamente y R4 cerrado humanamente. Obligaciones pendientes del alcance: ninguna demostrada; dependencias independientes pendientes: ninguna. La evidencia, incluido el primer control negativo inválido excluido de MHPOST-09 y su repetición válida, queda en [71 §§20–23](71-CONVERGENCIA_HPOST01_Y_VALIDACION_RELEVO_CONTEXTUAL.md#20-r4--resultado-humano-y-trazabilidad-de-la-observación). El producto anterior y los cierres 64/65/67/68/69/70 conservan su validez. **I-D23-01 / actuación 72 → CERRADA, B — SEPARACIÓN LEGÍTIMA / SIN OBLIGACIÓN DEMOSTRADA.** La comparación humana O/H con el caso Q permitió a dos P2 independientes comprender el mismo punto intelectual y continuar con E4-Q sin reconstrucción ni ayuda intelectual adicional. **D-23 → REDUCIDA / CERRADA POR ESTA VÍA, dentro del caso y alcance contrastados**; deja de ser incertidumbre bloqueante. El detalle y los límites constan en [72 §§12–15](72-INVESTIGACION_SEPARACION_RELEVO_CONTEXTUAL_RECORRIDO_ORDINARIO.md#12-ejecución-humana-y-evidencia-comunicada). No se afirma suficiencia universal de App ni equivalencia total O/H. **RAMA A — CONVERGENCIA PLANIFICADA → SIN CONTINUIDAD DERIVADA.** La reevaluación post-D23 de D-06…D-25 ya se realizó: capacidades realizadas, absorciones, reducciones, mejoras opcionales y generalizaciones distinguidas; D-14 y D-21 sin situación/decisión concreta que justifique investigación mínima; ninguna otra incertidumbre decisional bloqueante identificada, obligación positiva pendiente derivable o dependencia necesaria adicional. No queda siguiente actuación mínima derivada por Rama A. La conclusión se limita a las fuentes, casos y alcances actualmente contrastados; no declara Platform Vision universalmente realizada ni excluye evolución futura. **RAMA B — EVIDENCIA EMERGENTE → SIN CONTINUIDAD DERIVADA**, tras reevaluación de la evidencia final, incluidas las incidencias y el resultado de I-D23-01: no se identifica evidencia emergente que contradiga cierres, revele pérdida material nueva, active dependencia o demuestre necesidad vigente incumplida. **VEREDICTO GLOBAL: SIN CONTINUIDAD DERIVADA EN EL ESTADO ACTUAL. ESTADO ESTABLE ACTUAL.** El Manual ha sido aplicado a las fuentes, evidencia, casos y alcances actuales; su aplicación actual ha agotado las derivaciones disponibles y no existe actuación pendiente derivada. **Punto de reanudación:** cualquier cambio relevante del estado, nueva evidencia, nueva decisión humana o nueva obligación normativa deberá someterse nuevamente al Manual antes de abrir una actuación. No se deriva integración ni obligación constructiva. No se declara continuidad contextual universalmente resuelta, Product universalmente realizado ni plataforma final completada; no se derivan P6, nueva Architecture, Realization, Implementation ni backlog nuevo.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -7240,3 +7240,136 @@ ni cierre irreversible. Los cierres anteriores conservan su alcance.
 correspondiente del Manual antes de abrir cualquier actuación. El registro
 cronológico de esta evaluación figura en la bitácora, entrada posterior al cierre
 de H-POST-01 del 13/11/2026; no se reabre ni modifica 71.
+
+
+---
+
+# 13/11/2026 — Apertura documental de I-D23-01, sin ejecución
+
+La evaluación post-cierre se reabrió exclusivamente para reducir D-23 mediante
+el criterio de incertidumbre decisional bloqueante del Manual 17. La conclusión
+anterior de no continuar queda conservada en su orden histórico y se revisa sólo
+respecto de esta investigación mínima derivada de Rama A. No se presenta una
+nueva pérdida ni evidencia emergente de Rama B.
+
+**I-D23-01 — actuación 72 → ABIERTA DOCUMENTALMENTE / NO EJECUTADA.** D-23 no es
+pérdida demostrada, integración obligatoria ni mejora descartada; su clasificación
+exige una comprobación localizada. La decisión pendiente distingue separación
+legítima, mejora opcional y pérdida material que pueda generar obligación.
+
+[72](72-INVESTIGACION_SEPARACION_RELEVO_CONTEXTUAL_RECORRIDO_ORDINARIO.md)
+fija pregunta, alcance, evidencia, comparación, controles e independencia y las
+salidas A — pérdida material, B — separación legítima / sin obligación demostrada
+y C — inconclusa. A devuelve al Manual; B cierra D-23 sin continuidad adicional
+por esta vía; C exige revisar sólo el diseño, sin autorizar integración.
+
+H-POST-01 permanece **CERRADO EN EL ALCANCE ACEPTADO Y DEMOSTRADO**. No se abre
+Realization, Architecture, Implementation, backlog, P6, PV-007 ni horizonte.
+**Punto de reanudación:** pendiente de autorización de ejecución de 72; fijar
+entonces el caso y los controles antes de observar. La apertura no ejecuta la
+comprobación ni modifica 71, Product o el producto.
+
+
+---
+
+# 13/11/2026 — Resultado humano B y cierre de I-D23-01
+
+La persona responsable comunica la ejecución humana de O — App ordinaria y
+H — handoff existente con el caso Q y dos P2 independientes, sin conocimiento
+previo del caso ni exposición cruzada. La corrección «disponibilidad» → «aforo»
+se hizo antes de preparar C, sin cambiar el estado intelectual real. O recuperó
+C íntegro tras Crear y recarga completa en contexto aislado, con aportación actual
+vacía y sin materiales contaminantes; H recuperó el mismo contenido intelectual
+con decisión pendiente. Ambos reconocieron objetivo, descartes, Q2, K2/K3
+satisfechos y K1 pendiente, e incorporaron `E4-Q: Q2 satisface K1` hasta concluir
+Q2 seleccionada. No hubo reconstrucción ni ayuda intelectual adicional; la
+«ayuda» mencionada en H se aclaró como referencia a la propia E4-Q común.
+
+**I-D23-01 / 72 → B — SEPARACIÓN LEGÍTIMA / SIN OBLIGACIÓN DEMOSTRADA. D-23 →
+REDUCIDA / CERRADA POR ESTA VÍA, dentro del caso y alcance contrastados.** Las
+diferencias de representación, mecanismo, acceso y pasos no produjeron pérdida
+material independiente. D-23 deja de ser incertidumbre bloqueante en ese caso.
+La evidencia y la materialización de ambas continuaciones quedan en
+[72 §§12–15](72-INVESTIGACION_SEPARACION_RELEVO_CONTEXTUAL_RECORRIDO_ORDINARIO.md#12-ejecución-humana-y-evidencia-comunicada).
+
+H-POST-01 conserva su cierre. B no demuestra suficiencia universal de App,
+equivalencia total O/H, irrelevancia futura de integración ni imposibilidad de
+pérdida en otros casos. No se deriva integración, compromiso Product, Realization,
+Architecture, Implementation, backlog, P6, PV-007 o nuevo horizonte.
+
+**Única siguiente actuación registrada:** reevaluar Rama A post-D23 con esta
+incertidumbre resuelta. No se realiza todavía esa reevaluación, no se cierra toda
+Rama A ni se deriva otra actuación posterior. Las entradas previas de apertura
+y ejecución pendiente quedan conservadas como historia, no como estado vigente.
+
+
+---
+
+# 13/11/2026 — Reevaluación final de Rama A post-D23
+
+Después del cierre B de I-D23-01 se completó la reevaluación individual de
+D-06…D-25. H-POST-01 conserva su cierre; D-23 permanece reducida/cerrada por esta
+vía dentro del caso y alcance contrastados, sin incertidumbre bloqueante pendiente.
+
+El contraste Charter + Platform Vision + Product satisfecho + estado post-D23
+distingue capacidades realizadas, absorciones, reducciones, mejoras opcionales y
+generalizaciones. D-14, descubrimiento relacional, carece de una situación y
+una decisión concreta que justifiquen investigación mínima; D-21, control de
+acceso, carece de una situación y restricción concreta con ese fundamento.
+No se identifica otra incertidumbre decisional bloqueante, obligación positiva
+pendiente derivable, dependencia necesaria adicional ni siguiente actuación
+mínima derivada.
+
+**RAMA A — CONVERGENCIA PLANIFICADA → SIN CONTINUIDAD DERIVADA.** El fundamento
+es la reducción de las diferencias restantes, no la mera satisfacción de Product
+ni la ausencia de evidencia emergente en Rama B.
+
+La conclusión se limita a las fuentes, casos y alcances actualmente contrastados.
+No significa Platform Vision universalmente realizada, imposibilidad de evolución
+futura, inexistencia universal de diferencias, imposibilidad o inutilidad de
+D-14/D-21 ni cierre irreversible del proyecto. No se abre horizonte, compromiso
+Product, Realization, Architecture, Implementation, backlog, P6, PV-007 ni
+investigación.
+
+**Siguiente actuación derivada por Rama A: ninguna. Punto de reanudación por esta
+rama:** sólo ante fundamento positivo suficiente, contrastarlo con el Manual
+antes de abrir cualquier actuación. El punto anterior de reevaluar Rama A
+post-D23 queda atendido; las evaluaciones anteriores revisadas se conservan como
+historia. Este resultado no sustituye una comprobación independiente de Rama B.
+
+
+---
+
+# 13/11/2026 — Aplicación final conjunta del Manual de continuidad estratégica
+
+Tras la reevaluación final de Rama A post-D23 se reevaluó separadamente Rama B
+con el estado, la bitácora, 71 y 72 y la evidencia producida durante I-D23-01.
+No se reutilizó automáticamente el resultado anterior de Rama B.
+
+| Rama | Resultado y fundamento |
+| --- | --- |
+| A — Convergencia planificada | SIN CONTINUIDAD DERIVADA: D-06…D-25 examinadas, D-23 resuelta mediante B, ninguna obligación positiva pendiente derivable, dependencia necesaria adicional o incertidumbre decisional bloqueante suficientemente fundada. |
+| B — Evidencia emergente | SIN CONTINUIDAD DERIVADA: ninguna evidencia emergente identificada que contradiga cierres, revele pérdida material nueva, active dependencia o demuestre necesidad vigente incumplida. |
+
+H-POST-01 conserva su cierre en el alcance aceptado y demostrado; I-D23-01
+conserva B y D-23 su reducción/cierre por esta vía dentro del caso contrastado.
+La comparación humana confirma esa reducción; las incidencias preparatorias no
+constituyen un falsador aislado de los cierres. La causa de la reapertura privada
+sin recuperación de C sigue sin determinarse: no se declara explicada ni corregida.
+No se identifica otra dependencia, criterio o hito obligatorio pendiente.
+
+**VEREDICTO GLOBAL DEL MANUAL: SIN CONTINUIDAD DERIVADA EN EL ESTADO ACTUAL.**
+**Estado resultante: ESTADO ESTABLE ACTUAL. No existe actuación pendiente derivada.**
+El Manual ha sido aplicado a las fuentes, evidencia, casos y alcances actuales;
+su aplicación actual ha agotado las derivaciones disponibles.
+
+Esto no significa Platform Vision universalmente realizada, Product universalmente
+terminado, inexistencia universal de brechas, imposibilidad de evolución futura
+ni cierre irreversible. No se abre horizonte, compromiso Product, investigación,
+Realization, Architecture, Implementation, backlog, P6 o PV-007.
+
+**Punto de reanudación:** cualquier cambio relevante del estado, nueva evidencia,
+nueva decisión humana o nueva obligación normativa deberá someterse nuevamente
+al Manual antes de abrir una actuación. No se prescribe espera pasiva ni una
+campaña permanente de búsqueda; la aplicación actual está completada. Las
+evaluaciones anteriores y sus revisiones permanecen como historia.
