@@ -92,35 +92,63 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
     );
   });
 
-  it("[T-KGV-03] no constituye contexto colaborativo desde un antecedente inválido o incompleto", async () => {
+  it("[T-KGV-03] no constituye contexto colaborativo desde variantes inválidas o incompletas de MIN-CC-01", async () => {
     const user = userEvent.setup();
 
     render(<App />);
 
-    fireEvent.change(
-      screen.getByRole("textbox", {
-        name: /antecedente compartido recibido/i,
-      }),
-      {
-        target: {
-          value: JSON.stringify({
-            sharedResult: "Resultado sin aportación antecedente",
-          }),
-        },
-      },
-    );
-    await user.click(
-      screen.getByRole("button", {
-        name: /recibir antecedente compartido/i,
-      }),
-    );
+    const receivedAntecedent = screen.getByRole("textbox", {
+      name: /antecedente compartido recibido/i,
+    });
+    const receiveButton = screen.getByRole("button", {
+      name: /recibir antecedente compartido/i,
+    });
 
-    expect(screen.queryByLabelText(/resultado compartido/i)).not.toBeInTheDocument();
-    expect(screen.queryByLabelText(/aportación de a/i)).not.toBeInTheDocument();
-    expect(
-      screen.queryByRole("textbox", {
-        name: /aportación actual de b/i,
+    const invalidAntecedents = [
+      "{",
+      JSON.stringify({
+        sharedResult: "",
+        firstContribution: {
+          participant: "A",
+          content: "Aportación válida",
+        },
       }),
-    ).not.toBeInTheDocument();
+      JSON.stringify({
+        sharedResult: "Resultado sin aportación antecedente",
+      }),
+      JSON.stringify({
+        sharedResult: "Resultado compartido válido",
+        firstContribution: {
+          participant: "B",
+          content: "Aportación con participante no válido",
+        },
+      }),
+      JSON.stringify({
+        sharedResult: "Resultado compartido válido",
+        firstContribution: {
+          participant: "A",
+          content: "",
+        },
+      }),
+    ];
+
+    for (const invalidAntecedent of invalidAntecedents) {
+      fireEvent.change(receivedAntecedent, {
+        target: { value: invalidAntecedent },
+      });
+      await user.click(receiveButton);
+
+      expect(
+        screen.queryByLabelText(/resultado compartido/i),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByLabelText(/aportación de a/i),
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("textbox", {
+          name: /aportación actual de b/i,
+        }),
+      ).not.toBeInTheDocument();
+    }
   });
 });
