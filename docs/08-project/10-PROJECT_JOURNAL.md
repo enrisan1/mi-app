@@ -9633,3 +9633,50 @@ D-23 como incertidumbre bloqueante, I-D23-01, resultado B, reevaluación final d
 Rama A y reevaluación final de Rama B. Esta unidad sólo actualiza estado y
 bitácora; 71, 72, Product, código, tests y harness permanecen intactos. No se
 realizan git add, commit o push.
+
+
+---
+
+# 13/11/2026 — Actuación 73, revalidación post-HPOST del producto final utilizable
+
+Por encargo humano explícito se realizó la revalidación documental y material
+posterior a la ampliación de Product con C-PV-POST-01. Se verificó que 73 estaba
+libre y se creó [73](73-REVALIDACION_POST_HPOST_PRODUCTO_FINAL_UTILIZABLE.md).
+No se deriva por inercia de los cierres anteriores ni abre construcción.
+
+Se contrastaron Charter, Vision, Product, 56/60/61/62/65/67/68/69/71/72, estado,
+bitácora, código pertinente e historia Git. La matriz separa satisfacción
+realizativa, disponibilidad efectiva y mediación suficiente para los siete
+compromisos. 71 conserva el relevo demostrado; 72 acredita continuación suficiente
+por O/H en Q y reduce D-23 sin exigir integración literal de handoff en App.
+
+La revisión pública validada relevante es `f52c1763fea9fc1fe02f1887e11bc957c110b839`,
+Pages #6 según 68; el HEAD inspeccionado fue
+`f05d4b27bdad9ff87752239a2fcd58a5b7bce144`. Se verificó ascendencia y diff:
+12 archivos cambiados, pero ninguno en el recorrido ordinario existente,
+dependencias o configuración de publicación. App conserva el mismo blob
+`6713c92be656c0b00abc5947d321cd068dac064b`. Las únicas adiciones en src son
+HandoffExperience y su test. La identidad del soporte ordinario enlaza con la
+evidencia pública histórica; no prueba despliegue de HEAD/harness ni equivale a
+una nueva observación pública de Q.
+
+Después de completar K1-01…K1-10 se obtuvo **A — DISTANCIA MATERIAL = 0 dentro
+del alcance**, sin diferencia material pendiente ni indeterminación por evidencia
+concreta faltante. **73 → CERRADA. PRODUCTO FINAL → REVALIDADO POST-HPOST respecto
+del alcance legítimamente vigente y suficientemente demostrado.** 73 no sustituye
+61: conserva su conclusión histórica y la revalida para el Product ampliado.
+
+Disponibilidad pública histórica → demostrada; disponibilidad exacta actual →
+no revalidada independientemente en esta actuación. No se consultó la URL ni se
+repitieron deployment, tests, build o validación humana. Se conservan reservas
+T67-06/C68-02, carencias no bloqueantes y límites de 71/72, sin generalizar a
+producto perfecto, Vision completa, ausencia universal de defectos o cierre
+irreversible. Esa limitación operativa no demuestra indisponibilidad actual.
+
+No se deriva nueva Implementation, integración de handoff, Realization,
+Architecture, compromiso Product, investigación, backlog, P6, PV-007 ni horizonte.
+Se mantiene el estado estable actual sin actuación pendiente derivada; cualquier
+cambio relevante, nueva evidencia, decisión humana u obligación normativa deberá
+someterse al Manual antes de abrir actuación. Sólo se crean/actualizan 73, estado
+y bitácora; no se modifican 61/71/72, Product, Vision, metodología, código, tests
+o harness ni se realizan git add, commit o push.
