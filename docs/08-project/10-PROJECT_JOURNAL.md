@@ -9366,3 +9366,82 @@ cierres del producto anterior permanecen válidos; no se modificaron 70 ni Manua
 Implementation ni backlog técnico. Sólo se materializan Product, estado y
 bitácora para revisión humana, sin cambios de código/tests, git add, commit o
 push.
+
+
+---
+
+# 13/11/2026 — R4 y cierre formal de H-POST-01
+
+Se registra el resultado humano y la decisión de clausura comunicados por la
+persona responsable: **MHPOST-01…MHPOST-10 → 10/10 PASS; R4 → CERRADO
+HUMANAMENTE; HITO-HPOST-01 — Relevo contextual verificable → SATISFECHO.**
+No se atribuye al agente una repetición de la observación humana.
+
+Se conserva la incidencia real: el primer control negativo fue inválido porque
+el participante sin C recibió información demasiado reducida/procesada; no
+cuenta como evidencia de MHPOST-09. El control válido se repitió con N nuevo y
+participante no expuesto. Sin C reconstruyó descartes, superviviente y cuestión
+pendiente antes de E4-V1; con C, otro P2 independiente recibió ya ese estado
+intelectual y sólo resolvió la cuestión pendiente.
+
+En M, P1 constituye S1 y C conserva el estado abierto M2/K3 con M2/K1 y M2/K2
+establecidos; P2 humano independiente recupera C, incorpora E4 y continúa sin
+reconstruir desde cero la parte relevante: S2 → M2 seleccionada. En N, N1/K1,
+N2/K3 y N4/K2 son descartes; N3 sobrevive con K1/K3 satisfechos y K2 pendiente.
+P2 independiente continúa desde C y E4-V1 resuelve N3/K2: S2 → N3 seleccionada.
+La reproducción técnica de S2 queda confirmada en ambas trayectorias.
+
+La reevaluación separada de **CF-HPOST-01 — Continuidad operativa demostrada →
+SATISFECHO** contrasta pertinencia provisional, disponibilidad suficiente por
+relevo real, participación efectiva de C, preservación del estado intelectual,
+continuación de la misma actividad sin reconstruir desde cero la parte relevante
+y discriminación frente a almacenamiento pasivo y reconstrucción independiente.
+La justificación detallada queda en [71 §§20–23](71-CONVERGENCIA_HPOST01_Y_VALIDACION_RELEVO_CONTEXTUAL.md#20-r4--resultado-humano-y-trazabilidad-de-la-observación).
+
+Comprobación final: obligaciones pendientes del alcance → ninguna demostrada;
+dependencias independientes pendientes → ninguna; GAP-HPOST-01 → cerrado;
+PR-HPOST-01 → agotada; R1/R2 → completados; R3 → cerrado técnicamente;
+R4 → cerrado humanamente. **H-POST-01 — Continuidad del contexto intelectual
+en curso entre participantes operativos → CERRADO EN EL ALCANCE ACEPTADO Y
+DEMOSTRADO.** Se preservan el protocolo previo y los cierres anteriores.
+
+La clausura no significa continuidad contextual universalmente resuelta,
+Product universalmente realizado ni plataforma final completada. No abre otro
+horizonte, P6, nueva Architecture, Realization, Implementation ni backlog nuevo.
+**Única siguiente actuación permitida:** volver a aplicar el Manual 17 para
+comprobar si existe alguna nueva obligación positiva que justifique continuar.
+Esa obligación no se deriva en esta edición. Sólo se actualizan 71, estado y
+bitácora; no se modifican código, tests, Product ni metodología, ni se ejecutan
+git add, commit o push.
+
+
+---
+
+# 13/11/2026 — Reaplicación del Manual posterior al cierre de H-POST-01
+
+Después del cierre formal de H-POST-01 se realizó separadamente la comprobación
+de continuidad estratégica del Manual 17. Se contrastaron Charter, Platform
+Vision, Product, estado, bitácora y 71, con las remisiones pertinentes a la
+estrategia de convergencia y al criterio de clausura anterior. La persona
+responsable confirma el resultado para su registro documental.
+
+**Rama A — convergencia planificada:** ninguna obligación positiva pendiente
+demostrada, ninguna dependencia necesaria pendiente, ningún fundamento positivo
+nuevo y ninguna siguiente actuación estratégicamente derivada.
+
+**Rama B — evidencia emergente:** ninguna evidencia posterior al cierre que
+contradiga satisfacciones anteriores, revele insuficiencia real, necesidad
+vigente incumplida o dependencia activada que obligue a continuar.
+
+**Conclusión: CIERRE VIGENTE / NO CONTINUAR POR AHORA.** No existe obligación
+positiva demostrada ni siguiente actuación automática o estratégicamente derivada.
+H-POST-01 permanece **CERRADO EN EL ALCANCE ACEPTADO Y DEMOSTRADO** y se conservan
+los cierres anteriores. No se abre horizonte, P6, PV-007, capacidad, brecha,
+Realization, Architecture, Implementation ni backlog. No se afirma imposibilidad
+de evolución futura, Product o Platform Vision universalmente realizados,
+plataforma final absoluta ni cierre irreversible.
+
+**Punto de reanudación:** sólo ante fundamento positivo nuevo, reaplicar la rama
+correspondiente del Manual antes de abrir cualquier actuación. La comprobación
+antes pendiente queda atendida; este resultado actualiza el estado sin reescribir
+el cierre de 71 ni abrir otra actuación.

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEDIO-R4-01 — Observación local de R-HPOST-M1</title>
+  </head>
+  <body>
+    <header>
+      <h1>Observación local de R-HPOST-M1</h1>
+      <p>Instrumento de laboratorio. No forma parte del flujo ordinario del producto.</p>
+      <p>Esta superficie no evalúa el hito ni sustituye el registro humano de R4.</p>
+    </header>
+    <main>
+      <section id="selection" hidden>
+        <h2>Seleccionar una ejecución nueva</h2>
+        <p><a href="?participant=P1">Abrir documento P1</a></p>
+        <p><a href="?participant=P2">Abrir documento P2</a></p>
+        <p>
+          Para el relevo, P1 debe terminar y cerrar su documento antes de abrir P2.
+          No compartas con P2 las notas ni el formulario de P1.
+        </p>
+        <h2>Control explícito de observación</h2>
+        <button id="clear-context" type="button">
+          Eliminar sólo handoff.context para una observación sin C
+        </button>
+        <p>
+          Úsalo únicamente cuando corresponda al protocolo. Después abre P2 en
+          una nueva carga. La reconstrucción humana se observa con los materiales
+          iniciales; no se simula aquí.
+        </p>
+      </section>
+      <section id="origin" hidden>
+        <h2>P1 — Introducir el estado realmente producido</h2>
+        <p>
+          Primero P1 debe analizar el problema y producir S1. El observador
+          transcribe ese resultado; no se proporciona una solución precargada.
+          Comprueba el contenido antes de montarlo.
+        </p>
+        <form id="work-form" autocomplete="off">
+          <label for="work">S1 producido en esta observación (JSON)</label>
+          <textarea id="work" rows="18" cols="80" required autocomplete="off" spellcheck="false"></textarea>
+          <p>
+            Propiedades requeridas: objective (texto), mandatoryConditions
+            (lista de textos), discardedAlternatives (lista de objetos con
+            alternative y failedCondition), survivingAlternative (texto),
+            establishedChecks (lista de textos), openQuestion (texto), nextAction
+            (texto), finalDecisionPending (true), finalDecision (null) y
+            privateNotes (texto, que puede estar vacío).
+          </p>
+          <p>
+            Este formulario sólo vive en el documento P1. El harness no guarda
+            el formulario ni las notas privadas. La realización existente
+            constituye C mediante su propia proyección.
+          </p>
+          <button type="submit">Montar P1 con el S1 introducido</button>
+        </form>
+        <p>
+          Tras constituir C, P1 termina: cierra este documento y abre en una
+          carga nueva handoff-observation.html?participant=P2. No cambies de
+          participante dentro de la misma instancia.
+        </p>
+      </section>
+      <section id="receiver" hidden>
+        <h2>P2 — Ejecución nueva</h2>
+        <p>
+          Esta ejecución monta únicamente P2. La realización recupera C mediante
+          su mecanismo existente. No se recibe el formulario ni el trabajo
+          privado de P1. Entrega E4 sólo cuando indique el protocolo.
+        </p>
+      </section>
+      <p id="notice" role="status"></p>
+      <div id="root"></div>
+    </main>
+
+    <script type="module">
+      import React from "react";
+      import ReactDOM from "react-dom/client";
+      import { HandoffExperience } from "/src/realizations/handoff/HandoffExperience.tsx";
+
+      // La URL selecciona únicamente el rol. No se leen datos de trabajo ni hash.
+      const participant = new URLSearchParams(window.location.search).get("participant");
+      const notice = document.getElementById("notice");
+
+      function mount(props) {
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(React.createElement(HandoffExperience, props));
+        window.addEventListener("pagehide", () => root.unmount(), { once: true });
+      }
+
+      function prepareP1() {
+        document.getElementById("origin").hidden = false;
+        const form = document.getElementById("work-form");
+        const input = document.getElementById("work");
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          try {
+            const work = JSON.parse(input.value);
+            const text = (value) => typeof value === "string" && value.trim().length > 0;
+            const texts = (value) => Array.isArray(value) && value.every(text);
+            if (
+              work === null || typeof work !== "object" ||
+              !text(work.objective) ||
+              !texts(work.mandatoryConditions) || work.mandatoryConditions.length === 0 ||
+              !Array.isArray(work.discardedAlternatives) ||
+              !work.discardedAlternatives.every((entry) =>
+                entry !== null && typeof entry === "object" &&
+                text(entry.alternative) && text(entry.failedCondition)) ||
+              !text(work.survivingAlternative) || !texts(work.establishedChecks) ||
+              !text(work.openQuestion) || !text(work.nextAction) ||
+              work.finalDecisionPending !== true || work.finalDecision !== null ||
+              typeof work.privateNotes !== "string"
+            ) {
+              throw new Error("S1 debe respetar la estructura indicada y mantener la decisión abierta.");
+            }
+            // Sólo campos del contrato local, todos procedentes de la entrada humana.
+            mount({
+              participant: "P1",
+              initialWork: {
+                objective: work.objective,
+                mandatoryConditions: work.mandatoryConditions,
+                discardedAlternatives: work.discardedAlternatives.map((entry) => ({
+                  alternative: entry.alternative,
+                  failedCondition: entry.failedCondition,
+                })),
+                survivingAlternative: work.survivingAlternative,
+                establishedChecks: work.establishedChecks,
+                openQuestion: work.openQuestion,
+                nextAction: work.nextAction,
+                finalDecisionPending: work.finalDecisionPending,
+                finalDecision: work.finalDecision,
+                privateNotes: work.privateNotes,
+              },
+            });
+            input.value = "";
+            form.remove();
+            notice.textContent = "P1 montado. Constituye S1 y después C en la realización.";
+          } catch (error) {
+            notice.textContent = `No se ha podido montar P1: ${error.message}`;
+          }
+        });
+      }
+
+      if (participant === "P1") {
+        prepareP1();
+      } else if (participant === "P2") {
+        // No se transmite initialWork ni ningún callback o estado de P1.
+        document.getElementById("origin").remove();
+        document.getElementById("receiver").hidden = false;
+        mount({ participant: "P2" });
+      } else if (participant === null) {
+        document.getElementById("origin").remove();
+        document.getElementById("selection").hidden = false;
+        document.getElementById("clear-context").addEventListener("click", () => {
+          try {
+            localStorage.removeItem("handoff.context");
+            notice.textContent = "Se ha eliminado sólo handoff.context. Abre P2 en una nueva carga.";
+          } catch (error) {
+            notice.textContent = `No se ha podido eliminar el contexto: ${error.message}`;
+          }
+        });
+      } else {
+        document.getElementById("origin").remove();
+        notice.textContent = "Modo no válido. Abre este HTML sin parámetros para seleccionar P1 o P2.";
+      }
+
+      // Una restauración del historial tampoco reutiliza una instancia anterior.
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) window.location.reload();
+      });
+    </script>
+  </body>
+</html>
