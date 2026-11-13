@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
@@ -27,7 +27,9 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
       name: /antecedente compartido recibido/i,
     });
 
-    await user.type(receivedAntecedent, VALID_ANTECEDENT);
+    fireEvent.change(receivedAntecedent, {
+      target: { value: VALID_ANTECEDENT },
+    });
     await user.click(
       screen.getByRole("button", {
         name: /recibir antecedente compartido/i,
@@ -55,11 +57,11 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
 
     render(<App />);
 
-    await user.type(
+    fireEvent.change(
       screen.getByRole("textbox", {
         name: /antecedente compartido recibido/i,
       }),
-      VALID_ANTECEDENT,
+      { target: { value: VALID_ANTECEDENT } },
     );
     await user.click(
       screen.getByRole("button", {
@@ -95,13 +97,17 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
 
     render(<App />);
 
-    await user.type(
+    fireEvent.change(
       screen.getByRole("textbox", {
         name: /antecedente compartido recibido/i,
       }),
-      JSON.stringify({
-        sharedResult: "Resultado sin aportación antecedente",
-      }),
+      {
+        target: {
+          value: JSON.stringify({
+            sharedResult: "Resultado sin aportación antecedente",
+          }),
+        },
+      },
     );
     await user.click(
       screen.getByRole("button", {
