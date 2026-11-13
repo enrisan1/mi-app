@@ -148,24 +148,25 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 };
               };
 
+              if (
+                typeof parsed.sharedResult !== "string" ||
+                parsed.sharedResult.trim().length === 0 ||
+                parsed.firstContribution?.participant !== "A" ||
+                typeof parsed.firstContribution.content !== "string" ||
+                parsed.firstContribution.content.trim().length === 0
+              ) {
+                return;
+              }
+
               setReceivedCollaborativeAntecedent({
-                sharedResult:
-                  typeof parsed.sharedResult === "string"
-                    ? parsed.sharedResult
-                    : "",
+                sharedResult: parsed.sharedResult,
                 firstContribution: {
-                  participant:
-                    typeof parsed.firstContribution?.participant === "string"
-                      ? parsed.firstContribution.participant
-                      : "",
-                  content:
-                    typeof parsed.firstContribution?.content === "string"
-                      ? parsed.firstContribution.content
-                      : "",
+                  participant: "A",
+                  content: parsed.firstContribution.content,
                 },
               });
             } catch {
-              // La validación de antecedentes inválidos se deriva en T-KGV-03.
+              return;
             }
           }}
         >
