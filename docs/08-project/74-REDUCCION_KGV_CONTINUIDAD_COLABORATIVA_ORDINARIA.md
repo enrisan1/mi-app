@@ -1,6 +1,6 @@
 # Actuación 74 — Reducción KGV de la continuidad colaborativa ordinaria
 
-**Estado:** ABIERTA — criterio mínimo fijado; fase RED pendiente de verificación ejecutada.
+**Estado:** CERRADA EN EL ALCANCE DE CR-KGV-01 — GREEN verificado; GAP-KGV-01-R2 reducido/cerrado en el caso contrastado.
 
 **Fecha:** 13/11/2026.
 
@@ -45,7 +45,7 @@ No se deriva importar `CollaborationExperience` completa ni introducir infraestr
 
 > Si `App` puede recibir explícitamente el antecedente mínimo ya demostrado por Q05, presentar separadamente el resultado compartido y la aportación antecedente, y orientar una aportación posterior desde ese contexto, la pérdida observada puede corregirse sin backend, cuentas, sincronización ni transporte automático.
 
-Esta hipótesis no está todavía confirmada.
+Esta hipótesis queda **confirmada en el alcance de CR-KGV-01** por la implementación mínima y las verificaciones registradas en los apartados 8–10.
 
 # 4. CR-KGV-01 — Criterio mínimo de corrección ordinaria
 
@@ -137,3 +137,124 @@ integración completa de CollaborationExperience
 ```
 
 La siguiente decisión depende exclusivamente del resultado observado de `T-KGV-01…03`.
+
+
+# 8. Ejecución RED y transición incremental a GREEN
+
+La fase RED se ejecutó en una rama aislada sin modificar `feature/task-filters`.
+
+Resultado inicial observado:
+
+```text
+T-KGV-01 → FAIL
+T-KGV-02 → FAIL
+T-KGV-03 → FAIL
+```
+
+La causa común inicial fue la ausencia en `App` de una entrada accesible denominada «Antecedente compartido recibido». El DOM renderizado correspondía correctamente a la App ordinaria, por lo que el fallo no procedía de importación, compilación, fixture inválido o render roto.
+
+Durante la primera transición a GREEN apareció un defecto del propio mecanismo de fixture: `userEvent.type` interpretaba las llaves del JSON como sintaxis especial. Se corrigió exclusivamente la forma de introducir el JSON mediante `fireEvent.change`, sin alterar las expectativas funcionales de `T-KGV-01…03`.
+
+La implementación se realizó de forma incremental:
+
+1. receptor y presentación estructurada mínimos → `T-KGV-01` GREEN;
+2. aportación y continuación mínima de B → `T-KGV-02` GREEN;
+3. validación de `MIN-CC-01` → `T-KGV-03` GREEN.
+
+No se adelantaron en cada paso capacidades pertenecientes al test siguiente.
+
+# 9. Resultado GREEN de CR-KGV-01
+
+La implementación ordinaria resultante permite:
+
+- recibir explícitamente un antecedente colaborativo mínimo;
+- conservar separadamente `sharedResult` y la aportación antecedente de A;
+- mostrar una orientación situacional antes de la actuación de B;
+- introducir una aportación de B;
+- constituirla como continuación reconocible;
+- rechazar como contexto colaborativo un antecedente incompleto o inválido.
+
+La validación mínima exige conjuntamente:
+
+```text
+sharedResult
+→ string no vacío
+
+firstContribution.participant
+→ exactamente "A"
+
+firstContribution.content
+→ string no vacío
+```
+
+No se añadió backend, API, cuenta, autenticación, permiso, sincronización, transporte automático, identidad real ni integración completa de `CollaborationExperience`.
+
+Resultado específico:
+
+```text
+T-KGV-01 → PASS
+T-KGV-02 → PASS
+T-KGV-03 → PASS
+```
+
+**CR-KGV-01 → SATISFECHO EN EL ALCANCE FIJADO.**
+
+# 10. Verificación de no regresión
+
+Después de alcanzar GREEN se ejecutaron, en este orden:
+
+1. tests históricos de `App`;
+2. typecheck;
+3. suite completa.
+
+Resultados observados:
+
+```text
+src/App.test.tsx
+→ 28/28 PASS
+
+npm run typecheck
+→ PASS
+
+suite completa
+→ 39 archivos PASS
+→ 346/346 tests PASS
+
+src/App.kgv.test.tsx
+→ 3/3 PASS
+```
+
+No se detectó regresión dentro de la cobertura existente.
+
+# 11. Cierre de GAP-KGV-01-R2
+
+El gap se formuló como pérdida de mediación ordinaria: el contenido podía llegar y permanecer visible, pero el segundo participante no podía reconocer suficientemente la estructura del antecedente ni la actuación disponible para continuar.
+
+La corrección mínima ahora hace observables precisamente esas diferencias y permite constituir la continuación de B sin reconstruir la actividad desde cero.
+
+Por tanto:
+
+```text
+GAP-KGV-01-R2
+→ REDUCIDO / CERRADO
+  EN EL ALCANCE DE CR-KGV-01
+```
+
+Este cierre no demuestra:
+
+- colaboración general;
+- simultaneidad;
+- identidad de usuarios;
+- persistencia interdispositivo automática;
+- sincronización;
+- transporte automático;
+- suficiencia universal de la App para cualquier colaboración;
+- clausura global del proyecto.
+
+Sí demuestra que la pérdida concreta aislada por `GAP-KGV-01-R2` puede corregirse mediante una mediación ordinaria mínima y sin la infraestructura no derivada.
+
+# 12. Estado y siguiente gate
+
+La actuación 74 queda cerrada técnicamente y documentalmente en el alcance anterior.
+
+No se consolida todavía en `feature/task-filters` por este documento. El siguiente gate es revisar el diff completo de la rama de trabajo frente a `822a25f` y decidir su consolidación.
