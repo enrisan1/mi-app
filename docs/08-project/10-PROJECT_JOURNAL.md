@@ -9732,3 +9732,18 @@ Después de la formalización previa de KGV-10, la persona responsable responde 
 La decisión acepta la suficiencia global actualmente demostrada de KGV-01…KGV-09 y la ausencia de residuo material independiente que deba resolverse antes de cerrar este ciclo. En consecuencia, **KGV-10 queda SATISFECHO HUMANAMENTE** y **KGV-01…KGV-10 quedan satisfechos en sus alcances documentados**.
 
 **CICLO GLOBAL KGV → CERRADO.** No queda siguiente actuación automática ni estratégicamente derivada. El cierre es acotado: no constituye clausura absoluta o irreversible del proyecto, no universaliza Platform Vision, utilidad o robustez y no impide futuras evoluciones. Cualquier nueva continuidad deberá derivarse de fundamento positivo suficiente.
+
+
+---
+
+# 14/11/2026 — Actuación 79, reaplicación del Manual tras cierre KGV
+
+Después del cierre del ciclo KGV, la persona responsable decide explícitamente continuar evolucionando el proyecto y solicita reaplicar el Manual operativo de continuidad sobre Charter, Platform Vision, Product, V1, tablero, estrategia global post-T1 y Manual 17.
+
+La comprobación concluye que V1 permanece suficientemente realizada; las estrategias 11 y 54 conservan sus cierres y no constituyen por sí mismas un nuevo objetivo. No aparece obligación pendiente de Product ni nueva pérdida emergente que derive construcción directa.
+
+Sí concurren las cuatro condiciones de Manual 17 §13.1: Product vigente satisfecho/clausurado, cierres conservados, ausencia de obligación que determine por sí sola la continuación y fundamento humano explícito para estudiar una evolución posterior.
+
+Se abre [79](79-FORMACION_ESTRATEGICA_POST_KGV_Y_COBERTURA_DECISIONAL.md). La actuación mínima derivada es **§13.1.1 — cobertura decisional**. Debe contrastar Charter + Platform Vision + Product + estado/cierres, y sólo cuando pueda cambiar la decisión incorporar uso real, patrimonio/investigaciones previas, contraste externo y aptitud técnica.
+
+No se formula todavía horizonte. Las únicas salidas legítimas de la formación son CONTINUAR por incertidumbre concreta, CERRAR SIN HORIZONTE o FORMULAR HORIZONTE.
