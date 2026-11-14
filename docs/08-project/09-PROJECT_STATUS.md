@@ -7604,3 +7604,28 @@ CI-80-04 — separación IA/obra
 No se identifica investigación obligatoria previa que impida compararlas en Product. CI-80-02 conserva la evidencia empírica histórica más fuerte; CI-80-01 presenta la diferencia más simple y fácilmente acotable; CI-80-03 presenta novedad semántica alta pero evidencia ejercida débil; CI-80-04 tiene mayor acoplamiento con determinación humana/procedencia y exige reducción especialmente cuidadosa.
 
 La comparación no establece prioridad ni ganadora. Siguiente paso: procedimiento de Product para justificar/refutar valor y decidir selección individual.
+
+
+# 14/11/2026 — Evaluación Product de CI-80-01…04
+
+La actuación [83](83-EVALUACION_PRODUCT_Y_PROPUESTAS_SELECCION_CANDIDATAS_80.md) aplica Product §3 a las cuatro candidatas independientes.
+
+Los cuatro valores quedan justificados en alcance delimitado. CI-80-04 se reduce parcialmente: la autoridad humana sobre incorporación a la obra queda absorbida por PV-005; el valor independiente superviviente es disponer opcionalmente de apoyo auxiliar de IA diferenciado de la obra.
+
+Se formulan, sin consolidarlas todavía como compromisos:
+
+```text
+C-PV-80-01 — Captura inmediata de aportaciones emergentes
+→ PROPUESTA DE SELECCIÓN
+
+C-PV-80-02 — Comparación humana de documentos relacionados
+→ PROPUESTA DE SELECCIÓN
+
+C-PV-80-03 — Identidad autoral elegible
+→ PROPUESTA DE SELECCIÓN
+
+C-PV-80-04 — Apoyo auxiliar de IA separado de la obra
+→ PROPUESTA DE SELECCIÓN REDUCIDA
+```
+
+No se establece prioridad, arquitectura, implementación ni satisfacción. Los precedentes del proyecto exigen HUMAN GATE antes de consolidar nuevas selecciones Product. Las cuatro decisiones permanecen pendientes e independientes.
