@@ -7408,3 +7408,12 @@ Se mantiene **ESTADO ESTABLE ACTUAL / SIN CONTINUIDAD DERIVADA EN EL ESTADO
 ACTUAL**, sin actuación pendiente. Cualquier cambio relevante, nueva evidencia,
 decisión humana u obligación normativa deberá someterse nuevamente al Manual
 antes de abrir actuación.
+
+
+# 14/11/2026 — Cierre de GAP-KGV-03 y punto de reevaluación de KGV-07
+
+La actuación [76](76-REDUCCION_KGV_RECUPERABILIDAD_PERSISTENCIA_INCOMPATIBLE.md) formaliza la reducción de `GAP-KGV-03 — Recuperabilidad operativa mínima ante fallo pertinente de persistencia`.
+
+`CR-KGV-03` queda **SATISFECHO EN EL ALCANCE CONTRASTADO** para una trayectoria `post-v1-integrated.state` sintácticamente válida pero estructuralmente incompatible. `T-KGV-06` y `T-KGV-07` están verdes; la regresión histórica queda verificada con 14/14 tests de `PostV1IntegratedExperience`, 28/28 de `App`, typecheck PASS y suite canónica 39 archivos / 350 tests PASS. Una prueba efímera adicional confirmó que el descarte elimina sólo `post-v1-integrated.state` y conserva `ordinary.materials`, `ru2m1.previous` y `ru2m1.retained`; con dicha prueba la suite alcanzó 40 archivos / 351 tests PASS.
+
+No se declaran resueltos almacenamiento denegado (`SecurityError`) ni cuota/escritura. La siguiente cuestión de `KGV-07` queda reducida a determinar si la indisponibilidad completa de `localStorage` constituye una obligación independiente necesaria de sostenibilidad o un requisito de entorno legítimamente excluible. La carencia de cuota/escritura permanece sin pérdida material demostrada y no se eleva automáticamente a gap.
