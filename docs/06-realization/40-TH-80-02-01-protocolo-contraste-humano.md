@@ -482,3 +482,155 @@ Esta limitación no invalida TH-80-02-01. El caso debe completar B1 con los mism
 textos para mantener el contraste controlado, pero cualquier resultado positivo
 quedará limitado al alcance de textos breves. Una eventual ampliación a textos
 más extensos requerirá un caso posterior independiente.
+
+
+---
+
+# 14. Ejecución B1 y cierre de TH-80-02-01
+
+**Fecha:** 14/11/2026  
+**Condición:** `B1` completada.  
+**Orden efectivo:** `B0 → B1`.
+
+## 14.1. Observación humana registrada en B1
+
+La persona informó que:
+
+- ambos textos siguieron siendo igualmente fáciles de contrastar frase a frase;
+- la diferencia principal respecto de B0 fue una mayor claridad, porque en la
+  situación comparativa sólo estaban presentes D1 y D2 y no otros materiales
+  capaces de confundir o ralentizar el contraste;
+- volvió a utilizar una hoja externa como garantía para conservar y comprobar las
+  diferencias identificadas;
+- la segunda ejecución estuvo afectada por aprendizaje, porque ya se conocían las
+  diferencias halladas durante B0;
+- pese a ese aprendizaje, el contraste se realizó con precaución para comprobar
+  si aparecía alguna diferencia nueva o si alguna de las anteriores había sido
+  corregida;
+- la ventaja material atribuida a B1 fue específicamente la **claridad** de la
+  situación comparativa.
+
+## 14.2. Observables B1
+
+```text
+O1 — Disponibilidad de referencias
+✔ D1 y D2 permanecieron disponibles como referencias de la misma actividad
+
+O2 — Sustitución/relocalización
+✔ no fue necesario sustituir un documento por otro
+
+O3 — Reconstrucción desde memoria
+✔ no fue necesario depender de memoria para recuperar el otro texto
+
+O4 — Identidad de cada versión
+✔ no se registró confusión entre D1 y D2
+
+O5 — Reconocimiento de diferencias reales
+✔ las diferencias previamente observadas pudieron verificarse de nuevo
+
+O6 — Determinación humana de pertinencia
+✔ la pertinencia siguió siendo decidida por la persona
+
+O7 — Conclusión comparativa
+✔ la persona pudo sostener una conclusión comparativa propia
+```
+
+## 14.3. Comparación B0 ↔ B1
+
+```text
+B0
+→ dos textos breves simultáneamente visibles
+→ comparación frase a frase practicable
+→ otros materiales presentes
+→ apoyo externo usado para conservar diferencias
+
+B1
+→ dos textos breves simultáneamente disponibles
+→ comparación frase a frase practicable
+→ sólo D1 y D2 constituyen la situación
+→ mayor claridad / menor ruido contextual
+→ apoyo externo usado de nuevo para conservar diferencias
+```
+
+La diferencia positiva observada es, por tanto:
+
+```text
+copresencia genérica dentro de un conjunto de materiales
+≠
+pareja comparativa explícita y aislada del resto
+
+efecto humano observado
+→ mayor claridad durante el contraste
+```
+
+## 14.4. Falsadores y límites
+
+No se observaron `F-TH-01`, `F-TH-02`, `F-TH-03` ni `F-TH-05`.
+
+`F-TH-04` no se cumple en sentido absoluto, porque B1 sí produjo una diferencia
+observable de claridad respecto de B0. Sin embargo, esa diferencia no basta para
+sostener la hipótesis fuerte prerregistrada sobre reducción material de
+reconstrucción secuencial: B0 ya evitó sustitución y memoria en el caso de textos
+breves.
+
+Existen además dos limitaciones decisivas:
+
+1. **extensión breve:** la simultaneidad de B0 dependió de que D1 y D2 cupieran
+   simultáneamente pese a estar dispuestos verticalmente;
+2. **efecto de aprendizaje:** B1 se ejecutó después de B0 con los mismos textos,
+   por lo que la localización de diferencias ya era parcialmente conocida.
+
+La hoja externa siguió siendo útil en ambas condiciones. Esto conserva abierta
+una posible dependencia relativa a mantener el resultado acumulado del contraste,
+pero TH-80-02-01 no autoriza todavía a convertirla en requisito.
+
+## 14.5. Resultado del caso
+
+```text
+TH-80-02-01
+→ B — DIFERENCIA INSUFICIENTE
+
+R-80-02-M1
+→ aporta una diferencia humana positiva local:
+   mayor claridad por constitución explícita de la pareja D1/D2
+
+pero
+
+H-TH-80-02-01 fuerte
+→ NO demostrada en este caso
+
+motivo
+→ B0 ya permitió contraste directo sin reconstrucción secuencial
+   dentro del alcance de textos breves
+```
+
+Por tanto:
+
+```text
+CH-80-02-01
+✔ sigue satisfecho
+
+R-80-02-M1
+✔ aporta claridad comparativa local
+
+CR-80-02 completo
+○ todavía no demostrado
+
+H-80-02
+○ no cerrable todavía
+```
+
+## 14.6. Siguiente incertidumbre discriminante
+
+La evidencia obtenida reduce la siguiente cuestión a:
+
+> ¿La suficiencia observada en B0 desaparece cuando D1 y D2 tienen una extensión
+> que impide mantener ambos textos simultáneamente visibles en la disposición
+> ordinaria, y la constitución explícita de una pareja comparativa aporta entonces
+> una ventaja material suficiente?
+
+Esta cuestión debe contrastarse en un caso posterior con textos de mayor
+extensión y sin presuponer como solución una disposición lado a lado.
+
+No se deriva todavía modificación de `ComparisonExperience`, `App.tsx`,
+arquitectura ni Product.
