@@ -624,3 +624,123 @@ siguiente paso
 
 No se modifica todavía `ComparisonExperience`, `App.tsx`, Product ni
 Architecture.
+
+
+---
+
+# 16. Observación humana de R-80-02-M2
+
+**Fecha:** 14/11/2026  
+**Condición:** harness aislado de `R-80-02-M2` con D1-L y D2-L.  
+**Objeto:** comprobar si las superficies con posición independiente reducen materialmente la pérdida observada en el baseline extenso.
+
+## 16.1. Observación registrada
+
+La persona informó que:
+
+- la comparación resulta mucho más fácil sin perder la línea;
+- ya no necesita avanzar y retroceder continuamente por la página;
+- puede mantener con claridad el punto local del párrafo que está comparando;
+- la comparación es mucho más rápida y menos engorrosa que en el baseline;
+- sin embargo, a partir de aproximadamente el tercer o cuarto párrafo deja de ser
+  fácil recordar en qué párrafo global del documento se encuentra;
+- para textos mucho más largos, la tarea completa seguiría resultando tediosa,
+  lenta y poco productiva;
+- la persona considera que, para una longitud equivalente a la de un libro, esta
+  forma de comparación manual completa no sería razonablemente atractiva salvo
+  una necesidad muy fuerte.
+
+La pregunta sobre “volver al punto anterior sin relocalizarlo” se interpreta como:
+si, después de consultar o desplazar el otro documento, la superficie anterior
+conserva su posición local. La observación descrita es compatible con una
+respuesta positiva: no fue necesario reconstruir continuamente la línea o el
+punto local del párrafo.
+
+## 16.2. Comparación con baseline
+
+```text
+baseline extenso
+→ desplazamiento global continuo
+→ pérdida frecuente de línea / posición
+→ relocalización repetida
+→ comparación engorrosa y lenta
+
+R-80-02-M2
+→ posiciones independientes
+→ línea local conservada con mayor claridad
+→ mucho menos desplazamiento global
+→ comparación más rápida y fácil
+```
+
+Resultado humano sobre la propiedad reducida:
+
+```text
+PC-80-02-02
+→ SOSTENIDA HUMANAMENTE
+   dentro del alcance de textos extensos observados
+```
+
+## 16.3. Dificultad residual emergente
+
+La observación revela una dificultad distinta de la pérdida de posición local:
+
+`DR-80-02-03 — Pérdida de orientación estructural en textos largos`
+
+Formulación provisional:
+
+> Aunque cada superficie conserve correctamente su posición local, la persona
+> puede perder la referencia de qué unidad estructural global está comparando
+> (por ejemplo, qué párrafo o sección), haciendo que el contraste completo siga
+> siendo tedioso a medida que aumenta la longitud.
+
+Esta dificultad no invalida `PC-80-02-02`. Es posterior y distinta:
+
+```text
+posición local independiente
+✔ resuelta
+
+orientación estructural global
+○ todavía débil
+
+carga total de comparación en textos muy largos
+○ todavía elevada
+```
+
+## 16.4. Alcance y límites
+
+No se puede concluir de este caso que:
+
+- una comparación de longitud arbitraria sea ya suficientemente practicable;
+- textos de escala libro queden cubiertos;
+- numeración de párrafos, minimapa, anclajes, índice, diff u otra ayuda concreta
+  sea necesaria;
+- el horizonte `H-80-02` esté completamente cerrado.
+
+Sí puede concluirse que la causa observada en `TH-80-02-02` —pérdida de línea y
+relocalización por una única posición global— queda materialmente reducida por
+`R-80-02-M2`.
+
+## 16.5. Estado resultante
+
+```text
+R-80-02-M2
+→ GREEN técnico
+→ mejora humana material observada
+
+PC-80-02-02
+→ satisfecha en el alcance observado
+
+DR-80-02-03
+→ nueva dificultad residual candidata:
+   orientación estructural en textos largos
+
+CR-80-02 completo
+→ todavía no demostrado universalmente
+
+H-80-02
+→ todavía no cerrable
+```
+
+La siguiente actuación no debe añadir automáticamente numeración de párrafos ni
+otras ayudas. Primero corresponde reducir `DR-80-02-03` y decidir si constituye
+una obligación independiente necesaria para el alcance de `H-80-02`.
