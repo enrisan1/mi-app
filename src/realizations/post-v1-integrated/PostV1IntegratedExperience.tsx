@@ -94,6 +94,10 @@ export function PostV1IntegratedExperience({
     useState("");
   const [secondContributionInput, setSecondContributionInput] =
     useState("");
+  const [
+    transferableCollaborativeAntecedent,
+    setTransferableCollaborativeAntecedent,
+  ] = useState("");
 
   const {
     current,
@@ -376,6 +380,31 @@ export function PostV1IntegratedExperience({
               <p aria-label="Primera contribución">
                 {collaboration.firstContribution.content}
               </p>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setTransferableCollaborativeAntecedent(
+                    `Resultado compartido:
+${collaboration.sharedResult}
+
+Aportación de A:
+${collaboration.firstContribution.content}`,
+                  )
+                }
+              >
+                Preparar antecedente para compartir
+              </button>
+
+              {transferableCollaborativeAntecedent !== "" && (
+                <label>
+                  Antecedente transferible
+                  <textarea
+                    readOnly
+                    value={transferableCollaborativeAntecedent}
+                  />
+                </label>
+              )}
 
               {collaboration.secondContribution === null ? (
                 <>
