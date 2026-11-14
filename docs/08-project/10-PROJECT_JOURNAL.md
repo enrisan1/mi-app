@@ -9825,3 +9825,18 @@ Se aplica el procedimiento Product: compatibilidad → diferencia humana → val
 CI-80-01 justifica valor en conservar una aportación emergente con interrupción suficientemente reducida. CI-80-02 justifica valor en facilitar comparación humana suficientemente simultánea de dos documentos textuales relacionados y cuenta con antecedente empírico directo en CT-LE001-01/OT-CTLE001-001. CI-80-03 justifica valor en separar identidad operativa e identidad autoral elegible. CI-80-04 se reduce: PV-005 ya cubre la autoridad humana sobre incorporación; sobrevive como valor independiente la disponibilidad opcional de apoyo IA diferenciado de la obra.
 
 Se proponen cuatro compromisos candidatos C-PV-80-01…04. Ninguno queda todavía vigente. **Punto de reanudación: HUMAN GATE independiente para cada propuesta de selección.**
+
+
+---
+
+# 14/11/2026 — Aceptación humana de P80-01…04
+
+La persona responsable responde explícitamente ACEPTAR a los cuatro HUMAN GATES de la actuación 83.
+
+Product incorpora como compromisos vigentes `C-PV-80-01…04`: captura inmediata de aportaciones emergentes; comparación humana de documentos relacionados; identidad autoral elegible; y apoyo auxiliar de IA separado de la obra.
+
+La cuarta selección conserva la reducción realizada antes del gate: PV-005 sigue siendo la autoridad normativa sobre determinación humana; el nuevo compromiso no duplica esa obligación y se limita a la existencia opcional de apoyo IA diferenciado de la obra.
+
+No se asigna prioridad entre los cuatro compromisos y no se deriva todavía una realización concreta.
+
+**Punto de continuidad:** Manual 17 debe reaplicarse sobre el nuevo Product vigente para identificar la actuación mínima siguiente.
