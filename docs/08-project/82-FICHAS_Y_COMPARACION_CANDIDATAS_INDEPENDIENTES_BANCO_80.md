@@ -1068,3 +1068,34 @@ Si se desea reducir el trabajo secuencial, puede evaluarse primero cuál de las 
 # 13. Punto de reanudación
 
 > **Aplicar el procedimiento de Product a CI-80-01, CI-80-02, CI-80-03 y CI-80-04, comenzando por justificar o refutar el valor de cada situación dentro de un alcance delimitado, sin convertir la comparación cualitativa en prioridad automática.**
+
+
+# 14. Evaluación Product posterior
+
+La actuación [83](83-EVALUACION_PRODUCT_Y_PROPUESTAS_SELECCION_CANDIDATAS_80.md) aplica el procedimiento de Product a las cuatro candidatas.
+
+Resultado:
+
+```text
+CI-80-01
+→ VALOR JUSTIFICADO
+→ PROPUESTA DE SELECCIÓN
+
+CI-80-02
+→ VALOR JUSTIFICADO
+  con apoyo empírico directo
+→ PROPUESTA DE SELECCIÓN
+
+CI-80-03
+→ VALOR JUSTIFICADO
+→ PROPUESTA DE SELECCIÓN
+
+CI-80-04
+→ REDUCIDA PARCIALMENTE:
+  determinación humana absorbida por PV-005
+→ residuo independiente de apoyo IA separado
+  VALOR JUSTIFICADO
+→ PROPUESTA DE SELECCIÓN REDUCIDA
+```
+
+Las cuatro propuestas permanecen pendientes de HUMAN GATE.
