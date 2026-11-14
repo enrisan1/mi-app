@@ -9708,3 +9708,16 @@ La incompatibilidad interna quedó corregida en 76. El `SecurityError` simulado 
 Se rechazó que todo entorno con JavaScript deba ser soportado aunque niegue persistencia. Se aceptó que la realización actual puede tener como requisito de entorno la disponibilidad efectiva del almacenamiento local que utiliza, mientras no se oculte una fragilidad interna de evolución. La cuota/escritura permanece como carencia sin pérdida material demostrada.
 
 **KGV-07 → SATISFECHO EN EL ALCANCE JUSTIFICADO.** No significa robustez universal, compatibilidad universal, SLA, ausencia total de defectos ni manejo demostrado de cualquier fallo de cuota. Tras esta reducción, KGV-08 queda como único abierto primario; KGV-01 y KGV-09 dependen de él y KGV-10 sigue no ejecutado.
+
+
+---
+
+# 14/11/2026 — Actuación 78, formalización del HUMAN GATE KGV-10
+
+Se formaliza `KGV-10 — gate humano constitutivo` después de la reevaluación de `KGV-08` y de `KGV-01/KGV-09`.
+
+La evidencia primaria `OT-CTLE001-001` demuestra utilidad positiva local en una actividad intelectual real: una aportación producida durante localización reapareció posteriormente, permitió reencontrar los párrafos y evitó repetir la búsqueda según la declaración de la persona. Esa evidencia, junto con los criterios de realidad, sostenibilidad y evolutividad ya satisfechos, permite considerar `KGV-01` satisfecho en alcance justificado. La búsqueda de residuo independiente no identifica ninguna diferencia humana material vigente no absorbida por `KGV-02…08`; `KGV-09` queda satisfecho en alcance justificado.
+
+La actuación 78 reconstruye expresamente qué se acepta y qué no. La aceptación eventual cerrará el ciclo KGV sin convertirlo en clausura absoluta o irreversible del proyecto. El rechazo requerirá identificar la razón concreta de insuficiencia antes de derivar nueva actuación.
+
+No se infiere aceptación de la mera formalización. **KGV-10 permanece PENDIENTE DE DECISIÓN HUMANA.**
