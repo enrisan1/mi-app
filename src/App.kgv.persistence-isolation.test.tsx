@@ -60,6 +60,6 @@ it("descarta sólo post-v1-integrated.state y preserva persistencias independien
   expect(localStorage.getItem("ru2m1.previous")).toBe(previousBefore);
   expect(localStorage.getItem("ru2m1.retained")).toBe(retainedBefore);
   expect(
-    screen.getByRole("textbox", { name: /introduce un texto libre/i }),
+    screen.getByRole("heading", { name: /dónde estás/i }),
   ).toBeInTheDocument();
 });
