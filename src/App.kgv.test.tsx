@@ -340,3 +340,96 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
     );
   });
 });
+
+
+describe("CR-KGV-03 — recuperabilidad operativa mínima ante persistencia no utilizable", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  const INCOMPATIBLE_POST_V1_STATE = JSON.stringify({
+    current: "Trabajo recuperado",
+    stable: {
+      id: "S1",
+      content: "Trabajo recuperado",
+    },
+    published: {
+      id: "P1",
+      sourceStableId: "S1",
+      content: "Trabajo recuperado",
+    },
+    evaluation: {
+      publishedId: "P1",
+      criterion: "Criterio previo",
+      evidence: "Evidencia previa",
+    },
+    collaboration: {
+      sourcePublishedId: "P1",
+      sharedResult: "Trabajo recuperado",
+      secondContribution: null,
+    },
+    artifact: null,
+    received: null,
+  });
+
+  function persistIncompatibleIntegratedState() {
+    localStorage.setItem(
+      "post-v1-integrated.state",
+      INCOMPATIBLE_POST_V1_STATE,
+    );
+  }
+
+  function getOrdinaryRecoveryAction() {
+    return screen.getByRole("button", {
+      name: /(?=.*(?:recuper|restable|reinici|descart|continu))(?=.*(?:estado|trayectoria|datos|trabajo))/i,
+    });
+  }
+
+  it("[T-KGV-06] ofrece una vía ordinaria reconocible cuando una trayectoria persistida resulta incompatible", async () => {
+    const user = userEvent.setup();
+
+    persistIncompatibleIntegratedState();
+    render(<App />);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    );
+
+    expect(getOrdinaryRecoveryAction()).toBeInTheDocument();
+  });
+
+  it("[T-KGV-07] la recuperación ordinaria devuelve App a un estado utilizable y permite una actuación válida", async () => {
+    const user = userEvent.setup();
+
+    persistIncompatibleIntegratedState();
+    render(<App />);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /retomar trayectoria integrada existente/i,
+      }),
+    );
+
+    await user.click(getOrdinaryRecoveryAction());
+
+    const ordinaryInput = screen.getByRole("textbox", {
+      name: /introduce un texto libre/i,
+    });
+
+    await user.type(
+      ordinaryInput,
+      "Trabajo posterior a la recuperación",
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    expect(
+      screen.getByText("Trabajo posterior a la recuperación"),
+    ).toBeInTheDocument();
+  });
+});
