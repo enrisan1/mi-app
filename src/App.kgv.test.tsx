@@ -152,3 +152,191 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
     }
   });
 });
+
+
+describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colaborativo", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
+
+  const SHARED_RESULT =
+    "Cuando una revisión modifica una conclusión anterior, debería conservarse información suficiente para distinguir qué se mantenía antes y qué cambió después.";
+  const CONTRIBUTION_A =
+    "También debería quedar indicado qué evidencia justificó el cambio.";
+  const CONTRIBUTION_B =
+    "La evidencia debería quedar vinculada de forma reconocible con el cambio que justifica.";
+
+  async function constituteOrdinaryCollaborativeAntecedentForA() {
+    const user = userEvent.setup();
+
+    let execution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /introduce un texto libre/i,
+      }),
+      "Antecedente inicial",
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+
+    execution.unmount();
+    execution = render(<App />);
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual/i,
+      }),
+      SHARED_RESULT,
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /^crear$/i,
+      }),
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar con este trabajo/i,
+      }),
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /conservar trabajo actual como referencia estable/i,
+      }),
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /publicar p1 desde s1/i,
+      }),
+    );
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /^criterio$/i,
+      }),
+      "Criterio ordinario",
+    );
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /^evidencia$/i,
+      }),
+      "Evidencia ordinaria",
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /asociar soporte evaluativo/i,
+      }),
+    );
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /contribución de participante a/i,
+      }),
+      CONTRIBUTION_A,
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /añadir a1/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/resultado compartido/i)).toHaveTextContent(
+      SHARED_RESULT,
+    );
+    expect(screen.getByLabelText(/primera contribución/i)).toHaveTextContent(
+      CONTRIBUTION_A,
+    );
+
+    return { user, execution };
+  }
+
+  function getOrdinaryTransferAction() {
+    return screen.getByRole("button", {
+      name: /(?=.*antecedente)(?=.*compart)/i,
+    });
+  }
+
+  function getTransferableAntecedent() {
+    return screen.getByRole("textbox", {
+      name: /(?=.*antecedente)(?=.*(?:entregar|transfer))/i,
+    });
+  }
+
+  it("[T-KGV-04] permite a A constituir ordinariamente un antecedente entregable sin conocer el contrato interno", async () => {
+    const { user } = await constituteOrdinaryCollaborativeAntecedentForA();
+
+    await user.click(getOrdinaryTransferAction());
+
+    const transferable = getTransferableAntecedent();
+
+    expect(transferable).toHaveValue(expect.stringMatching(/\S/));
+  });
+
+  it("[T-KGV-05] una B limpia puede usar sin transformación el antecedente producido ordinariamente por A y continuar", async () => {
+    const { user, execution } =
+      await constituteOrdinaryCollaborativeAntecedentForA();
+
+    await user.click(getOrdinaryTransferAction());
+
+    const transferable = getTransferableAntecedent();
+    const transferredValue = (transferable as HTMLTextAreaElement).value;
+
+    expect(transferredValue.trim()).not.toBe("");
+
+    execution.unmount();
+    localStorage.clear();
+
+    render(<App />);
+
+    fireEvent.change(
+      screen.getByRole("textbox", {
+        name: /antecedente compartido recibido/i,
+      }),
+      { target: { value: transferredValue } },
+    );
+
+    await user.click(
+      screen.getByRole("button", {
+        name: /recibir antecedente compartido/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/resultado compartido/i)).toHaveTextContent(
+      SHARED_RESULT,
+    );
+    expect(screen.getByLabelText(/aportación de a/i)).toHaveTextContent(
+      CONTRIBUTION_A,
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: /qué puedes hacer ahora/i,
+      }),
+    ).toBeInTheDocument();
+
+    await user.type(
+      screen.getByRole("textbox", {
+        name: /aportación actual de b/i,
+      }),
+      CONTRIBUTION_B,
+    );
+    await user.click(
+      screen.getByRole("button", {
+        name: /continuar trabajo compartido/i,
+      }),
+    );
+
+    expect(screen.getByLabelText(/continuación de b/i)).toHaveTextContent(
+      CONTRIBUTION_B,
+    );
+    expect(screen.getByLabelText(/resultado compartido/i)).toHaveTextContent(
+      SHARED_RESULT,
+    );
+    expect(screen.getByLabelText(/aportación de a/i)).toHaveTextContent(
+      CONTRIBUTION_A,
+    );
+  });
+});
