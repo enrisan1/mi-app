@@ -361,3 +361,84 @@ Nueva incertidumbre material, si existe:
 
 No deberá modificarse retrospectivamente el protocolo para acomodarlo al
 resultado observado.
+
+---
+
+# 13. Ejecución parcial — B0 baseline ordinario
+
+**Fecha:** 14/11/2026  
+**Condición:** `B0` completada.  
+**B1:** todavía no ejecutada.
+
+## 13.1. Observación humana registrada
+
+La persona informó que:
+
+- mantuvo ambos textos simultáneamente a la vista;
+- realizó el contraste frase a frase;
+- identificó las cuatro diferencias preparadas;
+- consideró que tres alteraban elementos del plan sin invertir por sí mismas su sentido global;
+- consideró que la diferencia relativa a `Delta` producía un resultado contrario entre ambas versiones;
+- no modificó ningún texto;
+- señaló además que, aunque existiera edición, no sería correcto modificar nada sin disponer de fundamento para saber cuál de las dos formulaciones es la válida;
+- utilizó una hoja externa para anotar cada diferencia encontrada y evitar perderlas durante el contraste.
+
+## 13.2. Observables B0
+
+```text
+O1 — Disponibilidad de referencias
+✔ ambos textos permanecieron visibles y consultables simultáneamente
+
+O2 — Sustitución/relocalización
+✔ no fue necesario sustituir un documento por otro ni volver a localizarlo
+
+O3 — Reconstrucción desde memoria
+✔ no fue necesario depender de memoria para recuperar el contenido del otro texto
+
+O4 — Identidad de cada versión
+✔ no se registró confusión entre las versiones
+
+O5 — Reconocimiento de diferencias reales
+✔ 4/4 diferencias preparadas fueron identificadas
+
+O6 — Determinación humana de pertinencia
+✔ la persona distinguió por sí misma el peso material de las diferencias
+
+O7 — Conclusión comparativa
+✔ pudo formular una conclusión propia sobre el cambio material entre versiones
+```
+
+## 13.3. Resultado provisional de B0
+
+El baseline ordinario resulta más capaz de lo supuesto inicialmente respecto de la mera copresencia:
+
+```text
+B0
+→ ya permite comparación visual frase a frase
+→ ya evita sustitución entre D1 y D2
+→ ya evita reconstrucción desde memoria
+```
+
+Por tanto, la diferencia que B1 deberá demostrar no puede formularse como simple
+"visibilidad simultánea de dos textos".
+
+Sí apareció una dependencia auxiliar durante el uso:
+
+```text
+contraste humano sostenido
+→ necesidad de conservar diferencias ya reconocidas
+→ resolución contingente observada: hoja externa
+```
+
+Esta observación no deriva todavía una nueva capacidad ni autoriza a incorporar
+anotación, edición, diff o almacenamiento de diferencias. Primero debe ejecutarse
+B1 y comprobar si `R-80-02-M1` elimina, conserva o transforma esta dependencia.
+
+## 13.4. Estado del caso
+
+```text
+TH-80-02-01
+B0 → COMPLETADO
+B1 → PENDIENTE
+resultado A/B/C → NO DETERMINADO
+```
