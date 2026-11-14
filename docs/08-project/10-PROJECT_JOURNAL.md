@@ -9680,3 +9680,18 @@ cambio relevante, nueva evidencia, decisión humana u obligación normativa debe
 someterse al Manual antes de abrir actuación. Sólo se crean/actualizan 73, estado
 y bitácora; no se modifican 61/71/72, Product, Vision, metodología, código, tests
 o harness ni se realizan git add, commit o push.
+
+
+---
+
+# 14/11/2026 — Actuación 76, cierre de CR-KGV-03 y aislamiento de persistencias
+
+Se documenta el cierre técnico de `GAP-KGV-03` en [76](76-REDUCCION_KGV_RECUPERABILIDAD_PERSISTENCIA_INCOMPATIBLE.md).
+
+La trayectoria RED partió de un `post-v1-integrated.state` JSON válido pero estructuralmente incompatible. `T-KGV-06` y `T-KGV-07` fallaron inicialmente por `TypeError` al acceder a `collaboration.firstContribution.participant`. La implementación incremental separó dos etapas: primero detección de incompatibilidad y actuación ordinaria `Descartar estado incompatible` con T-KGV-06 verde y T-KGV-07 todavía rojo; después descarte efectivo únicamente de `post-v1-integrated.state` y retorno a App ordinaria, llevando T-KGV-07 a verde.
+
+Gate de regresión: `PostV1IntegratedExperience.test.tsx` 14/14 PASS; `App.test.tsx` 28/28 PASS; typecheck PASS; suite canónica 39 archivos / 350 tests PASS; `App.kgv.test.tsx` 7/7 PASS.
+
+Se ejecutó una prueba efímera específica con `ordinary.materials`, `ru2m1.previous`, `ru2m1.retained` y el estado post-V1 incompatible simultáneamente presentes. Tras el descarte, sólo desapareció `post-v1-integrated.state`; las tres persistencias independientes conservaron exactamente sus valores. La primera versión de esa prueba contenía una expectativa errónea de retorno a estado vacío; se corrigió sin cambiar la condición de aislamiento. Repetición: 40 archivos / 351 tests PASS. Test y workflow temporales retirados.
+
+`CR-KGV-03 → SATISFECHO EN EL ALCANCE CONTRASTADO`. `GAP-KGV-03 → REDUCIDO/CERRADO` para incompatibilidad estructural post-V1. No se afirma recuperación universal, migración universal, tolerancia general a corrupción, almacenamiento denegado o cuota. La reevaluación de `KGV-07` continúa sólo respecto de si `SecurityError`/indisponibilidad completa de almacenamiento constituye obligación independiente de sostenibilidad; cuota/escritura permanece como carencia sin pérdida material demostrada.
