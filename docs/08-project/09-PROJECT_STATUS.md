@@ -7480,3 +7480,43 @@ Manual 17 §13.1
 Se abre [79](79-FORMACION_ESTRATEGICA_POST_KGV_Y_COBERTURA_DECISIONAL.md) como **formación estratégica post-KGV**. La actuación mínima es la cobertura decisional de §13.1.1. No se derivan todavía V2, P6, nuevo Product Value, capacidad, horizonte, Architecture, Realization o Implementation.
 
 Posibles salidas: CONTINUAR ante incertidumbre concreta; CERRAR SIN HORIZONTE; o FORMULAR HORIZONTE. Punto de reanudación: reconstruir perspectivas estratégicas actualmente pertinentes capaces de cambiar materialmente la selección o una salida negativa.
+
+
+# 14/11/2026 — Cierre de G79-FORM-01 y formación post-KGV sin horizonte
+
+La ejecución de [79](79-FORMACION_ESTRATEGICA_POST_KGV_Y_COBERTURA_DECISIONAL.md) completa la cobertura decisional de Manual 17 §13.1.1.
+
+Se contrastaron: Charter; las seis familias de Platform Vision; Product y cierres vigentes; uso humano real; patrimonio e investigaciones previas; contraste externo; y aptitud/deuda técnica en el grado materialmente pertinente. Cada perspectiva fue asociada a una pregunta concreta capaz de cambiar la decisión, cuando tal pregunta podía formularse legítimamente.
+
+Resultado:
+
+```text
+cobertura decisional suficiente
+→ SÍ
+
+candidata post-KGV suficientemente formada
+→ NINGUNA
+
+incertidumbre concreta pendiente
+capaz de cambiar la decisión
+→ NINGUNA
+
+investigación mínima derivada
+→ NINGUNA
+
+G79-FORM-01
+→ COMPLETADO
+
+CF-79
+→ SATISFECHO
+```
+
+Salida de Manual 17 §13.1.3:
+
+```text
+CONTINUAR → NO
+FORMULAR HORIZONTE → NO
+CERRAR SIN HORIZONTE → SÍ
+```
+
+La decisión humana de continuar justificó abrir la formación, pero no sustituye el fundamento positivo independiente exigido para constituir una candidata. El proyecto vuelve a estado estable. No se derivan nuevo horizonte, Product Value, capacidad, Architecture, Realization, Implementation ni backlog.
