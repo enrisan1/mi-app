@@ -7551,3 +7551,30 @@ implementación directa de la primera idea
 ```
 
 El siguiente paso recomendado es construir una matriz de independencia y solapamiento para distinguir situaciones humanas independientes, mecanismos alternativos, agregaciones demasiado amplias, duplicaciones, dependencias y entradas que requieran evidencia antes de comparación Product.
+
+
+# 14/11/2026 — Matriz de independencia y solapamiento del banco 80
+
+La actuación [81](81-MATRIZ_INDEPENDENCIA_Y_SOLAPAMIENTO_BANCO_80.md) reduce las 18 entradas del banco 80 sin establecer prioridad ni selección Product.
+
+Resultado:
+
+```text
+4 candidatas independientes
+→ SH-80-01 / SH-80-02 / SH-80-05 / SH-80-09
+
+7 candidatas condicionadas
+→ SH-80-03 / SH-80-07 / SH-80-08 / SH-80-12
+  + IA-80-A / IA-80-B / IA-80-E
+
+2 mecanismos subordinados
+→ SH-80-06 / SH-80-11
+
+3 familias demasiado amplias
+→ SH-80-04 / SH-80-10 / SH-80-13
+
+2 transversales/dependencias
+→ IA-80-C / IA-80-D
+```
+
+La clasificación es de naturaleza, no de importancia. La prioridad Product permanece NO DECIDIDA. Siguiente actuación: completar las fichas mínimas §13.1.2 de las cuatro candidatas independientes y compararlas cualitativamente antes de someter ninguna a selección.
