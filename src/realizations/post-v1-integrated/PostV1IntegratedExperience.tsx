@@ -385,11 +385,13 @@ export function PostV1IntegratedExperience({
                 type="button"
                 onClick={() =>
                   setTransferableCollaborativeAntecedent(
-                    `Resultado compartido:
-${collaboration.sharedResult}
-
-Aportación de A:
-${collaboration.firstContribution.content}`,
+                    JSON.stringify({
+                      sharedResult: collaboration.sharedResult,
+                      firstContribution: {
+                        participant: "A",
+                        content: collaboration.firstContribution.content,
+                      },
+                    }),
                   )
                 }
               >
