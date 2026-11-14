@@ -42,6 +42,22 @@
    10.1 Situación y valor justificado
    10.2 Compromiso
    10.3 Delimitación
+11. Compromiso post-KGV — C-PV-80-01
+   11.1 Situación y valor justificado
+   11.2 Compromiso
+   11.3 Delimitación
+12. Compromiso post-KGV — C-PV-80-02
+   12.1 Situación y valor justificado
+   12.2 Compromiso
+   12.3 Delimitación
+13. Compromiso post-KGV — C-PV-80-03
+   13.1 Situación y valor justificado
+   13.2 Compromiso
+   13.3 Delimitación
+14. Compromiso post-KGV — C-PV-80-04
+   14.1 Situación y valor justificado
+   14.2 Compromiso
+   14.3 Delimitación
 
 # 1. Propósito
 
@@ -870,3 +886,132 @@ constituye una renumeración automática como PV-007 ni modifica retrospectivame
 los compromisos y cierres del alcance anterior. La delimitación operativa del
 horizonte y la derivación de capacidades corresponden al proceso de convergencia
 posterior a su aceptación estratégica.
+
+
+---
+
+# 11. Compromiso post-KGV — C-PV-80-01
+
+## 11.1 Situación y valor justificado
+
+**C-PV-80-01 — Captura inmediata de aportaciones emergentes**
+
+La situación seleccionada aparece cuando, durante una actividad intelectual, surge una aportación que la persona quiere conservar y el recorrido necesario para registrarla puede obligarla a abandonar innecesariamente el contexto en el que estaba trabajando.
+
+La diferencia humana seleccionada consiste en mantener abierta la posibilidad de conservar suficientemente esa aportación emergente con una interrupción operativa reducida, de modo que la persona no tenga que sacrificar innecesariamente la continuidad de la actividad para evitar perderla.
+
+El valor no depende de que la aportación resulte finalmente útil, correcta o incorporada a una obra. Reside en que la persona pueda decidir conservarla antes de que desaparezca y continuar después su actividad sin una ruptura desproporcionada.
+
+## 11.2 Compromiso
+
+Cuando durante una actividad intelectual aparezca una aportación que la persona quiera conservar, el producto deberá poder hacer practicable su conservación con una interrupción operativa suficientemente reducida para no obligar a abandonar innecesariamente la actividad en curso.
+
+## 11.3 Delimitación
+
+- No prescribe interfaz concreta.
+- No exige clasificación inmediata.
+- No exige IA.
+- No exige capturar desde cualquier aplicación o sistema externo.
+- No garantiza ausencia total de interrupción.
+- No compromete una organización posterior universal.
+- El alcance inicial queda limitado a una aportación breve, conservación fiable, referencia temporal suficiente y posibilidad posterior de recuperar lo capturado.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE el 14/11/2026.
+
+---
+
+# 12. Compromiso post-KGV — C-PV-80-02
+
+## 12.1 Situación y valor justificado
+
+**C-PV-80-02 — Comparación humana de documentos relacionados**
+
+La situación seleccionada aparece cuando una actividad intelectual requiere comparar dos documentos textuales relacionados para reconocer diferencias relevantes y decidir actuaciones posteriores.
+
+La diferencia humana seleccionada consiste en reducir la carga de alternancia y reconstrucción mental que puede producir una comparación secuencial, haciendo practicable un contraste suficientemente simultáneo para que la persona pueda identificar por sí misma las diferencias pertinentes.
+
+Existe además antecedente empírico directo en `CT-LE001-01 / OT-CTLE001-001`, donde una actividad real de comparación de dos versiones fue declarada tediosa y lenta con el procedimiento inicialmente utilizado. Ese antecedente no había derivado un comparador como obligación de `PV-001`, pero sí aporta evidencia humana reutilizable para justificar este valor independiente.
+
+## 12.2 Compromiso
+
+Cuando una actividad requiera reconocer diferencias entre dos documentos textuales relacionados, el producto deberá poder hacer practicable una comparación suficientemente simultánea para que la persona pueda identificar las diferencias pertinentes y decidir las actuaciones posteriores.
+
+## 12.3 Delimitación
+
+- El alcance inicial comprende dos documentos textuales relacionados.
+- La plataforma no decide qué diferencia es importante.
+- No prescribe algoritmo de comparación.
+- No exige comparación semántica automática.
+- No exige merge automático.
+- No exige control de versiones general.
+- No exige historial universal.
+- No exige corrección automática.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE el 14/11/2026.
+
+---
+
+# 13. Compromiso post-KGV — C-PV-80-03
+
+## 13.1 Situación y valor justificado
+
+**C-PV-80-03 — Identidad autoral elegible**
+
+La situación seleccionada aparece cuando una persona utiliza la plataforma mediante una identidad operativa principal, pero quiere presentar o firmar distintas obras mediante identidades autorales o seudónimos distintos.
+
+La diferencia humana seleccionada consiste en que la identidad utilizada para operar en el sistema no determine forzosamente la identidad bajo la que la persona decide presentarse como autora de una obra.
+
+El valor reside en preservar autonomía de autoría, permitir continuidad de identidades creativas diferenciadas y evitar que una persona deba multiplicar artificialmente sus cuentas sólo para utilizar firmas distintas.
+
+## 13.2 Compromiso
+
+El producto deberá poder permitir que una persona mantenga una identidad operativa principal y elija, para una obra o publicación, una identidad autoral reutilizable distinta cuando así lo determine.
+
+## 13.3 Delimitación
+
+- El alcance inicial comprende una identidad operativa principal y cero o más identidades autorales elegibles.
+- La identidad autoral no sustituye necesariamente la identidad interna del sistema.
+- No implica anonimato fuerte.
+- No prescribe modelo de cuentas.
+- No prescribe autenticación.
+- No introduce verificación legal de identidad.
+- No introduce reputación por alias.
+- No introduce delegación de autoría.
+- No determina por sí mismo qué datos internos deben ser públicos.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE el 14/11/2026.
+
+---
+
+# 14. Compromiso post-KGV — C-PV-80-04
+
+## 14.1 Situación y valor justificado
+
+**C-PV-80-04 — Apoyo auxiliar de IA separado de la obra**
+
+La situación seleccionada aparece cuando una persona desarrolla una obra y quiere disponer de aportaciones auxiliares de IA —como ideas, anotaciones, información técnica o cuestiones— sin que esas aportaciones deban convertirse por sí mismas en contenido de la obra.
+
+La evaluación Product redujo expresamente la formulación inicial.
+
+La autoridad humana sobre la decisión de incorporar una aportación a la obra ya queda protegida por `PV-005 — Determinación humana efectiva` cuando esa decisión sigue correspondiendo a la persona.
+
+El valor independiente que permanece consiste en hacer disponible apoyo auxiliar de IA manteniendo una separación funcional entre ese apoyo y la obra constituida.
+
+## 14.2 Compromiso
+
+El producto deberá poder hacer disponible, de forma opcional, apoyo auxiliar de IA asociado a una obra sin que ese apoyo adquiera por sí mismo el estatuto de contenido de la obra.
+
+## 14.3 Delimitación
+
+- El apoyo puede consistir en ideas, anotaciones, información técnica o cuestiones.
+- No prescribe un “archivo espejo” literal.
+- No compromete generación de texto final.
+- No autoriza incorporación automática a la obra.
+- Cuando la incorporación constituya una decisión relevante que siga correspondiendo a la persona, continuará siendo aplicable `PV-005`.
+- No deriva autonomía agéntica.
+- No exige múltiples IA.
+- No exige generación continua.
+- No exige conservar razonamiento interno del modelo.
+- No obliga a conservar indefinidamente todo apoyo auxiliar.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE el 14/11/2026.
