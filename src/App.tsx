@@ -58,13 +58,24 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [constitutedParticipantBContribution, setConstitutedParticipantBContribution] =
     useState<string | null>(null);
 
+  const recoverFromIncompatiblePostV1 = () => {
+    setIntegrationChoice(null);
+  };
+
   if (integrationChoice === "existing") {
-    return <PostV1IntegratedExperience />;
+    return (
+      <PostV1IntegratedExperience
+        onDiscardIncompatibleState={recoverFromIncompatiblePostV1}
+      />
+    );
   }
 
   if (integrationChoice === "current" && availablePostV1Current !== null) {
     return (
-      <PostV1IntegratedExperience initialCurrent={availablePostV1Current} />
+      <PostV1IntegratedExperience
+        initialCurrent={availablePostV1Current}
+        onDiscardIncompatibleState={recoverFromIncompatiblePostV1}
+      />
     );
   }
 
