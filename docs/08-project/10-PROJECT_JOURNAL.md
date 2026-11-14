@@ -9788,3 +9788,16 @@ Se separan cinco propuestas del asistente `IA-80-A…E`: reaparición contextual
 El banco no es backlog. Cada entrada deberá reconstruir situación humana, diferencia, independencia, valor, alcance y relación con cierres vigentes antes de Product o realización.
 
 **Punto de reanudación:** matriz de independencia y solapamiento del banco 80, sin asumir prioridad por numeración.
+
+
+---
+
+# 14/11/2026 — Actuación 81, matriz de independencia y solapamiento
+
+Se reduce el banco 80 mediante una matriz que distingue candidata independiente, candidata condicionada, mecanismo subordinado, familia demasiado amplia y transversal/dependencia.
+
+Sobreviven con independencia suficiente para ficha completa §13.1.2: SH-80-01 captura inmediata de ideas, SH-80-02 comparación simultánea de documentos, SH-80-05 identidad autoral múltiple y SH-80-09 asistencia de IA separada del contenido autoral final.
+
+SH-80-03/07/08/12 e IA-80-A/B/E quedan condicionadas por evidencia o discriminación adicional. SH-80-06/11 quedan como mecanismos. SH-80-04/10/13 deben descomponerse. IA-80-C/D se clasifican como transversales/dependencias.
+
+La matriz no prioriza. **Punto de reanudación:** fichas §13.1.2 de las cuatro candidatas independientes y comparación cualitativa posterior.
