@@ -7417,3 +7417,12 @@ La actuación [76](76-REDUCCION_KGV_RECUPERABILIDAD_PERSISTENCIA_INCOMPATIBLE.md
 `CR-KGV-03` queda **SATISFECHO EN EL ALCANCE CONTRASTADO** para una trayectoria `post-v1-integrated.state` sintácticamente válida pero estructuralmente incompatible. `T-KGV-06` y `T-KGV-07` están verdes; la regresión histórica queda verificada con 14/14 tests de `PostV1IntegratedExperience`, 28/28 de `App`, typecheck PASS y suite canónica 39 archivos / 350 tests PASS. Una prueba efímera adicional confirmó que el descarte elimina sólo `post-v1-integrated.state` y conserva `ordinary.materials`, `ru2m1.previous` y `ru2m1.retained`; con dicha prueba la suite alcanzó 40 archivos / 351 tests PASS.
 
 No se declaran resueltos almacenamiento denegado (`SecurityError`) ni cuota/escritura. La siguiente cuestión de `KGV-07` queda reducida a determinar si la indisponibilidad completa de `localStorage` constituye una obligación independiente necesaria de sostenibilidad o un requisito de entorno legítimamente excluible. La carencia de cuota/escritura permanece sin pérdida material demostrada y no se eleva automáticamente a gap.
+
+
+# 14/11/2026 — Reevaluación de KGV-07 posterior a CR-KGV-03
+
+La actuación [77](77-REEVALUACION_KGV07_SOSTENIBILIDAD_POST_CR_KGV03.md) reevaluó `KGV-07 — sostenibilidad suficiente` después del cierre de `GAP-KGV-03`.
+
+Resultado: `KGV-07 → SATISFECHO EN EL ALCANCE JUSTIFICADO`. La incompatibilidad estructural post-V1 ya dispone de recuperación ordinaria localizada y no destructiva respecto de persistencias independientes. El `SecurityError` por almacenamiento completamente denegado se clasifica como límite del entorno soportado por la realización actual, no como obligación independiente de sostenibilidad: Charter/Vision/Product no exigen compatibilidad universal ni funcionamiento sin la capacidad técnica de persistencia usada por esta realización. La carencia de cuota/escritura permanece sin pérdida material demostrada y no se eleva a gap.
+
+Matriz resultante: KGV-02…KGV-07 satisfechos; KGV-08 permanece como único abierto primario; KGV-01 y KGV-09 quedan abiertos por dependencia; KGV-10 no ejecutado.
