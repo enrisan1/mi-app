@@ -1,6 +1,6 @@
 # Actuación 79 — Formación estratégica post-KGV y cobertura decisional
 
-**Estado:** ABIERTA — cobertura decisional pendiente.
+**Estado:** CERRADA — G79-FORM-01 completado; formación estratégica post-KGV cerrada sin horizonte.
 
 **Fecha:** 14/11/2026.
 
@@ -268,3 +268,414 @@ NUEVA CAPACIDAD
 NUEVA CONSTRUCCIÓN
 → NO DERIVADA
 ```
+
+
+# 13. Ejecución de G79-FORM-01 — cobertura decisional post-KGV
+
+## 13.1 Regla de examen
+
+La cobertura no convierte cada familia de `PLATFORM_VISION` en candidata.
+
+Para que una perspectiva conserve capacidad de cambiar materialmente la decisión actual debe poder formularse una pregunta concreta cuya respuesta pudiera producir al menos una de estas salidas:
+
+```text
+a) candidata suficientemente formada
+b) investigación mínima por incertidumbre decisional
+c) refutación de una suficiencia/cierre vigente
+d) cierre negativo de la perspectiva
+```
+
+Una pregunta meramente general, técnica o prospectiva no cumple esta condición.
+
+## 13.2 Perspectiva P79-01 — finalidad superior del Charter
+
+**Fuente:** PROJECT_CHARTER.
+
+La finalidad superior permanece abierta a evolución:
+
+```text
+producto digital
+real + útil + sostenible + evolutivo
+orientado a ampliar posibilidades humanas
+de trabajo intelectual con información y contenidos
+```
+
+El cierre KGV demuestra suficiencia global en el alcance actual, pero no agota el perímetro superior.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Ha aparecido después del cierre KGV una situación humana concreta de trabajo intelectual con información o contenidos cuyo valor pertenezca al perímetro del Charter y que no quede suficientemente atendida por los compromisos y capacidades ya satisfechos?
+
+**Resultado de cobertura actual:** NO aparece en las fuentes contrastadas una situación nueva de ese tipo.
+
+**Clasificación:** perspectiva legítima, pero sin candidata actual.
+
+## 13.3 Perspectiva P79-02 — evolución de contenidos y estados significativos
+
+**Fuente:** PLATFORM_VISION 4.1.
+
+Antecedentes:
+
+```text
+P1/P2
+→ estados significativos / publicación mínima ejercidos
+
+PV-001…PV-006
+→ satisfacción suficiente
+
+59
+→ sin residuo independiente posterior demostrado
+
+KGV
+→ continuidad/evolutividad suficientes
+```
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe una situación nueva en la que la evolución temporal de un contenido produzca una pérdida humana independiente porque los estados significativos actualmente disponibles no permiten conservar, reconocer o utilizar una referencia necesaria?
+
+**Resultado actual:** ninguna situación nueva de ese tipo identificada.
+
+**Clasificación:** absorbida por cierres vigentes salvo nueva evidencia.
+
+## 13.4 Perspectiva P79-03 — organización, recuperación y enriquecimiento
+
+**Fuente:** PLATFORM_VISION 4.2 + evidencia empírica IOR + actuación 59.
+
+Existe evidencia humana real de:
+
+- multiplicidad distinguible;
+- procedencia;
+- relaciones;
+- pluralidad contextual;
+- recuperación desde indicios;
+- derivación distinguible.
+
+Sin embargo, la evidencia fue reducida expresamente:
+
+```text
+organización / recuperación
+→ absorbidas respecto de nuevo Product
+
+enriquecimiento independiente
+→ reducido
+
+nuevo valor humano independiente
+→ no demostrado
+```
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Ha aparecido después de esos cierres una actividad real en la que materiales ya localizables, inspeccionables y reutilizables sigan produciendo una pérdida independiente por falta de una organización o enriquecimiento posterior?
+
+**Resultado actual:** no se identifica evidencia post-cierre que responda positivamente.
+
+**Clasificación:** perspectiva históricamente examinada; no candidata actual.
+
+## 13.5 Perspectiva P79-04 — relaciones y reutilización
+
+**Fuente:** PLATFORM_VISION 4.3.
+
+Antecedentes:
+
+```text
+C-V1-06 / C-V1-07
+→ satisfechas
+
+Realization integrada
+→ relaciones ejercidas
+
+reutilización pertinente
+→ observada en contexto funcionalmente distinto
+
+59
+→ sin residuo independiente
+```
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe una situación nueva en la que un material o resultado siga disponible y reutilizable, pero la ausencia de una relación adicional concreta impida una actuación humana pertinente no cubierta por los compromisos vigentes?
+
+**Resultado actual:** no se identifica tal situación.
+
+**Clasificación:** cubierta en el alcance vigente; sin candidata.
+
+## 13.6 Perspectiva P79-05 — evaluación crítica y transparencia
+
+**Fuente:** PLATFORM_VISION 4.4.
+
+Antecedentes:
+
+```text
+I31
+→ diferencia de defendibilidad aislada
+
+PV-006
+→ absorción de la diferencia pertinente
+
+Realization de defendibilidad
+→ ejercitada
+
+59
+→ sin residuo independiente
+```
+
+El contraste externo conserva oportunidades relacionadas con procedencia, evidencia verificable e IA, pero el radar no las convierte en necesidades propias.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe una situación humana nueva en la que un resultado siga disponible y utilizable, pero la persona no pueda evaluarlo o defenderlo suficientemente por faltar una base, procedencia o evidencia concreta que no quede ya absorbida por PV-006?
+
+**Resultado actual:** no se identifica nueva evidencia que satisfaga esa condición.
+
+**Clasificación:** perspectiva potencialmente fértil ante nueva evidencia, pero no candidata actualmente.
+
+## 13.7 Perspectiva P79-06 — colaboración, publicación e intercambio
+
+**Fuente:** PLATFORM_VISION 4.5.
+
+Antecedentes:
+
+```text
+P2 / P4 / P5
+→ publicación, colaboración e intercambio mínimos ejercidos
+
+Q05
+→ continuidad colaborativa mínima contrastada
+
+H-POST-01
+→ continuidad contextual entre participantes demostrada
+
+KGV
+→ recepción, constitución/entrega y continuidad colaborativa ordinaria cerradas
+```
+
+Los residuos históricos de mayor escala —más participantes, tiempo real, identidad, permisos, persistencia remota, sincronización— no fueron demostrados como pérdidas humanas independientes.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Ha aparecido una situación colectiva u organizativa real en la que la colaboración mínima actualmente demostrada resulte insuficiente y esa insuficiencia produzca una pérdida humana concreta no reducible a los cierres H-POST/KGV?
+
+**Resultado actual:** no se identifica tal situación en la evidencia vigente.
+
+**Clasificación:** dirección futura legítima, sin candidata actual.
+
+## 13.8 Perspectiva P79-07 — preservación y continuidad de posibilidades pertinentes
+
+**Fuente:** PLATFORM_VISION 4.6.
+
+Antecedentes:
+
+```text
+PV-006
+→ satisfacción suficiente
+
+65/67/68/69
+→ residuos post-lanzamiento corregidos/reducidos
+
+H-POST-01
+→ continuidad contextual cerrada
+
+GAP-KGV-03
+→ recuperabilidad mínima cerrada
+
+KGV-07
+→ sostenibilidad satisfecha
+```
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe nueva evidencia de que una modificación válida del producto destruye una posibilidad todavía pertinente y no absorbida por los cierres anteriores?
+
+**Resultado actual:** no.
+
+**Clasificación:** cubierta; reapertura sólo mediante nueva evidencia causal.
+
+## 13.9 Perspectiva P79-08 — uso humano real
+
+El uso real es una fuente obligatoria cuando pueda cambiar la decisión.
+
+Evidencia vigente:
+
+- `OT-CTLE001-001`: utilidad positiva local;
+- actividad IOR: organización/recuperación ejercidas;
+- contraste post-lanzamiento 64: pérdidas reales detectadas y después corregidas;
+- validaciones humanas de 65/67/68/71/72;
+- KGV-08: utilidad real suficiente en alcance demostrado.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe uso humano posterior al cierre KGV que revele una necesidad o diferencia no cubierta por los cierres actuales?
+
+**Resultado actual:** no existe evidencia post-KGV aportada o documentada de una nueva necesidad de este tipo.
+
+**Clasificación:** fuente decisiva para futura reapertura; actualmente no produce candidata.
+
+## 13.10 Perspectiva P79-09 — patrimonio e investigaciones previas
+
+Se contrastaron V1, post-V1, IOR/RCA, defendibilidad, D-00…D-05, Q04/Q05, H-POST y KGV.
+
+El patrimonio contiene soluciones, realizaciones y resultados potencialmente reutilizables, pero Charter y Manual prohíben convertir su mera existencia en fundamento.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe algún resultado histórico ya establecido cuya aplicabilidad a una situación humana actualmente vigente haya cambiado y produzca ahora una obligación no existente en sus cierres anteriores?
+
+**Resultado actual:** ninguna aplicabilidad nueva identificada.
+
+**Clasificación:** sin candidata derivada.
+
+## 13.11 Perspectiva P79-10 — contraste externo
+
+El panorama externo y `EXTERNAL_RADAR` conservan:
+
+- procedencia;
+- anotación;
+- empaquetado portable;
+- objetos tipados;
+- IA verificable;
+- MCP/local-first y otros patrones.
+
+Pero el radar establece expresamente:
+
+```text
+solución externa disponible
+≠
+problema interno demostrado
+```
+
+y sus líneas cerradas no produjeron nuevo horizonte.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Algún cambio externo posterior revela una diferencia concreta respecto de una necesidad propia ya observada o activa una dependencia externa nueva capaz de invalidar un cierre vigente?
+
+**Resultado actual:** no se identifica tal cambio en las fuentes vigentes.
+
+**Clasificación:** no necesita nueva investigación externa para decidir G79-FORM-01.
+
+## 13.12 Perspectiva P79-11 — aptitud y deuda técnica
+
+La aptitud técnica sólo debe examinarse cuando exista candidata suficientemente formada.
+
+Las deudas conocidas —compatibilidad, cuota, CI, ESLint, README, licencia, automatización, etc.— no son fuentes primarias de horizonte y fueron clasificadas previamente como no bloqueantes salvo nueva pérdida material.
+
+**Pregunta capaz de cambiar la decisión:**
+
+> ¿Existe una candidata humana suficientemente formada cuya selección dependa de resolver previamente una incertidumbre técnica concreta?
+
+**Resultado actual:** no existe candidata humana superviviente; por tanto, esta perspectiva no activa comprobación técnica.
+
+**Clasificación:** omitida justificadamente como fuente primaria.
+
+# 14. Matriz de cobertura decisional G79-FORM-01
+
+| Perspectiva | Pregunta concreta capaz de cambiar decisión | Evidencia actual | Estado |
+| --- | --- | --- | --- |
+| Charter / nueva situación humana | Sí | ninguna situación nueva post-KGV | sin candidata |
+| 4.1 evolución/estados | Sí, si aparece pérdida nueva | ninguna | absorbida |
+| 4.2 organización/recuperación/enriquecimiento | Sí, si nueva actividad demuestra pérdida independiente | evidencia histórica ya reducida | absorbida/reducida |
+| 4.3 relaciones/reutilización | Sí, si relación faltante bloquea actuación nueva | ninguna | cubierta |
+| 4.4 evaluación/transparencia | Sí, si falta base/evidencia no absorbida por PV-006 | ninguna | cubierta salvo nueva evidencia |
+| 4.5 colaboración/publicación | Sí, si contexto colectivo real supera mínimo demostrado | ninguna | dirección futura sin candidata |
+| 4.6 preservación/continuidad | Sí, ante nueva pérdida causal | ninguna | cubierta |
+| uso real | Sí | sin evidencia post-KGV nueva | no activa |
+| patrimonio/investigación previa | Sí, sólo por nueva aplicabilidad | ninguna | no activa |
+| contraste externo | Sí, sólo si activa necesidad propia | ninguna | no activa |
+| aptitud/deuda técnica | Sí, sólo respecto de candidata formada | no hay candidata | no activa |
+
+# 15. Resultado de cobertura decisional
+
+La cobertura exigida por Manual 17 §13.1.1 queda materialmente completada.
+
+No permanece identificada una perspectiva pertinente no contrastada con una pregunta concreta capaz de cambiar la selección o una salida negativa.
+
+Sin embargo, el resultado de la cobertura es negativo respecto de candidatas actuales:
+
+```text
+perspectivas contrastadas
+→ suficientes
+
+candidata post-KGV suficientemente formada
+→ NINGUNA
+
+incertidumbre concreta pendiente
+capaz de cambiar la decisión
+→ NINGUNA
+
+investigación mínima derivada
+→ NINGUNA
+```
+
+La decisión humana de continuar justificó realizar la formación, pero no constituye por sí sola evidencia suficiente para fabricar una candidata.
+
+# 16. Evaluación de CF-79 tras G79-FORM-01
+
+```text
+cobertura decisional suficiente
+→ SÍ
+
+candidatas supervivientes suficientemente formuladas
+→ NINGUNA SUPERVIVIENTE
+
+duplicaciones/solapamientos/posibilidades técnicas
+→ REDUCIDOS mediante cierres previos y este contraste
+
+relaciones entre candidatas
+→ NO APLICA al no sobrevivir candidatas
+
+comprobación concreta pendiente
+capaz de cambiar materialmente la decisión
+→ NINGUNA IDENTIFICADA
+```
+
+Por tanto, el gate de clausura de formación puede resolverse ya sin investigación intermedia.
+
+# 17. Salida de G79-FORM-01
+
+Aplicando Manual 17 §13.1.3:
+
+```text
+CONTINUAR
+→ NO
+
+FORMULAR HORIZONTE
+→ NO
+
+CERRAR SIN HORIZONTE
+→ SÍ
+```
+
+Fundamento:
+
+> La cobertura decisional post-KGV es suficiente, pero ninguna perspectiva actualmente reconocida aporta una candidata o conjunto con fundamento positivo independiente respecto de los cierres vigentes; tampoco queda una comprobación concreta pendiente cuya respuesta pueda cambiar materialmente esta salida.
+
+# 18. Estado resultante de la actuación 79
+
+```text
+G79-FORM-01
+→ COMPLETADO
+
+CF-79
+→ SATISFECHO
+
+FORMACIÓN ESTRATÉGICA POST-KGV
+→ CERRADA SIN HORIZONTE
+
+NUEVO HORIZONTE
+→ NO DERIVADO
+
+NUEVO PRODUCT VALUE
+→ NO DERIVADO
+
+NUEVA CAPACIDAD
+→ NO DERIVADA
+
+NUEVA CONSTRUCCIÓN
+→ NO DERIVADA
+
+ESTADO
+→ ESTABLE
+```
+
+La continuidad futura requerirá nueva evidencia o fundamento positivo concreto capaz de constituir una candidata conforme a Manual 17 §13.1.2.
