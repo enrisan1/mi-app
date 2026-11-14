@@ -135,13 +135,13 @@ describe("R-80-02-M2 — continuidad de posición comparativa", () => {
     const { first, second } = await renderExperience();
     const user = userEvent.setup();
 
-    expect(first).toHaveTextContent(FIRST);
-    expect(second).toHaveTextContent(SECOND);
+    expect(first.textContent).toBe(FIRST);
+    expect(second.textContent).toBe(SECOND);
 
     await user.click(first);
     await user.click(second);
 
-    expect(first).toHaveTextContent(FIRST);
-    expect(second).toHaveTextContent(SECOND);
+    expect(first.textContent).toBe(FIRST);
+    expect(second.textContent).toBe(SECOND);
   });
 });
