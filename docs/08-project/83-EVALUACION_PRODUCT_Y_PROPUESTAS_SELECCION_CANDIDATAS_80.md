@@ -1,6 +1,6 @@
 # Evaluación Product y propuestas de selección de candidatas post-KGV
 
-**Estado:** VALOR EVALUADO — cuatro candidatas con valor justificado en alcance delimitado; propuestas de selección formuladas; HUMAN GATE pendiente.
+**Estado:** CERRADA — cuatro propuestas aceptadas por HUMAN GATE y consolidadas como compromisos Product.
 
 **Fecha:** 14/11/2026.
 
@@ -709,4 +709,64 @@ selección Product
 
 compromiso vigente
 → NO TODAVÍA
+```
+
+
+# 14. Resultado del HUMAN GATE
+
+La persona responsable responde explícitamente:
+
+```text
+P80-01 → ACEPTAR
+P80-02 → ACEPTAR
+P80-03 → ACEPTAR
+P80-04 → ACEPTAR
+```
+
+En consecuencia:
+
+```text
+C-PV-80-01
+→ SELECCIONADO POR PRODUCT
+
+C-PV-80-02
+→ SELECCIONADO POR PRODUCT
+
+C-PV-80-03
+→ SELECCIONADO POR PRODUCT
+
+C-PV-80-04
+→ SELECCIONADO POR PRODUCT
+  EN SU FORMULACIÓN REDUCIDA
+```
+
+Los cuatro compromisos quedan consolidados en `02-PRODUCT.md`.
+
+La aceptación no establece prioridad entre ellos, ni arquitectura, Realization, Implementation, satisfacción ni horizonte automático.
+
+# 15. Estado resultante
+
+```text
+valor Product
+→ JUSTIFICADO 4/4
+
+HUMAN GATE
+→ ACEPTADO 4/4
+
+compromisos Product nuevos
+→ C-PV-80-01
+→ C-PV-80-02
+→ C-PV-80-03
+→ C-PV-80-04
+
+prioridad
+→ NO DECIDIDA
+
+horizonte
+→ NO DERIVADO TODAVÍA
+
+siguiente actuación
+→ reaplicar Manual 17
+  con los cuatro compromisos vigentes
+  y derivar la actuación mínima necesaria
 ```
