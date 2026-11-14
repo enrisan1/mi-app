@@ -7629,3 +7629,30 @@ C-PV-80-04 — Apoyo auxiliar de IA separado de la obra
 ```
 
 No se establece prioridad, arquitectura, implementación ni satisfacción. Los precedentes del proyecto exigen HUMAN GATE antes de consolidar nuevas selecciones Product. Las cuatro decisiones permanecen pendientes e independientes.
+
+
+# 14/11/2026 — HUMAN GATE P80-01…04 aceptado
+
+La persona responsable acepta expresamente las cuatro propuestas de selección Product formuladas en la actuación 83:
+
+```text
+P80-01 → ACEPTAR
+P80-02 → ACEPTAR
+P80-03 → ACEPTAR
+P80-04 → ACEPTAR
+```
+
+Quedan consolidados en `02-PRODUCT.md`:
+
+```text
+C-PV-80-01 — Captura inmediata de aportaciones emergentes
+C-PV-80-02 — Comparación humana de documentos relacionados
+C-PV-80-03 — Identidad autoral elegible
+C-PV-80-04 — Apoyo auxiliar de IA separado de la obra
+```
+
+`C-PV-80-04` se consolida únicamente en su formulación reducida: la determinación humana sobre incorporación permanece absorbida por PV-005; el compromiso nuevo recae sobre la disponibilidad opcional de apoyo IA funcionalmente separado de la obra.
+
+La aceptación no establece prioridad, arquitectura, Realization, Implementation, satisfacción ni horizonte automático.
+
+**Punto de reanudación:** reaplicar el Manual 17 al nuevo Product vigente y derivar la actuación mínima necesaria respecto de los cuatro compromisos aceptados.
