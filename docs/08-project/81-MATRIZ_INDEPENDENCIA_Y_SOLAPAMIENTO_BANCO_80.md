@@ -463,3 +463,27 @@ PRIORIDAD PRODUCT
 SIGUIENTE ACTUACIÓN
 → fichas §13.1.2 de las cuatro candidatas independientes
 ```
+
+
+# 15. Formulación completa posterior
+
+La actuación [82](82-FICHAS_Y_COMPARACION_CANDIDATAS_INDEPENDIENTES_BANCO_80.md) completa las fichas §13.1.2 y la comparación cualitativa de las cuatro candidatas independientes.
+
+Resultado:
+
+```text
+CI-80-01 ← SH-80-01
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-02 ← SH-80-02
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-03 ← SH-80-05
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-04 ← SH-80-09
+→ APTA PARA COMPARACIÓN FINAL
+  CON RESERVA DE ABSORCIÓN PARCIAL
+```
+
+No se deriva una ganadora ni prioridad automática. La siguiente decisión pertenece al procedimiento de Product.
