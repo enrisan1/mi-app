@@ -9747,3 +9747,29 @@ Sí concurren las cuatro condiciones de Manual 17 §13.1: Product vigente satisf
 Se abre [79](79-FORMACION_ESTRATEGICA_POST_KGV_Y_COBERTURA_DECISIONAL.md). La actuación mínima derivada es **§13.1.1 — cobertura decisional**. Debe contrastar Charter + Platform Vision + Product + estado/cierres, y sólo cuando pueda cambiar la decisión incorporar uso real, patrimonio/investigaciones previas, contraste externo y aptitud técnica.
 
 No se formula todavía horizonte. Las únicas salidas legítimas de la formación son CONTINUAR por incertidumbre concreta, CERRAR SIN HORIZONTE o FORMULAR HORIZONTE.
+
+
+---
+
+# 14/11/2026 — Ejecución de G79-FORM-01 y cierre sin horizonte
+
+Se ejecutó la cobertura decisional post-KGV prevista en la actuación 79.
+
+La revisión no convirtió las familias de Platform Vision en candidatas automáticas. Se contrastó para cada una si existía una pregunta concreta capaz de cambiar la selección estratégica o una salida negativa. El resultado fue:
+
+- evolución/estados: cubierta por P1/P2 y cierres posteriores, sin pérdida nueva;
+- organización/recuperación/enriquecimiento: evidencia humana real existente, pero ya absorbida/reducida por IOR y 59;
+- relaciones/reutilización: ejercidas y sin residuo independiente;
+- evaluación/transparencia: defendibilidad aislada y absorbida por PV-006;
+- colaboración/publicación: mínimos ejercidos y continuidad post-HPOST/KGV cerrada, sin contexto colectivo nuevo que demuest pérdida independiente;
+- preservación/continuidad: cubierta por PV-006, correcciones post-lanzamiento, H-POST y KGV;
+- uso real: sin evidencia post-KGV nueva;
+- patrimonio/investigaciones: sin nueva aplicabilidad que genere obligación;
+- contraste externo: ninguna oportunidad externa activa una necesidad propia nueva;
+- aptitud/deuda técnica: no activa porque no existe candidata humana formada.
+
+No sobrevivió ninguna candidata y no quedó comprobación concreta pendiente capaz de cambiar materialmente la decisión.
+
+**G79-FORM-01 → COMPLETADO. CF-79 → SATISFECHO. FORMACIÓN ESTRATÉGICA POST-KGV → CERRADA SIN HORIZONTE.**
+
+No se deriva nueva construcción ni investigación. El proyecto retorna a estado estable hasta que aparezca nueva evidencia o fundamento positivo concreto capaz de formar una candidata conforme a Manual 17 §13.1.2.
