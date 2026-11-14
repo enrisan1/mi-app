@@ -273,7 +273,7 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
 
     const transferable = getTransferableAntecedent();
 
-    expect(transferable).toHaveValue(expect.stringMatching(/\S/));
+    expect((transferable as HTMLTextAreaElement).value.trim()).not.toBe("");
   });
 
   it("[T-KGV-05] una B limpia puede usar sin transformación el antecedente producido ordinariamente por A y continuar", async () => {
