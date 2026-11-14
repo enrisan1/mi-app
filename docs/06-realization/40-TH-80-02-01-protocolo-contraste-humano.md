@@ -442,3 +442,43 @@ B0 → COMPLETADO
 B1 → PENDIENTE
 resultado A/B/C → NO DETERMINADO
 ```
+
+
+## 13.5. Limitación material observada en B0
+
+La simultaneidad conseguida en B0 estuvo condicionada por la corta extensión de
+D1 y D2.
+
+La persona señaló que ambos textos podían mantenerse simultáneamente visibles
+porque cabían en la superficie disponible aun estando dispuestos uno encima del
+otro. Para textos de mayor extensión, esa propiedad podría desaparecer y obligar
+a desplazamiento, relocalización o memoria parcial.
+
+Por tanto, la evidencia de B0 debe delimitarse así:
+
+```text
+B0 con textos breves
+→ copresencia visual simultánea observada
+
+B0 con textos más extensos
+→ suficiencia simultánea NO demostrada
+```
+
+La posible disposición lado a lado se conserva únicamente como hipótesis de
+mecanismo. No se deriva todavía como requisito ni como solución, porque la
+necesidad que debe demostrarse primero es independiente de una geometría de
+interfaz concreta:
+
+```text
+necesidad candidata
+→ mantener ambos textos suficientemente accesibles durante el contraste
+
+mecanismo posible
+→ lado a lado
+→ NO seleccionado todavía
+```
+
+Esta limitación no invalida TH-80-02-01. El caso debe completar B1 con los mismos
+textos para mantener el contraste controlado, pero cualquier resultado positivo
+quedará limitado al alcance de textos breves. Una eventual ampliación a textos
+más extensos requerirá un caso posterior independiente.
