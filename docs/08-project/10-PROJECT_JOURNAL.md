@@ -9801,3 +9801,16 @@ Sobreviven con independencia suficiente para ficha completa §13.1.2: SH-80-01 c
 SH-80-03/07/08/12 e IA-80-A/B/E quedan condicionadas por evidencia o discriminación adicional. SH-80-06/11 quedan como mecanismos. SH-80-04/10/13 deben descomponerse. IA-80-C/D se clasifican como transversales/dependencias.
 
 La matriz no prioriza. **Punto de reanudación:** fichas §13.1.2 de las cuatro candidatas independientes y comparación cualitativa posterior.
+
+
+---
+
+# 14/11/2026 — Actuación 82, fichas §13.1.2 y comparación cualitativa
+
+Se completan los doce campos obligatorios del Manual 17 §13.1.2 para CI-80-01/02/03/04.
+
+CI-80-02 cuenta con antecedente empírico directo: CT-LE001-01/OT-CTLE001-001 surgió de una actividad real de comparación de dos versiones, donde el método inicial fue declarado tedioso y lento. Ese antecedente no había derivado un comparador como obligación de PV-001, pero sí aporta evidencia reutilizable para evaluar ahora la comparación como situación Product independiente.
+
+CI-80-04 se contrasta con I29, donde distinguir aportación propia, externa o asistida pudo ser pertinente y quedó absorbido por PV-006 en aquellos casos. La nueva candidata sólo sobrevivirá como valor independiente si la separación deliberada entre obra y apoyo IA produce una diferencia adicional y no mera procedencia.
+
+Las cuatro candidatas permanecen aptas para comparación final; ninguna queda absorbida ni seleccionada. No se deriva investigación obligatoria previa. **Punto de reanudación:** aplicar el procedimiento de Product a las cuatro para justificar/refutar valor y decidir selección delimitada.
