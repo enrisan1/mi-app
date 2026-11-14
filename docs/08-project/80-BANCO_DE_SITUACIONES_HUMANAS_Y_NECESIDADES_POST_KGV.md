@@ -711,3 +711,44 @@ La primera operación recomendada es construir una **matriz de independencia y s
 - y entradas que requieren evidencia antes de poder compararse.
 
 Sólo después deberá decidirse qué candidata merece evaluación Product primero.
+
+
+# 10. Reducción posterior — matriz de independencia y solapamiento
+
+La actuación [81](81-MATRIZ_INDEPENDENCIA_Y_SOLAPAMIENTO_BANCO_80.md) reduce el banco completo.
+
+Resultado predominante:
+
+```text
+CANDIDATAS INDEPENDIENTES
+→ SH-80-01
+→ SH-80-02
+→ SH-80-05
+→ SH-80-09
+
+CANDIDATAS CONDICIONADAS
+→ SH-80-03
+→ SH-80-07
+→ SH-80-08
+→ SH-80-12
+→ IA-80-A
+→ IA-80-B
+→ IA-80-E
+
+MECANISMOS SUBORDINADOS
+→ SH-80-06
+→ SH-80-11
+
+FAMILIAS A DESCOMPONER
+→ SH-80-04
+→ SH-80-10
+→ SH-80-13
+
+TRANSVERSALES / DEPENDENCIAS
+→ IA-80-C
+→ IA-80-D
+```
+
+Esta clasificación no establece importancia ni prioridad.
+
+El siguiente paso deja de ser construir una matriz y pasa a ser completar las fichas §13.1.2 de las cuatro candidatas independientes antes de cualquier selección Product.
