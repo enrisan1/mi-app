@@ -7578,3 +7578,29 @@ Resultado:
 ```
 
 La clasificación es de naturaleza, no de importancia. La prioridad Product permanece NO DECIDIDA. Siguiente actuación: completar las fichas mínimas §13.1.2 de las cuatro candidatas independientes y compararlas cualitativamente antes de someter ninguna a selección.
+
+
+# 14/11/2026 — Fichas completas §13.1.2 y comparación cualitativa de candidatas
+
+La actuación [82](82-FICHAS_Y_COMPARACION_CANDIDATAS_INDEPENDIENTES_BANCO_80.md) completa las fichas mínimas del Manual 17 §13.1.2 para las cuatro candidatas independientes derivadas del banco 80 y las compara sin puntuaciones artificiales.
+
+Resultado:
+
+```text
+CI-80-01 — captura inmediata
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-02 — comparación simultánea
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-03 — identidad autoral múltiple
+→ APTA PARA COMPARACIÓN FINAL
+
+CI-80-04 — separación IA/obra
+→ APTA PARA COMPARACIÓN FINAL
+  con reserva de absorción parcial por PV-005/PV-006
+```
+
+No se identifica investigación obligatoria previa que impida compararlas en Product. CI-80-02 conserva la evidencia empírica histórica más fuerte; CI-80-01 presenta la diferencia más simple y fácilmente acotable; CI-80-03 presenta novedad semántica alta pero evidencia ejercida débil; CI-80-04 tiene mayor acoplamiento con determinación humana/procedencia y exige reducción especialmente cuidadosa.
+
+La comparación no establece prioridad ni ganadora. Siguiente paso: procedimiento de Product para justificar/refutar valor y decidir selección individual.
