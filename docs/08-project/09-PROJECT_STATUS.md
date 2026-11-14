@@ -7455,3 +7455,28 @@ SIGUIENTE ACTUACIÓN ESTRATÉGICAMENTE DERIVADA → NINGUNA
 ```
 
 El proyecto queda en estado estable respecto de este ciclo. No se declara clausura absoluta o irreversible, Platform Vision universalmente realizada, producto perfecto, utilidad universal, robustez universal ni imposibilidad de evolución futura. Cualquier continuidad posterior requerirá fundamento positivo suficiente y nueva derivación conforme a la metodología vigente.
+
+
+# 14/11/2026 — Apertura de actuación 79: formación estratégica post-KGV
+
+Tras el cierre humano del ciclo global KGV, la persona responsable expresa fundamento humano explícito para continuar evolucionando el proyecto y solicita reaplicar el Manual 17.
+
+La reaplicación separa las ramas ordinarias del nodo post-clausura:
+
+```text
+Rama A
+→ sin obligación Product pendiente,
+  dependencia necesaria,
+  criterio o hito pendiente demostrado
+
+Rama B
+→ sin nueva evidencia de pérdida
+  que contradiga los cierres vigentes
+
+Manual 17 §13.1
+→ APLICABLE
+```
+
+Se abre [79](79-FORMACION_ESTRATEGICA_POST_KGV_Y_COBERTURA_DECISIONAL.md) como **formación estratégica post-KGV**. La actuación mínima es la cobertura decisional de §13.1.1. No se derivan todavía V2, P6, nuevo Product Value, capacidad, horizonte, Architecture, Realization o Implementation.
+
+Posibles salidas: CONTINUAR ante incertidumbre concreta; CERRAR SIN HORIZONTE; o FORMULAR HORIZONTE. Punto de reanudación: reconstruir perspectivas estratégicas actualmente pertinentes capaces de cambiar materialmente la selección o una salida negativa.
