@@ -9814,3 +9814,14 @@ CI-80-02 cuenta con antecedente empírico directo: CT-LE001-01/OT-CTLE001-001 su
 CI-80-04 se contrasta con I29, donde distinguir aportación propia, externa o asistida pudo ser pertinente y quedó absorbido por PV-006 en aquellos casos. La nueva candidata sólo sobrevivirá como valor independiente si la separación deliberada entre obra y apoyo IA produce una diferencia adicional y no mera procedencia.
 
 Las cuatro candidatas permanecen aptas para comparación final; ninguna queda absorbida ni seleccionada. No se deriva investigación obligatoria previa. **Punto de reanudación:** aplicar el procedimiento de Product a las cuatro para justificar/refutar valor y decidir selección delimitada.
+
+
+---
+
+# 14/11/2026 — Actuación 83, Product evalúa CI-80-01…04
+
+Se aplica el procedimiento Product: compatibilidad → diferencia humana → valor → alcance → propuesta de selección.
+
+CI-80-01 justifica valor en conservar una aportación emergente con interrupción suficientemente reducida. CI-80-02 justifica valor en facilitar comparación humana suficientemente simultánea de dos documentos textuales relacionados y cuenta con antecedente empírico directo en CT-LE001-01/OT-CTLE001-001. CI-80-03 justifica valor en separar identidad operativa e identidad autoral elegible. CI-80-04 se reduce: PV-005 ya cubre la autoridad humana sobre incorporación; sobrevive como valor independiente la disponibilidad opcional de apoyo IA diferenciado de la obra.
+
+Se proponen cuatro compromisos candidatos C-PV-80-01…04. Ninguno queda todavía vigente. **Punto de reanudación: HUMAN GATE independiente para cada propuesta de selección.**
