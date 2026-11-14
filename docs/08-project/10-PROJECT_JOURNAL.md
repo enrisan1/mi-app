@@ -9695,3 +9695,16 @@ Gate de regresión: `PostV1IntegratedExperience.test.tsx` 14/14 PASS; `App.test.
 Se ejecutó una prueba efímera específica con `ordinary.materials`, `ru2m1.previous`, `ru2m1.retained` y el estado post-V1 incompatible simultáneamente presentes. Tras el descarte, sólo desapareció `post-v1-integrated.state`; las tres persistencias independientes conservaron exactamente sus valores. La primera versión de esa prueba contenía una expectativa errónea de retorno a estado vacío; se corrigió sin cambiar la condición de aislamiento. Repetición: 40 archivos / 351 tests PASS. Test y workflow temporales retirados.
 
 `CR-KGV-03 → SATISFECHO EN EL ALCANCE CONTRASTADO`. `GAP-KGV-03 → REDUCIDO/CERRADO` para incompatibilidad estructural post-V1. No se afirma recuperación universal, migración universal, tolerancia general a corrupción, almacenamiento denegado o cuota. La reevaluación de `KGV-07` continúa sólo respecto de si `SecurityError`/indisponibilidad completa de almacenamiento constituye obligación independiente de sostenibilidad; cuota/escritura permanece como carencia sin pérdida material demostrada.
+
+
+---
+
+# 14/11/2026 — Actuación 77, reevaluación y satisfacción de KGV-07
+
+Después de documentar el cierre de `CR-KGV-03`, se reevaluó la sostenibilidad frente a los hallazgos restantes de 62. Se distinguió entre incompatibilidad interna de estado persistido y denegación completa de almacenamiento por el entorno.
+
+La incompatibilidad interna quedó corregida en 76. El `SecurityError` simulado demuestra que la realización actual no funciona cuando el navegador niega `localStorage`, pero no demuestra una obligación normativa de soportar cualquier política de navegador. Charter exige producto sostenible y evolutivo, pero no compatibilidad universal; Platform Vision y Product no prescriben mecanismo técnico de persistencia. 62 ya delimitó expresamente el lanzamiento a navegador funcional y no generalizó a todas las políticas de almacenamiento.
+
+Se rechazó que todo entorno con JavaScript deba ser soportado aunque niegue persistencia. Se aceptó que la realización actual puede tener como requisito de entorno la disponibilidad efectiva del almacenamiento local que utiliza, mientras no se oculte una fragilidad interna de evolución. La cuota/escritura permanece como carencia sin pérdida material demostrada.
+
+**KGV-07 → SATISFECHO EN EL ALCANCE JUSTIFICADO.** No significa robustez universal, compatibilidad universal, SLA, ausencia total de defectos ni manejo demostrado de cualquier fallo de cuota. Tras esta reducción, KGV-08 queda como único abierto primario; KGV-01 y KGV-09 dependen de él y KGV-10 sigue no ejecutado.
