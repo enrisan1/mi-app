@@ -9773,3 +9773,18 @@ No sobrevivió ninguna candidata y no quedó comprobación concreta pendiente ca
 **G79-FORM-01 → COMPLETADO. CF-79 → SATISFECHO. FORMACIÓN ESTRATÉGICA POST-KGV → CERRADA SIN HORIZONTE.**
 
 No se deriva nueva construcción ni investigación. El proyecto retorna a estado estable hasta que aparezca nueva evidencia o fundamento positivo concreto capaz de formar una candidata conforme a Manual 17 §13.1.2.
+
+
+---
+
+# 14/11/2026 — Actuación 80, banco de situaciones humanas y necesidades post-KGV
+
+La persona responsable aporta nuevas situaciones y necesidades después del cierre negativo de 79. Se conserva la secuencia metodológica: el cierre de 79 fue correcto con la evidencia entonces disponible; la nueva aportación constituye fundamento positivo posterior y no una refutación retroactiva.
+
+Se crea [80](80-BANCO_DE_SITUACIONES_HUMANAS_Y_NECESIDADES_POST_KGV.md) con trece entradas normalizadas `SH-80-01…SH-80-13`: captura inmediata de ideas; comparación simultánea de documentos; clasificación asistida; delegación administrativa a IA; identidad y alias; superficie contextual de acciones; undo/redo por actividad; interfaz minimalista espacial; archivo espejo de IA; espacio operativo para agentes; cursor por mirada; estructura documental por pestañas/secciones; y sistema multiformato individual/colaborativo.
+
+Se separan cinco propuestas del asistente `IA-80-A…E`: reaparición contextual de información; sesiones de trabajo recuperables; procedencia visible de transformaciones; cola de revisión de capturas; y portabilidad contextual de obras.
+
+El banco no es backlog. Cada entrada deberá reconstruir situación humana, diferencia, independencia, valor, alcance y relación con cierres vigentes antes de Product o realización.
+
+**Punto de reanudación:** matriz de independencia y solapamiento del banco 80, sin asumir prioridad por numeración.
