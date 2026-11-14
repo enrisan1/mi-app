@@ -94,6 +94,7 @@ export function PostV1IntegratedExperience({
     useState("");
   const [secondContributionInput, setSecondContributionInput] =
     useState("");
+  const [recoveryRequested, setRecoveryRequested] = useState(false);
   const [
     transferableCollaborativeAntecedent,
     setTransferableCollaborativeAntecedent,
@@ -108,6 +109,31 @@ export function PostV1IntegratedExperience({
     artifact,
     received,
   } = state;
+
+  const hasIncompatibleCollaboration =
+    collaboration !== null &&
+    (collaboration.firstContribution == null ||
+      !hasContent(collaboration.firstContribution.content));
+
+  if (hasIncompatibleCollaboration) {
+    return (
+      <main>
+        <h1>Integración post-V1</h1>
+        <p role="alert">
+          La trayectoria integrada guardada contiene un estado incompatible.
+        </p>
+        <button
+          type="button"
+          onClick={() => setRecoveryRequested(true)}
+        >
+          Descartar estado incompatible
+        </button>
+        {recoveryRequested && (
+          <p role="status">Recuperación todavía no aplicada.</p>
+        )}
+      </main>
+    );
+  }
 
   return (
     <main>
