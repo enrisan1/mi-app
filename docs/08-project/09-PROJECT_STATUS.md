@@ -7520,3 +7520,34 @@ CERRAR SIN HORIZONTE → SÍ
 ```
 
 La decisión humana de continuar justificó abrir la formación, pero no sustituye el fundamento positivo independiente exigido para constituir una candidata. El proyecto vuelve a estado estable. No se derivan nuevo horizonte, Product Value, capacidad, Architecture, Realization, Implementation ni backlog.
+
+
+# 14/11/2026 — Nuevo fundamento positivo post-79: banco de situaciones humanas
+
+Después del cierre de la actuación 79 sin horizonte, la persona responsable aporta un conjunto nuevo de situaciones humanas, necesidades, intuiciones y mecanismos candidatos.
+
+Se crea [80](80-BANCO_DE_SITUACIONES_HUMANAS_Y_NECESIDADES_POST_KGV.md) para conservarlos sin convertirlos automáticamente en backlog, Product, horizonte o Implementation.
+
+El documento normaliza la lista como `SH-80-01…SH-80-13` y separa además cinco propuestas del asistente `IA-80-A…IA-80-E`, que no poseen la misma autoridad ni estatuto.
+
+Resultado estratégico:
+
+```text
+79
+→ permanece históricamente correcto
+  para el estado anterior
+
+nueva evidencia/fundamento humano
+→ APARECIDO
+
+estado estable anterior
+→ deja de ser punto de continuidad vigente
+
+siguiente actuación
+→ reducción estratégica del banco 80
+
+implementación directa de la primera idea
+→ NO derivada
+```
+
+El siguiente paso recomendado es construir una matriz de independencia y solapamiento para distinguir situaciones humanas independientes, mecanismos alternativos, agregaciones demasiado amplias, duplicaciones, dependencias y entradas que requieran evidencia antes de comparación Product.
