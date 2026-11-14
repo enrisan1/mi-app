@@ -481,3 +481,146 @@ Resultado A/B/C:
 Limitaciones:
 Nueva propiedad mínima, si procede:
 ```
+
+
+---
+
+# 15. Ejecución del baseline extenso y resultado
+
+**Fecha:** 14/11/2026  
+**Condición ejecutada:** baseline ordinario con D1-L y D2-L.  
+**Estado:** completado.
+
+## 15.1. Observación humana registrada
+
+La persona informó que:
+
+- D1-L y D2-L ya no podían mantenerse simultáneamente visibles;
+- fue necesario desplazar la página de forma constante para realizar el contraste;
+- la longitud de los textos hacía fácil perder el renglón y el punto exacto que se
+  estaba comparando;
+- recuperar la posición introducía dificultad y ralentización;
+- el procedimiento resultó engorroso;
+- la propia mecánica de relocalización hacía más probable cometer errores durante
+  la comparación;
+- la persona consideró que este modo de comparación no debía aceptarse como
+  suficiente para textos de esta extensión.
+
+La persona añadió como proyección que, con textos aproximadamente el doble de
+largos, la tarea podría llegar a resultar impracticable. Esta última afirmación
+se registra como **hipótesis derivada**, no como hecho observado en este caso.
+
+## 15.2. Observables
+
+```text
+O1 — continuidad de referencia
+✘ no se mantuvo de forma estable entre fragmentos correspondientes
+
+O2 — relocalización repetida
+✔ apareció: fue necesario desplazar repetidamente la página para recuperar
+  fragmentos de D1-L y D2-L
+
+O3 — dependencia de memoria
+△ apareció de forma auxiliar al tener que retener el fragmento mientras se
+  localizaba el correspondiente; no se cuantifica su intensidad
+
+O4 — pérdida de posición
+✔ apareció de forma material: era fácil perder el renglón y el lugar exacto
+
+O5 — identidad de versión
+✔ no se registró confusión explícita entre D1-L y D2-L
+
+O6 — diferencias reales
+○ no se utiliza este caso para cuantificar cobertura de diferencias; el fenómeno
+  discriminante observado fue operativo
+
+O7 — pertinencia humana
+✔ se conservó: el sistema no determinó qué diferencias eran relevantes
+
+O8 — apoyo externo
+○ no es el fenómeno principal de este caso; la pérdida apareció antes en la
+  propia navegación y correspondencia entre fragmentos
+```
+
+## 15.3. Atribución
+
+La dificultad observada no se explica mejor por complejidad semántica:
+
+- D1-L y D2-L mantienen estructura paralela;
+- el problema descrito fue localizar y conservar la correspondencia espacial;
+- la pérdida apareció precisamente porque ambos fragmentos no podían mantenerse
+  simultáneamente accesibles.
+
+Por tanto, el fenómeno queda atribuido dentro del alcance observado a:
+
+```text
+separación espacial de fragmentos correspondientes
++
+desplazamiento repetido
++
+pérdida de posición
+↓
+pérdida de continuidad comparativa
+```
+
+## 15.4. Resultado de CS-80-02-02
+
+Las condiciones de `CS-80-02-02` quedan satisfechas dentro del caso observado:
+
+1. no fue posible mantener suficientemente accesibles ambos fragmentos;
+2. apareció relocalización repetida y pérdida de posición;
+3. la dificultad estuvo relacionada con la separación espacial;
+4. la pertinencia siguió siendo decisión humana;
+5. no apareció una explicación alternativa más fuerte basada sólo en la
+   complejidad del contenido.
+
+Resultado:
+
+```text
+TH-80-02-02
+→ B — PÉRDIDA MATERIAL DEMOSTRADA
+
+F-80-02-LONG-01
+✔ observado
+
+H-TH-80-02-02
+✔ sostenida dentro del caso observado
+```
+
+## 15.5. Propiedad mínima pendiente
+
+La evidencia no justifica todavía una solución concreta de interfaz.
+
+La propiedad mínima que emerge es:
+
+`PC-80-02-02 — Continuidad de correspondencia entre fragmentos comparados`
+
+> Durante el contraste de dos textos relacionados que no pueden mantenerse
+> enteros simultáneamente visibles, la persona puede mantener o recuperar de
+> forma suficientemente directa la correspondencia entre los fragmentos que está
+> comparando, sin relocalización repetida ni pérdida material de posición.
+
+Esta propiedad no prescribe:
+
+- disposición lado a lado;
+- scroll sincronizado;
+- anclajes;
+- resaltado;
+- diff automático;
+- edición;
+- ni navegación automática.
+
+## 15.6. Consecuencia metodológica
+
+```text
+pérdida material demostrada
+↓
+PC-80-02-02 reducida
+↓
+siguiente paso
+→ derivar el mecanismo realizativo mínimo capaz de satisfacerla
+  sin sobreconstrucción
+```
+
+No se modifica todavía `ComparisonExperience`, `App.tsx`, Product ni
+Architecture.
