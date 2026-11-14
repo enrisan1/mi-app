@@ -247,7 +247,7 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
     expect(screen.getByLabelText(/resultado compartido/i)).toHaveTextContent(
       SHARED_RESULT,
     );
-    expect(screen.getByLabelText(/primera contribución/i)).toHaveTextContent(
+    expect(screen.getByLabelText(/^primera contribución$/i)).toHaveTextContent(
       CONTRIBUTION_A,
     );
 
