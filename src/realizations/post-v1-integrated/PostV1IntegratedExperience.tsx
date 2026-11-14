@@ -67,10 +67,12 @@ function hasContent(value: string): boolean {
 
 type PostV1IntegratedExperienceProps = {
   initialCurrent?: string;
+  onDiscardIncompatibleState?: () => void;
 };
 
 export function PostV1IntegratedExperience({
   initialCurrent,
+  onDiscardIncompatibleState,
 }: PostV1IntegratedExperienceProps) {
   const initialState: PostV1IntegratedState =
     initialCurrent !== undefined && hasContent(initialCurrent)
@@ -94,7 +96,6 @@ export function PostV1IntegratedExperience({
     useState("");
   const [secondContributionInput, setSecondContributionInput] =
     useState("");
-  const [recoveryRequested, setRecoveryRequested] = useState(false);
   const [
     transferableCollaborativeAntecedent,
     setTransferableCollaborativeAntecedent,
@@ -124,13 +125,13 @@ export function PostV1IntegratedExperience({
         </p>
         <button
           type="button"
-          onClick={() => setRecoveryRequested(true)}
+          onClick={() => {
+            localStorage.removeItem("post-v1-integrated.state");
+            onDiscardIncompatibleState?.();
+          }}
         >
           Descartar estado incompatible
         </button>
-        {recoveryRequested && (
-          <p role="status">Recuperación todavía no aplicada.</p>
-        )}
       </main>
     );
   }
