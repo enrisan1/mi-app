@@ -977,3 +977,56 @@ Gate siguiente:
 M1-B
 → autorizado para implementación
 ~~~
+
+
+---
+
+# 23. Validación técnica de M1-B
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/realizations/ai-support/SeparatedAiSupportExperience.test.tsx
+~~~
+
+Resultado final:
+
+~~~text
+Test Files  1 passed (1)
+Tests       6 passed (6)
+~~~
+
+Por tanto:
+
+~~~text
+M1-B
+→ GREEN 6/6
+→ testigo técnicamente validado
+~~~
+
+## Estado técnico consolidado
+
+Las dos suites han sido ejecutadas y comunicadas por separado:
+
+~~~text
+M1-A
+→ 5/5 GREEN
+
+M1-B
+→ 6/6 GREEN
+
+propiedades automatizadas
+→ 11/11 satisfechas
+  en ejecuciones separadas
+~~~
+
+Esto demuestra la frontera funcional prevista, pero no todavía que esa frontera
+produzca una diferencia humana material.
+
+Siguiente gate:
+
+~~~text
+TH-80-04-01
+→ PENDIENTE
+→ contraste humano directo M1-A vs M1-B
+~~~
