@@ -9840,3 +9840,58 @@ La cuarta selección conserva la reducción realizada antes del gate: PV-005 sig
 No se asigna prioridad entre los cuatro compromisos y no se deriva todavía una realización concreta.
 
 **Punto de continuidad:** Manual 17 debe reaplicarse sobre el nuevo Product vigente para identificar la actuación mínima siguiente.
+
+
+---
+
+# 17/11/2026 — Reaplicación global del Manual 17 tras R-80-04-M1
+
+Se reaplicó el Manual 17 al mapa global después del cierre de
+`OB-80-NEXT-03`.
+
+Resultado:
+
+~~~text
+C-PV-80-01
+→ realizabilidad mínima demostrada
+
+C-PV-80-02
+→ suficientemente realizado
+
+C-PV-80-03
+→ realizabilidad mínima demostrada
+
+C-PV-80-04
+→ realizabilidad mínima demostrada
+
+Rama A
+→ sin obligación pendiente derivada
+
+Rama B
+→ E-80-EM-01 conservada
+→ sin independencia suficiente para actuación propia
+
+GATE-NH-01
+→ no abierto
+
+siguiente actuación automática
+→ ninguna
+
+siguiente actuación estratégicamente derivada
+→ ninguna
+
+nuevo horizonte
+→ no derivado
+
+estado
+→ ESTABLE SIN NUEVA ACTUACIÓN ABIERTA
+~~~
+
+La evidencia `E-80-EM-01` afina `SH-80-04`: delegar trabajo a IA no debe
+confundirse con eliminar esfuerzo creativo valioso. No se abre investigación
+longitudinal porque no existe todavía una decisión estratégica vigente cuya
+resolución dependa de demostrar esa causalidad.
+
+**Punto de reanudación:** sólo reabrir continuidad ante nueva evidencia concreta,
+una obligación Product pendiente o una situación suficientemente discriminable
+capaz de cambiar una decisión estratégica.
