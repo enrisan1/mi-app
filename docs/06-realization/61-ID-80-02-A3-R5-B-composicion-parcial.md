@@ -140,3 +140,167 @@ R5-B
 R5-C
 → condicionado al resultado humano de R5-B
 ```
+
+
+---
+
+# 8. Contraste humano
+
+**Fecha:** 16/11/2026
+
+Se ejecutó el caso controlado completo.
+
+## 8.1. Secuencia observada
+
+1. B comienza no editable.
+2. `Componer parcialmente en B` habilita edición explícita sólo en B.
+3. La persona transforma B hasta:
+
+```text
+El plazo será de ocho días y deberá notificarse por escrito.
+```
+
+4. A permanece intacto.
+5. Las marcas de diferencia permanecen.
+6. `Finalizar composición` devuelve B a modo no editable.
+7. Tras recargar y repetir, `Cancelar composición` restaura exactamente:
+
+```text
+El plazo será de ocho días.
+```
+
+## 8.2. Interpretación de las marcas
+
+La persistencia de marcas no constituye por sí sola un fallo.
+
+El resultado deliberado mantiene una diferencia real:
+
+```text
+A → cinco días
+B → ocho días
+```
+
+Por tanto, el diff debe seguir mostrando discrepancia mientras la persona
+conserve intencionalmente `ocho días`.
+
+El criterio relevante es:
+
+```text
+diferencia deliberadamente conservada
+→ debe permanecer visible
+
+contenido ya incorporado desde A
+→ no debe seguir apareciendo como discrepancia independiente
+```
+
+La prueba humana confirma que la composición parcial puede alcanzarse sin
+sustituir el chunk completo.
+
+---
+
+# 9. Resultado de R5-B
+
+Quedan observados:
+
+```text
+B inicialmente protegido
+→ sí
+
+activación explícita de edición
+→ sí
+
+A intacto
+→ sí
+
+conservación parcial de B
+→ sí
+
+incorporación parcial desde A
+→ sí
+
+resultado mixto A+B
+→ sí
+
+finalización explícita
+→ sí
+
+cancelación reversible
+→ sí
+```
+
+Resultado:
+
+```text
+R5-B
+→ SUFICIENCIA MATERIAL observada en el caso controlado
+```
+
+La edición local dentro del contexto comparativo permite construir una tercera
+versión deliberada por la persona sin generación automática del sistema.
+
+---
+
+# 10. Consecuencia para R5-C
+
+R5-C proponía un mecanismo más amplio:
+
+```text
+selección arbitraria de fragmento fuente
++
+destino libre en cualquier posición
+```
+
+El caso que justificó abrir R5-B ya puede resolverse con un mecanismo más simple:
+
+```text
+A visible
++
+B editable localmente
++
+persona compone
++
+diff recomputado
+```
+
+Por tanto, en este punto:
+
+```text
+R5-C
+→ NO JUSTIFICADO todavía
+```
+
+No debe construirse selección/destino libre sólo porque sea técnicamente posible.
+
+Sólo deberá reabrirse si aparece una situación humana independiente que no pueda
+resolverse razonablemente mediante edición local en el documento destino.
+
+---
+
+# 11. Modelo de actuación resultante
+
+El conjunto mínimo actualmente demostrado queda:
+
+```text
+mantener ambos
+→ permitido por no ejecutar
+
+A → B
+→ demostrado
+
+B → A
+→ demostrado
+
+composición parcial
+→ demostrada mediante edición humana local
+
+validación
+→ diff recomputado
+
+reversión
+→ demostrada en los testigos
+
+destino libre arbitrario
+→ no necesario por ahora
+```
+
+Esto evita convertir una posibilidad técnica en una obligación de producto.
