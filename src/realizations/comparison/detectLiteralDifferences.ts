@@ -5,7 +5,7 @@ export type LiteralDetection = {
 };
 
 function tokenize(text: string) {
-  return text.split(/(\s+)/).filter(Boolean);
+  return text.match(/\S+/g) ?? [];
 }
 
 function longestCommonSubsequence(a: string[], b: string[]) {
@@ -59,8 +59,8 @@ export function detectLiteralDifferences(
   let index = 1;
 
   const pushDifference = (aEnd: number, bEnd: number) => {
-    const sourceA = a.slice(aStart, aEnd).join("");
-    const sourceB = b.slice(bStart, bEnd).join("");
+    const sourceA = a.slice(aStart, aEnd).join(" ");
+    const sourceB = b.slice(bStart, bEnd).join(" ");
 
     if (sourceA !== "" || sourceB !== "") {
       detections.push({
