@@ -366,3 +366,45 @@ primera actuación propuesta
 ```
 
 La apertura de R-80-04-M1 requiere aceptación humana de OB-80-NEXT-03.
+
+
+---
+
+# 15. HUMAN GATE
+
+**Fecha:** 16/11/2026
+
+La persona responsable solicita decidir entre aceptación o rechazo de
+`OB-80-NEXT-03` y autoriza abrir la primera actuación si resulta aceptada.
+
+La evaluación estratégica establece:
+
+```text
+OB-80-NEXT-03
+→ ACEPTADA como siguiente obligación
+
+R-80-04-M1
+→ AUTORIZADA su apertura
+```
+
+Fundamento:
+
+- `C-PV-80-04` está seleccionado por Product;
+- es el único compromiso post-KGV sin suficiencia realizativa propia demostrada;
+- existe patrimonio parcial de separación de apoyo, pero no de apoyo realmente IA;
+- la obligación distingue estructura, procedencia IA y valor humano;
+- el alcance es finito, reversible y verificable;
+- no exige todavía API en producción, agentes, generación continua ni edición automática.
+
+## Resultado
+
+```text
+siguiente compromiso activo
+→ C-PV-80-04
+
+siguiente obligación
+→ OB-80-NEXT-03 — ACEPTADA
+
+primera actuación
+→ R-80-04-M1 — ABIERTA
+```
