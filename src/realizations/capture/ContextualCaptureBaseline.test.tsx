@@ -133,4 +133,42 @@ describe("R-80-01-M1-A — baseline de captura con cambio de contexto", () => {
       screen.getByRole("textbox", { name: /^contenido de trabajo$/i }),
     ).toHaveValue(workingText);
   });
+  it("[T-80-01-A05] recuperar posteriormente la idea exige abandonar de nuevo la actividad", async () => {
+    const Baseline = await loadBaseline();
+    const user = userEvent.setup();
+
+    render(<Baseline />);
+
+    await user.type(
+      screen.getByRole("textbox", { name: /^contenido de trabajo$/i }),
+      "Trabajo principal.",
+    );
+
+    await user.click(
+      screen.getByRole("button", { name: /^ir a capturar una idea$/i }),
+    );
+    await user.type(
+      screen.getByRole("textbox", { name: /^idea a conservar$/i }),
+      "Idea guardada para después.",
+    );
+    await user.click(screen.getByRole("button", { name: /^guardar idea$/i }));
+    await user.click(
+      screen.getByRole("button", { name: /^volver a la actividad$/i }),
+    );
+
+    expect(screen.queryByText("Idea guardada para después.")).not.toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: /^ir a capturas guardadas$/i }),
+    );
+
+    expect(
+      screen.queryByRole("region", { name: /^actividad principal$/i }),
+    ).not.toBeInTheDocument();
+
+    expect(
+      screen.getByRole("region", { name: /^capturas guardadas$/i }),
+    ).toHaveTextContent("Idea guardada para después.");
+  });
+
 });
