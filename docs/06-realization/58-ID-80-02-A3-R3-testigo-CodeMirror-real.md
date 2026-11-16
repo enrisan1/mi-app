@@ -328,3 +328,162 @@ La siguiente pregunta ya no es técnica:
 > `TH-80-02-05` y `TH-80-02-06`?
 
 Ese contraste humano debe hacerse antes de seleccionar definitivamente CodeMirror.
+
+
+---
+
+# 12. Contraste humano final de orientación y utilidad de controles
+
+**Fecha:** 16/11/2026
+
+La persona confirma:
+
+- `Coordinado: anterior A+B` funciona correctamente;
+- `Coordinado: siguiente A+B` funciona correctamente;
+- la sensación de “no saber dónde estoy” al avanzar por documentos extensos se
+  reduce considerablemente;
+- la navegación nativa sobre A parece recorrer cambios, pero sin una indicación
+  explícita de qué diferencia corresponde a cada pulsación aporta poca utilidad
+  práctica como interfaz final;
+- el testigo actual no ofrece todavía una acción visible para aplicar cambios.
+
+## 12.1. Resultado sobre PC-80-02-06
+
+La evidencia humana cambia respecto de M7:
+
+```text
+M7
+→ ordinal sin localización
+→ C — INSUFICIENTE
+
+CodeMirror + navegación coordinada + contexto
+→ localiza el cambio real
+→ conserva correspondencia A/B
+→ reduce considerablemente la desorientación
+```
+
+En este alcance, el mecanismo satisface materialmente la necesidad investigada de
+orientación comparativa.
+
+Resultado:
+
+```text
+PC-80-02-06
+→ SUFICIENCIA MATERIAL observada en el alcance del testigo
+```
+
+Esto no equivale todavía a selección definitiva de CodeMirror para el producto.
+
+## 12.2. Papel de la navegación nativa
+
+Los controles:
+
+```text
+Nativo: anterior en A
+Nativo: siguiente en A
+```
+
+han cumplido una función diagnóstica:
+
+- demostrar que la biblioteca dispone de navegación real entre chunks;
+- verificar el mecanismo base `goToPreviousChunk/goToNextChunk`.
+
+No se justifican por ahora como interfaz final porque:
+
+- sólo actúan sobre un lado;
+- no explicitan suficientemente qué cambio está activo;
+- son materialmente inferiores al adaptador coordinado A+B para el problema humano observado.
+
+Por tanto:
+
+```text
+navegación nativa A
+→ mecanismo base útil
+→ NO seleccionada como interacción final
+```
+
+## 12.3. Aplicación de cambios
+
+La ausencia de controles de cambio no es un fallo de esta validación de orientación.
+
+El testigo R3 se delimitó deliberadamente a:
+
+```text
+F1 detectar
++
+representar
++
+navegar/alinear
+
+sin ejecutar F4
+```
+
+La REA previa ya mostró que `@codemirror/merge` dispone de mecanismos de
+ejecución por chunk:
+
+- `revertControls` en `MergeView`;
+- `acceptChunk`;
+- `rejectChunk` en vista unificada.
+
+Pero esos mecanismos no se activaron en R3 para no mezclar:
+
+```text
+orientación
+≠
+decisión
+≠
+ejecución
+```
+
+La observación humana justifica ahora investigar F4 como fase separada.
+
+---
+
+# 13. Resultado consolidado de R3
+
+```text
+detección presentable
+→ suficiente en los casos ensayados
+
+rangos A/B
+→ verificables
+
+navegación coordinada
+→ funcional
+
+alineación/correspondencia
+→ funcional
+
+contexto estructural
+→ conservado
+
+desorientación humana
+→ reducida considerablemente
+
+PC-80-02-06
+→ SUFICIENCIA MATERIAL en este alcance
+
+navegación nativa A
+→ útil como mecanismo base
+→ no útil como interfaz final
+
+F4 — aplicación de cambios
+→ NO evaluada todavía
+→ siguiente incertidumbre separada
+```
+
+Se deriva como siguiente actuación candidata:
+
+`ID-80-02-A3-R4 — evaluar ejecución controlada de cambios por chunk con CodeMirror`.
+
+R4 deberá verificar que una persona puede:
+
+1. seleccionar o activar un cambio identificado;
+2. decidir explícitamente aplicar/revertir/rechazar la operación correspondiente;
+3. ejecutar sólo el chunk elegido;
+4. mantener separadas detección, juicio, decisión y ejecución;
+5. ver el resultado recomputado inmediatamente;
+6. deshacer la operación cuando proceda.
+
+No debe interpretarse la disponibilidad técnica de `revert/accept/reject` como
+autorización automática de cambios.
