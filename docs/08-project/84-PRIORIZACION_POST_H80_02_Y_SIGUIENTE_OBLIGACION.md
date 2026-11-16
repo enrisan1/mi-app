@@ -336,3 +336,50 @@ C-PV-80-04
 ```
 
 Esta propuesta debe aceptarse antes de abrir la realización.
+
+
+---
+
+# 11. HUMAN GATE
+
+**Fecha:** 16/11/2026
+
+La persona responsable acepta explícitamente:
+
+```text
+OB-80-NEXT-01
+→ ACEPTADA como siguiente obligación
+
+R-80-01-M1
+→ AUTORIZADA su apertura
+```
+
+Esto autoriza:
+
+- tratar `C-PV-80-01` como siguiente vertical activa;
+- abrir el testigo mínimo de captura contextual;
+- derivar criterios y pruebas para esa actuación.
+
+No autoriza todavía:
+
+- integración en `App.tsx`;
+- arquitectura definitiva;
+- inbox universal;
+- clasificación;
+- IA;
+- captura multimodal;
+- modificación automática de contenido;
+- consolidación de Product más allá de `C-PV-80-01`.
+
+## Resultado
+
+```text
+siguiente compromiso activo
+→ C-PV-80-01
+
+siguiente obligación
+→ OB-80-NEXT-01 — ACEPTADA
+
+primera actuación
+→ R-80-01-M1 — ABIERTA
+```
