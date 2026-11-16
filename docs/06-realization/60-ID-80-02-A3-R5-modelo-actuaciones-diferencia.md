@@ -245,3 +245,116 @@ incorporación en destino libre
 siguiente actuación
 → R5-A: testigo simétrico B → A
 ```
+
+
+---
+
+# 10. Resultado R5-A — simetría B → A
+
+**Fecha:** 16/11/2026
+
+## 10.1. Validación automática
+
+Se ejecutó:
+
+```text
+npx vitest run src/realizations/comparison/CodeMirrorChunkExecution.test.ts
+```
+
+Resultado:
+
+```text
+Test Files  1 passed (1)
+Tests       9 passed (9)
+```
+
+Los cuatro tests nuevos de R5-A comprobaron:
+
+- aplicación exclusiva del chunk elegido de B sobre A;
+- ausencia de modificación sin chunk válido;
+- snapshot y restauración de A;
+- preservación intacta de B durante B → A.
+
+## 10.2. Contraste humano
+
+Secuencia observada:
+
+1. navegación a un chunk;
+2. A y B permanecen sin cambios;
+3. acción explícita `Aplicar chunk activo B → A`;
+4. desaparece sólo esa diferencia;
+5. A adopta el contenido correspondiente de B;
+6. las demás diferencias permanecen;
+7. `Deshacer última aplicación` restaura A;
+8. reaparece exactamente la diferencia aplicada.
+
+Resultado:
+
+```text
+B → A
+→ SUFICIENCIA MATERIAL observada en el alcance del testigo
+```
+
+La simetría básica queda por tanto demostrada:
+
+```text
+A → B
+→ comprobado
+
+B → A
+→ comprobado
+
+navegar
+→ no modifica
+
+deshacer
+→ funciona en ambas direcciones
+```
+
+---
+
+# 11. Derivación de R5-B
+
+La simetría no resuelve todavía el caso en que la persona no quiere sustituir
+todo un rango por el otro, sino conservar parte del destino e incorporar sólo
+una parte de la fuente.
+
+R5-B queda definido como:
+
+```text
+composición parcial dentro de una correspondencia detectada
+```
+
+Pregunta:
+
+> ¿Puede la persona construir deliberadamente un resultado mixto a partir de A
+> y B dentro del contexto del chunk, sin que el sistema elija por ella qué
+> conservar ni qué incorporar?
+
+Ejemplo canónico:
+
+```text
+A:
+El plazo será de cinco días y deberá notificarse por escrito.
+
+B:
+El plazo será de ocho días.
+
+decisión:
+conservar "ocho días"
++
+incorporar "y deberá notificarse por escrito"
+
+resultado:
+El plazo será de ocho días y deberá notificarse por escrito.
+```
+
+R5-B no autoriza todavía:
+
+- selección arbitraria fuera del chunk;
+- destino libre en cualquier posición del documento;
+- generación automática de una tercera versión;
+- integración definitiva de edición.
+
+La siguiente actuación debe buscar el mecanismo mínimo suficiente para esta
+composición local.
