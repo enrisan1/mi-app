@@ -48,6 +48,12 @@ function renderExperience(Experience: ComponentType<Props>) {
   );
 }
 
+function expectSupportVisible(element: HTMLElement) {
+  for (const fragment of AI_SUPPORT_EVIDENCE.support.split("\n\n")) {
+    expect(element).toHaveTextContent(fragment);
+  }
+}
+
 afterEach(() => {
   cleanup();
   localStorage.clear();
@@ -74,9 +80,9 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
 
     renderExperience(Experience);
 
-    expect(
+    expectSupportVisible(
       screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i }),
-    ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
+    );
 
     const provenance = screen.getByRole("region", {
       name: /^procedencia del apoyo ia$/i,
@@ -99,9 +105,9 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
       AI_SUPPORT_EVIDENCE.support,
     );
 
-    expect(
+    expectSupportVisible(
       screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i }),
-    ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
+    );
   });
 
   it("[T-80-04-B04] editar la obra no exige editar ni elimina el apoyo", async () => {
@@ -116,9 +122,9 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     await user.type(work, "Nueva versión decidida por la persona.");
 
     expect(work).toHaveValue("Nueva versión decidida por la persona.");
-    expect(
+    expectSupportVisible(
       screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i }),
-    ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
+    );
   });
 
   it("[T-80-04-B05] conserva por separado obra y apoyo tras una nueva ejecución", async () => {
@@ -139,9 +145,9 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
       screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
     ).toHaveValue("Obra persistida sin incorporar el apoyo.");
 
-    expect(
+    expectSupportVisible(
       screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i }),
-    ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
+    );
 
     expect(
       (
@@ -168,9 +174,9 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     expect(work).toHaveValue(
       AI_SUPPORT_EVIDENCE.work + " Continuación propia.",
     );
-    expect(work).not.toHaveValue(
-      expect.stringContaining(AI_SUPPORT_EVIDENCE.support),
+    expect((work as HTMLTextAreaElement).value).not.toContain(
+      AI_SUPPORT_EVIDENCE.support,
     );
-    expect(support).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
+    expectSupportVisible(support);
   });
 });
