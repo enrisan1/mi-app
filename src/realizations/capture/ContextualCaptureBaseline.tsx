@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type View = "work" | "capture";
+type View = "work" | "capture" | "captures";
 
 export function ContextualCaptureBaseline() {
   const [view, setView] = useState<View>("work");
@@ -43,6 +43,25 @@ export function ContextualCaptureBaseline() {
     );
   }
 
+  if (view === "captures") {
+    return (
+      <section aria-label="Capturas guardadas">
+        <h1>Capturas guardadas</h1>
+
+        {savedIdea !== null ? (
+          <p>{savedIdea}</p>
+        ) : (
+          <p>No hay capturas guardadas.</p>
+        )}
+
+        <button type="button" onClick={() => setView("work")}>
+          Volver a la actividad
+        </button>
+      </section>
+    );
+  }
+
+
   return (
     <section aria-label="Actividad principal">
       <h1>Actividad principal</h1>
@@ -58,6 +77,12 @@ export function ContextualCaptureBaseline() {
       <button type="button" onClick={() => setView("capture")}>
         Ir a capturar una idea
       </button>
+
+      {savedIdea !== null && (
+        <button type="button" onClick={() => setView("captures")}>
+          Ir a capturas guardadas
+        </button>
+      )}
     </section>
   );
 }
