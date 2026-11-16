@@ -571,3 +571,116 @@ Estado:
 TH-80-03-01
 → PENDIENTE
 ~~~
+
+
+---
+
+# 18. Cierre de TH-80-03-01 — contraste humano
+
+Tras comparar ambos recorridos, la persona responsable establece:
+
+~~~text
+M1-B
+→ materialmente valioso frente a M1-A
+~~~
+
+La diferencia observada es:
+
+~~~text
+M1-A
+→ identidad operativa = firma obligatoria
+→ todas las obras quedan firmadas como Usuario principal
+
+M1-B
+→ identidad operativa permanece estable
+→ la persona elige Alias A o Alias B por obra
+→ una misma identidad autoral puede reutilizarse
+~~~
+
+La persona considera materialmente valioso poder mantener una única identidad
+operativa y, simultáneamente, elegir y reutilizar identidades autorales distintas
+para obras diferentes.
+
+## Resultado humano
+
+~~~text
+O-80-03-M1-01
+→ SATISFECHO
+
+O-80-03-M1-02
+→ SATISFECHO
+
+O-80-03-M1-03
+→ SATISFECHO
+
+O-80-03-M1-04
+→ SATISFECHO
+
+O-80-03-M1-05
+→ SATISFECHO
+
+O-80-03-M1-06
+→ SATISFECHO
+
+O-80-03-M1-07
+→ SATISFECHO
+
+O-80-03-M1-08
+→ SATISFECHO
+~~~
+
+## Estado de TH-80-03-01
+
+~~~text
+TH-80-03-01
+→ POSITIVO
+→ CERRADO en el alcance observado
+~~~
+
+---
+
+# 19. Resultado de R-80-03-M1
+
+La evidencia disponible queda:
+
+~~~text
+M1-A
+→ 3/3 GREEN
+
+M1-B
+→ 8/8 GREEN
+
+TH-80-03-01
+→ POSITIVO
+~~~
+
+Por tanto, en el alcance del testigo:
+
+~~~text
+R-80-03-M1
+→ SUFICIENCIA MATERIAL OBSERVADA
+~~~
+
+Esto demuestra que, en el caso ejercido:
+
+- la identidad operativa puede permanecer estable;
+- existen identidades autorales distinguibles y reutilizables;
+- la persona puede elegir explícitamente autoría por obra;
+- distintas obras pueden usar identidades autorales distintas;
+- una misma identidad autoral puede reutilizarse;
+- la elección autoral no modifica la identidad operativa;
+- la elección autoral no modifica automáticamente el contenido de la obra.
+
+No demuestra todavía:
+
+- sistema general de cuentas;
+- autenticación;
+- identidad legal;
+- anonimato fuerte;
+- reputación por alias;
+- permisos;
+- colaboración;
+- delegación de autoría;
+- publicación pública real;
+- política definitiva de privacidad;
+- arquitectura definitiva de identidad.
