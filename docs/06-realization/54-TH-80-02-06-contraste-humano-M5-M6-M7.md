@@ -95,3 +95,73 @@ Este contraste no evalúa todavía:
 - edición;
 - relevancia;
 - ni decisión.
+
+
+---
+
+# 8. Ejecución humana
+
+**Fecha:** 16/11/2026
+
+## 8.1. Observaciones
+
+La persona informa:
+
+- `Diferencia n de N` no modifica materialmente la sensación de localización;
+- sigue siendo necesario buscar manualmente dónde está la diferencia activa;
+- un control anterior/siguiente que sólo cambie el ordinal no aporta valor suficiente;
+- sería útil que la activación señalase o llevase a la localización de la diferencia;
+- posicionar ambos paneles automáticamente en los fragmentos correspondientes se
+  considera una mejora importante.
+
+Además se observaron problemas del detector literal actual:
+
+- aparecen marcadas como diferencias palabras o restos de palabras iguales;
+- existen diferencias que no quedan marcadas;
+- se observó al menos un caso en el que `tres` en D1 no aparecía marcado;
+- se observó al menos un caso en el que se marcaba `dos` dentro de `todos`
+  como diferencia no significativa.
+
+## 8.2. Resultado
+
+```text
+TH-80-02-06
+→ C — INSUFICIENTE respecto a PC-80-02-06
+
+M7
+→ informa del ordinal
+→ no restaura orientación
+→ no reduce búsqueda manual
+```
+
+La hipótesis de que una referencia ordinal discreta basta para resolver la pérdida
+de orientación queda refutada en este alcance.
+
+## 8.3. Incertidumbre adicional abierta
+
+La prueba revela además una incertidumbre anterior a la navegación:
+
+`ID-80-02-A2 — calidad del mecanismo de detección/alineación`.
+
+El detector literal experimental actual presenta errores observables de segmentación
+y omisión. Por tanto, no debe tratarse como detector suficientemente fiable para
+seguir optimizando la interfaz alrededor de su salida.
+
+---
+
+# 9. Consecuencia
+
+No se justifica derivar inmediatamente otro testigo local de navegación sobre el
+detector actual.
+
+Antes debe evaluarse si mecanismos de comparación ya maduros pueden proporcionar:
+
+- detección/alineación más fiable;
+- marcado de cambios;
+- copresencia lateral;
+- navegación entre cambios;
+- recuperación de correspondencia;
+- y, cuando proceda, aplicación o transferencia controlada de cambios.
+
+La siguiente actuación recomendada es una investigación comparativa de soluciones
+existentes y sus mecanismos antes de continuar construyendo componentes propios.
