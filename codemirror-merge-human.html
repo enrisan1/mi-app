@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID-80-02-A3 — Testigo CodeMirror Merge</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 1rem;
+        font-family: system-ui, sans-serif;
+      }
+
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .notes {
+        max-width: 80rem;
+      }
+
+      #codemirror-merge-root {
+        border: 1px solid currentColor;
+      }
+
+      #codemirror-merge-root .cm-mergeView {
+        height: 34rem;
+        overflow: auto;
+      }
+
+      #codemirror-merge-root .cm-editor {
+        min-width: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>ID-80-02-A3 — Testigo aislado CodeMirror Merge 6.12.3</h1>
+
+      <div class="notes">
+        <p>
+          La navegación nativa actúa sobre el editor A. La navegación coordinada
+          usa los rangos del mismo Chunk para pedir que A y B revelen sus
+          posiciones correspondientes.
+        </p>
+        <p>
+          Observa también si las líneas sin cambios recuperan alineación después
+          de bloques de distinta longitud y si los cambios problemáticos quedan
+          marcados de forma comprensible.
+        </p>
+      </div>
+
+      <div class="controls">
+        <button id="native-previous" type="button">Nativo: anterior en A</button>
+        <button id="native-next" type="button">Nativo: siguiente en A</button>
+        <button id="coordinated-previous" type="button">
+          Coordinado: anterior A+B
+        </button>
+        <button id="coordinated-next" type="button">
+          Coordinado: siguiente A+B
+        </button>
+      </div>
+
+      <p id="codemirror-merge-status" aria-live="polite"></p>
+      <div id="codemirror-merge-root"></div>
+    </main>
+
+    <script
+      type="module"
+      src="/src/realizations/comparison/CodeMirrorMergeHuman.harness.ts"
+    ></script>
+  </body>
+</html>
