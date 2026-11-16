@@ -533,3 +533,348 @@ registrar una evidencia concreta de procedencia IA
 ~~~
 
 sin crear todavía los componentes de producción.
+
+
+---
+
+# 14. Diseño realizativo definitivo de M1-A
+
+Archivo previsto de producción:
+
+~~~text
+src/realizations/ai-support/AiSupportBaseline.tsx
+~~~
+
+Entrada controlada:
+
+~~~text
+work
+support
+evidenceId
+system
+model
+~~~
+
+Todas las entradas proceden del fixture experimental asociado a
+`E-IA-80-04-M1-01`.
+
+Contrato observable:
+
+~~~text
+obra O
++
+[APOYO IA]
++
+apoyo X
+
+→ una única superficie editable
+
+procedencia IA
+→ visible por separado como información
+→ no cambia el hecho de que X forme parte
+  del mismo valor funcional de la obra
+~~~
+
+M1-A debe conservar tanto O como X al volver a ejecutarse. No puede perder apoyo
+ni recibir una versión degradada.
+
+Su limitación constitutiva es sólo:
+
+~~~text
+obra
+y
+apoyo etiquetado
+
+→ mismo estado funcional editable
+~~~
+
+---
+
+# 15. Diseño realizativo definitivo de M1-B
+
+Archivo previsto de producción:
+
+~~~text
+src/realizations/ai-support/SeparatedAiSupportExperience.tsx
+~~~
+
+Entrada controlada:
+
+~~~text
+work
+support
+evidenceId
+system
+model
+~~~
+
+Debe recibir exactamente los mismos valores que M1-A.
+
+Contrato observable:
+
+~~~text
+obra O
+→ estado editable propio
+
+apoyo X
+→ estado auxiliar propio
+→ asociado a O
+→ consultable
+→ procedencia IA visible
+
+editar O
+↛ editar X
+
+consultar X
+↛ incorporar X a O
+
+volver a ejecutar
+→ O y X siguen recuperables
+→ X no aparece dentro del valor de O
+~~~
+
+No se prescribe:
+
+- panel lateral;
+- modal;
+- pestaña;
+- color;
+- icono;
+- operación de promoción;
+- proveedor IA;
+- API;
+- SDK;
+- almacenamiento concreto.
+
+La separación exigida es funcional y observable, no gráfica.
+
+---
+
+# 16. Observables definitivos
+
+## O-80-04-M1-01 — obra identificable
+
+La persona puede reconocer el contenido que constituye la obra.
+
+## O-80-04-M1-02 — apoyo IA identificable
+
+La aportación X es visible y reconocible como apoyo de IA.
+
+## O-80-04-M1-03 — procedencia acreditada y común
+
+M1-A y M1-B presentan la misma X y la misma evidencia
+`E-IA-80-04-M1-01`.
+
+## O-80-04-M1-04 — baseline sin pérdida artificial
+
+M1-A conserva obra, apoyo y procedencia; su desventaja no procede de pérdida de
+información.
+
+## O-80-04-M1-05 — frontera funcional en M1-B
+
+En M1-B la obra y el apoyo ocupan estados funcionalmente distinguibles.
+
+## O-80-04-M1-06 — no incorporación automática
+
+En M1-B, recibir, mostrar o consultar X no modifica el valor de la obra.
+
+## O-80-04-M1-07 — independencia de edición
+
+Editar la obra en M1-B no obliga a editar ni elimina el apoyo X.
+
+## O-80-04-M1-08 — recuperación separada
+
+Tras una nueva ejecución, obra y apoyo siguen recuperables sin que X deba formar
+parte del contenido de la obra.
+
+## O-80-04-M1-09 — diferencia humana material
+
+En TH-80-04-01 la persona puede determinar si la frontera funcional aporta una
+diferencia material frente a M1-A en:
+
+- claridad sobre qué constituye la obra;
+- consulta de apoyo sin adopción;
+- control sobre estatuto autoral;
+- trabajo necesario para retirar apoyo no incorporado.
+
+---
+
+# 17. Falsadores definitivos
+
+R-80-04-M1 será insuficiente si ocurre cualquiera de estos casos:
+
+1. M1-A y M1-B no usan exactamente la misma obra O;
+2. M1-A y M1-B no usan exactamente la misma aportación X;
+3. la procedencia IA de X no queda documentalmente acreditada;
+4. M1-A pierde X, lo oculta o ofrece menos información que M1-B;
+5. M1-B sólo cambia color, posición, borde, título o etiqueta;
+6. X aparece dentro del valor que constituye la obra en M1-B sin acción humana
+   explícita;
+7. editar la obra en M1-B elimina, modifica o exige reescribir X;
+8. recuperar la obra obliga a tratar X como parte de su contenido;
+9. el contraste depende de un proveedor, agente, API o automatización no
+   comprometidos;
+10. TH-80-04-01 no muestra diferencia humana material entre ambas trayectorias.
+
+No será falsador que M1-B carezca de una operación para incorporar X a la obra:
+esa capacidad no forma parte de la obligación actual.
+
+---
+
+# 18. Tests rojos preregistrados
+
+Se fija un fixture común:
+
+~~~text
+src/realizations/ai-support/AiSupportEvidence.fixture.ts
+~~~
+
+que contiene literalmente:
+
+- la obra O;
+- el apoyo X;
+- `E-IA-80-04-M1-01`;
+- sistema;
+- modelo.
+
+## M1-A
+
+~~~text
+src/realizations/ai-support/AiSupportBaseline.test.tsx
+~~~
+
+Tests:
+
+~~~text
+T-80-04-A01
+→ obra y apoyo aparecen en una única superficie editable
+
+T-80-04-A02
+→ misma procedencia IA acreditada visible
+
+T-80-04-A03
+→ no existe estado auxiliar funcionalmente separado
+
+T-80-04-A04
+→ editar la única superficie edita el valor
+  que contiene también el apoyo
+
+T-80-04-A05
+→ obra combinada y apoyo no se pierden
+  al volver a ejecutar
+~~~
+
+## M1-B
+
+~~~text
+src/realizations/ai-support/SeparatedAiSupportExperience.test.tsx
+~~~
+
+Tests:
+
+~~~text
+T-80-04-B01
+→ obra y apoyo están en regiones funcionalmente distinguibles
+
+T-80-04-B02
+→ mismo apoyo X y misma procedencia que M1-A
+
+T-80-04-B03
+→ recibir/consultar apoyo no modifica la obra
+
+T-80-04-B04
+→ editar la obra no elimina ni exige editar el apoyo
+
+T-80-04-B05
+→ obra y apoyo se recuperan por separado
+  tras nueva ejecución
+
+T-80-04-B06
+→ la separación se demuestra conductualmente,
+  no sólo mediante etiqueta visual
+~~~
+
+Total preregistrado:
+
+~~~text
+M1-A
+→ 5 tests
+
+M1-B
+→ 6 tests
+
+total
+→ 11 tests
+~~~
+
+---
+
+# 19. Gate del rojo
+
+Los componentes de producción todavía no existen:
+
+~~~text
+./AiSupportBaseline.tsx
+./SeparatedAiSupportExperience.tsx
+~~~
+
+Por tanto, el resultado esperado de la primera ejecución es:
+
+~~~text
+M1-A
+→ 5/5 RED
+→ exclusivamente por ausencia de AiSupportBaseline.tsx
+
+M1-B
+→ 6/6 RED
+→ exclusivamente por ausencia de SeparatedAiSupportExperience.tsx
+~~~
+
+No se considerará rojo válido un fallo previo de:
+
+- sintaxis;
+- imports;
+- fixture;
+- entorno;
+- infraestructura;
+- o configuración de tests.
+
+Sólo después de observar ese rojo válido podrá comenzar la implementación de
+M1-A.
+
+---
+
+# 20. Estado resultante
+
+~~~text
+U1
+→ REDUCIDA
+
+U2
+→ REDUCIDA
+
+U3
+→ REDUCIDA
+
+M1-A
+→ DISEÑADO
+
+M1-B
+→ DISEÑADO
+
+observables
+→ DEFINITIVOS
+
+falsadores
+→ DEFINITIVOS
+
+tests RED
+→ PREREGISTRADOS
+→ todavía no ejecutados
+
+componentes de producción
+→ NO CREADOS
+
+TH-80-04-01
+→ PENDIENTE
+~~~
