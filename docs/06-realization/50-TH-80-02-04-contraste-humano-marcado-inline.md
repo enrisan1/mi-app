@@ -109,3 +109,152 @@ Este contraste no evalúa todavía:
 - semántica;
 - relevancia;
 - ni ejecución automática.
+
+
+---
+
+# 9. Ejecución humana
+
+**Fecha:** 16/11/2026
+
+## 9.1. Observación
+
+La persona informó:
+
+- los cambios se localizan directamente y sin búsqueda manual;
+- las marcas facilitan la localización;
+- la intensidad visual actual resulta algo excesiva;
+- color e intensidad parecen depender de preferencias personales;
+- la correspondencia entre D1 y D2 queda clara;
+- para textos cortos, la disposición actual es suficiente cuando ambos caben en
+  la misma pantalla;
+- para textos largos, disponer los documentos uno encima del otro vuelve a
+  dificultar la comparación;
+- una disposición contigua/lateral permitiría mantener ambos textos presentes de
+  forma más útil cuando crece la longitud.
+
+## 9.2. Resultado del caso
+
+```text
+TH-80-02-04
+→ A — SUFICIENCIA MATERIAL
+   respecto de PC-80-02-04
+
+marcado inline
+→ elimina la relocalización manual observada en TH-80-02-03
+→ mantiene clara la correspondencia D1/D2
+```
+
+Por tanto:
+
+`PC-80-02-04 — Localización directa de la detección en su fuente`
+
+queda satisfecha en el alcance observado.
+
+---
+
+# 10. Cuestión visual separada
+
+Se registra:
+
+`COND-80-02-VIS-01 — intensidad visual configurable`.
+
+Fundamento:
+
+- la marca actual cumple su función;
+- la intensidad resulta subjetivamente fuerte;
+- color e intensidad pueden depender de la persona.
+
+Estado:
+
+- no bloquea PC-80-02-04;
+- no se convierte todavía en obligación estructural;
+- puede tratarse después como preferencia/personalización de presentación.
+
+No debe confundirse:
+
+```text
+ser visible
+≠
+usar un color fijo
+≠
+usar una intensidad fija
+```
+
+---
+
+# 11. Nueva propiedad residual estructural
+
+La observación sobre textos largos no pertenece ya a la localización de la
+detección.
+
+Se deriva provisionalmente:
+
+`PC-80-02-05 — Copresencia lateral de fuentes extensas`.
+
+Formulación:
+
+> Cuando dos documentos relacionados son suficientemente extensos como para no
+> caber conjuntamente en una misma pantalla mediante disposición vertical, la
+> persona puede mantener ambos disponibles de forma contigua para contrastar
+> fragmentos correspondientes sin alternancia vertical material.
+
+La propiedad no prescribe todavía:
+
+- columnas 50/50;
+- ancho fijo;
+- sincronización de scroll;
+- scroll independiente;
+- paneles redimensionables;
+- ni disposición permanente.
+
+La necesidad aparece sólo cuando la longitud hace material la pérdida de
+copresencia vertical.
+
+---
+
+# 12. Relación con evidencia previa
+
+Esta observación es coherente con `TH-80-02-02`, donde los textos largos
+demostraron pérdida material de copresencia y necesidad de conservar posiciones
+independientes.
+
+La diferencia es:
+
+```text
+TH-80-02-02
+→ demostró necesidad de continuidad de posición
+
+TH-80-02-04
+→ muestra que, una vez añadidas detecciones inline,
+   la disposición vertical todavía puede degradar la comparación extensa
+```
+
+Por tanto, no se trata de volver atrás a M2, sino de combinar:
+
+```text
+marcado inline
++
+copresencia espacial suficiente
+```
+
+sin presuponer todavía el mecanismo exacto.
+
+---
+
+# 13. Consecuencia
+
+```text
+R-80-02-M5
+→ humanamente suficiente para PC-80-02-04
+
+COND-80-02-VIS-01
+→ personalización visual condicionada, no bloqueante
+
+PC-80-02-05
+→ nueva propiedad residual estructural para textos extensos
+
+siguiente cuestión
+→ comparar mecanismos mínimos para PC-80-02-05
+   antes de construir otro testigo
+```
