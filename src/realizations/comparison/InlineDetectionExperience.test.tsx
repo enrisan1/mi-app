@@ -126,8 +126,8 @@ describe("R-80-02-M5 — marcado inline neutral", () => {
       />,
     );
 
-    expect(screen.getByLabelText(/^documento 1 fuente$/i)).toHaveTextContent(FIRST);
-    expect(screen.getByLabelText(/^documento 2 fuente$/i)).toHaveTextContent(SECOND);
+    expect(screen.getByLabelText(/^documento 1 fuente$/i).textContent).toBe(FIRST);
+    expect(screen.getByLabelText(/^documento 2 fuente$/i).textContent).toBe(SECOND);
   });
 
   it("[T-80-02-M5-04] conserva la identidad de una misma detección en D1 y D2", async () => {
