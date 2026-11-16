@@ -243,7 +243,7 @@ Debe demostrar mínimamente que:
 4. la elección no modifica la identidad operativa;
 5. una misma identidad autoral puede reutilizarse en otra obra;
 6. distintas obras pueden quedar asociadas a identidades autorales distintas;
-7. cambiar la identidad autoral de una obra no modifica automáticamente su contenido;
+7. seleccionar la identidad autoral de una obra no modifica automáticamente su contenido;
 8. la identidad operativa no se convierte forzosamente en firma pública/autoral.
 
 ---
@@ -382,4 +382,49 @@ siguiente obligación
 
 primera actuación
 → R-80-03-M1 — ABIERTA
+```
+
+
+---
+
+# 12. RECTIFICACIÓN HUMANA DE OB-80-NEXT-02
+
+**Fecha:** 16/11/2026
+
+La persona responsable elige explícitamente la opción A de la evaluación de
+cierre registrada en el documento 66.
+
+Se rectifica la condición 7 de OB-80-NEXT-02.
+
+Formulación anterior:
+
+```text
+cambiar la identidad autoral de una obra
+→ no modifica automáticamente su contenido
+```
+
+Formulación vigente:
+
+```text
+seleccionar la identidad autoral de una obra
+→ no modifica automáticamente su contenido
+```
+
+Fundamento:
+
+- C-PV-80-03 compromete elección de identidad autoral reutilizable por obra;
+- no compromete edición posterior de autoría sobre una obra ya constituida;
+- exigir esa edición posterior ampliaría el alcance por mera posibilidad técnica;
+- R-80-03-M1 fue diseñado y validado conforme a la formulación corregida.
+
+La rectificación no rebaja el compromiso Product ni elimina una propiedad
+demostrada necesaria. Elimina una sobreespecificación introducida en la
+derivación de la obligación.
+
+Estado resultante:
+
+```text
+OB-80-NEXT-02
+→ RECTIFICADA
+→ condición 7 alineada con C-PV-80-03 y R-80-03-M1
 ```
