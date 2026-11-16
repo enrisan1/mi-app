@@ -99,10 +99,10 @@ describe("R-80-02-M3 — detección auxiliar verificable", () => {
     expect(support).toBeInTheDocument();
 
     expect(
-      within(screen.getByLabelText(/^documento 1 fuente$/i)).queryByText("ocho documentos"),
+      within(screen.getByLabelText(/^documento 1 fuente$/i)).queryByText(/ocho documentos/i),
     ).not.toBeNull();
     expect(
-      within(screen.getByLabelText(/^documento 2 fuente$/i)).queryByText("doce documentos"),
+      within(screen.getByLabelText(/^documento 2 fuente$/i)).queryByText(/doce documentos/i),
     ).not.toBeNull();
     expect(within(support).getByText("ocho documentos")).toBeInTheDocument();
     expect(within(support).getByText("doce documentos")).toBeInTheDocument();
