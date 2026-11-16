@@ -142,3 +142,203 @@ contraste humano
 selección definitiva de mecanismo F4
 → NO
 ```
+
+
+---
+
+# 9. Validación técnica
+
+Se ejecutó:
+
+```text
+npx vitest run src/realizations/comparison/CodeMirrorChunkExecution.test.ts
+```
+
+Resultado:
+
+```text
+Test Files  1 passed (1)
+Tests       5 passed (5)
+```
+
+Quedan comprobados automáticamente:
+
+- aplicación de un único chunk elegido;
+- ausencia de modificación sin chunk válido;
+- conservación de snapshot previo de B;
+- restauración mediante deshacer;
+- separación entre navegación y ejecución.
+
+---
+
+# 10. Contraste humano
+
+La secuencia ejecutada fue:
+
+1. navegar con `Coordinado: siguiente A+B`;
+2. verificar que B conserva su versión original;
+3. pulsar `Aplicar chunk activo A → B`;
+4. comprobar que desaparece sólo esa diferencia y el resto permanece;
+5. pulsar `Deshacer última aplicación`;
+6. comprobar que reaparece exactamente la diferencia aplicada y B vuelve al estado anterior.
+
+Resultado observado:
+
+```text
+1. navegación
+→ correcta
+
+2. B antes de ejecutar
+→ sin cambios
+
+3. aplicación explícita
+→ realizada
+
+4. efecto
+→ desaparece sólo la diferencia elegida
+→ resto de diferencias permanece
+
+5. deshacer
+→ realizado
+
+6. restauración
+→ correcta
+→ diferencia reaparece
+```
+
+---
+
+# 11. Resultado sobre F4 y F5
+
+## F4 — ejecución
+
+```text
+detección
+≠
+navegación
+≠
+ejecución
+```
+
+La ejecución requiere una acción humana explícita.
+
+El testigo permite aplicar únicamente el chunk activo de A sobre B.
+
+Resultado:
+
+```text
+F4
+→ SUFICIENCIA MATERIAL observada en el alcance del testigo
+```
+
+## F5 — validación
+
+Tras ejecutar:
+
+- el diff se recomputa;
+- la diferencia aplicada desaparece;
+- las diferencias restantes permanecen visibles;
+- la persona puede comprobar el nuevo estado.
+
+Además, la reversión devuelve B al estado previo y la diferencia reaparece.
+
+Resultado:
+
+```text
+F5
+→ SUFICIENCIA MATERIAL observada en el alcance del testigo
+```
+
+---
+
+# 12. Separación de autoridad
+
+El flujo observado queda:
+
+```text
+F1 detectar
+→ CodeMirror
+
+F2 juzgar pertinencia
+→ persona
+
+F3 decidir aplicar
+→ persona
+
+F4 ejecutar chunk elegido
+→ sistema tras acción explícita
+
+F5 validar resultado
+→ persona apoyada por recomputación del diff
+```
+
+No se observó:
+
+- aplicación automática al navegar;
+- decisión automática de pertinencia;
+- ejecución de chunks no elegidos.
+
+---
+
+# 13. Limitaciones del testigo
+
+La reversión actual usa un snapshot completo de B.
+
+Eso es adecuado para un testigo reversible, pero no constituye todavía una
+arquitectura definitiva de undo/redo.
+
+Tampoco se ha evaluado todavía:
+
+- aplicación B → A;
+- aceptación/rechazo semánticamente diferenciados;
+- edición libre de texto;
+- persistencia;
+- historial multioperación;
+- conflictos entre operaciones sucesivas;
+- integración en `App.tsx`.
+
+---
+
+# 14. Resultado consolidado de R4
+
+```text
+tests automáticos
+→ GREEN 5/5
+
+navegación sin modificación
+→ comprobada
+
+aplicación explícita de un único chunk
+→ comprobada
+
+recomputación del diff
+→ comprobada
+
+persistencia de otros cambios
+→ comprobada
+
+deshacer
+→ comprobado
+
+F4
+→ SUFICIENCIA MATERIAL en este alcance
+
+F5
+→ SUFICIENCIA MATERIAL en este alcance
+```
+
+R4 demuestra que CodeMirror puede soportar la cadena:
+
+```text
+detectar
+→ orientar
+→ decidir
+→ ejecutar cambio concreto
+→ validar
+→ revertir
+```
+
+sin colapsar F1…F5 en una única operación automática.
+
+La selección arquitectónica definitiva y la política final de edición/undo
+permanecen abiertas.
