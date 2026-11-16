@@ -181,3 +181,150 @@ harness humano
 selección definitiva CodeMirror
 → NO
 ```
+
+
+---
+
+# 9. Validación técnica y mecánica ejecutada
+
+**Fecha:** 16/11/2026
+
+## 9.1. Instalación real
+
+Se instaló y verificó:
+
+```text
+@codemirror/merge@6.12.3
+```
+
+La comprobación mediante `npm ls @codemirror/merge` confirmó exactamente esa versión.
+
+## 9.2. Typecheck del testigo nuevo
+
+La primera ejecución de `npm run typecheck` reveló dos errores propios del nuevo harness:
+
+1. uso inválido de `collapseUnchanged: false` frente al contrato real de 6.12.3;
+2. estrechamiento insuficiente de nullabilidad para el nodo de estado.
+
+Ambos se corrigieron.
+
+La segunda ejecución ya no mostró errores en:
+
+`CodeMirrorMergeHuman.harness.ts`.
+
+Persisten 14 errores preexistentes en cinco archivos de la línea comparativa anterior, no introducidos por este testigo.
+
+## 9.3. Tests automáticos
+
+Se ejecutó:
+
+```text
+npx vitest run src/realizations/comparison/CodeMirrorMergeWitness.test.ts
+```
+
+Resultado:
+
+```text
+Test Files  1 passed (1)
+Tests       6 passed (6)
+```
+
+Quedan por tanto comprobados en 6.12.3 real:
+
+- `tres → cuatro` como sustitución completa;
+- ausencia de marcado espurio de `todos` en `lunes → martes`;
+- inserciones con rango vacío correcto;
+- sustituciones con rangos verificables A/B;
+- revelado coordinado de ambos lados del mismo chunk;
+- ausencia de movimiento ante índice inexistente.
+
+---
+
+# 10. Ejecución humana del harness
+
+La página `/codemirror-merge-human.html` cargó correctamente.
+
+Se observaron:
+
+- dos documentos laterales;
+- diferencias marcadas directamente;
+- seis chunks;
+- funcionamiento de los cuatro controles de navegación.
+
+## 10.1. Primer defecto del harness
+
+Con un viewport demasiado alto, casi todos los chunks cabían simultáneamente y la prueba no forzaba navegación real.
+
+Además, al recorrer:
+
+```text
+1 → 2 → ... → 6 → 1
+```
+
+el retorno `6 → 1` no devolvía inicialmente el viewport al principio.
+
+Esto se atribuyó al adaptador/harness, no al algoritmo de detección.
+
+Se corrigió:
+
+- reduciendo la altura del viewport;
+- controlando explícitamente el contenedor vertical compartido de `MergeView`.
+
+## 10.2. Segundo defecto del harness
+
+Tras la corrección anterior, la navegación sí llevaba al chunk correcto, pero mostraba sólo la primera línea modificada y dejaba fuera la referencia estructural inmediata, por ejemplo el título de sección.
+
+Se corrigió dejando dos líneas de contexto anterior cuando existen.
+
+## 10.3. Resultado mecánico final
+
+Tras ambas correcciones, la persona confirma:
+
+```text
+la navegación coordinada funciona correctamente
+```
+
+Queda observado que:
+
+- los chunks recorren `1 → 6 → 1`;
+- el viewport se desplaza realmente al bloque correspondiente;
+- ambos lados se posicionan sobre el mismo chunk;
+- el retorno `6 → 1` vuelve correctamente al comienzo;
+- se conserva contexto estructural anterior suficiente para mostrar el título de sección.
+
+---
+
+# 11. Resultado parcial de R3
+
+```text
+dependencia real 6.12.3
+→ verificada
+
+tests automáticos
+→ GREEN 6/6
+
+navegación coordinada A+B
+→ FUNCIONAL
+
+retorno cíclico 6 → 1
+→ FUNCIONAL
+
+contexto estructural previo
+→ CONSERVADO
+
+alineación visual básica
+→ observable y operativa
+
+pero
+
+PC-80-02-06
+→ todavía no puede declararse satisfecho sólo con esta validación mecánica
+```
+
+La siguiente pregunta ya no es técnica:
+
+> ¿la composición real CodeMirror + navegación coordinada + contexto estructural
+> reduce materialmente la pérdida de orientación humana observada en
+> `TH-80-02-05` y `TH-80-02-06`?
+
+Ese contraste humano debe hacerse antes de seleccionar definitivamente CodeMirror.
