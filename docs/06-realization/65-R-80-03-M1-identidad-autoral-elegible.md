@@ -1,7 +1,7 @@
 # R-80-03-M1 — Testigo mínimo de identidad autoral elegible
 
 **Fecha:** 16/11/2026  
-**Estado:** ABIERTA; diseño realizativo y pruebas pendientes.  
+**Estado:** CERRADA; suficiencia material observada en el alcance del testigo.  
 **Obligación:** OB-80-NEXT-02.  
 **Compromiso Product:** C-PV-80-03 — Identidad autoral elegible.
 
