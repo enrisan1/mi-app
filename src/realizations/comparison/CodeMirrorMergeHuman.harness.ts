@@ -102,13 +102,14 @@ if (
   throw new Error("Faltan nodos del harness CodeMirror Merge");
 }
 
+const statusElement = status;
+
 const merge = new MergeView({
   a: { doc: FIRST },
   b: { doc: SECOND },
   parent: root,
   highlightChanges: true,
   gutter: true,
-  collapseUnchanged: false,
   diffConfig: {
     scanLimit: 500,
   },
@@ -121,7 +122,7 @@ let coordinatedIndex = 0;
 
 function updateStatus(prefix: string) {
   const total = merge.chunks.length;
-  status.textContent =
+  statusElement.textContent =
     total === 0
       ? `${prefix}: sin chunks`
       : `${prefix}: chunk ${coordinatedIndex + 1} de ${total}`;
@@ -129,12 +130,12 @@ function updateStatus(prefix: string) {
 
 nativePrevious.addEventListener("click", () => {
   goToPreviousChunk(merge.a);
-  status.textContent = "Navegación nativa: anterior en A";
+  statusElement.textContent = "Navegación nativa: anterior en A";
 });
 
 nativeNext.addEventListener("click", () => {
   goToNextChunk(merge.a);
-  status.textContent = "Navegación nativa: siguiente en A";
+  statusElement.textContent = "Navegación nativa: siguiente en A";
 });
 
 coordinatedPrevious.addEventListener("click", () => {
