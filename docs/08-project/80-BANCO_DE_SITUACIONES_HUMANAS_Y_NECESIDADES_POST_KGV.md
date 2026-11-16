@@ -752,3 +752,48 @@ TRANSVERSALES / DEPENDENCIAS
 Esta clasificación no establece importancia ni prioridad.
 
 El siguiente paso deja de ser construir una matriz y pasa a ser completar las fichas §13.1.2 de las cuatro candidatas independientes antes de cualquier selección Product.
+
+
+---
+
+# Evidencia emergente post-R-80-04-M1 — E-80-EM-01
+
+**Fecha:** 17/11/2026.
+
+El contraste de `R-80-04-M1` aporta una precisión nueva sobre `SH-80-04`.
+
+Se observó que el apoyo IA insertado dentro de la obra puede facilitar
+materialmente la construcción inmediata, mientras que la separación funcional
+fue preferida por la persona para mantener una elaboración propia más activa.
+
+Esto no demuestra causalidad longitudinal sobre creatividad.
+
+Sí obliga a evitar una lectura simplista de `SH-80-04`:
+
+~~~text
+reducir carga mediante IA
+≠
+eliminar indiscriminadamente esfuerzo humano
+
+preservar atención creativa
+→ puede exigir distinguir
+  trabajo administrativo delegable
+  de esfuerzo creativo valioso
+~~~
+
+Estado:
+
+~~~text
+E-80-EM-01
+→ CONSERVADA
+
+SH-80-04
+→ sigue siendo FA — familia amplia
+→ afinada por nueva restricción
+
+nueva candidata Product
+→ NO derivada
+
+investigación propia
+→ NO derivada
+~~~
