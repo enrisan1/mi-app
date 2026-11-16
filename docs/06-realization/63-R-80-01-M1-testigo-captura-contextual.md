@@ -432,3 +432,147 @@ no aparece un fallo previo no relacionado
 se implementará primero `ContextualCaptureBaseline.tsx` y después
 `ContextualCaptureExperience.tsx`, manteniendo los cambios pequeños y
 verificables.
+
+
+---
+
+# 15. Validación técnica
+
+## M1-A — baseline
+
+Ejecución:
+
+```text
+npx vitest run src/realizations/capture/ContextualCaptureBaseline.test.tsx
+```
+
+Resultado comunicado:
+
+```text
+Test Files  1 passed (1)
+Tests       4 passed (4)
+```
+
+Resultado:
+
+```text
+M1-A
+→ GREEN 4/4
+```
+
+## M1-B — captura contextual
+
+La primera ejecución produjo 8 timeouts de 5 s.
+
+La inspección del patrón mostró que todos los tests quedaban bloqueados bajo
+`vi.useFakeTimers()`; no apareció un incumplimiento funcional específico del
+testigo.
+
+Se corrigió sólo el arnés:
+
+- eliminación de fake timers;
+- validación de referencia temporal mediante `<time datetime>` parseable y
+  contenido visible;
+- sin cambios de producción para resolver el timeout.
+
+Nueva ejecución:
+
+```text
+npx vitest run src/realizations/capture/ContextualCaptureExperience.test.tsx
+```
+
+Resultado comunicado:
+
+```text
+Test Files  1 passed (1)
+Tests       8 passed (8)
+```
+
+Resultado:
+
+```text
+M1-B
+→ GREEN 8/8
+```
+
+## Estado técnico consolidado
+
+```text
+baseline
+→ 4/4 GREEN
+
+captura contextual
+→ 8/8 GREEN
+
+total
+→ 12/12 propiedades automatizadas satisfechas
+  en los dos testigos
+```
+
+Esto no demuestra todavía reducción humana de fricción.
+
+---
+
+# 16. TH-80-01-01 — contraste humano preparado
+
+Se añade:
+
+```text
+src/realizations/capture/ContextualCaptureHuman.harness.tsx
+contextual-capture-human.html
+```
+
+La página presenta en una misma sesión:
+
+```text
+M1-A — baseline con cambio de contexto
++
+M1-B — captura contextual mínima
+```
+
+El contraste debe usar la misma actividad y la misma aportación en ambos casos.
+
+## Caso humano sugerido
+
+Actividad principal:
+
+```text
+Estoy redactando una explicación sobre por qué una decisión debe conservar
+separadas la detección, el juicio y la ejecución.
+```
+
+Aportación emergente:
+
+```text
+Comprobar después si esta separación también debe aplicarse a la validación.
+```
+
+## Observación baseline
+
+1. escribir la actividad;
+2. pulsar `Ir a capturar una idea`;
+3. registrar la aportación;
+4. guardar;
+5. volver explícitamente a la actividad;
+6. observar si ha sido necesario reconstruir mentalmente el punto de trabajo.
+
+## Observación testigo
+
+1. escribir la misma actividad;
+2. pulsar `Capturar aportación`;
+3. registrar la misma aportación;
+4. conservar;
+5. continuar inmediatamente el texto principal;
+6. comprobar posteriormente que la captura sigue disponible.
+
+## Pregunta discriminante
+
+> ¿La captura contextual reduce materialmente la ruptura de contexto y el coste
+> de reanudar la actividad respecto del baseline?
+
+## Resultado aún pendiente
+
+```text
+TH-80-01-01
+→ PENDIENTE DE CONTRASTE HUMANO
+```
