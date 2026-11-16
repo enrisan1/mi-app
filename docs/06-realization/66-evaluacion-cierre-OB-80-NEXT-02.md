@@ -219,3 +219,28 @@ OB-80-NEXT-02
 → EVALUACIÓN DE CIERRE BLOQUEADA
   POR UNA ÚNICA INCONSISTENCIA FORMAL
 ```
+
+
+---
+
+# 9. Resolución humana de la inconsistencia
+
+La persona responsable selecciona explícitamente:
+
+```text
+OPCIÓN A
+→ RECTIFICAR OB-80-NEXT-02
+```
+
+La condición sobre cambio posterior de autoría deja de formar parte de la
+obligación vigente y se sustituye por:
+
+```text
+seleccionar la identidad autoral de una obra
+no modifica automáticamente su contenido
+```
+
+Esta resolución elimina la única inconsistencia formal identificada en esta
+evaluación.
+
+No se deriva actuación adicional.
