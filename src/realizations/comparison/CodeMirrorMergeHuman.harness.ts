@@ -286,3 +286,99 @@ if (merge.chunks.length > 0) {
 }
 
 updateStatus("Inicial");
+
+
+const compositionRoot = document.getElementById("composition-root");
+const compositionStatus = document.getElementById("composition-status");
+const compositionStart = document.getElementById("composition-start");
+const compositionFinish = document.getElementById("composition-finish");
+const compositionCancel = document.getElementById("composition-cancel");
+
+if (
+  !compositionRoot ||
+  !compositionStatus ||
+  !compositionStart ||
+  !compositionFinish ||
+  !compositionCancel
+) {
+  throw new Error("Faltan nodos del testigo R5-B");
+}
+
+const compositionStatusElement = compositionStatus;
+
+const compositionMerge = new MergeView({
+  a: {
+    doc: "El plazo será de cinco días y deberá notificarse por escrito.",
+  },
+  b: {
+    doc: "El plazo será de ocho días.",
+  },
+  parent: compositionRoot,
+  highlightChanges: true,
+  gutter: true,
+});
+
+compositionMerge.a.contentDOM.setAttribute("contenteditable", "false");
+compositionMerge.b.contentDOM.setAttribute("contenteditable", "false");
+
+let compositionSnapshotB: string | null = null;
+let compositionEditing = false;
+
+function updateCompositionStatus(prefix: string) {
+  compositionStatusElement.textContent =
+    `${prefix}. Diferencias actuales: ${compositionMerge.chunks.length}`;
+}
+
+compositionStart.addEventListener("click", () => {
+  if (compositionEditing) return;
+
+  compositionSnapshotB = compositionMerge.b.state.doc.toString();
+  compositionEditing = true;
+  compositionMerge.b.contentDOM.setAttribute("contenteditable", "true");
+
+  const chunk = compositionMerge.chunks[0];
+  if (chunk) {
+    compositionMerge.b.dispatch({
+      selection: { anchor: chunk.fromB },
+      scrollIntoView: true,
+    });
+  }
+
+  compositionMerge.b.focus();
+  updateCompositionStatus("Edición humana de B activada");
+});
+
+compositionFinish.addEventListener("click", () => {
+  if (!compositionEditing) {
+    updateCompositionStatus("No hay composición activa");
+    return;
+  }
+
+  compositionEditing = false;
+  compositionMerge.b.contentDOM.setAttribute("contenteditable", "false");
+  compositionSnapshotB = null;
+  updateCompositionStatus("Composición finalizada");
+});
+
+compositionCancel.addEventListener("click", () => {
+  if (!compositionEditing || compositionSnapshotB === null) {
+    updateCompositionStatus("No hay composición activa que cancelar");
+    return;
+  }
+
+  compositionMerge.b.dispatch({
+    changes: {
+      from: 0,
+      to: compositionMerge.b.state.doc.length,
+      insert: compositionSnapshotB,
+    },
+    userEvent: "input.codeMirrorWitness.cancelComposition",
+  });
+
+  compositionEditing = false;
+  compositionMerge.b.contentDOM.setAttribute("contenteditable", "false");
+  compositionSnapshotB = null;
+  updateCompositionStatus("Composición cancelada y B restaurado");
+});
+
+updateCompositionStatus("Inicial");
