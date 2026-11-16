@@ -51,8 +51,8 @@ La suficiencia exige conjuntamente:
 5. la elección de autoría no modifica la identidad operativa;
 6. una misma identidad autoral puede reutilizarse en otra obra;
 7. obras distintas pueden quedar asociadas a identidades autorales distintas;
-8. cambiar la identidad autoral asociada no modifica automáticamente el contenido
-   de la obra;
+8. seleccionar la identidad autoral de una obra no modifica automáticamente su
+   contenido;
 9. la identidad operativa no se convierte obligatoriamente en firma autoral.
 
 ---
@@ -146,7 +146,7 @@ Otra obra puede usar una identidad autoral diferente.
 
 ## O-80-03-M1-07
 
-Cambiar la autoría no cambia el contenido de la obra.
+Seleccionar la autoría no cambia el contenido de la obra.
 
 ## O-80-03-M1-08
 
@@ -163,7 +163,7 @@ R-80-03-M1 debe considerarse insuficiente si:
 3. reutilizar una identidad exige volver a escribirla como valor nuevo;
 4. la elección de firma altera la identidad operativa;
 5. una obra no conserva de forma identificable la autoría elegida;
-6. cambiar autoría altera automáticamente el contenido;
+6. seleccionar autoría altera automáticamente el contenido;
 7. demostrar el caso exige introducir cuentas múltiples o autenticación;
 8. la separación sólo existe como etiqueta visual sin comportamiento distinguible.
 
@@ -217,3 +217,188 @@ tests
 contraste humano
 → PENDIENTE
 ~~~
+
+
+---
+
+# 11. Diseño realizativo de M1-A y M1-B
+
+## 11.1. M1-A — baseline con firma operativa obligatoria
+
+Archivo previsto de producción:
+
+~~~text
+src/realizations/author-identity/AuthorIdentityBaseline.tsx
+~~~
+
+Contrato observable:
+
+~~~text
+identidad operativa
+→ Usuario principal
+
+obra
+→ contenido elegido por la persona
+→ firma = Usuario principal
+
+identidad autoral distinta seleccionable
+→ NO
+~~~
+
+El baseline no debe impedir crear una obra. Su limitación específica es que la
+identidad operativa determina forzosamente la firma.
+
+### Tests preregistrados
+
+~~~text
+T-80-03-A01
+→ identidad operativa principal identificable
+
+T-80-03-A02
+→ una obra queda firmada necesariamente
+  con la identidad operativa
+
+T-80-03-A03
+→ no existe identidad autoral distinta seleccionable
+~~~
+
+---
+
+## 11.2. M1-B — testigo de identidad autoral elegible
+
+Archivo previsto de producción:
+
+~~~text
+src/realizations/author-identity/AuthorIdentityExperience.tsx
+~~~
+
+Contrato observable:
+
+~~~text
+identidad operativa
+→ Usuario principal
+
+catálogo autoral reutilizable
+→ Alias A
+→ Alias B
+
+obra 1
+→ selección explícita Alias A
+
+obra 2
+→ selección explícita Alias B
+
+obra 3
+→ reutilización del mismo Alias A
+~~~
+
+La reutilización no se demostrará mediante un campo de texto libre repetido.
+Alias A y Alias B deben existir como opciones autorales estables seleccionables.
+
+### Tests preregistrados
+
+~~~text
+T-80-03-B01
+→ distingue identidad operativa de identidades autorales elegibles
+
+T-80-03-B02
+→ permite elegir explícitamente Alias A para una obra
+
+T-80-03-B03
+→ elegir autoría no modifica la identidad operativa
+
+T-80-03-B04
+→ obras distintas pueden usar identidades autorales distintas
+
+T-80-03-B05
+→ Alias A puede reutilizarse en otra obra
+  sin duplicar/recrear la identidad
+
+T-80-03-B06
+→ conserva asociación obra-autoría tras nueva ejecución
+
+T-80-03-B07
+→ seleccionar autoría no modifica el contenido de la obra
+
+T-80-03-B08
+→ la firma no queda forzada a la identidad operativa
+~~~
+
+---
+
+# 12. Decisiones deliberadamente no tomadas
+
+Los tests no prescriben:
+
+- base de datos;
+- modelo definitivo de perfil;
+- creación/edición de alias por la persona;
+- número arbitrario de alias;
+- login;
+- autenticación;
+- publicación real;
+- visibilidad pública de la identidad operativa;
+- privacidad;
+- identidad legal;
+- reputación;
+- permisos;
+- colaboración.
+
+El caso mínimo puede partir de dos identidades autorales ya disponibles porque
+la obligación actual es demostrar separación, selección y reutilización, no
+diseñar todavía el ciclo de administración de identidades.
+
+Tampoco se exige cambiar la autoría después de haber constituido una obra. Esa
+capacidad sería una ampliación no necesaria para demostrar C-PV-80-03 en este
+testigo.
+
+---
+
+# 13. Estado de tests rojos
+
+Se han creado:
+
+~~~text
+src/realizations/author-identity/AuthorIdentityBaseline.test.tsx
+src/realizations/author-identity/AuthorIdentityExperience.test.tsx
+~~~
+
+Los tests cargan dinámicamente:
+
+~~~text
+./AuthorIdentityBaseline.tsx
+./AuthorIdentityExperience.tsx
+~~~
+
+que todavía no existen.
+
+Por diseño, el resultado esperado es:
+
+~~~text
+M1-A
+→ RED por ausencia de AuthorIdentityBaseline.tsx
+
+M1-B
+→ RED por ausencia de AuthorIdentityExperience.tsx
+~~~
+
+No se considerará rojo válido un fallo de sintaxis, entorno o infraestructura
+que impida alcanzar esas ausencias previstas.
+
+---
+
+# 14. Gate para comenzar implementación
+
+Sólo después de observar:
+
+~~~text
+tests ejecutan
++
+M1-A falla por ausencia del baseline
++
+M1-B falla por ausencia del testigo
++
+no existe fallo previo no relacionado
+~~~
+
+se implementará primero M1-A y se verificará en verde antes de crear M1-B.
