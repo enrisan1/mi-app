@@ -49,7 +49,8 @@
         <p>
           Observa también si las líneas sin cambios recuperan alineación después
           de bloques de distinta longitud y si los cambios problemáticos quedan
-          marcados de forma comprensible.
+          marcados de forma comprensible. Aplicar un chunk es una acción explícita:
+          navegar nunca modifica el documento B por sí solo.
         </p>
       </div>
 
@@ -61,6 +62,12 @@
         </button>
         <button id="coordinated-next" type="button">
           Coordinado: siguiente A+B
+        </button>
+        <button id="apply-active" type="button">
+          Aplicar chunk activo A → B
+        </button>
+        <button id="undo-apply" type="button">
+          Deshacer última aplicación
         </button>
       </div>
 
