@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH-80-03-01 — identidad autoral</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 2rem;
+        line-height: 1.5;
+      }
+
+      main {
+        display: grid;
+        gap: 2rem;
+      }
+
+      section.test-case {
+        border: 1px solid #999;
+        padding: 1rem;
+      }
+
+      textarea,
+      select {
+        box-sizing: border-box;
+        display: block;
+        margin-top: 0.4rem;
+        width: 100%;
+      }
+
+      textarea {
+        min-height: 8rem;
+      }
+
+      button {
+        margin-top: 0.75rem;
+      }
+
+      .instructions {
+        max-width: 80ch;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>TH-80-03-01 — contraste humano de identidad autoral</h1>
+        <p class="instructions">
+          Usa primero M1-A y después M1-B. Crea tres obras breves: una que quieras
+          firmar como Alias A, otra como Alias B y una tercera otra vez como Alias A.
+          La comparación busca comprobar si poder mantener una identidad operativa
+          estable y elegir identidades autorales reutilizables produce una diferencia
+          material frente a firmar obligatoriamente como Usuario principal.
+        </p>
+      </header>
+
+      <section class="test-case">
+        <h2>M1-A — firma operativa obligatoria</h2>
+        <div id="author-identity-baseline-root"></div>
+      </section>
+
+      <section class="test-case">
+        <h2>M1-B — identidad autoral elegible</h2>
+        <div id="author-identity-witness-root"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/realizations/author-identity/AuthorIdentityHuman.harness.tsx"></script>
+  </body>
+</html>
