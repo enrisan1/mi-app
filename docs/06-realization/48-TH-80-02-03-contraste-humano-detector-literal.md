@@ -94,3 +94,91 @@ No evalúa:
 - contradicciones expresadas mediante paráfrasis;
 - bloques movidos complejos;
 - ni relevancia de los cambios.
+
+
+---
+
+# 8. Ejecución humana
+
+**Fecha:** 16/11/2026
+
+## 8.1. Observación
+
+La persona informó que la lista auxiliar:
+
+- permite identificar los cambios;
+- reduce el trabajo de búsqueda respecto de una comparación manual completa;
+- pero obliga a localizar después cada cambio uno a uno dentro de los documentos
+  fuente si se quiere actuar sobre él;
+- por ello, la identificación y la actuación siguen separadas espacialmente.
+
+La persona propuso como posibilidad una representación directamente situada en
+el texto, por ejemplo mediante subrayado o cambio de color.
+
+Esa propuesta se registra como hipótesis de mecanismo, no como requisito.
+
+## 8.2. Resultado del caso
+
+```text
+TH-80-02-03
+→ B — MEJORA PARCIAL
+
+R-80-02-M4
+→ reduce materialmente la búsqueda de diferencias
+
+pero
+
+R-80-02-M3
+→ presenta las detecciones en una lista separada
+→ exige relocalizar manualmente el fragmento fuente
+→ mantiene fricción antes de poder revisar o modificar
+```
+
+No se ha observado necesidad de releer exhaustivamente ambos documentos para
+saber que existen diferencias.
+
+Sí se ha observado una nueva carga:
+
+```text
+detección conocida
+↓
+buscar manualmente su ubicación exacta
+↓
+recién entonces puede inspeccionarse o actuarse
+```
+
+## 8.3. Propiedad residual
+
+Se deriva provisionalmente:
+
+`PC-80-02-04 — Localización directa de la detección en su fuente`.
+
+Formulación:
+
+> Cuando una diferencia ya ha sido detectada, la persona puede acceder de forma
+> suficientemente directa al fragmento correspondiente de D1 y/o D2 sin tener
+> que buscarlo manualmente dentro del documento completo.
+
+La propiedad no prescribe:
+
+- color;
+- subrayado;
+- resaltado;
+- scroll automático;
+- anclaje;
+- vista lado a lado;
+- ni edición inline.
+
+Esas son alternativas de mecanismo todavía no comparadas.
+
+## 8.4. Consecuencia
+
+La siguiente cuestión ya no es mejorar el detector, sino decidir cuál es el
+mecanismo mínimo que conecta:
+
+```text
+detección
+→ fragmento fuente
+```
+
+con el menor coste y sin invadir juicio, decisión o edición.
