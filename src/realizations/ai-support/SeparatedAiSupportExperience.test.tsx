@@ -95,8 +95,8 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     const work = screen.getByRole("textbox", { name: /^contenido de la obra$/i });
 
     expect(work).toHaveValue(AI_SUPPORT_EVIDENCE.work);
-    expect(work).not.toHaveValue(
-      expect.stringContaining(AI_SUPPORT_EVIDENCE.support),
+    expect((work as HTMLTextAreaElement).value).not.toContain(
+      AI_SUPPORT_EVIDENCE.support,
     );
 
     expect(
@@ -144,8 +144,12 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
 
     expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).not.toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+      (
+        screen.getByRole("textbox", {
+          name: /^contenido de la obra$/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).not.toContain(AI_SUPPORT_EVIDENCE.support);
   });
 
   it("[T-80-04-B06] la separación es conductual y no sólo una etiqueta visual", async () => {
