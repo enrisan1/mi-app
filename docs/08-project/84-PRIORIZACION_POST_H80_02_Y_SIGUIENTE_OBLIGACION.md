@@ -1,7 +1,7 @@
 # Priorización post-H-80-02 y derivación de la siguiente obligación
 
 **Fecha:** 16/11/2026  
-**Estado:** PROPUESTA DE PRIORIDAD; pendiente de aceptación humana.
+**Estado:** PRIORIDAD ACEPTADA; OB-80-NEXT-01 posteriormente realizada y cerrada.
 
 ---
 
