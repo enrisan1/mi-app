@@ -34,6 +34,10 @@ export type ExecutionSnapshot = {
   previousB: string;
 };
 
+export type ExecutionSnapshotA = {
+  previousA: string;
+};
+
 export function applyChunkAToB(
   merge: ExecutableMerge,
   index: number,
@@ -82,6 +86,60 @@ export function restoreB(
       insert: snapshot.previousB,
     },
     userEvent: "input.codeMirrorWitness.undoChunk",
+  });
+
+  return true;
+}
+
+
+export function applyChunkBToA(
+  merge: ExecutableMerge,
+  index: number,
+): ExecutionSnapshotA | null {
+  const chunk = merge.chunks[index];
+
+  if (!chunk) {
+    return null;
+  }
+
+  const previousA = merge.a.state.doc.toString();
+
+  let insert = merge.b.state.sliceDoc(
+    chunk.fromB,
+    Math.max(chunk.fromB, chunk.toB - 1),
+  );
+
+  if (chunk.fromB !== chunk.toB && chunk.toA <= merge.a.state.doc.length) {
+    insert += "\n";
+  }
+
+  merge.a.dispatch({
+    changes: {
+      from: chunk.fromA,
+      to: Math.min(merge.a.state.doc.length, chunk.toA),
+      insert,
+    },
+    userEvent: "input.codeMirrorWitness.applyChunkBToA",
+  });
+
+  return { previousA };
+}
+
+export function restoreA(
+  merge: ExecutableMerge,
+  snapshot: ExecutionSnapshotA | null,
+): boolean {
+  if (!snapshot) {
+    return false;
+  }
+
+  merge.a.dispatch({
+    changes: {
+      from: 0,
+      to: merge.a.state.doc.length,
+      insert: snapshot.previousA,
+    },
+    userEvent: "input.codeMirrorWitness.undoChunkBToA",
   });
 
   return true;
