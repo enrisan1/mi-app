@@ -341,3 +341,45 @@ C-PV-80-04
 Esta propuesta no abre todavía R-80-03-M1.
 
 Requiere aceptación humana antes de abrir la actuación.
+
+
+---
+
+# 11. HUMAN GATE
+
+**Fecha:** 16/11/2026
+
+La persona responsable solicita decidir entre aceptación o rechazo de la obligación
+propuesta y autoriza abrir la primera actuación si resulta aceptada.
+
+La evaluación estratégica establece:
+
+```text
+OB-80-NEXT-02
+→ ACEPTADA como siguiente obligación
+
+R-80-03-M1
+→ AUTORIZADA su apertura
+```
+
+Fundamento:
+
+- `C-PV-80-03` está seleccionado por Product;
+- la reutilización de identidad autoral ya forma parte del compromiso;
+- no existe realización previa que demuestre separación identidad operativa/autoral;
+- el alcance mínimo es finito, reversible y verificable;
+- no exige cuentas múltiples, autenticación ni identidad legal;
+- `C-PV-80-04` permanece vigente, pero presenta mayor acoplamiento y riesgo de inflación.
+
+## Resultado
+
+```text
+siguiente compromiso activo
+→ C-PV-80-03
+
+siguiente obligación
+→ OB-80-NEXT-02 — ACEPTADA
+
+primera actuación
+→ R-80-03-M1 — ABIERTA
+```
