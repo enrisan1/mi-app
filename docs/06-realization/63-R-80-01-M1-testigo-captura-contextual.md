@@ -1,7 +1,7 @@
 # R-80-01-M1 — Testigo mínimo de captura contextual inmediata
 
 **Fecha:** 16/11/2026  
-**Estado:** ABIERTA; diseño realizativo y pruebas pendientes.  
+**Estado:** CERRADA; suficiencia material observada en el alcance del testigo.  
 **Obligación:** `OB-80-NEXT-01`.  
 **Compromiso Product:** `C-PV-80-01 — Captura inmediata de aportaciones emergentes`.
 
