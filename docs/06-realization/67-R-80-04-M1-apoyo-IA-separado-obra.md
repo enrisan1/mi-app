@@ -878,3 +878,58 @@ componentes de producción
 TH-80-04-01
 → PENDIENTE
 ~~~
+
+
+---
+
+# 21. Verificación del rojo inicial
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/realizations/ai-support/AiSupportBaseline.test.tsx \
+  src/realizations/ai-support/SeparatedAiSupportExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  2 failed (2)
+Tests       11 failed (11)
+~~~
+
+Distribución:
+
+~~~text
+M1-A
+→ 5/5 RED
+
+M1-B
+→ 6/6 RED
+~~~
+
+Todos los fallos alcanzan exactamente las ausencias preregistradas:
+
+~~~text
+R-80-04-M1-A ausente
+→ falta ./AiSupportBaseline.tsx
+
+R-80-04-M1-B ausente
+→ falta ./SeparatedAiSupportExperience.tsx
+~~~
+
+No aparece fallo previo de sintaxis, imports, fixture, entorno o infraestructura.
+
+Por tanto:
+
+~~~text
+ROJO INICIAL
+→ VÁLIDO
+
+gate de implementación
+→ SUPERADO
+~~~
+
+La siguiente actuación técnica queda limitada a implementar primero M1-A y
+verificar sus 5 tests antes de crear M1-B.
