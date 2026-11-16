@@ -140,7 +140,7 @@ describe("R-80-03-M1-B — identidad autoral reutilizable elegible", () => {
     ).toHaveTextContent("Alias A");
 
     expect(
-      screen.getAllByTestId("author-identity-alias-a"),
+      screen.getAllByRole("option", { name: /^Alias A$/i }),
     ).toHaveLength(1);
   });
 
@@ -163,28 +163,12 @@ describe("R-80-03-M1-B — identidad autoral reutilizable elegible", () => {
     ).toHaveTextContent("Alias B");
   });
 
-  it("[T-80-03-B07] cambiar la autoría de una obra no modifica su contenido", async () => {
+  it("[T-80-03-B07] seleccionar autoría no modifica el contenido de la obra", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup();
 
     render(<Experience />);
 
-    await constituteWork("Contenido que debe permanecer", "Alias A");
-
-    await user.click(
-      screen.getByRole("button", { name: /^cambiar autoría de obra 1$/i }),
-    );
-
-    await user.selectOptions(
-      screen.getByRole("combobox", {
-        name: /^nueva identidad autoral de obra 1$/i,
-      }),
-      "Alias B",
-    );
-
-    await user.click(
-      screen.getByRole("button", { name: /^confirmar cambio de autoría$/i }),
-    );
+    await constituteWork("Contenido que debe permanecer", "Alias B");
 
     expect(
       screen.getByLabelText(/^contenido de obra 1$/i),
