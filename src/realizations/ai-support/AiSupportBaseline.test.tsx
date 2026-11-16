@@ -60,11 +60,13 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
 
     const work = screen.getByRole("textbox", { name: /^contenido de la obra$/i });
 
-    expect(work).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.work));
-    expect(work).toHaveValue(
-      expect.stringContaining(AI_SUPPORT_EVIDENCE.support),
+    expect((work as HTMLTextAreaElement).value).toContain(
+      AI_SUPPORT_EVIDENCE.work,
     );
-    expect(work).toHaveValue(expect.stringContaining("[APOYO IA]"));
+    expect((work as HTMLTextAreaElement).value).toContain(
+      AI_SUPPORT_EVIDENCE.support,
+    );
+    expect((work as HTMLTextAreaElement).value).toContain("[APOYO IA]");
   });
 
   it("[T-80-04-A02] conserva visible la misma procedencia IA acreditada", async () => {
@@ -91,8 +93,12 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
     ).not.toBeInTheDocument();
 
     expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+      (
+        screen.getByRole("textbox", {
+          name: /^contenido de la obra$/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toContain(AI_SUPPORT_EVIDENCE.support);
   });
 
   it("[T-80-04-A04] editar la única superficie implica editar el valor que contiene también el apoyo", async () => {
@@ -107,8 +113,8 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
     await user.type(work, "Nueva versión de la obra.");
 
     expect(work).toHaveValue("Nueva versión de la obra.");
-    expect(work).not.toHaveValue(
-      expect.stringContaining(AI_SUPPORT_EVIDENCE.support),
+    expect((work as HTMLTextAreaElement).value).not.toContain(
+      AI_SUPPORT_EVIDENCE.support,
     );
   });
 
@@ -126,11 +132,19 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
     renderBaseline(Baseline);
 
     expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.work));
+      (
+        screen.getByRole("textbox", {
+          name: /^contenido de la obra$/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toContain(AI_SUPPORT_EVIDENCE.work);
 
     expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+      (
+        screen.getByRole("textbox", {
+          name: /^contenido de la obra$/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toContain(AI_SUPPORT_EVIDENCE.support);
   });
 });
