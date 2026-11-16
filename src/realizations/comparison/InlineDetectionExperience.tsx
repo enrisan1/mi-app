@@ -12,7 +12,7 @@ type InlineDetectionExperienceProps = {
 
 type Side = "A" | "B";
 
-function renderMarkedSource(
+export function renderMarkedSource(
   text: string,
   detections: DetectionItem[],
   side: Side,
