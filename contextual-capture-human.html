@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH-80-01-01 — captura contextual</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0 auto;
+        max-width: 1100px;
+        padding: 2rem;
+        line-height: 1.5;
+      }
+
+      main {
+        display: grid;
+        gap: 2rem;
+      }
+
+      section.test-case {
+        border: 1px solid #999;
+        padding: 1rem;
+      }
+
+      textarea {
+        box-sizing: border-box;
+        display: block;
+        min-height: 10rem;
+        width: 100%;
+      }
+
+      button {
+        margin-right: 0.5rem;
+        margin-top: 0.75rem;
+      }
+
+      .instructions {
+        max-width: 80ch;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>TH-80-01-01 — contraste humano de captura</h1>
+        <p class="instructions">
+          Usa primero el baseline y después el testigo contextual con la misma
+          actividad y la misma aportación. El objetivo no es medir velocidad
+          exacta, sino comprobar si el segundo recorrido reduce materialmente
+          la ruptura de contexto y permite continuar con menor reconstrucción.
+        </p>
+      </header>
+
+      <section class="test-case">
+        <h2>M1-A — baseline con cambio de contexto</h2>
+        <div id="capture-baseline-root"></div>
+      </section>
+
+      <section class="test-case">
+        <h2>M1-B — captura contextual mínima</h2>
+        <div id="capture-witness-root"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/realizations/capture/ContextualCaptureHuman.harness.tsx"></script>
+  </body>
+</html>
