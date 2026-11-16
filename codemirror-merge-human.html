@@ -31,8 +31,17 @@
         overflow: auto;
       }
 
-      #codemirror-merge-root .cm-editor {
+      #codemirror-merge-root .cm-editor,
+      #composition-root .cm-editor {
         min-width: 0;
+      }
+
+      #composition-root {
+        border: 1px solid currentColor;
+      }
+
+      #composition-root .cm-mergeView {
+        min-height: 10rem;
       }
     </style>
   </head>
@@ -76,6 +85,30 @@
 
       <p id="codemirror-merge-status" aria-live="polite"></p>
       <div id="codemirror-merge-root"></div>
+
+      <hr />
+
+      <section class="notes">
+        <h2>R5-B — composición parcial dentro de una correspondencia</h2>
+        <p>
+          Caso controlado: conserva en B «ocho días» e incorpora desde A
+          «y deberá notificarse por escrito». El resultado esperado es
+          «El plazo será de ocho días y deberá notificarse por escrito.»
+        </p>
+        <div class="controls">
+          <button id="composition-start" type="button">
+            Componer parcialmente en B
+          </button>
+          <button id="composition-finish" type="button">
+            Finalizar composición
+          </button>
+          <button id="composition-cancel" type="button">
+            Cancelar composición
+          </button>
+        </div>
+        <p id="composition-status" aria-live="polite"></p>
+        <div id="composition-root"></div>
+      </section>
     </main>
 
     <script
