@@ -933,3 +933,47 @@ gate de implementación
 
 La siguiente actuación técnica queda limitada a implementar primero M1-A y
 verificar sus 5 tests antes de crear M1-B.
+
+
+---
+
+# 22. Validación técnica de M1-A
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/realizations/ai-support/AiSupportBaseline.test.tsx
+~~~
+
+Tras corregir exclusivamente aserciones defectuosas de substring en los tests,
+sin modificar producción, el resultado final es:
+
+~~~text
+Test Files  1 passed (1)
+Tests       5 passed (5)
+~~~
+
+Por tanto:
+
+~~~text
+M1-A
+→ GREEN 5/5
+→ baseline técnicamente validado
+~~~
+
+El baseline conserva:
+
+- obra O;
+- apoyo X;
+- procedencia IA;
+- persistencia de la combinación;
+
+y mantiene deliberadamente obra y apoyo dentro de un único estado funcional
+editable.
+
+Gate siguiente:
+
+~~~text
+M1-B
+→ autorizado para implementación
+~~~
