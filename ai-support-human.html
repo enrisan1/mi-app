@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TH-80-04-01 — apoyo IA separado de la obra</title>
+  </head>
+  <body>
+    <main>
+      <h1>TH-80-04-01 — contraste humano</h1>
+
+      <p>
+        Ambos recorridos usan exactamente la misma obra, el mismo apoyo generado
+        por IA y la misma procedencia. La única diferencia relevante debe ser la
+        frontera funcional entre obra y apoyo.
+      </p>
+
+      <section>
+        <h2>M1-A — apoyo IA etiquetado dentro de la obra</h2>
+        <p>
+          Edita libremente el contenido y comprueba qué ocurre con el bloque de
+          apoyo IA cuando forma parte del mismo estado editable.
+        </p>
+        <div id="ai-support-baseline-root"></div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>M1-B — apoyo IA funcionalmente separado</h2>
+        <p>
+          Edita la obra y consulta el mismo apoyo IA manteniéndolo fuera del
+          contenido que constituye la obra.
+        </p>
+        <div id="ai-support-witness-root"></div>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>Pregunta discriminante</h2>
+        <p>
+          ¿La separación funcional entre la obra y el apoyo IA produce una
+          diferencia material frente a tener exactamente el mismo apoyo
+          etiquetado dentro del propio contenido de la obra?
+        </p>
+
+        <p>
+          Al responder, valora especialmente si cambia materialmente:
+          qué entiendes que constituye la obra, si puedes consultar el apoyo sin
+          adoptarlo, si mantienes mejor control sobre el estatuto autoral del
+          contenido y si evitas tener que retirar después apoyo que nunca quisiste
+          incorporar.
+        </p>
+      </section>
+    </main>
+
+    <script
+      type="module"
+      src="/src/realizations/ai-support/AiSupportHuman.harness.tsx"
+    ></script>
+  </body>
+</html>
