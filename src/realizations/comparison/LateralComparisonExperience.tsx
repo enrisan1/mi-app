@@ -1,4 +1,4 @@
-import { InlineDetectionExperience } from "./InlineDetectionExperience";
+import { renderMarkedSource } from "./InlineDetectionExperience";
 
 type DetectionItem = {
   id: string;
@@ -34,14 +34,10 @@ export function LateralComparisonExperience({
           overflow: "auto",
         }}
       >
-        <InlineDetectionExperience
-          first={first}
-          second=""
-          detections={detections.map((detection) => ({
-            ...detection,
-            sourceB: "",
-          }))}
-        />
+        <h2>Documento 1</h2>
+        <div aria-label="Documento 1 fuente">
+          {renderMarkedSource(first, detections, "A")}
+        </div>
       </section>
 
       <section
@@ -52,14 +48,10 @@ export function LateralComparisonExperience({
           overflow: "auto",
         }}
       >
-        <InlineDetectionExperience
-          first=""
-          second={second}
-          detections={detections.map((detection) => ({
-            ...detection,
-            sourceA: "",
-          }))}
-        />
+        <h2>Documento 2</h2>
+        <div aria-label="Documento 2 fuente">
+          {renderMarkedSource(second, detections, "B")}
+        </div>
       </section>
     </section>
   );
