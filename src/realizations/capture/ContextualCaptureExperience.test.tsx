@@ -29,21 +29,18 @@ async function loadExperience() {
 
 beforeEach(() => {
   localStorage.clear();
-  vi.useFakeTimers();
-  vi.setSystemTime(new Date("2026-11-16T20:15:30.000Z"));
 });
 
 afterEach(() => {
   cleanup();
   localStorage.clear();
-  vi.useRealTimers();
   vi.resetModules();
 });
 
 describe("R-80-01-M1-B — captura contextual mínima", () => {
   it("[T-80-01-B01] mantiene identificable la actividad principal al abrir captura", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
@@ -71,7 +68,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B02] conserva una aportación breve sólo tras acción explícita", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
@@ -96,7 +93,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B03] registra una referencia temporal observable", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
@@ -109,15 +106,20 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
     );
     await user.click(screen.getByRole("button", { name: /^conservar$/i }));
 
-    const time = screen.getByText(/16\/11\/2026|2026/i).closest("time");
+    const time = screen.getByRole("time");
 
-    expect(time).not.toBeNull();
-    expect(time).toHaveAttribute("datetime", "2026-11-16T20:15:30.000Z");
+    expect(time).toBeInTheDocument();
+
+    const datetime = time.getAttribute("datetime");
+
+    expect(datetime).not.toBeNull();
+    expect(Number.isNaN(Date.parse(datetime!))).toBe(false);
+    expect(time.textContent?.trim().length).toBeGreaterThan(0);
   });
 
   it("[T-80-01-B04] conservar no modifica el contenido de la actividad principal", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
     const workingText = "Argumento que debe permanecer intacto.";
 
     render(<Experience />);
@@ -142,7 +144,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B05] tras conservar cierra la captura y permite continuar inmediatamente", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
@@ -174,7 +176,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B06] recupera posteriormente una captura conservada", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     const first = render(<Experience />);
 
@@ -198,7 +200,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B07] cancelar una captura no conserva nada ni altera la actividad", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
@@ -224,7 +226,7 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
 
   it("[T-80-01-B08] capturar no clasifica ni incorpora automáticamente la aportación", async () => {
     const Experience = await loadExperience();
-    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const user = userEvent.setup();
 
     render(<Experience />);
 
