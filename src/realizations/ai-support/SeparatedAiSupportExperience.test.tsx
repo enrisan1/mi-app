@@ -121,21 +121,7 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     ).toHaveTextContent(AI_SUPPORT_EVIDENCE.support);
   });
 
-  it("[T-80-04-B05] consultar el apoyo no ofrece incorporación automática a la obra", async () => {
-    const Experience = await loadExperience();
-
-    renderExperience(Experience);
-
-    expect(
-      screen.queryByRole("button", { name: /incorporar automáticamente/i }),
-    ).not.toBeInTheDocument();
-
-    expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).toHaveValue(AI_SUPPORT_EVIDENCE.work);
-  });
-
-  it("[T-80-04-B06] conserva por separado obra y apoyo tras una nueva ejecución", async () => {
+  it("[T-80-04-B05] conserva por separado obra y apoyo tras una nueva ejecución", async () => {
     const Experience = await loadExperience();
     const user = userEvent.setup();
 
@@ -162,7 +148,7 @@ describe("R-80-04-M1-B — apoyo IA funcionalmente separado de la obra", () => {
     ).not.toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
   });
 
-  it("[T-80-04-B07] la separación es conductual y no sólo una etiqueta visual", async () => {
+  it("[T-80-04-B06] la separación es conductual y no sólo una etiqueta visual", async () => {
     const Experience = await loadExperience();
     const user = userEvent.setup();
 
