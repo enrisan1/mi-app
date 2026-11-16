@@ -1030,3 +1030,240 @@ TH-80-04-01
 → PENDIENTE
 → contraste humano directo M1-A vs M1-B
 ~~~
+
+
+---
+
+# 24. TH-80-04-01 — contraste humano
+
+La persona responsable realiza el contraste directo entre M1-A y M1-B.
+
+## 24.1 Resultado comunicado
+
+La valoración distingue dos efectos contrapuestos.
+
+### Beneficio inmediato de M1-A
+
+La persona observa que disponer del apoyo IA insertado dentro de la propia obra
+puede facilitar materialmente la construcción inmediata del contenido, siempre
+que permanezca bien diferenciado y etiquetado para evitar confusión de autoría.
+
+Por tanto:
+
+~~~text
+M1-A
+→ ventaja práctica inmediata para construir la obra
+→ OBSERVADA POR LA PERSONA
+~~~
+
+### Razón para preferir M1-B
+
+Pese a esa ventaja inmediata, la persona prefiere el sistema separado porque
+considera que la facilidad de disponer de gran cantidad de material IA dentro
+del propio documento favorece una menor exigencia de elaboración propia.
+
+La separación introduce una fricción deliberada que, en su valoración, ayuda a
+mantener activo el esfuerzo creativo y evita dejarse llevar automáticamente por
+el material disponible.
+
+Por tanto:
+
+~~~text
+M1-B
+→ preferido por preservar una relación más activa
+  entre apoyo IA y elaboración humana
+
+TH-80-04-01
+→ POSITIVO
+→ diferencia humana material observada
+~~~
+
+## 24.2 Qué queda demostrado
+
+El contraste sí demuestra, en el alcance humano evaluado, que:
+
+- M1-A y M1-B no son equivalentes para la persona;
+- la separación funcional cambia materialmente la forma de relacionarse con el
+  apoyo IA;
+- la persona valora poder consultar apoyo sin tenerlo ya constituido dentro del
+  mismo estado funcional que la obra;
+- existe una tensión real entre conveniencia inmediata y conservación de una
+  elaboración humana más activa.
+
+## 24.3 Qué NO queda demostrado
+
+No se ha realizado un estudio longitudinal.
+
+Por tanto, no puede declararse como hecho demostrado que:
+
+~~~text
+apoyo IA insertado
+→ causa pérdida de creatividad a largo plazo
+
+o que
+
+separación funcional
+→ preserva objetivamente la creatividad a largo plazo
+~~~
+
+Esa relación causal permanece como hipótesis humana plausible expresada en el
+contraste, no como resultado experimental de R-80-04-M1.
+
+La suficiencia del testigo no depende de probar esa causalidad longitudinal.
+Depende de establecer si la frontera funcional produce una diferencia humana
+material, y esa diferencia sí ha sido observada.
+
+---
+
+# 25. Evaluación contra CR-80-04-M1
+
+| Condición | Evidencia | Estado |
+| --- | --- | --- |
+| 1. obra/actividad creativa identificable | obra O del fixture común | SATISFECHA |
+| 2. aportación auxiliar con procedencia IA acreditable | E-IA-80-04-M1-01 | SATISFECHA |
+| 3. apoyo asociado a la obra | mismo caso O + X en M1-B | SATISFECHA |
+| 4. apoyo distinguible del contenido | M1-B + B01/B02/B06 | SATISFECHA |
+| 5. recibir/conservar apoyo no modifica obra | B03/B05 | SATISFECHA |
+| 6. consultar apoyo no le da estatuto de contenido | B03/B06 | SATISFECHA |
+| 7. procedencia IA reconocible | E-IA-80-04-M1-01 + B02 | SATISFECHA |
+| 8. diferencia humana material frente al baseline | TH-80-04-01 positivo | SATISFECHA |
+
+Resultado:
+
+~~~text
+CR-80-04-M1
+→ 8/8 SATISFECHAS
+~~~
+
+---
+
+# 26. Cierre de R-80-04-M1
+
+Estado técnico:
+
+~~~text
+M1-A
+→ 5/5 GREEN
+
+M1-B
+→ 6/6 GREEN
+
+total automatizado
+→ 11/11 propiedades satisfechas
+  en ejecuciones separadas
+~~~
+
+Estado humano:
+
+~~~text
+TH-80-04-01
+→ POSITIVO
+→ diferencia material observada
+~~~
+
+Por tanto:
+
+~~~text
+R-80-04-M1
+→ SUFICIENCIA MATERIAL OBSERVADA
+→ CERRADA EN EL ALCANCE DEL TESTIGO
+~~~
+
+El cierre demuestra la realizabilidad y suficiencia mínima de una frontera
+funcional entre obra y apoyo IA para el caso observado.
+
+No demuestra:
+
+- necesidad universal de esa separación;
+- superioridad absoluta de M1-B en toda actividad;
+- pérdida causal de creatividad por M1-A;
+- arquitectura definitiva;
+- ni integración final en producto.
+
+---
+
+# 27. Evaluación de OB-80-NEXT-03
+
+La obligación aceptada exigía demostrar:
+
+~~~text
+apoyo auxiliar realmente procedente de IA
++
+asociado a una obra
++
+funcionalmente separado
++
+sin incorporación automática
++
+diferencia humana material
+~~~
+
+Todas esas condiciones han quedado satisfechas en el alcance mínimo aceptado.
+
+Por tanto:
+
+~~~text
+OB-80-NEXT-03
+→ REALIZADA
+→ CERRADA EN EL ALCANCE ACEPTADO
+
+dependencia constitutiva bloqueante
+→ NINGUNA ESTABLECIDA
+~~~
+
+Esto no equivale a declarar satisfacción universal de C-PV-80-04.
+
+---
+
+# 28. Evidencia emergente derivada del contraste
+
+El contraste introduce una cuestión nueva:
+
+> si la ubicación y disponibilidad inmediata del apoyo IA alteran a medio o largo
+> plazo el grado de elaboración creativa propia.
+
+Su estado correcto es:
+
+~~~text
+posible diferencia humana
+→ IDENTIFICADA
+
+causalidad longitudinal
+→ NO DEMOSTRADA
+
+dependencia necesaria de C-PV-80-04
+→ NO ESTABLECIDA
+
+nueva actuación automática
+→ NO DERIVADA
+~~~
+
+Deberá evaluarse mediante Manual 17 como evidencia emergente sólo si puede
+formularse una comprobación concreta capaz de cambiar una decisión estratégica.
+
+---
+
+# 29. Punto de reanudación
+
+~~~text
+R-80-04-M1
+→ CERRADA
+
+OB-80-NEXT-03
+→ CERRADA EN ALCANCE ACEPTADO
+
+C-PV-80-04
+→ realizabilidad mínima demostrada
+→ satisfacción general NO declarada
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégica
+→ reaplicar Manual 17 al mapa global
+  incluyendo la nueva evidencia emergente
+  sobre esfuerzo creativo y disponibilidad de apoyo IA
+
+nuevo horizonte
+→ NO derivado por este cierre
+~~~
