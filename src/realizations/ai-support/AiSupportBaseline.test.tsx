@@ -124,8 +124,12 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
     const first = renderBaseline(Baseline);
 
     expect(
-      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
-    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+      (
+        screen.getByRole("textbox", {
+          name: /^contenido de la obra$/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toContain(AI_SUPPORT_EVIDENCE.support);
 
     first.unmount();
 
