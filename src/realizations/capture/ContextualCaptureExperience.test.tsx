@@ -106,15 +106,15 @@ describe("R-80-01-M1-B — captura contextual mínima", () => {
     );
     await user.click(screen.getByRole("button", { name: /^conservar$/i }));
 
-    const time = screen.getByRole("time");
+    const time = document.querySelector("time");
 
-    expect(time).toBeInTheDocument();
+    expect(time).not.toBeNull();
 
-    const datetime = time.getAttribute("datetime");
+    const datetime = time!.getAttribute("datetime");
 
     expect(datetime).not.toBeNull();
     expect(Number.isNaN(Date.parse(datetime!))).toBe(false);
-    expect(time.textContent?.trim().length).toBeGreaterThan(0);
+    expect(time!.textContent?.trim().length).toBeGreaterThan(0);
   });
 
   it("[T-80-01-B04] conservar no modifica el contenido de la actividad principal", async () => {
