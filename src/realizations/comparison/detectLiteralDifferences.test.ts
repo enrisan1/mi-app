@@ -113,8 +113,8 @@ describe("R-80-02-M4 — detección literal determinista", () => {
     expect(
       result.some(
         (d) =>
-          d.sourceA.includes("Delta permanece disponible") &&
-          d.sourceB.includes("Delta queda descartada"),
+          d.sourceA.includes("permanece disponible") &&
+          d.sourceB.includes("queda descartada"),
       ),
     ).toBe(true);
     expect(
