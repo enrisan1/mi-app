@@ -187,3 +187,349 @@ tests
 contraste humano
 → PENDIENTE
 ```
+
+
+---
+
+# 9. Reducción de U1 — baseline justo
+
+## 9.1 Variable controlada
+
+M1-A y M1-B deberán usar conjuntamente:
+
+~~~text
+misma obra inicial
++
+mismo apoyo IA literal
++
+misma procedencia declarada
++
+mismo momento de presentación
++
+misma posibilidad de lectura
+~~~
+
+No podrá variar entre recorridos:
+
+- el contenido del apoyo;
+- su calidad;
+- su extensión;
+- el modelo que lo produjo;
+- la obra de partida;
+- ni la información de procedencia.
+
+La única variable experimental será:
+
+~~~text
+estatuto funcional del apoyo
+respecto de la obra
+~~~
+
+## 9.2 Baseline seleccionado — M1-A
+
+El baseline será:
+
+~~~text
+una única superficie/contenido de obra
++
+bloque de apoyo IA insertado dentro
+de ese mismo contenido
++
+marca explícita de procedencia IA
+~~~
+
+El bloque puede estar claramente rotulado, por ejemplo:
+
+~~~text
+[APOYO IA]
+...
+~~~
+
+pero forma parte del mismo valor editable/persistido que constituye la obra.
+
+Por tanto:
+
+~~~text
+procedencia visible
+→ SÍ
+
+información disponible
+→ SÍ
+
+pérdida de apoyo
+→ NO
+
+frontera funcional obra/apoyo
+→ NO
+~~~
+
+El baseline no se hará peor mediante pérdida de datos, menor calidad del apoyo,
+ocultación de procedencia ni pasos adicionales.
+
+Su única limitación será que:
+
+~~~text
+apoyo etiquetado
+→ comparte estatuto operativo con el contenido de la obra
+~~~
+
+## 9.3 Razón de selección
+
+Esta forma permite contrastar directamente:
+
+~~~text
+etiquetado de procedencia dentro de la obra
+vs
+separación funcional fuera de la obra
+~~~
+
+sin introducir diferencias ajenas a C-PV-80-04.
+
+Resultado:
+
+~~~text
+U1 — baseline justo
+→ REDUCIDA
+→ M1-A definido
+~~~
+
+---
+
+# 10. Reducción de U2 — procedencia IA real
+
+## 10.1 Qué debe demostrarse
+
+No es necesario demostrar en R-80-04-M1:
+
+- calidad general de un modelo;
+- integración API;
+- disponibilidad de red;
+- proveedor definitivo;
+- prompt engineering;
+- reproducibilidad exacta del modelo.
+
+Sí es necesario demostrar:
+
+~~~text
+al menos una aportación concreta
+usada en M1-A y M1-B
+→ fue generada realmente por una IA
+~~~
+
+## 10.2 Mecanismo mínimo de acreditación
+
+Se utilizará una evidencia de procedencia externa al estado funcional de los
+componentes.
+
+Para una aportación concreta se conservarán conjuntamente:
+
+~~~text
+identificador de evidencia
++
+fecha
++
+sistema/modelo generador declarado
++
+prompt exacto
++
+salida exacta utilizada
+~~~
+
+El testigo recibirá esa salida como dato controlado.
+
+Por tanto:
+
+~~~text
+generación real
+→ ocurre una vez fuera del componente
+
+tests funcionales
+→ usan la salida literal ya acreditada
+
+dependencia de red/API durante tests
+→ NO
+~~~
+
+Esto permite tener a la vez:
+
+- procedencia IA real;
+- tests deterministas;
+- mismo apoyo literal en M1-A y M1-B;
+- ninguna integración prematura de proveedor.
+
+## 10.3 Límite epistemológico
+
+La aplicación no verificará criptográficamente que el texto fue generado por
+IA.
+
+La acreditación pertenece al expediente experimental de R-80-04-M1, del mismo
+modo que una observación humana pertenece a la evidencia de una actuación y no
+al runtime del producto.
+
+La condición quedará satisfecha sólo para la aportación documentada, no para
+cualquier texto arbitrariamente etiquetado como IA.
+
+Resultado:
+
+~~~text
+U2 — procedencia IA real
+→ REDUCIDA
+→ evidencia externa reproducible documentalmente
+  + salida literal controlada
+~~~
+
+---
+
+# 11. Reducción de U3 — etiquetado frente a separación funcional
+
+## 11.1 Definición negativa
+
+No bastará para M1-B:
+
+- otro color;
+- otro borde;
+- una etiqueta “IA”;
+- un encabezado;
+- una posición lateral;
+- ni un icono.
+
+Esas diferencias pueden ser sólo presentación.
+
+## 11.2 Criterio funcional
+
+Habrá separación funcional cuando se cumplan conjuntamente:
+
+1. la obra y el apoyo son estados distinguibles;
+2. recibir/conservar apoyo no modifica el valor que constituye la obra;
+3. editar la obra no requiere editar/eliminar el apoyo;
+4. consultar el apoyo no lo convierte en contenido de la obra;
+5. persistir o recuperar la obra no exige tratar el apoyo como parte de su
+   contenido;
+6. puede comprobarse por separado qué es obra y qué es apoyo.
+
+En M1-A, por contraste:
+
+~~~text
+obra + bloque [APOYO IA]
+→ mismo contenido persistido/editable
+~~~
+
+En M1-B:
+
+~~~text
+obra
+→ estado de obra
+
+apoyo IA
+→ estado auxiliar asociado
+
+consultar apoyo
+↛ modificar obra
+~~~
+
+## 11.3 Discriminante humano
+
+TH-80-04-01 no preguntará si una interfaz “se ve mejor”.
+
+Preguntará si la separación funcional mejora materialmente:
+
+- claridad sobre qué constituye la obra;
+- capacidad de consultar apoyo sin adoptarlo;
+- control sobre el estatuto autoral del contenido;
+- ausencia de trabajo posterior para retirar apoyo que nunca se quiso
+  incorporar.
+
+Resultado:
+
+~~~text
+U3 — etiquetado vs separación funcional
+→ REDUCIDA
+→ diferencia definida por estado y comportamiento,
+  no por apariencia
+~~~
+
+---
+
+# 12. Contrato experimental resultante
+
+## M1-A — procedencia etiquetada sin frontera funcional suficiente
+
+~~~text
+obra inicial O
++
+apoyo IA X acreditado
+↓
+mismo contenido editable/persistido
+
+X
+→ visible como [APOYO IA]
+→ pero forma parte del contenido de obra
+~~~
+
+## M1-B — apoyo auxiliar funcionalmente separado
+
+~~~text
+obra inicial O
++
+mismo apoyo IA X acreditado
+↓
+dos estados funcionalmente distintos
+
+obra
+→ permanece O salvo edición humana explícita
+
+apoyo
+→ asociado a O
+→ consultable
+→ persistible si el testigo lo requiere
+→ no forma parte del contenido de obra
+~~~
+
+## Control principal
+
+~~~text
+O
+→ idéntica en M1-A y M1-B
+
+X
+→ idéntico en M1-A y M1-B
+
+procedencia de X
+→ idéntica
+
+única variable
+→ frontera funcional
+~~~
+
+---
+
+# 13. Estado tras reducción
+
+~~~text
+U1 — baseline justo
+→ REDUCIDA
+
+U2 — procedencia IA real
+→ REDUCIDA
+
+U3 — etiquetado vs separación funcional
+→ REDUCIDA
+
+incertidumbre metodológica bloqueante
+antes del diseño
+→ NINGUNA IDENTIFICADA
+~~~
+
+La siguiente actuación ya puede ser:
+
+~~~text
+diseñar M1-A
++
+diseñar M1-B
++
+preregistrar tests RED
++
+registrar una evidencia concreta de procedencia IA
+~~~
+
+sin crear todavía los componentes de producción.
