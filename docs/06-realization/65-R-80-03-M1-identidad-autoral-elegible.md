@@ -402,3 +402,58 @@ no existe fallo previo no relacionado
 ~~~
 
 se implementará primero M1-A y se verificará en verde antes de crear M1-B.
+
+
+---
+
+# 15. Verificación del rojo inicial
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/realizations/author-identity/AuthorIdentityBaseline.test.tsx \
+  src/realizations/author-identity/AuthorIdentityExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  2 failed (2)
+Tests       11 failed (11)
+~~~
+
+Distribución:
+
+~~~text
+M1-A
+→ 3/3 RED
+
+M1-B
+→ 8/8 RED
+~~~
+
+Todos los fallos alcanzan exactamente las ausencias preregistradas:
+
+~~~text
+R-80-03-M1-A ausente
+→ falta ./AuthorIdentityBaseline.tsx
+
+R-80-03-M1-B ausente
+→ falta ./AuthorIdentityExperience.tsx
+~~~
+
+No aparece fallo previo de sintaxis, infraestructura o entorno.
+
+Por tanto:
+
+~~~text
+ROJO INICIAL
+→ VÁLIDO
+
+gate de implementación
+→ SUPERADO
+~~~
+
+La siguiente actuación técnica queda limitada a implementar primero M1-A y
+verificar sus 3 tests antes de crear M1-B.
