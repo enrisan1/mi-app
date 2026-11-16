@@ -1,6 +1,8 @@
 import { describe, expect, it, vi } from "vitest";
 import {
   applyChunkAToB,
+  applyChunkBToA,
+  restoreA,
   restoreB,
   type ExecutableMerge,
 } from "./CodeMirrorChunkExecution";
@@ -110,5 +112,65 @@ describe("ID-80-02-A3-R4 — ejecución controlada por chunk", () => {
     applyChunkAToB(merge, 0);
 
     expect(b.dispatch).toHaveBeenCalledTimes(1);
+  });
+});
+
+
+describe("ID-80-02-A3-R5-A — ejecución simétrica B → A", () => {
+  it("[T-A3-R5A-01] aplica sólo el chunk elegido de B sobre A", () => {
+    const a = editor("uno\ndos\ntres\n");
+    const b = editor("uno\nDOS\ntres\n");
+    const merge = {
+      a,
+      b,
+      chunks: [{ fromA: 4, toA: 8, fromB: 4, toB: 8 }],
+    } as unknown as ExecutableMerge;
+
+    const snapshot = applyChunkBToA(merge, 0);
+
+    expect(snapshot).not.toBeNull();
+    expect(a.value).toBe("uno\nDOS\ntres\n");
+    expect(b.value).toBe("uno\nDOS\ntres\n");
+  });
+
+  it("[T-A3-R5A-02] sin chunk válido no modifica A", () => {
+    const a = editor("A");
+    const b = editor("B");
+    const merge = { a, b, chunks: [] } as unknown as ExecutableMerge;
+
+    expect(applyChunkBToA(merge, 0)).toBeNull();
+    expect(a.value).toBe("A");
+    expect(a.dispatch).not.toHaveBeenCalled();
+  });
+
+  it("[T-A3-R5A-03] conserva snapshot de A y permite deshacer", () => {
+    const a = editor("alfa\nbeta\n");
+    const b = editor("alfa\nBETA\n");
+    const merge = {
+      a,
+      b,
+      chunks: [{ fromA: 5, toA: 10, fromB: 5, toB: 10 }],
+    } as unknown as ExecutableMerge;
+
+    const snapshot = applyChunkBToA(merge, 0);
+
+    expect(a.value).toBe("alfa\nBETA\n");
+    expect(restoreA(merge, snapshot)).toBe(true);
+    expect(a.value).toBe("alfa\nbeta\n");
+  });
+
+  it("[T-A3-R5A-04] B permanece intacto durante B → A", () => {
+    const a = editor("uno\ndos\n");
+    const b = editor("uno\nDOS\n");
+    const merge = {
+      a,
+      b,
+      chunks: [{ fromA: 4, toA: 8, fromB: 4, toB: 8 }],
+    } as unknown as ExecutableMerge;
+
+    applyChunkBToA(merge, 0);
+
+    expect(b.value).toBe("uno\nDOS\n");
+    expect(b.dispatch).not.toHaveBeenCalled();
   });
 });
