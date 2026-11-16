@@ -690,3 +690,45 @@ Pero TH-80-01-01 no se cierra todavía por completo hasta comprobar:
 1. que el baseline corregido conserva y recupera la idea;
 2. que esa recuperación sigue exigiendo cambio de contexto;
 3. que M1-B mantiene su ventaja humana cuando ambos recorridos son funcionalmente recuperables.
+
+
+---
+
+# 18. Revalidación técnica del baseline corregido
+
+Ejecución comunicada:
+
+```text
+npx vitest run src/realizations/capture/ContextualCaptureBaseline.test.tsx
+```
+
+Resultado:
+
+```text
+Test Files  1 passed (1)
+Tests       5 passed (5)
+```
+
+Por tanto:
+
+```text
+M1-A corregido
+→ GREEN 5/5
+
+recuperación de captura
+→ técnicamente disponible
+
+recuperación sin cambio de contexto
+→ NO comprometida por el baseline
+```
+
+El contraste humano pendiente queda reducido a una comprobación breve de la
+diferencia de experiencia entre:
+
+```text
+M1-A
+→ recuperar exige salir de la actividad
+
+M1-B
+→ recuperar permanece copresente con la actividad
+```
