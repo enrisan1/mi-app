@@ -732,3 +732,116 @@ M1-A
 M1-B
 → recuperar permanece copresente con la actividad
 ```
+
+
+---
+
+# 19. Cierre de TH-80-01-01 — contraste humano
+
+Tras corregir el baseline para que también conserve y recupere la aportación,
+la persona responsable compara de nuevo ambos recorridos y establece:
+
+```text
+M1-B
+→ superior a M1-A
+```
+
+La diferencia relevante ya no depende de que M1-A pierda o no permita recuperar
+la idea.
+
+Ambos recorridos permiten:
+
+```text
+conservar
++
+recuperar posteriormente
+```
+
+La diferencia observada queda en:
+
+```text
+M1-A
+→ capturar exige abandonar la actividad principal
+→ recuperar exige abandonar de nuevo la actividad principal
+
+M1-B
+→ capturar mantiene visible la actividad principal
+→ recuperar mantiene copresente la actividad principal
+```
+
+## Resultado humano
+
+```text
+O-80-01-M1-02
+→ SATISFECHO
+
+O-80-01-M1-03
+→ SATISFECHO
+
+O-80-01-M1-04
+→ SATISFECHO
+
+O-80-01-M1-07
+→ SATISFECHO
+```
+
+En particular:
+
+```text
+captura contextual
+→ reduce materialmente la ruptura de contexto
+  respecto del baseline funcionalmente recuperable
+```
+
+## Estado de TH-80-01-01
+
+```text
+TH-80-01-01
+→ POSITIVO
+→ CERRADO en el alcance observado
+```
+
+---
+
+# 20. Resultado de R-80-01-M1
+
+La evidencia disponible queda:
+
+```text
+M1-A corregido
+→ 5/5 GREEN
+
+M1-B
+→ 8/8 GREEN
+
+TH-80-01-01
+→ POSITIVO
+```
+
+Por tanto, en el alcance del testigo:
+
+```text
+R-80-01-M1
+→ SUFICIENCIA MATERIAL OBSERVADA
+```
+
+Esto demuestra que una aportación breve puede:
+
+- capturarse durante una actividad intelectual en curso;
+- conservarse explícitamente;
+- mantener una referencia temporal;
+- permanecer separada del contenido principal;
+- recuperarse posteriormente;
+- y hacerlo con menor ruptura de contexto que el baseline comparativo.
+
+No demuestra todavía:
+
+- arquitectura definitiva;
+- captura desde aplicaciones externas;
+- clasificación;
+- búsqueda;
+- inbox universal;
+- sincronización;
+- multimodalidad;
+- IA;
+- satisfacción general de C-PV-80-01 fuera del alcance observado.
