@@ -576,3 +576,117 @@ Comprobar después si esta separación también debe aplicarse a la validación.
 TH-80-01-01
 → PENDIENTE DE CONTRASTE HUMANO
 ```
+
+
+---
+
+# 17. Primer contraste humano y corrección del baseline
+
+La primera observación humana produjo dos resultados distintos.
+
+## 17.1. Resultado válido sobre ruptura de contexto
+
+La persona observó:
+
+```text
+M1-B
+→ facilita mucho mejor la aportación de nuevas ideas
+→ el texto principal permanece visible
+→ no se pierde de vista la actividad
+
+M1-A
+→ insertar la idea obliga a abandonar temporalmente
+   el trabajo principal
+```
+
+Este resultado responde directamente a la pregunta discriminante principal:
+
+```text
+captura contextual
+→ reduce materialmente la ruptura de contexto
+```
+
+La evidencia es positiva y no depende de la recuperación posterior.
+
+## 17.2. Hallazgo adicional sobre recuperabilidad
+
+La persona observó además que:
+
+```text
+M1-B
+→ muestra "Capturas conservadas"
+→ permite utilizar posteriormente las ideas
+  sin abandonar la actividad principal
+
+M1-A
+→ tras volver al trabajo,
+  la idea guardada no disponía de una vía explícita de consulta
+```
+
+Este segundo contraste no era metodológicamente limpio.
+
+El baseline debía representar:
+
+```text
+recuperación posible
++
+cambio de contexto necesario
+```
+
+y no:
+
+```text
+recuperación ausente
+```
+
+Por tanto, no se usa esa diferencia inicial como evidencia contra M1-A.
+
+## 17.3. Corrección
+
+Se añade al baseline:
+
+```text
+"Ir a capturas guardadas"
+↓
+actividad principal deja de estar visible
+↓
+captura previamente guardada queda accesible
+↓
+"Volver a la actividad"
+```
+
+Se añade:
+
+```text
+T-80-01-A05
+→ recuperar posteriormente la idea exige
+  abandonar de nuevo la actividad
+```
+
+La corrección conserva el propósito del baseline:
+
+```text
+datos no perdidos
++
+captura recuperable
+
+pero
+
+captura y recuperación
+→ requieren cambio de contexto
+```
+
+## 17.4. Estado del contraste humano
+
+La conclusión principal sobre interrupción queda:
+
+```text
+O-80-01-M1-07
+→ evidencia positiva inicial
+```
+
+Pero TH-80-01-01 no se cierra todavía por completo hasta comprobar:
+
+1. que el baseline corregido conserva y recupera la idea;
+2. que esa recuperación sigue exigiendo cambio de contexto;
+3. que M1-B mantiene su ventaja humana cuando ambos recorridos son funcionalmente recuperables.
