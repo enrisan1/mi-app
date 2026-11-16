@@ -457,3 +457,117 @@ gate de implementación
 
 La siguiente actuación técnica queda limitada a implementar primero M1-A y
 verificar sus 3 tests antes de crear M1-B.
+
+
+---
+
+# 16. Validación técnica
+
+## M1-A — baseline
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/realizations/author-identity/AuthorIdentityBaseline.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       3 passed (3)
+~~~
+
+Por tanto:
+
+~~~text
+M1-A
+→ GREEN 3/3
+~~~
+
+## M1-B — identidad autoral elegible
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/realizations/author-identity/AuthorIdentityExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       8 passed (8)
+~~~
+
+Por tanto:
+
+~~~text
+M1-B
+→ GREEN 8/8
+~~~
+
+## Estado técnico consolidado
+
+~~~text
+M1-A
+→ 3/3 GREEN
+
+M1-B
+→ 8/8 GREEN
+
+total
+→ 11/11 propiedades automatizadas satisfechas
+~~~
+
+Esto demuestra propiedades funcionales del testigo, pero no todavía que la
+diferencia sea materialmente valiosa para una persona.
+
+---
+
+# 17. TH-80-03-01 — contraste humano pendiente
+
+Debe compararse:
+
+~~~text
+M1-A
+→ identidad operativa = firma obligatoria
+
+M1-B
+→ identidad operativa separada
+→ identidad autoral elegible y reutilizable
+~~~
+
+La prueba humana debe usar varias obras para que la reutilización sea observable.
+
+Caso sugerido:
+
+~~~text
+identidad operativa
+→ Usuario principal
+
+obra 1
+→ título/contenido breve
+→ intención de firmar como Alias A
+
+obra 2
+→ contenido distinto
+→ intención de firmar como Alias B
+
+obra 3
+→ contenido distinto
+→ intención de volver a firmar como Alias A
+~~~
+
+Pregunta discriminante:
+
+> ¿La posibilidad de mantener una identidad operativa estable y elegir/reutilizar
+> identidades autorales distintas produce una diferencia material frente a estar
+> obligado a firmar todas las obras con la identidad operativa?
+
+Estado:
+
+~~~text
+TH-80-03-01
+→ PENDIENTE
+~~~
