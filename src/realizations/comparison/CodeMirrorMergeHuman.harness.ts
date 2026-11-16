@@ -7,6 +7,12 @@ import {
   revealChunkOnBothSides,
   type CoordinatedMerge,
 } from "./CodeMirrorMergeWitness";
+import {
+  applyChunkAToB,
+  restoreB,
+  type ExecutableMerge,
+  type ExecutionSnapshot,
+} from "./CodeMirrorChunkExecution";
 
 const FIRST = `Programa de transición del archivo Boreal
 
@@ -90,6 +96,8 @@ const nativePrevious = document.getElementById("native-previous");
 const nativeNext = document.getElementById("native-next");
 const coordinatedPrevious = document.getElementById("coordinated-previous");
 const coordinatedNext = document.getElementById("coordinated-next");
+const applyActive = document.getElementById("apply-active");
+const undoApply = document.getElementById("undo-apply");
 
 if (
   !root ||
@@ -97,7 +105,9 @@ if (
   !nativePrevious ||
   !nativeNext ||
   !coordinatedPrevious ||
-  !coordinatedNext
+  !coordinatedNext ||
+  !applyActive ||
+  !undoApply
 ) {
   throw new Error("Faltan nodos del harness CodeMirror Merge");
 }
@@ -119,6 +129,7 @@ merge.a.contentDOM.setAttribute("contenteditable", "false");
 merge.b.contentDOM.setAttribute("contenteditable", "false");
 
 let coordinatedIndex = 0;
+let executionSnapshot: ExecutionSnapshot | null = null;
 
 function updateStatus(prefix: string) {
   const total = merge.chunks.length;
@@ -173,6 +184,48 @@ coordinatedNext.addEventListener("click", () => {
   coordinatedIndex = (coordinatedIndex + 1) % merge.chunks.length;
   revealCoordinated(coordinatedIndex);
   updateStatus("Navegación coordinada");
+});
+
+applyActive.addEventListener("click", () => {
+  if (merge.chunks.length === 0) return;
+
+  const beforeCount = merge.chunks.length;
+  const appliedOrdinal = coordinatedIndex + 1;
+  executionSnapshot = applyChunkAToB(
+    merge as unknown as ExecutableMerge,
+    coordinatedIndex,
+  );
+
+  if (!executionSnapshot) return;
+
+  if (merge.chunks.length > 0) {
+    coordinatedIndex = Math.min(coordinatedIndex, merge.chunks.length - 1);
+    revealCoordinated(coordinatedIndex);
+  } else {
+    coordinatedIndex = 0;
+  }
+
+  statusElement.textContent =
+    `Aplicado A → B: chunk ${appliedOrdinal} de ${beforeCount}. ` +
+    `Quedan ${merge.chunks.length} diferencias.`;
+});
+
+undoApply.addEventListener("click", () => {
+  if (!restoreB(merge as unknown as ExecutableMerge, executionSnapshot)) {
+    statusElement.textContent = "No hay una aplicación que deshacer.";
+    return;
+  }
+
+  executionSnapshot = null;
+
+  if (merge.chunks.length > 0) {
+    coordinatedIndex = Math.min(coordinatedIndex, merge.chunks.length - 1);
+    revealCoordinated(coordinatedIndex);
+  } else {
+    coordinatedIndex = 0;
+  }
+
+  updateStatus("Deshecha la última aplicación");
 });
 
 if (merge.chunks.length > 0) {
