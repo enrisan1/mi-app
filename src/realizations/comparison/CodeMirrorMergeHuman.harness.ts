@@ -136,12 +136,18 @@ function revealCoordinated(index: number) {
 
   if (!chunk) return;
 
-  const topA = merge.a.lineBlockAt(chunk.fromA).top;
-  const topB = merge.b.lineBlockAt(chunk.fromB).top;
+  const lineA = merge.a.state.doc.lineAt(chunk.fromA).number;
+  const lineB = merge.b.state.doc.lineAt(chunk.fromB).number;
+  const contextFromA = merge.a.state.doc.line(Math.max(1, lineA - 2)).from;
+  const contextFromB = merge.b.state.doc.line(Math.max(1, lineB - 2)).from;
 
-  // MergeView usa un contenedor vertical compartido. Controlamos ese
-  // viewport explícitamente para que el ciclo 6 → 1 también vuelva arriba.
-  merge.dom.scrollTop = Math.max(0, Math.min(topA, topB) - 12);
+  const topA = merge.a.lineBlockAt(contextFromA).top;
+  const topB = merge.b.lineBlockAt(contextFromB).top;
+
+  // Dejamos dos líneas de contexto anterior cuando existen. Así la
+  // navegación no muestra sólo el primer cambio, sino también su referencia
+  // estructural inmediata (por ejemplo, el título de la sección).
+  merge.dom.scrollTop = Math.max(0, Math.min(topA, topB) - 8);
 }
 
 nativePrevious.addEventListener("click", () => {
