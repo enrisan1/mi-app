@@ -111,4 +111,26 @@ describe("R-80-04-M1-A — apoyo IA etiquetado dentro de la obra", () => {
       expect.stringContaining(AI_SUPPORT_EVIDENCE.support),
     );
   });
+
+  it("[T-80-04-A05] conserva la obra combinada y el apoyo al volver a ejecutarse", async () => {
+    const Baseline = await loadBaseline();
+
+    const first = renderBaseline(Baseline);
+
+    expect(
+      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
+    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+
+    first.unmount();
+
+    renderBaseline(Baseline);
+
+    expect(
+      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
+    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.work));
+
+    expect(
+      screen.getByRole("textbox", { name: /^contenido de la obra$/i }),
+    ).toHaveValue(expect.stringContaining(AI_SUPPORT_EVIDENCE.support));
+  });
 });
