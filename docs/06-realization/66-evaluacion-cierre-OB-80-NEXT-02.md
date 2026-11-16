@@ -244,3 +244,107 @@ Esta resolución elimina la única inconsistencia formal identificada en esta
 evaluación.
 
 No se deriva actuación adicional.
+
+
+---
+
+# 10. Reevaluación final después de la rectificación
+
+Con la condición 7 ya rectificada, OB-80-NEXT-02 exige demostrar:
+
+1. identidad operativa principal;
+2. identidad autoral distinta y reutilizable;
+3. elección explícita por obra;
+4. elección sin modificación de identidad operativa;
+5. reutilización de una misma identidad autoral;
+6. obras distintas con identidades autorales distintas;
+7. selección de identidad autoral sin modificación automática del contenido;
+8. identidad operativa no forzada como firma autoral.
+
+La evidencia disponible establece:
+
+| Condición | Evidencia | Estado |
+| --- | --- | --- |
+| 1 | identidad operativa visible como Usuario principal | SATISFECHA |
+| 2 | Alias A y Alias B como opciones autorales estables | SATISFECHA |
+| 3 | selección explícita mediante selector autoral | SATISFECHA |
+| 4 | Usuario principal permanece estable tras seleccionar autoría | SATISFECHA |
+| 5 | Alias A reutilizado en obra 1 y obra 3 | SATISFECHA |
+| 6 | obra 1/3 con Alias A y obra 2 con Alias B | SATISFECHA |
+| 7 | B07 conserva contenido al seleccionar autoría | SATISFECHA |
+| 8 | B08 demuestra firma no forzada a Usuario principal | SATISFECHA |
+
+Resultado:
+
+```text
+condiciones constitutivas vigentes
+→ 8/8 SATISFECHAS
+```
+
+---
+
+# 11. Residuos examinados
+
+No constituyen condiciones de cierre de esta obligación:
+
+- creación y edición general de identidades autorales;
+- número arbitrario de alias;
+- cuentas múltiples;
+- autenticación;
+- identidad legal;
+- anonimato fuerte;
+- reputación;
+- permisos;
+- colaboración;
+- delegación;
+- publicación pública real;
+- política definitiva de privacidad;
+- arquitectura definitiva;
+- cambio retrospectivo de autoría sobre una obra ya constituida.
+
+Ninguno de esos elementos está exigido por el alcance mínimo aceptado de
+OB-80-NEXT-02.
+
+---
+
+# 12. Decisión final
+
+```text
+R-80-03-M1
+→ CERRADA
+
+OB-80-NEXT-02
+→ REALIZADA
+→ CERRADA EN EL ALCANCE ACEPTADO
+
+dependencia constitutiva bloqueante
+→ NINGUNA ESTABLECIDA
+```
+
+La evidencia demuestra realizabilidad y suficiencia mínima de la separación
+entre identidad operativa e identidad autoral reutilizable elegible por obra.
+
+No se declara satisfacción universal de C-PV-80-03 ni integración final en el
+producto.
+
+---
+
+# 13. Punto de reanudación
+
+```text
+C-PV-80-03
+→ realizabilidad mínima demostrada
+→ satisfacción general NO declarada
+
+siguiente actuación automática
+→ NINGUNA DERIVADA POR ESTE CIERRE
+
+siguiente actuación estratégicamente derivada
+→ PENDIENTE DE REEVALUAR MAPA GLOBAL
+
+nuevo horizonte
+→ NO DERIVADO POR ESTE CIERRE
+
+punto de reanudación
+→ aplicar Manual 17 al estado resultante
+```
