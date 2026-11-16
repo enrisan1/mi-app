@@ -128,6 +128,22 @@ function updateStatus(prefix: string) {
       : `${prefix}: chunk ${coordinatedIndex + 1} de ${total}`;
 }
 
+function revealCoordinated(index: number) {
+  const chunk = revealChunkOnBothSides(
+    merge as unknown as CoordinatedMerge,
+    index,
+  );
+
+  if (!chunk) return;
+
+  const topA = merge.a.lineBlockAt(chunk.fromA).top;
+  const topB = merge.b.lineBlockAt(chunk.fromB).top;
+
+  // MergeView usa un contenedor vertical compartido. Controlamos ese
+  // viewport explícitamente para que el ciclo 6 → 1 también vuelva arriba.
+  merge.dom.scrollTop = Math.max(0, Math.min(topA, topB) - 12);
+}
+
 nativePrevious.addEventListener("click", () => {
   goToPreviousChunk(merge.a);
   statusElement.textContent = "Navegación nativa: anterior en A";
@@ -142,28 +158,19 @@ coordinatedPrevious.addEventListener("click", () => {
   if (merge.chunks.length === 0) return;
   coordinatedIndex =
     (coordinatedIndex - 1 + merge.chunks.length) % merge.chunks.length;
-  revealChunkOnBothSides(
-    merge as unknown as CoordinatedMerge,
-    coordinatedIndex,
-  );
+  revealCoordinated(coordinatedIndex);
   updateStatus("Navegación coordinada");
 });
 
 coordinatedNext.addEventListener("click", () => {
   if (merge.chunks.length === 0) return;
   coordinatedIndex = (coordinatedIndex + 1) % merge.chunks.length;
-  revealChunkOnBothSides(
-    merge as unknown as CoordinatedMerge,
-    coordinatedIndex,
-  );
+  revealCoordinated(coordinatedIndex);
   updateStatus("Navegación coordinada");
 });
 
 if (merge.chunks.length > 0) {
-  revealChunkOnBothSides(
-    merge as unknown as CoordinatedMerge,
-    coordinatedIndex,
-  );
+  revealCoordinated(coordinatedIndex);
 }
 
 updateStatus("Inicial");
