@@ -1001,3 +1001,38 @@ App.test.tsx
 siguiente gate
 → reejecutar App.test.tsx
 ~~~
+
+
+---
+
+# 28. Corrección del import del arnés histórico
+
+La reejecución de `App.test.tsx` alcanza:
+
+~~~text
+ReferenceError: within is not defined
+~~~
+
+Causa:
+
+~~~text
+el ajuste del test histórico introdujo within(...)
+pero App.test.tsx no lo importaba todavía
+~~~
+
+Se corrige exclusivamente el import desde `@testing-library/react`.
+
+No se modifica producción.
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+App.test.tsx
+→ arnés corregido
+
+siguiente gate
+→ reejecutar App.test.tsx
+~~~
