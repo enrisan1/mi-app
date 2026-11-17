@@ -665,3 +665,133 @@ producción
 siguiente paso autorizado
 → NINGUNO hasta HUMAN GATE
 ~~~
+
+
+---
+
+# 21. Resultado del HUMAN GATE
+
+La persona responsable decide:
+
+~~~text
+R-80-CONV-03
+→ ABRIR
+~~~
+
+La autorización queda limitada a:
+
+~~~text
+1. preregistrar tests de integración
+2. observar RED válido
+3. sólo entonces modificar producción
+~~~
+
+Estado:
+
+~~~text
+R-80-CONV-03
+→ ABIERTA
+
+producción
+→ SIN CAMBIOS
+~~~
+
+---
+
+# 22. Tests RED preregistrados
+
+Se crea:
+
+~~~text
+src/App.author-identity.integration.test.tsx
+~~~
+
+con ocho pruebas:
+
+~~~text
+T-CONV-80-03-01
+→ identidad operativa principal visible
+
+T-CONV-80-03-02
+→ identidad autoral creada queda reutilizable
+
+T-CONV-80-03-03
+→ asignar autoría no modifica contenido de obra
+
+T-CONV-80-03-04
+→ misma identidad reutilizable en otra obra
+
+T-CONV-80-03-05
+→ obras distintas conservan autorías distintas
+
+T-CONV-80-03-06
+→ catálogo y asociaciones sobreviven a remount
+
+T-CONV-80-03-07
+→ autoría no modifica estados ordinarios ni capturas
+
+T-CONV-80-03-08
+→ captura contextual no se convierte en obra autorable
+~~~
+
+Contrato observable inicial del arnés:
+
+~~~text
+Identidad operativa
+Identidad autoral
+Nueva identidad autoral
+Crear identidad autoral
+Obra ordinaria
+Asignar autoría
+~~~
+
+Este vocabulario es contrato de prueba inicial, no arquitectura ni diseño visual
+definitivo.
+
+---
+
+# 23. Gate actual
+
+Debe ejecutarse:
+
+~~~text
+npx vitest run src/App.author-identity.integration.test.tsx
+~~~
+
+Resultado esperado:
+
+~~~text
+Test Files
+→ 1 failed
+
+Tests
+→ 8 failed
+~~~
+
+La causa válida deberá ser la ausencia de la capacidad autoral ordinaria, por
+ejemplo la inexistencia de:
+
+~~~text
+Identidad operativa
+o
+región "Identidad autoral"
+~~~
+
+No se considerará RED válido un fallo previo de sintaxis, imports, entorno,
+selectores defectuosos ni DEUDA-TSC-COMP-01.
+
+Hasta observar el resultado:
+
+~~~text
+tests
+→ PREREGISTRADOS
+
+RED
+→ NO CONFIRMADO
+
+producción
+→ SIN CAMBIOS
+
+implementación
+→ NO AUTORIZADA TODAVÍA
+~~~
