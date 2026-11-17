@@ -1073,3 +1073,42 @@ App.test.tsx
 siguiente gate
 → reejecutar App.test.tsx
 ~~~
+
+
+---
+
+# 30. GREEN de regresión histórica de App
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       28 passed (28)
+~~~
+
+Por tanto:
+
+~~~text
+regresión histórica App
+→ GREEN 28/28
+
+gate 2 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+npx vitest run \
+  src/realizations/author-identity/AuthorIdentityBaseline.test.tsx \
+  src/realizations/author-identity/AuthorIdentityExperience.test.tsx
+~~~
+
+No se avanza todavía a captura integrada, criterio diferencial TypeScript ni
+suite canónica hasta observar este patrimonio realizativo.
