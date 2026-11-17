@@ -2124,3 +2124,56 @@ npx vitest run workers/ai-support/src/index.test.ts
 
 Sólo después de GREEN se avanzará a comprobar conjuntamente cliente + Worker y
 a preparar el despliegue real.
+
+
+---
+
+# 48. GREEN del Worker
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       7 passed (7)
+~~~
+
+Por tanto:
+
+~~~text
+Worker contract
+→ GREEN 7/7
+
+cliente ordinario
+→ GREEN 9/9
+
+borde cliente↔Worker
+→ cada lado validado aisladamente
+~~~
+
+No se ha desplegado todavía ningún Worker ni se ha configurado secreto real.
+
+Siguiente gate:
+
+~~~text
+npx vitest run \
+  src/App.ai-support.integration.test.tsx \
+  workers/ai-support/src/index.test.ts
+~~~
+
+Objetivo:
+
+~~~text
+cliente
++
+Worker
+→ GREEN conjunto
+~~~
+
+Sólo después de ese resultado se preparará el despliegue real mínimo y la
+prueba con proveedor IA real.
