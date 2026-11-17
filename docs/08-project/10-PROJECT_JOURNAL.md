@@ -10016,3 +10016,30 @@ DEUDA-TSC-COMP-01
 siguiente gate
 → suite canónica completa
 ~~~
+
+
+---
+
+# 17/11/2026 — Contraste humano y cierre de R-80-CONV-02
+
+~~~text
+TH-80-CONV-01
+→ POSITIVO
+
+CSO-80-01
+→ SATISFECHO
+
+HITO-80-CONV-01
+→ SATISFECHO
+
+R-80-CONV-02
+→ CERRADA
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ ajena al cierre
+
+siguiente candidato de convergencia
+→ C-PV-80-03
+→ formular bajo PM-10 antes de construir
+~~~
