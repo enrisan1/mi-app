@@ -974,11 +974,11 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     await user.click(inspectButton);
 
     expect(
-      screen.getByText("Material anterior A", { exact: true }),
+      within(materialsRegion).getByText("Material anterior A", { exact: true }),
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("Material anterior B", { exact: true }),
+      within(materialsRegion).getByText("Material anterior B", { exact: true }),
     ).toBeInTheDocument();
 
     expect(
