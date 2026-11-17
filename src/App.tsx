@@ -11,6 +11,48 @@ type OrdinaryMaterial = {
   content: string;
 };
 
+type ContextualCapture = {
+  id: string;
+  text: string;
+  capturedAt: string;
+};
+
+const CONTEXTUAL_CAPTURES_STORAGE_KEY = "ordinary.contextual-captures";
+
+function loadContextualCaptures(): ContextualCapture[] {
+  try {
+    const stored = localStorage.getItem(CONTEXTUAL_CAPTURES_STORAGE_KEY);
+
+    if (stored === null) {
+      return [];
+    }
+
+    const parsed = JSON.parse(stored);
+
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
+
+    return parsed.filter(
+      (item): item is ContextualCapture =>
+        typeof item === "object" &&
+        item !== null &&
+        typeof item.id === "string" &&
+        typeof item.text === "string" &&
+        typeof item.capturedAt === "string",
+    );
+  } catch {
+    return [];
+  }
+}
+
+function saveContextualCaptures(captures: ContextualCapture[]) {
+  localStorage.setItem(
+    CONTEXTUAL_CAPTURES_STORAGE_KEY,
+    JSON.stringify(captures),
+  );
+}
+
 type IntegrationChoice = null | "existing" | "current";
 
 type ReceivedCollaborativeAntecedent = {
@@ -29,6 +71,11 @@ type AppProps = {
 
 function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [assistanceRequested, setAssistanceRequested] = useState(false);
+  const [captureOpen, setCaptureOpen] = useState(false);
+  const [captureDraft, setCaptureDraft] = useState("");
+  const [contextualCaptures, setContextualCaptures] = useState<
+    ContextualCapture[]
+  >(() => loadContextualCaptures());
   const [ordinaryMaterials, setOrdinaryMaterials] = useState<
     OrdinaryMaterial[]
   >(() => {
@@ -109,6 +156,82 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             El lápiz cuesta 1 euro: al restar los 3 euros de diferencia, quedan
             2 euros que corresponden a dos veces el precio del lápiz.
           </p>
+        )}
+      </section>
+
+      <section aria-label="Captura contextual">
+        <button
+          type="button"
+          onClick={() => {
+            setCaptureDraft("");
+            setCaptureOpen(true);
+          }}
+        >
+          Capturar aportación
+        </button>
+
+        {captureOpen && (
+          <div>
+            <label>
+              Aportación breve
+              <textarea
+                value={captureDraft}
+                onChange={(event) => setCaptureDraft(event.target.value)}
+              />
+            </label>
+
+            <button
+              type="button"
+              onClick={() => {
+                if (captureDraft.trim().length === 0) {
+                  return;
+                }
+
+                const capturedAt = new Date().toISOString();
+                const nextCaptures = [
+                  ...contextualCaptures,
+                  {
+                    id: `${capturedAt}-${contextualCaptures.length}`,
+                    text: captureDraft,
+                    capturedAt,
+                  },
+                ];
+
+                saveContextualCaptures(nextCaptures);
+                setContextualCaptures(nextCaptures);
+                setCaptureDraft("");
+                setCaptureOpen(false);
+              }}
+            >
+              Conservar
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setCaptureDraft("");
+                setCaptureOpen(false);
+              }}
+            >
+              Cancelar
+            </button>
+          </div>
+        )}
+
+        {contextualCaptures.length > 0 && (
+          <section aria-label="Capturas conservadas">
+            <h2>Capturas conservadas</h2>
+            <ul>
+              {contextualCaptures.map((capture) => (
+                <li key={capture.id}>
+                  <p>{capture.text}</p>
+                  <time dateTime={capture.capturedAt}>
+                    {new Date(capture.capturedAt).toLocaleString("es-ES")}
+                  </time>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
       </section>
 
