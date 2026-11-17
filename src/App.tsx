@@ -17,6 +17,19 @@ type ContextualCapture = {
   capturedAt: string;
 };
 
+type AuthorIdentity = {
+  id: string;
+  label: string;
+};
+
+type WorkAuthorship = {
+  materialId: string;
+  authorIdentityId: string;
+};
+
+const OPERATIONAL_IDENTITY = "Usuario principal";
+const AUTHOR_IDENTITIES_STORAGE_KEY = "ordinary.author-identities";
+const WORK_AUTHORSHIPS_STORAGE_KEY = "ordinary.work-authorships";
 const CONTEXTUAL_CAPTURES_STORAGE_KEY = "ordinary.contextual-captures";
 
 function loadContextualCaptures(): ContextualCapture[] {
@@ -53,6 +66,54 @@ function saveContextualCaptures(captures: ContextualCapture[]) {
   );
 }
 
+function loadAuthorIdentities(): AuthorIdentity[] {
+  try {
+    const stored = localStorage.getItem(AUTHOR_IDENTITIES_STORAGE_KEY);
+    if (stored === null) return [];
+
+    const parsed = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return [];
+
+    return parsed.filter(
+      (item): item is AuthorIdentity =>
+        typeof item === "object" &&
+        item !== null &&
+        typeof item.id === "string" &&
+        typeof item.label === "string",
+    );
+  } catch {
+    return [];
+  }
+}
+
+function loadWorkAuthorships(): WorkAuthorship[] {
+  try {
+    const stored = localStorage.getItem(WORK_AUTHORSHIPS_STORAGE_KEY);
+    if (stored === null) return [];
+
+    const parsed = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return [];
+
+    return parsed.filter(
+      (item): item is WorkAuthorship =>
+        typeof item === "object" &&
+        item !== null &&
+        typeof item.materialId === "string" &&
+        typeof item.authorIdentityId === "string",
+    );
+  } catch {
+    return [];
+  }
+}
+
+function saveAuthorIdentities(identities: AuthorIdentity[]) {
+  localStorage.setItem(AUTHOR_IDENTITIES_STORAGE_KEY, JSON.stringify(identities));
+}
+
+function saveWorkAuthorships(authorships: WorkAuthorship[]) {
+  localStorage.setItem(WORK_AUTHORSHIPS_STORAGE_KEY, JSON.stringify(authorships));
+}
+
 type IntegrationChoice = null | "existing" | "current";
 
 type ReceivedCollaborativeAntecedent = {
@@ -76,6 +137,16 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [contextualCaptures, setContextualCaptures] = useState<
     ContextualCapture[]
   >(() => loadContextualCaptures());
+  const [authorIdentityDraft, setAuthorIdentityDraft] = useState("");
+  const [authorIdentities, setAuthorIdentities] = useState<AuthorIdentity[]>(
+    () => loadAuthorIdentities(),
+  );
+  const [selectedAuthorshipMaterialId, setSelectedAuthorshipMaterialId] =
+    useState("");
+  const [selectedAuthorIdentityId, setSelectedAuthorIdentityId] = useState("");
+  const [workAuthorships, setWorkAuthorships] = useState<WorkAuthorship[]>(
+    () => loadWorkAuthorships(),
+  );
   const [ordinaryMaterials, setOrdinaryMaterials] = useState<
     OrdinaryMaterial[]
   >(() => {
@@ -231,6 +302,146 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 </li>
               ))}
             </ul>
+          </section>
+        )}
+      </section>
+
+      <section aria-label="Identidad autoral">
+        <h2>Identidad autoral</h2>
+
+        <p aria-label="Identidad operativa">{OPERATIONAL_IDENTITY}</p>
+
+        <label>
+          Nueva identidad autoral
+          <input
+            value={authorIdentityDraft}
+            onChange={(event) => setAuthorIdentityDraft(event.target.value)}
+          />
+        </label>
+
+        <button
+          type="button"
+          onClick={() => {
+            const label = authorIdentityDraft.trim();
+            if (label.length === 0) {
+              return;
+            }
+
+            const existing = authorIdentities.find(
+              (identity) => identity.label === label,
+            );
+
+            if (existing !== undefined) {
+              setSelectedAuthorIdentityId(existing.id);
+              setAuthorIdentityDraft("");
+              return;
+            }
+
+            const nextIdentity: AuthorIdentity = {
+              id: `author-${authorIdentities.length + 1}`,
+              label,
+            };
+            const next = [...authorIdentities, nextIdentity];
+
+            saveAuthorIdentities(next);
+            setAuthorIdentities(next);
+            setSelectedAuthorIdentityId(nextIdentity.id);
+            setAuthorIdentityDraft("");
+          }}
+        >
+          Crear identidad autoral
+        </button>
+
+        <label>
+          Obra ordinaria
+          <select
+            value={selectedAuthorshipMaterialId}
+            onChange={(event) =>
+              setSelectedAuthorshipMaterialId(event.target.value)
+            }
+          >
+            <option value="">Selecciona una obra</option>
+            {ordinaryMaterials.map((material) => (
+              <option key={material.id} value={material.id}>
+                {material.content}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Identidad autoral
+          <select
+            value={selectedAuthorIdentityId}
+            onChange={(event) =>
+              setSelectedAuthorIdentityId(event.target.value)
+            }
+          >
+            <option value="">Selecciona una identidad</option>
+            {authorIdentities.map((identity) => (
+              <option key={identity.id} value={identity.id}>
+                {identity.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <button
+          type="button"
+          disabled={
+            selectedAuthorshipMaterialId === "" ||
+            selectedAuthorIdentityId === ""
+          }
+          onClick={() => {
+            if (
+              selectedAuthorshipMaterialId === "" ||
+              selectedAuthorIdentityId === ""
+            ) {
+              return;
+            }
+
+            const next = [
+              ...workAuthorships.filter(
+                (authorship) =>
+                  authorship.materialId !== selectedAuthorshipMaterialId,
+              ),
+              {
+                materialId: selectedAuthorshipMaterialId,
+                authorIdentityId: selectedAuthorIdentityId,
+              },
+            ];
+
+            saveWorkAuthorships(next);
+            setWorkAuthorships(next);
+          }}
+        >
+          Asignar autoría
+        </button>
+
+        {workAuthorships.length > 0 && (
+          <section aria-label="Autorías de obras">
+            <h3>Autorías de obras</h3>
+            {workAuthorships.map((authorship) => {
+              const material = ordinaryMaterials.find(
+                (item) => item.id === authorship.materialId,
+              );
+              const identity = authorIdentities.find(
+                (item) => item.id === authorship.authorIdentityId,
+              );
+
+              if (material === undefined || identity === undefined) {
+                return null;
+              }
+
+              return (
+                <article key={authorship.materialId}>
+                  <p>{material.content}</p>
+                  <p aria-label={`Autoría de obra ${authorship.materialId}`}>
+                    {identity.label}
+                  </p>
+                </article>
+              );
+            })}
           </section>
         )}
       </section>
