@@ -1781,3 +1781,60 @@ App + gateway cliente
 Worker
 → TODAVÍA NO CONSTRUIDO
 ~~~
+
+
+---
+
+# 40. Primer tramo de construcción — cliente y gateway
+
+Tras RED válido se implementa únicamente:
+
+~~~text
+src/ai-support/aiSupportGateway.ts
+src/App.tsx
+~~~
+
+El gateway:
+
+~~~text
+VITE_AI_SUPPORT_ENDPOINT
+→ POST JSON
+→ valida AiSupportResponse
+→ normaliza fallo mediante excepción
+~~~
+
+No contiene secreto ni proveedor.
+
+La App añade:
+
+~~~text
+region "Apoyo auxiliar de IA"
+selección de obra
+petición humana
+acción "Solicitar apoyo IA"
+estado ordinary.ai-support
+procedencia separada
+error recuperable
+~~~
+
+No se modifica:
+
+~~~text
+ordinary.materials
+ordinary.contextual-captures
+ordinary.author-identities
+ordinary.work-authorships
+~~~
+
+como efecto de conservar apoyo IA.
+
+El Worker y sus dependencias siguen sin construirse.
+
+Siguiente gate:
+
+~~~text
+npx vitest run src/App.ai-support.integration.test.tsx
+~~~
+
+Sólo si el cliente alcanza GREEN se abrirá el scaffold del Worker y se
+preregistrarán sus pruebas antes de implementar la llamada real a OpenAI.
