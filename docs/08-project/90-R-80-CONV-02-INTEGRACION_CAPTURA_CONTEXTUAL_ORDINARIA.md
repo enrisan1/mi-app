@@ -792,3 +792,44 @@ npx vitest run src/App.test.tsx
 
 No se avanza todavía a tests de R-80-01-M1, typecheck ni suite canónica hasta
 observar esta regresión histórica de App.
+
+
+---
+
+# 23. GREEN de la regresión histórica de App
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       28 passed (28)
+~~~
+
+Por tanto:
+
+~~~text
+regresión histórica de App
+→ GREEN 28/28
+
+gate 2 de validación posterior
+→ SUPERADO
+~~~
+
+No se observa regresión en los recorridos históricos cubiertos por `App.test.tsx`.
+
+Siguiente gate preregistrado:
+
+~~~text
+npx vitest run \
+  src/realizations/capture/ContextualCaptureBaseline.test.tsx \
+  src/realizations/capture/ContextualCaptureExperience.test.tsx
+~~~
+
+No se avanza todavía a typecheck ni a la suite canónica hasta observar este
+resultado.
