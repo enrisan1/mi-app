@@ -515,3 +515,130 @@ producción
 siguiente paso autorizado
 → NINGUNO hasta HUMAN GATE
 ~~~
+
+
+---
+
+# 17. Resultado del HUMAN GATE
+
+La persona responsable decide:
+
+~~~text
+R-80-CONV-02
+→ ABRIR
+~~~
+
+La autorización queda limitada al orden preregistrado:
+
+~~~text
+1. crear tests de integración
+2. observar RED válido
+3. sólo entonces modificar producción
+~~~
+
+Estado:
+
+~~~text
+R-80-CONV-02
+→ ABIERTA
+
+producción
+→ todavía SIN CAMBIOS
+~~~
+
+---
+
+# 18. Tests RED preregistrados
+
+Se crea:
+
+~~~text
+src/App.capture.integration.test.tsx
+~~~
+
+con siete pruebas:
+
+~~~text
+T-CONV-80-01-01
+→ abrir captura mantiene la actividad ordinaria
+
+T-CONV-80-01-02
+→ cancelar no conserva ni altera estado ordinario
+
+T-CONV-80-01-03
+→ conservar produce captura + referencia temporal válida
+
+T-CONV-80-01-04
+→ captura no modifica estados ordinarios preexistentes
+
+T-CONV-80-01-05
+→ captura sobrevive a desmontaje/remontaje de App
+
+T-CONV-80-01-06
+→ captura no se convierte en ordinary.materials
+  ni en ru2m1.previous/retained
+
+T-CONV-80-01-07
+→ después de capturar puede continuar el recorrido ordinario
+~~~
+
+Cada test verifica primero que existe el recorrido ordinario y sólo después
+intenta invocar la nueva operación.
+
+El contrato accesible mínimo utilizado por el arnés es:
+
+~~~text
+Capturar aportación
+Aportación breve
+Conservar
+Cancelar
+~~~
+
+Estos nombres no constituyen arquitectura ni diseño visual definitivo; son el
+contrato observable inicial del hito y pueden revisarse si la implementación
+mínima demuestra una alternativa equivalente mejor.
+
+---
+
+# 19. Gate actual
+
+Los tests han sido preregistrados, pero no se declara RED todavía.
+
+Debe ejecutarse localmente:
+
+~~~text
+npx vitest run src/App.capture.integration.test.tsx
+~~~
+
+Resultado esperado:
+
+~~~text
+Test Files
+→ 1 failed
+
+Tests
+→ 7 failed
+
+causa esperada
+→ ausencia del botón/operación
+  "Capturar aportación" en App
+~~~
+
+Sólo si los fallos alcanzan esa ausencia —sin fallos previos de sintaxis,
+imports, entorno o selectores— quedará superado el gate RED.
+
+Hasta observar el resultado:
+
+~~~text
+tests
+→ PREREGISTRADOS
+
+RED
+→ NO CONFIRMADO
+
+App.tsx
+→ SIN CAMBIOS
+
+implementación
+→ NO AUTORIZADA TODAVÍA
+~~~
