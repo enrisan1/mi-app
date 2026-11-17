@@ -1726,3 +1726,58 @@ dependencias
 Sólo un RED válido autorizará comenzar la construcción del cliente y del
 gateway. El scaffold del Worker se construirá después de ese gate y sus pruebas
 propias precederán a su lógica de proveedor.
+
+
+---
+
+# 39. Verificación del RED inicial
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.ai-support.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       9 failed (9)
+~~~
+
+La App ordinaria se monta correctamente y mantiene visibles:
+
+~~~text
+Captura contextual
+Identidad autoral
+Autorías de obras
+Ahora
+Continuidad compartida
+Materiales anteriores
+~~~
+
+El fallo alcanza exactamente la capacidad ausente preregistrada:
+
+~~~text
+Unable to find an accessible element
+with role "region"
+and name "Apoyo auxiliar de IA"
+~~~
+
+No aparece un fallo previo de imports, sintaxis, entorno ni configuración.
+
+Por tanto:
+
+~~~text
+RED INICIAL
+→ VÁLIDO
+
+gate de construcción cliente
+→ SUPERADO
+
+App + gateway cliente
+→ AUTORIZADOS
+
+Worker
+→ TODAVÍA NO CONSTRUIDO
+~~~
