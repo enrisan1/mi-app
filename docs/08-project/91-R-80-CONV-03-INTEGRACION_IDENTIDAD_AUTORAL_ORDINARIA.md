@@ -847,3 +847,55 @@ gate de implementación
 App.tsx
 → AUTORIZADA modificación mínima
 ~~~
+
+
+---
+
+# 25. Primera ejecución GREEN parcial y corrección del arnés
+
+Primera ejecución tras implementar identidad autoral:
+
+~~~text
+Test Files  1 failed (1)
+Tests       1 failed | 7 passed (8)
+~~~
+
+El único fallo aparece en `T-CONV-80-03-03`.
+
+La producción muestra correctamente dos ocurrencias legítimas de:
+
+~~~text
+Obra ordinaria uno
+~~~
+
+1. una opción del selector de obra;
+2. la obra ya asociada dentro de la región `Autorías de obras`.
+
+El test usaba una consulta global:
+
+~~~text
+getByText("Obra ordinaria uno")
+~~~
+
+que resulta ambigua después de implementar la capacidad.
+
+Se corrige únicamente el arnés para verificar el contenido dentro de:
+
+~~~text
+region "Autorías de obras"
+~~~
+
+No se modifica producción.
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+tests
+→ corregidos sólo para desambiguar selector
+
+siguiente gate
+→ reejecutar src/App.author-identity.integration.test.tsx
+~~~
