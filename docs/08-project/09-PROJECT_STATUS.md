@@ -7911,3 +7911,31 @@ siguiente gate
 → ejecutar src/App.author-identity.integration.test.tsx
   y confirmar RED válido
 ~~~
+
+
+---
+
+# 17/11/2026 — Cierre de HITO-80-CONV-02
+
+~~~text
+TH-80-CONV-03
+→ POSITIVO
+
+CSO-80-03
+→ SATISFECHO
+
+HITO-80-CONV-02
+→ SATISFECHO
+
+R-80-CONV-03
+→ CERRADA
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ ajena al cierre
+
+orden de convergencia
+→ 80-01 completado
+→ 80-03 completado
+→ siguiente candidato: 80-04
+~~~
