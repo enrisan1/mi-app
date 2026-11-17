@@ -982,3 +982,143 @@ o
 B — sustituirse, para esta actuación, por un criterio diferencial explícito de no regresión atribuible a captura, preservando la deuda como obligación separada.
 
 No se adopta ninguna de las dos salidas automáticamente.
+
+---
+
+# 26. Resolución metodológica del gate de typecheck — método B
+
+Se adopta la salida B:
+
+~~~text
+para R-80-CONV-02
+→ sustituir el requisito de PASS global absoluto
+  por un criterio diferencial explícito
+  de no regresión atribuible a la captura
+
+deuda TypeScript previa de comparison
+→ preservar separadamente
+~~~
+
+## 26.1 Fundamento
+
+Se ha comprobado que los cinco archivos que producen los 14 errores son idénticos entre:
+
+~~~text
+24c30b
+→ estado inmediatamente anterior a modificar App
+
+feature/task-filters
+→ estado actual
+~~~
+
+También se comprueba:
+
+~~~text
+package.json
+→ idéntico
+
+tsconfig.json
+→ idéntico
+~~~
+
+Por tanto, en el alcance observado:
+
+~~~text
+cambio de captura
+→ no modifica los archivos con error
+→ no modifica package.json
+→ no modifica tsconfig.json
+
+atribución causal de esos 14 errores a R-80-CONV-02
+→ REFUTADA
+~~~
+
+## 26.2 Nuevo criterio diferencial de tipos
+
+Se define:
+
+**CTD-80-CONV-02 — no regresión TypeScript atribuible a la integración de captura.**
+
+CTD-80-CONV-02 queda satisfecho cuando concurren conjuntamente:
+
+1. el typecheck global se ejecuta;
+2. todos los errores observados pertenecen a archivos no modificados por R-80-CONV-02;
+3. esos archivos son idénticos al estado inmediatamente anterior a la integración;
+4. la configuración TypeScript relevante y package.json permanecen sin cambios;
+5. no aparece ningún error en App.tsx ni en App.capture.integration.test.tsx;
+6. no aparece ningún error nuevo atribuible a imports, tipos o contratos introducidos por captura.
+
+Resultado actual:
+
+~~~text
+CTD-80-CONV-02
+→ SATISFECHO
+
+typecheck global absoluto
+→ sigue FAIL por deuda previa
+~~~
+
+## 26.3 Deuda separada
+
+Se registra:
+
+**DEUDA-TSC-COMP-01 — saneamiento TypeScript del patrimonio de comparación.**
+
+Contenido observado:
+
+~~~text
+namespace JSX no disponible
++
+indexación potencialmente undefined
+en detectLiteralDifferences.ts
+~~~
+
+Esta deuda:
+
+- no bloquea por causalidad propia la integración de captura;
+- no se corrige dentro de R-80-CONV-02;
+- deberá resolverse antes de declarar sano el typecheck global del repositorio;
+- deberá abordarse de forma localizada, preferentemente antes o durante la futura convergencia de C-PV-80-02, salvo que otro gate global anterior la haga necesaria.
+
+No se declara todavía una actuación constructiva independiente para esa deuda.
+
+## 26.4 Modificación del criterio de cierre
+
+Para R-80-CONV-02, el bloque técnico queda reinterpretado así:
+
+~~~text
+tests específicos de integración
+→ GREEN
+
+regresión App
+→ GREEN
+
+patrimonio R-80-01-M1
+→ GREEN
+
+CTD-80-CONV-02
+→ SATISFECHO
+
+suite canónica
+→ pendiente
+~~~
+
+El requisito de calidad global no desaparece:
+
+~~~text
+typecheck global sano
+→ deuda abierta del repositorio
+
+pero
+
+R-80-CONV-02
+→ no carga una regresión que no produjo
+~~~
+
+## 26.5 Siguiente gate
+
+Queda habilitada la ejecución de la suite canónica completa.
+
+Si la suite canónica falla exclusivamente por la misma deuda preexistente de comparison o por un fallo no relacionado con captura, deberá aplicarse el mismo análisis causal antes de atribuirlo a R-80-CONV-02.
+
+Si falla en App, captura o recorridos tocados por esta actuación, R-80-CONV-02 permanecerá bloqueada.
