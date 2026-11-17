@@ -5,6 +5,7 @@ import {
 } from "./realizations/ru2m1/ResumeExperience";
 import { PostV1IntegratedExperience } from "./realizations/post-v1-integrated/PostV1IntegratedExperience";
 import { localStorageResumeRepository } from "./realizations/ru2m1/localStorageResumeRepository";
+import { requestAiSupport } from "./ai-support/aiSupportGateway";
 
 type OrdinaryMaterial = {
   id: string;
@@ -27,9 +28,23 @@ type WorkAuthorship = {
   authorIdentityId: string;
 };
 
+type AiSupport = {
+  id: string;
+  materialId: string;
+  request: string;
+  content: string;
+  provenance: {
+    system: string;
+    model?: string;
+    requestId?: string;
+  };
+  createdAt: string;
+};
+
 const OPERATIONAL_IDENTITY = "Usuario principal";
 const AUTHOR_IDENTITIES_STORAGE_KEY = "ordinary.author-identities";
 const WORK_AUTHORSHIPS_STORAGE_KEY = "ordinary.work-authorships";
+const AI_SUPPORT_STORAGE_KEY = "ordinary.ai-support";
 const CONTEXTUAL_CAPTURES_STORAGE_KEY = "ordinary.contextual-captures";
 
 function loadContextualCaptures(): ContextualCapture[] {
@@ -114,6 +129,40 @@ function saveWorkAuthorships(authorships: WorkAuthorship[]) {
   localStorage.setItem(WORK_AUTHORSHIPS_STORAGE_KEY, JSON.stringify(authorships));
 }
 
+function loadAiSupports(): AiSupport[] {
+  try {
+    const stored = localStorage.getItem(AI_SUPPORT_STORAGE_KEY);
+    if (stored === null) return [];
+
+    const parsed = JSON.parse(stored);
+    if (!Array.isArray(parsed)) return [];
+
+    return parsed.filter(
+      (item): item is AiSupport =>
+        typeof item === "object" &&
+        item !== null &&
+        typeof item.id === "string" &&
+        typeof item.materialId === "string" &&
+        typeof item.request === "string" &&
+        typeof item.content === "string" &&
+        typeof item.createdAt === "string" &&
+        typeof item.provenance === "object" &&
+        item.provenance !== null &&
+        typeof item.provenance.system === "string" &&
+        (item.provenance.model === undefined ||
+          typeof item.provenance.model === "string") &&
+        (item.provenance.requestId === undefined ||
+          typeof item.provenance.requestId === "string"),
+    );
+  } catch {
+    return [];
+  }
+}
+
+function saveAiSupports(supports: AiSupport[]) {
+  localStorage.setItem(AI_SUPPORT_STORAGE_KEY, JSON.stringify(supports));
+}
+
 type IntegrationChoice = null | "existing" | "current";
 
 type ReceivedCollaborativeAntecedent = {
@@ -147,6 +196,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [workAuthorships, setWorkAuthorships] = useState<WorkAuthorship[]>(
     () => loadWorkAuthorships(),
   );
+  const [selectedAiSupportMaterialId, setSelectedAiSupportMaterialId] =
+    useState("");
+  const [aiSupportRequest, setAiSupportRequest] = useState("");
+  const [aiSupports, setAiSupports] = useState<AiSupport[]>(() =>
+    loadAiSupports(),
+  );
+  const [aiSupportPending, setAiSupportPending] = useState(false);
+  const [aiSupportError, setAiSupportError] = useState<string | null>(null);
   const [ordinaryMaterials, setOrdinaryMaterials] = useState<
     OrdinaryMaterial[]
   >(() => {
@@ -442,6 +499,115 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 </article>
               );
             })}
+          </section>
+        )}
+      </section>
+
+      <section aria-label="Apoyo auxiliar de IA">
+        <h2>Apoyo auxiliar de IA</h2>
+
+        <label>
+          Obra para apoyo IA
+          <select
+            value={selectedAiSupportMaterialId}
+            onChange={(event) => {
+              setSelectedAiSupportMaterialId(event.target.value);
+              setAiSupportError(null);
+            }}
+          >
+            <option value="">Selecciona una obra</option>
+            {ordinaryMaterials.map((material) => (
+              <option key={material.id} value={material.id}>
+                {material.content}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label>
+          Qué apoyo necesitas
+          <textarea
+            value={aiSupportRequest}
+            onChange={(event) => {
+              setAiSupportRequest(event.target.value);
+              setAiSupportError(null);
+            }}
+          />
+        </label>
+
+        <button
+          type="button"
+          disabled={
+            selectedAiSupportMaterialId === "" ||
+            aiSupportRequest.trim().length === 0 ||
+            aiSupportPending
+          }
+          onClick={async () => {
+            const material = ordinaryMaterials.find(
+              (item) => item.id === selectedAiSupportMaterialId,
+            );
+
+            if (material === undefined || aiSupportRequest.trim().length === 0) {
+              return;
+            }
+
+            setAiSupportPending(true);
+            setAiSupportError(null);
+
+            try {
+              const response = await requestAiSupport({
+                workId: material.id,
+                workContent: material.content,
+                request: aiSupportRequest,
+              });
+
+              const createdAt = new Date().toISOString();
+              const nextSupport: AiSupport = {
+                id: `${createdAt}-${aiSupports.length}`,
+                materialId: material.id,
+                request: aiSupportRequest,
+                content: response.content,
+                provenance: response.provenance,
+                createdAt,
+              };
+              const next = [...aiSupports, nextSupport];
+
+              saveAiSupports(next);
+              setAiSupports(next);
+              setAiSupportRequest("");
+            } catch {
+              setAiSupportError("No se pudo obtener apoyo IA.");
+            } finally {
+              setAiSupportPending(false);
+            }
+          }}
+        >
+          Solicitar apoyo IA
+        </button>
+
+        {aiSupportError !== null && <p role="alert">{aiSupportError}</p>}
+
+        {aiSupports.length > 0 && (
+          <section aria-label="Apoyos IA conservados">
+            <h3>Apoyos IA conservados</h3>
+
+            {aiSupports.map((support) => (
+              <article
+                key={support.id}
+                aria-label={`Apoyo IA de obra ${support.materialId}`}
+              >
+                <p>{support.content}</p>
+                <p aria-label="Sistema de IA">{support.provenance.system}</p>
+                {support.provenance.model !== undefined && (
+                  <p aria-label="Modelo de IA">{support.provenance.model}</p>
+                )}
+                {support.provenance.requestId !== undefined && (
+                  <p aria-label="Identificador de solicitud IA">
+                    {support.provenance.requestId}
+                  </p>
+                )}
+              </article>
+            ))}
           </section>
         )}
       </section>
