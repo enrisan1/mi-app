@@ -877,3 +877,108 @@ typecheck
 ~~~
 
 No se avanza todavía a la suite canónica hasta observar ese resultado.
+
+---
+
+# 25. Typecheck global bloqueado por errores previos ajenos a la captura
+
+Ejecución comunicada:
+
+~~~text
+npm run typecheck
+→ tsc --noEmit
+~~~
+
+Resultado:
+
+~~~text
+14 errores
+en 5 archivos
+todos bajo src/realizations/comparison/
+~~~
+
+Archivos:
+
+~~~text
+ComparisonProgress.test.tsx
+InlineDetectionExperience.test.tsx
+InlineDetectionExperience.tsx
+LateralComparisonExperience.test.tsx
+detectLiteralDifferences.ts
+~~~
+
+Se comparan esos cinco archivos entre:
+
+~~~text
+24c30b
+→ estado inmediatamente anterior
+  a la modificación productiva de captura
+
+feature/task-filters
+→ estado actual
+~~~
+
+Resultado:
+
+~~~text
+los cinco archivos
+→ IDÉNTICOS
+~~~
+
+Por tanto:
+
+~~~text
+errores de typecheck
+→ PREEXISTENTES respecto de R-80-CONV-02
+
+atribución a integración de captura
+→ REFUTADA
+~~~
+
+Los errores se agrupan en dos familias:
+
+1. uso del namespace global JSX en artefactos de comparación;
+2. accesos indexados potencialmente undefined en detectLiteralDifferences.ts.
+
+Ambas pertenecen al patrimonio de comparación, no al cambio de captura.
+
+## Decisión de alcance
+
+No se corrigen dentro de R-80-CONV-02 porque:
+
+~~~text
+R-80-CONV-02
+→ limitada exclusivamente a HITO-80-CONV-01
+
+comparación
+→ C-PV-80-02
+→ integración posterior en el orden derivado
+~~~
+
+Corregir ahora esos archivos mezclaría una deuda previa independiente con la primera integración de captura.
+
+## Estado del gate
+
+~~~text
+typecheck global PASS
+→ NO
+
+regresión de tipos atribuible a captura
+→ NO OBSERVADA
+
+bloqueo externo/preexistente
+→ IDENTIFICADO
+
+suite canónica
+→ TODAVÍA NO EJECUTADA
+~~~
+
+La formulación inicial exigía typecheck PASS; por tanto no se declara HITO-80-CONV-01 satisfecho ni se cierra R-80-CONV-02 mientras no se resuelva metodológicamente si el gate debe:
+
+A — exigir saneamiento previo de la deuda global de comparación;
+
+o
+
+B — sustituirse, para esta actuación, por un criterio diferencial explícito de no regresión atribuible a captura, preservando la deuda como obligación separada.
+
+No se adopta ninguna de las dos salidas automáticamente.
