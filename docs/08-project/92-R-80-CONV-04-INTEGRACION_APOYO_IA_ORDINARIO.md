@@ -2306,3 +2306,507 @@ El bloqueo no reabre:
 - elección inicial de gpt-6-luna.
 
 Sólo afecta al borde de exposición pública de una credencial facturable.
+
+
+---
+
+# 51. Apertura localizada de B-80-04-DEPLOY-01
+
+Se abre únicamente:
+
+**B-80-04-DEPLOY-01 — protección mínima suficientemente segura del endpoint
+público antes de exponer una credencial OpenAI real.**
+
+No se reabre:
+
+- C-PV-80-04;
+- CSO-80-04;
+- HITO-80-CONV-03;
+- frontera obra/apoyo;
+- contrato funcional cliente↔Worker;
+- OpenAI Responses API;
+- modelo inicial;
+- persistencia local del apoyo.
+
+Durante esta reducción:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+Worker público real
+→ NO DESPLEGAR
+
+OPENAI_API_KEY real
+→ NO CONFIGURAR
+~~~
+
+---
+
+# 52. Propiedad que debe conseguir la protección
+
+La protección mínima no necesita demostrar identidad civil ni cuenta de usuario.
+
+Debe conseguir conjuntamente:
+
+1. dificultar de forma material la automatización anónima masiva;
+2. impedir replay trivial de una prueba válida;
+3. evitar que una simple clave copiable del bundle permita consumir la API;
+4. limitar ráfagas aun después de superar la barrera primaria;
+5. limitar económicamente el daño residual si las otras capas fallan;
+6. mantener la App pública sin exigir cuenta general;
+7. mantener secretos exclusivamente en servidor;
+8. no introducir infraestructura persistente innecesaria.
+
+No se exige seguridad absoluta frente a una persona determinada dispuesta a
+resolver desafíos repetidamente.
+
+---
+
+# 53. Alternativa A — Rate Limiting aproximado como única barrera
+
+Forma:
+
+~~~text
+request
+→ Worker Rate Limiting
+→ OpenAI
+~~~
+
+Cloudflare documenta que el Rate Limiting de Workers:
+
+- es aproximado;
+- se aplica localmente por ubicación;
+- puede dejar pasar solicitudes por encima del umbral;
+- recomienda usar como clave un identificador estable de usuario o clase;
+- no recomienda IP como identificador estable cuando varios usuarios pueden
+  compartirla.
+
+En el producto actual no existe:
+
+~~~text
+userId
+API key por usuario
+tenantId
+sesión autenticada
+~~~
+
+Por tanto el rate limit por IP no puede cumplir por sí solo la función de
+barrera primaria sin riesgo simultáneo de:
+
+~~~text
+falso agrupamiento de usuarios legítimos
++
+evasión mediante cambio de IP/proxy
++
+carácter sólo aproximado
+~~~
+
+Resultado:
+
+~~~text
+A
+→ INSUFICIENTE COMO ÚNICA BARRERA
+
+rate limiting
+→ CONSERVAR COMO DEFENSA SECUNDARIA DE RÁFAGA
+→ NO tratar como identidad de usuario
+~~~
+
+---
+
+# 54. Alternativa B — Turnstile por solicitud sensible
+
+Forma:
+
+~~~text
+App
+→ Turnstile Managed
+→ token
+→ Worker
+→ Siteverify
+→ si válido: OpenAI
+~~~
+
+Propiedades relevantes de Turnstile:
+
+~~~text
+token
+→ validación server-side obligatoria
+→ un solo uso
+→ caduca aproximadamente a los 5 minutos
+
+Managed mode
+→ puede resolver sin interacción visible
+→ puede pedir interacción cuando detecta riesgo
+~~~
+
+La validación server-side puede comprobar adicionalmente:
+
+~~~text
+success
+hostname
+action
+~~~
+
+El secreto de Turnstile permanece en Worker.
+
+Ventajas:
+
+- no exige cuenta ni identidad permanente;
+- está diseñado para proteger una acción sensible frente a automatización;
+- token de un solo uso reduce replay;
+- encaja con GitHub Pages + Worker;
+- la sitekey es pública por diseño;
+- el secret de validación permanece servidor;
+- puede probarse con claves de test sin usar OpenAI real.
+
+Limitaciones:
+
+- no demuestra que exista una persona única;
+- no impide que una persona o automatización capaz de superar desafíos genere
+  consumo;
+- añade una dependencia cliente + Siteverify;
+- cada solicitud protegida necesita token válido nuevo.
+
+Resultado:
+
+~~~text
+B
+→ SUFICIENTE COMO BARRERA PRIMARIA MÍNIMA
+→ SELECCIONADA
+~~~
+
+---
+
+# 55. Alternativa C — autenticación ligera con Cloudflare Access / OTP
+
+Forma:
+
+~~~text
+persona
+→ email / OTP
+→ Cloudflare Access
+→ Worker
+→ OpenAI
+~~~
+
+Cloudflare Access puede proteger el Worker antes de que éste ejecute y puede
+usar OTP por email para personas autorizadas.
+
+Ventajas:
+
+- aporta identidad autenticada más estable;
+- permite rate limiting y políticas por sujeto más fiables;
+- reduce notablemente abuso anónimo.
+
+Costes y conflicto con el alcance actual:
+
+- exige política de usuarios autorizados;
+- introduce login;
+- introduce email como dato operacional;
+- convierte el endpoint en recurso para una población previamente definida;
+- altera materialmente la experiencia pública actual;
+- aproxima el proyecto a un modelo de cuentas/autorización que C-PV-80-04 no
+  exige.
+
+Resultado:
+
+~~~text
+C
+→ SEGURIDAD MAYOR
+→ NO SELECCIONADA PARA EL BORDE MÍNIMO
+→ reservar si el producto adopta posteriormente autenticación
+  o si Turnstile resulta insuficiente en evidencia real
+~~~
+
+---
+
+# 56. Alternativa D — secreto compartido embebido en cliente
+
+Forma:
+
+~~~text
+bundle Vite
+→ shared secret
+→ Worker
+~~~
+
+Resultado:
+
+~~~text
+D
+→ DESCARTADA
+~~~
+
+Razón:
+
+~~~text
+secreto enviado al navegador
+→ deja de ser secreto
+→ puede copiarse y automatizarse fuera de la App
+~~~
+
+Ni variable VITE_* ni localStorage resuelven este problema.
+
+---
+
+# 57. Alternativa E — token firmado propio / sesión anónima
+
+Forma conceptual:
+
+~~~text
+challenge inicial
+→ servidor emite token corto firmado
+→ varias solicitudes usan token
+~~~
+
+Ventajas:
+
+- podría evitar ejecutar Turnstile en cada solicitud;
+- permitiría un identificador pseudónimo estable durante una sesión;
+- permitiría rate limiting por sesión.
+
+Costes:
+
+- introduce emisión y validación de sesión;
+- obliga a diseñar expiración, renovación y revocación;
+- si el challenge inicial sigue siendo Turnstile, añade complejidad sin eliminar
+  esa dependencia;
+- incrementa el alcance antes de disponer de evidencia de que una validación
+  Turnstile por solicitud sea insuficiente.
+
+Resultado:
+
+~~~text
+E
+→ NO SELECCIONADA AHORA
+→ posible optimización posterior si la fricción real lo justifica
+~~~
+
+---
+
+# 58. Capa económica independiente — límite estricto OpenAI
+
+OpenAI permite configurar límites de gasto por proyecto y aplicar un límite
+estricto que hace fallar futuras solicitudes una vez alcanzado el gasto
+registrado, aunque la aplicación no es instantánea y puede existir un pequeño
+sobrepaso.
+
+Esto no autentica ni distingue bots.
+
+Su responsabilidad es distinta:
+
+~~~text
+Turnstile
+→ reducir automatización abusiva
+
+rate limiting
+→ frenar ráfagas
+
+hard spend limit OpenAI
+→ limitar impacto económico residual
+~~~
+
+Por tanto:
+
+~~~text
+hard spend limit
+→ OBLIGATORIO antes de exposición pública real
+→ defensa de última instancia
+→ NO sustituto de Turnstile
+~~~
+
+Se recomienda utilizar un proyecto OpenAI dedicado a esta integración para que
+la contención económica quede aislada de otros usos API.
+
+El importe exacto del límite será una decisión operativa humana antes del
+despliegue y no una propiedad de Product.
+
+---
+
+# 59. Decisión — protección mínima pública
+
+Se decide:
+
+**EDGE-PROTECT-80-04-01 — defensa en profundidad mínima sin identidad de
+cuenta.**
+
+Capas:
+
+~~~text
+1. origen permitido + HTTPS
+   ↓
+2. Turnstile Managed
+   ↓
+3. Siteverify server-side
+   - token obligatorio
+   - single-use
+   - expiración propia de Turnstile
+   - hostname esperado
+   - action esperada
+   ↓
+4. payload y output acotados
+   ↓
+5. Rate Limiting de Cloudflare
+   - protección secundaria de ráfaga
+   - IP sólo como señal gruesa
+   - NO como identidad de usuario
+   ↓
+6. OpenAI project dedicado
+   - modelo permitido acotado
+   - hard spend limit activo
+   ↓
+7. OpenAI Responses API
+~~~
+
+Esta combinación se selecciona porque:
+
+- añade una barrera anti-automatización real sin introducir login;
+- evita secreto compartido en cliente;
+- conserva el rate limit en la responsabilidad que realmente puede cumplir;
+- añade contención económica independiente;
+- mantiene reversible la arquitectura;
+- no modifica C-PV-80-04.
+
+---
+
+# 60. Cambio mínimo de contrato necesario
+
+La decisión de seguridad obliga a ampliar sólo el request técnico:
+
+~~~text
+AiSupportRequest {
+  workId
+  workContent
+  request
+  turnstileToken
+}
+~~~
+
+`turnstileToken`:
+
+- no forma parte de la obra;
+- no forma parte del apoyo;
+- no se persiste;
+- se usa una sola vez;
+- sólo autoriza intentar esa solicitud.
+
+El Worker deberá validar el token antes de llamar a OpenAI.
+
+Se deberá usar una `action` específica, por ejemplo:
+
+~~~text
+ai_support
+~~~
+
+y comprobar en Siteverify:
+
+~~~text
+success = true
+hostname = hostname esperado
+action = ai_support
+~~~
+
+No se deriva ninguna identidad personal de este token.
+
+---
+
+# 61. Consecuencia sobre el rate limiter existente
+
+El test preregistrado:
+
+~~~text
+T-WORKER-80-04-05
+→ rate limit antes de OpenAI
+~~~
+
+sigue siendo válido.
+
+Pero cambia su interpretación:
+
+~~~text
+antes
+→ protección pública principal candidata
+
+ahora
+→ defensa secundaria contra ráfaga
+~~~
+
+La clave IP podrá conservarse inicialmente sólo como señal gruesa, con un umbral
+lo bastante amplio para minimizar falsos positivos.
+
+No se declarará:
+
+~~~text
+IP
+→ usuario
+
+IP
+→ cuota individual fiable
+~~~
+
+Si se necesitara posteriormente una cuota individual real, deberá aparecer un
+identificador estable fundado por otro mecanismo.
+
+---
+
+# 62. Falsadores de la solución de despliegue
+
+EDGE-PROTECT-80-04-01 será insuficiente si:
+
+1. el Worker acepta una solicitud sin token Turnstile válido;
+2. el token no se valida server-side;
+3. se acepta replay de un token ya usado;
+4. no se comprueban hostname/action esperados;
+5. el secreto Turnstile llega al bundle;
+6. el secreto OpenAI llega al bundle;
+7. el rate limiter vuelve a tratarse como identidad fiable;
+8. no existe límite económico duro antes del despliegue público;
+9. un fallo de Turnstile permite continuar hacia OpenAI;
+10. la protección obliga a crear cuenta/login sin una nueva justificación.
+
+---
+
+# 63. Estado de B-80-04-DEPLOY-01
+
+~~~text
+alternativas comparadas
+→ rate limiting sólo
+→ Turnstile
+→ Access/OTP
+→ secreto compartido cliente
+→ sesión anónima firmada
+
+decisión
+→ Turnstile Managed como barrera primaria
+→ rate limiting como capa secundaria
+→ hard spend limit OpenAI como contención económica
+
+autenticación general
+→ NO introducida
+
+B-80-04-DEPLOY-01
+→ RESUELTO
+
+producción
+→ SIN CAMBIOS
+
+deploy real
+→ TODAVÍA NO EJECUTADO
+
+secretos reales
+→ TODAVÍA NO CONFIGURADOS
+~~~
+
+Siguiente actuación legítima:
+
+~~~text
+actualizar diseño técnico mínimo
++
+preregistrar RED específico de Turnstile
++
+implementar validación con claves de test
++
+sólo después preparar configuración real
+~~~
