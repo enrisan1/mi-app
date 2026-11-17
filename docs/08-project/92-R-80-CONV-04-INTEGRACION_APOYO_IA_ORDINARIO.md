@@ -2032,3 +2032,50 @@ Este RED será válido porque:
 - no requiere secreto real.
 
 Sólo después de observar ese RED se implementará la lógica del Worker.
+
+
+---
+
+# 46. RED del Worker confirmado
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       7 failed (7)
+~~~
+
+Patrón observado:
+
+~~~text
+actual
+→ 501
+
+expected
+→ 405
+→ 403
+→ 400
+→ 413
+→ 429
+→ 200
+→ 502
+~~~
+
+Todos los tests alcanzan el handler real y fallan únicamente por
+`not_implemented`.
+
+Por tanto:
+
+~~~text
+RED WORKER
+→ VÁLIDO
+
+gate de implementación Worker
+→ SUPERADO
+~~~
