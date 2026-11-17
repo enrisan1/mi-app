@@ -175,6 +175,7 @@ describe("HITO-80-CONV-03 — apoyo IA separado integrado en App", () => {
           workId: "m1",
           workContent: "Obra ordinaria uno",
           request: "Señala una cuestión que convendría revisar.",
+          turnstileToken: "turnstile-token-1",
         }),
       }),
     );
