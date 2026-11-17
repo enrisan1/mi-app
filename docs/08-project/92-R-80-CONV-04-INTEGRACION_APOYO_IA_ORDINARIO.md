@@ -3100,3 +3100,303 @@ El siguiente paso legítimo no es ampliar arquitectura.
 Es decidir y preparar de forma controlada la configuración real mínima necesaria
 para una prueba de despliegue, manteniendo separadas las credenciales reales del
 código y conservando la posibilidad de reversión.
+
+
+---
+
+# 66. Configuración mínima real previa a prueba de despliegue
+
+Se prepara únicamente la configuración necesaria para poder realizar una prueba
+real y reversible del borde público.
+
+No se despliega todavía y no se introducen secretos en el repositorio.
+
+## 66.1 Configuración versionable del Worker
+
+`workers/ai-support/wrangler.jsonc` deberá declarar:
+
+~~~text
+name
+→ mi-app-ai-support
+
+main
+→ src/index.ts
+
+ALLOWED_ORIGIN
+→ https://enrisan1.github.io
+
+MODEL
+→ gpt-6-luna
+
+secretos requeridos
+→ TURNSTILE_SECRET_KEY
+→ OPENAI_API_KEY
+
+AI_SUPPORT_RATE_LIMITER
+→ namespace_id = "800401"
+→ limit = 10
+→ period = 60
+~~~
+
+El valor 10/60 se adopta sólo como umbral operativo inicial para la prueba de
+despliegue. No representa identidad individual ni cuota de producto y podrá
+revisarse con evidencia posterior.
+
+El namespace `800401` se reserva para este binding mientras no exista colisión
+con otro namespace de la misma cuenta Cloudflare. Cloudflare exige un entero
+positivo expresado como string y que namespaces distintos usen identificadores
+distintos cuando no se desea compartir contadores.
+
+## 66.2 Secretos que NO se versionan
+
+Valores sensibles:
+
+~~~text
+TURNSTILE_SECRET_KEY
+→ secreto real del widget Turnstile
+
+OPENAI_API_KEY
+→ clave del proyecto OpenAI dedicado
+~~~
+
+No deberán aparecer en:
+
+~~~text
+git
+wrangler.jsonc vars
+VITE_*
+bundle
+localStorage
+documentación
+capturas
+logs
+~~~
+
+Para desarrollo local podrán residir en:
+
+~~~text
+workers/ai-support/.dev.vars
+~~~
+
+ya cubierto por `.gitignore`.
+
+Para Worker desplegado deberán almacenarse como secretos de Cloudflare.
+
+## 66.3 Turnstile — valores reales
+
+Se requiere crear un widget Turnstile:
+
+~~~text
+modo
+→ Managed
+
+hostname autorizado
+→ enrisan1.github.io
+
+sitekey
+→ pública
+→ cliente
+
+secret key
+→ privada
+→ TURNSTILE_SECRET_KEY
+
+action emitida por cliente
+→ ai_support
+~~~
+
+La sitekey puede formar parte de configuración pública del frontend porque no es
+un secreto.
+
+La secret key sólo se utiliza en Siteverify desde el Worker.
+
+## 66.4 Claves de prueba Turnstile frente a claves reales
+
+Cloudflare proporciona sitekeys y secrets de prueba para automatización.
+
+Sirven para comprobar:
+
+~~~text
+render básico del widget
+generación de token dummy
+success/failure de Siteverify
+timeout-or-duplicate simulado
+~~~
+
+Pero existe una limitación material:
+
+~~~text
+Siteverify con secret de prueba exitoso
+→ hostname = example.com
+→ action ausente
+~~~
+
+Por tanto las claves de prueba NO pueden satisfacer de extremo a extremo el
+Worker actual, que exige conjuntamente:
+
+~~~text
+hostname = enrisan1.github.io
+action = ai_support
+~~~
+
+Conclusión:
+
+~~~text
+tests unitarios deterministas
+→ mocks
+→ ya GREEN
+
+prueba de integración básica de Turnstile
+→ puede usar claves de prueba
+
+prueba real Worker + hostname + action
+→ requiere widget real + secret real
+~~~
+
+No se relajarán las comprobaciones de hostname/action para acomodar claves de
+prueba.
+
+## 66.5 Proyecto OpenAI dedicado
+
+Antes de una prueba real facturable se requiere:
+
+~~~text
+proyecto OpenAI dedicado
+→ esta integración
+
+modelo permitido
+→ gpt-6-luna
+
+OPENAI_API_KEY
+→ generada dentro de ese proyecto
+
+monthly spend limit
+→ valor humano explícito
+
+Enforce hard limit
+→ ACTIVADO
+~~~
+
+El límite exacto de gasto no se fija en código ni documentación técnica porque
+es una decisión operativa humana. Debe establecerse antes de introducir la
+clave real en Cloudflare.
+
+Las alertas de gasto no sustituyen al hard limit.
+
+## 66.6 Autenticación operativa de despliegue
+
+Wrangler necesitará autenticación contra la cuenta Cloudflare para desplegar.
+
+Esa autenticación pertenece al entorno operativo del usuario y no al Worker:
+
+~~~text
+credencial Wrangler / sesión Cloudflare
+→ fuera del repo
+→ NO binding del Worker
+→ NO variable de producto
+~~~
+
+## 66.7 Qué puede probarse sin secretos reales
+
+Sin secretos reales pueden mantenerse:
+
+~~~text
+Vitest 13/13
+→ contrato Worker completo por seam
+
+validación payload
+→ local
+
+hostname/action
+→ mocks
+
+replay
+→ mocks de Siteverify
+
+rate limiter
+→ contrato unitario
+~~~
+
+También puede probarse Turnstile de forma aislada con claves dummy, aceptando
+sus limitaciones.
+
+## 66.8 Qué exige secretos reales
+
+La primera prueba remota completa exige conjuntamente:
+
+~~~text
+widget Turnstile real
++
+token real emitido desde enrisan1.github.io
++
+TURNSTILE_SECRET_KEY real en Worker
++
+binding AI_SUPPORT_RATE_LIMITER desplegado
++
+proyecto OpenAI dedicado
++
+hard spend limit activo
++
+OPENAI_API_KEY real en Worker
+~~~
+
+Sólo entonces puede acreditarse:
+
+~~~text
+browser real
+→ Turnstile real
+→ Siteverify hostname/action reales
+→ rate limit de Cloudflare
+→ OpenAI real
+→ respuesta real
+~~~
+
+## 66.9 Bloqueo restante antes del deploy real
+
+El Worker está preparado para recibir `turnstileToken`, pero el cliente
+ordinario todavía no genera ese token.
+
+Por tanto la configuración de servidor puede prepararse ahora, pero una prueba
+end-to-end desde la App requiere después una integración cliente mínima de
+Turnstile que:
+
+~~~text
+renderice widget Managed
+use sitekey pública
+emita action = ai_support
+obtenga token
+incluya turnstileToken en AiSupportRequest
+no persista el token
+renueve token por solicitud
+~~~
+
+Esto no reabre C-PV-80-04; es la adaptación mínima del cliente necesaria para
+usar la protección ya decidida.
+
+## 66.10 Estado resultante
+
+~~~text
+wrangler declarativo
+→ PREPARADO
+
+secretos requeridos
+→ DECLARADOS POR NOMBRE
+
+secretos reales
+→ NO CONFIGURADOS
+
+Turnstile real
+→ NO CREADO TODAVÍA
+
+OpenAI project dedicado
+→ NO ACREDITADO TODAVÍA
+
+hard spend limit
+→ NO ACREDITADO TODAVÍA
+
+deploy
+→ NO EJECUTADO
+
+cliente Turnstile
+→ PENDIENTE
+~~~
