@@ -2177,3 +2177,132 @@ Worker
 
 Sólo después de ese resultado se preparará el despliegue real mínimo y la
 prueba con proveedor IA real.
+
+
+---
+
+# 49. GREEN conjunto cliente + Worker
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/App.ai-support.integration.test.tsx \
+  workers/ai-support/src/index.test.ts
+~~~
+
+Resultado:
+
+~~~text
+Test Files  2 passed (2)
+Tests       16 passed (16)
+~~~
+
+Por tanto:
+
+~~~text
+cliente
+→ GREEN 9/9
+
+Worker
+→ GREEN 7/7
+
+cliente + Worker
+→ GREEN 16/16
+
+contrato funcional del borde
+→ SATISFECHO
+~~~
+
+---
+
+# 50. Revalidación previa a despliegue real
+
+Antes de configurar credenciales o desplegar se revalidan las dependencias
+externas que afectan materialmente a seguridad y operabilidad.
+
+## 50.1 Modelo API
+
+La documentación vigente de OpenAI confirma:
+
+~~~text
+gpt-6-luna
+→ modelo API vigente
+→ orientado a tareas focalizadas/de alto volumen
+
+Responses API
+→ interfaz vigente para nuevas integraciones
+~~~
+
+Por tanto:
+
+~~~text
+D-80-04-IMPL-02
+→ SE MANTIENE
+~~~
+
+## 50.2 Rate Limiting de Cloudflare
+
+La documentación vigente de Cloudflare confirma que:
+
+~~~text
+Rate Limiting binding
+→ disponible
+
+period
+→ 10 o 60 segundos
+
+namespace_id
+→ obligatorio
+→ entero positivo expresado como string
+
+decisión de límite
+→ aproximada/local por ubicación
+
+IP como key
+→ NO recomendada como identificador estable
+  cuando puede representar múltiples usuarios
+~~~
+
+El Worker actual usa:
+
+~~~text
+CF-Connecting-IP
+→ X-Forwarded-For
+→ "unknown"
+~~~
+
+como clave del rate limiter.
+
+Eso fue suficiente para el contrato funcional preregistrado, pero no constituye
+todavía una protección pública suficientemente fundada frente a abuso de una
+credencial OpenAI de pago.
+
+Se abre únicamente:
+
+**B-80-04-DEPLOY-01 — protección mínima suficientemente segura del endpoint
+público antes de exponer una credencial OpenAI real.**
+
+Hasta resolverlo:
+
+~~~text
+OPENAI_API_KEY real
+→ NO CONFIGURAR
+
+Worker público con proveedor real
+→ NO DESPLEGAR
+
+GitHub Pages
+→ SIN CAMBIOS
+~~~
+
+El bloqueo no reabre:
+
+- Product;
+- CSO-80-04;
+- frontera obra/apoyo;
+- contrato cliente↔Worker;
+- elección de Responses API;
+- elección inicial de gpt-6-luna.
+
+Sólo afecta al borde de exposición pública de una credencial facturable.
