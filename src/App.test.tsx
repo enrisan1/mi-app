@@ -944,12 +944,16 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     render(<App />);
 
+    const materialsRegion = screen.getByRole("region", {
+      name: /materiales anteriores/i,
+    });
+
     expect(
-      screen.queryByText("Material anterior A", { exact: true }),
+      within(materialsRegion).queryByText("Material anterior A", { exact: true }),
     ).not.toBeInTheDocument();
 
     expect(
-      screen.queryByText("Material anterior B", { exact: true }),
+      within(materialsRegion).queryByText("Material anterior B", { exact: true }),
     ).not.toBeInTheDocument();
 
     const inspectButton = screen.getByRole("button", {
