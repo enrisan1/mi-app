@@ -752,3 +752,43 @@ tests
 siguiente gate
 → reejecutar src/App.capture.integration.test.tsx
 ~~~
+
+
+---
+
+# 22. GREEN de la suite específica de integración
+
+Reejecución comunicada tras corregir únicamente el arnés:
+
+~~~text
+npx vitest run src/App.capture.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       7 passed (7)
+~~~
+
+Por tanto:
+
+~~~text
+suite específica de captura integrada
+→ GREEN 7/7
+
+producción
+→ sin cambios adicionales desde 06e247c
+
+gate 1 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+npx vitest run src/App.test.tsx
+~~~
+
+No se avanza todavía a tests de R-80-01-M1, typecheck ni suite canónica hasta
+observar esta regresión histórica de App.
