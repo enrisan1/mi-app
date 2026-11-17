@@ -3400,3 +3400,123 @@ deploy
 cliente Turnstile
 → PENDIENTE
 ~~~
+
+
+---
+
+# 67. Preregistro RED — Turnstile mínimo en cliente
+
+Se abre únicamente la adaptación mínima del cliente necesaria para consumir el
+Worker ya protegido.
+
+Alcance:
+
+~~~text
+sitekey
+→ pública
+→ VITE_TURNSTILE_SITE_KEY
+
+renderizado
+→ explícito
+→ apropiado para SPA
+
+action
+→ ai_support
+
+ejecución
+→ al solicitar apoyo
+
+token
+→ efímero
+→ enviado como turnstileToken
+→ NO persistido
+→ nuevo por solicitud
+
+secret key
+→ NO cliente
+→ NO VITE_*
+~~~
+
+No se modifica C-PV-80-04 ni se introduce autenticación, sesión o identidad.
+
+## 67.1 T-CONV-80-04-10 — configuración del widget
+
+Al solicitar apoyo, el cliente deberá invocar Turnstile explícitamente con:
+
+~~~text
+sitekey
+→ VITE_TURNSTILE_SITE_KEY
+
+action
+→ ai_support
+
+execution
+→ execute
+~~~
+
+y ejecutar el widget antes de enviar la petición al Worker.
+
+## 67.2 T-CONV-80-04-11 — token en el contrato
+
+Tras recibir un token válido:
+
+~~~text
+AiSupportRequest
+→ workId
+→ workContent
+→ request
+→ turnstileToken
+~~~
+
+El token deberá corresponder al emitido para esa solicitud.
+
+## 67.3 T-CONV-80-04-12 — ausencia de persistencia
+
+El token no deberá aparecer en:
+
+~~~text
+localStorage
+ordinary.materials
+ordinary.ai-support
+capturas
+autorías
+~~~
+
+Su ciclo de vida termina con la solicitud.
+
+## 67.4 T-CONV-80-04-13 — token nuevo por solicitud
+
+Dos solicitudes consecutivas deberán obtener dos ejecuciones Turnstile y enviar
+los respectivos tokens emitidos, sin reutilizar el anterior.
+
+## 67.5 Estrategia determinista
+
+Los tests no cargarán la red real de Cloudflare.
+
+Se inyectará/stubeará la API global explícita de Turnstile:
+
+~~~text
+turnstile.render
+turnstile.execute
+turnstile.remove
+~~~
+
+El contrato real del script se mantendrá en producción mediante:
+
+~~~text
+https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit
+~~~
+
+## 67.6 Gate RED
+
+Antes de implementar:
+
+~~~text
+T-CONV-80-04-01…09
+→ deben permanecer GREEN
+
+T-CONV-80-04-10…13
+→ deben quedar RED por ausencia de integración cliente
+~~~
+
+Sólo tras observar ese RED se autoriza la implementación mínima.
