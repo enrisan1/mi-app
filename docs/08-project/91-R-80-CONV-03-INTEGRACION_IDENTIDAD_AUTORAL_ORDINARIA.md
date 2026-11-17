@@ -1412,3 +1412,198 @@ Pregunta discriminante:
 > ¿La App permite elegir y reutilizar identidades autorales distintas de la
 > identidad operativa para obras ordinarias sin interferir materialmente con
 > el contenido ni con el recorrido ya existente?
+
+
+---
+
+# 36. Contraste humano ordinario — resultado
+
+La persona responsable ejecuta el contraste en la App ordinaria.
+
+## 36.1 Evidencia previa a recarga
+
+Se observa:
+
+~~~text
+Identidad operativa
+→ Usuario principal
+
+obra 1
+→ Continuación del trabajo después de capturar la idea.
+→ Alias A
+
+obra 2
+→ prueba
+→ Alias B
+
+obra 3
+→ Objetivo: elegir una sala...
+→ Alias A reutilizada
+~~~
+
+La tercera asociación reutiliza el mismo `Alias A` sin recrearlo.
+
+También permanece visible y separada la captura contextual:
+
+~~~text
+Comprobar después si esta separación
+también debe aplicarse a la validación.
+~~~
+
+## 36.2 Evidencia tras recarga
+
+Tras recargar la App ordinaria se observa:
+
+~~~text
+Identidad operativa
+→ Usuario principal
+
+Autorías de obras
+→ obra 1 → Alias A
+→ obra 2 → Alias B
+→ obra 3 → Alias A
+~~~
+
+La captura contextual permanece en `Capturas conservadas`.
+
+Las obras conservan sus contenidos.
+
+La persistencia del catálogo autoral queda corroborada por el hecho de que las
+asociaciones recuperadas siguen resolviendo `Alias A` y `Alias B` tras la
+recarga; la implementación sólo renderiza una asociación cuando puede resolver
+también la identidad autoral persistida correspondiente.
+
+## 36.3 Pregunta discriminante
+
+> ¿La App permite elegir y reutilizar identidades autorales distintas de la
+> identidad operativa para obras ordinarias sin interferir materialmente con
+> el contenido ni con el recorrido ya existente?
+
+Resultado:
+
+~~~text
+TH-80-CONV-03
+→ POSITIVO
+~~~
+
+---
+
+# 37. Evaluación de CSO-80-03
+
+| Condición | Estado |
+| --- | --- |
+| identidad operativa principal identificable | SATISFECHA |
+| identidad autoral reutilizable distinta | SATISFECHA |
+| elección explícita por obra | SATISFECHA |
+| seleccionar autoría no modifica contenido | SATISFECHA |
+| seleccionar autoría no modifica identidad operativa | SATISFECHA |
+| misma identidad reutilizable en otra obra | SATISFECHA |
+| obras distintas con autorías distintas | SATISFECHA |
+| asociación sobrevive a recuperación ordinaria | SATISFECHA |
+
+Resultado:
+
+~~~text
+CSO-80-03
+→ SATISFECHO
+~~~
+
+No se declara:
+
+- autenticación;
+- identidad legal;
+- anonimato fuerte;
+- reputación;
+- múltiples cuentas;
+- arquitectura global de identidad.
+
+---
+
+# 38. Cierre de HITO-80-CONV-02
+
+Estado técnico:
+
+~~~text
+suite específica autoral
+→ GREEN 8/8
+
+App histórica
+→ GREEN 28/28
+
+R-80-03-M1
+→ GREEN 11/11
+
+captura integrada + patrimonio histórico
+→ GREEN 20/20
+
+CTD-80-CONV-03
+→ SATISFECHO
+
+suite canónica
+→ GREEN 56/56
+→ GREEN 462/462
+~~~
+
+Estado humano:
+
+~~~text
+TH-80-CONV-03
+→ POSITIVO
+~~~
+
+Por tanto:
+
+~~~text
+HITO-80-CONV-02
+→ SATISFECHO
+~~~
+
+---
+
+# 39. Cierre de R-80-CONV-03
+
+~~~text
+R-80-CONV-03
+→ CERRADA
+
+resultado
+→ C-PV-80-03 suficientemente disponible
+  en el recorrido ordinario probado
+
+regresión atribuible
+→ NO OBSERVADA
+~~~
+
+La deuda:
+
+~~~text
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ AJENA A ESTE CIERRE
+~~~
+
+permanece registrada.
+
+No se declara satisfacción universal de `C-PV-80-03` fuera del alcance
+ordinario probado.
+
+Punto de continuidad:
+
+~~~text
+orden vigente de convergencia
+→ C-PV-80-01
+→ C-PV-80-03
+→ C-PV-80-04
+→ C-PV-80-02
+
+completados
+→ C-PV-80-01
+→ C-PV-80-03
+
+siguiente candidato
+→ C-PV-80-04
+
+antes de construir
+→ reaplicar PM-10
+  y formular actuación mínima específica
+~~~
