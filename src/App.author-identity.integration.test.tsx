@@ -100,8 +100,12 @@ describe("HITO-80-CONV-02 — identidad autoral integrada en App", () => {
     await assignAuthorIdentity(user, 1, "Alias A");
 
     expect(localStorage.getItem("ordinary.materials")).toBe(before);
+
+    const authorships = screen.getByRole("region", {
+      name: /^autorías de obras$/i,
+    });
     expect(
-      screen.getByText("Obra ordinaria uno", { exact: true }),
+      within(authorships).getByText("Obra ordinaria uno", { exact: true }),
     ).toBeInTheDocument();
   });
 
