@@ -642,3 +642,54 @@ App.tsx
 implementación
 → NO AUTORIZADA TODAVÍA
 ~~~
+
+
+---
+
+# 20. Verificación del RED inicial
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.capture.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       7 failed (7)
+~~~
+
+Los siete fallos alcanzan el comportamiento ausente preregistrado:
+
+~~~text
+Unable to find an accessible element
+with role "button"
+and name "Capturar aportación"
+~~~
+
+El recorrido ordinario sí se encuentra montado durante los fallos, incluyendo:
+
+~~~text
+Dónde estás
+Un problema para pensar
+Ahora
+Crear
+Continuidad compartida
+~~~
+
+No se observa un fallo previo de sintaxis, imports, entorno o configuración.
+
+Por tanto:
+
+~~~text
+RED INICIAL
+→ VÁLIDO
+
+gate de implementación
+→ SUPERADO
+
+App.tsx
+→ AUTORIZADA modificación mínima
+~~~
