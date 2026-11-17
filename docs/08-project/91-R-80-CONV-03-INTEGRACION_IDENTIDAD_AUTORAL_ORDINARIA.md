@@ -1112,3 +1112,45 @@ npx vitest run \
 
 No se avanza todavía a captura integrada, criterio diferencial TypeScript ni
 suite canónica hasta observar este patrimonio realizativo.
+
+
+---
+
+# 31. GREEN del patrimonio realizativo R-80-03-M1
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/realizations/author-identity/AuthorIdentityBaseline.test.tsx \
+  src/realizations/author-identity/AuthorIdentityExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  2 passed (2)
+Tests       11 passed (11)
+~~~
+
+Por tanto:
+
+~~~text
+R-80-03-M1
+→ GREEN 11/11
+
+gate 3 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+npx vitest run \
+  src/App.capture.integration.test.tsx \
+  src/realizations/capture/ContextualCaptureBaseline.test.tsx \
+  src/realizations/capture/ContextualCaptureExperience.test.tsx
+~~~
+
+No se avanza todavía al criterio diferencial TypeScript ni a la suite canónica
+hasta observar esta regresión de captura.
