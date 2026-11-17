@@ -30,3 +30,9 @@ experiments/r-exp-rca-01/.venv/
 # Archivos generados por Python
 __pycache__/
 *.py[cod]
+
+# Secretos locales de Cloudflare Worker
+.dev.vars
+.dev.vars.*
+workers/**/.dev.vars
+workers/**/.dev.vars.*
