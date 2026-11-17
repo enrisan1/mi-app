@@ -7859,3 +7859,34 @@ siguiente candidato de convergencia
 → C-PV-80-03
 → formular bajo PM-10 antes de construir
 ~~~
+
+
+---
+
+# 17/11/2026 — Formulación de R-80-CONV-03
+
+~~~text
+C-PV-80-03
+→ siguiente compromiso en el orden de convergencia
+
+PM-10
+→ reaplicado
+
+hipótesis mínima
+→ catálogo autoral reutilizable
+  + asociación separada obra↔autoría
+  sobre ordinary.materials
+
+HITO-80-CONV-02
+→ DERIVADO
+
+bloqueo material
+→ NINGUNO IDENTIFICADO
+
+R-80-CONV-03
+→ FORMULADA
+→ pendiente de HUMAN GATE
+
+producción
+→ SIN CAMBIOS
+~~~
