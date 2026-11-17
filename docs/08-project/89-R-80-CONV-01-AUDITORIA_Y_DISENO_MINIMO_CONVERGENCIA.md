@@ -653,3 +653,502 @@ R-80-CONV-01 permanece ABIERTA.
 La siguiente actuación dentro de esta misma auditoría es formular los criterios
 de satisfacción ordinaria por compromiso y, a partir de ellos, derivar el
 primer hito verificable y el orden mínimo de integración.
+
+
+---
+
+# 17. Criterios de satisfacción ordinaria
+
+La satisfacción ordinaria no exige copiar literalmente las Realizations.
+
+Exige que el resultado humano comprometido sea practicable desde el producto
+ordinario y que las fronteras constitutivas ya demostradas permanezcan
+observables.
+
+## 17.1 CSO-80-01 — captura inmediata
+
+`C-PV-80-01` podrá considerarse suficientemente disponible ordinariamente
+cuando se cumplan conjuntamente:
+
+1. existe una actividad/trabajo ordinario identificable en curso;
+2. desde esa misma situación puede invocarse una captura breve sin sustituir
+   materialmente la actividad principal;
+3. sólo una acción humana explícita conserva la aportación;
+4. la captura conserva una referencia temporal suficiente;
+5. conservarla no modifica automáticamente el contenido de la actividad;
+6. después de capturar, la actividad previa continúa inmediatamente disponible;
+7. la captura queda recuperable posteriormente desde el producto ordinario;
+8. recuperar la captura no exige convertirla automáticamente en contenido,
+   clasificación, tarea o instrucción de IA.
+
+No se exige todavía:
+
+- búsqueda universal;
+- taxonomía;
+- inbox;
+- captura externa;
+- multimodalidad.
+
+Falsador ordinario principal:
+
+~~~text
+capturar o recuperar
+→ obliga a abandonar materialmente
+  el trabajo ordinario
+~~~
+
+o:
+
+~~~text
+captura
+→ se incorpora automáticamente
+  al contenido de la obra
+~~~
+
+---
+
+## 17.2 CSO-80-02 — comparación humana
+
+`C-PV-80-02` podrá considerarse suficientemente disponible ordinariamente
+cuando:
+
+1. la persona puede llevar dos materiales textuales relacionados del producto
+   ordinario a una misma actividad comparativa;
+2. ambos permanecen distinguibles;
+3. la presentación es suficientemente simultánea para evitar reconstrucción
+   secuencial relevante;
+4. las diferencias presentadas son inspeccionables y verificables respecto de
+   sus fuentes;
+5. el sistema no decide qué diferencia es pertinente ni qué versión debe
+   prevalecer;
+6. la persona puede determinar la actuación posterior;
+7. salir de la comparación no destruye ni colapsa indebidamente las fuentes.
+
+La disponibilidad ordinaria de comparación **no exige por sí sola** que toda
+operación experimental R5 quede convertida en función de producto.
+
+Si el producto ofrece ejecución de cambios desde la comparación, entonces sí
+deberá conservar:
+
+~~~text
+decisión humana previa
++
+ejecución determinada
++
+resultado verificable
++
+reversión suficiente cuando corresponda
+~~~
+
+No se exige:
+
+- comparación semántica;
+- merge automático;
+- destino libre arbitrario;
+- control de versiones universal.
+
+Falsador principal:
+
+~~~text
+comparar
+→ obliga a alternar secuencialmente
+  hasta perder la simultaneidad suficiente
+~~~
+
+o:
+
+~~~text
+detección
+→ decide por la persona qué debe conservarse
+~~~
+
+---
+
+## 17.3 CSO-80-03 — identidad autoral elegible
+
+`C-PV-80-03` podrá considerarse suficientemente disponible ordinariamente
+cuando:
+
+1. existe una identidad operativa principal identificable;
+2. existe al menos una identidad autoral reutilizable distinta;
+3. una obra ordinaria identificable puede asociarse mediante elección explícita
+   a una identidad autoral;
+4. seleccionar autoría no modifica el contenido de la obra;
+5. seleccionar autoría no modifica la identidad operativa;
+6. una misma identidad autoral puede reutilizarse en otra obra sin recrearla
+   como texto nuevo;
+7. obras distintas pueden conservar autorías distintas;
+8. la asociación obra↔autoría sobrevive al ciclo ordinario de recuperación que
+   corresponda.
+
+No se exige:
+
+- autenticación;
+- identidad legal;
+- anonimato fuerte;
+- reputación;
+- múltiples cuentas.
+
+Falsador principal:
+
+~~~text
+identidad operativa
+→ determina forzosamente la firma
+~~~
+
+o:
+
+~~~text
+alias
+→ sólo texto efímero no reutilizable
+~~~
+
+---
+
+## 17.4 CSO-80-04 — apoyo auxiliar de IA separado
+
+`C-PV-80-04` podrá considerarse suficientemente disponible ordinariamente
+cuando:
+
+1. existe una obra ordinaria identificable en curso;
+2. la persona puede solicitar opcionalmente al menos una aportación auxiliar
+   realmente procedente de IA para esa obra;
+3. el apoyo queda asociado de forma reconocible a la obra correspondiente;
+4. obra y apoyo permanecen en estados funcionalmente distinguibles;
+5. recibir, consultar o conservar el apoyo no modifica automáticamente la obra;
+6. editar la obra no obliga a editar ni elimina el apoyo;
+7. la persona puede reconocer suficientemente la procedencia auxiliar IA;
+8. recuperar la obra no exige tratar el apoyo como parte de su contenido;
+9. el producto no atribuye automáticamente el apoyo IA a la identidad autoral
+   elegida para la obra.
+
+No se exige:
+
+- generación continua;
+- agente autónomo;
+- múltiples modelos;
+- razonamiento interno;
+- incorporación automática;
+- conservación indefinida.
+
+Falsador principal:
+
+~~~text
+solicitar/recibir apoyo IA
+→ inserta automáticamente el apoyo
+  en el contenido de la obra
+~~~
+
+o:
+
+~~~text
+autoría de la obra
+→ absorbe la procedencia del apoyo IA
+~~~
+
+---
+
+# 18. Q5 — reducción de estado y persistencia
+
+La persistencia no debe unificarse por anticipado.
+
+La reducción mínima es:
+
+| Compromiso | Estado que debe persistir | Puede compartir `ordinary.materials` | Debe conservar estado propio |
+| --- | --- | --- | --- |
+| C-PV-80-01 | capturas + referencia temporal | puede reutilizar el contexto/material actual | SÍ, porque captura ≠ obra |
+| C-PV-80-02 | fuentes seleccionadas sólo si la continuidad ordinaria lo exige | SÍ como origen de documentos | SÍ para estado comparativo transitorio si se persiste |
+| C-PV-80-03 | identidades reutilizables + asociación obra↔autoría | la obra puede proceder del sustrato ordinario | SÍ para metadato autoral |
+| C-PV-80-04 | apoyo IA asociado + procedencia suficiente | la obra puede proceder del sustrato ordinario | SÍ, porque apoyo ≠ obra |
+
+Regla:
+
+~~~text
+sustrato compartido
+→ SÍ
+
+almacenamiento único indiferenciado
+→ NO derivado
+~~~
+
+No se introduce todavía un repositorio universal ni un esquema único de obra.
+
+Q5 queda suficientemente reducida para comenzar integración incremental.
+
+---
+
+# 19. Derivación del primer hito verificable
+
+No existe dependencia constitutiva que imponga qué compromiso debe integrarse
+primero.
+
+Se comparan por:
+
+1. tamaño mínimo del cambio;
+2. reutilización del sustrato ordinario;
+3. reversibilidad;
+4. riesgo de acoplamiento;
+5. capacidad de validar el patrón de convergencia;
+6. dependencia técnica adicional.
+
+## 19.1 C-PV-80-01
+
+Ventajas:
+
+- reutiliza una actividad ordinaria ya existente;
+- puede reutilizar persistencia local sin cambiar el modelo de obra;
+- no requiere dependencia nueva;
+- mantiene estado propio pequeño;
+- permite comprobar por primera vez que una capacidad post-KGV puede coexistir
+  con App sin alterar el trabajo actual;
+- es fácilmente reversible.
+
+Riesgo principal:
+
+- confundir captura con `ordinary.materials` o incorporarla automáticamente al
+  trabajo.
+
+## 19.2 C-PV-80-03
+
+Ventajas:
+
+- realización pequeña y ya demostrada;
+- sin dependencia externa.
+
+Mayor coste de convergencia:
+
+- requiere decidir qué objeto ordinario cuenta como “obra” para conservar la
+  asociación obra↔autoría;
+- introduce metadato persistente asociado a obras.
+
+No debe resolverse antes de observar cómo se integra una capacidad post-KGV
+simple alrededor del sustrato actual.
+
+## 19.3 C-PV-80-04
+
+Ventajas:
+
+- frontera funcional ya muy bien definida.
+
+Mayor coste:
+
+- la disponibilidad ordinaria real exige una aportación realmente IA asociada
+  a una obra, no sólo fixture experimental;
+- introduce procedencia y estado auxiliar;
+- debe coordinarse cuidadosamente con autoría sin absorberla.
+
+## 19.4 C-PV-80-02
+
+Es la integración con mayor superficie:
+
+- dos materiales;
+- UI comparativa especializada;
+- dependencia CodeMirror ya incorporada al repositorio pero no al recorrido
+  ordinario;
+- navegación/detección;
+- posibles operaciones de ejecución;
+- mayor riesgo de convertir el harness en arquitectura accidental.
+
+No existe razón para usarla como primera prueba de convergencia.
+
+---
+
+# 20. Primer hito — HITO-80-CONV-01
+
+**HITO-80-CONV-01 — captura contextual ordinaria sin regresión del recorrido vigente.**
+
+El hito se alcanza cuando `C-PV-80-01` satisface `CSO-80-01` dentro del
+recorrido ordinario de `App`, conservando el comportamiento previo relevante.
+
+Debe demostrar:
+
+~~~text
+App ordinaria
++
+actividad actual
+↓
+captura contextual invocable
+↓
+aportación breve conservada
++
+marca temporal
++
+actividad no sustituida
++
+captura recuperable
++
+sin incorporación automática
+↓
+recorrido ordinario previo
+→ sigue funcionando
+~~~
+
+No exige todavía:
+
+- integrar 80-02;
+- integrar 80-03;
+- integrar 80-04;
+- reorganizar App;
+- crear arquitectura definitiva;
+- unificar almacenamiento.
+
+## 20.1 Criterio verificable del hito
+
+El hito queda satisfecho si:
+
+1. todos los observables de `CSO-80-01` pasan en tests de integración de App;
+2. la suite existente de App relevante permanece verde;
+3. la captura no altera las claves/estados ordinarios salvo el estado propio
+   explícitamente introducido;
+4. existe contraste humano breve que confirme que la captura sigue siendo
+   contextual dentro de la experiencia ordinaria;
+5. no aparece una regresión material en creación, recuperación o continuación
+   ordinaria.
+
+---
+
+# 21. Orden mínimo de integración
+
+El orden propuesto es:
+
+~~~text
+1. C-PV-80-01 — captura inmediata
+2. C-PV-80-03 — identidad autoral elegible
+3. C-PV-80-04 — apoyo IA separado
+4. C-PV-80-02 — comparación humana
+~~~
+
+Este orden **no expresa importancia**.
+
+Expresa reducción de riesgo.
+
+## 21.1 Por qué 80-01 primero
+
+Valida el patrón mínimo:
+
+~~~text
+capacidad post-KGV
++
+App existente
+→ coexistencia sin regresión
+~~~
+
+con el menor cambio de estado.
+
+## 21.2 Por qué 80-03 después
+
+Una vez validado el patrón de integración incremental, puede introducirse
+metadato persistente asociado a una obra.
+
+Eso ayuda además a fijar una noción operativa mínima de obra sin universalizarla.
+
+## 21.3 Por qué 80-04 después de 80-03
+
+80-04 necesita una obra identificable y debe conservar explícitamente:
+
+~~~text
+autoría de obra
+≠
+procedencia IA
+~~~
+
+No existe dependencia constitutiva entre ambos, pero integrar primero la
+identidad autoral permite comprobar después esa separación dentro de una obra
+ordinaria ya enriquecida.
+
+Esto es una **ventaja de secuencia**, no una dependencia normativa.
+
+## 21.4 Por qué 80-02 al final
+
+La comparación tiene mayor complejidad de interacción y estado.
+
+Integrarla después permite reutilizar un producto ordinario ya enriquecido sin
+hacer que CodeMirror determine prematuramente la estructura de App.
+
+---
+
+# 22. Falsadores de la estrategia de convergencia
+
+El orden o el hito deberán revisarse si aparece cualquiera de estos casos:
+
+1. integrar captura exige modificar de forma amplia el modelo ordinario de obra;
+2. la captura sólo puede satisfacerse fusionándola con `ordinary.materials` y
+   perdiendo su estatuto propio;
+3. una regresión de App demuestra que 80-01 no es el cambio menos acoplado;
+4. 80-03 exige una definición general de obra no justificada;
+5. 80-04 exige proveedor/arquitectura cuya decisión deba resolverse antes de
+   poder formular un test integrable;
+6. 80-02 revela una dependencia material previa que contradiga el grafo actual;
+7. cualquier integración colapsa una frontera constitutiva documentada en §14.
+
+---
+
+# 23. Cierre de Q6, Q7 y Q8
+
+~~~text
+Q5 — estado/persistencia
+→ SUFICIENTEMENTE REDUCIDA
+
+Q6 — satisfacción ordinaria
+→ RESUELTA
+→ CSO-80-01…04 definidos
+
+Q7 — primer hito
+→ RESUELTA
+→ HITO-80-CONV-01
+
+Q8 — orden mínimo
+→ RESUELTA
+→ 80-01 → 80-03 → 80-04 → 80-02
+~~~
+
+No permanece una incertidumbre estratégica que impida comenzar la primera
+integración.
+
+---
+
+# 24. Evaluación de CR-80-CONV-01
+
+| Condición | Estado |
+| --- | --- |
+| mapa de disponibilidad ordinaria | SATISFECHO |
+| matriz composición/separación | SATISFECHA |
+| dependencias reales | SATISFECHAS / ninguna arista constitutiva |
+| criterios por compromiso | SATISFECHOS — CSO-80-01…04 |
+| primer hito | SATISFECHO — HITO-80-CONV-01 |
+| orden mínimo | SATISFECHO |
+| falsadores | DEFINIDOS |
+| incertidumbre bloqueante | NINGUNA IDENTIFICADA |
+
+Resultado:
+
+~~~text
+CR-80-CONV-01
+→ SATISFECHO
+~~~
+
+---
+
+# 25. Cierre de R-80-CONV-01
+
+~~~text
+R-80-CONV-01
+→ CERRADA
+
+resultado
+→ existe recorrido convergente mínimo
+
+primer hito
+→ HITO-80-CONV-01
+
+primera integración derivable
+→ C-PV-80-01 en App ordinaria
+
+producción modificada durante R-80-CONV-01
+→ NO
+~~~
+
+La siguiente actuación constructiva deberá formularse bajo PM-10 y quedar
+limitada a HITO-80-CONV-01.
+
+No autoriza todavía la integración simultánea de los otros tres compromisos.
