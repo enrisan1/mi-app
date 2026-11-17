@@ -1317,3 +1317,98 @@ Siguiente gate:
 ~~~text
 npm test -- --run
 ~~~
+
+
+---
+
+# 34. GREEN de la suite canónica completa
+
+Ejecución comunicada:
+
+~~~text
+npm test -- --run
+~~~
+
+Resultado:
+
+~~~text
+Test Files  56 passed (56)
+Tests       462 passed (462)
+~~~
+
+Por tanto:
+
+~~~text
+suite canónica completa
+→ GREEN 56/56
+→ GREEN 462/462
+
+gate técnico final
+→ SUPERADO
+~~~
+
+Estado técnico acumulado:
+
+~~~text
+suite específica autoral
+→ GREEN 8/8
+
+App histórica
+→ GREEN 28/28
+
+R-80-03-M1
+→ GREEN 11/11
+
+captura integrada + patrimonio histórico
+→ GREEN 20/20
+
+CTD-80-CONV-03
+→ SATISFECHO
+
+suite canónica
+→ GREEN 462/462
+~~~
+
+Queda pendiente únicamente:
+
+~~~text
+contraste humano ordinario
+→ PENDIENTE
+
+CSO-80-03
+→ NO CERRADO TODAVÍA
+
+HITO-80-CONV-02
+→ NO CERRADO TODAVÍA
+
+R-80-CONV-03
+→ ABIERTA
+~~~
+
+---
+
+# 35. Procedimiento de contraste humano ordinario
+
+El contraste se realizará en la App ordinaria inicial.
+
+Secuencia mínima:
+
+~~~text
+1. disponer de al menos tres obras ordinarias
+2. comprobar identidad operativa = Usuario principal
+3. crear Alias A
+4. crear Alias B
+5. asociar obra 1 → Alias A
+6. asociar obra 2 → Alias B
+7. asociar obra 3 → Alias A reutilizada
+8. comprobar que el contenido no cambia
+9. recargar la App
+10. comprobar que catálogo y asociaciones sobreviven
+11. comprobar que la captura contextual permanece separada
+~~~
+
+Pregunta discriminante:
+
+> ¿La App permite elegir y reutilizar identidades autorales distintas de la
+> identidad operativa para obras ordinarias sin interferir materialmente con
+> el contenido ni con el recorrido ya existente?
