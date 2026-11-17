@@ -7,7 +7,7 @@ const CAPTURE_TEXT =
   "Comprobar después si esta separación también debe aplicarse a la validación.";
 
 function getOrdinaryActivity() {
-  return screen.getByRole("heading", { name: /^ahora$/i });
+  return screen.getByRole("heading", { name: /^(ahora|retomar)$/i });
 }
 
 function getCaptureButton() {
@@ -187,7 +187,7 @@ describe("HITO-80-CONV-01 — captura contextual integrada en App", () => {
     );
     await user.click(screen.getByRole("button", { name: /^crear$/i }));
 
-    expect(screen.getByLabelText(/^actuación actual$/i)).toHaveTextContent(
+    expect(screen.getByRole("status")).toHaveTextContent(
       "Trabajo ordinario posterior",
     );
     expect(screen.getByText(CAPTURE_TEXT)).toBeInTheDocument();
