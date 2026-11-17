@@ -2987,3 +2987,116 @@ npx vitest run workers/ai-support/src/index.test.ts
 
 y comprobar que el rojo corresponde a las seis propiedades nuevas, no a
 regresiones de los siete contratos ya consolidados.
+
+
+---
+
+# 65. GREEN — validación mínima Turnstile
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       13 passed (13)
+~~~
+
+Por tanto:
+
+~~~text
+T-WORKER-80-04-01…07
+→ GREEN
+→ contratos históricos conservados
+
+T-WORKER-80-04-08…13
+→ GREEN
+→ protección Turnstile satisfecha en el seam determinista
+
+Worker contract
+→ GREEN 13/13
+~~~
+
+La implementación mínima acreditada incluye:
+
+~~~text
+turnstileToken
+→ obligatorio
+
+Siteverify
+→ server-side
+
+success
+→ true obligatorio
+
+hostname
+→ debe coincidir con el derivado de ALLOWED_ORIGIN
+
+action
+→ ai_support
+
+orden
+→ validaciones locales
+→ Siteverify
+→ rate limiter
+→ OpenAI
+
+replay
+→ rechazado según comportamiento single-use simulado de Siteverify
+→ sin base de datos propia de tokens
+~~~
+
+No se ha incorporado:
+
+~~~text
+secretos reales
+→ NO
+
+deploy
+→ NO
+
+SDK Turnstile
+→ NO
+
+sesiones
+→ NO
+
+autenticación general
+→ NO
+
+persistencia servidor
+→ NO
+
+cambios cliente
+→ NO
+~~~
+
+Estado resultante:
+
+~~~text
+EDGE-PROTECT-80-04-01
+→ IMPLEMENTADO EN EL WORKER
+→ VALIDADO 13/13
+
+B-80-04-DEPLOY-01
+→ RESUELTO
+
+producción pública real
+→ TODAVÍA NO DESPLEGADA
+
+TURNSTILE_SECRET_KEY real
+→ TODAVÍA NO CONFIGURADA
+
+OPENAI_API_KEY real
+→ TODAVÍA NO CONFIGURADA
+~~~
+
+El siguiente paso legítimo no es ampliar arquitectura.
+
+Es decidir y preparar de forma controlada la configuración real mínima necesaria
+para una prueba de despliegue, manteniendo separadas las credenciales reales del
+código y conservando la posibilidad de reversión.
