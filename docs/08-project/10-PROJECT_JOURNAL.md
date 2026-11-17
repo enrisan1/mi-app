@@ -10226,3 +10226,40 @@ RED
 producción
 → SIN CAMBIOS
 ~~~
+
+
+---
+
+# 17/11/2026 — Protección mínima del endpoint IA público
+
+~~~text
+B-80-04-DEPLOY-01
+→ RESUELTO
+
+barrera primaria
+→ Turnstile Managed
+→ validación server-side Siteverify
+→ token single-use / expiración propia
+→ hostname + action validados
+
+rate limiting
+→ defensa secundaria de ráfaga
+→ IP no se trata como identidad
+
+contención económica
+→ proyecto OpenAI dedicado
+→ hard spend limit antes de exposición pública
+
+Cloudflare Access / OTP
+→ no seleccionado
+→ introduciría login/identidad innecesarios
+
+producción
+→ SIN CAMBIOS
+
+secretos reales
+→ NO configurados
+
+deploy
+→ NO ejecutado
+~~~
