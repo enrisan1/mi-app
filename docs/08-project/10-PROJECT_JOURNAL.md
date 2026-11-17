@@ -9968,3 +9968,24 @@ formular bajo PM-10
 la primera actuación constructiva
 limitada a HITO-80-CONV-01
 ~~~
+
+
+---
+
+# 17/11/2026 — Apertura constructiva de HITO-80-CONV-01
+
+~~~text
+R-80-CONV-02
+→ ABIERTA
+
+tests RED
+→ PREREGISTRADOS
+→ no ejecutados todavía
+
+producción
+→ SIN CAMBIOS
+
+siguiente gate
+→ ejecutar src/App.capture.integration.test.tsx
+  y confirmar RED válido
+~~~
