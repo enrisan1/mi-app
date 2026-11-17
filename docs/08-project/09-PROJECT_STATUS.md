@@ -7890,3 +7890,24 @@ R-80-CONV-03
 producción
 → SIN CAMBIOS
 ~~~
+
+
+---
+
+# 17/11/2026 — Apertura de R-80-CONV-03
+
+~~~text
+R-80-CONV-03
+→ ABIERTA
+
+tests RED de identidad autoral
+→ PREREGISTRADOS
+→ no ejecutados todavía
+
+producción
+→ SIN CAMBIOS
+
+siguiente gate
+→ ejecutar src/App.author-identity.integration.test.tsx
+  y confirmar RED válido
+~~~
