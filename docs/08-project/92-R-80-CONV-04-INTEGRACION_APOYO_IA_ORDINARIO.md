@@ -1268,3 +1268,461 @@ que sean necesarias para construir
 ~~~
 
 antes de tocar producción.
+
+
+---
+
+# 32. Diseño constructivo mínimo
+
+Tras resolver `B-80-04-AI-01`, la construcción queda reducida a dos unidades
+con una frontera explícita.
+
+## 32.1 Cliente ordinario
+
+Responsabilidad:
+
+~~~text
+App
+→ seleccionar obra ordinaria
+→ recoger petición humana de apoyo
+→ invocar gateway
+→ recibir apoyo
+→ conservarlo en estado propio
+→ mostrar contenido + procedencia
+~~~
+
+Persistencia cliente propuesta:
+
+~~~text
+ordinary.ai-support
+~~~
+
+Forma mínima:
+
+~~~text
+AiSupport {
+  id: string
+  materialId: string
+  request: string
+  content: string
+  provenance: {
+    system: string
+    model?: string
+    requestId?: string
+  }
+  createdAt: string
+}
+~~~
+
+La App no almacenará el apoyo dentro de `ordinary.materials`.
+
+## 32.2 Gateway cliente
+
+Se prevé una unidad pequeña:
+
+~~~text
+src/ai-support/aiSupportGateway.ts
+~~~
+
+Responsabilidad exclusiva:
+
+~~~text
+AiSupportRequest
+→ POST a VITE_AI_SUPPORT_ENDPOINT
+→ validar respuesta mínima
+→ devolver AiSupportResponse
+→ normalizar error
+~~~
+
+`VITE_AI_SUPPORT_ENDPOINT` es configuración pública y NO contiene secreto.
+
+## 32.3 Worker
+
+Se prevé:
+
+~~~text
+workers/ai-support/
+→ Worker Cloudflare mínimo
+~~~
+
+Responsabilidad:
+
+~~~text
+POST /ai-support
+→ validar origen/método/payload
+→ aplicar protección de abuso
+→ llamar OpenAI Responses API
+→ devolver sólo apoyo + procedencia
+~~~
+
+No almacena obras ni apoyos.
+
+---
+
+# 33. Decisiones de implementación imprescindibles
+
+## D-80-04-IMPL-01 — plataforma serverless
+
+Decisión:
+
+~~~text
+Cloudflare Workers
+→ SELECCIONADO
+~~~
+
+Razones:
+
+- runtime serverless aislado del frontend estático;
+- secretos server-side;
+- `fetch` nativo suficiente para llamar proveedor;
+- rate limiting disponible en el propio Worker;
+- despliegue independiente y reversible;
+- no obliga a migrar GitHub Pages.
+
+No se añade Cloudflare Pages ni base de datos.
+
+## D-80-04-IMPL-02 — proveedor y modelo inicial
+
+Decisión:
+
+~~~text
+proveedor
+→ OpenAI API
+
+API
+→ Responses API
+
+modelo inicial
+→ gpt-6-luna
+
+reasoning effort
+→ low
+
+tools
+→ NINGUNA
+~~~
+
+Justificación:
+
+- el hito requiere apoyo textual auxiliar, no máxima capacidad general;
+- `gpt-6-luna` está orientado a tareas acotadas y coste reducido;
+- el modelo puede sustituirse más adelante sin alterar la frontera
+  `obra ≠ apoyo`;
+- no se habilitan web search, file search, function calling ni otros tools.
+
+La llamada inicial usará HTTP directo desde Worker a Responses API.
+
+No se introduce SDK OpenAI mientras `fetch` directo sea suficiente.
+
+## D-80-04-IMPL-03 — secreto
+
+~~~text
+OPENAI_API_KEY
+→ Cloudflare Worker Secret
+→ nunca VITE_*
+→ nunca localStorage
+→ nunca repositorio
+~~~
+
+Para desarrollo local se usará `.dev.vars` no versionado.
+
+Al construir el Worker deberá añadirse `.dev.vars*` a `.gitignore`.
+
+## D-80-04-IMPL-04 — protección mínima contra abuso
+
+Para el primer despliegue público:
+
+~~~text
+Cloudflare Rate Limiting binding
+→ por IP
+→ sólo ruta /ai-support
+
++
+límite de longitud de payload
+
++
+límite de salida del modelo
+
++
+CORS al origen autorizado
+~~~
+
+La cifra concreta del rate limit será configuración de despliegue y no forma
+parte del contrato Product.
+
+CORS no se tratará como mecanismo de autenticación.
+
+No se introduce todavía login general.
+
+## D-80-04-IMPL-05 — prompt mínimo
+
+El Worker enviará instrucciones estables equivalentes a:
+
+~~~text
+proporciona apoyo auxiliar sobre la obra;
+responde a la petición concreta;
+no declares que el apoyo ha sido incorporado a la obra;
+no reescribas automáticamente la obra;
+devuelve sólo el apoyo solicitado
+~~~
+
+Entrada:
+
+~~~text
+obra
++
+petición humana
+~~~
+
+No se enviarán por defecto:
+
+- identidad operativa;
+- alias autoral;
+- capturas;
+- otros materiales;
+- historial post-v1.
+
+## D-80-04-IMPL-06 — salida y procedencia
+
+El Worker devolverá:
+
+~~~text
+{
+  content,
+  provenance: {
+    system: "OpenAI",
+    model: "gpt-6-luna",
+    requestId
+  }
+}
+~~~
+
+`requestId` se incluirá cuando la API/proveedor lo haga disponible.
+
+La App añadirá localmente:
+
+~~~text
+materialId
+createdAt
+~~~
+
+## D-80-04-IMPL-07 — tratamiento de errores
+
+~~~text
+fallo red/proveedor/validación
+→ NO crea apoyo
+→ NO modifica obra
+→ muestra estado de error recuperable
+~~~
+
+No habrá reintentos automáticos en la primera versión.
+
+---
+
+# 34. Archivos inicialmente previstos para construcción
+
+Después de RED válido, el cambio deberá limitarse inicialmente a:
+
+~~~text
+src/App.tsx
+src/ai-support/aiSupportGateway.ts
+src/App.ai-support.integration.test.tsx
+
+workers/ai-support/src/index.ts
+workers/ai-support/wrangler.jsonc
+
+.gitignore
+package.json / lock
+→ sólo si Wrangler se incorpora como herramienta reproducible
+~~~
+
+No se autoriza modificar:
+
+~~~text
+ResumeExperience
+PostV1IntegratedExperience
+realizaciones consolidadas de captura
+realizaciones consolidadas de autoría
+comparación
+rutas
+~~~
+
+salvo evidencia material nueva.
+
+---
+
+# 35. Tests RED preregistrados
+
+Se crea:
+
+~~~text
+src/App.ai-support.integration.test.tsx
+~~~
+
+con nueve pruebas.
+
+## T-CONV-80-04-01 — solicitud explícita
+
+La App ofrece selección de obra, petición y acción `Solicitar apoyo IA`, pero
+no invoca el gateway antes de la acción humana.
+
+## T-CONV-80-04-02 — contrato mínimo de solicitud
+
+La llamada contiene exactamente el contexto mínimo:
+
+~~~text
+workId
+workContent
+request
+~~~
+
+y usa `VITE_AI_SUPPORT_ENDPOINT`.
+
+## T-CONV-80-04-03 — separación obra/apoyo
+
+La respuesta aparece como apoyo asociado a la obra y
+`ordinary.materials` permanece byte-a-byte igual.
+
+## T-CONV-80-04-04 — procedencia separada de autoría
+
+Se muestran:
+
+~~~text
+system
+model
+requestId
+~~~
+
+y el alias de la obra no se usa como procedencia del apoyo.
+
+## T-CONV-80-04-05 — recuperación
+
+El apoyo persiste en estado propio y reaparece tras desmontar/remontar App.
+
+## T-CONV-80-04-06 — independencia de edición
+
+Una modificación posterior del contenido de la obra no obliga a modificar ni
+eliminar el apoyo ya conservado.
+
+## T-CONV-80-04-07 — independencia de captura y autoría
+
+Solicitar apoyo no modifica:
+
+~~~text
+ordinary.contextual-captures
+ordinary.author-identities
+ordinary.work-authorships
+~~~
+
+## T-CONV-80-04-08 — captura humana no es obra IA
+
+Una captura humana no aparece como obra seleccionable por el mero hecho de
+existir.
+
+## T-CONV-80-04-09 — fallo seguro
+
+Un 503/fallo de proveedor:
+
+~~~text
+→ muestra error
+→ no modifica ordinary.materials
+→ no crea apoyo falso
+~~~
+
+---
+
+# 36. Estrategia de test del Worker
+
+Los tests de App son RED ahora y no dependen de red real.
+
+El Worker tendrá posteriormente pruebas propias para:
+
+1. rechazar método distinto de POST;
+2. rechazar origen no permitido;
+3. rechazar payload malformado o excesivo;
+4. no exponer `OPENAI_API_KEY`;
+5. traducir una respuesta válida de OpenAI al contrato mínimo;
+6. devolver error controlado ante fallo del proveedor;
+7. aplicar rate limit.
+
+Esas pruebas se preregistrarán al crear el scaffold del Worker, porque importar
+un Worker inexistente ahora produciría un RED inválido de infraestructura y no
+de comportamiento.
+
+---
+
+# 37. Gate RED actual
+
+Debe ejecutarse:
+
+~~~text
+npx vitest run src/App.ai-support.integration.test.tsx
+~~~
+
+Resultado esperado inicialmente:
+
+~~~text
+Test Files
+→ 1 failed
+
+Tests
+→ 9 failed
+~~~
+
+La causa válida deberá alcanzar la capacidad ausente, por ejemplo:
+
+~~~text
+Unable to find role="region"
+name="Apoyo auxiliar de IA"
+~~~
+
+No será RED válido:
+
+- error de import;
+- error de sintaxis;
+- ausencia de `fetch` en entorno;
+- error de configuración Vitest;
+- DEUDA-TSC-COMP-01.
+
+---
+
+# 38. Estado tras diseño y preregistro
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+
+diseño constructivo mínimo
+→ FORMULADO
+
+D-80-04-IMPL-01
+→ Cloudflare Workers
+
+D-80-04-IMPL-02
+→ OpenAI Responses API / gpt-6-luna
+
+D-80-04-IMPL-03
+→ secreto server-side
+
+D-80-04-IMPL-04
+→ rate limiting + límites + CORS
+
+tests App
+→ PREREGISTRADOS
+
+RED
+→ NO CONFIRMADO TODAVÍA
+
+producción
+→ SIN CAMBIOS
+
+Worker
+→ NO CREADO TODAVÍA
+
+dependencias
+→ SIN CAMBIOS
+~~~
+
+Sólo un RED válido autorizará comenzar la construcción del cliente y del
+gateway. El scaffold del Worker se construirá después de ese gate y sus pruebas
+propias precederán a su lógica de proveedor.
