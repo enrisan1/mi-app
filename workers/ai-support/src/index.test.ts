@@ -148,7 +148,23 @@ describe("AI support Worker contract", () => {
   });
 
   it("[T-WORKER-80-04-05] aplica el rate limiter antes de llamar a OpenAI", async () => {
-    const providerFetch = vi.fn() as unknown as WorkerFetch;
+    const providerFetch = vi.fn(async (input: RequestInfo | URL) => {
+      const url = requestUrl(input);
+
+      if (url === TURNSTILE_SITEVERIFY_URL) {
+        return turnstileResponse({
+          success: true,
+          hostname: "enrisan1.github.io",
+          action: "ai_support",
+        });
+      }
+
+      if (url === OPENAI_RESPONSES_URL) {
+        return openAiSuccessResponse();
+      }
+
+      throw new Error(`unexpected URL: ${url}`);
+    });
 
     const response = await handleAiSupportRequest(
       request(VALID_BODY),
@@ -157,37 +173,55 @@ describe("AI support Worker contract", () => {
           limit: vi.fn().mockResolvedValue({ success: false }),
         },
       }),
-      providerFetch,
+      providerFetch as unknown as WorkerFetch,
     );
 
     expect(response.status).toBe(429);
-    expect(providerFetch).not.toHaveBeenCalled();
+    expect(
+      providerFetch.mock.calls.some(
+        ([input]) => requestUrl(input as RequestInfo | URL) === OPENAI_RESPONSES_URL,
+      ),
+    ).toBe(false);
   });
 
   it("[T-WORKER-80-04-06] traduce una respuesta válida de Responses API al contrato mínimo", async () => {
-    const providerFetch = vi.fn().mockResolvedValue(
-      new Response(
-        JSON.stringify({
-          id: "resp_test_1",
-          model: "gpt-6-luna",
-          output: [
-            {
-              type: "message",
-              content: [
-                {
-                  type: "output_text",
-                  text: "Conviene comprobar la premisa principal.",
-                },
-              ],
-            },
-          ],
-        }),
-        {
-          status: 200,
-          headers: { "Content-Type": "application/json" },
-        },
-      ),
-    ) as unknown as WorkerFetch;
+    const providerFetch = vi.fn(async (input: RequestInfo | URL) => {
+      const url = requestUrl(input);
+
+      if (url === TURNSTILE_SITEVERIFY_URL) {
+        return turnstileResponse({
+          success: true,
+          hostname: "enrisan1.github.io",
+          action: "ai_support",
+        });
+      }
+
+      if (url === OPENAI_RESPONSES_URL) {
+        return new Response(
+          JSON.stringify({
+            id: "resp_test_1",
+            model: "gpt-6-luna",
+            output: [
+              {
+                type: "message",
+                content: [
+                  {
+                    type: "output_text",
+                    text: "Conviene comprobar la premisa principal.",
+                  },
+                ],
+              },
+            ],
+          }),
+          {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          },
+        );
+      }
+
+      throw new Error(`unexpected URL: ${url}`);
+    }) as unknown as WorkerFetch;
 
     const response = await handleAiSupportRequest(
       request(VALID_BODY),
@@ -219,19 +253,33 @@ describe("AI support Worker contract", () => {
   });
 
   it("[T-WORKER-80-04-07] un fallo del proveedor devuelve error controlado sin exponer el secreto", async () => {
-    const providerFetch = vi.fn().mockResolvedValue(
-      new Response(
-        JSON.stringify({
-          error: {
-            message: "upstream failure containing test-secret",
+    const providerFetch = vi.fn(async (input: RequestInfo | URL) => {
+      const url = requestUrl(input);
+
+      if (url === TURNSTILE_SITEVERIFY_URL) {
+        return turnstileResponse({
+          success: true,
+          hostname: "enrisan1.github.io",
+          action: "ai_support",
+        });
+      }
+
+      if (url === OPENAI_RESPONSES_URL) {
+        return new Response(
+          JSON.stringify({
+            error: {
+              message: "upstream failure containing test-secret",
+            },
+          }),
+          {
+            status: 503,
+            headers: { "Content-Type": "application/json" },
           },
-        }),
-        {
-          status: 503,
-          headers: { "Content-Type": "application/json" },
-        },
-      ),
-    ) as unknown as WorkerFetch;
+        );
+      }
+
+      throw new Error(`unexpected URL: ${url}`);
+    }) as unknown as WorkerFetch;
 
     const response = await handleAiSupportRequest(
       request(VALID_BODY),
