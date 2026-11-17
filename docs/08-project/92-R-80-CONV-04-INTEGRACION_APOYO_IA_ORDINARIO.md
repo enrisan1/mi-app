@@ -3655,3 +3655,262 @@ reversible:
 ~~~
 
 Ninguno de esos pasos queda ejecutado por este GREEN.
+
+
+---
+
+# 69. Primera prueba remota real — preflight y gate humano
+
+Objetivo:
+
+~~~text
+ejecutar una única prueba end-to-end real y reversible
+sin introducir secretos en Git ni en el frontend
+~~~
+
+## 69.1 Preflight de frontend
+
+El workflow de GitHub Pages exige ahora dos variables públicas:
+
+~~~text
+VITE_AI_SUPPORT_ENDPOINT
+VITE_TURNSTILE_SITE_KEY
+~~~
+
+Si alguna falta, el despliegue debe fallar antes de construir.
+
+Estas variables NO son secretos:
+
+~~~text
+endpoint Worker
+→ público por naturaleza
+
+Turnstile sitekey
+→ pública por diseño
+~~~
+
+## 69.2 Gate externo — Cloudflare Turnstile
+
+Debe crearse un widget real con:
+
+~~~text
+name
+→ mi-app-ai-support
+
+region
+→ Rest of World / world
+
+hostname
+→ enrisan1.github.io
+
+mode
+→ Managed
+
+pre-clearance
+→ no requerido para este corte
+~~~
+
+Resultado a conservar fuera del repositorio:
+
+~~~text
+sitekey
+→ pública
+→ puede usarse como VITE_TURNSTILE_SITE_KEY
+
+secret key
+→ privada
+→ NO pegar en chat
+→ NO guardar en Git
+→ destinada sólo a TURNSTILE_SECRET_KEY del Worker
+~~~
+
+Cloudflare documenta que la región no puede cambiarse después de crear el widget.
+Si la región fuese incorrecta, la reversión limpia es eliminar el widget y crear
+otro antes de cualquier despliegue productivo.
+
+## 69.3 Gate externo — proyecto OpenAI dedicado
+
+Debe existir un proyecto dedicado a esta integración.
+
+Configuración mínima:
+
+~~~text
+nombre
+→ mi-app-ai-support
+
+model usage
+→ permitir únicamente el modelo necesario para el Worker
+
+monthly spend limit
+→ valor humano explícito y bajo para la prueba
+
+Enforce a hard limit
+→ ON
+
+spend alert
+→ opcional pero recomendable por debajo del hard limit
+~~~
+
+La aplicación del hard limit no es instantánea; puede existir un pequeño
+sobrepaso del gasto registrado.
+
+Sólo después de activar el hard limit deberá generarse una API key del proyecto.
+
+Resultado sensible:
+
+~~~text
+OPENAI_API_KEY
+→ NO pegar en chat
+→ NO Git
+→ destinada sólo al secreto del Worker
+~~~
+
+## 69.4 Orden de introducción de secretos
+
+Los secretos NO se introducen hasta que estén acreditados simultáneamente:
+
+~~~text
+widget Turnstile real
+→ creado correctamente
+
+proyecto OpenAI dedicado
+→ creado
+
+hard spend limit
+→ activo
+
+modelo
+→ limitado
+~~~
+
+Después:
+
+~~~text
+TURNSTILE_SECRET_KEY
+→ secret del Worker Cloudflare
+
+OPENAI_API_KEY
+→ secret del Worker Cloudflare
+~~~
+
+No usar `vars` para esos valores.
+
+## 69.5 Despliegue Worker
+
+Tras configurar secretos:
+
+~~~text
+wrangler deploy
+→ deberá validar secretos requeridos
+→ deberá desplegar AI_SUPPORT_RATE_LIMITER
+→ devolverá URL pública del Worker
+~~~
+
+La URL resultante pasa a:
+
+~~~text
+VITE_AI_SUPPORT_ENDPOINT
+~~~
+
+como variable pública del workflow de Pages.
+
+## 69.6 Despliegue frontend
+
+Antes de ejecutar el workflow de Pages deberán existir:
+
+~~~text
+VITE_AI_SUPPORT_ENDPOINT
+→ URL pública real del Worker
+
+VITE_TURNSTILE_SITE_KEY
+→ sitekey real del widget
+~~~
+
+Sólo entonces se ejecutará el workflow manual de GitHub Pages.
+
+## 69.7 Prueba E2E única
+
+La prueba humana mínima será:
+
+~~~text
+1. abrir https://enrisan1.github.io/mi-app/
+2. disponer de una obra ordinaria
+3. seleccionar la obra
+4. escribir una petición breve de apoyo
+5. pulsar Solicitar apoyo IA
+6. completar Turnstile sólo si lo exige
+7. comprobar una respuesta real del Worker/OpenAI
+8. comprobar procedencia OpenAI/modelo/requestId cuando exista
+9. comprobar que la obra original no se modifica
+10. no repetir solicitudes innecesarias
+~~~
+
+Éxito:
+
+~~~text
+browser real
+→ token Turnstile real
+→ Siteverify success + hostname + action
+→ rate limiter
+→ OpenAI
+→ respuesta real
+→ apoyo separado de la obra
+~~~
+
+## 69.8 Reversión
+
+Si la prueba falla o se decide detenerla:
+
+~~~text
+frontend
+→ no volver a desplegar o retirar variables públicas
+
+Worker
+→ retirar/desactivar despliegue
+
+TURNSTILE_SECRET_KEY / OPENAI_API_KEY
+→ eliminar o rotar
+
+OpenAI key
+→ revocar
+
+widget Turnstile
+→ puede eliminarse si no va a usarse
+
+hard spend limit
+→ mantener o reducir mientras exista la key
+~~~
+
+Nunca se requiere reescribir historia Git para retirar secretos porque ningún
+secreto debe entrar en el repositorio.
+
+## 69.9 Estado
+
+~~~text
+preflight repo
+→ PREPARADO
+
+variables públicas de Pages
+→ todavía NO configuradas
+
+widget Turnstile real
+→ pendiente de acción en cuenta Cloudflare
+
+proyecto OpenAI dedicado
+→ pendiente de acción en cuenta OpenAI
+
+hard spend limit
+→ pendiente de acción en cuenta OpenAI
+
+secretos Worker
+→ NO introducidos
+
+Worker deploy
+→ NO ejecutado
+
+Pages deploy
+→ NO ejecutado
+
+prueba remota
+→ NO ejecutada
+~~~
