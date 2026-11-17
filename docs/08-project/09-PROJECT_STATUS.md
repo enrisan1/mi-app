@@ -7711,3 +7711,35 @@ resolución dependa de demostrar esa causalidad.
 **Punto de reanudación:** sólo reabrir continuidad ante nueva evidencia concreta,
 una obligación Product pendiente o una situación suficientemente discriminable
 capaz de cambiar una decisión estratégica.
+
+
+---
+
+# 17/11/2026 — Apertura de convergencia post-KGV
+
+Resultado:
+
+~~~text
+OB-80-CONV-01
+→ ACEPTADA
+
+R-80-CONV-01
+→ ABIERTA
+
+objetivo
+→ determinar convergencia mínima y coherente
+  de C-PV-80-01…04 en producto ordinario
+
+producción
+→ SIN CAMBIOS
+
+nuevo Product Value
+→ NO
+
+nuevo horizonte
+→ NO
+~~~
+
+La actuación abierta es exclusivamente de auditoría y diseño. La construcción
+quedará condicionada a su criterio de cierre y a la derivación de un primer hito
+verificable.
