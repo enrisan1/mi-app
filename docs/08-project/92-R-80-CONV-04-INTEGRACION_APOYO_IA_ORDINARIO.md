@@ -3520,3 +3520,138 @@ T-CONV-80-04-10…13
 ~~~
 
 Sólo tras observar ese RED se autoriza la implementación mínima.
+
+
+---
+
+# 68. GREEN — integración mínima Turnstile en cliente
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.ai-support.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       13 passed (13)
+~~~
+
+Por tanto:
+
+~~~text
+T-CONV-80-04-01…09
+→ GREEN
+→ contratos históricos conservados
+
+T-CONV-80-04-10…13
+→ GREEN
+→ integración mínima Turnstile cliente satisfecha
+
+cliente ordinario
+→ GREEN 13/13
+~~~
+
+La implementación acreditada incluye:
+
+~~~text
+VITE_TURNSTILE_SITE_KEY
+→ sitekey pública
+
+render explícito
+→ Turnstile SPA
+
+action
+→ ai_support
+
+execution
+→ execute
+
+solicitud apoyo IA
+→ obtiene token antes del request
+
+AiSupportRequest
+→ incluye turnstileToken
+
+token
+→ efímero
+→ NO persistido
+→ nuevo por solicitud
+
+widget
+→ eliminado tras resolver/rechazar
+~~~
+
+No se ha introducido:
+
+~~~text
+TURNSTILE_SECRET_KEY en cliente
+→ NO
+
+OPENAI_API_KEY en cliente
+→ NO
+
+persistencia de token
+→ NO
+
+autenticación
+→ NO
+
+sesión
+→ NO
+
+deploy real
+→ NO
+
+credenciales reales
+→ NO
+~~~
+
+Estado resultante:
+
+~~~text
+Worker Turnstile
+→ GREEN 13/13
+
+cliente Turnstile
+→ GREEN 13/13
+
+contrato cliente↔Worker protegido
+→ IMPLEMENTADO EN CÓDIGO
+
+prueba remota real
+→ TODAVÍA PENDIENTE
+
+widget Turnstile real
+→ TODAVÍA NO CREADO
+
+TURNSTILE_SECRET_KEY real
+→ TODAVÍA NO CONFIGURADA
+
+OPENAI_API_KEY real
+→ TODAVÍA NO CONFIGURADA
+
+hard spend limit OpenAI
+→ TODAVÍA NO ACREDITADO
+
+deploy
+→ TODAVÍA NO EJECUTADO
+~~~
+
+El siguiente paso legítimo es preparar la primera prueba remota real de forma
+reversible:
+
+~~~text
+1. crear widget Turnstile real
+2. crear/confirmar proyecto OpenAI dedicado
+3. fijar hard spend limit
+4. introducir secretos sólo en Cloudflare
+5. desplegar Worker
+6. configurar endpoint/sitekey públicas del frontend
+7. desplegar frontend
+8. ejecutar una única prueba end-to-end
+~~~
+
+Ninguno de esos pasos queda ejecutado por este GREEN.
