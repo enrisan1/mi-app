@@ -833,3 +833,47 @@ npx vitest run \
 
 No se avanza todavía a typecheck ni a la suite canónica hasta observar este
 resultado.
+
+
+---
+
+# 24. GREEN del patrimonio R-80-01-M1
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/realizations/capture/ContextualCaptureBaseline.test.tsx \
+  src/realizations/capture/ContextualCaptureExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  2 passed (2)
+Tests       13 passed (13)
+~~~
+
+Por tanto:
+
+~~~text
+patrimonio R-80-01-M1
+→ GREEN 13/13
+
+baseline histórico
+→ conservado
+
+testigo contextual histórico
+→ conservado
+
+gate 3 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+typecheck
+~~~
+
+No se avanza todavía a la suite canónica hasta observar ese resultado.
