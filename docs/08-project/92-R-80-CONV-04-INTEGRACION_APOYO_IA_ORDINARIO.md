@@ -1880,3 +1880,155 @@ preregistrar sus tests
 mantener todavía sin implementar
 la llamada real a OpenAI
 ~~~
+
+
+---
+
+# 42. Scaffold y RED del Worker preregistrados
+
+Tras GREEN 9/9 del cliente se crea únicamente el scaffold del borde servidor:
+
+~~~text
+workers/ai-support/src/index.ts
+workers/ai-support/src/index.test.ts
+workers/ai-support/wrangler.jsonc
+~~~
+
+El handler existe y es importable, pero devuelve deliberadamente:
+
+~~~text
+501
+not_implemented
+~~~
+
+No llama todavía a OpenAI.
+
+Se añade además a `.gitignore`:
+
+~~~text
+.dev.vars
+.dev.vars.*
+workers/**/.dev.vars
+workers/**/.dev.vars.*
+~~~
+
+para impedir versionar secretos locales.
+
+No se incorpora aún Wrangler como dependencia porque las pruebas contractuales
+del handler pueden ejecutarse con el Vitest existente y Web APIs estándar.
+
+---
+
+# 43. Tests preregistrados del Worker
+
+La suite contiene siete contratos:
+
+~~~text
+T-WORKER-80-04-01
+→ método distinto de POST = 405
+
+T-WORKER-80-04-02
+→ origen no autorizado = 403
+→ proveedor no llamado
+
+T-WORKER-80-04-03
+→ payload malformado = 400
+
+T-WORKER-80-04-04
+→ payload excesivo = 413
+→ proveedor no llamado
+
+T-WORKER-80-04-05
+→ rate limit agotado = 429
+→ proveedor no llamado
+
+T-WORKER-80-04-06
+→ Responses API válida
+→ 200
+→ contenido + procedencia mínima
+
+T-WORKER-80-04-07
+→ fallo upstream
+→ 502 controlado
+→ secreto no expuesto
+~~~
+
+El fixture de Responses API reproduce la estructura HTTP documentada:
+
+~~~text
+response.id
+response.model
+response.output[]
+  → message
+  → content[]
+  → output_text.text
+~~~
+
+No se presupone un campo HTTP agregado `output_text` que sólo algunos SDK
+ofrecen como conveniencia.
+
+---
+
+# 44. Configuración todavía incompleta a propósito
+
+`wrangler.jsonc` fija únicamente:
+
+~~~text
+name
+main
+compatibility_date
+ALLOWED_ORIGIN
+MODEL
+~~~
+
+No contiene:
+
+~~~text
+OPENAI_API_KEY
+rate-limit namespace real
+account id
+ruta de producción
+~~~
+
+El binding de Rate Limiting se añadirá sólo cuando exista un namespace real de
+la cuenta Cloudflare; no se inventa un identificador.
+
+---
+
+# 45. Gate RED del Worker
+
+Debe ejecutarse con el Vitest ya existente:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+Resultado esperado:
+
+~~~text
+Test Files
+→ 1 failed
+
+Tests
+→ 7 failed
+~~~
+
+La causa esperada es comportamiento todavía no implementado:
+
+~~~text
+actual status
+→ 501
+
+expected
+→ 405 / 403 / 400 / 413 / 429 / 200 / 502
+~~~
+
+Este RED será válido porque:
+
+- el Worker existe;
+- el test puede importarlo;
+- no falta dependencia;
+- no depende de red;
+- no requiere secreto real.
+
+Sólo después de observar ese RED se implementará la lógica del Worker.
