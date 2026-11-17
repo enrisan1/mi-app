@@ -1122,3 +1122,78 @@ Queda habilitada la ejecución de la suite canónica completa.
 Si la suite canónica falla exclusivamente por la misma deuda preexistente de comparison o por un fallo no relacionado con captura, deberá aplicarse el mismo análisis causal antes de atribuirlo a R-80-CONV-02.
 
 Si falla en App, captura o recorridos tocados por esta actuación, R-80-CONV-02 permanecerá bloqueada.
+
+
+---
+
+# 27. GREEN de la suite canónica completa
+
+Ejecución comunicada:
+
+~~~text
+npm test -- --run
+~~~
+
+Resultado:
+
+~~~text
+Test Files  55 passed (55)
+Tests       454 passed (454)
+~~~
+
+Por tanto:
+
+~~~text
+suite canónica completa
+→ GREEN 454/454
+
+gate técnico final
+→ SUPERADO
+~~~
+
+Estado técnico acumulado de R-80-CONV-02:
+
+~~~text
+suite específica de captura
+→ GREEN 7/7
+
+regresión histórica de App
+→ GREEN 28/28
+
+patrimonio R-80-01-M1
+→ GREEN 13/13
+
+CTD-80-CONV-02
+→ SATISFECHO
+
+suite canónica completa
+→ GREEN 454/454
+~~~
+
+La única condición pendiente para cerrar R-80-CONV-02 es el contraste humano
+ordinario definido en §13.
+
+Debe comprobarse en la App ordinaria:
+
+1. comenzar o retomar un trabajo;
+2. abrir captura;
+3. conservar una idea breve;
+4. comprobar que el trabajo seguía presente;
+5. continuar el trabajo;
+6. recuperar posteriormente la captura.
+
+Pregunta discriminante:
+
+> ¿La captura conserva en el producto ordinario la ventaja contextual observada
+> en R-80-01-M1 sin interferir materialmente con el recorrido previo?
+
+Hasta observar esa respuesta:
+
+~~~text
+HITO-80-CONV-01
+→ TÉCNICAMENTE SATISFECHO
+→ HUMANAMENTE PENDIENTE
+
+R-80-CONV-02
+→ ABIERTA
+~~~
