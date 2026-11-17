@@ -899,3 +899,43 @@ tests
 siguiente gate
 → reejecutar src/App.author-identity.integration.test.tsx
 ~~~
+
+
+---
+
+# 26. GREEN de la suite específica de identidad autoral integrada
+
+Reejecución comunicada:
+
+~~~text
+npx vitest run src/App.author-identity.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       8 passed (8)
+~~~
+
+Por tanto:
+
+~~~text
+suite específica de identidad autoral
+→ GREEN 8/8
+
+producción
+→ sin cambios adicionales desde 53a5230
+
+gate 1 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+npx vitest run src/App.test.tsx
+~~~
+
+No se avanza todavía a R-80-03-M1, captura integrada, criterio diferencial
+TypeScript ni suite canónica hasta observar esta regresión histórica de App.
