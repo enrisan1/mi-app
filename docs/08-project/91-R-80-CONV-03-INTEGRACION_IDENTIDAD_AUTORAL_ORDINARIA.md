@@ -795,3 +795,55 @@ producción
 implementación
 → NO AUTORIZADA TODAVÍA
 ~~~
+
+
+---
+
+# 24. Verificación del RED inicial
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.author-identity.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       8 failed (8)
+~~~
+
+La evidencia de fallo muestra que App se monta correctamente con su recorrido
+ordinario, incluyendo:
+
+~~~text
+Ahora
+Captura contextual
+Capturas conservadas
+Continuidad compartida
+Materiales anteriores
+~~~
+
+El fallo alcanza exactamente la capacidad ausente preregistrada:
+
+~~~text
+Unable to find an accessible element
+with role "region"
+and name "Identidad autoral"
+~~~
+
+No aparece un fallo previo de sintaxis, imports, entorno o configuración.
+
+Por tanto:
+
+~~~text
+RED INICIAL
+→ VÁLIDO
+
+gate de implementación
+→ SUPERADO
+
+App.tsx
+→ AUTORIZADA modificación mínima
+~~~
