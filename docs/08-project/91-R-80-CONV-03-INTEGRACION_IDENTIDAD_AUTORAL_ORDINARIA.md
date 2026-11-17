@@ -939,3 +939,65 @@ npx vitest run src/App.test.tsx
 
 No se avanza todavía a R-80-03-M1, captura integrada, criterio diferencial
 TypeScript ni suite canónica hasta observar esta regresión histórica de App.
+
+
+---
+
+# 27. Regresión histórica parcial y ajuste de alcance del test
+
+Ejecución:
+
+~~~text
+npx vitest run src/App.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       1 failed | 27 passed (28)
+~~~
+
+El único fallo pertenece al test:
+
+~~~text
+permite localizar y seleccionar humanamente
+un material ordinario ante una necesidad posterior
+~~~
+
+La expectativa histórica usaba consultas globales para afirmar que:
+
+~~~text
+Material anterior A
+Material anterior B
+~~~
+
+no estaban presentes antes de abrir `Materiales anteriores`.
+
+Tras integrar identidad autoral esos contenidos aparecen legítimamente como
+opciones del selector `Obra ordinaria`, aunque continúan ocultos dentro del
+recorrido histórico `Materiales anteriores` hasta la acción explícita de
+inspección.
+
+Por tanto, el fallo no demuestra regresión funcional.
+
+Se corrige únicamente el test histórico para acotar la ausencia a:
+
+~~~text
+region "Materiales anteriores"
+~~~
+
+que es la responsabilidad que el test pretendía verificar.
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+App.test.tsx
+→ selector histórico acotado a su región
+
+siguiente gate
+→ reejecutar App.test.tsx
+~~~
