@@ -1036,3 +1036,40 @@ App.test.tsx
 siguiente gate
 → reejecutar App.test.tsx
 ~~~
+
+
+---
+
+# 29. Segundo ajuste de alcance del test histórico
+
+La nueva reejecución alcanza el mismo test histórico, pero después de abrir
+`Materiales anteriores`.
+
+El fallo proviene de una segunda consulta global:
+
+~~~text
+getByText("Material anterior A")
+~~~
+
+que ahora encuentra legítimamente:
+
+1. la opción del selector `Obra ordinaria`;
+2. el contenido mostrado dentro de `Materiales anteriores`.
+
+Se acota también esta comprobación positiva a la región histórica
+`Materiales anteriores`.
+
+No se modifica producción.
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+App.test.tsx
+→ ambas fases del test histórico acotadas a su región
+
+siguiente gate
+→ reejecutar App.test.tsx
+~~~
