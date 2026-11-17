@@ -7805,3 +7805,30 @@ siguiente gate
 → ejecutar src/App.capture.integration.test.tsx
   y confirmar RED válido
 ~~~
+
+
+---
+
+# 17/11/2026 — Gate diferencial de tipos para R-80-CONV-02
+
+~~~text
+typecheck global
+→ FAIL por 14 errores preexistentes
+  en src/realizations/comparison/
+
+archivos con error
+→ idénticos al estado pre-captura
+
+package.json / tsconfig.json
+→ sin cambios
+
+CTD-80-CONV-02
+→ SATISFECHO
+
+DEUDA-TSC-COMP-01
+→ REGISTRADA
+→ no corregida dentro de R-80-CONV-02
+
+siguiente gate
+→ suite canónica completa
+~~~
