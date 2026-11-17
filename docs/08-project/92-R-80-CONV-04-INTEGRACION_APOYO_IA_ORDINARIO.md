@@ -2079,3 +2079,48 @@ RED WORKER
 gate de implementación Worker
 → SUPERADO
 ~~~
+
+
+---
+
+# 47. Implementación del contrato del Worker
+
+Tras RED válido se implementa únicamente el handler preregistrado.
+
+Responsabilidades implementadas:
+
+~~~text
+POST only
+origin check
+payload validation
+payload size limits
+rate limiter binding
+OPENAI_API_KEY server-side
+Responses API via fetch
+reasoning effort low
+sin tools
+extracción output[].content[].output_text
+traducción a content + provenance
+fallo upstream → 502 controlado
+~~~
+
+No se incorpora:
+
+~~~text
+Wrangler dependency
+secreto real
+namespace real de rate limiting
+deploy
+dominio de producción
+autenticación general
+persistencia servidor
+~~~
+
+Siguiente gate:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+Sólo después de GREEN se avanzará a comprobar conjuntamente cliente + Worker y
+a preparar el despliegue real.
