@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mi-app-ai-support",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-17",
+  "vars": {
+    "ALLOWED_ORIGIN": "https://enrisan1.github.io",
+    "MODEL": "gpt-6-luna"
+  }
+}
