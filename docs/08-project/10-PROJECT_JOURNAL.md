@@ -10158,3 +10158,37 @@ R-80-CONV-04
 producción
 → SIN CAMBIOS
 ~~~
+
+
+---
+
+# 17/11/2026 — Reducción localizada B-80-04-AI-01
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+
+alternativas comparadas
+→ backend propio
+→ función serverless
+→ runtime local
+→ salida preacreditada
+
+decisión
+→ endpoint serverless externo mínimo
+→ secreto sólo servidor
+→ GitHub Pages permanece como frontend estático
+→ estado de apoyo separado en cliente
+
+proveedor serverless
+→ NO seleccionado todavía
+
+proveedor/modelo IA
+→ NO seleccionado todavía
+
+producción
+→ SIN CAMBIOS
+
+tests
+→ NO PREREGISTRADOS todavía
+~~~
