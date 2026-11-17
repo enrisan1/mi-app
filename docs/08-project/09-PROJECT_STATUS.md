@@ -7939,3 +7939,38 @@ orden de convergencia
 → 80-03 completado
 → siguiente candidato: 80-04
 ~~~
+
+
+---
+
+# 17/11/2026 — Formulación de R-80-CONV-04
+
+~~~text
+C-PV-80-04
+→ siguiente compromiso en convergencia
+
+PM-10
+→ reaplicado
+
+HITO-80-CONV-03
+→ DERIVADO
+
+hipótesis mínima
+→ apoyo IA real
+  + asociado a obra
+  + funcionalmente separado
+  + procedencia reconocible
+
+B-80-04-AI-01
+→ bloqueo material identificado
+→ borde seguro mínimo para obtener IA real
+
+construcción
+→ NO AUTORIZADA
+
+R-80-CONV-04
+→ FORMULADA
+
+producción
+→ SIN CAMBIOS
+~~~
