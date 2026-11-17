@@ -1197,3 +1197,172 @@ HITO-80-CONV-01
 R-80-CONV-02
 → ABIERTA
 ~~~
+
+
+---
+
+# 28. Contraste humano ordinario — resultado
+
+La persona responsable ejecuta el recorrido ordinario en la App inicial.
+
+Secuencia observada:
+
+~~~text
+App ordinaria
+→ estado Retomar
+
+Capturar aportación
+→ abre captura contextual
+
+aportación breve
+→ "Comprobar después si esta separación también debe aplicarse a la validación."
+
+Conservar
+→ captura visible en "Capturas conservadas"
+→ referencia temporal visible
+
+trabajo ordinario
+→ continúa disponible
+
+Aportación actual
+→ "Continuación del trabajo después de capturar la idea."
+
+Crear
+→ recorrido ordinario continúa
+
+recarga / reanudación
+→ la captura sigue visible
+→ el nuevo trabajo aparece como Aportación anterior
+→ ambos permanecen separados
+~~~
+
+Observaciones humanas:
+
+1. la captura no sustituye la actividad ordinaria;
+2. la idea capturada permanece separada del contenido del trabajo;
+3. puede continuarse el trabajo después de capturar;
+4. la captura sigue recuperable posteriormente;
+5. no se observa interferencia material con el recorrido previo.
+
+Pregunta discriminante:
+
+> ¿La captura conserva en el producto ordinario la ventaja contextual observada
+> en R-80-01-M1 sin interferir materialmente con el recorrido previo?
+
+Resultado:
+
+~~~text
+TH-80-CONV-01
+→ POSITIVO
+~~~
+
+La ventaja contextual observada en R-80-01-M1 se conserva suficientemente en
+la App ordinaria dentro del alcance probado.
+
+---
+
+# 29. Evaluación de CSO-80-01
+
+| Condición | Estado |
+| --- | --- |
+| actividad ordinaria identificable | SATISFECHA |
+| captura invocable sin sustituir actividad | SATISFECHA |
+| conservación por acción explícita | SATISFECHA |
+| referencia temporal suficiente | SATISFECHA |
+| no modificación automática del contenido | SATISFECHA |
+| continuidad inmediata | SATISFECHA |
+| recuperación posterior | SATISFECHA |
+| separación de estatuto | SATISFECHA |
+
+Resultado:
+
+~~~text
+CSO-80-01
+→ SATISFECHO
+~~~
+
+---
+
+# 30. Cierre de HITO-80-CONV-01
+
+Estado técnico:
+
+~~~text
+suite específica de captura
+→ GREEN 7/7
+
+App histórica
+→ GREEN 28/28
+
+R-80-01-M1
+→ GREEN 13/13
+
+CTD-80-CONV-02
+→ SATISFECHO
+
+suite canónica
+→ GREEN 454/454
+~~~
+
+Estado humano:
+
+~~~text
+TH-80-CONV-01
+→ POSITIVO
+~~~
+
+Por tanto:
+
+~~~text
+HITO-80-CONV-01
+→ SATISFECHO
+~~~
+
+---
+
+# 31. Cierre de R-80-CONV-02
+
+~~~text
+R-80-CONV-02
+→ CERRADA
+
+resultado
+→ C-PV-80-01 suficientemente disponible
+  en el recorrido ordinario probado
+
+producción
+→ integración mínima realizada
+
+regresión atribuible a captura
+→ NO OBSERVADA
+~~~
+
+No se declara satisfacción universal de C-PV-80-01 fuera del alcance ordinario
+probado.
+
+La deuda:
+
+~~~text
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ AJENA A ESTE CIERRE
+~~~
+
+permanece registrada y no se considera resuelta por este hito.
+
+Punto de continuidad derivado:
+
+~~~text
+orden de convergencia vigente
+→ C-PV-80-01
+→ C-PV-80-03
+→ C-PV-80-04
+→ C-PV-80-02
+
+siguiente candidato
+→ integración ordinaria de C-PV-80-03
+
+antes de construir
+→ reaplicar PM-10
+  y formular actuación mínima específica
+~~~
