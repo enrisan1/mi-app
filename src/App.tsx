@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   ResumeExperience,
   type EstablishedResolution,
@@ -6,6 +6,7 @@ import {
 import { PostV1IntegratedExperience } from "./realizations/post-v1-integrated/PostV1IntegratedExperience";
 import { localStorageResumeRepository } from "./realizations/ru2m1/localStorageResumeRepository";
 import { requestAiSupport } from "./ai-support/aiSupportGateway";
+import { requestTurnstileToken } from "./ai-support/turnstileClient";
 
 type OrdinaryMaterial = {
   id: string;
@@ -204,6 +205,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   );
   const [aiSupportPending, setAiSupportPending] = useState(false);
   const [aiSupportError, setAiSupportError] = useState<string | null>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
   const [ordinaryMaterials, setOrdinaryMaterials] = useState<
     OrdinaryMaterial[]
   >(() => {
@@ -535,6 +537,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
           />
         </label>
 
+        <div ref={turnstileContainerRef} aria-label="Verificación antiabuso" />
+
         <button
           type="button"
           disabled={
@@ -555,10 +559,20 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             setAiSupportError(null);
 
             try {
+              const turnstileContainer = turnstileContainerRef.current;
+
+              if (turnstileContainer === null) {
+                throw new Error("Turnstile container is unavailable");
+              }
+
+              const turnstileToken =
+                await requestTurnstileToken(turnstileContainer);
+
               const response = await requestAiSupport({
                 workId: material.id,
                 workContent: material.content,
                 request: aiSupportRequest,
+                turnstileToken,
               });
 
               const createdAt = new Date().toISOString();
