@@ -8008,3 +8008,37 @@ producción
 tests
 → NO PREREGISTRADOS todavía
 ~~~
+
+
+---
+
+# 17/11/2026 — Diseño constructivo mínimo de R-80-CONV-04
+
+~~~text
+R-80-CONV-04
+→ diseño constructivo mínimo formulado
+
+plataforma serverless
+→ Cloudflare Workers
+
+proveedor
+→ OpenAI Responses API
+
+modelo inicial
+→ gpt-6-luna
+
+secreto
+→ sólo Worker
+
+protección mínima
+→ rate limiting + límites + CORS
+
+src/App.ai-support.integration.test.tsx
+→ 9 tests preregistrados
+
+RED
+→ pendiente de ejecución
+
+producción
+→ SIN CAMBIOS
+~~~
