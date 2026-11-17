@@ -6,5 +6,21 @@
   "vars": {
     "ALLOWED_ORIGIN": "https://enrisan1.github.io",
     "MODEL": "gpt-6-luna"
-  }
+  },
+  "secrets": {
+    "required": [
+      "TURNSTILE_SECRET_KEY",
+      "OPENAI_API_KEY"
+    ]
+  },
+  "ratelimits": [
+    {
+      "name": "AI_SUPPORT_RATE_LIMITER",
+      "namespace_id": "800401",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ]
 }
