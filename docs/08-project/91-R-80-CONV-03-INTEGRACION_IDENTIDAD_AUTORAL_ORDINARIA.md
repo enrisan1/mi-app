@@ -1154,3 +1154,49 @@ npx vitest run \
 
 No se avanza todavía al criterio diferencial TypeScript ni a la suite canónica
 hasta observar esta regresión de captura.
+
+
+---
+
+# 32. GREEN de regresión de captura contextual
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run \
+  src/App.capture.integration.test.tsx \
+  src/realizations/capture/ContextualCaptureBaseline.test.tsx \
+  src/realizations/capture/ContextualCaptureExperience.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  3 passed (3)
+Tests       20 passed (20)
+~~~
+
+Por tanto:
+
+~~~text
+captura contextual integrada
+→ GREEN
+
+patrimonio R-80-01-M1
+→ GREEN
+
+gate 4 de validación posterior
+→ SUPERADO
+~~~
+
+Siguiente gate preregistrado:
+
+~~~text
+npm run typecheck
+~~~
+
+El resultado se evaluará mediante criterio diferencial mientras
+`DEUDA-TSC-COMP-01` continúe abierta.
+
+No se avanza todavía a la suite canónica completa hasta observar y clasificar
+el resultado de TypeScript.
