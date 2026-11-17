@@ -660,3 +660,611 @@ dependencias
 infraestructura
 → SIN CAMBIOS
 ~~~
+
+
+---
+
+# 20. Apertura de la reducción localizada B-80-04-AI-01
+
+La persona responsable autoriza únicamente:
+
+~~~text
+B-80-04-AI-01
+→ REDUCIR
+
+producción
+→ NO MODIFICAR
+
+tests
+→ NO PREREGISTRAR TODAVÍA
+
+dependencias
+→ NO MODIFICAR
+~~~
+
+La reducción se mantiene localizada en el borde de obtención segura de una
+aportación IA real.
+
+---
+
+# 21. Restricción de despliegue vigente
+
+El producto ordinario público utiliza actualmente:
+
+~~~text
+GitHub Pages
+→ frontend estático
+→ build Vite
+→ despliegue manual
+~~~
+
+Este destino fue elegido previamente como primer destino reversible, no como
+requisito universal del producto.
+
+La consecuencia relevante para B-80-04-AI-01 es:
+
+~~~text
+GitHub Pages
+→ puede servir HTML/CSS/JS estático
+→ no proporciona runtime servidor para custodiar secretos
+  ni ejecutar una llamada privilegiada a proveedor IA
+~~~
+
+Por tanto:
+
+~~~text
+credencial de proveedor en bundle Vite
+→ DESCARTADA
+
+VITE_* con secreto
+→ DESCARTADO
+
+llamada directa desde navegador
+con secreto embebido
+→ DESCARTADA
+~~~
+
+La frontera de confianza debe quedar fuera del cliente.
+
+---
+
+# 22. Comparación de alternativas
+
+## 22.1 A — backend propio persistente
+
+Forma:
+
+~~~text
+GitHub Pages
+→ backend propio
+→ proveedor IA
+~~~
+
+### Ventajas
+
+- secreto fuera del navegador;
+- control completo de contrato y políticas;
+- extensible a persistencia, autenticación o colas si fueran necesarias.
+
+### Costes
+
+- introduce servicio servidor permanente;
+- añade superficie operativa y de despliegue;
+- obliga a decidir hosting y ciclo de vida servidor;
+- ofrece capacidades no requeridas por C-PV-80-04.
+
+### Evaluación
+
+~~~text
+seguridad
+→ suficiente
+
+capacidad
+→ superior a la necesaria
+
+simplicidad/reversibilidad
+→ peor que función serverless mínima
+~~~
+
+Resultado:
+
+~~~text
+A
+→ NO SELECCIONADA
+→ sobreconstruye el borde actual
+~~~
+
+---
+
+## 22.2 B — función serverless mínima externa
+
+Forma:
+
+~~~text
+GitHub Pages
+→ POST HTTPS
+→ función serverless mínima
+→ proveedor IA
+~~~
+
+Responsabilidades irreducibles de la función:
+
+1. recibir una solicitud acotada;
+2. validar formato y tamaño;
+3. construir la llamada mínima al proveedor;
+4. usar secreto sólo en runtime servidor;
+5. recibir la respuesta;
+6. devolver contenido + metadatos de procedencia suficientes;
+7. devolver error controlado sin modificar obra.
+
+No tendrá, en el alcance inicial:
+
+- base de datos;
+- sesiones;
+- autenticación general;
+- memoria conversacional;
+- agentes;
+- colas;
+- herramientas;
+- historial servidor;
+- almacenamiento de obras;
+- almacenamiento de capturas;
+- almacenamiento de autorías.
+
+### Ventajas
+
+- mantiene el secreto fuera del navegador;
+- no obliga a abandonar GitHub Pages;
+- introduce una única frontera nueva;
+- puede desplegarse y retirarse independientemente;
+- permite tests deterministas del cliente mediante seam/mock;
+- permite prueba real separada contra proveedor;
+- minimiza estado y acoplamiento.
+
+### Costes
+
+- añade un segundo destino de despliegue;
+- exige CORS explícito si usa dominio distinto;
+- exige gestión de secreto y límites de uso;
+- añade dependencia operativa externa.
+
+### Evaluación
+
+~~~text
+seguridad
+→ suficiente
+
+capacidad
+→ ajustada
+
+reversibilidad
+→ alta
+
+compatibilidad con Pages
+→ alta
+
+superficie nueva
+→ mínima entre alternativas válidas
+~~~
+
+Resultado:
+
+~~~text
+B
+→ SELECCIONADA COMO BORDE MÍNIMO
+~~~
+
+---
+
+## 22.3 C — servicio IA local controlado
+
+Forma:
+
+~~~text
+browser local
+→ runtime IA local
+~~~
+
+### Ventajas
+
+- puede evitar secreto remoto;
+- útil para desarrollo o pruebas locales;
+- control fuerte del entorno.
+
+### Costes
+
+- exige instalación/runtime adicional;
+- no está disponible en la App pública de GitHub Pages por defecto;
+- convierte el entorno local en requisito operacional;
+- no satisface de forma suficiente el recorrido ordinario público ya adoptado.
+
+Resultado:
+
+~~~text
+C
+→ NO SELECCIONADA PARA PRODUCTO ORDINARIO
+→ posible herramienta local futura
+~~~
+
+---
+
+## 22.4 D — salida IA preacreditada
+
+Forma:
+
+~~~text
+respuesta IA real generada previamente
+→ literal controlado
+→ App
+~~~
+
+### Ventajas
+
+- determinista;
+- útil para tests;
+- útil para contrastes aislados;
+- ya demostró valor en R-80-04-M1.
+
+### Limitación decisiva
+
+No permite:
+
+~~~text
+persona
+→ solicita ahora apoyo IA para esta obra
+→ recibe respuesta realmente generada
+~~~
+
+Resultado:
+
+~~~text
+D
+→ NO SATISFACE CSO-80-04 EN PRODUCTO ORDINARIO
+→ se conserva como estrategia de fixtures/tests
+~~~
+
+---
+
+# 23. Decisión del borde mínimo seguro
+
+Se decide:
+
+**B-80-04-AI-EDGE-01 — endpoint serverless mínimo externo como frontera de
+confianza entre la App estática y el proveedor IA.**
+
+Topología:
+
+~~~text
+App en GitHub Pages
+        |
+        | POST HTTPS
+        v
+endpoint serverless mínimo
+        |
+        | credencial sólo servidor
+        v
+proveedor IA
+        |
+        v
+respuesta auxiliar + procedencia
+        |
+        v
+App
+→ estado de apoyo separado
+→ ordinary.materials intacto
+~~~
+
+La decisión selecciona la categoría arquitectónica del borde.
+
+No selecciona todavía:
+
+- proveedor serverless;
+- proveedor IA;
+- modelo;
+- SDK;
+- nombre de endpoint;
+- dominio;
+- política económica definitiva.
+
+---
+
+# 24. Contrato mínimo del borde
+
+## 24.1 Solicitud
+
+El cliente enviará únicamente lo necesario para producir apoyo sobre una obra.
+
+Contrato conceptual:
+
+~~~text
+AiSupportRequest {
+  workId
+  workContent
+  request
+}
+~~~
+
+Donde:
+
+- `workId` permite asociación local;
+- `workContent` aporta contexto mínimo;
+- `request` expresa qué apoyo solicita la persona.
+
+No se envían por defecto:
+
+- capturas contextuales;
+- identidad operativa;
+- identidad autoral;
+- historial completo;
+- otros materiales;
+- estado post-v1.
+
+Cualquier ampliación requerirá justificación propia.
+
+## 24.2 Respuesta
+
+Contrato conceptual:
+
+~~~text
+AiSupportResponse {
+  content
+  provenance {
+    system
+    model?
+    requestId?
+  }
+}
+~~~
+
+La respuesta no contiene una obra modificada.
+
+Regla:
+
+~~~text
+endpoint
+→ devuelve apoyo
+
+endpoint
+→ NO devuelve nuevo ordinary.material
+→ NO decide incorporación a obra
+~~~
+
+---
+
+# 25. Propiedad y persistencia
+
+La función serverless será inicialmente sin estado.
+
+~~~text
+persistencia servidor
+→ NO
+
+persistencia de apoyo
+→ responsabilidad cliente/local
+  si el hito exige recuperación
+~~~
+
+La App conservará el apoyo en un estado propio, separado de:
+
+~~~text
+ordinary.materials
+ordinary.contextual-captures
+ordinary.author-identities
+ordinary.work-authorships
+~~~
+
+Esto minimiza el nuevo borde y evita duplicar contenido de usuario en un
+servidor sin necesidad.
+
+---
+
+# 26. Seguridad mínima obligatoria
+
+La implementación futura deberá cumplir:
+
+1. secreto del proveedor sólo en runtime serverless;
+2. ningún secreto en `VITE_*`, bundle o localStorage;
+3. endpoint sólo por HTTPS;
+4. método permitido inicialmente `POST`;
+5. tipo de contenido esperado explícito;
+6. límite de tamaño de entrada;
+7. CORS restringido a orígenes permitidos cuando corresponda;
+8. errores sin eco de secreto ni respuesta interna sensible;
+9. timeout acotado;
+10. ausencia de ejecución de herramientas/agentes;
+11. ausencia de incorporación automática de respuesta a la obra.
+
+Si el endpoint queda públicamente invocable sin autenticación, deberá
+establecerse al menos una protección mínima contra abuso antes de considerarlo
+apto para despliegue público.
+
+La forma exacta de esa protección no se deriva todavía.
+
+---
+
+# 27. Tratamiento de procedencia
+
+La procedencia que recibe el cliente deberá venir del borde servidor, no de un
+campo editable por la persona.
+
+Mínimo:
+
+~~~text
+system
+→ identificador del sistema/proveedor
+
+model
+→ cuando el proveedor lo permita o el servidor lo conozca
+
+requestId
+→ cuando exista
+~~~
+
+La App podrá añadir localmente:
+
+~~~text
+createdAt
+materialId
+~~~
+
+La procedencia no se atribuirá a la identidad autoral de la obra.
+
+---
+
+# 28. Pruebas deterministas frente a prueba real
+
+Se separan dos niveles:
+
+## 28.1 Tests funcionales
+
+~~~text
+cliente
+→ seam AiSupportGateway
+→ fake/mock determinista
+~~~
+
+Verifican:
+
+- solicitud explícita;
+- asociación;
+- separación;
+- no modificación de obra;
+- persistencia local;
+- tratamiento de errores;
+- autoría/captura intactas.
+
+No usan red real.
+
+## 28.2 Prueba de integración real
+
+~~~text
+App/cliente de integración
+→ endpoint desplegado
+→ proveedor IA real
+~~~
+
+Verifica:
+
+- respuesta realmente IA;
+- secreto no presente en cliente;
+- procedencia suficiente;
+- error controlado.
+
+Esta prueba deberá realizarse antes del contraste humano final.
+
+---
+
+# 29. Evaluación del bloqueo
+
+La pregunta original era:
+
+> ¿Cuál es el mecanismo mínimo y seguro mediante el que la App ordinaria puede
+> solicitar una aportación realmente IA para una obra sin exponer secretos en
+> el cliente ni convertir esta actuación en una arquitectura general de IA?
+
+Respuesta:
+
+~~~text
+GitHub Pages
+→ mantiene frontend ordinario
+
++
+endpoint serverless externo mínimo
+→ único borde privilegiado
+
++
+secreto sólo servidor
+→ proveedor IA
+
++
+respuesta apoyo + procedencia
+→ cliente
+
++
+estado local separado
+→ obra intacta
+~~~
+
+Por tanto:
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+~~~
+
+---
+
+# 30. Qué queda abierto tras resolver el bloqueo
+
+La reducción NO decide todavía:
+
+~~~text
+Cloudflare Workers
+vs
+Vercel Functions
+vs
+otra plataforma serverless equivalente
+~~~
+
+porque esa elección no modifica la frontera funcional ya decidida y puede
+hacerse en el momento mínimo de implementación atendiendo a disponibilidad,
+coste y despliegue.
+
+Tampoco decide proveedor/modelo IA.
+
+Quedan como decisiones de implementación acotadas:
+
+~~~text
+D-80-04-IMPL-01
+→ plataforma serverless concreta
+
+D-80-04-IMPL-02
+→ proveedor/modelo IA concreto
+
+D-80-04-IMPL-03
+→ protección mínima contra abuso para endpoint público
+~~~
+
+Ninguna de ellas exige reabrir Product ni R-80-04-M1.
+
+---
+
+# 31. Estado resultante de R-80-CONV-04
+
+~~~text
+R-80-CONV-04
+→ REDUCCIÓN B-80-04-AI-01 ABIERTA Y COMPLETADA
+
+B-80-04-AI-01
+→ RESUELTO
+
+borde mínimo
+→ endpoint serverless externo
+
+construcción
+→ TODAVÍA NO INICIADA
+
+tests
+→ TODAVÍA NO PREREGISTRADOS
+
+producción
+→ SIN CAMBIOS
+
+dependencias
+→ SIN CAMBIOS
+~~~
+
+Bajo PM-10 desaparece el bloqueo arquitectónico principal.
+
+El siguiente paso legítimo pasa a ser:
+
+~~~text
+formular el diseño constructivo mínimo
++
+preregistrar tests RED
++
+resolver sólo las decisiones de implementación
+que sean necesarias para construir
+~~~
+
+antes de tocar producción.
