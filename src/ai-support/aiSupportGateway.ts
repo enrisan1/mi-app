@@ -2,6 +2,7 @@ export type AiSupportRequest = {
   workId: string;
   workContent: string;
   request: string;
+  turnstileToken: string;
 };
 
 export type AiSupportResponse = {
