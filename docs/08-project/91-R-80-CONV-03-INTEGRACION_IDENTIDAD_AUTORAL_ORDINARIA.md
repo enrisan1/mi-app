@@ -1200,3 +1200,120 @@ El resultado se evaluará mediante criterio diferencial mientras
 
 No se avanza todavía a la suite canónica completa hasta observar y clasificar
 el resultado de TypeScript.
+
+
+---
+
+# 33. Criterio diferencial TypeScript — CTD-80-CONV-03
+
+Ejecución comunicada:
+
+~~~text
+npm run typecheck
+~~~
+
+Resultado global:
+
+~~~text
+tsc --noEmit
+→ FAIL
+
+14 errores
+→ 5 archivos
+→ todos en src/realizations/comparison/
+~~~
+
+Archivos afectados:
+
+~~~text
+src/realizations/comparison/ComparisonProgress.test.tsx
+src/realizations/comparison/InlineDetectionExperience.test.tsx
+src/realizations/comparison/InlineDetectionExperience.tsx
+src/realizations/comparison/LateralComparisonExperience.test.tsx
+src/realizations/comparison/detectLiteralDifferences.ts
+~~~
+
+Errores observados:
+
+~~~text
+TS2503
+→ Cannot find namespace 'JSX'
+
+TS2532
+→ Object is possibly 'undefined'
+
+TS2345
+→ number | undefined no asignable a number
+~~~
+
+Se verifica contra el commit inmediatamente anterior a la implementación
+autoral:
+
+~~~text
+b1136bed990060799312a2df029028e88d068520
+~~~
+
+Resultado de comparación:
+
+~~~text
+ComparisonProgress.test.tsx
+→ UNCHANGED
+
+InlineDetectionExperience.test.tsx
+→ UNCHANGED
+
+InlineDetectionExperience.tsx
+→ UNCHANGED
+
+LateralComparisonExperience.test.tsx
+→ UNCHANGED
+
+detectLiteralDifferences.ts
+→ UNCHANGED
+
+package.json
+→ UNCHANGED
+
+tsconfig.json
+→ UNCHANGED
+~~~
+
+Además, el typecheck no informa errores en:
+
+~~~text
+src/App.tsx
+src/App.author-identity.integration.test.tsx
+src/App.test.tsx
+src/App.capture.integration.test.tsx
+src/realizations/author-identity/*
+src/realizations/capture/*
+~~~
+
+Por tanto:
+
+~~~text
+CTD-80-CONV-03
+→ SATISFECHO
+
+regresión TypeScript atribuible
+a integración autoral
+→ NO OBSERVADA
+
+typecheck global
+→ CONTINÚA FAIL
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ PREEXISTENTE
+→ AJENA A R-80-CONV-03
+~~~
+
+El gate diferencial no declara el repositorio globalmente limpio de TypeScript.
+Sólo establece que la integración autoral no introduce nuevos errores
+atribuibles.
+
+Siguiente gate:
+
+~~~text
+npm test -- --run
+~~~
