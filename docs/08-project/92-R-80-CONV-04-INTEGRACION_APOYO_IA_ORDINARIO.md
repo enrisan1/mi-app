@@ -1838,3 +1838,45 @@ npx vitest run src/App.ai-support.integration.test.tsx
 
 Sólo si el cliente alcanza GREEN se abrirá el scaffold del Worker y se
 preregistrarán sus pruebas antes de implementar la llamada real a OpenAI.
+
+
+---
+
+# 41. GREEN del tramo cliente
+
+Ejecución comunicada:
+
+~~~text
+npx vitest run src/App.ai-support.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       9 passed (9)
+~~~
+
+Por tanto:
+
+~~~text
+cliente ordinario
+→ GREEN 9/9
+
+gateway HTTP
+→ contrato funcional satisfecho bajo fetch simulado
+
+gate cliente
+→ SUPERADO
+~~~
+
+Siguiente paso preregistrado:
+
+~~~text
+crear scaffold mínimo de Worker
++
+preregistrar sus tests
++
+mantener todavía sin implementar
+la llamada real a OpenAI
+~~~
