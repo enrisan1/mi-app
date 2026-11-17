@@ -693,3 +693,62 @@ gate de implementación
 App.tsx
 → AUTORIZADA modificación mínima
 ~~~
+
+
+---
+
+# 21. Primera ejecución GREEN parcial y corrección del arnés
+
+Primera ejecución tras implementar la captura:
+
+~~~text
+Test Files  1 failed (1)
+Tests       2 failed | 5 passed (7)
+~~~
+
+La evidencia visible muestra que la captura ya funciona y permanece conservada,
+pero dos aserciones del arnés estaban acopladas a estados históricos concretos
+de `ResumeExperience`.
+
+## T-CONV-80-01-07
+
+Tras crear el primer trabajo ordinario desde estado vacío, `ResumeExperience`
+muestra:
+
+~~~text
+role="status"
+Lo que has aportado
+Trabajo ordinario posterior
+~~~
+
+y no el label `Actuación actual`, que pertenece al recorrido de reanudación.
+
+Por tanto se corrige sólo el test para observar el resultado ordinario real.
+
+## T-CONV-80-01-04
+
+El caso precarga `ru2m1.previous`; por contrato histórico eso lleva a
+`ResumeExperience` a estado `Retomar`, no `Ahora`.
+
+El helper se corrige para aceptar ambas formas legítimas de actividad ordinaria:
+
+~~~text
+Ahora
+o
+Retomar
+~~~
+
+No se modifica producción.
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS respecto de 06e247c
+
+tests
+→ corregidos sólo en expectativas históricas
+
+siguiente gate
+→ reejecutar src/App.capture.integration.test.tsx
+~~~
