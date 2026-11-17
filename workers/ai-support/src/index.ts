@@ -2,6 +2,7 @@ export type AiSupportWorkerEnv = {
   OPENAI_API_KEY?: string;
   ALLOWED_ORIGIN?: string;
   MODEL?: string;
+  TURNSTILE_SECRET_KEY?: string;
   AI_SUPPORT_RATE_LIMITER?: {
     limit(input: { key: string }): Promise<{ success: boolean }>;
   };
@@ -16,11 +17,21 @@ type AiSupportPayload = {
   workId: string;
   workContent: string;
   request: string;
+  turnstileToken: string;
+};
+
+type TurnstileVerification = {
+  success?: unknown;
+  hostname?: unknown;
+  action?: unknown;
 };
 
 const MAX_WORK_CONTENT_LENGTH = 20000;
 const MAX_REQUEST_LENGTH = 2000;
 const OPENAI_RESPONSES_URL = "https://api.openai.com/v1/responses";
+const TURNSTILE_SITEVERIFY_URL =
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+const TURNSTILE_ACTION = "ai_support";
 
 function jsonResponse(
   status: number,
@@ -48,6 +59,7 @@ function isValidPayload(value: unknown): value is AiSupportPayload {
     workId?: unknown;
     workContent?: unknown;
     request?: unknown;
+    turnstileToken?: unknown;
   };
 
   return (
@@ -56,7 +68,9 @@ function isValidPayload(value: unknown): value is AiSupportPayload {
     typeof candidate.workContent === "string" &&
     candidate.workContent.trim().length > 0 &&
     typeof candidate.request === "string" &&
-    candidate.request.trim().length > 0
+    candidate.request.trim().length > 0 &&
+    typeof candidate.turnstileToken === "string" &&
+    candidate.turnstileToken.trim().length > 0
   );
 }
 
@@ -118,6 +132,68 @@ function getClientKey(request: Request): string {
   );
 }
 
+function expectedHostname(allowedOrigin: string | undefined): string | null {
+  if (allowedOrigin === undefined) {
+    return null;
+  }
+
+  try {
+    return new URL(allowedOrigin).hostname;
+  } catch {
+    return null;
+  }
+}
+
+async function verifyTurnstile(
+  token: string,
+  allowedOrigin: string | undefined,
+  secret: string | undefined,
+  fetchImpl: WorkerFetch,
+): Promise<boolean> {
+  const hostname = expectedHostname(allowedOrigin);
+
+  if (hostname === null) {
+    return false;
+  }
+
+  const body = new URLSearchParams({
+    secret: secret ?? "",
+    response: token,
+  });
+
+  let response: Response;
+
+  try {
+    response = await fetchImpl(TURNSTILE_SITEVERIFY_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: body.toString(),
+    });
+  } catch {
+    return false;
+  }
+
+  if (!response.ok) {
+    return false;
+  }
+
+  let verification: TurnstileVerification;
+
+  try {
+    verification = (await response.json()) as TurnstileVerification;
+  } catch {
+    return false;
+  }
+
+  return (
+    verification.success === true &&
+    verification.hostname === hostname &&
+    verification.action === TURNSTILE_ACTION
+  );
+}
+
 export async function handleAiSupportRequest(
   request: Request,
   env: AiSupportWorkerEnv,
@@ -156,6 +232,17 @@ export async function handleAiSupportRequest(
     payload.request.length > MAX_REQUEST_LENGTH
   ) {
     return jsonResponse(413, { error: "payload_too_large" }, allowedOrigin);
+  }
+
+  const turnstileValid = await verifyTurnstile(
+    payload.turnstileToken,
+    allowedOrigin,
+    env.TURNSTILE_SECRET_KEY,
+    fetchImpl,
+  );
+
+  if (!turnstileValid) {
+    return jsonResponse(403, { error: "turnstile_rejected" }, allowedOrigin);
   }
 
   if (env.AI_SUPPORT_RATE_LIMITER !== undefined) {
