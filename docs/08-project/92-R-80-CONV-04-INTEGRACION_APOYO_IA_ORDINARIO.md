@@ -2810,3 +2810,180 @@ implementar validación con claves de test
 +
 sólo después preparar configuración real
 ~~~
+
+
+---
+
+# 64. Preregistro RED — protección Turnstile
+
+Se autoriza únicamente el preregistro de tests de protección del borde público.
+
+Alcance:
+
+~~~text
+documentación
+→ ACTUALIZAR
+
+tests Worker
+→ AÑADIR RED
+
+producción Worker
+→ NO MODIFICAR
+
+Turnstile real
+→ NO CONFIGURAR
+
+secretos reales
+→ NO CONFIGURAR
+
+deploy
+→ NO EJECUTAR
+~~~
+
+La finalidad de este corte no es hacer funcionar Turnstile, sino fijar antes de
+la implementación las propiedades observables que deberá satisfacer.
+
+## 64.1 Orden mínimo de procesamiento preregistrado
+
+El orden esperado queda:
+
+~~~text
+POST
+↓
+origen permitido
+↓
+JSON y payload válidos
+↓
+límites de tamaño
+↓
+turnstileToken presente
+↓
+Siteverify server-side
+  success = true
+  hostname = esperado
+  action = ai_support
+↓
+rate limiting secundario
+↓
+configuración OpenAI válida
+↓
+OpenAI Responses API
+~~~
+
+Las validaciones locales baratas preceden a Siteverify para no consumir una
+validación remota ante solicitudes ya inválidas.
+
+Turnstile debe preceder siempre al rate limiting operativo que protege la
+llamada facturable y, en todo caso, a OpenAI.
+
+## 64.2 T-WORKER-80-04-08 — token obligatorio
+
+~~~text
+request válido salvo turnstileToken ausente
+→ 400
+→ Siteverify NO llamado
+→ OpenAI NO llamado
+~~~
+
+Propiedad falsada si una solicitud sin token puede alcanzar OpenAI.
+
+## 64.3 T-WORKER-80-04-09 — rechazo de Siteverify
+
+~~~text
+turnstileToken presente
++
+Siteverify success = false
+→ 403
+→ OpenAI NO llamado
+~~~
+
+Un fallo de la barrera primaria debe cerrar la petición.
+
+## 64.4 T-WORKER-80-04-10 — hostname obligatorio
+
+~~~text
+Siteverify success = true
++
+hostname != hostname esperado
+→ 403
+→ OpenAI NO llamado
+~~~
+
+No basta con que el token sea criptográficamente válido; debe corresponder al
+sitio esperado.
+
+## 64.5 T-WORKER-80-04-11 — action obligatoria
+
+~~~text
+Siteverify success = true
++
+hostname correcto
++
+action != ai_support
+→ 403
+→ OpenAI NO llamado
+~~~
+
+El token de otra acción no autoriza apoyo IA.
+
+## 64.6 T-WORKER-80-04-12 — orden de capas con token válido
+
+~~~text
+Siteverify válido
+→ rate limiter
+→ OpenAI
+~~~
+
+El test deberá observar exactamente ese orden una vez superadas las
+validaciones locales.
+
+## 64.7 T-WORKER-80-04-13 — replay rechazado
+
+El replay no se implementará mediante una base de datos propia de tokens.
+
+Se preregistra la propiedad de Turnstile:
+
+~~~text
+mismo token
+→ primera validación Siteverify aceptada
+→ segunda validación Siteverify rechazada
+→ segunda solicitud NO alcanza OpenAI
+~~~
+
+El test simulará el comportamiento de single-use de Siteverify. No se deriva
+estado persistente adicional en el Worker.
+
+## 64.8 Seam de prueba
+
+Los tests reutilizarán el seam HTTP ya existente mediante `fetchImpl`.
+
+Se distinguirán dos destinos:
+
+~~~text
+https://challenges.cloudflare.com/turnstile/v0/siteverify
+https://api.openai.com/v1/responses
+~~~
+
+No se introduce SDK de Turnstile ni abstracción general nueva en este corte.
+
+## 64.9 Estado esperado tras el preregistro
+
+~~~text
+T-WORKER-80-04-01…07
+→ deben permanecer GREEN
+
+T-WORKER-80-04-08…13
+→ deben quedar RED por ausencia deliberada de implementación
+
+workers/ai-support/src/index.ts
+→ SIN CAMBIOS
+~~~
+
+El siguiente gate será ejecutar únicamente:
+
+~~~text
+npx vitest run workers/ai-support/src/index.test.ts
+~~~
+
+y comprobar que el rojo corresponde a las seis propiedades nuevas, no a
+regresiones de los siete contratos ya consolidados.
