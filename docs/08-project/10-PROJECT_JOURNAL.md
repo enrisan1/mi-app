@@ -10850,7 +10850,7 @@ Se deriva el conjunto de criterios antes de mirar el estado actual, evitando ada
 Se establecen:
 
 ~~~text
-31 criterios individuales
+30 criterios individuales
 2 criterios de dependencias
 6 criterios globales
 1 criterio constitutivo superior conservado
