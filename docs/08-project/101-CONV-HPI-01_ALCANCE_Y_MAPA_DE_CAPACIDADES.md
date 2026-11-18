@@ -1002,3 +1002,23 @@ PARCIALMENTE SATISFECHAS
 ~~~
 
 No cambia el mapa de capacidades; sólo determina su estado actual.
+
+
+---
+
+# 29. Mapa de capacidades frente a huecos
+
+La reducción posterior [105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) mantiene sin cambios C-HPI-01…10.
+
+~~~text
+GAP-HPI-01
+→ afecta principalmente
+  C-HPI-01, C-HPI-04, C-HPI-06, C-HPI-07, C-HPI-10
+
+GAP-HPI-02
+→ afecta principalmente
+  C-HPI-05, C-HPI-10
+  y D-HPI-01/02
+~~~
+
+No se deriva nueva capacidad.
