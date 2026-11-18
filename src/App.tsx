@@ -7,6 +7,7 @@ import { PostV1IntegratedExperience } from "./realizations/post-v1-integrated/Po
 import { localStorageResumeRepository } from "./realizations/ru2m1/localStorageResumeRepository";
 import { requestAiSupport } from "./ai-support/aiSupportGateway";
 import { requestTurnstileToken } from "./ai-support/turnstileClient";
+import { OrdinaryComparison } from "./OrdinaryComparison";
 
 type OrdinaryMaterial = {
   id: string;
@@ -228,6 +229,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [selectedMaterialId, setSelectedMaterialId] = useState<string | null>(
     null,
   );
+  const [comparisonFirstMaterialId, setComparisonFirstMaterialId] = useState("");
+  const [comparisonSecondMaterialId, setComparisonSecondMaterialId] = useState("");
+  const [comparisonOpen, setComparisonOpen] = useState(false);
   const [receivedAntecedentInput, setReceivedAntecedentInput] = useState("");
   const [receivedCollaborativeAntecedent, setReceivedCollaborativeAntecedent] =
     useState<ReceivedCollaborativeAntecedent | null>(null);
@@ -625,6 +629,81 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
           </section>
         )}
       </section>
+
+      {ordinaryMaterials.length >= 2 && (
+        <section aria-label="Comparación de documentos">
+          <h2>Comparación de documentos</h2>
+
+          <label>
+            Documento A
+            <select
+              value={comparisonFirstMaterialId}
+              onChange={(event) => {
+                setComparisonFirstMaterialId(event.target.value);
+                setComparisonOpen(false);
+              }}
+            >
+              <option value="">Selecciona un material</option>
+              {ordinaryMaterials.map((material) => (
+                <option key={material.id} value={material.id}>
+                  {material.content}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label>
+            Documento B
+            <select
+              value={comparisonSecondMaterialId}
+              onChange={(event) => {
+                setComparisonSecondMaterialId(event.target.value);
+                setComparisonOpen(false);
+              }}
+            >
+              <option value="">Selecciona un material</option>
+              {ordinaryMaterials.map((material) => (
+                <option key={material.id} value={material.id}>
+                  {material.content}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <button
+            type="button"
+            disabled={
+              comparisonFirstMaterialId === "" ||
+              comparisonSecondMaterialId === "" ||
+              comparisonFirstMaterialId === comparisonSecondMaterialId
+            }
+            onClick={() => setComparisonOpen(true)}
+          >
+            Comparar
+          </button>
+
+          {comparisonOpen && (
+            <section aria-label="Comparación activa">
+              <OrdinaryComparison
+                first={
+                  ordinaryMaterials.find(
+                    (material) => material.id === comparisonFirstMaterialId,
+                  )?.content ?? ""
+                }
+                second={
+                  ordinaryMaterials.find(
+                    (material) => material.id === comparisonSecondMaterialId,
+                  )?.content ?? ""
+                }
+              />
+
+              <button type="button" onClick={() => setComparisonOpen(false)}>
+                Salir de comparación
+              </button>
+            </section>
+          )}
+        </section>
+      )}
 
       <ResumeExperience
         {...(resolution !== undefined ? { resolution } : {})}
