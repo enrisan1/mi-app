@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **ESTADO ESTABLE POST-`OB-80-CONV-01`, SIN NUEVA ACTUACIÓN ESTRATÉGICA ABIERTA.** La fase de convergencia/productización post-KGV queda cerrada en su alcance aceptado: `C-PV-80-01`, `C-PV-80-03`, `C-PV-80-04` y `C-PV-80-02` están suficientemente disponibles en el producto ordinario mediante `R-80-CONV-02…05`, sus cuatro `CSO` e hitos correspondientes están satisfechos y `OB-80-CONV-01` queda satisfecha. La reaplicación posterior del Manual 17 verifica las seis fuentes de continuidad: no existe compromiso vigente con obligación constitutiva pendiente, criterio estratégico insatisfecho, dependencia necesaria, hito aceptado pendiente, incertidumbre bloqueante ni evidencia emergente independiente suficiente. Rama A → SIN CONTINUIDAD DERIVADA. Rama B → SIN CONTINUIDAD DERIVADA. `GATE-NH-01` no se abre. No se deriva nueva formación estratégica, Product Value, horizonte, Architecture, Realization ni Implementation. `DEUDA-TSC-COMP-01` permanece abierta como deuda técnica separada —14 errores en 5 archivos— y no se convierte por sí sola en actuación estratégica. **Punto de reanudación:** reaplicar el Manual 17 sólo ante nueva evidencia, obligación, decisión o cambio material suficientemente justificado.
+**Estado vigente al 18/11/2026:** **CICLO POST-`OB-80-CONV-01` LOCALMENTE ESTABLE; ESTABILIDAD GLOBAL DEL PROYECTO NO DETERMINADA.** Los compromisos Product vigentes permanecen satisfechos en sus alcances demostrados y `OB-80-CONV-01` sigue cerrada. La auditoría metodológica [96](96-AUDITORIA_Y_CORRECCION_CRITERIO_ESTADO_ESTABLE_MANUAL17.md) detecta que el criterio anterior confundía satisfacción del Product vigente con realización material suficiente de la finalidad superior del proyecto. Manual 17 queda corregido mediante `GATE-PROJ-01`: las seis fuentes ordinarias permiten declarar estabilidad local de ciclo, pero la estabilidad global exige contrastar explícitamente `PROJECT_CHARTER + PLATFORM_VISION + PRODUCT + producto material existente`. En el estado actual `GATE-PROJ-01 → NO EVALUADO`; por tanto, no puede sostenerse todavía `ESTADO ESTABLE DEL PROYECTO` en sentido global. **Siguiente actuación estratégicamente derivada: `AUD-PROJ-01 — auditoría de realización material y distancia constitutiva del proyecto`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8262,3 +8262,54 @@ ESTADO ESTABLE
 ~~~
 
 Referencia: [95](95-AUDITORIA_FUNDAMENTOS_EXTERNOS_Y_ACTIVADORES_REAPERTURA_POST_OB80_CONV01.md).
+
+
+---
+
+# 18/11/2026 — Corrección del criterio de estado estable
+
+La auditoría [96](96-AUDITORIA_Y_CORRECCION_CRITERIO_ESTADO_ESTABLE_MANUAL17.md) identifica un defecto en el Manual 17 anterior:
+
+~~~text
+Product vigente satisfecho
++
+sin nueva pérdida emergente
+→ estado estable
+~~~
+
+no permite concluir por sí solo:
+
+~~~text
+finalidad constitutiva del proyecto
+→ suficientemente realizada
+~~~
+
+Se introduce:
+
+~~~text
+ESTABILIDAD LOCAL / DE CICLO
+≠
+ESTABILIDAD GLOBAL DEL PROYECTO
+
+GATE-PROJ-01
+→ suficiencia material respecto de la finalidad
+~~~
+
+Estado actual:
+
+~~~text
+OB-80-CONV-01
+→ SATISFECHA
+
+ciclo post-OB-80-CONV-01
+→ LOCALMENTE ESTABLE
+
+GATE-PROJ-01
+→ NO EVALUADO
+
+estabilidad global
+→ NO DETERMINADA
+
+siguiente actuación estratégica
+→ AUD-PROJ-01
+~~~
