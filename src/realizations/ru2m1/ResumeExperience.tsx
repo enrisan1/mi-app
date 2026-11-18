@@ -14,6 +14,7 @@ type ResumeExperienceProps = {
   resolution?: EstablishedResolution;
   secondResolution?: EstablishedResolution;
   thirdResolution?: EstablishedResolution;
+  onInitialResult?: (current: string) => void;
   onResult?: (result: SituatedResult) => void;
 };
 
@@ -21,6 +22,7 @@ export function ResumeExperience({
   resolution,
   secondResolution,
   thirdResolution,
+  onInitialResult,
   onResult,
 }: ResumeExperienceProps) {
   const [restoredPrevious] = useState(() =>
@@ -67,6 +69,7 @@ export function ResumeExperience({
               onClick={() => {
                 if (isResumeAvailable(currentInput)) {
                   localStorageResumeRepository.savePrevious(currentInput);
+                  onInitialResult?.(currentInput);
                   setAccepted(true);
                 }
               }}
