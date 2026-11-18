@@ -10549,3 +10549,39 @@ GATE-PROJ-01
 siguiente actuación
 → AUD-PROJ-01
 ~~~
+
+
+---
+
+# 18/11/2026 — AUD-PROJ-01: distancia material frente a la finalidad
+
+Se ejecuta la primera auditoría exigida por `GATE-PROJ-01`.
+
+La App actual demuestra producto material real: creación y continuación de texto, persistencia, recuperación/reutilización de materiales, captura contextual, identidad autoral, apoyo IA separado, comparación y varios recorridos de continuidad.
+
+La auditoría también constata que estas capacidades todavía no demuestran suficiencia global de plataforma. La aplicación conserva una estructura contingente y varias funciones aparecen como superficies separadas alrededor de realizaciones históricas; organización/recuperación es mínima; la continuidad compartida requiere transferencia manual estructurada; y las familias de Platform Vision todavía no realizadas no están globalmente clasificadas como núcleo, evolución, aplazamiento o descarte.
+
+Resultado:
+
+~~~text
+GP-01 → SATISFECHO
+GP-02 → PARCIAL
+GP-03 → PARCIAL
+GP-04 → NO SATISFECHO
+GP-05 → NO SATISFECHO
+GP-06 → NO SATISFECHO
+
+GATE-PROJ-01
+→ NO SATISFECHO
+~~~
+
+La distancia constitutiva queda reducida a cuatro cuestiones:
+
+~~~text
+D-PROJ-01 → núcleo ordinario de trabajo
+D-PROJ-02 → recorrido humano representativo
+D-PROJ-03 → integración de capacidades existentes
+D-PROJ-04 → frontera núcleo / evolución
+~~~
+
+Se deriva `RED-PROJ-01`. No se abre todavía nueva capacidad, Product Value, Architecture ni Implementation.
