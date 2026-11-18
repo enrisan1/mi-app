@@ -10666,3 +10666,41 @@ H-PROJ-INT-01
 → CANDIDATO
 → NO ACEPTADO
 ~~~
+
+
+---
+
+# 18/11/2026 — G-PROJ-HOR-01: gate constitutivo del horizonte integrado
+
+Tras cerrar RED-PROJ-01 se somete `H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` al gate constitutivo del Manual 17.
+
+Las ocho condiciones quedan establecidas:
+
+~~~text
+HOR-01 → objetivo final → SATISFECHO
+HOR-02 → fundamento positivo → SATISFECHO
+HOR-03 → alcance → SATISFECHO
+HOR-04 → no-alcance → SATISFECHO
+HOR-05 → resultado Product → SATISFECHO
+HOR-06 → dependencias → SATISFECHO
+HOR-07 → criterio de finalización → SATISFECHO
+HOR-08 → posibles cierres → SATISFECHO
+~~~
+
+Para HOR-05 se determina `RP-PROJ-INT-01`: el horizonte no selecciona una nueva situación humana, sino que integra en un mismo recorrido situaciones ya cubiertas por compromisos Product vigentes. No se crea un nuevo `C-PV`.
+
+Resultado:
+
+~~~text
+G-PROJ-HOR-01
+→ 8/8 SATISFECHOS
+
+H-PROJ-INT-01
+→ FORMULADO
+→ TODAVÍA NO ACEPTADO
+
+HUMAN GATE
+→ PENDIENTE
+~~~
+
+No se deriva todavía Architecture, Realization ni Implementation.
