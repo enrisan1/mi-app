@@ -17,8 +17,37 @@ jobs:
       - run: npm ci
       - name: Formal HPI validation
         run: npx vitest run src/App.hpi.test.tsx src/App.hpi.validation.test.tsx
-      - name: Typecheck
-        run: npm run typecheck
+      - name: Typecheck regression against pre-HPI-production baseline
+        shell: bash
+        run: |
+          set +e
+          npm run typecheck > /tmp/current-typecheck.log 2>&1
+          current_code=$?
+          set -e
+          grep 'error TS' /tmp/current-typecheck.log | sort > /tmp/current-errors.txt || true
+
+          git fetch origin 17b792d546eaab09d97376d88a3d0184183150ee --depth=1
+          git checkout --detach 17b792d546eaab09d97376d88a3d0184183150ee
+
+          set +e
+          npm run typecheck > /tmp/baseline-typecheck.log 2>&1
+          baseline_code=$?
+          set -e
+          grep 'error TS' /tmp/baseline-typecheck.log | sort > /tmp/baseline-errors.txt || true
+
+          echo "=== current typecheck errors ==="
+          cat /tmp/current-errors.txt
+          echo "=== baseline typecheck errors ==="
+          cat /tmp/baseline-errors.txt
+
+          diff -u /tmp/baseline-errors.txt /tmp/current-errors.txt
+
+          if [ "$current_code" -ne "$baseline_code" ]; then
+            echo "::error::Typecheck exit status differs from baseline"
+            exit 1
+          fi
+
+          git checkout --detach "$GITHUB_SHA"
       - name: Build
         run: npm run build
       - name: Full regression
