@@ -10432,3 +10432,66 @@ proyecto
 ~~~
 
 La continuidad deberá reaplicarse sólo ante nueva evidencia, obligación, decisión humana o cambio material suficientemente justificado.
+
+
+---
+
+# 18/11/2026 — Estudio documental de residuos del programa externo
+
+Se audita el extracto histórico que proponía panorama externo, matriz comparativa, profundización de estándares, IA, pruebas comparativas y radar.
+
+La reconstrucción confirma que aquella propuesta no permanece como programa pendiente:
+
+~~~text
+43
+→ panorama ejecutado
+
+44
+→ reducción ejecutada
+
+GATE-EXT-01
+→ superado selectivamente
+
+L-EXT-01…05
+→ ejecutadas y cerradas
+→ FAVORABLE LIMITADO
+~~~
+
+La auditoría separa cinco condiciones de reactivación futura:
+
+~~~text
+ACT-EXT-01
+→ procedencia/trayectoria insuficiente
+
+ACT-EXT-02
+→ anclaje granular insuficiente
+
+ACT-EXT-03
+→ portabilidad/intercambio con pérdida pertinente
+
+ACT-EXT-04
+→ coste documental estructural insuficiente
+
+ACT-EXT-05
+→ tarea IA concreta, necesaria y verificable
+~~~
+
+Ninguna está actualmente satisfecha.
+
+Resultado:
+
+~~~text
+fundamento actual suficiente
+→ NINGUNO
+
+Manual 17
+→ NO REABIERTO
+
+External Radar
+→ SENSOR ACTIVO
+
+proyecto
+→ ESTADO ESTABLE
+~~~
+
+Documento: `95-AUDITORIA_FUNDAMENTOS_EXTERNOS_Y_ACTIVADORES_REAPERTURA_POST_OB80_CONV01.md`.
