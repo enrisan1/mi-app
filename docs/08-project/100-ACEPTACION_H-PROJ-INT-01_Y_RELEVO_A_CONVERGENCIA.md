@@ -387,3 +387,44 @@ actuación
 ~~~
 
 No se derivan aún huecos ni implementación.
+
+
+---
+
+# 15. Resultado de CONV-HPI-04
+
+El relevo dispone ya de evaluación material actual.
+
+~~~text
+alcance
+✓
+capacidades
+✓
+dependencias
+✓
+criterios
+✓
+estado actual
+✓
+~~~
+
+Resultado global:
+
+~~~text
+CF-HPI-01
+→ NO SATISFECHO
+
+H-PROJ-INT-01
+→ ABIERTO
+~~~
+
+La insuficiencia se concentra en identidad operacional común del trabajo, contextualización auxiliar, continuidad antecedente→resultado y reconstrucción externa relevante.
+
+Estas zonas todavía no se consideran huecos formales.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-05
+→ derivación y reducción de huecos
+~~~
