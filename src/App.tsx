@@ -237,12 +237,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
     }
 
     const matches = materials.filter((material) => material.content === previous);
-    if (matches.length !== 1) {
+    const matchingMaterial = matches[0];
+
+    if (matches.length !== 1 || matchingMaterial === undefined) {
       return null;
     }
 
-    localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, matches[0].id);
-    return matches[0].id;
+    localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, matchingMaterial.id);
+    return matchingMaterial.id;
   });
   const currentWork =
     currentWorkId === null
