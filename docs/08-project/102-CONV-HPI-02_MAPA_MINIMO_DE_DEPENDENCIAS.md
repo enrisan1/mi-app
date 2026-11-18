@@ -813,3 +813,20 @@ Siguiente actuación:
 CONV-HPI-04
 → evaluación del estado material actual
 ~~~
+
+
+---
+
+# 27. Resultado de la evaluación material posterior
+
+[104](104-CONV-HPI-04_ESTADO_MATERIAL_ACTUAL.md) conserva el mapa de dos dependencias, pero clasifica ambas como:
+
+~~~text
+D-HPI-01
+→ PARCIALMENTE SATISFECHA
+
+D-HPI-02
+→ PARCIALMENTE SATISFECHA
+~~~
+
+La causa no altera el grafo: la relación antecedente→resultado existe en el recorrido UI, pero no queda materialmente preservada con suficiencia para cerrar C-HPI-05.
