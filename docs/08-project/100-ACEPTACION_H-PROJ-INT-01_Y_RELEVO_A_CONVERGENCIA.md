@@ -493,3 +493,26 @@ Siguiente actuación:
 CONV-HPI-07
 → roadmap mínimo hacia HITO-HPI-01
 ~~~
+
+
+---
+
+# 18. Resultado de CONV-HPI-07
+
+El relevo dispone ya de roadmap mínimo hacia el primer hito:
+
+~~~text
+R-HPI-01
+→ DERIVADA
+→ contrato realizativo mínimo + tests rojos
+
+R-HPI-02
+→ NO INICIADA
+
+R-HPI-03
+→ NO INICIADA
+~~~
+
+No se deriva Architecture.
+
+Implementation sólo podrá abrirse después de cerrar R-HPI-01 con rojo correcto.
