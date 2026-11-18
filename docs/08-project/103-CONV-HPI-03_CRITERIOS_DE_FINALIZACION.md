@@ -688,7 +688,7 @@ Conteo:
 
 ~~~text
 criterios individuales
-→ 31
+→ 30
 
 criterios de dependencias
 → 2
