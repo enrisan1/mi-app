@@ -428,3 +428,41 @@ Siguiente actuación:
 CONV-HPI-05
 → derivación y reducción de huecos
 ~~~
+
+
+---
+
+# 16. Resultado de CONV-HPI-05
+
+El relevo dispone ya de mapa mínimo de huecos:
+
+~~~text
+GAP-HPI-01
+→ contexto operativo común y persistente
+
+GAP-HPI-02
+→ continuidad material antecedente → resultado
+~~~
+
+Los huecos son independientes como obligaciones, aunque una solución técnica futura pudiera compartir mecanismos.
+
+Estado del relevo:
+
+~~~text
+alcance
+✓
+capacidades
+✓
+dependencias
+✓
+criterios
+✓
+estado actual
+✓
+huecos
+✓
+↓
+prioridades
+~~~
+
+Siguiente actuación: `CONV-HPI-06`.
