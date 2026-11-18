@@ -276,6 +276,21 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [constitutedParticipantBContribution, setConstitutedParticipantBContribution] =
     useState<string | null>(null);
 
+  const establishCurrentWork = (content: string) => {
+    setAvailablePostV1Current(content);
+
+    const nextMaterial: OrdinaryMaterial = {
+      id: `m${ordinaryMaterials.length + 1}`,
+      content,
+    };
+    const nextMaterials = [...ordinaryMaterials, nextMaterial];
+
+    localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, nextMaterial.id);
+    setCurrentWorkId(nextMaterial.id);
+    setOrdinaryMaterials(nextMaterials);
+    localStorage.setItem("ordinary.materials", JSON.stringify(nextMaterials));
+  };
+
   const recoverFromIncompatiblePostV1 = () => {
     setIntegrationChoice(null);
   };
@@ -759,24 +774,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         {...(resolution !== undefined ? { resolution } : {})}
         {...(secondResolution !== undefined ? { secondResolution } : {})}
         {...(thirdResolution !== undefined ? { thirdResolution } : {})}
-        onResult={(result) => {
-          setAvailablePostV1Current(result.current);
-
-          const nextMaterial = {
-            id: `m${ordinaryMaterials.length + 1}`,
-            content: result.current,
-          };
-          const nextMaterials = [...ordinaryMaterials, nextMaterial];
-
-          localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, nextMaterial.id);
-          setCurrentWorkId(nextMaterial.id);
-
-          setOrdinaryMaterials(nextMaterials);
-          localStorage.setItem(
-            "ordinary.materials",
-            JSON.stringify(nextMaterials),
-          );
-        }}
+        onInitialResult={establishCurrentWork}
+        onResult={(result) => establishCurrentWork(result.current)}
       />
 
       <section aria-labelledby="shared-antecedent-heading">
