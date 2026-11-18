@@ -760,3 +760,27 @@ HUMAN GATE
 ~~~
 
 No se altera el cierre de RED-PROJ-01.
+
+
+---
+
+# 17. Aceptación posterior del horizonte
+
+La decisión humana registrada en [100](100-ACEPTACION_H-PROJ-INT-01_Y_RELEVO_A_CONVERGENCIA.md) establece:
+
+~~~text
+H-PROJ-INT-01
+→ ACEPTADO
+
+HUMAN GATE
+→ SUPERADO
+~~~
+
+Se conserva el cierre de RED-PROJ-01 y sus cuatro resultados `N-PROJ-01 / R-PROJ-01 / I-PROJ-01 / F-PROJ-01`.
+
+El siguiente relevo ya no corresponde a reducción estratégica, sino a convergencia:
+
+~~~text
+CONV-HPI-01
+→ alcance + capacidades
+~~~
