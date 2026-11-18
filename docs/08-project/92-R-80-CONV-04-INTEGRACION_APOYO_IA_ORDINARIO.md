@@ -1,7 +1,7 @@
 # R-80-CONV-04 — Integración ordinaria mínima de apoyo IA separado de la obra
 
 **Fecha:** 17/11/2026  
-**Estado:** construcción y despliegue real mínimo validados; `B-80-04-DEPLOY-01` CERRADO; cierre global de `R-80-CONV-04` no decidido en este corte.  
+**Estado:** `R-80-CONV-04` CERRADA; `CSO-80-04` y `HITO-80-CONV-03` satisfechos; despliegue real mínimo validado.  
 **Obligación:** `OB-80-CONV-01`.  
 **Compromiso:** `C-PV-80-04 — Apoyo auxiliar de IA separado de la obra`.  
 **Precedente:** `HITO-80-CONV-02` satisfecho mediante `R-80-CONV-03`.
@@ -4462,4 +4462,408 @@ R-80-CONV-04
 La siguiente decisión legítima es evaluar por separado si la evidencia funcional
 ya acumulada satisface conjuntamente `CSO-80-04` y `HITO-80-CONV-03`, y sólo
 entonces decidir el cierre global de `R-80-CONV-04`.
+
+---
+
+# 71. Gate final de regresiones y cierre global de R-80-CONV-04
+
+Esta sección evalúa exclusivamente el criterio de cierre definido en §17 tras
+la satisfacción de `B-80-04-AI-01` y `B-80-04-DEPLOY-01`.
+
+## 71.1 Evidencia funcional acumulada
+
+La evaluación conjunta de los observables de §7 y del hito de §4 permite
+declarar:
+
+~~~text
+CSO-80-04
+→ SATISFECHO
+
+HITO-80-CONV-03
+→ SATISFECHO
+~~~
+
+Fundamento:
+
+~~~text
+obra identificable
+→ acreditada
+
+solicitud explícita y opcional
+→ acreditada
+
+procedencia IA real
+→ acreditada por E2E real
+
+asociación obra↔apoyo
+→ acreditada
+
+separación funcional
+→ acreditada
+
+no incorporación automática
+→ acreditada
+
+independencia de edición
+→ acreditada
+
+procedencia visible
+→ acreditada
+
+recuperación compatible
+→ acreditada
+
+autoría separada
+→ acreditada
+
+captura separada
+→ acreditada
+~~~
+
+El contraste humano ordinario con IA real fue positivo.
+
+## 71.2 Primer bloque de regresión dirigida
+
+Se ejecutó:
+
+~~~text
+npx vitest run \
+  src/App.ai-support.integration.test.tsx \
+  workers/ai-support/src/index.test.ts \
+  src/App.test.tsx \
+  src/realizations/ai-support/AiSupportBaseline.test.tsx \
+  src/realizations/ai-support/SeparatedAiSupportExperience.test.tsx \
+  src/App.capture.integration.test.tsx \
+  src/App.author-identity.integration.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+Test Files  7 passed (7)
+Tests       81 passed (81)
+~~~
+
+Esto cubre conjuntamente:
+
+~~~text
+integración ordinaria C-PV-80-04
+→ GREEN
+
+Worker
+→ GREEN
+
+App histórica
+→ GREEN
+
+R-80-04-M1
+→ GREEN
+
+captura integrada
+→ GREEN
+
+identidad autoral integrada
+→ GREEN
+~~~
+
+No se observaron regresiones en este bloque.
+
+## 71.3 Criterio diferencial TypeScript
+
+La primera ejecución de:
+
+~~~text
+npm run typecheck
+~~~
+
+produjo:
+
+~~~text
+15 errores
+→ 6 archivos
+~~~
+
+La clasificación separó:
+
+~~~text
+14 errores
+→ 5 archivos de src/realizations/comparison/
+→ DEUDA-TSC-COMP-01
+→ preexistente
+
+1 error
+→ src/App.ai-support.integration.test.tsx
+→ TS2345
+→ atribuible a R-80-CONV-04
+~~~
+
+El error nuevo correspondía al mock de Turnstile:
+
+~~~text
+tokens[index]
+→ string | undefined
+→ pasado a callback(string)
+~~~
+
+Se aplicó una corrección mínima sólo en test:
+
+~~~text
+token === undefined
+→ throw "missing Turnstile test token"
+~~~
+
+sin modificar producción ni relajar tipos.
+
+Commit:
+
+~~~text
+6554059
+→ test(ai-support): guard missing Turnstile mock token
+~~~
+
+Revalidación específica:
+
+~~~text
+src/App.ai-support.integration.test.tsx
+→ Test Files 1 passed (1)
+→ Tests 13 passed (13)
+~~~
+
+Nueva ejecución de TypeScript:
+
+~~~text
+npm run typecheck
+
+resultado global
+→ FAIL
+
+14 errores
+→ 5 archivos
+→ exclusivamente src/realizations/comparison/
+~~~
+
+Los 14 errores restantes coinciden con `DEUDA-TSC-COMP-01` ya registrada:
+
+~~~text
+TS2503
+→ namespace JSX no disponible
+
+TS2532 / TS2345
+→ indexación potencialmente undefined
+  en detectLiteralDifferences.ts
+~~~
+
+Por tanto:
+
+~~~text
+CTD-80-CONV-04
+→ SATISFECHO
+
+regresión TypeScript atribuible a R-80-CONV-04
+→ NO OBSERVADA
+
+typecheck global
+→ continúa FAIL únicamente por deuda previa conocida
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ AJENA AL CIERRE DE R-80-CONV-04
+~~~
+
+No se corrige esa deuda en esta actuación.
+
+## 71.4 Suite canónica completa
+
+Se ejecutó:
+
+~~~text
+npm test -- --run
+~~~
+
+Resultado:
+
+~~~text
+Test Files  58 passed (58)
+Tests       489 passed (489)
+~~~
+
+Por tanto:
+
+~~~text
+suite canónica completa
+→ GREEN
+
+regresiones funcionales globales
+→ NO OBSERVADAS
+~~~
+
+## 71.5 Build y limpieza final
+
+Se ejecutó:
+
+~~~text
+npm run build
+git diff --check
+git status --short
+git log -1 --oneline
+~~~
+
+Resultado:
+
+~~~text
+vite build
+→ SUCCESS
+→ 32 modules transformed
+
+git diff --check
+→ sin salida
+
+git status --short
+→ sin salida
+
+HEAD
+→ 6554059
+→ origin/feature/task-filters
+~~~
+
+Por tanto:
+
+~~~text
+build de producción
+→ CORRECTO
+
+diff
+→ LIMPIO
+
+árbol de trabajo
+→ LIMPIO
+
+rama local/remota
+→ SINCRONIZADAS
+~~~
+
+## 71.6 Confrontación con el criterio de cierre de §17
+
+El criterio exigía:
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+
+integración mínima
+→ CONSTRUIDA
+
+CSO-80-04
+→ SATISFECHO
+
+HITO-80-CONV-03
+→ SATISFECHO
+
+contraste humano
+→ POSITIVO
+
+regresiones
+→ NO OBSERVADAS
+~~~
+
+Resultado actual:
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+
+B-80-04-DEPLOY-01
+→ CERRADO
+
+integración mínima
+→ CONSTRUIDA
+→ DESPLEGADA
+→ E2E REAL POSITIVO
+
+CSO-80-04
+→ SATISFECHO
+
+HITO-80-CONV-03
+→ SATISFECHO
+
+contraste humano
+→ POSITIVO
+
+regresiones atribuibles
+→ NO OBSERVADAS
+
+suite canónica
+→ 58/58 archivos PASS
+→ 489/489 tests PASS
+
+build
+→ PASS
+~~~
+
+No queda ninguna condición propia de `R-80-CONV-04` incumplida.
+
+## 71.7 Decisión formal
+
+Por tanto:
+
+**R-80-CONV-04 — CERRADA GLOBALMENTE EN SU ALCANCE DEFINIDO.**
+
+La clausura significa:
+
+> la integración ordinaria mínima de apoyo IA separado de la obra satisface el
+> compromiso funcional y el hito derivado en el alcance construido, ha sido
+> validada con IA real y no introduce regresiones observadas respecto del
+> patrimonio cubierto por el gate.
+
+No significa:
+
+- resolver `DEUDA-TSC-COMP-01`;
+- cerrar `C-PV-80-02`;
+- establecer autenticación general;
+- garantizar ausencia absoluta de abuso;
+- fijar definitivamente proveedor, modelo o límites operativos;
+- convertir este borde mínimo en arquitectura universal de IA.
+
+## 71.8 Estado resultante
+
+~~~text
+R-80-CONV-04
+→ CERRADA
+
+CSO-80-04
+→ SATISFECHO
+
+HITO-80-CONV-03
+→ SATISFECHO
+
+B-80-04-AI-01
+→ RESUELTO
+
+B-80-04-DEPLOY-01
+→ CERRADO
+
+INC-80-04-CORS-01
+→ CERRADO
+
+EDGE-PROTECT-80-04-01
+→ IMPLEMENTADO
+→ DESPLEGADO
+→ VALIDADO
+
+suite canónica
+→ 58/58 PASS
+→ 489/489 PASS
+
+build
+→ PASS
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ PREEXISTENTE
+→ FUERA DE ALCANCE
+~~~
+
+La siguiente actuación no deberá reabrir `R-80-CONV-04` salvo nueva evidencia
+material. El punto de continuidad estratégico queda fuera de este cierre y
+deberá derivarse nuevamente desde el estado vigente del proyecto.
 
