@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-06` CERRADA; PRIORIDAD Y PRIMER HITO DETERMINADOS.** [106](106-CONV-HPI-06_PRIORIDAD_Y_PRIMER_HITO.md) prioriza `GAP-HPI-01 — contexto operativo común y persistente` antes de `GAP-HPI-02 — continuidad antecedente→resultado`. La decisión no crea dependencia funcional entre ambos: responde a bloqueo global, habilitación de evidencia posterior, menor riesgo de retrabajo y mejor aprovechamiento del patrimonio existente. Se formula `HITO-HPI-01 — Contexto operativo común verificable`, con ocho criterios `MHPI-01…08` y regla de cierre 8/8. `GAP-HPI-02` permanece expresamente abierto y fuera del primer hito. **Siguiente actuación: `CONV-HPI-07 — roadmap mínimo para alcanzar HITO-HPI-01 y determinar la primera actuación justificable`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-07` CERRADA; ROADMAP MÍNIMO HACIA `HITO-HPI-01` DETERMINADO.** [107](107-CONV-HPI-07_ROADMAP_MINIMO_HITO_HPI_01.md) reduce el primer hito a tres actuaciones: `R-HPI-01` contrato realizativo mínimo + tests rojos; `R-HPI-02` realización mínima del contexto común en la App ordinaria; `R-HPI-03` validación integrada de `MHPI-01…08`. No se deriva Architecture: el problema sigue siendo realizativo y verificable sobre patrimonio existente. **Primera actuación justificable: `R-HPI-01`, que deberá fijar `CTX-01…08` y `T-HPI-01…08` sin modificar todavía producción. Implementation permanece NO ABIERTA hasta observar que los nuevos tests fallan por la diferencia material correcta.** `GAP-HPI-02` permanece fuera del primer hito.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8832,3 +8832,45 @@ HITO-HPI-01
 ~~~
 
 No se formula todavía roadmap ni actuación de implementación.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-07: roadmap mínimo hacia HITO-HPI-01
+
+Se evalúa si el primer hito requiere Architecture antes de realizar.
+
+Resultado:
+
+~~~text
+Architecture
+→ NO NECESARIA POR AHORA
+
+diseño realizativo mínimo
+→ SÍ
+
+Implementation
+→ TODAVÍA NO ABIERTA
+~~~
+
+Roadmap:
+
+~~~text
+R-HPI-01
+→ contrato mínimo + tests rojos
+
+R-HPI-02
+→ realización mínima en App
+
+R-HPI-03
+→ validación MHPI-01…08
+~~~
+
+Primera actuación justificable:
+
+~~~text
+R-HPI-01
+→ DERIVADA
+~~~
+
+Debe preservar GAP-HPI-02 fuera del primer hito.
