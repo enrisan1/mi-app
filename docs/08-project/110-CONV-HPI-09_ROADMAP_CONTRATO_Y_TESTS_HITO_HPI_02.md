@@ -1,7 +1,7 @@
 # CONV-HPI-09 — Roadmap mínimo, contrato realizativo y tests de HITO-HPI-02
 
 **Fecha:** 18/11/2026
-**Estado:** CERRADA — roadmap mínimo determinado; R-HPI2-01 y R-HPI2-02 ejecutadas; queda pendiente R-HPI2-03. Véanse [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md) y [112](112-R-HPI2-02_REALIZACION_MINIMA_CONTINUIDAD_ANTECEDENTE_RESULTADO.md).
+**Estado:** CERRADA — roadmap mínimo completado; R-HPI2-01/02/03 ejecutadas; HITO-HPI-02 SATISFECHO. Véanse [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md), [112](112-R-HPI2-02_REALIZACION_MINIMA_CONTINUIDAD_ANTECEDENTE_RESULTADO.md) y [113](113-R-HPI2-03_VALIDACION_HITO_HPI_02.md).
 **Horizonte:** H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual.
 **Hito:** HITO-HPI-02 — Continuidad reconocible entre antecedente reutilizado y resultado posterior.
 **Precedente:** 109-CONV-HPI-08_REDUCCION_GAP_HPI_02_Y_HITO_HPI_02.md.
@@ -759,3 +759,57 @@ R-HPI2-03
 HITO-HPI-02
 → todavía pendiente de validación formal
 ~~~
+
+
+---
+
+# 20. Resultado posterior de R-HPI2-03
+
+La validación formal se completó mediante dos casos integrados sobre la App ordinaria, sin inspección de la forma interna de la relación.
+
+Resultado:
+
+~~~text
+MHPI2-01 → SATISFECHO
+MHPI2-02 → SATISFECHO
+MHPI2-03 → SATISFECHO
+MHPI2-04 → SATISFECHO
+MHPI2-05 → SATISFECHO
+MHPI2-06 → SATISFECHO
+
+6/6
+→ HITO-HPI-02 SATISFECHO
+~~~
+
+Validación técnica:
+
+~~~text
+validación formal HPI2
+→ 2/2 PASS
+
+contrato HPI2
+→ 7/7 PASS
+
+HPI-01
+→ 10/10 PASS
+
+suite global
+→ 63/63 archivos
+→ 517/517 tests
+
+build
+→ PASS
+
+typecheck
+→ 14 errores históricos
+→ 0 nuevos
+
+git diff --check
+→ PASS
+~~~
+
+Por tanto el roadmap de HITO-HPI-02 queda completado.
+
+GAP-HPI-02 se considera cerrado en el alcance del hito.
+
+La siguiente cuestión no es abrir otra realización automáticamente, sino reevaluar globalmente H-PROJ-INT-01 contra sus criterios integrados.
