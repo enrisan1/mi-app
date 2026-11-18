@@ -514,7 +514,7 @@ No existe cadena más larga en el grafo mínimo actual.
 
 # 17. Capacidades sin dependencia interna necesaria
 
-Ocho capacidades no presentan dependencia funcional fija respecto de otra capacidad del mapa:
+Nueve capacidades no presentan dependencia funcional fija respecto de otra capacidad del mapa:
 
 ~~~text
 C-HPI-01
@@ -528,7 +528,7 @@ C-HPI-09
 C-HPI-10
 ~~~
 
-La lista contiene nueve capacidades, no ocho:
+Por tanto:
 
 ~~~text
 capacidades sin dependencia interna
@@ -538,7 +538,7 @@ capacidad dependiente
 → C-HPI-05
 ~~~
 
-Esta corrección aritmética es importante: sólo C-HPI-05 posee dependencias internas directas.
+Sólo C-HPI-05 posee dependencias internas directas.
 
 La ausencia de dependencia no significa:
 
