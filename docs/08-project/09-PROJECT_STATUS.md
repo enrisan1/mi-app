@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-02` CERRADA; MAPA MÍNIMO DE DEPENDENCIAS DETERMINADO.** El alcance y las diez capacidades `C-HPI-01…10` permanecen vigentes. [102](102-CONV-HPI-02_MAPA_MINIMO_DE_DEPENDENCIAS.md) reduce el grafo a dos dependencias funcionales directas irreducibles: `C-HPI-04 → C-HPI-05` y `C-HPI-02 → C-HPI-05`. No hay dependencias transitivas adicionales ni ciclos; las nueve capacidades restantes no presentan dependencia funcional interna necesaria. `C-HPI-09/10` siguen siendo condiciones transversales, no prerrequisitos fijos. No se ha evaluado todavía el estado material actual ni se han derivado huecos. **Siguiente actuación: `CONV-HPI-03 — criterios de finalización de C-HPI-01…10 y del conjunto integrado`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-03` CERRADA; CRITERIOS DE FINALIZACIÓN DETERMINADOS.** El proyecto dispone ya de alcance, mapa de diez capacidades, mapa mínimo de dos dependencias directas y criterios observables de finalización. [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) define 31 criterios individuales, 2 criterios de dependencia y 6 criterios globales, manteniendo `CF-HPI-01` como condición constitutiva superior. No se ha evaluado aún si el producto material actual satisface estos criterios y, por tanto, todavía no se derivan huecos. **Siguiente actuación: `CONV-HPI-04 — evaluación del estado material actual de C-HPI-01…10, D-HPI-01/02 y G01…G06`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8631,4 +8631,53 @@ Siguiente paso:
 ~~~text
 CONV-HPI-03
 → criterios de finalización
+~~~
+
+
+---
+
+# 18/11/2026 — CONV-HPI-03: criterios de finalización
+
+Se definen criterios observables y falsables para H-PROJ-INT-01.
+
+Resultado:
+
+~~~text
+capacidades
+→ 10
+
+criterios individuales
+→ 31
+
+dependencias verificables
+→ 2
+
+criterios globales
+→ 6
+
+CF-HPI-01
+→ OPERACIONALIZADO
+~~~
+
+Regla de cierre:
+
+~~~text
+capacidades aisladas satisfechas
+≠
+horizonte satisfecho
+
+cierre exige:
+→ criterios individuales
+→ dependencias
+→ integración global
+→ CF-HPI-01
+~~~
+
+No se evalúa todavía el estado material actual.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-04
+→ evaluación del estado actual
 ~~~
