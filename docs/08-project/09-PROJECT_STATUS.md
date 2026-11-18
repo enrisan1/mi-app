@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-03` CERRADA; CRITERIOS DE FINALIZACIÓN DETERMINADOS.** El proyecto dispone ya de alcance, mapa de diez capacidades, mapa mínimo de dos dependencias directas y criterios observables de finalización. [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) define 30 criterios individuales, 2 criterios de dependencia y 6 criterios globales, manteniendo `CF-HPI-01` como condición constitutiva superior. No se ha evaluado aún si el producto material actual satisface estos criterios y, por tanto, todavía no se derivan huecos. **Siguiente actuación: `CONV-HPI-04 — evaluación del estado material actual de C-HPI-01…10, D-HPI-01/02 y G01…G06`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-04` CERRADA; ESTADO MATERIAL ACTUAL EVALUADO.** [104](104-CONV-HPI-04_ESTADO_MATERIAL_ACTUAL.md) contrasta el producto actual contra los criterios fijados antes de la evaluación. De 30 criterios individuales: 22 SATISFECHOS, 4 PARCIALMENTE SATISFECHOS y 4 NO SATISFECHOS; no queda ninguno indeterminado. Cuatro capacidades están satisfechas (`C-HPI-02/03/08/09`) y seis parcialmente satisfechas (`C-HPI-01/04/05/06/07/10`). `D-HPI-01/02` son parciales. Entre `G01…G06`: 1 satisfecho, 4 parciales y 1 no satisfecho. `CF-HPI-01 → NO SATISFECHO`. La insuficiencia se concentra en identidad operacional común del trabajo actual, asociación contextual de auxiliares, continuidad reconocible antecedente→resultado y ausencia de reconstrucción externa relevante. **Estas zonas todavía no son huecos formales. Siguiente actuación: `CONV-HPI-05 — derivación y reducción de huecos materiales`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8681,3 +8681,58 @@ Siguiente actuación:
 CONV-HPI-04
 → evaluación del estado actual
 ~~~
+
+
+---
+
+# 18/11/2026 — CONV-HPI-04: estado material actual
+
+Se evalúa el producto existente frente a criterios definidos antes de mirar el estado.
+
+Resultado individual:
+
+~~~text
+30 criterios
+
+22 → SATISFECHOS
+4  → PARCIALMENTE SATISFECHOS
+4  → NO SATISFECHOS
+0  → NO DETERMINADOS
+~~~
+
+Capacidades:
+
+~~~text
+SATISFECHAS
+→ C-HPI-02
+→ C-HPI-03
+→ C-HPI-08
+→ C-HPI-09
+
+PARCIALES
+→ C-HPI-01
+→ C-HPI-04
+→ C-HPI-05
+→ C-HPI-06
+→ C-HPI-07
+→ C-HPI-10
+~~~
+
+Global:
+
+~~~text
+D-HPI-01/02
+→ PARCIALES
+
+G01…G06
+→ 1 SATISFECHO
+→ 4 PARCIALES
+→ 1 NO SATISFECHO
+
+CF-HPI-01
+→ NO SATISFECHO
+~~~
+
+No se derivan todavía huecos formales.
+
+Siguiente actuación: `CONV-HPI-05`.
