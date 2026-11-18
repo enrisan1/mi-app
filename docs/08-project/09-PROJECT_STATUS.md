@@ -8205,3 +8205,60 @@ cambio material del estado
 
 → reaplicar Manual 17
 ~~~
+
+
+---
+
+# 18/11/2026 — Auditoría de fundamentos externos y activadores de reapertura
+
+Se revisa documentalmente el programa de investigación externa que dio origen a 43–53 y su relación con el estado post-`OB-80-CONV-01`.
+
+La auditoría confirma:
+
+~~~text
+43 / 44
+→ YA CONSUMADOS
+
+L-EXT-01…05
+→ CERRADAS — FAVORABLE LIMITADO
+
+nueva pérdida humana independiente
+→ NO
+
+nuevo residuo humano independiente
+→ NO
+
+fundamento actual Manual 17
+→ NINGUNO
+~~~
+
+Se conservan como sensores futuros:
+
+~~~text
+ACT-EXT-01 → procedencia insuficiente
+ACT-EXT-02 → anclaje granular insuficiente
+ACT-EXT-03 → portabilidad insuficiente
+ACT-EXT-04 → coste documental estructural insuficiente
+ACT-EXT-05 → tarea IA verificable necesaria
+~~~
+
+Estado actual:
+
+~~~text
+activadores satisfechos
+→ 0 / 5
+
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+GATE-NH-01
+→ NO abierto
+
+ESTADO ESTABLE
+→ CONSERVADO
+~~~
+
+Referencia: [95](95-AUDITORIA_FUNDAMENTOS_EXTERNOS_Y_ACTIVADORES_REAPERTURA_POST_OB80_CONV01.md).
