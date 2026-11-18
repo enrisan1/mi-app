@@ -10704,3 +10704,40 @@ HUMAN GATE
 ~~~
 
 No se deriva todavía Architecture, Realization ni Implementation.
+
+
+---
+
+# 18/11/2026 — HUMAN GATE: aceptación de H-PROJ-INT-01
+
+Tras verificar `HOR-01…HOR-08 = 8/8 SATISFECHOS`, la persona responsable decide:
+
+~~~text
+ACEPTAR H-PROJ-INT-01
+~~~
+
+La formulación aceptada es:
+
+> **H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual**
+>
+> Hacer materialmente practicable, desde el punto ordinario de entrada del producto, un recorrido persistente de creación, desarrollo, reanudación, recuperación y reutilización de trabajo textual, con acceso contextual a las operaciones auxiliares ya justificadas que resulten pertinentes, preservando determinación humana y posibilidades anteriores necesarias.
+
+La aceptación no modifica Product ni amplía el no-alcance.
+
+Resultado:
+
+~~~text
+H-PROJ-INT-01
+→ ACEPTADO
+
+HUMAN GATE
+→ SUPERADO
+
+G-PROJ-HOR-01
+→ CERRADO
+
+metodología de convergencia
+→ TOMA EL RELEVO
+~~~
+
+El siguiente paso es `CONV-HPI-01`, comenzando por alcance y capacidades. No se abre todavía Architecture, Realization ni Implementation.
