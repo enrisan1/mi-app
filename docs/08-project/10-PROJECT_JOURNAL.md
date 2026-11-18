@@ -12076,3 +12076,137 @@ R-RESHPI-01
 ~~~
 
 Documento: [115](115-CONV-HPI-11_REDUCCION_RES_HPI_01_Y_CONTRATO_MINIMO.md).
+
+
+---
+
+# 18/11/2026 — R-RESHPI-01: contrato rojo de primera creación
+
+Se materializó el contrato previo de RES-HPI-01 en:
+
+~~~text
+src/App.reshpi.test.tsx
+~~~
+
+sin modificar producción.
+
+Los ocho tests ejercen App ordinaria.
+
+Resultado focal:
+
+~~~text
+T-RESHPI-01 → PASS
+T-RESHPI-02 → FAIL
+T-RESHPI-03 → FAIL
+T-RESHPI-04 → FAIL
+T-RESHPI-05 → FAIL
+T-RESHPI-06 → FAIL
+T-RESHPI-07 → FAIL
+T-RESHPI-08 → PASS
+~~~
+
+Patrón:
+
+~~~text
+PASS / FAIL×6 / PASS
+~~~
+
+Los dos verdes demuestran:
+
+~~~text
+T01
+→ primera creación básica existe
+  y W1 queda visible/persistido
+
+T08
+→ rama retomada sigue usando
+  contexto común en captura,
+  comparación e IA
+~~~
+
+Los seis rojos fallan por las diferencias materiales previstas:
+
+~~~text
+T02
+→ W1 no aparece como trabajo/obra común inmediata
+
+T03
+→ captura inmediata no reconoce W1
+
+T04
+→ comparación inmediata no reconoce W1
+
+T05
+→ IA no adopta W1 sin segunda selección
+
+T06
+→ remount recupera W1 como previous
+  pero no como contexto común
+
+T07
+→ A/B permanecen disponibles
+  pero W1 no queda current
+~~~
+
+No se observaron fallos por fixture, selector artificial, import o render.
+
+Preservación específica:
+
+~~~text
+App.hpi.test
+App.hpi.validation.test
+App.hpi2.test
+App.hpi2.validation.test
+App.hpi.global.validation.test
+→ 5 archivos
+→ 20/20 PASS
+~~~
+
+Regresión histórica completa, excluyendo únicamente el contrato rojo deliberado:
+
+~~~text
+64/64 archivos PASS
+518/518 tests PASS
+~~~
+
+Producción comprobada sin cambios en:
+
+~~~text
+src/App.tsx
+src/realizations/ru2m1/ResumeExperience.tsx
+~~~
+
+y:
+
+~~~text
+git diff --check
+→ PASS
+~~~
+
+Resultado:
+
+~~~text
+R-RESHPI-01
+→ CERRADA
+
+T-RESHPI-01…08
+→ MATERIALIZADOS
+
+RES-HPI-01
+→ ABIERTO
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-RESHPI-02
+→ derivar y realizar
+  la mínima diferencia de producción
+  que vuelva verdes T02…07
+  sin romper T01/T08,
+  HPI-01, HPI-02,
+  validación global
+  ni los 518 tests previos
+~~~
+
+Documento: [116](116-R-RESHPI-01_CONTRATO_ROJO_PRIMERA_CREACION.md).
