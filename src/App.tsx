@@ -18,6 +18,7 @@ type ContextualCapture = {
   id: string;
   text: string;
   capturedAt: string;
+  workId?: string;
 };
 
 type AuthorIdentity = {
@@ -48,6 +49,7 @@ const AUTHOR_IDENTITIES_STORAGE_KEY = "ordinary.author-identities";
 const WORK_AUTHORSHIPS_STORAGE_KEY = "ordinary.work-authorships";
 const AI_SUPPORT_STORAGE_KEY = "ordinary.ai-support";
 const CONTEXTUAL_CAPTURES_STORAGE_KEY = "ordinary.contextual-captures";
+const CURRENT_WORK_ID_STORAGE_KEY = "ordinary.current-work-id";
 
 function loadContextualCaptures(): ContextualCapture[] {
   try {
@@ -214,6 +216,38 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
 
     return stored === null ? [] : (JSON.parse(stored) as OrdinaryMaterial[]);
   });
+  const [currentWorkId, setCurrentWorkId] = useState<string | null>(() => {
+    const materialsStored = localStorage.getItem("ordinary.materials");
+    const materials =
+      materialsStored === null
+        ? []
+        : (JSON.parse(materialsStored) as OrdinaryMaterial[]);
+    const persistedId = localStorage.getItem(CURRENT_WORK_ID_STORAGE_KEY);
+
+    if (
+      persistedId !== null &&
+      materials.some((material) => material.id === persistedId)
+    ) {
+      return persistedId;
+    }
+
+    const previous = localStorageResumeRepository.loadPrevious();
+    if (previous === null) {
+      return null;
+    }
+
+    const matches = materials.filter((material) => material.content === previous);
+    if (matches.length !== 1) {
+      return null;
+    }
+
+    localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, matches[0].id);
+    return matches[0].id;
+  });
+  const currentWork =
+    currentWorkId === null
+      ? undefined
+      : ordinaryMaterials.find((material) => material.id === currentWorkId);
   const [availablePostV1Current, setAvailablePostV1Current] = useState<
     string | null
   >(() => localStorageResumeRepository.loadPrevious());
@@ -328,6 +362,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     id: `${capturedAt}-${contextualCaptures.length}`,
                     text: captureDraft,
                     capturedAt,
+                    ...(currentWorkId !== null ? { workId: currentWorkId } : {}),
                   },
                 ];
 
@@ -359,6 +394,15 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
               {contextualCaptures.map((capture) => (
                 <li key={capture.id}>
                   <p>{capture.text}</p>
+                  {capture.workId !== undefined && (
+                    <p>
+                      {
+                        ordinaryMaterials.find(
+                          (material) => material.id === capture.workId,
+                        )?.content
+                      }
+                    </p>
+                  )}
                   <time dateTime={capture.capturedAt}>
                     {new Date(capture.capturedAt).toLocaleString("es-ES")}
                   </time>
@@ -515,7 +559,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         <label>
           Obra para apoyo IA
           <select
-            value={selectedAiSupportMaterialId}
+            value={selectedAiSupportMaterialId || currentWorkId || ""}
             onChange={(event) => {
               setSelectedAiSupportMaterialId(event.target.value);
               setAiSupportError(null);
@@ -546,13 +590,15 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         <button
           type="button"
           disabled={
-            selectedAiSupportMaterialId === "" ||
+            (selectedAiSupportMaterialId || currentWorkId || "") === "" ||
             aiSupportRequest.trim().length === 0 ||
             aiSupportPending
           }
           onClick={async () => {
+            const effectiveAiSupportMaterialId =
+              selectedAiSupportMaterialId || currentWorkId || "";
             const material = ordinaryMaterials.find(
-              (item) => item.id === selectedAiSupportMaterialId,
+              (item) => item.id === effectiveAiSupportMaterialId,
             );
 
             if (material === undefined || aiSupportRequest.trim().length === 0) {
@@ -684,6 +730,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
 
           {comparisonOpen && (
             <section aria-label="Comparación activa">
+              {currentWork !== undefined && <p>{currentWork.content}</p>}
               <OrdinaryComparison
                 first={
                   ordinaryMaterials.find(
@@ -712,13 +759,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         onResult={(result) => {
           setAvailablePostV1Current(result.current);
 
-          const nextMaterials = [
-            ...ordinaryMaterials,
-            {
-              id: `m${ordinaryMaterials.length + 1}`,
-              content: result.current,
-            },
-          ];
+          const nextMaterial = {
+            id: `m${ordinaryMaterials.length + 1}`,
+            content: result.current,
+          };
+          const nextMaterials = [...ordinaryMaterials, nextMaterial];
+
+          localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, nextMaterial.id);
+          setCurrentWorkId(nextMaterial.id);
 
           setOrdinaryMaterials(nextMaterials);
           localStorage.setItem(
@@ -898,14 +946,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 onClick={() => {
                   localStorageResumeRepository.savePrevious(newWork);
 
-                  const nextMaterials = [
-                    ...ordinaryMaterials,
-                    {
-                      id: `m${ordinaryMaterials.length + 1}`,
-                      content: newWork,
-                    },
-                  ];
+                  const nextMaterial = {
+                    id: `m${ordinaryMaterials.length + 1}`,
+                    content: newWork,
+                  };
+                  const nextMaterials = [...ordinaryMaterials, nextMaterial];
 
+                  localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, nextMaterial.id);
+                  setCurrentWorkId(nextMaterial.id);
                   setOrdinaryMaterials(nextMaterials);
                   localStorage.setItem(
                     "ordinary.materials",
