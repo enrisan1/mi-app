@@ -1,0 +1,49 @@
+name: R-RESHPI-02 minimal realization
+on:
+  push:
+    branches:
+      - r-reshpi-02-minimal
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci
+      - name: RES-HPI contract
+        run: npx vitest run src/App.reshpi.test.tsx
+      - name: HPI preservation
+        run: npx vitest run src/App.hpi.test.tsx src/App.hpi.validation.test.tsx src/App.hpi2.test.tsx src/App.hpi2.validation.test.tsx src/App.hpi.global.validation.test.tsx
+      - name: ResumeExperience preservation
+        run: npx vitest run src/realizations/ru2m1/ResumeExperience.test.tsx src/realizations/ru2m1/ResumeExperience.pv003.test.tsx
+      - name: Full regression
+        run: npx vitest run
+      - name: Build
+        run: npm run build
+      - name: Typecheck delta
+        run: |
+          set +e
+          npm run typecheck > /tmp/current-typecheck.log 2>&1
+          current_code=$?
+          grep 'error TS' /tmp/current-typecheck.log | sort > /tmp/current-errors.txt || true
+          git checkout d4fe2d23bf4c4512d9ae62356db9fee32b94d5ab
+          npm run typecheck > /tmp/base-typecheck.log 2>&1
+          base_code=$?
+          grep 'error TS' /tmp/base-typecheck.log | sort > /tmp/base-errors.txt || true
+          set -e
+          echo "current_code=$current_code base_code=$base_code"
+          echo "current_errors=$(wc -l < /tmp/current-errors.txt)"
+          echo "base_errors=$(wc -l < /tmp/base-errors.txt)"
+          diff -u /tmp/base-errors.txt /tmp/current-errors.txt
+          test "$current_code" -eq "$base_code"
+      - name: Diff check
+        run: |
+          git checkout "$GITHUB_SHA"
+          git diff --check d4fe2d23bf4c4512d9ae62356db9fee32b94d5ab..HEAD -- src/App.tsx src/realizations/ru2m1/ResumeExperience.tsx
