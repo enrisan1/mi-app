@@ -1,7 +1,7 @@
 # R-80-CONV-04 — Integración ordinaria mínima de apoyo IA separado de la obra
 
 **Fecha:** 17/11/2026  
-**Estado:** FORMULADA; construcción NO autorizada.  
+**Estado:** construcción y despliegue real mínimo validados; `B-80-04-DEPLOY-01` CERRADO; cierre global de `R-80-CONV-04` no decidido en este corte.  
 **Obligación:** `OB-80-CONV-01`.  
 **Compromiso:** `C-PV-80-04 — Apoyo auxiliar de IA separado de la obra`.  
 **Precedente:** `HITO-80-CONV-02` satisfecho mediante `R-80-CONV-03`.
@@ -3914,3 +3914,552 @@ Pages deploy
 prueba remota
 → NO ejecutada
 ~~~
+
+---
+
+# 70. Evidencia real de despliegue, incidente CORS y cierre formal de B-80-04-DEPLOY-01
+
+Esta sección registra la ejecución real posterior al preflight de §69 y decide
+únicamente el estado del bloqueo de despliegue.
+
+No reabre:
+
+- `C-PV-80-04`;
+- `CSO-80-04`;
+- la separación obra/apoyo;
+- la decisión `EDGE-PROTECT-80-04-01`;
+- la elección inicial de `gpt-6-luna`;
+- el cierre global de `R-80-CONV-04`.
+
+## 70.1 Gates externos realmente satisfechos
+
+Se acreditó operativamente:
+
+~~~text
+Cloudflare Turnstile
+→ widget real mi-app-ai-support
+→ modo Managed
+→ hostname enrisan1.github.io
+→ pre-clearance no activado
+
+OpenAI
+→ proyecto dedicado mi-app-ai-support
+→ hard spend limit activo
+→ límite observado para la prueba: 5 USD
+→ model usage restringido a gpt-6-luna
+→ API key restringida a Responses
+→ caducidad corta para la primera prueba
+
+secretos
+→ TURNSTILE_SECRET_KEY
+→ OPENAI_API_KEY
+→ almacenados como secretos del Worker
+→ valores NO documentados
+→ valores NO introducidos en Git
+~~~
+
+La comprobación posterior mediante Wrangler mostró únicamente los nombres:
+
+~~~text
+OPENAI_API_KEY
+TURNSTILE_SECRET_KEY
+~~~
+
+sin exponer sus valores.
+
+## 70.2 Primer despliegue real del Worker
+
+El Worker se desplegó públicamente como:
+
+~~~text
+https://mi-app-ai-support.enrisan1.workers.dev
+~~~
+
+con:
+
+~~~text
+ALLOWED_ORIGIN
+→ https://enrisan1.github.io
+
+MODEL
+→ gpt-6-luna
+
+AI_SUPPORT_RATE_LIMITER
+→ 10 requests / 60 s
+
+TURNSTILE_SECRET_KEY
+→ presente como secreto
+
+OPENAI_API_KEY
+→ presente como secreto
+~~~
+
+El primer despliegue real quedó identificado por:
+
+~~~text
+Version ID
+→ b033be90-8cd9-4570-aef4-e2321434344b
+~~~
+
+## 70.3 Pruebas negativas reales previas al E2E
+
+Antes de consumir OpenAI se verificaron dos rechazos reales.
+
+### 70.3.1 Origen no permitido
+
+Solicitud:
+
+~~~text
+Origin
+→ https://example.com
+~~~
+
+Resultado:
+
+~~~text
+HTTP 403
+{"error":"origin_forbidden"}
+~~~
+
+La respuesta no concedió `Access-Control-Allow-Origin` al origen rechazado.
+
+### 70.3.2 Origin permitido con Turnstile inválido
+
+Solicitud:
+
+~~~text
+Origin
+→ https://enrisan1.github.io
+
+turnstileToken
+→ inválido
+~~~
+
+Resultado:
+
+~~~text
+HTTP 403
+{"error":"turnstile_rejected"}
+
+Access-Control-Allow-Origin
+→ https://enrisan1.github.io
+~~~
+
+Por tanto:
+
+~~~text
+origen incorrecto
+→ falla cerrado antes de Turnstile/OpenAI
+
+Turnstile inválido
+→ falla cerrado antes de rate limiter/OpenAI
+~~~
+
+## 70.4 Despliegue real del frontend
+
+Se configuraron como variables públicas de GitHub Actions:
+
+~~~text
+VITE_AI_SUPPORT_ENDPOINT
+VITE_TURNSTILE_SITE_KEY
+~~~
+
+El primer intento de Pages posterior a esta configuración falló en `npm ci`
+por desincronización previa entre `package.json` y `package-lock.json`.
+
+La corrección se mantuvo separada del diseño de IA:
+
+~~~text
+package-lock.json
+→ sincronizado con @codemirror/merge y transitivas
+
+npm ci local
+→ GREEN
+
+commit
+→ a32bc28
+→ chore(deps): sync lockfile for codemirror merge
+~~~
+
+Tras ello:
+
+~~~text
+Deploy to GitHub Pages #8
+→ SUCCESS
+
+Install dependencies
+→ SUCCESS
+
+Validate public AI support configuration
+→ SUCCESS
+
+Build
+→ SUCCESS
+
+Deploy to GitHub Pages
+→ SUCCESS
+~~~
+
+El fallo del workflow anterior no pertenecía a `B-80-04-DEPLOY-01`; era una
+inconsistencia de lockfile preexistente que impedía alcanzar el propio preflight
+de despliegue.
+
+## 70.5 Incidente CORS descubierto por la primera prueba humana
+
+La primera solicitud desde la App desplegada terminó visualmente en:
+
+~~~text
+No se pudo obtener apoyo IA.
+~~~
+
+No se atribuyó el fallo a Turnstile ni a OpenAI sin evidencia.
+
+Se reprodujo el preflight real:
+
+~~~text
+OPTIONS
+→ https://mi-app-ai-support.enrisan1.workers.dev
+
+Origin
+→ https://enrisan1.github.io
+
+Access-Control-Request-Method
+→ POST
+
+Access-Control-Request-Headers
+→ content-type
+~~~
+
+Resultado observado:
+
+~~~text
+HTTP 405
+{"error":"method_not_allowed"}
+~~~
+
+Diagnóstico:
+
+~~~text
+browser
+→ necesita preflight CORS por POST JSON cross-origin
+
+Worker
+→ sólo aceptaba POST
+→ trataba OPTIONS como método no permitido
+
+consecuencia
+→ POST real no llegaba a enviarse
+→ Turnstile/OpenAI no podían completar el recorrido
+~~~
+
+Por tanto:
+
+**INC-80-04-CORS-01 — ausencia de respuesta válida al preflight CORS del
+endpoint público.**
+
+## 70.6 RED específico del incidente
+
+Se añadió únicamente:
+
+**T-WORKER-80-04-14 — responde al preflight CORS permitido sin llamar a
+servicios remotos.**
+
+Propiedad exigida:
+
+~~~text
+OPTIONS desde origen permitido
+→ 204
+
+Access-Control-Allow-Origin
+→ https://enrisan1.github.io
+
+Access-Control-Allow-Methods
+→ POST, OPTIONS
+
+Access-Control-Allow-Headers
+→ Content-Type
+
+Vary
+→ Origin
+
+servicios remotos
+→ NO llamados
+~~~
+
+RED observado:
+
+~~~text
+Test Files  1 failed (1)
+Tests       1 failed | 13 passed (14)
+
+T-WORKER-80-04-14
+→ expected 204
+→ received 405
+~~~
+
+El RED reprodujo exactamente el comportamiento observado en producción.
+
+## 70.7 GREEN de la corrección CORS
+
+La implementación mínima:
+
+- lee `Origin` antes de discriminar el método;
+- trata `OPTIONS` como preflight;
+- rechaza un origen distinto del permitido;
+- devuelve `204` al origen permitido;
+- expone únicamente `POST, OPTIONS`;
+- permite únicamente `Content-Type`;
+- mantiene `GET` y otros métodos bajo `405`;
+- no modifica Turnstile, rate limiting ni OpenAI.
+
+GREEN observado:
+
+~~~text
+Test Files  1 passed (1)
+Tests       14 passed (14)
+~~~
+
+La corrección se consolidó en:
+
+~~~text
+706be6e
+→ fix(worker): handle CORS preflight
+~~~
+
+y se desplegó como:
+
+~~~text
+Version ID
+→ d865d6a1-b4da-4d36-8e9a-345f14d8fc13
+~~~
+
+## 70.8 Verificación CORS real posterior al GREEN
+
+Se repitió el mismo preflight contra el Worker desplegado.
+
+Resultado:
+
+~~~text
+HTTP 204
+
+Access-Control-Allow-Origin
+→ https://enrisan1.github.io
+
+Access-Control-Allow-Methods
+→ POST, OPTIONS
+
+Access-Control-Allow-Headers
+→ Content-Type
+
+Vary
+→ Origin
+~~~
+
+Por tanto:
+
+~~~text
+INC-80-04-CORS-01
+→ REPRODUCIDO
+→ RED ESPECÍFICO
+→ CORREGIDO
+→ GREEN 14/14
+→ VERIFICADO EN PRODUCCIÓN
+~~~
+
+## 70.9 E2E real final
+
+Tras la corrección se ejecutó una única nueva solicitud desde:
+
+~~~text
+https://enrisan1.github.io/mi-app/
+~~~
+
+sobre una obra ordinaria seleccionada en:
+
+~~~text
+Apoyo auxiliar de IA
+→ Obra para apoyo IA
+~~~
+
+La solicitud completó el recorrido real y la App mostró un apoyo conservado con:
+
+~~~text
+contenido de apoyo
+→ presente
+
+procedencia
+→ OpenAI
+
+modelo
+→ gpt-6-luna
+
+requestId
+→ resp_...
+~~~
+
+Esto acredita directamente:
+
+~~~text
+browser real
+→ Worker real
+→ respuesta OpenAI real
+→ retorno al cliente
+→ apoyo conservado en estado separado
+→ procedencia visible
+~~~
+
+Dado el código desplegado y el contrato ya GREEN, el recorrido válido atraviesa:
+
+~~~text
+Turnstile Siteverify
+→ hostname/action exigidos
+→ rate limiter binding
+→ OpenAI Responses API
+~~~
+
+La prueba E2E no observa directamente el contador interno del rate limiter; su
+presencia y orden quedan acreditados por el binding desplegado y por los tests
+deterministas existentes.
+
+La ausencia de persistencia de `turnstileToken` tampoco se infiere de la
+captura E2E: queda acreditada por el contrato y tests de cliente ya GREEN.
+
+## 70.10 Confrontación con los falsadores de §62
+
+Resultado:
+
+~~~text
+1. solicitud sin Turnstile válido
+→ rechazada por contrato
+
+2. validación server-side
+→ implementada mediante Siteverify
+
+3. replay trivial
+→ delegado al single-use de Siteverify
+→ simulado y protegido en T-WORKER-80-04-13
+
+4. hostname/action
+→ obligatorios en Worker
+→ recorrido E2E real compatible con ambos
+
+5. secreto Turnstile en bundle
+→ NO
+
+6. secreto OpenAI en bundle
+→ NO
+
+7. rate limiter como identidad fiable
+→ NO
+→ continúa como señal gruesa secundaria
+
+8. límite económico duro
+→ ACTIVO antes del despliegue real
+
+9. fallo Turnstile continúa hacia OpenAI
+→ NO
+→ rechazo real 403 observado
+
+10. cuenta/login general
+→ NO introducidos
+~~~
+
+No se observa ningún falsador que obligue a reabrir
+`EDGE-PROTECT-80-04-01`.
+
+## 70.11 Decisión formal sobre B-80-04-DEPLOY-01
+
+La pregunta del bloqueo era si existía una protección mínima suficientemente
+segura para exponer públicamente un endpoint capaz de consumir una credencial
+OpenAI real sin introducir autenticación general ni secreto copiable en el
+cliente.
+
+La evidencia acumulada permite responder:
+
+~~~text
+EDGE-PROTECT-80-04-01
+→ IMPLEMENTADO
+
+Turnstile real
+→ OPERATIVO
+
+Siteverify
+→ OPERATIVO
+
+rate limiting secundario
+→ DESPLEGADO
+
+hard spend limit
+→ ACTIVO
+
+secretos
+→ sólo servidor
+
+Worker público
+→ DESPLEGADO
+
+Pages
+→ DESPLEGADO
+
+preflight CORS
+→ CORREGIDO Y VERIFICADO
+
+E2E real
+→ POSITIVO
+~~~
+
+Por tanto:
+
+**B-80-04-DEPLOY-01 — CERRADO.**
+
+La clausura significa:
+
+> ya no existe una incertidumbre de despliegue suficientemente material como
+> para impedir el uso público mínimo de la integración bajo las protecciones
+> definidas en `EDGE-PROTECT-80-04-01`.
+
+No significa:
+
+- seguridad absoluta frente a abuso;
+- identidad individual fiable;
+- cuota por persona;
+- cierre definitivo de políticas de coste;
+- necesidad de mantener para siempre 10/60 como umbral;
+- cierre automático de `R-80-CONV-04`;
+- cierre automático de `HITO-80-CONV-03` o `CSO-80-04`.
+
+## 70.12 Estado resultante
+
+~~~text
+B-80-04-AI-01
+→ RESUELTO
+
+B-80-04-DEPLOY-01
+→ CERRADO
+
+EDGE-PROTECT-80-04-01
+→ IMPLEMENTADO
+→ DESPLEGADO
+→ VALIDADO EN E2E REAL
+
+INC-80-04-CORS-01
+→ CERRADO
+
+Worker
+→ público y operativo
+
+frontend Pages
+→ desplegado con endpoint/sitekey públicas
+
+secretos
+→ fuera de Git
+→ fuera del cliente
+
+R-80-CONV-04
+→ NO se declara cerrada en este corte
+~~~
+
+La siguiente decisión legítima es evaluar por separado si la evidencia funcional
+ya acumulada satisface conjuntamente `CSO-80-04` y `HITO-80-CONV-03`, y sólo
+entonces decidir el cierre global de `R-80-CONV-04`.
+
