@@ -968,3 +968,33 @@ Deberá partir de los criterios fallidos/parciales y decidir:
 - cuál es el mapa mínimo de huecos reales.
 
 No deberá todavía priorizar ni formular hitos hasta completar esa reducción.
+
+
+---
+
+# 30. Resultado de CONV-HPI-05
+
+La actuación [105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) reduce las cuatro zonas observadas a dos huecos independientes:
+
+~~~text
+Z1 + Z2
+→ GAP-HPI-01
+→ contexto operativo común y persistente
+
+Z3
+→ GAP-HPI-02
+→ continuidad material antecedente → resultado
+
+Z4
+→ consecuencia de GAP-HPI-01 + GAP-HPI-02
+~~~
+
+No se identifica tercer hueco material independiente.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-06
+→ determinar prioridad
+  y reducir el primer hito verificable
+~~~
