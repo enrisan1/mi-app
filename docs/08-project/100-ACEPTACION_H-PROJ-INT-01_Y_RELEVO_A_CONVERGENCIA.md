@@ -466,3 +466,30 @@ prioridades
 ~~~
 
 Siguiente actuación: `CONV-HPI-06`.
+
+
+---
+
+# 17. Resultado de CONV-HPI-06
+
+El relevo dispone ya de prioridad y primer hito verificable:
+
+~~~text
+GAP-HPI-01
+→ prioridad 1
+
+GAP-HPI-02
+→ prioridad 2
+
+HITO-HPI-01
+→ Contexto operativo común verificable
+→ MHPI-01…08
+→ regla 8/8
+~~~
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-07
+→ roadmap mínimo hacia HITO-HPI-01
+~~~
