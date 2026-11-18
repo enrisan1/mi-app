@@ -11618,3 +11618,129 @@ Architecture
 ~~~
 
 Documento de cierre: [112](112-R-HPI2-02_REALIZACION_MINIMA_CONTINUIDAD_ANTECEDENTE_RESULTADO.md).
+
+
+---
+
+# 18/11/2026 — R-HPI2-03: validación formal de HITO-HPI-02
+
+Se ejecutó la validación formal del segundo hito sobre la App ordinaria.
+
+Se creó:
+
+~~~text
+src/App.hpi2.validation.test.tsx
+~~~
+
+con dos casos integrados.
+
+V-HPI2-01 recorre:
+
+~~~text
+W1
+→ recuperar A
+→ seleccionar A
+→ desarrollar W2
+→ constituir W2
+→ unmount
+→ mount App
+→ recuperar W2
+→ reconocer W2←A
+~~~
+
+El caso no inspecciona antecedentMaterialId ni reconstruye la relación leyendo JSON.
+
+V-HPI2-02 recorre:
+
+~~~text
+A → W2
+B → W3
+→ unmount
+→ mount App
+→ W2←A
+→ W3←B
+→ W2≠B
+→ W3≠A
+~~~
+
+Esto falsaría una solución basada en el último antecedente global, el último trabajo o una asociación por orden temporal.
+
+Resultado formal:
+
+~~~text
+MHPI2-01 → SATISFECHO
+MHPI2-02 → SATISFECHO
+MHPI2-03 → SATISFECHO
+MHPI2-04 → SATISFECHO
+MHPI2-05 → SATISFECHO
+MHPI2-06 → SATISFECHO
+
+6/6
+~~~
+
+Aplicando la regla establecida en CONV-HPI-08:
+
+~~~text
+HITO-HPI-02
+→ SATISFECHO
+~~~
+
+Validación técnica:
+
+~~~text
+V-HPI2-01/02
+→ 2/2 PASS
+
+T-HPI2-01…07
+→ 7/7 PASS
+
+HPI-01
+→ 10/10 PASS
+
+suite global
+→ 63 archivos
+→ 517/517 tests PASS
+
+build
+→ PASS
+
+typecheck baseline
+→ 14 errores históricos
+
+typecheck actual
+→ 14 errores
+
+errores nuevos
+→ 0
+
+git diff --check
+→ PASS
+~~~
+
+GAP-HPI-02 se declara cerrado en el alcance de HITO-HPI-02.
+
+El estado queda:
+
+~~~text
+H-PROJ-INT-01
+→ ACEPTADO Y ABIERTO
+
+HITO-HPI-01
+→ SATISFECHO
+
+GAP-HPI-01
+→ CERRADO
+
+HITO-HPI-02
+→ SATISFECHO
+
+GAP-HPI-02
+→ CERRADO EN EL ALCANCE DEL HITO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+No se infiere automáticamente la clausura de H-PROJ-INT-01. Dado que los dos gaps de CONV-HPI-05 están cerrados en el alcance de sus hitos, la siguiente cuestión justificable es una reevaluación global del horizonte contra sus criterios integrados.
+
+Documento de cierre: [113](113-R-HPI2-03_VALIDACION_HITO_HPI_02.md).
