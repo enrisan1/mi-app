@@ -11744,3 +11744,245 @@ Architecture
 No se infiere automáticamente la clausura de H-PROJ-INT-01. Dado que los dos gaps de CONV-HPI-05 están cerrados en el alcance de sus hitos, la siguiente cuestión justificable es una reevaluación global del horizonte contra sus criterios integrados.
 
 Documento de cierre: [113](113-R-HPI2-03_VALIDACION_HITO_HPI_02.md).
+
+
+---
+
+# 18/11/2026 — CONV-HPI-10: reevaluación global de H-PROJ-INT-01
+
+Tras satisfacer HITO-HPI-01 y HITO-HPI-02 se reevaluó el horizonte completo contra los criterios de 103.
+
+La primera hipótesis fue que el cierre de GAP-HPI-01 y GAP-HPI-02 en sus hitos podía ser suficiente.
+
+Para evitar una suma mecánica de pruebas separadas se creó una validación global temporal y después se consolidó su caso positivo:
+
+~~~text
+src/App.hpi.global.validation.test.tsx
+~~~
+
+La primera versión del caso global partía sin trabajo previo:
+
+~~~text
+sin trabajo
+→ Crear W1
+→ captura inmediata
+~~~
+
+y falló porque la captura no reconocía W1.
+
+El log mostró:
+
+~~~text
+Expected:
+Trabajo global W1
+
+Received:
+Captura global de W1
++ fecha/hora
+~~~
+
+La inspección de ResumeExperience explicó el comportamiento.
+
+Primera creación:
+
+~~~text
+savePrevious(currentInput)
+setAccepted(true)
+~~~
+
+sin onResult.
+
+Continuación/reanudación:
+
+~~~text
+createFromPrevious
+savePrevious
+setResult
+onResult
+~~~
+
+y sólo entonces App crea OrdinaryMaterial y actualiza ordinary.current-work-id.
+
+Por tanto se detectó una diferencia material real:
+
+~~~text
+crear nuevo
+→ no converge inmediatamente
+  con contexto común
+
+retomar existente
+→ sí converge
+  con contexto común
+~~~
+
+Se ejecutó un segundo contraste global partiendo de un W1 retomable.
+
+Recorrido:
+
+~~~text
+retomar W1
+→ captura bajo W1
+→ comparación A/B bajo W1
+→ IA bajo W1
+→ interrupción
+→ reanudar W1
+→ recuperar A
+→ constituir W2
+→ interrupción
+→ reanudar W2
+→ reconocer W2←A
+→ IA adopta W2
+~~~
+
+Resultado:
+
+~~~text
+V-HPI-GLOBAL-01
+→ PASS
+~~~
+
+Se caracterizó además temporalmente el residuo de primera creación:
+
+~~~text
+captura inmediata
+→ no muestra W1
+
+comparación inmediata
+→ no muestra W1 como contexto
+
+selector IA
+→ value vacío
+~~~
+
+El diagnóstico pasó porque verificaba exactamente esas ausencias.
+
+Validación técnica de la rama con diagnóstico:
+
+~~~text
+global gate
+→ 2/2 PASS
+
+HPI-01 + HPI-02
+→ 19/19 PASS
+
+suite global
+→ 64 archivos
+→ 519/519 tests PASS
+
+build
+→ PASS
+
+typecheck
+→ 14 errores históricos
+→ 0 nuevos
+
+git diff --check
+→ PASS
+~~~
+
+La prueba diagnóstica temporal no se consolida como comportamiento deseado; sólo se conserva la validación positiva de la rama retomada.
+
+Evaluación global:
+
+~~~text
+C-HPI-01
+→ PARCIAL
+
+C-HPI-02
+→ SATISFECHA
+
+C-HPI-03
+→ SATISFECHA
+
+C-HPI-04
+→ SATISFECHA en recorrido establecido
+
+C-HPI-05
+→ SATISFECHA
+
+C-HPI-06
+→ PARCIAL
+
+C-HPI-07
+→ PARCIAL
+
+C-HPI-08
+→ PARCIAL
+
+C-HPI-09
+→ SATISFECHA
+
+C-HPI-10
+→ PARCIAL
+
+D-HPI-01/02
+→ SATISFECHAS
+
+G01
+→ SATISFECHO
+
+G02
+→ PARCIAL
+
+G03
+→ SATISFECHO
+
+G04
+→ PARCIAL
+
+G05
+→ SATISFECHO
+
+G06
+→ PARCIAL
+
+CF-HPI-01
+→ NO SATISFECHO
+~~~
+
+El falsador de 103:
+
+~~~text
+crear y retomar
+usan contextos incompatibles
+~~~
+
+queda activado literalmente.
+
+Decisión:
+
+~~~text
+H-PROJ-INT-01
+→ NO SATISFECHO
+→ NO CERRAR
+
+tercer gap
+→ NO DERIVADO
+
+GAP-HPI-02
+→ permanece cerrado
+
+GAP-HPI-01
+→ cerrado en el alcance de HITO-HPI-01
+→ residuo global detectado
+~~~
+
+Se define:
+
+~~~text
+RES-HPI-01
+→ Convergencia inmediata
+  de la primera creación
+  con el contexto operativo común
+~~~
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-11
+→ reducir RES-HPI-01
+→ fijar contrato mínimo
+→ antes de modificar producción
+~~~
+
+Documento: [114](114-CONV-HPI-10_REEVALUACION_GLOBAL_H_P_PROJ_INT_01.md).
