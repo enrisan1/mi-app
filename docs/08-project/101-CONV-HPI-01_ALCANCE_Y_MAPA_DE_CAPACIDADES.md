@@ -977,3 +977,28 @@ Siguiente paso:
 CONV-HPI-04
 → estado material actual
 ~~~
+
+
+---
+
+# 28. Estado material posterior del mapa de capacidades
+
+La evaluación [104](104-CONV-HPI-04_ESTADO_MATERIAL_ACTUAL.md) clasifica:
+
+~~~text
+SATISFECHAS
+→ C-HPI-02
+→ C-HPI-03
+→ C-HPI-08
+→ C-HPI-09
+
+PARCIALMENTE SATISFECHAS
+→ C-HPI-01
+→ C-HPI-04
+→ C-HPI-05
+→ C-HPI-06
+→ C-HPI-07
+→ C-HPI-10
+~~~
+
+No cambia el mapa de capacidades; sólo determina su estado actual.
