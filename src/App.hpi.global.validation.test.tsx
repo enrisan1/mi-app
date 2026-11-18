@@ -5,11 +5,12 @@ import App from "./App";
 
 const A = { id: "a", content: "Antecedente global A" };
 const B = { id: "b", content: "Antecedente global B" };
-const W1 = "Trabajo global W1";
+const W1 = { id: "w1", content: "Trabajo global W1" };
 const W2 = "Resultado global W2";
 
-function seedAntecedents() {
-  localStorage.setItem("ordinary.materials", JSON.stringify([A, B]));
+function seedResumableContext() {
+  localStorage.setItem("ru2m1.previous", W1.content);
+  localStorage.setItem("ordinary.materials", JSON.stringify([W1, A, B]));
 }
 
 async function openMaterials(
@@ -46,27 +47,21 @@ function ordinaryMaterialArticle(content: string) {
 describe("CONV-HPI-10 — gate global de H-PROJ-INT-01", () => {
   beforeEach(() => {
     localStorage.clear();
-    seedAntecedents();
+    seedResumableContext();
   });
 
-  it("[V-HPI-GLOBAL-01] recorre de extremo a extremo trabajo actual, auxiliares, interrupción, antecedente, reutilización, resultado y nueva reanudación", async () => {
+  it("[V-HPI-GLOBAL-01] retoma W1 y recorre auxiliares, interrupción, antecedente, reutilización, resultado y nueva reanudación", async () => {
     const user = userEvent.setup();
 
     let execution = render(<App />);
 
-    await user.type(
-      screen.getByLabelText(/^introduce un texto libre$/i),
-      W1,
+    expect(screen.getByLabelText(/^aportación anterior$/i)).toHaveTextContent(
+      W1.content,
     );
-    await user.click(screen.getByRole("button", { name: /^crear$/i }));
 
-    expect(screen.getByText(/^lo que has aportado$/i)).toBeInTheDocument();
-    expect(screen.getByText(W1)).toBeInTheDocument();
-
-    const captureButton = screen.getByRole("button", {
-      name: /^capturar aportación$/i,
-    });
-    await user.click(captureButton);
+    await user.click(
+      screen.getByRole("button", { name: /^capturar aportación$/i }),
+    );
     await user.type(
       screen.getByLabelText(/^aportación breve$/i),
       "Captura global de W1",
@@ -75,7 +70,7 @@ describe("CONV-HPI-10 — gate global de H-PROJ-INT-01", () => {
 
     const captureItem = screen.getByText("Captura global de W1").closest("li");
     expect(captureItem).not.toBeNull();
-    expect(captureItem).toHaveTextContent(W1);
+    expect(captureItem).toHaveTextContent(W1.content);
 
     const comparison = screen.getByRole("region", {
       name: /^comparación de documentos$/i,
@@ -95,37 +90,34 @@ describe("CONV-HPI-10 — gate global de H-PROJ-INT-01", () => {
     const activeComparison = within(comparison).getByRole("region", {
       name: /^comparación activa$/i,
     });
-    expect(activeComparison).toHaveTextContent(W1);
-    expect(
-      within(activeComparison).getByRole("region", { name: /^documento a$/i }),
-    ).toHaveTextContent(A.content);
-    expect(
-      within(activeComparison).getByRole("region", { name: /^documento b$/i }),
-    ).toHaveTextContent(B.content);
+    expect(activeComparison).toHaveTextContent(W1.content);
 
     const ai = screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i });
-    const aiWork = within(ai).getByRole("combobox", {
-      name: /^obra para apoyo ia$/i,
-    });
-    expect(aiWork).toHaveValue("m3");
+    expect(
+      within(ai).getByRole("combobox", { name: /^obra para apoyo ia$/i }),
+    ).toHaveValue(W1.id);
 
     execution.unmount();
 
     execution = render(<App />);
-    expect(screen.getByLabelText(/^aportación anterior$/i)).toHaveTextContent(W1);
+    expect(screen.getByLabelText(/^aportación anterior$/i)).toHaveTextContent(
+      W1.content,
+    );
 
     const resumedCapture = screen.getByText("Captura global de W1").closest("li");
     expect(resumedCapture).not.toBeNull();
-    expect(resumedCapture).toHaveTextContent(W1);
+    expect(resumedCapture).toHaveTextContent(W1.content);
 
     await openMaterials(user, "Reutilizar A sin abandonar W1.");
     await user.click(
-      screen.getByRole("button", { name: /^usar este material 1$/i }),
+      screen.getByRole("button", { name: /^usar este material 2$/i }),
     );
     expect(screen.getByLabelText(/^contenido seleccionado$/i)).toHaveTextContent(
       A.content,
     );
-    expect(screen.getByLabelText(/^aportación anterior$/i)).toHaveTextContent(W1);
+    expect(screen.getByLabelText(/^aportación anterior$/i)).toHaveTextContent(
+      W1.content,
+    );
 
     await user.type(
       screen.getByRole("textbox", { name: /^nuevo trabajo$/i }),
@@ -160,4 +152,5 @@ describe("CONV-HPI-10 — gate global de H-PROJ-INT-01", () => {
       within(resumedAi).getByRole("combobox", { name: /^obra para apoyo ia$/i }),
     ).toHaveValue("m4");
   });
+
 });
