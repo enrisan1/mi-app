@@ -395,3 +395,59 @@ Architecture
 Siguiente actuación justificable:
 
 > **R-RESHPI-01 — crear T-RESHPI-01…08 sobre la App ordinaria, sin modificar producción, y comprobar que aparece el patrón PASS / FAIL×6 / PASS por las razones materiales previstas.**
+
+---
+
+# 16. Resultado posterior de R-RESHPI-01
+
+[116](116-R-RESHPI-01_CONTRATO_ROJO_PRIMERA_CREACION.md) materializa T-RESHPI-01…08 sin modificar producción.
+
+Resultado observado:
+
+~~~text
+T-RESHPI-01 → PASS
+T-RESHPI-02 → FAIL
+T-RESHPI-03 → FAIL
+T-RESHPI-04 → FAIL
+T-RESHPI-05 → FAIL
+T-RESHPI-06 → FAIL
+T-RESHPI-07 → FAIL
+T-RESHPI-08 → PASS
+~~~
+
+Forma compacta:
+
+~~~text
+PASS / FAIL×6 / PASS
+~~~
+
+Los seis rojos fallan por la ausencia material prevista de W1 como contexto común, no por problemas del test.
+
+Preservación:
+
+~~~text
+HPI/HPI2/global
+→ 20/20 PASS
+
+suite previa completa
+→ 64/64 archivos
+→ 518/518 tests PASS
+
+producción
+→ SIN CAMBIOS
+
+git diff --check
+→ PASS
+~~~
+
+Por tanto:
+
+~~~text
+R-RESHPI-01
+→ CERRADA
+
+RES-HPI-01
+→ ABIERTO
+~~~
+
+Siguiente actuación: R-RESHPI-02.
