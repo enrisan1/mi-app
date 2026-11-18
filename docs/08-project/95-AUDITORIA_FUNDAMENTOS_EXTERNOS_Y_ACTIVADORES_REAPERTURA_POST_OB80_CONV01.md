@@ -770,3 +770,42 @@ External Radar
 proyecto
 → ESTADO ESTABLE
 ~~~
+
+
+---
+
+# 18. Corrección metodológica posterior
+
+La auditoría [96](96-AUDITORIA_Y_CORRECCION_CRITERIO_ESTADO_ESTABLE_MANUAL17.md) no modifica el resultado específico de esta actuación:
+
+~~~text
+ACT-EXT-01…05
+→ 0 / 5 activados
+
+reapertura por fundamento externo
+→ NO
+~~~
+
+Pero corrige una inferencia global:
+
+~~~text
+ausencia de activador externo
+≠
+estabilidad global del proyecto
+~~~
+
+Por tanto:
+
+~~~text
+External Radar
+→ no reabre continuidad por sí mismo
+
+ciclo post-OB-80-CONV-01
+→ localmente estable
+
+GATE-PROJ-01
+→ NO EVALUADO
+
+estado global
+→ NO DETERMINADO
+~~~
