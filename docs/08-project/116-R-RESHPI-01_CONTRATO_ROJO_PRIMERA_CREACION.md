@@ -408,3 +408,30 @@ Se deriva:
 > **R-RESHPI-02 — determinar y realizar la mínima diferencia de producción capaz de convertir T-RESHPI-02…07 en verdes sin romper T-RESHPI-01/08, HPI-01, HPI-02, la validación global ni los 518 tests previos.**
 
 No se deriva todavía Architecture.
+
+---
+
+# 19. Resultado posterior de R-RESHPI-02
+
+El contrato rojo de esta actuación ha sido satisfecho por la realización mínima registrada en [117](117-R-RESHPI-02_REALIZACION_MINIMA_CONVERGENCIA_PRIMERA_CREACION.md).
+
+Transición observada:
+
+~~~text
+antes de producción
+→ PASS / FAIL×6 / PASS
+
+después de R-RESHPI-02
+→ PASS×8
+~~~
+
+Resultado:
+
+~~~text
+T-RESHPI-01…08
+→ 8/8 PASS
+~~~
+
+Los controles T01/T08 permanecen verdes y T02…07 pasan sin introducir almacenamiento paralelo ni alterar la semántica de SituatedResult.
+
+R-RESHPI-01 permanece cerrada como contrato discriminante; R-RESHPI-02 queda cerrada como realización mínima.
