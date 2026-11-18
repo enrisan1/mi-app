@@ -11080,3 +11080,118 @@ R-HPI-03
 Implementation
 → NO ABIERTA
 ~~~
+
+
+---
+
+# 18/11/2026 — R-HPI-03: validación formal de HITO-HPI-01
+
+## Contexto
+
+Tras cerrar `R-HPI-01` con `T-HPI-01…08` y realizar `R-HPI-02` mediante una identidad operacional común del trabajo actual en la App ordinaria, quedaba pendiente separar la validación del hito de la mera comprobación de implementación.
+
+## Actuación
+
+Se ejecutó `R-HPI-03` sin alterar los criterios fijados previamente.
+
+Se añadieron dos pruebas de validación integrada:
+
+~~~text
+V-HPI-01
+→ caso positivo completo sobre W1
+
+V-HPI-02
+→ control W1/W2
+→ variación de trabajo
+→ variación de antecedente
+→ variación de operación auxiliar
+~~~
+
+Durante el primer intento de cierre, el typecheck detectó dos errores nuevos en `App.tsx` relacionados con el estrechamiento TypeScript de la recuperación compatible de `currentWorkId`.
+
+No se ignoraron: se corrigieron antes de continuar la validación.
+
+Después se comparó automáticamente el typecheck actual con el commit anterior a la producción HPI.
+
+Resultado:
+
+~~~text
+errores TypeScript actuales
+→ 14
+
+errores TypeScript del baseline
+→ 14
+
+diferencia
+→ 0
+
+errores nuevos atribuibles a HPI
+→ 0
+~~~
+
+Los 14 errores restantes pertenecen al patrimonio histórico de comparación y no se declaran resueltos.
+
+## Evidencia final
+
+~~~text
+T-HPI-01…08
+→ 8/8 PASS
+
+V-HPI-01…02
+→ 2/2 PASS
+
+suite HPI
+→ 10/10 PASS
+
+control W1/W2
+→ PASS
+
+variación material
+→ PASS
+
+build
+→ PASS
+
+git diff --check
+→ PASS
+
+suite global
+→ 61/61 archivos
+→ 508/508 tests
+~~~
+
+## Decisión
+
+Aplicando la regla fijada antes de la realización:
+
+~~~text
+MHPI-01…08
+→ 8/8 SATISFECHOS
+=
+HITO-HPI-01 SATISFECHO
+~~~
+
+Por tanto:
+
+~~~text
+R-HPI-01
+→ CERRADA
+
+R-HPI-02
+→ CERRADA
+
+R-HPI-03
+→ CERRADA
+
+HITO-HPI-01
+→ SATISFECHO
+
+GAP-HPI-01
+→ CERRADO EN EL ALCANCE DEL HITO
+~~~
+
+`GAP-HPI-02` permanece deliberadamente abierto. No se ha demostrado todavía que un resultado posterior conserve de manera reconocible el antecedente utilizado.
+
+El cierre del primer hito no deriva automáticamente Architecture, una nueva Realization ni una implementación adicional. La siguiente actuación deberá derivarse específicamente desde `GAP-HPI-02`.
+
+Documento de cierre: [108](108-R-HPI-03_VALIDACION_HITO_HPI_01.md).
