@@ -771,3 +771,23 @@ GAP-HPI-02
 ~~~
 
 La prioridad es de convergencia, no una dependencia funcional nueva.
+
+
+---
+
+# 20. Roadmap posterior del hueco prioritario
+
+[107](107-CONV-HPI-07_ROADMAP_MINIMO_HITO_HPI_01.md) establece para GAP-HPI-01:
+
+~~~text
+R-HPI-01
+→ diseño realizativo mínimo + tests rojos
+
+R-HPI-02
+→ realización mínima en App
+
+R-HPI-03
+→ validación del hito
+~~~
+
+GAP-HPI-02 permanece fuera de este roadmap inicial.
