@@ -446,3 +446,74 @@ nuevo horizonte
 
 La aceptación no autoriza todavía ninguna modificación de `App`, arquitectura,
 persistencia, rutas o componentes productivos.
+
+
+---
+
+# 14. Cierre de OB-80-CONV-01
+
+**Fecha:** 18/11/2026
+
+La obligación aceptada en §13 queda evaluada después de completar el orden de convergencia derivado en `R-80-CONV-01`.
+
+Estado acumulado:
+
+~~~text
+C-PV-80-01
+→ CSO-80-01 SATISFECHO
+→ HITO-80-CONV-01 SATISFECHO
+→ R-80-CONV-02 CERRADA
+
+C-PV-80-03
+→ CSO-80-03 SATISFECHO
+→ HITO-80-CONV-02 SATISFECHO
+→ R-80-CONV-03 CERRADA
+
+C-PV-80-04
+→ CSO-80-04 SATISFECHO
+→ HITO-80-CONV-03 SATISFECHO
+→ R-80-CONV-04 CERRADA
+
+C-PV-80-02
+→ CSO-80-02 SATISFECHO
+→ HITO-80-CONV-04 SATISFECHO
+→ R-80-CONV-05 CERRADA
+~~~
+
+La condición central de la obligación queda cumplida:
+
+~~~text
+disponibilidad ordinaria mínima y coherente
+de C-PV-80-01…C-PV-80-04
+→ VERIFICADA
+
+Realizations existentes
+→ reutilizadas/reducidas selectivamente
+
+mecanismos experimentales
+→ NO convertidos automáticamente
+  en arquitectura final
+~~~
+
+Resultado:
+
+~~~text
+OB-80-CONV-01
+→ SATISFECHA EN SU ALCANCE ACEPTADO
+
+fase de convergencia/productización post-KGV
+→ CERRADA EN ESTE ALCANCE
+~~~
+
+Permanece separada:
+
+~~~text
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ no absorbida por OB-80-CONV-01
+→ no bloquea el cierre de la obligación
+~~~
+
+No se deriva automáticamente una nueva obligación, horizonte, Product Value, Architecture, Realization o Implementation.
+
+El siguiente paso estratégico deberá derivarse de nuevo desde el estado vigente.
