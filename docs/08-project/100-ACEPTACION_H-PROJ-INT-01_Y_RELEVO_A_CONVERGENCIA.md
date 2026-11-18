@@ -282,3 +282,43 @@ Realization
 Implementation
 → NO DERIVADA
 ~~~
+
+
+---
+
+# 12. Resultado de CONV-HPI-01
+
+La actuación [101](101-CONV-HPI-01_ALCANCE_Y_MAPA_DE_CAPACIDADES.md) ejecuta los dos primeros pasos del relevo:
+
+~~~text
+alcance
+→ CERRADO
+
+capacidades
+→ DETERMINADAS
+~~~
+
+Mapa resultante:
+
+~~~text
+C-HPI-01 → establecer trabajo textual actual
+C-HPI-02 → desarrollar trabajo actual
+C-HPI-03 → conservar y reanudar
+C-HPI-04 → recuperar antecedentes
+C-HPI-05 → reutilizar antecedentes
+C-HPI-06 → captura contextual
+C-HPI-07 → comparación contextual
+C-HPI-08 → apoyo IA separado/contextual
+C-HPI-09 → determinación humana
+C-HPI-10 → preservación + distinción/procedencia suficiente
+~~~
+
+No se han evaluado todavía dependencias, estado actual, huecos ni prioridades.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-02
+→ mapa de dependencias
+  de C-HPI-01…C-HPI-10
+~~~
