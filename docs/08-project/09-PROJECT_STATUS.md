@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`GATE-PROJ-01` NO SATISFECHO; DISTANCIA CONSTITUTIVA DEL PROYECTO DEMOSTRADA.** `AUD-PROJ-01` queda cerrada mediante [97](97-AUD-PROJ-01_REALIZACION_MATERIAL_Y_DISTANCIA_CONSTITUTIVA.md). Existe producto digital real y ejecutable (`GP-01` satisfecho), pero la integración material, los recorridos representativos y la relación global con Platform Vision no alcanzan suficiencia para declarar estabilidad global (`GP-02/03` parciales; `GP-04/05/06` no satisfechos). Los cierres Product y `OB-80-CONV-01` permanecen válidos localmente. La distancia se reduce a cuatro cuestiones constitutivas: `D-PROJ-01` núcleo ordinario de trabajo; `D-PROJ-02` recorrido humano representativo de extremo a extremo; `D-PROJ-03` integración de capacidades existentes; `D-PROJ-04` frontera entre constitución mínima y evolución posterior. **Siguiente actuación estratégicamente derivada: `RED-PROJ-01 — reducción de la distancia constitutiva y formulación del núcleo mínimo de plataforma integrada`.**
+**Estado vigente al 18/11/2026:** **`RED-PROJ-01` CERRADA; NÚCLEO MÍNIMO DE PLATAFORMA INTEGRADA DETERMINADO; `GATE-PROJ-01` SIGUE NO SATISFECHO.** La distancia constitutiva demostrada por `AUD-PROJ-01` ya no es indeterminada. [98](98-RED-PROJ-01_NUCLEO_MINIMO_PLATAFORMA_INTEGRADA.md) determina `N-PROJ-01`: actividad ordinaria persistente centrada en un trabajo textual actual; `R-PROJ-01`: recorrido de extremo a extremo crear/retomar → desarrollar → conservar/interrumpir → reanudar → recuperar antecedente → reutilizar/comparar/consultar apoyo → producir continuación/revisión → conservar → reanudar; `I-PROJ-01`: creación/desarrollo + persistencia/reanudación + recuperación/reutilización + preservación como núcleo, con captura, comparación y apoyo IA como operaciones contextuales; y `F-PROJ-01`: frontera explícita entre núcleo mínimo y evolución posterior. Colaboración/publicación, multiformato general, agentes, CRDT, MCP, grafo general y versionado universal no bloquean el primer núcleo. **Siguiente actuación estratégicamente derivada: formular y someter `H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` al gate constitutivo del horizonte; todavía no está aceptado ni deriva Implementation.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8372,4 +8372,64 @@ RED-PROJ-01
 + recorrido representativo
 + integración mínima
 + frontera núcleo/evolución
+~~~
+
+
+---
+
+# 18/11/2026 — RED-PROJ-01: núcleo mínimo de plataforma integrada
+
+Se reduce la distancia constitutiva abierta por AUD-PROJ-01.
+
+Resultado:
+
+~~~text
+N-PROJ-01
+→ actividad ordinaria persistente
+  centrada en trabajo textual actual
+
+R-PROJ-01
+→ recorrido humano representativo
+  de extremo a extremo
+
+I-PROJ-01
+→ creación/desarrollo
++ persistencia/reanudación
++ recuperación/reutilización
++ preservación
++ operaciones contextuales
+  de captura/comparación/apoyo IA
+
+F-PROJ-01
+→ frontera núcleo/evolución
+  determinada
+~~~
+
+La plataforma mínima integrada se reduce a un núcleo individual y textual.
+
+No bloquean el primer umbral:
+
+~~~text
+colaboración
+publicación
+multiformato general
+agentes
+MCP
+CRDT
+grafo general
+versionado universal
+~~~
+
+Estado:
+
+~~~text
+RED-PROJ-01
+→ CERRADA
+
+GATE-PROJ-01
+→ NO SATISFECHO
+
+siguiente actuación
+→ someter H-PROJ-INT-01
+  al gate constitutivo del horizonte
 ~~~
