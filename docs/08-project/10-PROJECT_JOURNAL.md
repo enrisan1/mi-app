@@ -10741,3 +10741,58 @@ metodología de convergencia
 ~~~
 
 El siguiente paso es `CONV-HPI-01`, comenzando por alcance y capacidades. No se abre todavía Architecture, Realization ni Implementation.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-01: mapa de capacidades del horizonte integrado
+
+Tras la aceptación de H-PROJ-INT-01 se reconstruye primero su alcance y, sólo después, las capacidades necesarias.
+
+Se aplica el criterio:
+
+~~~text
+capacidad esencial
+=
+su eliminación impide
+realizar completamente
+el alcance aceptado
+~~~
+
+El mapa queda:
+
+~~~text
+C-HPI-01 → establecer trabajo textual actual
+C-HPI-02 → desarrollar trabajo actual
+C-HPI-03 → conservar y reanudar el mismo trabajo
+C-HPI-04 → recuperar antecedentes pertinentes
+C-HPI-05 → reutilizar antecedentes en continuación/revisión
+
+C-HPI-06 → captura contextual
+C-HPI-07 → comparación contextual
+C-HPI-08 → apoyo IA separado y contextual
+
+C-HPI-09 → determinación humana efectiva
+C-HPI-10 → preservación de posibilidades
+            + distinción/procedencia suficiente
+~~~
+
+La prueba de cobertura no deja elementos del alcance sin capacidad ni capacidades sin fundamento en el alcance.
+
+Estado formal:
+
+~~~text
+CONV-HPI-01
+→ CERRADA EN SU ALCANCE
+
+dependencias
+→ PENDIENTES
+
+estado actual
+→ NO EVALUADO FORMALMENTE
+
+huecos
+→ NO DERIVADOS
+~~~
+
+Siguiente actuación: `CONV-HPI-02`.
