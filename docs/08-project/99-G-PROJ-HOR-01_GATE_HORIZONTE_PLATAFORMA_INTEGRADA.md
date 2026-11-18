@@ -608,3 +608,65 @@ H-PROJ-INT-01
 HUMAN GATE
 → PENDIENTE
 ~~~
+
+
+---
+
+# 14. Resultado del HUMAN GATE
+
+La persona responsable decide:
+
+~~~text
+ACEPTAR H-PROJ-INT-01
+~~~
+
+Por tanto:
+
+~~~text
+H-PROJ-INT-01
+→ ACEPTADO
+
+HUMAN GATE
+→ SUPERADO
+
+G-PROJ-HOR-01
+→ CERRADO
+~~~
+
+La aceptación conserva íntegramente objetivo, fundamento, alcance, no-alcance, correspondencia Product, dependencias, criterio de finalización y posibles resultados de cierre establecidos en este documento.
+
+El relevo pasa a Manual 17 §13.1.5:
+
+~~~text
+horizonte aceptado
+↓
+alcance
+↓
+capacidades
+↓
+dependencias
+↓
+criterios de finalización
+↓
+estado actual
+↓
+huecos
+↓
+prioridades
+↓
+hitos
+↓
+roadmap
+↓
+actuaciones
+~~~
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-01
+→ reconstrucción de alcance y capacidades
+  de H-PROJ-INT-01
+~~~
+
+No se deriva todavía Architecture, Realization ni Implementation.
