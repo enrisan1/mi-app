@@ -906,3 +906,48 @@ No deberá todavía:
 - formular hitos;
 - construir;
 - abrir Architecture o Implementation.
+
+
+---
+
+# 26. Resultado de CONV-HPI-02
+
+La actuación [102](102-CONV-HPI-02_MAPA_MINIMO_DE_DEPENDENCIAS.md) completa el siguiente paso del relevo.
+
+Resultado:
+
+~~~text
+dependencias directas
+→ 2
+
+D-HPI-01
+C-HPI-04 → C-HPI-05
+
+D-HPI-02
+C-HPI-02 → C-HPI-05
+
+dependencias transitivas adicionales
+→ 0
+
+capacidades sin dependencia interna
+→ 9
+
+ciclos
+→ 0
+
+nuevas capacidades
+→ 0
+
+CONV-HPI-02
+→ CERRADA
+~~~
+
+El mapa de capacidades C-HPI-01…10 permanece sin cambios.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-03
+→ criterios de finalización
+  de las capacidades y del conjunto integrado
+~~~
