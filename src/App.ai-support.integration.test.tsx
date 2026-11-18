@@ -71,6 +71,11 @@ function installTurnstileMock(tokens = ["turnstile-token-1"]) {
     }
 
     const token = tokens[Math.min(tokenIndex, tokens.length - 1)];
+
+    if (token === undefined) {
+      throw new Error("missing Turnstile test token");
+    }
+
     tokenIndex += 1;
     options.callback(token);
   });
