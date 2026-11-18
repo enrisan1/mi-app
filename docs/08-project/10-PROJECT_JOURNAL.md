@@ -10263,3 +10263,104 @@ secretos reales
 deploy
 → NO ejecutado
 ~~~
+
+
+---
+
+# 18/11/2026 — Cierre de la convergencia post-KGV
+
+La secuencia de convergencia iniciada por `OB-80-CONV-01` alcanza su cierre dentro del alcance aceptado.
+
+La última integración fue `R-80-CONV-05 — Integración ordinaria mínima de comparación humana de documentos relacionados`.
+
+La reducción PM-10 evitó importar literalmente todo el patrimonio experimental de `comparison/` y seleccionó únicamente el núcleo necesario:
+
+~~~text
+ordinary.materials
+→ selección humana A/B
+→ @codemirror/merge
+→ MergeView read-only
+→ diferencias verificables
+→ decisión humana preservada
+→ fuentes intactas
+~~~
+
+Quedaron fuera del corte mínimo:
+
+- ejecución A→B/B→A;
+- undo;
+- composición parcial;
+- destino libre;
+- persistencia de sesión;
+- detector literal propio;
+- comparación semántica;
+- merge automático;
+- apoyo IA dentro de la comparación.
+
+El prerregistro RED produjo 9/9 fallos por ausencia de la capacidad comparativa ordinaria. Tras la implementación mínima:
+
+~~~text
+suite específica
+→ 9/9 PASS
+
+regresión dirigida
+→ 127/127 PASS
+
+suite global
+→ 498/498 PASS
+
+build
+→ PASS
+
+TypeScript diferencial
+→ 0 errores nuevos
+~~~
+
+El contraste humano confirmó que las diferencias pueden reconocerse y recorrerse manteniendo clara la pertenencia A/B sin reconstrucción secuencial relevante.
+
+Resultado:
+
+~~~text
+CSO-80-02
+→ SATISFECHO
+
+HITO-80-CONV-04
+→ SATISFECHO
+
+R-80-CONV-05
+→ CERRADA
+~~~
+
+Con ello se completa el mapa de convergencia:
+
+~~~text
+C-PV-80-01
+→ R-80-CONV-02
+→ CERRADA
+
+C-PV-80-03
+→ R-80-CONV-03
+→ CERRADA
+
+C-PV-80-04
+→ R-80-CONV-04
+→ CERRADA
+
+C-PV-80-02
+→ R-80-CONV-05
+→ CERRADA
+~~~
+
+La obligación global queda satisfecha:
+
+~~~text
+OB-80-CONV-01
+→ SATISFECHA EN SU ALCANCE ACEPTADO
+
+fase de convergencia/productización post-KGV
+→ CERRADA EN ESTE ALCANCE
+~~~
+
+`DEUDA-TSC-COMP-01` permanece abierta con 14 errores en 5 archivos y no se considera resuelta ni absorbida por este cierre.
+
+La clausura de la obligación no crea por sí misma una nueva actuación. El proyecto debe volver a derivar cualquier continuidad desde el nuevo estado vigente.
