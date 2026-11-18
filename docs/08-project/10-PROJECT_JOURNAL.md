@@ -10495,3 +10495,57 @@ proyecto
 ~~~
 
 Documento: `95-AUDITORIA_FUNDAMENTOS_EXTERNOS_Y_ACTIVADORES_REAPERTURA_POST_OB80_CONV01.md`.
+
+
+---
+
+# 18/11/2026 — Auditoría correctiva del estado estable
+
+Se detecta que el Manual 17 permitía cerrar correctamente compromisos y ciclos locales, pero podía inferir indebidamente estabilidad global del proyecto a partir de la satisfacción del Product vigente.
+
+La auditoría contrasta Charter, Platform Vision, Product y el árbol operativo del Manual.
+
+Conclusión:
+
+~~~text
+satisfacción de Product
+→ necesaria para cerrar sus compromisos
+
+satisfacción de Product
+→ NO suficiente
+  para declarar realización material
+  de la finalidad global
+~~~
+
+Se corrige el Manual introduciendo:
+
+~~~text
+GATE-PROJ-01
+→ suficiencia material respecto de la finalidad
+
+GP-01…GP-06
+→ producto material
+→ integración
+→ actividades representativas
+→ relación explícita con Platform Vision
+→ distancia restante
+→ coherencia cierre local / finalidad superior
+~~~
+
+Los cierres anteriores no se invalidan. `94` pasa a interpretarse como estabilidad local del ciclo post-`OB-80-CONV-01`; `95` conserva la ausencia de activadores externos sin demostrar estabilidad global.
+
+Estado resultante:
+
+~~~text
+ciclo actual
+→ LOCALMENTE ESTABLE
+
+proyecto global
+→ NO DETERMINADO
+
+GATE-PROJ-01
+→ NO EVALUADO
+
+siguiente actuación
+→ AUD-PROJ-01
+~~~
