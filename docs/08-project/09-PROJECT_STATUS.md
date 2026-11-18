@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` ACEPTADO; HUMAN GATE SUPERADO; RELEVO A CONVERGENCIA.** El gate constitutivo `G-PROJ-HOR-01` permanece 8/8 satisfecho y queda cerrado por decisión humana. La aceptación conserva el objetivo, alcance, no-alcance, `RP-PROJ-INT-01`, dependencias y `CF-HPI-01`; no crea un nuevo compromiso Product ni modifica `PRODUCT.md`. `GATE-PROJ-01` sigue NO SATISFECHO hasta que el horizonte sea materialmente realizado y validado. Según Manual 17 §13.1.5, el relevo pasa a la metodología de convergencia. **Siguiente actuación estratégicamente derivada: `CONV-HPI-01 — reconstrucción de alcance y capacidades de H-PROJ-INT-01`.** Architecture, Realization e Implementation continúan NO DERIVADAS.
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-01` CERRADA; ALCANCE Y MAPA DE CAPACIDADES DETERMINADOS.** La actuación [101](101-CONV-HPI-01_ALCANCE_Y_MAPA_DE_CAPACIDADES.md) reconstruye estrictamente el alcance aceptado y deriva diez capacidades esenciales mediante criterio de eliminación: `C-HPI-01…05` continuidad longitudinal del trabajo textual; `C-HPI-06…08` operaciones auxiliares contextuales; `C-HPI-09…10` condiciones transversales de determinación humana y preservación/distinción suficiente. No se han evaluado todavía dependencias, criterios por capacidad, estado actual, huecos, prioridades, hitos, roadmap ni implementación. **Siguiente actuación: `CONV-HPI-02 — mapa de dependencias entre C-HPI-01…C-HPI-10`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8526,4 +8526,49 @@ Punto de reanudación:
 CONV-HPI-01
 → reconstrucción de alcance y capacidades
   del horizonte aceptado
+~~~
+
+
+---
+
+# 18/11/2026 — CONV-HPI-01: alcance y capacidades
+
+Se ejecutan únicamente los dos primeros pasos de convergencia de H-PROJ-INT-01.
+
+Resultado:
+
+~~~text
+alcance
+→ RECONSTRUIDO Y CERRADO
+
+mapa de capacidades
+→ DETERMINADO
+
+capacidades esenciales
+→ 10
+~~~
+
+Familias:
+
+~~~text
+MC-HPI-1
+→ continuidad longitudinal
+→ C-HPI-01…05
+
+MC-HPI-2
+→ operaciones auxiliares contextuales
+→ C-HPI-06…08
+
+MC-HPI-3
+→ condiciones transversales
+→ C-HPI-09…10
+~~~
+
+No se determina todavía estado actual ni huecos.
+
+Siguiente paso:
+
+~~~text
+CONV-HPI-02
+→ dependencias
 ~~~
