@@ -1,3 +1,4 @@
+# Temporary validation workflow for R-RESHPI-02.
 name: R-RESHPI-02 minimal realization
 on:
   push:
