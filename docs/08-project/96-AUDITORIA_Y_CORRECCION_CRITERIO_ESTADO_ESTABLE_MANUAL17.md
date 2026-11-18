@@ -635,3 +635,60 @@ estado global actual
 siguiente actuación estratégica
 → AUD-PROJ-01
 ~~~
+
+
+---
+
+# 15. Resultado de AUD-PROJ-01
+
+La actuación [97](97-AUD-PROJ-01_REALIZACION_MATERIAL_Y_DISTANCIA_CONSTITUTIVA.md) ejecuta el gate introducido por esta auditoría.
+
+Resultado:
+
+~~~text
+GP-01
+→ SATISFECHO
+
+GP-02
+→ PARCIAL / NO SATISFECHO
+
+GP-03
+→ PARCIAL / NO SATISFECHO
+
+GP-04
+→ NO SATISFECHO
+
+GP-05
+→ NO SATISFECHO
+
+GP-06
+→ NO SATISFECHO
+
+GATE-PROJ-01
+→ NO SATISFECHO
+~~~
+
+La distancia constitutiva se reduce inicialmente a:
+
+~~~text
+D-PROJ-01
+→ núcleo ordinario de trabajo
+
+D-PROJ-02
+→ recorrido humano representativo
+
+D-PROJ-03
+→ integración de capacidades ya demostradas
+
+D-PROJ-04
+→ frontera núcleo / evolución
+~~~
+
+Siguiente actuación:
+
+~~~text
+RED-PROJ-01
+→ reducción de la distancia constitutiva
+  y formulación del núcleo mínimo
+  de plataforma integrada
+~~~
