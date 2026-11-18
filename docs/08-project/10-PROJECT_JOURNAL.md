@@ -11986,3 +11986,93 @@ CONV-HPI-11
 ~~~
 
 Documento: [114](114-CONV-HPI-10_REEVALUACION_GLOBAL_H_P_PROJ_INT_01.md).
+
+
+---
+
+# 18/11/2026 — CONV-HPI-11: reducción de RES-HPI-01 y contrato previo
+
+Se redujo la obligación residual detectada por CONV-HPI-10 sin modificar producción.
+
+La diferencia material no es simplemente «falta contexto hasta remontar». La primera creación persiste W1 como previous pero no lo incorpora a ordinary.materials ni establece una identidad operacional común, por lo que un simple remount tampoco garantiza W1 como current común.
+
+Formulación reducida:
+
+~~~text
+sin trabajo actual
+→ Crear W1
+→ W1 debe quedar inmediatamente
+  como trabajo actual común
+→ captura/comparación/IA
+  deben poder usar W1
+→ interrupción
+→ W1 debe seguir siendo current común
+~~~
+
+Se fijó el contrato:
+
+~~~text
+REL-RESHPI-01…08
+~~~
+
+que cubre:
+
+- primera creación humana real;
+- constitución inmediata como current común;
+- captura inmediata contextual;
+- comparación inmediata contextual;
+- IA inmediata bajo W1;
+- persistencia tras interrupción;
+- no contaminación de A/B;
+- App ordinaria y no prescripción técnica.
+
+Se determinaron:
+
+~~~text
+T-RESHPI-01…08
+~~~
+
+con patrón esperado antes de producción:
+
+~~~text
+T-RESHPI-01 → PASS
+T-RESHPI-02 → FAIL
+T-RESHPI-03 → FAIL
+T-RESHPI-04 → FAIL
+T-RESHPI-05 → FAIL
+T-RESHPI-06 → FAIL
+T-RESHPI-07 → FAIL
+T-RESHPI-08 → PASS
+~~~
+
+Forma compacta:
+
+~~~text
+PASS / FAIL×6 / PASS
+~~~
+
+No se acepta como cierre aparente:
+
+- persistir sólo ru2m1.previous;
+- esperar a remount;
+- usar último texto global;
+- arreglar sólo captura;
+- mostrar W1 sin identidad compartida;
+- precargar W1 como material/current.
+
+No se deriva un nuevo hito ni Architecture.
+
+Producción permanece sin cambios.
+
+Siguiente actuación:
+
+~~~text
+R-RESHPI-01
+→ crear T-RESHPI-01…08
+→ sobre App ordinaria
+→ sin modificar producción
+→ comprobar patrón
+  PASS / FAIL×6 / PASS
+~~~
+
+Documento: [115](115-CONV-HPI-11_REDUCCION_RES_HPI_01_Y_CONTRATO_MINIMO.md).
