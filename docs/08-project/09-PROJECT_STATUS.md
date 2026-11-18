@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-04` CERRADA; ESTADO MATERIAL ACTUAL EVALUADO.** [104](104-CONV-HPI-04_ESTADO_MATERIAL_ACTUAL.md) contrasta el producto actual contra los criterios fijados antes de la evaluación. De 30 criterios individuales: 22 SATISFECHOS, 4 PARCIALMENTE SATISFECHOS y 4 NO SATISFECHOS; no queda ninguno indeterminado. Cuatro capacidades están satisfechas (`C-HPI-02/03/08/09`) y seis parcialmente satisfechas (`C-HPI-01/04/05/06/07/10`). `D-HPI-01/02` son parciales. Entre `G01…G06`: 1 satisfecho, 4 parciales y 1 no satisfecho. `CF-HPI-01 → NO SATISFECHO`. La insuficiencia se concentra en identidad operacional común del trabajo actual, asociación contextual de auxiliares, continuidad reconocible antecedente→resultado y ausencia de reconstrucción externa relevante. **Estas zonas todavía no son huecos formales. Siguiente actuación: `CONV-HPI-05 — derivación y reducción de huecos materiales`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-05` CERRADA; MAPA MÍNIMO DE HUECOS DETERMINADO.** [105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) reduce las cuatro zonas observadas en CONV-HPI-04 a dos obligaciones materiales independientes: `GAP-HPI-01 — contexto operativo común y suficientemente persistente del trabajo actual`, que absorbe Z1 y Z2; y `GAP-HPI-02 — continuidad material reconocible antecedente → resultado`, derivado de Z3. Z4 —reconstrucción externa relevante— no es un tercer hueco, sino una consecuencia global de ambos. Todos los criterios individuales/globales insuficientes quedan cubiertos por al menos uno de estos dos huecos. **Todavía no se determina prioridad ni se formula hito. Siguiente actuación: `CONV-HPI-06 — prioridad entre GAP-HPI-01/02 y reducción del primer hito verificable`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8736,3 +8736,62 @@ CF-HPI-01
 No se derivan todavía huecos formales.
 
 Siguiente actuación: `CONV-HPI-05`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-05: reducción de huecos
+
+Se parte de:
+
+~~~text
+Z1 → identidad operacional común
+Z2 → asociación contextual de auxiliares
+Z3 → continuidad antecedente → resultado
+Z4 → ausencia de reconstrucción externa
+~~~
+
+La reducción causal determina:
+
+~~~text
+Z1 + Z2
+→ GAP-HPI-01
+→ contexto operativo común y persistente
+
+Z3
+→ GAP-HPI-02
+→ continuidad material antecedente → resultado
+
+Z4
+→ consecuencia de ambos
+~~~
+
+Prueba de independencia:
+
+~~~text
+cerrar GAP-HPI-01
+sin GAP-HPI-02
+→ deja fallos en C05, D01/D02, G03/G06
+
+cerrar GAP-HPI-02
+sin GAP-HPI-01
+→ deja fallos en C01, C06, C07, G01/G02/G04/G06
+~~~
+
+Por tanto:
+
+~~~text
+huecos reales mínimos
+→ 2
+
+prioridad
+→ NO DETERMINADA
+
+hitos
+→ NO FORMULADOS
+
+CONV-HPI-05
+→ CERRADA
+~~~
+
+Siguiente actuación: `CONV-HPI-06`.
