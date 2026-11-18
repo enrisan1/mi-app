@@ -591,3 +591,20 @@ roadmap
 ↓
 actuaciones
 ~~~
+
+
+---
+
+# 13. Estado formal del HUMAN GATE
+
+~~~text
+G-PROJ-HOR-01
+→ 8/8 SATISFECHOS
+
+H-PROJ-INT-01
+→ FORMULADO
+→ NO ACEPTADO
+
+HUMAN GATE
+→ PENDIENTE
+~~~
