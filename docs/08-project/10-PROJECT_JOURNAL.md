@@ -10364,3 +10364,71 @@ fase de convergencia/productización post-KGV
 `DEUDA-TSC-COMP-01` permanece abierta con 14 errores en 5 archivos y no se considera resuelta ni absorbida por este cierre.
 
 La clausura de la obligación no crea por sí misma una nueva actuación. El proyecto debe volver a derivar cualquier continuidad desde el nuevo estado vigente.
+
+
+---
+
+# 18/11/2026 — Reaplicación de continuidad tras OB-80-CONV-01
+
+Tras cerrar `R-80-CONV-05` y satisfacer `OB-80-CONV-01`, se reaplicó el Manual 17 al estado consolidado.
+
+La Rama A no identificó compromisos con obligación constitutiva pendiente, hitos abiertos ni dependencias necesarias adicionales.
+
+La Rama B tampoco identificó una diferencia emergente independiente capaz de abrir `GATE-NH-01`.
+
+Se revisaron expresamente las seis fuentes de continuidad:
+
+~~~text
+compromisos vigentes
+→ sin obligación pendiente demostrada
+
+criterios insatisfechos
+→ ninguno estratégico vigente
+
+dependencias necesarias
+→ ninguna
+
+hitos pendientes
+→ ninguno aceptado
+
+incertidumbres bloqueantes
+→ ninguna
+
+evidencia emergente independiente
+→ ninguna suficiente
+~~~
+
+`DEUDA-TSC-COMP-01` permanece abierta como deuda técnica de saneamiento TypeScript, pero no constituye por sí sola una obligación estratégica ni un hito vigente.
+
+La relación Product ↔ Platform Vision tampoco genera continuidad automática: el perímetro superior conserva posibilidades futuras, pero ninguna situación humana nueva aporta actualmente fundamento suficiente para abrir otra formación estratégica.
+
+Resultado:
+
+~~~text
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+GATE-NH-01
+→ NO abierto
+
+nueva formación estratégica
+→ NO derivada
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo horizonte
+→ NO derivado
+
+proyecto
+→ ESTADO ESTABLE
+→ SIN NUEVA ACTUACIÓN ESTRATÉGICA ABIERTA
+~~~
+
+La continuidad deberá reaplicarse sólo ante nueva evidencia, obligación, decisión humana o cambio material suficientemente justificado.
