@@ -672,3 +672,42 @@ estabilidad global del proyecto
 siguiente actuación estratégica
 → RED-PROJ-01
 ~~~
+
+
+---
+
+# 18. Resultado de RED-PROJ-01
+
+La actuación [98](98-RED-PROJ-01_NUCLEO_MINIMO_PLATAFORMA_INTEGRADA.md) reduce las cuatro diferencias constitutivas abiertas por esta auditoría.
+
+Resultado:
+
+~~~text
+N-PROJ-01
+→ DETERMINADO
+
+R-PROJ-01
+→ DETERMINADO
+
+I-PROJ-01
+→ DETERMINADO
+
+F-PROJ-01
+→ DETERMINADO
+
+RED-PROJ-01
+→ CERRADA
+~~~
+
+El núcleo mínimo queda definido como una actividad ordinaria persistente centrada en un trabajo textual actual, con creación/desarrollo, persistencia/reanudación, recuperación/reutilización y preservación de posibilidades pertinentes, más acceso contextual a captura, comparación y apoyo IA.
+
+La frontera con evolución posterior deja fuera del primer umbral constitutivo colaboración, publicación, multiformato general, agentes, CRDT, MCP, grafo general, versionado universal y demás capacidades no necesarias para demostrar el núcleo individual mínimo.
+
+Siguiente actuación:
+
+~~~text
+H-PROJ-INT-01
+→ horizonte candidato
+→ todavía NO aceptado
+→ debe someterse al gate constitutivo del horizonte
+~~~
