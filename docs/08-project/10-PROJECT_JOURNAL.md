@@ -10796,3 +10796,46 @@ huecos
 ~~~
 
 Siguiente actuación: `CONV-HPI-02`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-02: dependencias de H-PROJ-INT-01
+
+Se construye el mapa mínimo de dependencias entre `C-HPI-01…10`.
+
+La reducción rechaza convertir el recorrido narrativo en una cadena automática de dependencias. También distingue las capacidades transversales `C-HPI-09/10` de prerrequisitos funcionales fijos.
+
+Sólo se conservan:
+
+~~~text
+C-HPI-02 desarrollar trabajo
+          ───────────────┐
+                         ├→ C-HPI-05 reutilizar antecedente
+C-HPI-04 recuperar       ┘   en continuación/revisión
+~~~
+
+Motivo:
+
+- C-HPI-05 exige una continuación/revisión, por lo que requiere desarrollo textual;
+- C-HPI-05 está definida sobre un antecedente recuperado, por lo que requiere recuperación.
+
+No se derivan dependencias adicionales.
+
+Estado:
+
+~~~text
+10 capacidades
+2 dependencias directas
+0 transitivas adicionales
+9 capacidades sin dependencia interna
+0 ciclos
+0 nuevas capacidades
+
+CONV-HPI-02
+→ CERRADA
+~~~
+
+No se evalúan todavía estado actual ni huecos.
+
+Siguiente actuación: `CONV-HPI-03`.
