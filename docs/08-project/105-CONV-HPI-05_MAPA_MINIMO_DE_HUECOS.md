@@ -748,3 +748,26 @@ Deberá evaluar, sin presuponer arquitectura:
 - cuál permite formular el primer hito materialmente verificable.
 
 No deberá todavía abrir Implementation por el mero hecho de priorizar un hueco.
+
+
+---
+
+# 19. Resultado de CONV-HPI-06
+
+La actuación [106](106-CONV-HPI-06_PRIORIDAD_Y_PRIMER_HITO.md) determina:
+
+~~~text
+PRIORIDAD 1
+→ GAP-HPI-01
+
+PRIORIDAD 2
+→ GAP-HPI-02
+
+HITO-HPI-01
+→ Contexto operativo común verificable
+
+GAP-HPI-02
+→ permanece abierto
+~~~
+
+La prioridad es de convergencia, no una dependencia funcional nueva.
