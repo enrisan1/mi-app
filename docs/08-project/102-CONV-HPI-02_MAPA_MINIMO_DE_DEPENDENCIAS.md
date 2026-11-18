@@ -830,3 +830,18 @@ D-HPI-02
 ~~~
 
 La causa no altera el grafo: la relación antecedente→resultado existe en el recorrido UI, pero no queda materialmente preservada con suficiencia para cerrar C-HPI-05.
+
+
+---
+
+# 28. Relación de dependencias con los huecos
+
+La reducción de [105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) no altera el grafo funcional:
+
+~~~text
+C-HPI-02 ─┐
+          ├→ C-HPI-05
+C-HPI-04 ─┘
+~~~
+
+Las dos dependencias parciales quedan explicadas por GAP-HPI-02, porque la relación antecedente → resultado no permanece suficientemente materializada después de constituir la continuación/revisión.
