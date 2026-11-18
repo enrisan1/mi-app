@@ -1,7 +1,7 @@
 # CONV-HPI-09 — Roadmap mínimo, contrato realizativo y tests de HITO-HPI-02
 
 **Fecha:** 18/11/2026
-**Estado:** CERRADA — roadmap mínimo determinado y R-HPI2-01 ejecutada; contrato/tests materializados y patrón previo confirmado. Véase [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md).
+**Estado:** CERRADA — roadmap mínimo determinado; R-HPI2-01 y R-HPI2-02 ejecutadas; queda pendiente R-HPI2-03. Véanse [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md) y [112](112-R-HPI2-02_REALIZACION_MINIMA_CONTINUIDAD_ANTECEDENTE_RESULTADO.md).
 **Horizonte:** H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual.
 **Hito:** HITO-HPI-02 — Continuidad reconocible entre antecedente reutilizado y resultado posterior.
 **Precedente:** 109-CONV-HPI-08_REDUCCION_GAP_HPI_02_Y_HITO_HPI_02.md.
@@ -707,4 +707,55 @@ R-HPI2-01
 
 R-HPI2-02
 → siguiente actuación justificable
+~~~
+
+
+---
+
+# 19. Resultado posterior de R-HPI2-02
+
+R-HPI2-02 fue ejecutada mediante la mínima diferencia validada:
+
+~~~text
+OrdinaryMaterial
++ antecedentMaterialId?
+~~~
+
+La referencia sólo se asigna al resultado creado desde «Continuar con este material» y se hace visible en su artículo ordinario como antecedente utilizado.
+
+Validación:
+
+~~~text
+T-HPI2-01…07
+→ 7/7 PASS
+
+HPI-01
+→ 10/10 PASS
+
+suite global
+→ 515/515 PASS
+
+build
+→ PASS
+
+typecheck
+→ 14 errores históricos en baseline
+→ 14 errores actuales
+→ 0 nuevos
+
+git diff --check
+→ PASS
+~~~
+
+Por tanto:
+
+~~~text
+R-HPI2-02
+→ SATISFECHA
+
+R-HPI2-03
+→ siguiente actuación justificable
+
+HITO-HPI-02
+→ todavía pendiente de validación formal
 ~~~
