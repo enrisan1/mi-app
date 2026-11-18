@@ -10839,3 +10839,52 @@ CONV-HPI-02
 No se evalúan todavía estado actual ni huecos.
 
 Siguiente actuación: `CONV-HPI-03`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-03: criterios de finalización del horizonte integrado
+
+Se deriva el conjunto de criterios antes de mirar el estado actual, evitando adaptar los criterios a lo ya construido.
+
+Se establecen:
+
+~~~text
+31 criterios individuales
+2 criterios de dependencias
+6 criterios globales
+1 criterio constitutivo superior conservado
+→ CF-HPI-01
+~~~
+
+Los criterios globales exigen:
+
+- punto ordinario común;
+- continuidad de contexto operativo;
+- trayectoria longitudinal completa;
+- contextualización de auxiliares;
+- compatibilidad con determinación humana y preservación;
+- ausencia de reconstrucción externa relevante.
+
+Se establece además una regla explícita contra falsos positivos:
+
+~~~text
+10 capacidades satisfechas por separado
+≠
+plataforma integrada satisfecha
+~~~
+
+Estado:
+
+~~~text
+CONV-HPI-03
+→ CERRADA
+
+estado material actual
+→ NO EVALUADO
+
+huecos
+→ NO DERIVADOS
+~~~
+
+Siguiente actuación: `CONV-HPI-04`.
