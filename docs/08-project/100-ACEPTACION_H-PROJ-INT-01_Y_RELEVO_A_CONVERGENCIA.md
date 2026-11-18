@@ -352,3 +352,38 @@ criterios de finalización
 siguiente actuación
 → CONV-HPI-03
 ~~~
+
+
+---
+
+# 14. Resultado de CONV-HPI-03
+
+La convergencia dispone ya de:
+
+~~~text
+alcance
+✓
+
+capacidades
+✓
+
+dependencias
+✓
+
+criterios de finalización
+✓
+~~~
+
+La actuación [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) operacionaliza `CF-HPI-01` mediante criterios individuales, dependenciales y globales.
+
+Estado actual del relevo:
+
+~~~text
+siguiente etapa
+→ ESTADO ACTUAL
+
+actuación
+→ CONV-HPI-04
+~~~
+
+No se derivan aún huecos ni implementación.
