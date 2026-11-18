@@ -456,3 +456,57 @@ PUNTO DE REANUDACIÓN
 → nueva evidencia, obligación, decisión o cambio material
   que justifique reaplicar el Manual 17
 ~~~
+
+
+---
+
+# 12. Refinamiento posterior — activadores externos conocidos
+
+La auditoría [95](95-AUDITORIA_FUNDAMENTOS_EXTERNOS_Y_ACTIVADORES_REAPERTURA_POST_OB80_CONV01.md) revisa el programa externo histórico y sus cierres posteriores.
+
+Resultado:
+
+~~~text
+programa externo histórico
+→ consumado en su parte pertinente
+
+L-EXT-01…05
+→ CERRADAS — FAVORABLE LIMITADO
+
+fundamento actual para reaplicar Manual 17
+→ NINGUNO
+
+estado estable
+→ CONSERVADO
+~~~
+
+Se precisan cinco sensores externos de reapertura futura:
+
+~~~text
+ACT-EXT-01
+→ procedencia/trayectoria actual insuficiente
+
+ACT-EXT-02
+→ localización granular actual insuficiente
+
+ACT-EXT-03
+→ portabilidad/intercambio con pérdida pertinente
+
+ACT-EXT-04
+→ coste documental estructural materialmente insuficiente
+
+ACT-EXT-05
+→ tarea IA concreta, necesaria y verificable
+~~~
+
+Estado actual:
+
+~~~text
+ACT-EXT-01 → INACTIVO
+ACT-EXT-02 → INACTIVO
+ACT-EXT-03 → INACTIVO
+ACT-EXT-04 → INACTIVO
+ACT-EXT-05 → INACTIVO
+~~~
+
+Estos activadores no constituyen backlog, roadmap ni obligaciones pendientes. Sólo refinan el punto de reanudación si aparece evidencia futura suficiente.
