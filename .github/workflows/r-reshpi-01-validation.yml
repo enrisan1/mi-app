@@ -22,6 +22,9 @@ jobs:
       - name: Prior HPI preservation
         if: always()
         run: npx vitest run src/App.hpi.test.tsx src/App.hpi.validation.test.tsx src/App.hpi2.test.tsx src/App.hpi2.validation.test.tsx src/App.hpi.global.validation.test.tsx
+      - name: Prior full regression excluding deliberate red contract
+        if: always()
+        run: npx vitest run --exclude src/App.reshpi.test.tsx
       - name: Production unchanged
         if: always()
         run: |
