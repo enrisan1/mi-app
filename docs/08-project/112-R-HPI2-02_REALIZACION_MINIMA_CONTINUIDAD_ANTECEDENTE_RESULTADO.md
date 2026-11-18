@@ -1,7 +1,7 @@
 # R-HPI2-02 — Realización mínima de continuidad antecedente → resultado
 
 **Fecha:** 18/11/2026
-**Estado:** CERRADA — diferencia mínima de producción realizada y validada; HITO-HPI-02 aún pendiente de validación formal R-HPI2-03.
+**Estado:** CERRADA — diferencia mínima de producción realizada y validada; validación formal posterior completada en [113](113-R-HPI2-03_VALIDACION_HITO_HPI_02.md), con HITO-HPI-02 SATISFECHO.
 **Hito:** HITO-HPI-02 — Continuidad reconocible entre antecedente reutilizado y resultado posterior.
 **Precedente:** 111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md.
 
@@ -250,3 +250,21 @@ R-HPI2-03
 ~~~
 
 La siguiente actuación justificable es validar formalmente MHPI2-01…06 sobre la realización integrada, incluyendo el caso positivo, el control A→W2 / B→W3 y la persistencia tras interrupción.
+
+---
+
+# 10. Resultado posterior de R-HPI2-03
+
+La validación formal posterior confirmó MHPI2-01…06 = 6/6 SATISFECHOS.
+
+Por tanto:
+
+~~~text
+HITO-HPI-02
+→ SATISFECHO
+
+GAP-HPI-02
+→ CERRADO EN EL ALCANCE DEL HITO
+~~~
+
+Véase [113](113-R-HPI2-03_VALIDACION_HITO_HPI_02.md).
