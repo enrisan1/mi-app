@@ -451,3 +451,55 @@ RES-HPI-01
 ~~~
 
 Siguiente actuación: R-RESHPI-02.
+
+
+---
+
+# 17. Resultado posterior de R-RESHPI-02
+
+[117](117-R-RESHPI-02_REALIZACION_MINIMA_CONVERGENCIA_PRIMERA_CREACION.md) ejecuta la diferencia mínima de producción.
+
+Resultado:
+
+~~~text
+T-RESHPI-01…08
+→ 8/8 PASS
+
+HPI/HPI2/global
+→ 20/20 PASS
+
+ResumeExperience
+→ 41/41 PASS
+
+suite completa
+→ 65/65 archivos
+→ 526/526 tests PASS
+
+build
+→ PASS
+
+typecheck
+→ 14 errores históricos
+→ 0 nuevos
+
+git diff --check
+→ PASS
+~~~
+
+La realización seleccionada introduce una notificación específica de primera constitución y reutiliza en App el mismo mecanismo ordinario de establecimiento de currentWork.
+
+Por tanto:
+
+~~~text
+R-RESHPI-02
+→ CERRADA
+
+RES-HPI-01
+→ REALIZADO MATERIALMENTE
+→ PENDIENTE DE VALIDACIÓN FORMAL
+
+Architecture
+→ NO DERIVADA
+~~~
+
+Siguiente actuación: R-RESHPI-03.
