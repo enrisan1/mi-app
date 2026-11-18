@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-03` CERRADA; CRITERIOS DE FINALIZACIÓN DETERMINADOS.** El proyecto dispone ya de alcance, mapa de diez capacidades, mapa mínimo de dos dependencias directas y criterios observables de finalización. [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) define 31 criterios individuales, 2 criterios de dependencia y 6 criterios globales, manteniendo `CF-HPI-01` como condición constitutiva superior. No se ha evaluado aún si el producto material actual satisface estos criterios y, por tanto, todavía no se derivan huecos. **Siguiente actuación: `CONV-HPI-04 — evaluación del estado material actual de C-HPI-01…10, D-HPI-01/02 y G01…G06`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-03` CERRADA; CRITERIOS DE FINALIZACIÓN DETERMINADOS.** El proyecto dispone ya de alcance, mapa de diez capacidades, mapa mínimo de dos dependencias directas y criterios observables de finalización. [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) define 30 criterios individuales, 2 criterios de dependencia y 6 criterios globales, manteniendo `CF-HPI-01` como condición constitutiva superior. No se ha evaluado aún si el producto material actual satisface estos criterios y, por tanto, todavía no se derivan huecos. **Siguiente actuación: `CONV-HPI-04 — evaluación del estado material actual de C-HPI-01…10, D-HPI-01/02 y G01…G06`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8647,7 +8647,7 @@ capacidades
 → 10
 
 criterios individuales
-→ 31
+→ 30
 
 dependencias verificables
 → 2
