@@ -951,3 +951,29 @@ CONV-HPI-03
 → criterios de finalización
   de las capacidades y del conjunto integrado
 ~~~
+
+
+---
+
+# 27. Resultado de CONV-HPI-03
+
+La actuación [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) establece criterios observables para las diez capacidades, las dos dependencias y el conjunto integrado.
+
+~~~text
+31 criterios individuales
++
+2 criterios de dependencias
++
+6 criterios globales
++
+CF-HPI-01
+~~~
+
+El mapa de capacidades permanece sin cambios.
+
+Siguiente paso:
+
+~~~text
+CONV-HPI-04
+→ estado material actual
+~~~
