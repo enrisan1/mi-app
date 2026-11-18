@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-01` CERRADA; ALCANCE Y MAPA DE CAPACIDADES DETERMINADOS.** La actuación [101](101-CONV-HPI-01_ALCANCE_Y_MAPA_DE_CAPACIDADES.md) reconstruye estrictamente el alcance aceptado y deriva diez capacidades esenciales mediante criterio de eliminación: `C-HPI-01…05` continuidad longitudinal del trabajo textual; `C-HPI-06…08` operaciones auxiliares contextuales; `C-HPI-09…10` condiciones transversales de determinación humana y preservación/distinción suficiente. No se han evaluado todavía dependencias, criterios por capacidad, estado actual, huecos, prioridades, hitos, roadmap ni implementación. **Siguiente actuación: `CONV-HPI-02 — mapa de dependencias entre C-HPI-01…C-HPI-10`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO; `CONV-HPI-02` CERRADA; MAPA MÍNIMO DE DEPENDENCIAS DETERMINADO.** El alcance y las diez capacidades `C-HPI-01…10` permanecen vigentes. [102](102-CONV-HPI-02_MAPA_MINIMO_DE_DEPENDENCIAS.md) reduce el grafo a dos dependencias funcionales directas irreducibles: `C-HPI-04 → C-HPI-05` y `C-HPI-02 → C-HPI-05`. No hay dependencias transitivas adicionales ni ciclos; las nueve capacidades restantes no presentan dependencia funcional interna necesaria. `C-HPI-09/10` siguen siendo condiciones transversales, no prerrequisitos fijos. No se ha evaluado todavía el estado material actual ni se han derivado huecos. **Siguiente actuación: `CONV-HPI-03 — criterios de finalización de C-HPI-01…10 y del conjunto integrado`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8571,4 +8571,64 @@ Siguiente paso:
 ~~~text
 CONV-HPI-02
 → dependencias
+~~~
+
+
+---
+
+# 18/11/2026 — CONV-HPI-02: mapa mínimo de dependencias
+
+Se aplica el criterio:
+
+~~~text
+dependencia funcional necesaria
+≠ secuencia narrativa
+≠ coexistencia en el recorrido
+≠ orden de implementación
+~~~
+
+Resultado:
+
+~~~text
+D-HPI-01
+C-HPI-04
+↓
+C-HPI-05
+
+D-HPI-02
+C-HPI-02
+↓
+C-HPI-05
+~~~
+
+Estado consolidado:
+
+~~~text
+dependencias directas
+→ 2
+
+dependencias transitivas adicionales
+→ 0
+
+capacidades dependientes
+→ 1
+
+capacidades sin dependencia interna
+→ 9
+
+ciclos
+→ 0
+
+nuevas capacidades
+→ 0
+
+CONV-HPI-02
+→ CERRADA
+~~~
+
+Siguiente paso:
+
+~~~text
+CONV-HPI-03
+→ criterios de finalización
 ~~~
