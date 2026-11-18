@@ -1,7 +1,7 @@
 # CONV-HPI-07 — Roadmap mínimo hacia HITO-HPI-01 y primera actuación justificable
 
 **Fecha:** 18/11/2026  
-**Estado:** CERRADA — roadmap mínimo determinado y primera actuación justificable derivada; producción todavía no modificada.  
+**Estado:** CERRADA — roadmap mínimo ejecutado; `R-HPI-01…03` completadas y `HITO-HPI-01` validado como SATISFECHO en [108](108-R-HPI-03_VALIDACION_HITO_HPI_01.md).  
 **Horizonte:** `H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual`.  
 **Hito:** `HITO-HPI-01 — Contexto operativo común verificable`.  
 **Precedente:** `106-CONV-HPI-06_PRIORIDAD_Y_PRIMER_HITO.md`.
@@ -609,3 +609,75 @@ Se deriva inequívocamente:
 > **Ejecutar R-HPI-01 — diseño realizativo mínimo del contexto operativo común y tests rojos sobre la App ordinaria, sin modificar todavía producción.**
 
 Sólo después de observar el rojo correcto podrá decidirse y ejecutar R-HPI-02.
+
+
+---
+
+# 19. Resultado posterior de ejecución del roadmap
+
+El roadmap definido en este documento fue posteriormente ejecutado de forma completa:
+
+~~~text
+R-HPI-01
+→ contrato realizativo mínimo
+→ T-HPI-01…08
+→ CERRADA
+
+R-HPI-02
+→ contexto operativo común mínimo
+  integrado en App ordinaria
+→ CERRADA
+
+R-HPI-03
+→ validación formal integrada
+→ CERRADA
+~~~
+
+La evidencia final se conserva en:
+
+- `src/App.hpi.test.tsx`;
+- `src/App.hpi.validation.test.tsx`;
+- [108](108-R-HPI-03_VALIDACION_HITO_HPI_01.md).
+
+Resultado:
+
+~~~text
+MHPI-01…08
+→ 8/8 SATISFECHOS
+
+control W1/W2
+→ PASS
+
+variación material
+→ PASS
+
+suite HPI
+→ 10/10 PASS
+
+suite global
+→ 508/508 PASS
+
+build
+→ PASS
+
+errores TypeScript nuevos atribuibles a HPI
+→ 0
+
+git diff --check
+→ PASS
+~~~
+
+Por tanto:
+
+~~~text
+HITO-HPI-01
+→ SATISFECHO
+
+GAP-HPI-01
+→ CERRADO EN EL ALCANCE DEL HITO
+
+GAP-HPI-02
+→ PENDIENTE
+~~~
+
+No se deriva Architecture por este resultado.
