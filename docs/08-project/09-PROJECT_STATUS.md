@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`RED-PROJ-01` CERRADA; NÚCLEO MÍNIMO DE PLATAFORMA INTEGRADA DETERMINADO; `GATE-PROJ-01` SIGUE NO SATISFECHO.** La distancia constitutiva demostrada por `AUD-PROJ-01` ya no es indeterminada. [98](98-RED-PROJ-01_NUCLEO_MINIMO_PLATAFORMA_INTEGRADA.md) determina `N-PROJ-01`: actividad ordinaria persistente centrada en un trabajo textual actual; `R-PROJ-01`: recorrido de extremo a extremo crear/retomar → desarrollar → conservar/interrumpir → reanudar → recuperar antecedente → reutilizar/comparar/consultar apoyo → producir continuación/revisión → conservar → reanudar; `I-PROJ-01`: creación/desarrollo + persistencia/reanudación + recuperación/reutilización + preservación como núcleo, con captura, comparación y apoyo IA como operaciones contextuales; y `F-PROJ-01`: frontera explícita entre núcleo mínimo y evolución posterior. Colaboración/publicación, multiformato general, agentes, CRDT, MCP, grafo general y versionado universal no bloquean el primer núcleo. **Siguiente actuación estratégicamente derivada: formular y someter `H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` al gate constitutivo del horizonte; todavía no está aceptado ni deriva Implementation.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` FORMULADO; GATE CONSTITUTIVO 8/8 SATISFECHO; HUMAN GATE PENDIENTE.** `RED-PROJ-01` permanece cerrada con `N-PROJ-01`, `R-PROJ-01`, `I-PROJ-01` y `F-PROJ-01` determinados. La actuación [99](99-G-PROJ-HOR-01_GATE_HORIZONTE_PLATAFORMA_INTEGRADA.md) verifica `HOR-01…HOR-08`: objetivo final, fundamento positivo, alcance, no-alcance, resultado Product correspondiente, dependencias conocidas, criterio verificable de finalización y posibles resultados de cierre. `HOR-05` queda satisfecho mediante `RP-PROJ-INT-01`: no se requiere un nuevo compromiso Product, porque el horizonte hace coherentemente practicables situaciones ya seleccionadas por `PV-001`, `PV-002`, `PV-005`, `PV-006`, `C-PV-POST-01`, `C-PV-80-01`, `C-PV-80-02` y `C-PV-80-04`; `C-PV-80-03` permanece vigente pero no bloquea el primer núcleo. **El horizonte todavía NO está aceptado y no deriva Architecture, Realization ni Implementation. Siguiente decisión: HUMAN GATE sobre aceptar o rechazar `H-PROJ-INT-01`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8432,4 +8432,55 @@ GATE-PROJ-01
 siguiente actuación
 → someter H-PROJ-INT-01
   al gate constitutivo del horizonte
+~~~
+
+
+---
+
+# 18/11/2026 — Gate constitutivo de H-PROJ-INT-01
+
+Se sometió el horizonte candidato al Manual 17 §13.1.4.
+
+Resultado:
+
+~~~text
+HOR-01 → SATISFECHO
+HOR-02 → SATISFECHO
+HOR-03 → SATISFECHO
+HOR-04 → SATISFECHO
+HOR-05 → SATISFECHO
+HOR-06 → SATISFECHO
+HOR-07 → SATISFECHO
+HOR-08 → SATISFECHO
+
+G-PROJ-HOR-01
+→ 8/8 SATISFECHOS
+~~~
+
+Correspondencia Product:
+
+~~~text
+RP-PROJ-INT-01
+→ el horizonte NO introduce
+  nueva situación Product independiente
+
+→ integra coherentemente
+  compromisos Product vigentes
+
+nuevo compromiso Product
+→ NO requerido actualmente
+~~~
+
+Estado:
+
+~~~text
+H-PROJ-INT-01
+→ FORMULADO
+→ NO ACEPTADO
+
+HUMAN GATE
+→ PENDIENTE
+
+Architecture / Realization / Implementation
+→ NO DERIVADAS
 ~~~
