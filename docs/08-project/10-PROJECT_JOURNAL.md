@@ -11533,3 +11533,88 @@ Architecture
 ~~~
 
 Documento de cierre: [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md).
+
+
+---
+
+# 18/11/2026 — R-HPI2-02: realización mínima antecedente→resultado
+
+Se derivó y realizó la mínima diferencia de producción capaz de cerrar los cuatro discriminantes de HPI2 sin reabrir HPI-01.
+
+La inspección confirmó que ordinary.materials ya ofrece identidad estable suficiente y que no era necesario introducir una colección separada de relaciones.
+
+Se eligió:
+
+~~~text
+OrdinaryMaterial
++ antecedentMaterialId?
+~~~
+
+El campo es opcional para mantener compatibles los materiales históricos y los materiales creados por otros recorridos.
+
+En «Continuar con este material»:
+
+~~~text
+selectedMaterialId
+→ antecedentMaterialId
+  del nuevo resultado
+~~~
+
+La superficie ordinaria de materiales anteriores resuelve esa referencia y, cuando el antecedente sigue disponible, muestra:
+
+~~~text
+Antecedente utilizado: <contenido>
+~~~
+
+No se introdujeron store, repository, grafo, versionado general, nueva Realization ni Architecture.
+
+La primera ejecución de validación completa dejó verdes HPI2, HPI-01, suite global y build, pero falló diff check porque el workflow temporal había hecho checkout con fetch-depth 1 y no tenía disponible el baseline. La comparación de typecheck de esa ejecución tampoco se consideró válida por la misma causa.
+
+Se corrigió únicamente el workflow temporal a fetch-depth 0 y se repitió toda la validación.
+
+Resultado final válido:
+
+~~~text
+T-HPI2-01…07
+→ 7/7 PASS
+
+HPI-01
+→ 10/10 PASS
+
+suite global
+→ 62 archivos
+→ 515/515 tests PASS
+
+build
+→ PASS
+
+typecheck baseline
+→ 14 errores históricos
+
+typecheck actual
+→ 14 errores
+
+errores nuevos
+→ 0
+
+git diff --check
+→ PASS
+~~~
+
+Resultado:
+
+~~~text
+R-HPI2-02
+→ CERRADA / SATISFECHA
+
+HITO-HPI-02
+→ aún NO declarado satisfecho
+
+R-HPI2-03
+→ siguiente actuación justificable
+
+Architecture
+→ NO DERIVADA
+~~~
+
+Documento de cierre: [112](112-R-HPI2-02_REALIZACION_MINIMA_CONTINUIDAD_ANTECEDENTE_RESULTADO.md).
