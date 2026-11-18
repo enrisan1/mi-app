@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-05` CERRADA; MAPA MÍNIMO DE HUECOS DETERMINADO.** [105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) reduce las cuatro zonas observadas en CONV-HPI-04 a dos obligaciones materiales independientes: `GAP-HPI-01 — contexto operativo común y suficientemente persistente del trabajo actual`, que absorbe Z1 y Z2; y `GAP-HPI-02 — continuidad material reconocible antecedente → resultado`, derivado de Z3. Z4 —reconstrucción externa relevante— no es un tercer hueco, sino una consecuencia global de ambos. Todos los criterios individuales/globales insuficientes quedan cubiertos por al menos uno de estos dos huecos. **Todavía no se determina prioridad ni se formula hito. Siguiente actuación: `CONV-HPI-06 — prioridad entre GAP-HPI-01/02 y reducción del primer hito verificable`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO; `CONV-HPI-06` CERRADA; PRIORIDAD Y PRIMER HITO DETERMINADOS.** [106](106-CONV-HPI-06_PRIORIDAD_Y_PRIMER_HITO.md) prioriza `GAP-HPI-01 — contexto operativo común y persistente` antes de `GAP-HPI-02 — continuidad antecedente→resultado`. La decisión no crea dependencia funcional entre ambos: responde a bloqueo global, habilitación de evidencia posterior, menor riesgo de retrabajo y mejor aprovechamiento del patrimonio existente. Se formula `HITO-HPI-01 — Contexto operativo común verificable`, con ocho criterios `MHPI-01…08` y regla de cierre 8/8. `GAP-HPI-02` permanece expresamente abierto y fuera del primer hito. **Siguiente actuación: `CONV-HPI-07 — roadmap mínimo para alcanzar HITO-HPI-01 y determinar la primera actuación justificable`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8795,3 +8795,40 @@ CONV-HPI-05
 ~~~
 
 Siguiente actuación: `CONV-HPI-06`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-06: prioridad y primer hito
+
+Comparación de huecos:
+
+~~~text
+GAP-HPI-01
+→ mayor bloqueo global
+→ estabiliza contexto para evidencia posterior
+→ menor riesgo de retrabajo
+→ fuerte patrimonio reutilizable
+
+GAP-HPI-02
+→ independiente
+→ posterior en orden de convergencia
+~~~
+
+Decisión:
+
+~~~text
+PRIORIDAD 1 → GAP-HPI-01
+PRIORIDAD 2 → GAP-HPI-02
+~~~
+
+Primer hito:
+
+~~~text
+HITO-HPI-01
+→ Contexto operativo común verificable
+→ MHPI-01…08
+→ 8/8 para satisfacción
+~~~
+
+No se formula todavía roadmap ni actuación de implementación.
