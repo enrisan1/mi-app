@@ -12210,3 +12210,131 @@ R-RESHPI-02
 ~~~
 
 Documento: [116](116-R-RESHPI-01_CONTRATO_ROJO_PRIMERA_CREACION.md).
+
+
+---
+
+# 18/11/2026 — R-RESHPI-02: realización mínima de convergencia de primera creación
+
+Se partió del contrato rojo de R-RESHPI-01:
+
+~~~text
+PASS / FAIL×6 / PASS
+~~~
+
+y se compararon tres familias de solución.
+
+Se descartó reutilizar onResult con un previous ficticio porque habría deformado SituatedResult.
+
+Se descartó depender de una inferencia posterior desde ru2m1.previous porque W1 no existía necesariamente como material ordinario y no garantizaba convergencia inmediata.
+
+Se seleccionó una notificación específica de primera constitución:
+
+~~~text
+ResumeExperience
+→ onInitialResult?: (current: string) => void
+~~~
+
+La primera creación válida ejecuta:
+
+~~~text
+savePrevious(currentInput)
+→ onInitialResult?.(currentInput)
+→ setAccepted(true)
+~~~
+
+App concentra la constitución ordinaria en:
+
+~~~text
+establishCurrentWork(content)
+~~~
+
+que actualiza:
+
+~~~text
+availablePostV1Current
+ordinary.materials
+ordinary.current-work-id
+currentWorkId
+~~~
+
+y se reutiliza tanto para:
+
+~~~text
+onInitialResult
+como
+onResult
+~~~
+
+sin inventar un antecedente para la primera creación.
+
+La primera ejecución de la solución reveló un fallo de T-RESHPI-01 por getByText no unívoco: W1 aparecía ahora correctamente tanto en el resultado visible como en superficies ordinarias. Se corrigió la aserción para comprobar W1 dentro del status competente, sin rebajar el criterio.
+
+La validación HPI detectó el mismo acoplamiento histórico en T-HPI-01 y se corrigió del mismo modo.
+
+La suite global detectó un tercer supuesto de unicidad en T-KGV-07; se acotó también al status de la recuperación ordinaria.
+
+Ninguno de estos tres ajustes modifica comportamiento de producción ni elimina una condición material.
+
+Validación autoritativa:
+
+~~~text
+run
+→ 44412656079
+
+T-RESHPI-01…08
+→ 8/8 PASS
+
+HPI/HPI2/global
+→ 20/20 PASS
+
+ResumeExperience
+→ 41/41 PASS
+
+suite global
+→ 65 archivos
+→ 526/526 tests PASS
+
+build
+→ PASS
+
+typecheck
+→ baseline 14 errores históricos
+→ realización 14 errores
+→ 0 nuevos
+
+git diff --check
+→ PASS
+~~~
+
+Los cinco archivos consolidados en feature/task-filters coinciden byte por byte con los blobs validados en la rama temporal.
+
+El workflow temporal fue retirado y no se consolida.
+
+Resultado:
+
+~~~text
+R-RESHPI-02
+→ CERRADA
+
+RES-HPI-01
+→ REALIZADO MATERIALMENTE
+→ PENDIENTE DE VALIDACIÓN FORMAL
+
+Architecture
+→ NO DERIVADA
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-RESHPI-03
+→ validar REL-RESHPI-01…08
+→ reevaluar C01-B, C06-B,
+  C07-B, C08-A, C10-C,
+  G02, G04, G06
+→ reevaluar CF-HPI-01
+→ decidir H-PROJ-INT-01
+~~~
+
+Documento: [117](117-R-RESHPI-02_REALIZACION_MINIMA_CONVERGENCIA_PRIMERA_CREACION.md).
