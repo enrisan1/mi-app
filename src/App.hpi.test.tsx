@@ -47,8 +47,11 @@ describe("R-HPI-01 — contrato observable de contexto operativo común", () => 
     await user.click(screen.getByRole("button", { name: /^crear$/i }));
 
     expect(localStorage.getItem("ru2m1.previous")).toBe(W1.content);
-    expect(screen.getByText(/^lo que has aportado$/i)).toBeInTheDocument();
-    expect(screen.getByText(W1.content)).toBeInTheDocument();
+    const status = screen.getByRole("status");
+    expect(
+      within(status).getByRole("heading", { name: /^lo que has aportado$/i }),
+    ).toBeInTheDocument();
+    expect(status).toHaveTextContent(W1.content);
   });
 
   it("[T-HPI-02] conserva W1 tras desmontar y remontar la App sin reconstrucción manual", () => {
