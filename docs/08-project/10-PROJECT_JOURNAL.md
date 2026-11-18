@@ -10585,3 +10585,72 @@ D-PROJ-04 → frontera núcleo / evolución
 ~~~
 
 Se deriva `RED-PROJ-01`. No se abre todavía nueva capacidad, Product Value, Architecture ni Implementation.
+
+
+---
+
+# 18/11/2026 — RED-PROJ-01: reducción del núcleo material de plataforma
+
+La distancia constitutiva demostrada por AUD-PROJ-01 se reduce sin convertir Platform Vision en backlog.
+
+Se determina:
+
+~~~text
+N-PROJ-01
+→ actividad ordinaria persistente
+  centrada en un trabajo textual actual
+
+R-PROJ-01
+→ crear/retomar
+→ desarrollar
+→ conservar/interrumpir
+→ reanudar
+→ recuperar antecedente
+→ utilizar/comparar/consultar apoyo
+→ producir continuación o revisión
+→ conservar
+→ volver a reanudar
+
+I-PROJ-01
+→ núcleo:
+   creación/desarrollo
+   persistencia/reanudación
+   recuperación/reutilización
+   preservación
+
+→ auxiliares contextuales:
+   captura
+   comparación
+   apoyo IA
+
+→ no bloqueantes del núcleo:
+   identidad autoral
+   colaboración
+   trayectorias especializadas
+
+F-PROJ-01
+→ frontera núcleo/evolución explícita
+~~~
+
+Platform Vision queda reducida así:
+
+~~~text
+4.1 → núcleo parcial
+4.2 → núcleo parcial
+4.3 → núcleo parcial
+4.4 → núcleo limitado
+4.5 → evolución posterior
+4.6 → núcleo transversal
+~~~
+
+No se deriva todavía arquitectura ni implementación.
+
+Se formula únicamente como candidato:
+
+~~~text
+H-PROJ-INT-01
+→ Plataforma integrada mínima
+  para trabajo textual individual
+~~~
+
+El horizonte todavía requiere gate constitutivo.
