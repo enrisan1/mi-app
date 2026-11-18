@@ -11195,3 +11195,118 @@ GAP-HPI-01
 El cierre del primer hito no deriva automáticamente Architecture, una nueva Realization ni una implementación adicional. La siguiente actuación deberá derivarse específicamente desde `GAP-HPI-02`.
 
 Documento de cierre: [108](108-R-HPI-03_VALIDACION_HITO_HPI_01.md).
+
+
+---
+
+# 18/11/2026 — CONV-HPI-08: reducción de GAP-HPI-02 y formulación de HITO-HPI-02
+
+Tras declarar satisfecho HITO-HPI-01, se retomó únicamente el segundo hueco material del horizonte.
+
+La inspección confirmó que el producto ya dispone de:
+
+~~~text
+pluralidad de materiales
++
+selección humana de antecedente
++
+actividad textual posterior
++
+constitución de nuevo resultado
++
+persistencia del resultado
+~~~
+
+La diferencia residual no consiste en ausencia de reutilización, sino en que la relación entre el antecedente seleccionado y el resultado constituido desaparece cuando se pierde el estado transitorio de selección.
+
+Se redujo por tanto:
+
+~~~text
+A seleccionado
++
+actividad humana
+↓
+W2 constituido
+
+pero después
+
+W2
+→ no conserva de forma reconocible
+  que A intervino en su constitución
+~~~
+
+No se exige causalidad semántica exhaustiva ni trazabilidad por fragmentos. El alcance se limita a continuidad operacional reconocible.
+
+Se formuló:
+
+~~~text
+HITO-HPI-02
+→ Continuidad reconocible entre
+  antecedente reutilizado
+  y resultado posterior
+~~~
+
+con seis criterios:
+
+~~~text
+MHPI2-01
+→ antecedente recuperado y seleccionado
+
+MHPI2-02
+→ resultado posterior diferenciado
+
+MHPI2-03
+→ relación A→W2 reconocible después
+
+MHPI2-04
+→ relación sobrevive a interrupción
+
+MHPI2-05
+→ discriminación A→W2 / B→W3
+  sin atribución cruzada
+
+MHPI2-06
+→ evidencia desde App ordinaria
+  y alcance reducido
+~~~
+
+El control negativo obligatorio queda:
+
+~~~text
+A → W2
+B → W3
+
+después de interrupción
+
+W2 → A
+W3 → B
+
+W2 ≠ B
+W3 ≠ A
+~~~
+
+La variación mínima cambia antecedente y resultado. No se exige variar además operaciones auxiliares porque ello no aporta discriminación necesaria al hueco específico.
+
+No se deriva:
+
+~~~text
+Architecture
+grafo universal de procedencia
+versionado general
+store
+repository
+base de datos
+forma de datos concreta
+implementación
+~~~
+
+Siguiente actuación justificable:
+
+~~~text
+construir roadmap mínimo de HITO-HPI-02
++
+determinar contrato realizativo y tests
+antes de modificar producción
+~~~
+
+Documento canónico de la reducción: [109](109-CONV-HPI-08_REDUCCION_GAP_HPI_02_Y_HITO_HPI_02.md).
