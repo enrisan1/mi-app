@@ -11449,3 +11449,87 @@ R-HPI2-01
 ~~~
 
 Documento canónico: [110](110-CONV-HPI-09_ROADMAP_CONTRATO_Y_TESTS_HITO_HPI_02.md).
+
+
+---
+
+# 18/11/2026 — R-HPI2-01: contrato y tests discriminantes
+
+Se ejecutó R-HPI2-01 sobre la App ordinaria sin modificar producción.
+
+Se creó:
+
+~~~text
+src/App.hpi2.test.tsx
+~~~
+
+con siete pruebas contractuales.
+
+La primera ejecución produjo 3 PASS y 4 FAIL, pero el análisis del log reveló que los cuatro fallos pasaban por un helper ambiguo: getByText encontraba varias apariciones legítimas de W2 en option y en el artículo ordinario.
+
+Ese rojo se rechazó como artificial.
+
+Se corrigió sólo el helper de test para localizar el article ordinario correspondiente al material mediante su botón «Usar este material N».
+
+La segunda ejecución produjo exactamente:
+
+~~~text
+T-HPI2-01 → PASS
+T-HPI2-02 → PASS
+T-HPI2-03 → FAIL
+T-HPI2-04 → FAIL
+T-HPI2-05 → FAIL
+T-HPI2-06 → FAIL
+T-HPI2-07 → PASS
+~~~
+
+Los fallos discriminantes ya no son de selección. El error material es:
+
+~~~text
+Expected element to have text content:
+Antecedente A / Antecedente B
+~~~
+
+Por tanto se demuestra:
+
+~~~text
+A/B existen
+selección funciona
+W2/W3 se constituyen
+W2/W3 persisten
+
+pero
+
+W2/W3 no conservan
+una relación observable
+con A/B
+~~~
+
+Esto coincide exactamente con GAP-HPI-02.
+
+La regresión histórica y HPI-01 se ejecutó excluyendo el nuevo contrato rojo:
+
+~~~text
+Test Files 61 passed (61)
+Tests      508 passed (508)
+~~~
+
+Todos los gates R2-G01…07 quedan satisfechos.
+
+Resultado:
+
+~~~text
+R-HPI2-01
+→ CERRADA / SATISFECHA
+
+R-HPI2-02
+→ siguiente actuación justificable
+
+producción
+→ sin cambios
+
+Architecture
+→ NO DERIVADA
+~~~
+
+Documento de cierre: [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md).
