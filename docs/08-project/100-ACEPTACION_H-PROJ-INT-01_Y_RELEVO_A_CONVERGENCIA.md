@@ -322,3 +322,33 @@ CONV-HPI-02
 → mapa de dependencias
   de C-HPI-01…C-HPI-10
 ~~~
+
+
+---
+
+# 13. Resultado de CONV-HPI-02
+
+La actuación [102](102-CONV-HPI-02_MAPA_MINIMO_DE_DEPENDENCIAS.md) determina el grafo funcional mínimo.
+
+~~~text
+C-HPI-02 ─┐
+          ├→ C-HPI-05
+C-HPI-04 ─┘
+~~~
+
+No se conservan otras aristas directas.
+
+Las capacidades transversales `C-HPI-09/10` no se convierten en prerrequisitos fijos de todas las demás.
+
+Estado:
+
+~~~text
+CONV-HPI-02
+→ CERRADA
+
+criterios de finalización
+→ PENDIENTES
+
+siguiente actuación
+→ CONV-HPI-03
+~~~
