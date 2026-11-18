@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **FASE DE CONVERGENCIA/PRODUCTIZACIÓN POST-KGV CERRADA EN EL ALCANCE ACEPTADO.** `OB-80-CONV-01` queda satisfecha tras completar la disponibilidad ordinaria mínima y verificable de los cuatro compromisos post-KGV: `C-PV-80-01` mediante `R-80-CONV-02 / HITO-80-CONV-01`; `C-PV-80-03` mediante `R-80-CONV-03 / HITO-80-CONV-02`; `C-PV-80-04` mediante `R-80-CONV-04 / HITO-80-CONV-03`; y `C-PV-80-02` mediante `R-80-CONV-05 / HITO-80-CONV-04`. En la última actuación, la comparación ordinaria read-only de dos `ordinary.materials` quedó validada con 9/9 tests específicos, 127/127 en regresión dirigida, 498/498 en suite canónica, build PASS, 0 errores TypeScript nuevos y contraste humano positivo de simultaneidad/distinción A-B. `DEUDA-TSC-COMP-01` permanece abierta con los mismos 14 errores en 5 archivos y no queda absorbida por el cierre. No se deriva automáticamente una nueva obligación, horizonte, Product Value, Architecture, Realization o Implementation; cualquier continuidad estratégica deberá volver a derivarse desde este estado vigente.
+**Estado vigente al 18/11/2026:** **ESTADO ESTABLE POST-`OB-80-CONV-01`, SIN NUEVA ACTUACIÓN ESTRATÉGICA ABIERTA.** La fase de convergencia/productización post-KGV queda cerrada en su alcance aceptado: `C-PV-80-01`, `C-PV-80-03`, `C-PV-80-04` y `C-PV-80-02` están suficientemente disponibles en el producto ordinario mediante `R-80-CONV-02…05`, sus cuatro `CSO` e hitos correspondientes están satisfechos y `OB-80-CONV-01` queda satisfecha. La reaplicación posterior del Manual 17 verifica las seis fuentes de continuidad: no existe compromiso vigente con obligación constitutiva pendiente, criterio estratégico insatisfecho, dependencia necesaria, hito aceptado pendiente, incertidumbre bloqueante ni evidencia emergente independiente suficiente. Rama A → SIN CONTINUIDAD DERIVADA. Rama B → SIN CONTINUIDAD DERIVADA. `GATE-NH-01` no se abre. No se deriva nueva formación estratégica, Product Value, horizonte, Architecture, Realization ni Implementation. `DEUDA-TSC-COMP-01` permanece abierta como deuda técnica separada —14 errores en 5 archivos— y no se convierte por sí sola en actuación estratégica. **Punto de reanudación:** reaplicar el Manual 17 sólo ante nueva evidencia, obligación, decisión o cambio material suficientemente justificado.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8150,4 +8150,58 @@ No se abre automáticamente una actuación posterior.
 siguiente actuación estratégica
 → NO PRESUPUESTA
 → debe derivarse nuevamente desde el estado vigente
+~~~
+
+
+---
+
+# 18/11/2026 — Reaplicación post-OB-80-CONV-01 y estado estable
+
+~~~text
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+seis fuentes de continuidad
+→ COMPROBADAS
+
+GATE-NH-01
+→ NO abierto
+
+nueva formación estratégica
+→ NO derivada
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo horizonte
+→ NO derivado
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ deuda técnica separada
+→ no constituye obligación estratégica vigente
+
+ESTADO RESULTANTE
+→ ESTABLE
+→ SIN NUEVA ACTUACIÓN ESTRATÉGICA ABIERTA
+~~~
+
+Punto de reanudación:
+
+~~~text
+nueva evidencia
+o
+nueva obligación
+o
+nueva decisión humana
+o
+cambio material del estado
+
+→ reaplicar Manual 17
 ~~~
