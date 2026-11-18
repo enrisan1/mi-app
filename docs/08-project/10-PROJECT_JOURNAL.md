@@ -11310,3 +11310,142 @@ antes de modificar producción
 ~~~
 
 Documento canónico de la reducción: [109](109-CONV-HPI-08_REDUCCION_GAP_HPI_02_Y_HITO_HPI_02.md).
+
+
+---
+
+# 18/11/2026 — CONV-HPI-09: roadmap, contrato y tests de HITO-HPI-02
+
+Tras reducir GAP-HPI-02 en CONV-HPI-08, se construyó el roadmap mínimo del segundo hito sin modificar producción.
+
+La inspección confirmó que el recorrido ordinario ya aporta:
+
+~~~text
+materiales anteriores
+→ selección humana de A
+→ nuevo trabajo W2
+→ Continuar con este material
+→ W2 persistido
+→ W2 como trabajo actual
+~~~
+
+Por tanto el contrato no redefine recuperación, edición ni persistencia general. Se concentra en la propiedad residual:
+
+~~~text
+después de constituir W2
+y perder selectedMaterialId
+
+W2
+→ debe seguir permitiendo reconocer
+  A como antecedente de continuación
+~~~
+
+Se fijó el contrato realizativo observable:
+
+~~~text
+REL-HPI2-01
+→ selección humana efectiva
+
+REL-HPI2-02
+→ constitución conectada
+
+REL-HPI2-03
+→ relación A→W2 observable después
+
+REL-HPI2-04
+→ persistencia tras interrupción
+
+REL-HPI2-05
+→ relación ligada al resultado,
+  no al último antecedente
+
+REL-HPI2-06
+→ A y W2 siguen siendo distinguibles
+
+REL-HPI2-07
+→ evidencia desde App ordinaria
+
+REL-HPI2-08
+→ no sobreprescripción técnica
+~~~
+
+Se derivaron siete tests previos a producción:
+
+~~~text
+T-HPI2-01
+→ recuperar y seleccionar A
+→ PASS esperado
+
+T-HPI2-02
+→ producir W2 desde A
+→ PASS esperado
+
+T-HPI2-03
+→ W2 reconoce A
+  tras perder selección transitoria
+→ FAIL esperado
+
+T-HPI2-04
+→ W2→A sobrevive a remontaje
+→ FAIL esperado
+
+T-HPI2-05
+→ A→W2 / B→W3
+  sobreviven sin contaminación
+→ FAIL esperado
+
+T-HPI2-06
+→ no atribución cruzada
+  W2≠B / W3≠A
+→ FAIL esperado
+
+T-HPI2-07
+→ recorrido sólo sobre App ordinaria
+→ PASS esperado
+~~~
+
+El patrón previo queda fijado:
+
+~~~text
+PASS
+PASS
+FAIL
+FAIL
+FAIL
+FAIL
+PASS
+~~~
+
+Los PASS demuestran que el patrimonio necesario existe. Los FAIL deben producirse porque W2 y W3 existen correctamente pero no conservan una asociación reconocible y persistente con A y B.
+
+Se rechazó como rojo útil cualquier fallo por imports, fixtures imposibles, selectores arbitrarios o dependencia de una forma interna no derivada.
+
+El roadmap mínimo queda:
+
+~~~text
+R-HPI2-01
+→ contrato + tests discriminantes
+
+R-HPI2-02
+→ realización mínima
+  antecedente→resultado
+
+R-HPI2-03
+→ validación formal
+  MHPI2-01…06
+~~~
+
+Architecture continúa NO DERIVADA.
+
+Primera actuación justificable:
+
+~~~text
+R-HPI2-01
+→ materializar T-HPI2-01…07
+→ sin modificar producción
+→ ejecutar
+→ confirmar patrón esperado
+→ mantener regresión histórica verde
+~~~
+
+Documento canónico: [110](110-CONV-HPI-09_ROADMAP_CONTRATO_Y_TESTS_HITO_HPI_02.md).
