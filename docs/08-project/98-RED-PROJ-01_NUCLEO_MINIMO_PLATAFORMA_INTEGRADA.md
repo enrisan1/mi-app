@@ -720,3 +720,20 @@ siguiente actuación estratégica
   H-PROJ-INT-01
   al gate constitutivo del horizonte
 ~~~
+
+
+---
+
+# 15. Declaración inequívoca de continuidad
+
+~~~text
+RED-PROJ-01
+→ CERRADA
+
+H-PROJ-INT-01
+→ HORIZONTE CANDIDATO
+→ NO ACEPTADO
+
+siguiente decisión
+→ aplicar gate constitutivo del horizonte
+~~~
