@@ -12,6 +12,7 @@ import { OrdinaryComparison } from "./OrdinaryComparison";
 type OrdinaryMaterial = {
   id: string;
   content: string;
+  antecedentMaterialId?: string;
 };
 
 type ContextualCapture = {
@@ -899,11 +900,25 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
 
           {inspectionOpen && (
             <div aria-label="Materiales anteriores">
-              {ordinaryMaterials.map((material, index) => (
+              {ordinaryMaterials.map((material, index) => {
+                const antecedent =
+                  material.antecedentMaterialId === undefined
+                    ? undefined
+                    : ordinaryMaterials.find(
+                        (candidate) =>
+                          candidate.id === material.antecedentMaterialId,
+                      );
+
+                return (
                 <article key={material.id}>
                   <p aria-label={`Contenido de material ${index + 1}`}>
                     {material.content}
                   </p>
+                  {antecedent !== undefined && (
+                    <p aria-label={`Antecedente de material ${index + 1}`}>
+                      Antecedente utilizado: {antecedent.content}
+                    </p>
+                  )}
 
                   <button
                     type="button"
@@ -916,7 +931,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     Usar este material {index + 1}
                   </button>
                 </article>
-              ))}
+                );
+              })}
             </div>
           )}
 
@@ -948,9 +964,10 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 onClick={() => {
                   localStorageResumeRepository.savePrevious(newWork);
 
-                  const nextMaterial = {
+                  const nextMaterial: OrdinaryMaterial = {
                     id: `m${ordinaryMaterials.length + 1}`,
                     content: newWork,
+                    antecedentMaterialId: selectedMaterialId,
                   };
                   const nextMaterials = [...ordinaryMaterials, nextMaterial];
 
