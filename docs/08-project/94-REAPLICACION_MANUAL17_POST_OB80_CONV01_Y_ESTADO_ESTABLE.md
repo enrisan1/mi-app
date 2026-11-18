@@ -510,3 +510,45 @@ ACT-EXT-05 → INACTIVO
 ~~~
 
 Estos activadores no constituyen backlog, roadmap ni obligaciones pendientes. Sólo refinan el punto de reanudación si aparece evidencia futura suficiente.
+
+
+---
+
+# 13. Corrección metodológica posterior — alcance del estado estable
+
+La auditoría [96](96-AUDITORIA_Y_CORRECCION_CRITERIO_ESTADO_ESTABLE_MANUAL17.md) detecta que la conclusión de este documento utilizó un criterio suficiente para cerrar el ciclo post-`OB-80-CONV-01`, pero insuficiente para declarar estabilidad global del proyecto.
+
+Se conserva:
+
+~~~text
+OB-80-CONV-01
+→ SATISFECHA
+
+RAMA A local
+→ SIN CONTINUIDAD DERIVADA
+
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+seis fuentes de continuidad
+→ COMPROBADAS
+~~~
+
+Se corrige el alcance:
+
+~~~text
+"ESTADO ESTABLE"
+→ ESTABILIDAD LOCAL DEL CICLO
+  POST-OB-80-CONV-01
+
+ESTABILIDAD GLOBAL DEL PROYECTO
+→ NO DETERMINADA
+
+GATE-PROJ-01
+→ NO EVALUADO
+
+siguiente actuación estratégica
+→ AUD-PROJ-01
+~~~
+
+No se reabre ninguna obligación cerrada ni se selecciona todavía una nueva capacidad.
