@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 13/11/2026
+**Fecha de actualización:** 18/11/2026
 
 ## Índice
 
@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 13/11/2026:** **PRODUCTO FINAL → REVALIDADO POST-HPOST respecto del alcance legítimamente vigente y suficientemente demostrado**, mediante [73](73-REVALIDACION_POST_HPOST_PRODUCTO_FINAL_UTILIZABLE.md): siete compromisos contrastados y K1-01…K1-10 satisfechos; distancia material = 0 dentro del alcance. La revisión pública validada `f52c176` y HEAD de referencia `f05d4b2` conservan idéntico código ordinario pertinente para D-23; no se afirma despliegue de handoff ni comprobación pública contemporánea. H-POST-01 — Continuidad del contexto intelectual en curso entre participantes operativos → **CERRADO EN EL ALCANCE ACEPTADO Y DEMOSTRADO**. R4 aporta MHPOST-01…MHPOST-10 → 10/10 PASS humanos; HITO-HPOST-01 → SATISFECHO. La reevaluación separada establece CF-HPOST-01 → SATISFECHO; GAP-HPOST-01 → CERRADO; PR-HPOST-01 → AGOTADA. R1/R2 completados, R3 cerrado técnicamente y R4 cerrado humanamente. Obligaciones pendientes del alcance: ninguna demostrada; dependencias independientes pendientes: ninguna. La evidencia, incluido el primer control negativo inválido excluido de MHPOST-09 y su repetición válida, queda en [71 §§20–23](71-CONVERGENCIA_HPOST01_Y_VALIDACION_RELEVO_CONTEXTUAL.md#20-r4--resultado-humano-y-trazabilidad-de-la-observación). El producto anterior y los cierres 64/65/67/68/69/70 conservan su validez. **I-D23-01 / actuación 72 → CERRADA, B — SEPARACIÓN LEGÍTIMA / SIN OBLIGACIÓN DEMOSTRADA.** La comparación humana O/H con el caso Q permitió a dos P2 independientes comprender el mismo punto intelectual y continuar con E4-Q sin reconstrucción ni ayuda intelectual adicional. **D-23 → REDUCIDA / CERRADA POR ESTA VÍA, dentro del caso y alcance contrastados**; deja de ser incertidumbre bloqueante. El detalle y los límites constan en [72 §§12–15](72-INVESTIGACION_SEPARACION_RELEVO_CONTEXTUAL_RECORRIDO_ORDINARIO.md#12-ejecución-humana-y-evidencia-comunicada). No se afirma suficiencia universal de App ni equivalencia total O/H. **RAMA A — CONVERGENCIA PLANIFICADA → SIN CONTINUIDAD DERIVADA.** La reevaluación post-D23 de D-06…D-25 ya se realizó: capacidades realizadas, absorciones, reducciones, mejoras opcionales y generalizaciones distinguidas; D-14 y D-21 sin situación/decisión concreta que justifique investigación mínima; ninguna otra incertidumbre decisional bloqueante identificada, obligación positiva pendiente derivable o dependencia necesaria adicional. No queda siguiente actuación mínima derivada por Rama A. La conclusión se limita a las fuentes, casos y alcances actualmente contrastados; no declara Platform Vision universalmente realizada ni excluye evolución futura. **RAMA B — EVIDENCIA EMERGENTE → SIN CONTINUIDAD DERIVADA**, tras reevaluación de la evidencia final, incluidas las incidencias y el resultado de I-D23-01: no se identifica evidencia emergente que contradiga cierres, revele pérdida material nueva, active dependencia o demuestre necesidad vigente incumplida. **VEREDICTO GLOBAL: SIN CONTINUIDAD DERIVADA EN EL ESTADO ACTUAL. ESTADO ESTABLE ACTUAL.** El Manual ha sido aplicado a las fuentes, evidencia, casos y alcances actuales; su aplicación actual ha agotado las derivaciones disponibles y no existe actuación pendiente derivada. **Punto de reanudación:** cualquier cambio relevante del estado, nueva evidencia, nueva decisión humana o nueva obligación normativa deberá someterse nuevamente al Manual antes de abrir una actuación. No se deriva integración ni obligación constructiva. No se declara continuidad contextual universalmente resuelta, Platform Vision completamente realizada ni ausencia universal de defectos; no se derivan P6, nueva Architecture, Realization, Implementation ni backlog nuevo.
+**Estado vigente al 18/11/2026:** **FASE DE CONVERGENCIA/PRODUCTIZACIÓN POST-KGV CERRADA EN EL ALCANCE ACEPTADO.** `OB-80-CONV-01` queda satisfecha tras completar la disponibilidad ordinaria mínima y verificable de los cuatro compromisos post-KGV: `C-PV-80-01` mediante `R-80-CONV-02 / HITO-80-CONV-01`; `C-PV-80-03` mediante `R-80-CONV-03 / HITO-80-CONV-02`; `C-PV-80-04` mediante `R-80-CONV-04 / HITO-80-CONV-03`; y `C-PV-80-02` mediante `R-80-CONV-05 / HITO-80-CONV-04`. En la última actuación, la comparación ordinaria read-only de dos `ordinary.materials` quedó validada con 9/9 tests específicos, 127/127 en regresión dirigida, 498/498 en suite canónica, build PASS, 0 errores TypeScript nuevos y contraste humano positivo de simultaneidad/distinción A-B. `DEUDA-TSC-COMP-01` permanece abierta con los mismos 14 errores en 5 archivos y no queda absorbida por el cierre. No se deriva automáticamente una nueva obligación, horizonte, Product Value, Architecture, Realization o Implementation; cualquier continuidad estratégica deberá volver a derivarse desde este estado vigente.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8078,4 +8078,76 @@ secretos reales
 
 deploy
 → NO ejecutado
+~~~
+
+
+---
+
+# 18/11/2026 — Cierre de R-80-CONV-05 y de OB-80-CONV-01
+
+~~~text
+C-PV-80-02
+→ disponibilidad ordinaria mínima demostrada
+
+CSO-80-02
+→ SATISFECHO
+
+TH-80-CONV-05
+→ POSITIVO
+
+HITO-80-CONV-04
+→ SATISFECHO
+
+R-80-CONV-05
+→ CERRADA
+
+suite específica
+→ 9/9 PASS
+
+regresión dirigida
+→ 127/127 PASS
+
+suite canónica
+→ 498/498 PASS
+
+build
+→ PASS
+
+TypeScript diferencial
+→ 0 errores nuevos
+
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ 14 errores / 5 archivos
+→ ajena al cierre
+~~~
+
+Estado acumulado de convergencia:
+
+~~~text
+C-PV-80-01
+→ CONVERGIDO
+
+C-PV-80-03
+→ CONVERGIDO
+
+C-PV-80-04
+→ CONVERGIDO
+
+C-PV-80-02
+→ CONVERGIDO
+
+OB-80-CONV-01
+→ SATISFECHA EN SU ALCANCE ACEPTADO
+
+fase de convergencia/productización post-KGV
+→ CERRADA EN ESTE ALCANCE
+~~~
+
+No se abre automáticamente una actuación posterior.
+
+~~~text
+siguiente actuación estratégica
+→ NO PRESUPUESTA
+→ debe derivarse nuevamente desde el estado vigente
 ~~~
