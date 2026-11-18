@@ -11032,3 +11032,51 @@ MHPI-01…08
 GAP-HPI-02 queda fuera del primer hito.
 
 Siguiente actuación: `CONV-HPI-07`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-07: roadmap mínimo del primer hito
+
+Se reduce HITO-HPI-01 hasta actuaciones necesarias.
+
+No se identifica fundamento para abrir Architecture: el hito no exige decidir subsistemas, servicios, topología, persistencia distribuida ni modelo global.
+
+Sí se identifica una decisión realizativa previa al código: fijar qué significa observacionalmente un contexto operativo común y cómo demostrarlo.
+
+Roadmap:
+
+~~~text
+R-HPI-01
+→ CTX-01…08
+→ T-HPI-01…08
+→ tests rojos correctos
+
+R-HPI-02
+→ mínima producción necesaria
+→ tests focales verdes + regresión
+
+R-HPI-03
+→ validación integrada
+→ control W1/W2
+→ MHPI-01…08
+~~~
+
+Estado:
+
+~~~text
+CONV-HPI-07
+→ CERRADA
+
+R-HPI-01
+→ DERIVADA / PENDIENTE DE EJECUCIÓN
+
+R-HPI-02
+→ NO INICIADA
+
+R-HPI-03
+→ NO INICIADA
+
+Implementation
+→ NO ABIERTA
+~~~
