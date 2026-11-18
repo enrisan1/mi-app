@@ -10947,3 +10947,48 @@ CF-HPI-01
 CONV-HPI-04 queda cerrada.
 
 La siguiente etapa es derivar y reducir huecos, sin priorizarlos todavía: `CONV-HPI-05`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-05: mapa mínimo de huecos reales
+
+Se reduce la evaluación material de CONV-HPI-04 buscando causas independientes, no síntomas.
+
+Resultado:
+
+~~~text
+GAP-HPI-01
+→ ausencia de contexto operativo común y persistente
+  que identifique el trabajo actual
+  y contextualice elementos/operaciones pertinentes
+
+GAP-HPI-02
+→ ausencia de continuidad material reconocible
+  entre antecedente reutilizado
+  y resultado posterior
+~~~
+
+Z2 queda absorbida por GAP-HPI-01.
+
+Z4 no constituye hueco autónomo: la reconstrucción externa observada procede de la ausencia de contexto común y de la pérdida de continuidad antecedente→resultado.
+
+Los dos huecos superan prueba de independencia: cerrar uno no cierra el otro.
+
+Estado:
+
+~~~text
+CONV-HPI-05
+→ CERRADA
+
+huecos
+→ 2
+
+prioridad
+→ PENDIENTE
+
+hitos
+→ PENDIENTES
+~~~
+
+Siguiente actuación: `CONV-HPI-06`.
