@@ -10888,3 +10888,62 @@ huecos
 ~~~
 
 Siguiente actuación: `CONV-HPI-04`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-04: evaluación material del horizonte integrado
+
+Se aplica el conjunto de criterios de CONV-HPI-03 al producto material actual.
+
+Antes de evaluar se corrige una inconsistencia aritmética documental: la matriz de 103 contiene 30 criterios individuales, no 31. No cambia ningún criterio ni su contenido.
+
+La evaluación encuentra una base material sustancial:
+
+~~~text
+C-HPI-02 → SATISFECHA
+C-HPI-03 → SATISFECHA
+C-HPI-08 → SATISFECHA
+C-HPI-09 → SATISFECHA
+~~~
+
+y seis capacidades parciales:
+
+~~~text
+C-HPI-01
+C-HPI-04
+C-HPI-05
+C-HPI-06
+C-HPI-07
+C-HPI-10
+~~~
+
+Las insuficiencias observables se concentran en:
+
+- ausencia de identidad operacional común del trabajo actual;
+- capturas sin referencia al trabajo que las originó;
+- comparación sin contexto persistente de actividad;
+- reutilización sin relación persistida antecedente→resultado;
+- necesidad de reconstrucción cognitiva de parte del contexto global.
+
+Resultado:
+
+~~~text
+22 criterios satisfechos
+4 parciales
+4 no satisfechos
+
+D01/D02 → parciales
+
+G01…G06
+→ 1 satisfecho
+→ 4 parciales
+→ 1 no satisfecho
+
+CF-HPI-01
+→ NO SATISFECHO
+~~~
+
+CONV-HPI-04 queda cerrada.
+
+La siguiente etapa es derivar y reducir huecos, sin priorizarlos todavía: `CONV-HPI-05`.
