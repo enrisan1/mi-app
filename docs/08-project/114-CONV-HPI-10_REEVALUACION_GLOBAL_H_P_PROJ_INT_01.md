@@ -815,3 +815,47 @@ sin exigir:
 ~~~
 
 y comprobar que la corrección no altera la rama ya válida de reanudación ni HITO-HPI-02.
+
+
+---
+
+# 19. Resultado posterior de CONV-HPI-11
+
+[115](115-CONV-HPI-11_REDUCCION_RES_HPI_01_Y_CONTRATO_MINIMO.md) reduce RES-HPI-01 y fija el contrato previo a producción.
+
+Resultado:
+
+~~~text
+núcleo residual
+→ primera creación válida
+  no constituye todavía
+  el trabajo actual común
+
+obligación
+→ Crear W1
+  debe dejar W1 inmediatamente
+  como contexto común persistente
+
+REL-RESHPI-01…08
+→ FIJADO
+
+T-RESHPI-01…08
+→ DETERMINADOS
+
+patrón esperado
+→ PASS / FAIL×6 / PASS
+
+producción
+→ NO MODIFICADA
+
+Architecture
+→ NO DERIVADA
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-RESHPI-01
+→ materializar contrato rojo
+  antes de producción
+~~~
