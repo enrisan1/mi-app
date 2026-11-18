@@ -10992,3 +10992,43 @@ hitos
 ~~~
 
 Siguiente actuación: `CONV-HPI-06`.
+
+
+---
+
+# 18/11/2026 — CONV-HPI-06: prioridad de huecos y primer hito
+
+Se comparan GAP-HPI-01 y GAP-HPI-02 por bloqueo global, habilitación de evidencia, riesgo de retrabajo, patrimonio reutilizable y verificabilidad autónoma.
+
+Resultado:
+
+~~~text
+GAP-HPI-01
+→ PRIORIDAD 1
+
+GAP-HPI-02
+→ PRIORIDAD 2
+~~~
+
+La prioridad 1 no convierte GAP-HPI-01 en dependencia lógica de GAP-HPI-02.
+
+Se formula:
+
+~~~text
+HITO-HPI-01
+→ Contexto operativo común verificable
+~~~
+
+Debe demostrar, desde el producto ordinario, trabajo actual inequívoco y persistente, coexistencia con antecedente, contextualización de captura/comparación/IA y continuidad operativa sin reconstrucción externa del trabajo activo.
+
+Regla:
+
+~~~text
+MHPI-01…08
+→ 8/8 SATISFECHOS
+= HITO-HPI-01 SATISFECHO
+~~~
+
+GAP-HPI-02 queda fuera del primer hito.
+
+Siguiente actuación: `CONV-HPI-07`.
