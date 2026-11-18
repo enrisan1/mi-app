@@ -62,7 +62,9 @@ describe("R-RESHPI-01 — contrato rojo de primera creación y contexto común",
     await createFirstWork(user);
 
     const status = screen.getByRole("status");
-    expect(status).toHaveTextContent(/^lo que has aportado$/i);
+    expect(
+      within(status).getByRole("heading", { name: /^lo que has aportado$/i }),
+    ).toBeInTheDocument();
     expect(status).toHaveTextContent(W1);
     expect(localStorage.getItem("ru2m1.previous")).toBe(W1);
   });
