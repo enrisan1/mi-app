@@ -635,3 +635,32 @@ Deberá:
 5. fijar tests/evidencias antes de cambiar producción cuando proceda.
 
 No deberá asumir que la primera actuación sea escribir código.
+
+
+---
+
+# 23. Resultado de CONV-HPI-07
+
+La actuación [107](107-CONV-HPI-07_ROADMAP_MINIMO_HITO_HPI_01.md) reduce el camino al hito a tres actuaciones:
+
+~~~text
+R-HPI-01
+→ contrato realizativo mínimo
+  + tests rojos
+
+R-HPI-02
+→ realización mínima
+  en App ordinaria
+
+R-HPI-03
+→ validación de HITO-HPI-01
+~~~
+
+Primera actuación justificable:
+
+~~~text
+R-HPI-01
+→ DERIVADA
+~~~
+
+Architecture no se deriva por ahora y Implementation permanece cerrada hasta observar el rojo correcto.
