@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` FORMULADO; GATE CONSTITUTIVO 8/8 SATISFECHO; HUMAN GATE PENDIENTE.** `RED-PROJ-01` permanece cerrada con `N-PROJ-01`, `R-PROJ-01`, `I-PROJ-01` y `F-PROJ-01` determinados. La actuación [99](99-G-PROJ-HOR-01_GATE_HORIZONTE_PLATAFORMA_INTEGRADA.md) verifica `HOR-01…HOR-08`: objetivo final, fundamento positivo, alcance, no-alcance, resultado Product correspondiente, dependencias conocidas, criterio verificable de finalización y posibles resultados de cierre. `HOR-05` queda satisfecho mediante `RP-PROJ-INT-01`: no se requiere un nuevo compromiso Product, porque el horizonte hace coherentemente practicables situaciones ya seleccionadas por `PV-001`, `PV-002`, `PV-005`, `PV-006`, `C-PV-POST-01`, `C-PV-80-01`, `C-PV-80-02` y `C-PV-80-04`; `C-PV-80-03` permanece vigente pero no bloquea el primer núcleo. **El horizonte todavía NO está aceptado y no deriva Architecture, Realization ni Implementation. Siguiente decisión: HUMAN GATE sobre aceptar o rechazar `H-PROJ-INT-01`.**
+**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` ACEPTADO; HUMAN GATE SUPERADO; RELEVO A CONVERGENCIA.** El gate constitutivo `G-PROJ-HOR-01` permanece 8/8 satisfecho y queda cerrado por decisión humana. La aceptación conserva el objetivo, alcance, no-alcance, `RP-PROJ-INT-01`, dependencias y `CF-HPI-01`; no crea un nuevo compromiso Product ni modifica `PRODUCT.md`. `GATE-PROJ-01` sigue NO SATISFECHO hasta que el horizonte sea materialmente realizado y validado. Según Manual 17 §13.1.5, el relevo pasa a la metodología de convergencia. **Siguiente actuación estratégicamente derivada: `CONV-HPI-01 — reconstrucción de alcance y capacidades de H-PROJ-INT-01`.** Architecture, Realization e Implementation continúan NO DERIVADAS.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8483,4 +8483,47 @@ HUMAN GATE
 
 Architecture / Realization / Implementation
 → NO DERIVADAS
+~~~
+
+
+---
+
+# 18/11/2026 — Aceptación de H-PROJ-INT-01
+
+La persona responsable acepta:
+
+~~~text
+H-PROJ-INT-01
+→ Plataforma integrada mínima
+  para trabajo textual individual
+~~~
+
+Estado:
+
+~~~text
+G-PROJ-HOR-01
+→ 8/8 SATISFECHOS
+→ CERRADO
+
+HUMAN GATE
+→ SUPERADO
+
+H-PROJ-INT-01
+→ ACEPTADO
+
+nuevo compromiso Product
+→ NO
+
+GATE-PROJ-01
+→ SIGUE NO SATISFECHO
+~~~
+
+La aceptación no deriva todavía Architecture, Realization ni Implementation.
+
+Punto de reanudación:
+
+~~~text
+CONV-HPI-01
+→ reconstrucción de alcance y capacidades
+  del horizonte aceptado
 ~~~
