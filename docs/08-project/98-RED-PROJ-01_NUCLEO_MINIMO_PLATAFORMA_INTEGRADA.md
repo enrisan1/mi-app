@@ -737,3 +737,26 @@ H-PROJ-INT-01
 siguiente decisión
 → aplicar gate constitutivo del horizonte
 ~~~
+
+
+---
+
+# 16. Resultado del gate constitutivo posterior
+
+La actuación [99](99-G-PROJ-HOR-01_GATE_HORIZONTE_PLATAFORMA_INTEGRADA.md) evalúa el horizonte candidato derivado por esta reducción.
+
+Resultado:
+
+~~~text
+HOR-01…HOR-08
+→ 8/8 SATISFECHOS
+
+H-PROJ-INT-01
+→ FORMULADO
+→ NO ACEPTADO
+
+HUMAN GATE
+→ PENDIENTE
+~~~
+
+No se altera el cierre de RED-PROJ-01.
