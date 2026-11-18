@@ -778,3 +778,38 @@ No deberá todavía:
 - formular hitos;
 - construir;
 - abrir Architecture o Implementation.
+
+
+---
+
+# 26. Resultado de CONV-HPI-03
+
+La actuación [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) completa el siguiente paso del relevo.
+
+Resultado:
+
+~~~text
+criterios individuales
+→ 31
+
+criterios de dependencias
+→ 2
+
+criterios globales
+→ 6
+
+CF-HPI-01
+→ conservado y operacionalizado
+
+CONV-HPI-03
+→ CERRADA
+~~~
+
+No se ha evaluado todavía el estado material actual.
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-04
+→ evaluación del estado material actual
+~~~
