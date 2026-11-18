@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **CICLO POST-`OB-80-CONV-01` LOCALMENTE ESTABLE; ESTABILIDAD GLOBAL DEL PROYECTO NO DETERMINADA.** Los compromisos Product vigentes permanecen satisfechos en sus alcances demostrados y `OB-80-CONV-01` sigue cerrada. La auditoría metodológica [96](96-AUDITORIA_Y_CORRECCION_CRITERIO_ESTADO_ESTABLE_MANUAL17.md) detecta que el criterio anterior confundía satisfacción del Product vigente con realización material suficiente de la finalidad superior del proyecto. Manual 17 queda corregido mediante `GATE-PROJ-01`: las seis fuentes ordinarias permiten declarar estabilidad local de ciclo, pero la estabilidad global exige contrastar explícitamente `PROJECT_CHARTER + PLATFORM_VISION + PRODUCT + producto material existente`. En el estado actual `GATE-PROJ-01 → NO EVALUADO`; por tanto, no puede sostenerse todavía `ESTADO ESTABLE DEL PROYECTO` en sentido global. **Siguiente actuación estratégicamente derivada: `AUD-PROJ-01 — auditoría de realización material y distancia constitutiva del proyecto`.**
+**Estado vigente al 18/11/2026:** **`GATE-PROJ-01` NO SATISFECHO; DISTANCIA CONSTITUTIVA DEL PROYECTO DEMOSTRADA.** `AUD-PROJ-01` queda cerrada mediante [97](97-AUD-PROJ-01_REALIZACION_MATERIAL_Y_DISTANCIA_CONSTITUTIVA.md). Existe producto digital real y ejecutable (`GP-01` satisfecho), pero la integración material, los recorridos representativos y la relación global con Platform Vision no alcanzan suficiencia para declarar estabilidad global (`GP-02/03` parciales; `GP-04/05/06` no satisfechos). Los cierres Product y `OB-80-CONV-01` permanecen válidos localmente. La distancia se reduce a cuatro cuestiones constitutivas: `D-PROJ-01` núcleo ordinario de trabajo; `D-PROJ-02` recorrido humano representativo de extremo a extremo; `D-PROJ-03` integración de capacidades existentes; `D-PROJ-04` frontera entre constitución mínima y evolución posterior. **Siguiente actuación estratégicamente derivada: `RED-PROJ-01 — reducción de la distancia constitutiva y formulación del núcleo mínimo de plataforma integrada`.**
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -8312,4 +8312,64 @@ estabilidad global
 
 siguiente actuación estratégica
 → AUD-PROJ-01
+~~~
+
+
+---
+
+# 18/11/2026 — Ejecución de AUD-PROJ-01
+
+La auditoría material contrasta Charter, Platform Vision, Product y la App ordinaria existente.
+
+Resultado:
+
+~~~text
+GP-01
+→ SATISFECHO
+
+GP-02
+→ PARCIAL / NO SATISFECHO
+
+GP-03
+→ PARCIAL / NO SATISFECHO
+
+GP-04
+→ NO SATISFECHO
+
+GP-05
+→ NO SATISFECHO
+
+GP-06
+→ NO SATISFECHO
+
+GATE-PROJ-01
+→ NO SATISFECHO
+~~~
+
+Se demuestra que:
+
+~~~text
+producto digital real
+→ SÍ
+
+capacidades ordinarias reales
+→ SÍ
+
+suficiencia material de plataforma
+→ NO DEMOSTRADA
+
+distancia constitutiva
+→ SÍ
+~~~
+
+La distancia queda reducida a `D-PROJ-01…04`.
+
+Siguiente actuación:
+
+~~~text
+RED-PROJ-01
+→ núcleo mínimo de plataforma integrada
++ recorrido representativo
++ integración mínima
++ frontera núcleo/evolución
 ~~~
