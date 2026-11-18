@@ -871,3 +871,22 @@ Siguiente actuación:
 CONV-HPI-05
 → derivación y reducción de huecos materiales
 ~~~
+
+
+---
+
+# 27. Cobertura de insuficiencias por huecos
+
+[105](105-CONV-HPI-05_MAPA_MINIMO_DE_HUECOS.md) demuestra que los criterios no plenamente satisfechos quedan explicados por dos huecos:
+
+~~~text
+GAP-HPI-01
+→ contexto operativo común y persistente
+
+GAP-HPI-02
+→ continuidad material antecedente → resultado
+~~~
+
+No se modifican los criterios de finalización.
+
+El siguiente paso es priorización, no implementación.
