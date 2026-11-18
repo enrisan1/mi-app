@@ -1,7 +1,7 @@
 # CONV-HPI-09 — Roadmap mínimo, contrato realizativo y tests de HITO-HPI-02
 
 **Fecha:** 18/11/2026
-**Estado:** CERRADA — roadmap mínimo determinado; contrato realizativo observable y tests discriminantes fijados antes de modificar producción.
+**Estado:** CERRADA — roadmap mínimo determinado y R-HPI2-01 ejecutada; contrato/tests materializados y patrón previo confirmado. Véase [111](111-R-HPI2-01_CONTRATO_Y_TESTS_DISCRIMINANTES.md).
 **Horizonte:** H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual.
 **Hito:** HITO-HPI-02 — Continuidad reconocible entre antecedente reutilizado y resultado posterior.
 **Precedente:** 109-CONV-HPI-08_REDUCCION_GAP_HPI_02_Y_HITO_HPI_02.md.
@@ -670,3 +670,41 @@ producción
 ~~~
 
 La siguiente actuación ejecutable es R-HPI2-01.
+
+---
+
+# 18. Resultado posterior de R-HPI2-01
+
+R-HPI2-01 fue ejecutada sin modificar producción.
+
+El patrón observado tras eliminar un falso rojo de localización fue exactamente:
+
+~~~text
+T-HPI2-01 → PASS
+T-HPI2-02 → PASS
+T-HPI2-03 → FAIL
+T-HPI2-04 → FAIL
+T-HPI2-05 → FAIL
+T-HPI2-06 → FAIL
+T-HPI2-07 → PASS
+~~~
+
+Los cuatro discriminantes fallan porque W2/W3 no hacen reconocible A/B como antecedente, no por imports, fixtures o selectores rotos.
+
+La regresión previa queda:
+
+~~~text
+61/61 archivos
+508/508 tests
+→ PASS
+~~~
+
+Por tanto:
+
+~~~text
+R-HPI2-01
+→ SATISFECHA
+
+R-HPI2-02
+→ siguiente actuación justificable
+~~~
