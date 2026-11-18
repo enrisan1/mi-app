@@ -200,12 +200,33 @@ export async function handleAiSupportRequest(
   fetchImpl: WorkerFetch = fetch,
 ): Promise<Response> {
   const allowedOrigin = env.ALLOWED_ORIGIN;
+  const origin = request.headers.get("Origin");
+
+  if (request.method === "OPTIONS") {
+    if (
+      allowedOrigin !== undefined &&
+      origin !== null &&
+      origin !== allowedOrigin
+    ) {
+      return jsonResponse(403, { error: "origin_forbidden" });
+    }
+
+    const headers = new Headers({
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    });
+
+    if (allowedOrigin !== undefined) {
+      headers.set("Access-Control-Allow-Origin", allowedOrigin);
+      headers.set("Vary", "Origin");
+    }
+
+    return new Response(null, { status: 204, headers });
+  }
 
   if (request.method !== "POST") {
     return jsonResponse(405, { error: "method_not_allowed" }, allowedOrigin);
   }
-
-  const origin = request.headers.get("Origin");
 
   if (
     allowedOrigin !== undefined &&

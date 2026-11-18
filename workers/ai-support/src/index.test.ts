@@ -108,6 +108,38 @@ describe("AI support Worker contract", () => {
     expect(response.status).toBe(405);
   });
 
+  it("[T-WORKER-80-04-14] responde al preflight CORS permitido sin llamar a servicios remotos", async () => {
+    const remoteFetch = vi.fn() as unknown as WorkerFetch;
+
+    const preflight = new Request(ENDPOINT, {
+      method: "OPTIONS",
+      headers: {
+        Origin: ALLOWED_ORIGIN,
+        "Access-Control-Request-Method": "POST",
+        "Access-Control-Request-Headers": "content-type",
+      },
+    });
+
+    const response = await handleAiSupportRequest(
+      preflight,
+      env(),
+      remoteFetch,
+    );
+
+    expect(response.status).toBe(204);
+    expect(response.headers.get("Access-Control-Allow-Origin")).toBe(
+      ALLOWED_ORIGIN,
+    );
+    expect(response.headers.get("Access-Control-Allow-Methods")).toBe(
+      "POST, OPTIONS",
+    );
+    expect(response.headers.get("Access-Control-Allow-Headers")).toBe(
+      "Content-Type",
+    );
+    expect(response.headers.get("Vary")).toBe("Origin");
+    expect(remoteFetch).not.toHaveBeenCalled();
+  });
+
   it("[T-WORKER-80-04-02] rechaza orígenes no autorizados", async () => {
     const providerFetch = vi.fn() as unknown as WorkerFetch;
 
