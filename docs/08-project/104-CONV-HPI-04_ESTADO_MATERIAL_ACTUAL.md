@@ -998,3 +998,12 @@ CONV-HPI-06
 → determinar prioridad
   y reducir el primer hito verificable
 ~~~
+
+
+---
+
+# 31. Prioridad posterior
+
+[106](106-CONV-HPI-06_PRIORIDAD_Y_PRIMER_HITO.md) establece que las insuficiencias asociadas al contexto común se tratarán primero mediante HITO-HPI-01.
+
+La relación antecedente → resultado permanece deliberadamente fuera de ese primer hito.
