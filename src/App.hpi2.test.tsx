@@ -43,11 +43,18 @@ async function createContinuation(
 }
 
 function materialArticle(content: string) {
-  const node = screen.getByText(content);
-  const article = node.closest("article");
-  if (article === null) {
+  const article = screen.getAllByRole("article").find((candidate) => {
+    const useButton = within(candidate).queryByRole("button", {
+      name: /^usar este material \d+$/i,
+    });
+
+    return useButton !== null && candidate.textContent?.includes(content);
+  });
+
+  if (article === undefined) {
     throw new Error("No se encontró el artículo ordinario del material: " + content);
   }
+
   return article;
 }
 
