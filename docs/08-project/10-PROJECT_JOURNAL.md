@@ -10654,3 +10654,15 @@ H-PROJ-INT-01
 ~~~
 
 El horizonte todavía requiere gate constitutivo.
+
+
+Estado formal de la reducción:
+
+~~~text
+RED-PROJ-01
+→ CERRADA
+
+H-PROJ-INT-01
+→ CANDIDATO
+→ NO ACEPTADO
+~~~
