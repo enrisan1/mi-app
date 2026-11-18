@@ -960,7 +960,7 @@ CONV-HPI-03
 La actuación [103](103-CONV-HPI-03_CRITERIOS_DE_FINALIZACION.md) establece criterios observables para las diez capacidades, las dos dependencias y el conjunto integrado.
 
 ~~~text
-31 criterios individuales
+30 criterios individuales
 +
 2 criterios de dependencias
 +
