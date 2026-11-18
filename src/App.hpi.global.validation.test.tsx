@@ -153,4 +153,56 @@ describe("CONV-HPI-10 — gate global de H-PROJ-INT-01", () => {
     ).toHaveValue("m4");
   });
 
+  it("[D-HPI-GLOBAL-NEW-01] caracteriza el residuo tras la primera creación antes de reanudar", async () => {
+    localStorage.clear();
+    localStorage.setItem("ordinary.materials", JSON.stringify([A, B]));
+
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.type(
+      screen.getByLabelText(/^introduce un texto libre$/i),
+      "Trabajo nuevo sin reanudación",
+    );
+    await user.click(screen.getByRole("button", { name: /^crear$/i }));
+
+    await user.click(
+      screen.getByRole("button", { name: /^capturar aportación$/i }),
+    );
+    await user.type(
+      screen.getByLabelText(/^aportación breve$/i),
+      "Captura inmediata",
+    );
+    await user.click(screen.getByRole("button", { name: /^conservar$/i }));
+
+    const captureItem = screen.getByText("Captura inmediata").closest("li");
+    expect(captureItem).not.toBeNull();
+    expect(captureItem).not.toHaveTextContent("Trabajo nuevo sin reanudación");
+
+    const comparison = screen.getByRole("region", {
+      name: /^comparación de documentos$/i,
+    });
+    await user.selectOptions(
+      within(comparison).getByRole("combobox", { name: /^documento a$/i }),
+      A.id,
+    );
+    await user.selectOptions(
+      within(comparison).getByRole("combobox", { name: /^documento b$/i }),
+      B.id,
+    );
+    await user.click(
+      within(comparison).getByRole("button", { name: /^comparar$/i }),
+    );
+
+    const activeComparison = within(comparison).getByRole("region", {
+      name: /^comparación activa$/i,
+    });
+    expect(activeComparison).not.toHaveTextContent("Trabajo nuevo sin reanudación");
+
+    const ai = screen.getByRole("region", { name: /^apoyo auxiliar de ia$/i });
+    expect(
+      within(ai).getByRole("combobox", { name: /^obra para apoyo ia$/i }),
+    ).toHaveValue("");
+  });
+
 });
