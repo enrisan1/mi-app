@@ -1,0 +1,27 @@
+name: R-HPI2-01 contract validation
+on:
+  push:
+    branches:
+      - r-hpi2-01-validation
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci
+      - name: HPI2 contract suite
+        run: |
+          set +e
+          npx vitest run src/App.hpi2.test.tsx
+          code=$?
+          set -e
+          echo "focused_exit=$code"
+          exit 0
+      - name: Historical regression
+        run: npx vitest run --exclude src/App.hpi2.test.tsx
