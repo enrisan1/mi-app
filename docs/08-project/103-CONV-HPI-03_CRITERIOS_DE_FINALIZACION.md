@@ -821,3 +821,53 @@ NO DETERMINADO
 con evidencia concreta para cada clasificación.
 
 No deberá convertir automáticamente un criterio no satisfecho en actuación de implementación; primero deberán derivarse los huecos y después priorizarse.
+
+
+---
+
+# 26. Resultado de CONV-HPI-04
+
+La actuación [104](104-CONV-HPI-04_ESTADO_MATERIAL_ACTUAL.md) aplica los criterios de este documento al producto material actual.
+
+Resultado:
+
+~~~text
+criterios individuales
+→ 30
+
+SATISFECHOS
+→ 22
+
+PARCIALES
+→ 4
+
+NO SATISFECHOS
+→ 4
+
+NO DETERMINADOS
+→ 0
+
+capacidades satisfechas
+→ 4
+
+capacidades parciales
+→ 6
+
+D-HPI-01/02
+→ PARCIALMENTE SATISFECHAS
+
+G01…G06
+→ 1 SATISFECHO
+→ 4 PARCIALES
+→ 1 NO SATISFECHO
+
+CF-HPI-01
+→ NO SATISFECHO
+~~~
+
+Siguiente actuación:
+
+~~~text
+CONV-HPI-05
+→ derivación y reducción de huecos materiales
+~~~
