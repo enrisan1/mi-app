@@ -555,6 +555,20 @@ COMPROBAR RAMA B
 ├── NO → localizar dependencia pendiente
 └── SÍ
      ↓
+COMPROBAR SUFICIENCIA MATERIAL DEL PROYECTO
+¿GATE-PROJ-01 ha sido evaluado?
+├── NO
+│    → derivar auditoría mínima de distancia material
+│      Charter ↔ Platform Vision ↔ Product ↔ producto existente
+└── SÍ
+     ↓
+¿GATE-PROJ-01 está satisfecho?
+├── NO
+│    → el ciclo puede quedar localmente estable
+│    → el proyecto global NO puede declararse estable
+│    → reducir la distancia material hasta un objetivo finito
+└── SÍ
+     ↓
 reevaluar relación Product ↔ PLATFORM_VISION
      ↓
 ¿existe fundamento suficiente para estudiar
@@ -562,7 +576,7 @@ un posible nuevo objetivo estratégico?
 ├── SÍ
 │    → aplicar 13.1 — Formación estratégica post-clausura
 └── NO
-     → estado estable sin nueva actuación
+     → estabilidad global del proyecto admisible
 ```
 
 ## 13.1. Formación estratégica post-clausura
@@ -757,17 +771,125 @@ La aceptación de un nuevo horizonte constituye una decisión estratégica susta
 
 ### 13.1.6. Regla de no infinitud
 
-La clausura de un horizonte no obliga a abrir otro.
+La clausura de un horizonte no obliga a abrir otro horizonte.
+
+Pero tampoco permite concluir automáticamente estabilidad global del proyecto.
 
 ```text
 horizonte cerrado
 ↓
-¿existe nuevo fundamento suficiente para continuar?
-├── NO → estado estable
-└── SÍ → nueva formación estratégica
+¿existe nuevo fundamento suficiente para continuar ese ciclo?
+├── SÍ → nueva formación estratégica
+└── NO
+     ↓
+ciclo actual
+→ puede quedar localmente estable
+     ↓
+¿GATE-PROJ-01 está evaluado y satisfecho?
+├── NO → no declarar estabilidad global
+└── SÍ → estabilidad global admisible si no existe otra continuidad derivada
 ```
 
 Cada nueva formación deberá volver a satisfacer este apartado; el horizonte anterior no se convierte automáticamente en fundamento del siguiente.
+
+---
+
+## 13.2. Gate de suficiencia material del proyecto — GATE-PROJ-01
+
+La satisfacción de los compromisos Product vigentes es necesaria para cerrar su alcance, pero no basta por sí sola para declarar agotamiento estratégico del proyecto completo.
+
+Debe distinguirse:
+
+```text
+ESTABILIDAD LOCAL O DE CICLO
+→ obligaciones del ciclo cerradas
+→ sin dependencia interna pendiente
+→ sin incertidumbre bloqueante del ciclo
+
+ESTABILIDAD GLOBAL DEL PROYECTO
+→ sólo admisible tras evaluar
+  la realización material suficiente
+  de la finalidad constitutiva
+```
+
+### 13.2.1. Pregunta constitutiva
+
+> ¿El producto material existente realiza suficientemente, dentro de un alcance explícito y defendible, la finalidad vigente del proyecto y la dirección de plataforma que continúa siendo pertinente?
+
+### 13.2.2. Condiciones mínimas
+
+Deben evaluarse:
+
+```text
+GP-01
+→ existe producto digital material y ejecutable
+
+GP-02
+→ integración material suficiente en producto ordinario
+
+GP-03
+→ actividades suficientemente representativas
+  de la finalidad del Charter son practicables
+
+GP-04
+→ las direcciones centrales todavía pertinentes
+  de PLATFORM_VISION están materialmente presentes,
+  reducidas justificadamente, aplazadas explícitamente
+  o descartadas por el cuerpo competente
+
+GP-05
+→ la distancia restante es evolución opcional,
+  no constitución todavía incompleta
+  de la clase de plataforma perseguida
+
+GP-06
+→ no existe contradicción no resuelta entre
+  "Product satisfecho" y
+  "finalidad superior todavía materialmente no realizada"
+```
+
+### 13.2.3. Salidas
+
+```text
+GATE-PROJ-01 → SATISFECHO
+→ estabilidad global del proyecto puede declararse
+  si el resto del Manual tampoco deriva continuidad
+
+GATE-PROJ-01 → NO SATISFECHO
+→ el ciclo puede estar cerrado
+→ el proyecto global no está estable
+→ debe reducirse la distancia material
+  hasta una actuación finita y verificable
+
+GATE-PROJ-01 → NO DETERMINADO
+→ estabilidad global no declarable
+→ debe derivarse una auditoría mínima
+  de distancia material
+```
+
+Este gate no convierte PLATFORM_VISION en backlog ni autoriza implementar todas sus capacidades. La dirección válida es:
+
+```text
+finalidad constitutiva
++
+producto material actual
+↓
+distancia material demostrada
+↓
+reducción
+↓
+objetivo finito
+↓
+actuación competente
+```
+
+No:
+
+```text
+PLATFORM_VISION contiene X
+↓
+implementar X
+```
 
 ---
 
@@ -804,6 +926,12 @@ Antes de cerrar definitivamente una investigación deben contestarse estas pregu
 
 [ ] ¿Hace falta realmente un nuevo horizonte?
 
+[ ] ¿El cierre que se declara es local/de ciclo o global del proyecto?
+
+[ ] Si se pretende estabilidad global, ¿se ha evaluado GATE-PROJ-01?
+
+[ ] ¿La distancia restante al Charter y Platform Vision es opcional o todavía constitutiva?
+
 [ ] ¿Ha quedado actualizado el punto de reanudación?
 ```
 
@@ -833,7 +961,9 @@ Primero deben comprobarse expresamente:
 6. nueva evidencia emergente.
 ```
 
-Sólo después de comprobar esas seis fuentes puede declararse legítimamente un estado estable sin siguiente actuación.
+Sólo después de comprobar esas seis fuentes puede declararse legítimamente **estabilidad local o de ciclo** sin siguiente actuación interna.
+
+La **estabilidad global del proyecto** exige además evaluar `GATE-PROJ-01`. Si ese gate no ha sido evaluado, está no satisfecho o permanece indeterminado, no deberá utilizarse la expresión `ESTADO ESTABLE DEL PROYECTO` como conclusión global.
 
 ---
 
@@ -848,9 +978,19 @@ CONSOLIDACIÓN
 ↓
 ESTADO ACTUAL
 ↓
-OBJETIVOS Y COMPROMISOS VIGENTES
+PROJECT_CHARTER
++
+PLATFORM_VISION
++
+PRODUCT
++
+PRODUCTO MATERIAL EXISTENTE
 +
 NUEVA EVIDENCIA
+↓
+OBJETIVOS Y COMPROMISOS VIGENTES
++
+DISTANCIA MATERIAL RESPECTO DE LA FINALIDAD
 ↓
 DEPENDENCIAS REALES
 ↓
