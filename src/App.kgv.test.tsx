@@ -428,8 +428,7 @@ describe("CR-KGV-03 — recuperabilidad operativa mínima ante persistencia no u
       }),
     );
 
-    expect(
-      screen.getByText("Trabajo posterior a la recuperación"),
-    ).toBeInTheDocument();
+    const status = screen.getByRole("status");
+    expect(status).toHaveTextContent("Trabajo posterior a la recuperación");
   });
 });
