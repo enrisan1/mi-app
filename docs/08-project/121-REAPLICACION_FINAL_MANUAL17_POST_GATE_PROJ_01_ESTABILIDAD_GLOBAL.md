@@ -473,3 +473,37 @@ nuevo horizonte
 ~~~
 
 La continuidad queda limitada a reducir el gap demostrado antes de derivar construcción.
+
+
+---
+
+# 16. Restauración posterior tras RED-CE-MIAPP-01
+
+La reapertura registrada en el apartado 15 fue posteriormente reducida por [125](125-RED-CE-MIAPP-01_REDUCCION_GAP_Y_CRITERIO_MINIMO.md).
+
+Resultado:
+
+~~~text
+GAP-CE-MIAPP-01
+→ FALSADO COMO INSUFICIENCIA REAL
+
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+nueva obligación estratégica
+→ NINGUNA
+
+ESTABILIDAD GLOBAL
+→ RESTAURADA
+~~~
+
+La secuencia histórica queda así:
+
+~~~text
+estabilidad global declarada
+→ nueva evidencia candidata
+→ diagnóstico B provisional
+→ trayectoria discriminante
+→ suficiencia existente demostrada
+→ estabilidad global restaurada
+~~~
