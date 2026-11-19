@@ -711,3 +711,25 @@ H-PROJ-INT-01
 → todavía NO aceptado
 → debe someterse al gate constitutivo del horizonte
 ~~~
+
+
+---
+
+# 16. Resolución posterior mediante AUD-PROJ-02
+
+La distancia constitutiva detectada por esta auditoría fue posteriormente reducida por 98 y materializada/validada mediante H-PROJ-INT-01.
+
+[120](120-AUD-PROJ-02_REAPLICACION_POST_HPI_GATE_PROJ_01.md) reaplica el mismo gate al estado posterior y obtiene:
+
+~~~text
+GP-01…GP-06
+→ 6/6 SATISFECHOS
+
+GATE-PROJ-01
+→ SATISFECHO
+
+distancia constitutiva restante
+→ NINGUNA DEMOSTRADA
+~~~
+
+El resultado NO SATISFECHO de AUD-PROJ-01 permanece históricamente correcto para el estado de 18/11/2026 previo a H-PROJ-INT-01.
