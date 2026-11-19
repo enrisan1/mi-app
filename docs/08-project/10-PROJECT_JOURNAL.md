@@ -13113,3 +13113,111 @@ Siguiente actuación mínima:
 > **RED-CE-MIAPP-01 — reducir GAP-CE-MIAPP-01 contra las capacidades ordinarias existentes y determinar el criterio mínimo de satisfacción, separando insuficiencia real, posibilidad ya disponible pero no ejercitada y mecanismo meramente conveniente.**
 
 Documento: [124](124-EVAL-CE-MIAPP-01_RESULTADO_B_CONTEXTO_EPISTEMOLOGICO.md).
+
+
+---
+
+# 19/11/2026 — RED-CE-MIAPP-01: el gap no sobrevive
+
+Se reduce GAP-CE-MIAPP-01 contra las capacidades ordinarias existentes.
+
+Hipótesis:
+
+~~~text
+H-A → insuficiencia real
+H-B → posibilidad existente no ejercitada
+H-C → mecanismo meramente conveniente
+~~~
+
+La inspección de ResumeExperience y R-RESHPI muestra que la App ya admite texto libre multilínea, persistencia exacta, restauración tras interrupción y continuación desde el antecedente recuperado.
+
+Se fija CF-CE-MIAPP-01 con cinco condiciones:
+
+~~~text
+CE-01 → estado pertinente explícito
+CE-02 → autosuficiencia
+CE-03 → persistencia y correspondencia
+CE-04 → reconocibilidad posterior
+CE-05 → participación efectiva
+~~~
+
+Se añade únicamente un test discriminante:
+
+~~~text
+src/App.ce-miapp.test.tsx
+~~~
+
+La trayectoria crea un bloque autodescriptivo con:
+
+~~~text
+ACREDITADO
+HIPÓTESIS
+ABIERTO
+PENDIENTE
+~~~
+
+interrumpe, remonta App, comprueba restauración exacta y produce una actuación posterior desde ese estado.
+
+Validación autoritativa:
+
+~~~text
+workflow → CE-MIAPP temporary validation
+run → 44587787341
+job → 135785324209
+
+src/App.ce-miapp.test.tsx
+→ 1/1 PASS
+
+Test Files
+→ 1/1 PASS
+~~~
+
+El workflow temporal se elimina después de la validación.
+
+Producción no se modifica.
+
+Resultado:
+
+~~~text
+H-A
+→ REFUTADA
+
+H-B
+→ CONFIRMADA
+
+H-C
+→ conveniencia posible
+→ no obligación
+~~~
+
+Clasificación final:
+
+~~~text
+1. insuficiencia real
+→ NO DEMOSTRADA
+
+2. posibilidad ya disponible pero no ejercitada
+→ SÍ
+
+3. mecanismo meramente conveniente
+→ SÍ, posibles varios
+→ ninguno derivado
+~~~
+
+Por tanto:
+
+~~~text
+GAP-CE-MIAPP-01
+→ FALSADO / CERRADO
+
+EVAL-CE-MIAPP-01
+→ resultado vigente A en alcance mínimo
+
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+ESTABILIDAD GLOBAL
+→ RESTAURADA
+~~~
+
+Documento: [125](125-RED-CE-MIAPP-01_REDUCCION_GAP_Y_CRITERIO_MINIMO.md).
