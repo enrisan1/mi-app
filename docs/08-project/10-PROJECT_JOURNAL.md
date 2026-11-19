@@ -13001,3 +13001,115 @@ ESTABILIDAD GLOBAL
 ~~~
 
 Documento: [123](123-CI-MIAPP-01_CANDIDATA_ESTADO_EPISTEMOLOGICO_INVESTIGACION.md).
+
+
+---
+
+# 19/11/2026 — EVAL-CE-MIAPP-01: Resultado B
+
+Se abre y ejecuta la evaluación formal de CI-MIAPP-01 frente a tres falsadores.
+
+## F1 — C-PV-POST-01
+
+La candidata queda funcionalmente absorbida.
+
+Cuando distinguir qué está acreditado, qué sigue siendo hipótesis, qué permanece abierto y qué trabajo queda pendiente resulta necesario para continuar una investigación, esas diferencias forman parte del contexto provisional pertinente cuyo uso posterior compromete C-PV-POST-01.
+
+~~~text
+F1
+→ ABSORCIÓN CONFIRMADA
+~~~
+
+No se deriva un nuevo compromiso Product.
+
+## F2 — PV-006
+
+PV-006 resulta aplicable cuando la pérdida deriva de un cambio introducido por la plataforma.
+
+Una mera interrupción entre sesiones no satisface necesariamente esa condición.
+
+~~~text
+F2
+→ ABSORCIÓN PARCIAL / CONDICIONAL
+~~~
+
+## F3 — capacidad material actual
+
+La App ordinaria conserva actualmente:
+
+~~~text
+OrdinaryMaterial
+→ id / content / antecedentMaterialId?
+
+ContextualCapture
+→ id / text / capturedAt / workId?
+~~~
+
+y permite continuidad de trabajo, antecedentes, captura, comparación y apoyo IA.
+
+No existe evidencia ordinaria de que conserve como contexto operativo recuperable el estatuto epistemológico necesario de una investigación.
+
+HandoffExperience contiene patrimonio útil:
+
+~~~text
+establishedChecks
+openQuestion
+nextAction
+finalDecisionPending
+finalDecision
+~~~
+
+pero permanece como realización especializada y no demuestra suficiencia ordinaria del caso.
+
+La posibilidad de escribir manualmente etiquetas dentro de texto demuestra almacenamiento de caracteres, no participación efectiva suficiente del contexto después de interrupción.
+
+~~~text
+F3
+→ INSUFICIENCIA MATERIAL LOCALIZADA
+~~~
+
+## Decisión
+
+~~~text
+A → RECHAZADO
+C → RECHAZADO
+B → ACEPTADO
+
+EVAL-CE-MIAPP-01
+→ RESULTADO B
+~~~
+
+Se abre:
+
+~~~text
+GAP-CE-MIAPP-01
+→ continuidad insuficiente del contexto epistemológico operativo
+  en investigaciones multi-sesión
+~~~
+
+El cierre previo de C-PV-POST-01 permanece históricamente correcto en su alcance demostrado; este caso aporta evidencia nueva fuera de aquel ejercicio.
+
+Consecuencia estratégica:
+
+~~~text
+ESTABILIDAD GLOBAL
+→ deja de ser vigente
+
+RAMA A
+→ REABIERTA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture / Implementation
+→ NO DERIVADAS
+~~~
+
+Siguiente actuación mínima:
+
+> **RED-CE-MIAPP-01 — reducir GAP-CE-MIAPP-01 contra las capacidades ordinarias existentes y determinar el criterio mínimo de satisfacción, separando insuficiencia real, posibilidad ya disponible pero no ejercitada y mecanismo meramente conveniente.**
+
+Documento: [124](124-EVAL-CE-MIAPP-01_RESULTADO_B_CONTEXTO_EPISTEMOLOGICO.md).
