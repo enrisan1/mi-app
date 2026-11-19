@@ -516,3 +516,23 @@ R-HPI-03
 No se deriva Architecture.
 
 Implementation sólo podrá abrirse después de cerrar R-HPI-01 con rojo correcto.
+
+
+---
+
+# 8. Resultado de cierre posterior
+
+La convergencia derivada desde esta aceptación concluye en [118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md).
+
+Resultado final del horizonte aceptado:
+
+~~~text
+H-PROJ-INT-01
+→ ACEPTADO
+→ REALIZADO
+→ VALIDADO
+→ SATISFECHO
+→ CERRADO
+~~~
+
+El cierre se limita al alcance aceptado en este documento y no deriva Architecture, Implementation ni ampliaciones del no-alcance.
