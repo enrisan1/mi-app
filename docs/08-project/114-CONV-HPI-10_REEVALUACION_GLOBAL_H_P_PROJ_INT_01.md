@@ -859,3 +859,46 @@ R-RESHPI-01
 → materializar contrato rojo
   antes de producción
 ~~~
+
+
+---
+
+# 20. Resolución posterior del residuo y cierre del horizonte
+
+La obligación residual detectada por esta reevaluación quedó posteriormente:
+
+~~~text
+CONV-HPI-11
+→ reducida
+
+R-RESHPI-01
+→ contrato rojo materializado
+
+R-RESHPI-02
+→ realización mínima validada
+
+R-RESHPI-03
+→ validación formal positiva
+~~~
+
+[118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md) demuestra:
+
+~~~text
+RES-HPI-01
+→ CERRADO
+
+GAP-HPI-01
+→ CERRADO GLOBALMENTE
+
+GAP-HPI-02
+→ CERRADO
+
+CF-HPI-01
+→ SATISFECHO
+
+H-PROJ-INT-01
+→ SATISFECHO
+→ CERRADO
+~~~
+
+El falsador global «crear y retomar usan contextos incompatibles» deja de estar activo.
