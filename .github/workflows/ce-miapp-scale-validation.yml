@@ -1,0 +1,18 @@
+name: CE-MIAPP scale validation
+
+on:
+  push:
+    branches:
+      - feature/task-filters
+
+jobs:
+  ce-miapp-scale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npx vitest run src/App.ce-miapp-scale.test.tsx
