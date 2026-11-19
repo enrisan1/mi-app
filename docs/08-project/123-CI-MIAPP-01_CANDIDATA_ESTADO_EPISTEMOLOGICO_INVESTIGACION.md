@@ -337,3 +337,39 @@ ESTABILIDAD GLOBAL
 Architecture / Implementation
 → NO DERIVADAS
 ~~~
+
+---
+
+# 15. Resultado posterior de EVAL-CE-MIAPP-01
+
+[124](124-EVAL-CE-MIAPP-01_RESULTADO_B_CONTEXTO_EPISTEMOLOGICO.md) evalúa esta candidata frente a los tres falsadores principales.
+
+Resultado:
+
+~~~text
+absorción por C-PV-POST-01
+→ CONFIRMADA
+
+absorción por PV-006
+→ PARCIAL / CONDICIONAL
+
+suficiencia material actual
+→ NO DEMOSTRADA
+→ insuficiente para el caso evaluado
+
+salida
+→ RESULTADO B
+~~~
+
+Por tanto:
+
+~~~text
+CI-MIAPP-01
+→ NO nueva necesidad Product independiente
+
+GAP-CE-MIAPP-01
+→ ABIERTO
+
+siguiente actuación
+→ RED-CE-MIAPP-01
+~~~
