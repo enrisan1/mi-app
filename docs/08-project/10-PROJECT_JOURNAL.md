@@ -12505,3 +12505,92 @@ No se deriva R-RESHPI-04.
 La siguiente actuación, si existe, deberá derivarse de nuevo desde el estado estratégico posterior al cierre de H-PROJ-INT-01, sin asumir Architecture ni Implementation.
 
 Documento: [118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md).
+
+
+---
+
+# 19/11/2026 — Continuidad estratégica post-HPI: derivación de AUD-PROJ-02
+
+Tras cerrar H-PROJ-INT-01 se reaplica el Manual 17 sin presuponer Architecture ni Implementation.
+
+Rama A:
+
+~~~text
+compromisos Product específicos
+→ sin obligación nueva demostrada
+
+pero
+
+GATE-PROJ-01
+→ último resultado = NO SATISFECHO en AUD-PROJ-01 (97)
+
+99/100
+→ ordenan/conservan reaplicación posterior
+  después de materializar y validar H-PROJ-INT-01
+
+H-PROJ-INT-01
+→ ahora SATISFECHO Y CERRADO
+~~~
+
+Por tanto existe una continuidad estratégica superior todavía derivada:
+
+~~~text
+PROJECT_CHARTER
++
+PLATFORM_VISION
++
+PRODUCT
++
+producto material post-HPI
+↓
+reaplicar GATE-PROJ-01
+~~~
+
+Rama B:
+
+~~~text
+nueva pérdida independiente
+→ NO
+
+nuevo residuo material
+→ NO
+
+GATE-NH-01
+→ NO SE ABRE
+~~~
+
+La deuda TypeScript histórica de 14 errores permanece separada y no se convierte en actuación estratégica por sí sola.
+
+No procede todavía una nueva formación estratégica porque Manual 17 §13.1 exige ausencia de una obligación pendiente que determine por sí sola la continuación.
+
+Se deriva:
+
+~~~text
+AUD-PROJ-02
+→ reaplicación post-HPI de GATE-PROJ-01
+→ reevaluar GP-01…GP-06
+→ decidir:
+   SATISFECHO
+   / NO SATISFECHO
+   / NO DETERMINADO
+~~~
+
+Tipo:
+
+~~~text
+auditoría estratégica
+→ documental + material
+→ sin producción
+~~~
+
+No se deriva:
+
+~~~text
+Architecture
+Implementation
+Realization nueva
+nuevo horizonte
+nueva formación estratégica
+~~~
+
+Documento: [119](119-CONTINUIDAD_ESTRATEGICA_POST_HPI_Y_DERIVACION_AUD_PROJ_02.md).
