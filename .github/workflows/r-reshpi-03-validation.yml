@@ -1,3 +1,4 @@
+# Temporary formal gate for R-RESHPI-03.
 name: R-RESHPI-03 formal gate
 on:
   push:
