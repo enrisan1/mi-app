@@ -325,3 +325,176 @@ ESTABILIDAD GLOBAL
 ~~~
 
 La estabilidad se conserva porque la actuación se abre deliberadamente para resolver una incertidumbre no bloqueante; no existe todavía evidencia nueva de pérdida.
+
+---
+
+# 14. Ejecución humana — BS-01 / primera apertura
+
+## 14.1 Evidencia observada
+
+La persona abre la App ordinaria sin instrucción adicional y describe espontáneamente:
+
+- una página formada por varias secciones que percibe como independientes;
+- ausencia de relación clara entre esas secciones;
+- mensajes, comentarios e indicaciones demasiado esquemáticos para saber qué hacer con suficiente sentido;
+- posibilidad aparente de aprender el funcionamiento mediante ensayo y error;
+- una zona de apoyo IA (`Qué apoyo necesitas`) cuya función general puede intuirse;
+- varias zonas finales capaces de producir algo parecido a una `Aportación actual`, pero sin quedar claro:
+  - qué relación tienen entre sí;
+  - qué tipo de aportación solicita cada una;
+  - ni qué ocurriría después de realizarla.
+
+La persona no consigue, a partir de la página por sí sola, reconstruir de forma suficientemente segura:
+
+~~~text
+qué actividad intelectual estaba en curso
+qué sección corresponde a qué propósito
+qué actuación debe realizar a continuación
+qué consecuencias tendrá una aportación
+~~~
+
+## 14.2 Clasificación provisional por dimensiones
+
+### M-ORI — orientación
+
+~~~text
+resultado
+→ AFECTACIÓN FUERTE OBSERVADA
+~~~
+
+La persona no puede determinar espontáneamente dónde se encuentra dentro de una actividad de investigación ni cómo se relacionan las superficies disponibles.
+
+### M-CON — continuidad
+
+~~~text
+resultado
+→ AFECTACIÓN FUERTE OBSERVADA EN REANUDACIÓN
+~~~
+
+La interfaz no hace reconocible por sí sola una continuación operativa suficientemente clara.
+
+### M-REC — reconstrucción
+
+~~~text
+resultado
+→ NO CLASIFICABLE TODAVÍA
+~~~
+
+La observación se bloquea antes de poder medir cuánto trabajo previo necesita reconstruirse, porque la persona todavía no identifica de forma suficientemente segura el propio recorrido.
+
+### M-LOC — localización
+
+~~~text
+resultado
+→ NO EJERCITADA TODAVÍA
+~~~
+
+No se ha pasado a localizar un material concreto porque BS-01 no ha proporcionado todavía orientación suficiente para continuar limpiamente.
+
+### M-ALT — alternancia
+
+~~~text
+resultado
+→ NO EJERCITADA TODAVÍA
+~~~
+
+## 14.3 Incidencia BS-I-01
+
+~~~text
+ID
+→ BS-I-01
+
+momento
+→ apertura / reanudación inicial
+
+acción intentada
+→ comprender el estado de trabajo
+  y determinar cómo continuar
+
+resultado esperado
+→ reconocer suficientemente
+  actividad, superficies pertinentes
+  y siguiente actuación
+
+resultado observado
+→ secciones percibidas como independientes
+→ relación entre superficies no reconocible
+→ significado/efecto de las aportaciones incierto
+
+consecuencia humana
+→ no puede iniciarse con suficiente sentido
+  la continuación de la investigación
+
+¿obliga a reconstruir?
+→ TODAVÍA NO DETERMINADO
+
+¿impide continuar?
+→ SÍ, sin aprendizaje previo o ensayo/error
+
+¿se resuelve con procedimiento razonable?
+→ PENDIENTE DE CONTRASTE
+
+¿requiere herramienta externa?
+→ NO DETERMINADO
+
+evidencia
+→ observación humana directa
+~~~
+
+## 14.4 Distinción fricción / posible insuficiencia
+
+La incidencia no se clasifica como mera fricción porque afecta a la posibilidad de comenzar una continuación significativa.
+
+Sin embargo tampoco se acepta todavía como `BS-C`.
+
+El falsador principal pendiente es:
+
+~~~text
+explicación alternativa EA-BS-01
+→ falta de familiaridad puntual
+  con una interfaz aprendible
+~~~
+
+La propia persona identifica que podría aprender el uso mediante ensayo y error.
+
+Por tanto debe discriminarse:
+
+~~~text
+si una orientación mínima razonable
+permite comprender establemente el recorrido
+→ problema de aprendibilidad / familiaridad
+
+si incluso tras comprender el uso
+la relación entre actividad, estado y acciones
+sigue sin ser operativamente reconocible
+→ la candidata a insuficiencia se fortalece
+~~~
+
+## 14.5 Estado de BS-01
+
+~~~text
+BS-01
+→ NO SUPERADA
+
+M-ORI
+→ AFECTACIÓN FUERTE
+
+M-CON
+→ AFECTACIÓN FUERTE EN PRIMERA APERTURA
+
+M-REC
+→ PENDIENTE
+
+M-LOC
+→ NO EJERCITADA
+
+M-ALT
+→ NO EJERCITADA
+
+BS-C
+→ TODAVÍA NO ACEPTADA
+
+siguiente contraste
+→ falsar EA-BS-01
+  (falta de familiaridad / aprendibilidad)
+~~~
