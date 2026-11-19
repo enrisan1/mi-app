@@ -12594,3 +12594,81 @@ nueva formación estratégica
 ~~~
 
 Documento: [119](119-CONTINUIDAD_ESTRATEGICA_POST_HPI_Y_DERIVACION_AUD_PROJ_02.md).
+
+
+---
+
+# 19/11/2026 — AUD-PROJ-02: GATE-PROJ-01 satisfecho
+
+Se reaplica GATE-PROJ-01 después del cierre de H-PROJ-INT-01.
+
+El antecedente 97 había dejado:
+
+~~~text
+GP-01 → SATISFECHO
+GP-02 → PARCIAL / NO SATISFECHO
+GP-03 → PARCIAL / NO SATISFECHO
+GP-04 → NO SATISFECHO
+GP-05 → NO SATISFECHO
+GP-06 → NO SATISFECHO
+~~~
+
+La reducción 98 había aislado:
+
+~~~text
+N-PROJ-01
+R-PROJ-01
+I-PROJ-01
+F-PROJ-01
+~~~
+
+y H-PROJ-INT-01 materializó el criterio de suficiencia de ese núcleo.
+
+Reevaluación:
+
+~~~text
+GP-01 → SATISFECHO
+GP-02 → SATISFECHO
+GP-03 → SATISFECHO
+GP-04 → SATISFECHO
+GP-05 → SATISFECHO
+GP-06 → SATISFECHO
+~~~
+
+Fundamentos principales:
+
+- el trabajo actual común articula creación, reanudación, antecedentes y auxiliares;
+- V-HPI-GLOBAL-01 y V-RESHPI-01 demuestran recorridos representativos de extremo a extremo;
+- F-PROJ-01 clasifica explícitamente las familias 4.1…4.6 de Platform Vision;
+- la distancia restante conocida queda fuera del primer umbral constitutivo como evolución posterior;
+- desaparece la contradicción entre Product satisfecho y finalidad superior todavía materialmente incompleta.
+
+DEUDA-TSC-COMP-01 permanece abierta con 14 errores TypeScript históricos. No se declara saneada ni irrelevante; simplemente no existe evidencia que la convierta en dependencia constitutiva de este gate.
+
+Decisión:
+
+~~~text
+GATE-PROJ-01
+→ SATISFECHO
+
+distancia constitutiva restante
+→ NINGUNA DEMOSTRADA
+
+estabilidad global
+→ ADMISIBLE
+→ NO DECLARADA TODAVÍA POR AUD-PROJ-02
+~~~
+
+No se derivan Architecture ni Implementation.
+
+Punto siguiente:
+
+~~~text
+reaplicar Manual 17
+al estado post-GATE-PROJ-01
+→ decidir estabilidad global
+  o nueva formación estratégica
+  sólo si existe fundamento suficiente
+~~~
+
+Documento: [120](120-AUD-PROJ-02_REAPLICACION_POST_HPI_GATE_PROJ_01.md).
