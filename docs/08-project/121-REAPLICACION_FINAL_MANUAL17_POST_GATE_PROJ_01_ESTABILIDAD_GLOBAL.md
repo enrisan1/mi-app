@@ -399,3 +399,38 @@ formación estratégica nueva
 ESTABILIDAD GLOBAL
 → DECLARADA
 ~~~
+
+---
+
+# 14. Hecho posterior — registro de CE-MIAPP-01
+
+Con posterioridad a esta declaración se registra [122](122-CE-MIAPP-01_EXPERIENCIA_CANDIDATA_INVESTIGACION_DOCUMENTAL.md):
+
+~~~text
+CE-MIAPP-01
+→ experiencia humana real
+→ evidencia candidata
+→ pendiente de evaluación formal deliberada
+~~~
+
+El nuevo hecho no contradice esta declaración porque no demuestra todavía:
+
+~~~text
+incumplimiento Product
+nueva pérdida independiente
+obligación estratégica
+nuevo horizonte
+~~~
+
+Por tanto:
+
+~~~text
+ESTABILIDAD GLOBAL
+→ CONSERVADA
+
+EVAL-CE-MIAPP-01
+→ RESERVADA
+→ NO ABIERTA
+~~~
+
+Si una evaluación futura obtiene un resultado B o C capaz de establecer una obligación, deberá reaplicarse el Manual 17.
