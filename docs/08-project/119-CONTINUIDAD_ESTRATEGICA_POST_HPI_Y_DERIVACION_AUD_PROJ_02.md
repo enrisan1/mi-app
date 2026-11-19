@@ -324,3 +324,29 @@ Implementation
 # 13. Punto de reanudación
 
 > **AUD-PROJ-02 — reaplicar GATE-PROJ-01 al estado material post-H-PROJ-INT-01, reevaluando GP-01…06 y decidiendo entre SATISFECHO / NO SATISFECHO / NO DETERMINADO.**
+
+---
+
+# 14. Resultado posterior de AUD-PROJ-02
+
+[120](120-AUD-PROJ-02_REAPLICACION_POST_HPI_GATE_PROJ_01.md) ejecuta la auditoría derivada en este documento.
+
+Resultado:
+
+~~~text
+GP-01…GP-06
+→ 6/6 SATISFECHOS
+
+GATE-PROJ-01
+→ SATISFECHO
+
+distancia constitutiva restante
+→ NINGUNA DEMOSTRADA
+
+distancia restante conocida
+→ EVOLUCIÓN OPCIONAL / FUTURA
+~~~
+
+Por tanto, la obligación estratégica que impedía evaluar estabilidad global queda cerrada.
+
+La siguiente decisión ya no es constructiva: debe reaplicarse el Manual 17 al estado post-gate para decidir si procede declarar estabilidad global o si existe fundamento suficiente para una nueva formación estratégica.
