@@ -12338,3 +12338,170 @@ R-RESHPI-03
 ~~~
 
 Documento: [117](117-R-RESHPI-02_REALIZACION_MINIMA_CONVERGENCIA_PRIMERA_CREACION.md).
+
+
+---
+
+# 19/11/2026 — R-RESHPI-03: validación formal y cierre de H-PROJ-INT-01
+
+Se ejecutó el gate formal posterior a R-RESHPI-02 sin modificar producción.
+
+Se añadió:
+
+~~~text
+src/App.reshpi.validation.test.tsx
+~~~
+
+con el caso:
+
+~~~text
+V-RESHPI-01
+~~~
+
+que parte sin previous y recorre:
+
+~~~text
+Crear W1
+→ W1 current común
+→ captura bajo W1
+→ comparación A/B bajo W1
+→ IA adopta W1
+→ interrupción
+→ reanudar W1
+→ recuperar A
+→ seleccionar A sin sustituir W1
+→ producir W2
+→ interrupción
+→ reanudar W2
+→ reconocer W2 ← A
+→ IA adopta W2
+~~~
+
+Resultado:
+
+~~~text
+V-RESHPI-01
+→ PASS
+~~~
+
+El contrato formal queda:
+
+~~~text
+REL-RESHPI-01…08
+→ 8/8 SATISFECHOS
+
+RES-HPI-01
+→ SATISFECHO
+→ CERRADO
+~~~
+
+Se reevaluaron los criterios que CONV-HPI-10 dejó parciales:
+
+~~~text
+C01-B
+C06-B
+C07-B
+C08-A
+C10-C
+G02
+G04
+G06
+→ todos SATISFECHOS
+~~~
+
+El estado integrado final queda:
+
+~~~text
+C-HPI-01…10
+→ SATISFECHAS
+
+D-HPI-01/02
+→ SATISFECHAS
+
+G01…G06
+→ SATISFECHOS
+
+CF-HPI-01-A…J
+→ 10/10 SATISFECHAS
+
+CF-HPI-01
+→ SATISFECHO
+~~~
+
+Se revisaron los diez falsos positivos globales de 103:
+
+~~~text
+activos
+→ 0/10
+~~~
+
+En particular, deja de estar activo:
+
+~~~text
+crear y retomar usan contextos incompatibles
+~~~
+
+La validación técnica autoritativa fue:
+
+~~~text
+GitHub Actions run
+→ 44518143543
+
+T-RESHPI-01…08 + V-RESHPI-01
+→ 9/9 PASS
+
+HPI/HPI2/global previo
+→ 20/20 PASS
+
+suite completa
+→ 66/66 archivos PASS
+→ 527/527 tests PASS
+
+build
+→ PASS
+→ built in 222ms
+
+typecheck
+→ baseline 14 errores
+→ actual 14 errores
+→ 0 nuevos
+
+producción
+→ sin cambios en R-RESHPI-03
+
+git diff --check
+→ PASS
+~~~
+
+Decisión:
+
+~~~text
+GAP-HPI-01
+→ CERRADO GLOBALMENTE
+
+GAP-HPI-02
+→ CERRADO
+
+RES-HPI-01
+→ CERRADO
+
+HITO-HPI-01
+→ SATISFECHO
+
+HITO-HPI-02
+→ SATISFECHO
+
+H-PROJ-INT-01
+→ SATISFECHO
+→ CERRADO
+  en su alcance aceptado
+
+Architecture
+→ NO DERIVADA
+~~~
+
+No se deriva R-RESHPI-04.
+
+La siguiente actuación, si existe, deberá derivarse de nuevo desde el estado estratégico posterior al cierre de H-PROJ-INT-01, sin asumir Architecture ni Implementation.
+
+Documento: [118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md).
