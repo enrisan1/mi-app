@@ -13447,3 +13447,54 @@ EA-BS-01
 ~~~
 
 No se deriva desarrollo.
+
+
+---
+
+# 19/11/2026 — BS-CE-MIAPP-01 / contraste de familiaridad
+
+Tras la desorientación inicial de BS-01 se proporciona únicamente orientación conceptual mínima sobre las seis superficies principales, sin prescribir recorrido ni botones.
+
+La persona declara que la página pasa a cobrar sentido y reconoce la relación general entre sus funciones.
+
+Identifica espontáneamente:
+
+~~~text
+Materiales anteriores
+→ recuperar estado del proyecto
+→ decidir después según el estado obtenido
+   entre nueva aportación,
+   apoyo IA,
+   comparación,
+   u otra actuación pertinente
+~~~
+
+Resultado:
+
+~~~text
+EA-BS-01
+→ CONFIRMADA
+
+BS-I-01
+→ fricción de aprendibilidad/orientación
+→ no gap demostrado
+
+M-ORI
+→ orientación recuperada
+
+M-CON
+→ suficiencia conceptual recuperada
+→ pendiente de ejercicio material
+
+BS-01
+→ SUPERADA CON ORIENTACIÓN CONCEPTUAL MÍNIMA
+~~~
+
+Siguiente fase:
+
+~~~text
+BS-02
+→ localización real
+~~~
+
+No se deriva desarrollo.
