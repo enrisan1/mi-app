@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 19/11/2026:** **ESTABILIDAD GLOBAL CONSERVADA**, con `BS-CE-MIAPP-01` abierta deliberadamente como observación humana de la frontera ergonómica identificada en [126](126-EVAL-CE-MIAPP-02_FRONTERA_SUFICIENCIA_COMPLEJIDAD_DOCUMENTAL.md). [127](127-BS-CE-MIAPP-01_OBSERVACION_HUMANA_COMPLEJIDAD_DOCUMENTAL.md) fija antes de observar la trayectoria BS-01…BS-06, las cinco dimensiones M-LOC/M-REC/M-ALT/M-CON/M-ORI, la distinción entre fricción e insuficiencia y el criterio `CF-BS-CE-MIAPP-01`. **La observación humana aún no ha sido ejecutada**, por lo que no existe nueva pérdida demostrada ni desarrollo derivado. Product, Rama A/B, horizonte, Realization, Architecture e Implementation permanecen sin cambios.
+**Estado vigente al 19/11/2026:** **ESTABILIDAD GLOBAL CONSERVADA**, con `BS-CE-MIAPP-01` en ejecución humana. La primera apertura real registrada en [127](127-BS-CE-MIAPP-01_OBSERVACION_HUMANA_COMPLEJIDAD_DOCUMENTAL.md) muestra **afectación fuerte de M-ORI y M-CON**: la persona percibe secciones independientes, no reconoce suficientemente su relación, no puede inferir con seguridad qué aportación solicita cada superficie ni qué efecto tendrá y no consigue iniciar con sentido la continuación de una investigación. `BS-01` queda NO SUPERADA. Aún no se declara `BS-C`: debe falsarse primero la explicación alternativa de **falta de familiaridad / aprendibilidad mediante ensayo y error**. M-REC permanece pendiente y M-LOC/M-ALT aún no han sido ejercitadas. No se deriva desarrollo, Product ni nuevo horizonte.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
