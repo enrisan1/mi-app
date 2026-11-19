@@ -12672,3 +12672,130 @@ al estado post-GATE-PROJ-01
 ~~~
 
 Documento: [120](120-AUD-PROJ-02_REAPLICACION_POST_HPI_GATE_PROJ_01.md).
+
+
+---
+
+# 19/11/2026 — Reaplicación final del Manual 17 y estabilidad global
+
+Después de AUD-PROJ-02:
+
+~~~text
+GATE-PROJ-01
+→ SATISFECHO
+~~~
+
+se reaplican las restantes ramas de continuidad.
+
+## Rama A
+
+No existe dependencia necesaria de un objetivo o compromiso vigente:
+
+~~~text
+Product vigente
+→ satisfecho en sus alcances
+
+H-PROJ-INT-01
+→ cerrado
+
+GATE-PROJ-01
+→ satisfecho
+
+dependencia estratégica pendiente
+→ ninguna demostrada
+~~~
+
+Resultado:
+
+~~~text
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+~~~
+
+## Rama B
+
+No aparece nueva pérdida independiente, incompatibilidad o residuo no absorbido.
+
+E-80-EM-01 permanece como evidencia condicionada sobre asistencia IA/esfuerzo creativo, pero sin independencia suficiente ni decisión Product bloqueada.
+
+~~~text
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+GATE-NH-01
+→ NO SE ABRE
+~~~
+
+## Incertidumbres
+
+Persisten cuestiones abiertas y deuda técnica, pero ninguna bloquea una decisión estratégica vigente.
+
+~~~text
+incertidumbre bloqueante
+→ NINGUNA IDENTIFICADA
+~~~
+
+## Product ↔ Platform Vision
+
+Platform Vision permanece dirección de largo plazo.
+
+Sus capacidades no realizadas:
+
+~~~text
+→ no son backlog
+→ no constituyen obligación por sí solas
+→ requieren justificación Product futura
+~~~
+
+F-PROJ-01 conserva la frontera núcleo/evolución.
+
+## Fundamentos externos
+
+Los activadores de 95 permanecen:
+
+~~~text
+ACT-EXT-01…05
+→ 0/5 activos
+~~~
+
+No existe fundamento humano explícito suficiente para abrir ahora una nueva formación estratégica.
+
+## Decisión
+
+~~~text
+nueva formación estratégica
+→ NO DERIVADA
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo horizonte
+→ NO DERIVADO
+
+Architecture
+→ NO DERIVADA
+
+Implementation
+→ NO DERIVADA
+
+ESTABILIDAD GLOBAL DEL PROYECTO
+→ DECLARADA
+  en el estado, alcance y evidencia actuales
+~~~
+
+La estabilidad es revisable: no significa proyecto terminado para siempre, Platform Vision agotada, producto perfecto ni ausencia de deuda.
+
+Punto de reanudación:
+
+~~~text
+nuevo hecho / nueva decisión / nueva evidencia
+↓
+reaplicar Manual 17
+↓
+derivar únicamente la actuación mínima justificada
+~~~
+
+Documento: [121](121-REAPLICACION_FINAL_MANUAL17_POST_GATE_PROJ_01_ESTABILIDAD_GLOBAL.md).
