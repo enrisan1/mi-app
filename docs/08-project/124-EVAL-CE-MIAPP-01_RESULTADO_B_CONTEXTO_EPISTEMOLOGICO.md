@@ -455,3 +455,27 @@ Architecture / Implementation
 siguiente actuación
 → RED-CE-MIAPP-01
 ~~~
+
+---
+
+# 15. Corrección posterior por RED-CE-MIAPP-01
+
+La salida B de esta evaluación era provisional respecto de un falsador explícito: debía cerrarse el gap sin modificación de producto si una trayectoria ordinaria existente demostraba establecimiento, interrupción, recuperación y continuación desde el estado epistemológico pertinente.
+
+[125](125-RED-CE-MIAPP-01_REDUCCION_GAP_Y_CRITERIO_MINIMO.md) ejecuta esa comprobación y obtiene:
+
+~~~text
+trayectoria ordinaria existente
+→ DEMOSTRADA
+
+producción
+→ SIN CAMBIOS
+
+GAP-CE-MIAPP-01
+→ FALSADO / CERRADO
+
+resultado vigente de EVAL-CE-MIAPP-01
+→ A EN ALCANCE MÍNIMO
+~~~
+
+Por tanto, este documento conserva valor histórico como diagnóstico previo a la trayectoria discriminante, pero su Resultado B deja de ser la conclusión vigente.
