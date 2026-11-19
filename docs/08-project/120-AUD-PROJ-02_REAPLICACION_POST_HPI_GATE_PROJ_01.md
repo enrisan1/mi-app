@@ -508,3 +508,30 @@ Implementation
 # 18. Punto de reanudación
 
 > **Reaplicar el Manual 17 al estado post-GATE-PROJ-01 satisfecho para decidir si puede declararse estabilidad global del proyecto o si existe fundamento suficiente para una nueva formación estratégica post-clausura.**
+
+---
+
+# 19. Resultado posterior de la reaplicación final del Manual 17
+
+[121](121-REAPLICACION_FINAL_MANUAL17_POST_GATE_PROJ_01_ESTABILIDAD_GLOBAL.md) reaplica las restantes ramas del Manual después de este gate.
+
+Resultado:
+
+~~~text
+RAMA A
+→ SIN CONTINUIDAD DERIVADA
+
+RAMA B
+→ SIN CONTINUIDAD DERIVADA
+
+incertidumbre bloqueante
+→ NINGUNA
+
+nueva formación estratégica
+→ NO DERIVADA
+
+ESTABILIDAD GLOBAL DEL PROYECTO
+→ DECLARADA
+~~~
+
+Por tanto la condición de estabilidad que AUD-PROJ-02 dejó únicamente como admisible queda posteriormente satisfecha.
