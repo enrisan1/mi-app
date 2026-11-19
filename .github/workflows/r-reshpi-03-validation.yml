@@ -1,0 +1,49 @@
+name: R-RESHPI-03 formal gate
+on:
+  push:
+    branches:
+      - r-reshpi-03-formal-gate
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - run: npm ci
+      - name: RES-HPI formal validation
+        run: npx vitest run src/App.reshpi.test.tsx src/App.reshpi.validation.test.tsx
+      - name: HPI preservation
+        run: npx vitest run src/App.hpi.test.tsx src/App.hpi.validation.test.tsx src/App.hpi2.test.tsx src/App.hpi2.validation.test.tsx src/App.hpi.global.validation.test.tsx
+      - name: Full regression
+        run: npx vitest run
+      - name: Build
+        run: npm run build
+      - name: Typecheck delta
+        run: |
+          set +e
+          npm run typecheck > /tmp/current-typecheck.log 2>&1
+          current_code=$?
+          grep 'error TS' /tmp/current-typecheck.log | sort > /tmp/current-errors.txt || true
+          git checkout 1fd898d7c3727db942dc8adcda53562319493db4
+          npm run typecheck > /tmp/base-typecheck.log 2>&1
+          base_code=$?
+          grep 'error TS' /tmp/base-typecheck.log | sort > /tmp/base-errors.txt || true
+          set -e
+          echo "current_code=$current_code base_code=$base_code"
+          echo "current_errors=$(wc -l < /tmp/current-errors.txt)"
+          echo "base_errors=$(wc -l < /tmp/base-errors.txt)"
+          diff -u /tmp/base-errors.txt /tmp/current-errors.txt
+          test "$current_code" -eq "$base_code"
+      - name: Production unchanged
+        run: |
+          git checkout "$GITHUB_SHA"
+          git diff --exit-code 1fd898d7c3727db942dc8adcda53562319493db4..HEAD -- src/App.tsx src/realizations/ru2m1/ResumeExperience.tsx
+      - name: Diff check
+        run: git diff --check 1fd898d7c3727db942dc8adcda53562319493db4..HEAD -- src/App.reshpi.validation.test.tsx
