@@ -13221,3 +13221,111 @@ ESTABILIDAD GLOBAL
 ~~~
 
 Documento: [125](125-RED-CE-MIAPP-01_REDUCCION_GAP_Y_CRITERIO_MINIMO.md).
+
+
+---
+
+# 19/11/2026 — EVAL-CE-MIAPP-02: frontera de complejidad documental
+
+Se evalúa si la suficiencia demostrada en CE-MIAPP-01 se conserva al aumentar materialmente la complejidad.
+
+Dimensiones ejercitadas:
+
+~~~text
+12 materiales previos
++
+varios resultados acreditados
++
+varias hipótesis
++
+varias cuestiones abiertas
++
+varios pendientes
++
+referencias cruzadas a fuentes
++
+comparación
++
+localización
++
+continuación posterior
+~~~
+
+Se añade exclusivamente:
+
+~~~text
+src/App.ce-miapp-scale.test.tsx
+~~~
+
+sin modificar producción.
+
+Primera ejecución:
+~~~text
+run 44593759612
+→ FAIL
+→ selector ambiguo del test
+~~~
+
+Segunda ejecución:
+~~~text
+run 44593962512
+→ FAIL
+→ error sintáctico introducido al corregir el selector
+~~~
+
+Ambos fallos son del test, no del comportamiento evaluado.
+
+Tras corregir sólo el test:
+
+~~~text
+run → 44594213297
+job → 135808027173
+
+src/App.ce-miapp-scale.test.tsx
+→ 1/1 PASS
+
+Test Files
+→ 1/1 PASS
+
+Tests
+→ 1/1 PASS
+~~~
+
+El workflow temporal se elimina después.
+
+Resultado:
+
+~~~text
+insuficiencia estructural
+→ REFUTADA EN EL CASO EJERCITADO
+
+suficiencia estructural
+→ CONFIRMADA
+
+insuficiencia humana/ergonómica a escala
+→ NO DETERMINADA
+→ incertidumbre no bloqueante
+~~~
+
+No se deriva buscador, etiquetas, grafo, dashboard, clasificación automática ni otra funcionalidad.
+
+Posible contraste futuro, no obligatorio:
+
+~~~text
+OBS-CE-MIAPP-01
+→ observación humana de una investigación compleja
+→ medir localización, reconstrucción,
+  alternancia, continuidad y pérdida de orientación
+~~~
+
+Estado:
+
+~~~text
+ESTABILIDAD GLOBAL
+→ CONSERVADA
+
+desarrollo
+→ NO DERIVADO
+~~~
+
+Documento: [126](126-EVAL-CE-MIAPP-02_FRONTERA_SUFICIENCIA_COMPLEJIDAD_DOCUMENTAL.md).
