@@ -434,3 +434,42 @@ EVAL-CE-MIAPP-01
 ~~~
 
 Si una evaluación futura obtiene un resultado B o C capaz de establecer una obligación, deberá reaplicarse el Manual 17.
+
+
+---
+
+# 15. Reapertura posterior por EVAL-CE-MIAPP-01
+
+La estabilidad global declarada en este documento fue correcta para el estado y evidencia existentes en ese momento.
+
+Posteriormente, [124](124-EVAL-CE-MIAPP-01_RESULTADO_B_CONTEXTO_EPISTEMOLOGICO.md) aporta nueva evidencia material:
+
+~~~text
+CI-MIAPP-01
+→ absorbida por C-PV-POST-01
+
+capacidad ordinaria suficiente
+→ NO demostrada
+
+GAP-CE-MIAPP-01
+→ ABIERTO
+~~~
+
+Por tanto:
+
+~~~text
+ESTABILIDAD GLOBAL
+→ deja de ser el estado vigente
+→ no se invalida retrospectivamente
+
+RAMA A
+→ REABIERTA
+
+nuevo compromiso Product
+→ NO
+
+nuevo horizonte
+→ NO
+~~~
+
+La continuidad queda limitada a reducir el gap demostrado antes de derivar construcción.
