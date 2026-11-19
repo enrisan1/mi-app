@@ -297,3 +297,26 @@ desarrollo
 ESTABILIDAD GLOBAL
 → CONSERVADA
 ~~~
+
+---
+
+# 14. Apertura posterior de BS-CE-MIAPP-01
+
+Por decisión deliberada posterior se abre [127](127-BS-CE-MIAPP-01_OBSERVACION_HUMANA_COMPLEJIDAD_DOCUMENTAL.md):
+
+~~~text
+BS-CE-MIAPP-01
+→ ABIERTA
+
+objeto
+→ observar suficiencia humana/ergonómica
+  en investigación documental compleja
+
+protocolo
+→ FIJADO
+
+observación humana
+→ TODAVÍA NO EJECUTADA
+~~~
+
+La apertura no modifica el resultado estructural de este documento ni deriva desarrollo.
