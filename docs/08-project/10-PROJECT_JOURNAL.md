@@ -12799,3 +12799,101 @@ derivar únicamente la actuación mínima justificada
 ~~~
 
 Documento: [121](121-REAPLICACION_FINAL_MANUAL17_POST_GATE_PROJ_01_ESTABILIDAD_GLOBAL.md).
+
+
+---
+
+# 19/11/2026 — Registro de CE-MIAPP-01 como experiencia candidata
+
+Se incorpora al proyecto una experiencia real procedente de una investigación documental prolongada:
+
+~~~text
+CE-MIAPP-01
+→ Recuperación, organización y continuidad
+  de una investigación documental
+~~~
+
+Situación observada:
+
+~~~text
+información dispersa
++
+fuentes
++
+materiales relacionados
++
+resultados acreditados
++
+cuestiones pendientes
++
+trabajo multi-sesión
+↓
+necesidad de recuperar,
+organizar y continuar
+sin reconstrucción innecesaria
+ni confusión epistemológica
+~~~
+
+La experiencia se registra sin convertir las soluciones históricas utilizadas —incluido Obsidian, HTML, Markdown, enlaces o búsquedas externas— en requisitos de mi-app.
+
+La pregunta futura queda formulada como:
+
+> ¿Qué parte de esta necesidad puede satisfacer ya mi-app, qué parte corresponde razonablemente a herramientas externas o al procedimiento y qué parte, si existe, permanece insuficientemente atendida dentro del alcance legítimo del producto?
+
+Se fijan tres salidas legítimas:
+
+~~~text
+A
+→ capacidades suficientes
+→ evidencia positiva
+→ sin desarrollo nuevo
+
+B
+→ compromiso existente insuficientemente realizado
+→ posible actuación correctiva derivada
+
+C
+→ necesidad humana nueva e independiente
+→ someter posteriormente a Product
+~~~
+
+Ningún resultado se presupone.
+
+La experiencia deja además una regla metodológica explícita:
+
+~~~text
+dificultad observada
+≠
+necesidad automática de software
+
+mejora de procedimiento
+puede resolver una dificultad
+sin ampliar Product
+~~~
+
+Se completa una ficha provisional compatible con Manual 17 §13.1.2. La novedad e independencia quedan NO DETERMINADAS.
+
+Estado:
+
+~~~text
+CE-MIAPP-01
+→ REGISTRADA
+
+EVAL-CE-MIAPP-01
+→ RESERVADA
+→ NO ABIERTA
+
+PRODUCT.md
+→ SIN CAMBIOS
+
+H-PROJ-INT-01
+→ NO REABIERTO
+
+ESTABILIDAD GLOBAL
+→ CONSERVADA
+
+Architecture / Implementation
+→ NO DERIVADAS
+~~~
+
+Documento: [122](122-CE-MIAPP-01_EXPERIENCIA_CANDIDATA_INVESTIGACION_DOCUMENTAL.md).
