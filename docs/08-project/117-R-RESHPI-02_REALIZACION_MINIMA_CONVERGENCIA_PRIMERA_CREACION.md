@@ -353,3 +353,36 @@ Architecture
 # 14. Siguiente actuación justificable
 
 > **R-RESHPI-03 — validar formalmente RES-HPI-01 contra REL-RESHPI-01…08 y reevaluar C01-B, C06-B, C07-B, C08-A, C10-C, G02, G04, G06 y CF-HPI-01 para decidir si H-PROJ-INT-01 puede finalmente declararse satisfecho/cerrado.**
+
+---
+
+# 15. Resultado posterior de R-RESHPI-03
+
+[118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md) valida formalmente la realización.
+
+Resultado:
+
+~~~text
+REL-RESHPI-01…08
+→ 8/8 SATISFECHOS
+
+V-RESHPI-01
+→ PASS
+
+C01-B, C06-B, C07-B,
+C08-A, C10-C,
+G02, G04, G06
+→ SATISFECHOS
+
+CF-HPI-01-A…J
+→ 10/10 SATISFECHAS
+
+RES-HPI-01
+→ CERRADO
+
+H-PROJ-INT-01
+→ SATISFECHO
+→ CERRADO
+~~~
+
+R-RESHPI-02 permanece cerrada como realización mínima; no se deriva trabajo productivo adicional desde este residuo.
