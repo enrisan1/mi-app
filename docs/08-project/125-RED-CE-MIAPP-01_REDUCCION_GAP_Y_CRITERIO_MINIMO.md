@@ -386,3 +386,34 @@ ESTABILIDAD GLOBAL
 siguiente actuación estratégica
 → NINGUNA DERIVADA POR CE-MIAPP-01
 ~~~
+
+---
+
+# 16. Evaluación posterior de complejidad
+
+[126](126-EVAL-CE-MIAPP-02_FRONTERA_SUFICIENCIA_COMPLEJIDAD_DOCUMENTAL.md) amplía el contraste a una actividad documental materialmente más compleja.
+
+Resultado:
+
+~~~text
+12 materiales
++
+estado epistemológico compuesto
++
+referencias cruzadas
++
+comparación
++
+localización
++
+continuación
++
+reanudación
+↓
+suficiencia estructural
+→ DEMOSTRADA
+~~~
+
+No aparece nuevo gap estructural.
+
+La posible insuficiencia restante queda desplazada a una cuestión humana/ergonómica de escala, todavía no demostrada.
