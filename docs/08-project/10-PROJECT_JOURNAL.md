@@ -13400,3 +13400,50 @@ ESTABILIDAD GLOBAL
 ~~~
 
 Documento: [127](127-BS-CE-MIAPP-01_OBSERVACION_HUMANA_COMPLEJIDAD_DOCUMENTAL.md).
+
+
+---
+
+# 19/11/2026 — BS-CE-MIAPP-01 / primera observación humana
+
+Primera apertura real de la App ordinaria sin instrucción adicional.
+
+La persona percibe:
+
+- varias secciones independientes;
+- relación entre ellas no reconocible;
+- mensajes e indicaciones demasiado esquemáticos para actuar con suficiente sentido;
+- posibilidad de aprender por ensayo y error;
+- una zona de apoyo IA reconocible de forma general;
+- varias superficies de aportación cuyo propósito, relación y efecto no quedan claros.
+
+Resultado provisional:
+
+~~~text
+BS-01
+→ NO SUPERADA
+
+M-ORI
+→ AFECTACIÓN FUERTE
+
+M-CON
+→ AFECTACIÓN FUERTE EN REANUDACIÓN
+
+M-REC
+→ PENDIENTE
+
+M-LOC / M-ALT
+→ NO EJERCITADAS
+~~~
+
+Se registra `BS-I-01`: dificultad de orientación inicial que impide iniciar con suficiente sentido la continuación.
+
+No se acepta todavía `BS-C`. Debe falsarse primero:
+
+~~~text
+EA-BS-01
+→ falta de familiaridad puntual
+→ interfaz potencialmente aprendible por ensayo/error
+~~~
+
+No se deriva desarrollo.
