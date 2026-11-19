@@ -13329,3 +13329,74 @@ desarrollo
 ~~~
 
 Documento: [126](126-EVAL-CE-MIAPP-02_FRONTERA_SUFICIENCIA_COMPLEJIDAD_DOCUMENTAL.md).
+
+
+---
+
+# 19/11/2026 — Apertura de BS-CE-MIAPP-01
+
+Se abre deliberadamente la observación humana derivada de la incertidumbre ergonómica dejada por EVAL-CE-MIAPP-02.
+
+~~~text
+BS-CE-MIAPP-01
+→ observar investigación documental compleja
+  con App ordinaria
+~~~
+
+Se fijan antes de observar:
+
+~~~text
+BS-01 → reanudación
+BS-02 → localización
+BS-03 → relación/comparación
+BS-04 → decisión epistemológica
+BS-05 → continuación
+BS-06 → segunda interrupción
+~~~
+
+Dimensiones:
+
+~~~text
+M-LOC → localización
+M-REC → reconstrucción
+M-ALT → alternancia
+M-CON → continuidad
+M-ORI → orientación
+~~~
+
+Se distingue expresamente:
+
+~~~text
+fricción
+≠
+insuficiencia material
+~~~
+
+y se fija CF-BS-CE-MIAPP-01 con cuatro posibles salidas:
+
+~~~text
+BS-A → suficiencia humana
+BS-B → fricción relevante pero no gap
+BS-C → candidata a insuficiencia
+BS-D → evidencia insuficiente
+~~~
+
+Antes de aceptar BS-C deberán descartarse explicaciones alternativas relativas a procedimiento, fuentes externas, familiaridad con la interfaz, amplitud artificial, automatización preferida y necesidad propia de otra herramienta.
+
+Estado:
+
+~~~text
+protocolo
+→ FIJADO
+
+observación humana
+→ NO EJECUTADA TODAVÍA
+
+desarrollo
+→ NO DERIVADO
+
+ESTABILIDAD GLOBAL
+→ CONSERVADA
+~~~
+
+Documento: [127](127-BS-CE-MIAPP-01_OBSERVACION_HUMANA_COMPLEJIDAD_DOCUMENTAL.md).
