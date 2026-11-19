@@ -498,3 +498,138 @@ siguiente contraste
 → falsar EA-BS-01
   (falta de familiaridad / aprendibilidad)
 ~~~
+
+
+---
+
+# 15. Contraste de familiaridad — resultado
+
+Se proporciona una orientación conceptual mínima sobre seis superficies:
+
+- Aportación anterior;
+- Aportación actual / nuevo trabajo;
+- Materiales anteriores;
+- Comparación de documentos;
+- Captura contextual;
+- Apoyo IA.
+
+No se prescribe un recorrido concreto ni se indican botones específicos.
+
+## 15.1 Respuesta humana
+
+Tras esta orientación mínima, la persona declara que:
+
+~~~text
+la página ahora cobra sentido
+y las funciones parecen estar relacionadas
+~~~
+
+Además identifica espontáneamente como punto de entrada:
+
+~~~text
+Materiales anteriores
+→ recuperar el estado del proyecto
+→ decidir después según lo recuperado
+   entre aportar algo nuevo,
+   solicitar apoyo IA,
+   comparar con otro texto,
+   u otra actuación pertinente
+~~~
+
+La persona no adopta un flujo rígido, sino que condiciona la siguiente actuación al estado actual del proceso.
+
+## 15.2 Evaluación de EA-BS-01
+
+La explicación alternativa:
+
+~~~text
+EA-BS-01
+→ falta de familiaridad puntual
+  con una interfaz potencialmente aprendible
+~~~
+
+queda **CONFIRMADA COMO EXPLICACIÓN MATERIAL DE LA PRIMERA DESORIENTACIÓN**.
+
+Esto reduce el peso probatorio de BS-I-01 como candidata directa a insuficiencia.
+
+No obstante, la observación también demuestra un requisito de uso:
+
+~~~text
+sin orientación conceptual mínima
+→ relación entre superficies no reconocible
+
+con orientación conceptual mínima
+→ lógica global reconocible
+~~~
+
+Por tanto la incidencia no desaparece: cambia de estatuto.
+
+~~~text
+BS-I-01
+→ PROBLEMA DE APRENDIBILIDAD / ORIENTACIÓN INICIAL
+→ NO demuestra por sí solo insuficiencia material
+~~~
+
+## 15.3 Revisión de dimensiones
+
+### M-ORI
+
+~~~text
+primera apertura
+→ afectación fuerte
+
+tras orientación mínima
+→ orientación recuperada
+
+clasificación provisional
+→ FRICCIÓN DE APRENDIBILIDAD
+→ no gap demostrado
+~~~
+
+### M-CON
+
+~~~text
+tras orientación mínima
+→ la persona identifica
+  un recorrido de continuación razonable
+
+punto de entrada elegido
+→ Materiales anteriores
+
+lógica
+→ recuperar estado
+→ decidir actuación posterior
+  según contexto
+~~~
+
+Resultado provisional:
+
+~~~text
+M-CON
+→ SUFICIENCIA CONCEPTUAL RECUPERADA
+→ continuidad material todavía por ejercitar
+~~~
+
+## 15.4 Estado tras contraste
+
+~~~text
+BS-01
+→ SUPERADA CON ORIENTACIÓN CONCEPTUAL MÍNIMA
+
+EA-BS-01
+→ CONFIRMADA
+
+BS-I-01
+→ FRICCIÓN DE APRENDIBILIDAD
+→ NO GAP
+
+M-ORI
+→ RECUPERADA
+
+M-CON
+→ CONCEPTUALMENTE SUFICIENTE
+→ pendiente de contraste material
+
+siguiente fase
+→ BS-02 — LOCALIZACIÓN REAL
+~~~
