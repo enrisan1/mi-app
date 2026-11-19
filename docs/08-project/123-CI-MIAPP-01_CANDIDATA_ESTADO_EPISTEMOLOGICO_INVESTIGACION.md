@@ -373,3 +373,22 @@ GAP-CE-MIAPP-01
 siguiente actuación
 → RED-CE-MIAPP-01
 ~~~
+
+
+---
+
+# 16. Resolución posterior por RED-CE-MIAPP-01
+
+[125](125-RED-CE-MIAPP-01_REDUCCION_GAP_Y_CRITERIO_MINIMO.md) demuestra que la candidata no requiere una nueva capacidad material en el alcance mínimo.
+
+~~~text
+CI-MIAPP-01
+→ absorbida por C-PV-POST-01
+→ suficientemente practicable
+  mediante capacidades ordinarias existentes
+
+resultado vigente
+→ A EN ALCANCE MÍNIMO
+~~~
+
+Los mecanismos especializados permanecen como posibles mejoras de conveniencia, no como obligaciones derivadas.
