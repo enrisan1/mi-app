@@ -73,7 +73,13 @@ describe("EVAL-CE-MIAPP-02 — suficiencia estructural en investigación documen
       screen.getByRole("button", { name: /^examinar materiales anteriores$/i }),
     );
 
-    const materialsRegion = screen\n      .getAllByLabelText(/^materiales anteriores$/i)\n      .find((element) => element.tagName === "DIV");\n\n    if (materialsRegion === undefined) {\n      throw new Error("Región de materiales anteriores no encontrada");\n    }
+    const materialsRegion = screen
+      .getAllByLabelText(/^materiales anteriores$/i)
+      .find((element) => element.tagName === "DIV");
+
+    if (materialsRegion === undefined) {
+      throw new Error("Región de materiales anteriores no encontrada");
+    }
     expect(within(materialsRegion).getAllByRole("article")).toHaveLength(13);
 
     const source7 = within(materialsRegion)
