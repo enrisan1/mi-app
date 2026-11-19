@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 18/11/2026
+**Fecha de actualización:** 19/11/2026
 
 ## Índice
 
@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 18/11/2026:** **`H-PROJ-INT-01` ACEPTADO Y ABIERTO, TODAVÍA NO DECLARADO SATISFECHO; `HITO-HPI-01` y `HITO-HPI-02` permanecen SATISFECHOS; `GAP-HPI-02` permanece CERRADO; `RES-HPI-01` está REALIZADO MATERIALMENTE y pendiente únicamente de validación formal.** [117](117-R-RESHPI-02_REALIZACION_MINIMA_CONVERGENCIA_PRIMERA_CREACION.md) selecciona una notificación específica de primera constitución en `ResumeExperience` y reutiliza en `App` una única función `establishCurrentWork`, sin falsificar `SituatedResult`, sin almacenamiento paralelo y sin Architecture. Resultado: **`T-RESHPI-01…08 = 8/8 PASS`**; HPI/HPI2/global **20/20 PASS**; pruebas propias de `ResumeExperience` **41/41 PASS**; suite completa **65 archivos / 526 tests PASS**; build PASS; typecheck conserva exactamente los **14 errores históricos y 0 nuevos**; `git diff --check` PASS. Se ajustaron únicamente tres aserciones de tests que asumían unicidad visual del texto recién creado, sin rebajar ninguna condición material. Siguiente actuación justificable: `R-RESHPI-03`, validar formalmente `RES-HPI-01` contra `REL-RESHPI-01…08` y reevaluar `C01-B, C06-B, C07-B, C08-A, C10-C, G02, G04, G06` y `CF-HPI-01` antes de decidir el cierre de `H-PROJ-INT-01`.
+**Estado vigente al 19/11/2026:** **`H-PROJ-INT-01 — Plataforma integrada mínima para trabajo textual individual` queda SATISFECHO Y CERRADO en su alcance aceptado.** [118](118-R-RESHPI-03_VALIDACION_FORMAL_Y_CIERRE_H_PROJ_INT_01.md) valida `REL-RESHPI-01…08 = 8/8`, cierra `RES-HPI-01`, reevalúa como satisfechos `C01-B, C06-B, C07-B, C08-A, C10-C, G02, G04, G06` y determina `CF-HPI-01-A…J = 10/10 SATISFECHAS`. Los 30 criterios individuales, `D-HPI-01/02` y `G01…G06` quedan satisfechos; los diez falsos positivos globales de 103 quedan inactivos. La validación formal añade `V-RESHPI-01`, que parte sin `previous`, crea W1 y completa la trayectoria hasta W2 ← A tras dos interrupciones. Evidencia técnica: contrato RES-HPI formal **9/9 PASS**, HPI/HPI2/global previo **20/20 PASS**, suite completa **66 archivos / 527 tests PASS**, build PASS, typecheck con los mismos **14 errores históricos y 0 nuevos**, producción sin cambios en R-RESHPI-03 y `git diff --check` PASS. `GAP-HPI-01` queda CERRADO GLOBALMENTE, `GAP-HPI-02` permanece CERRADO, `HITO-HPI-01/02` permanecen SATISFECHOS. Architecture NO queda derivada por este cierre. No queda justificada una `R-RESHPI-04`; cualquier siguiente actuación debe derivarse de nuevo desde el estado estratégico post-`H-PROJ-INT-01`.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
