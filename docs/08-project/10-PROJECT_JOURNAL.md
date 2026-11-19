@@ -12897,3 +12897,107 @@ Architecture / Implementation
 ~~~
 
 Documento: [122](122-CE-MIAPP-01_EXPERIENCIA_CANDIDATA_INVESTIGACION_DOCUMENTAL.md).
+
+
+---
+
+# 19/11/2026 — Derivación de CI-MIAPP-01 para evaluación posterior
+
+Se reduce CE-MIAPP-01 para evitar evaluar una experiencia agregada como si fuera una sola necesidad Product.
+
+Líneas consideradas:
+
+~~~text
+L1 — procedencia de fuentes
+L2 — organización/relación de materiales
+L3 — continuidad del estado epistemológico
+L4 — criterio de cuándo detener investigación
+~~~
+
+Resultado reductivo:
+
+~~~text
+L1
+→ fuerte solapamiento con PV-006 / Platform Vision 4.4 / ACT-EXT-01
+→ conservar como dimensión de contraste
+
+L2
+→ demasiado amplia
+→ coincide con Platform Vision 4.2/4.3
+→ no apta todavía como candidata Product
+
+L4
+→ resuelta en el caso mediante método, evidencia y decisión humana
+→ principalmente metodológica
+
+L3
+→ residuo más estrecho y discriminable
+→ seleccionada para evaluación posterior
+~~~
+
+Se formula:
+
+> **CI-MIAPP-01 — Continuidad del estado epistemológico operativo de una investigación.**
+
+Situación candidata:
+
+~~~text
+investigación multi-sesión
++
+materiales pertinentes recuperables
++
+necesidad de reconocer:
+  resultados acreditados
+  hipótesis
+  cuestiones abiertas
+  trabajo pendiente
+↓
+continuar sin reconstrucción innecesaria
+ni confusión del estado intelectual alcanzado
+~~~
+
+No se presupone independencia.
+
+Contrastes pendientes principales:
+
+~~~text
+PV-003
+→ no absorbe de forma evidente;
+  excluye estado general, persistencia de orientación,
+  colección de resultados y planificación
+
+C-PV-POST-01
+→ podría absorber parte o todo
+  si estas distinciones son contexto provisional pertinente
+
+PV-006
+→ podría absorberla
+  si su pérdida elimina posibilidades pertinentes
+~~~
+
+La futura evaluación deberá decidir entre:
+
+~~~text
+A — absorbida / ya suficientemente atendida
+B — compromiso vigente insuficientemente realizado
+C — necesidad nueva e independiente
+~~~
+
+Estado:
+
+~~~text
+CI-MIAPP-01
+→ CANDIDATA SELECCIONADA PARA EVALUACIÓN POSTERIOR
+
+EVAL-CE-MIAPP-01
+→ RESERVADA
+→ NO ABIERTA
+
+Product
+→ SIN CAMBIOS
+
+ESTABILIDAD GLOBAL
+→ CONSERVADA
+~~~
+
+Documento: [123](123-CI-MIAPP-01_CANDIDATA_ESTADO_EPISTEMOLOGICO_INVESTIGACION.md).
