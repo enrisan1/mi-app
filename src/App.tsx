@@ -8,6 +8,11 @@ import { localStorageResumeRepository } from "./realizations/ru2m1/localStorageR
 import { requestAiSupport } from "./ai-support/aiSupportGateway";
 import { requestTurnstileToken } from "./ai-support/turnstileClient";
 import { OrdinaryComparison } from "./OrdinaryComparison";
+import {
+  traceResult,
+  traceResultReason,
+} from "./realizations/knowledge-trajectory/KnowledgeTrajectory";
+import { listAssociatedTrajectories } from "./realizations/knowledge-trajectory/knowledgeTrajectoryRepository";
 
 type OrdinaryMaterial = {
   id: string;
@@ -251,6 +256,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
     currentWorkId === null
       ? undefined
       : ordinaryMaterials.find((material) => material.id === currentWorkId);
+  const [openedKnowledgeTrajectoryKey, setOpenedKnowledgeTrajectoryKey] =
+    useState<string | null>(null);
+  const knowledgeTrajectoryAssociations = listAssociatedTrajectories().filter(
+    (association) =>
+      ordinaryMaterials.some(
+        (material) => material.id === association.materialId,
+      ),
+  );
   const [availablePostV1Current, setAvailablePostV1Current] = useState<
     string | null
   >(() => localStorageResumeRepository.loadPrevious());
@@ -693,6 +706,80 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
           </section>
         )}
       </section>
+
+      {knowledgeTrajectoryAssociations.length > 0 && (
+        <section aria-label="Trayectorias de conocimiento">
+          <h2>Trayectorias de conocimiento</h2>
+
+          {knowledgeTrajectoryAssociations.map((association) => {
+            const material = ordinaryMaterials.find(
+              (candidate) => candidate.id === association.materialId,
+            );
+
+            if (material === undefined) {
+              return null;
+            }
+
+            const trajectoryKey = `${association.materialId}:${association.resultId}`;
+            const isOpen = openedKnowledgeTrajectoryKey === trajectoryKey;
+            const provenance = isOpen
+              ? traceResult(association.trajectory, association.resultId)
+              : null;
+            const reason = isOpen
+              ? traceResultReason(association.trajectory, association.resultId)
+              : null;
+
+            return (
+              <article
+                key={trajectoryKey}
+                aria-label={`Trayectoria de resultado ${association.resultId}`}
+              >
+                <p>{material.content}</p>
+                <p>{association.resultId}</p>
+                <button
+                  type="button"
+                  onClick={() => setOpenedKnowledgeTrajectoryKey(trajectoryKey)}
+                >
+                  Ver trayectoria de {association.resultId}
+                </button>
+
+                {provenance !== null && reason !== null && (
+                  <section aria-label={`Trayectoria de ${association.resultId}`}>
+                    <h3>Trayectoria de {association.resultId}</h3>
+
+                    <section aria-label="Procedencia">
+                      <h4>Procedencia</h4>
+                      <p>
+                        {provenance.sourceId} → {provenance.assertionId} →{" "}
+                        {provenance.transformationId} → {provenance.resultId}
+                      </p>
+                      <p>
+                        {provenance.participantId} → {provenance.actionId} →{" "}
+                        {provenance.transformationId}
+                      </p>
+                    </section>
+
+                    <section aria-label="Razón">
+                      <h4>Razón</h4>
+                      <p>{reason.objectiveId}</p>
+                      <p>{reason.mandatoryConditionIds.join("/")}</p>
+                      {reason.discardedAlternatives.map((discarded) => (
+                        <p key={discarded.alternativeId}>
+                          {discarded.alternativeId} descartada por{" "}
+                          {discarded.failedConditionId}
+                        </p>
+                      ))}
+                      <p>{reason.selectedAlternativeId} seleccionada</p>
+                      <p>{reason.decisiveEvidenceId}</p>
+                      <p>{reason.decisionId}</p>
+                    </section>
+                  </section>
+                )}
+              </article>
+            );
+          })}
+        </section>
+      )}
 
       {ordinaryMaterials.length >= 2 && (
         <section aria-label="Comparación de documentos">
