@@ -1,6 +1,6 @@
 import type { KnowledgeTrajectory } from "./KnowledgeTrajectory";
 
-type AssociatedTrajectory = {
+export type AssociatedTrajectory = {
   materialId: string;
   resultId: string;
   trajectory: KnowledgeTrajectory;
@@ -44,6 +44,10 @@ export function saveAssociatedTrajectory(
   );
 
   saveAssociations([...remaining, association]);
+}
+
+export function listAssociatedTrajectories(): AssociatedTrajectory[] {
+  return loadAssociations();
 }
 
 export function loadAssociatedTrajectory(
