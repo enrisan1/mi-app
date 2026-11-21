@@ -408,7 +408,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     );
 
@@ -457,7 +457,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     );
 
@@ -499,7 +499,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     render(<App />);
 
     expect(
-      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+      screen.getByRole("button", { name: /usar este trabajo en integración post-v1/i }),
     ).toBeInTheDocument();
     const resumeExisting = screen.getByRole("button", {
       name: /retomar trayectoria integrada existente/i,
@@ -532,7 +532,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     expect(localStorage.getItem("post-v1-integrated.state")).toBe(storedR);
     await user.click(
-      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+      screen.getByRole("button", { name: /usar este trabajo en integración post-v1/i }),
     );
 
     expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
@@ -566,7 +566,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     const firstExecution = render(<App />);
     await user.click(
-      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+      screen.getByRole("button", { name: /usar este trabajo en integración post-v1/i }),
     );
     expect(screen.getByLabelText("Contenido del trabajo actual").textContent).toBe(
       "Y nuevo",
@@ -606,7 +606,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     render(<App />);
 
     expect(
-      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+      screen.getByRole("button", { name: /usar este trabajo en integración post-v1/i }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
@@ -690,7 +690,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
     expect(localStorage.getItem("ru2m1.previous")).toBe("Y nuevo");
     expect(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     ).toBeInTheDocument();
   });
@@ -787,7 +787,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     );
 
@@ -850,7 +850,7 @@ describe("continuidad ordinaria hacia la trayectoria post-V1", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     ).toBeInTheDocument();
 
