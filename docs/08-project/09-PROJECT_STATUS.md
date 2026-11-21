@@ -9418,3 +9418,57 @@ R-CSYS-06
 No se abre motor general de razonamiento, Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de GAP-CONV-SYS-04
+
+Se integra el relevo P1 → P2 en la misma `KnowledgeTrajectory` ordinaria.
+
+Evidencia funcional:
+
+~~~text
+RED
+→ 4/4 FAIL
+→ ausencia de Preparar relevo de R1
+
+GREEN
+→ 4/4 PASS
+~~~
+
+Regresión dirigida:
+
+~~~text
+App.kgv
+→ 7/7 PASS
+
+HandoffExperience
+→ 4/4 PASS
+
+App.knowledge-trajectory.continuation
+→ 4/4 PASS
+
+TOTAL
+→ 19/19 PASS
+~~~
+
+Decisión:
+
+~~~text
+GAP-CONV-SYS-04
+→ CERRADO
+
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+R-CSYS-07
+→ SIGUIENTE ACTUACIÓN DERIVADA
+→ escenario E2E completo
+~~~
+
+Los cuatro gaps de convergencia quedan cerrados. Falta demostrar su ejercicio conjunto en una sola investigación ordinaria persistida.
+
+No se abre nuevo Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
