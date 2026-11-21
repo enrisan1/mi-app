@@ -1893,7 +1893,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
 
                   if (antecedentMaterial !== undefined) {
                     const resultId = `R${ordinaryMaterials.length + 1}`;
-                    const trajectory = createKnowledgeTrajectory({
+                    const baseTrajectory = createKnowledgeTrajectory({
                       source: {
                         id: `F-${nextMaterial.id}`,
                         kind: "source",
@@ -1925,6 +1925,30 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                         content: newWork,
                       },
                     });
+
+                    const trajectory = attachParticipantProvenance(
+                      baseTrajectory,
+                      {
+                        resultId,
+                        contributions: [
+                          {
+                            participant: {
+                              id: `PH-${nextMaterial.id}`,
+                              kind: "participant",
+                              content: OPERATIONAL_IDENTITY,
+                            },
+                            participantType: "human",
+                            action: {
+                              id: `AC-${nextMaterial.id}`,
+                              kind: "action",
+                              content: "Continuar con este material",
+                            },
+                            transformationId: `T-${nextMaterial.id}`,
+                            contributionState: "produced",
+                          },
+                        ],
+                      },
+                    );
 
                     saveAssociatedTrajectory({
                       materialId: nextMaterial.id,
