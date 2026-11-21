@@ -2543,3 +2543,680 @@ producción
 
 > Crear el contrato rojo de continuidad humana ordinaria sin modificar
 > producción y verificar qué condiciones fallan realmente.
+
+
+# 50. R-CSYS-09-C — contrato rojo y diferencia observada
+
+Se crea exclusivamente el contrato:
+
+~~~text
+src/App.human-continuity.test.tsx
+~~~
+
+con T-CSYS-HCONT-01…08, sin modificar todavía producción.
+
+Primera ejecución válida:
+
+~~~text
+8 tests
+→ 1 PASS
+→ 7 FAIL
+~~~
+
+Resultado individual:
+
+~~~text
+T-CSYS-HCONT-01
+→ FAIL
+→ no existe una acción “Seguir trabajando”
+
+T-CSYS-HCONT-02
+→ FAIL aguas arriba
+→ no puede ejercerse todavía A1 → A2 por ruta ordinaria
+
+T-CSYS-HCONT-03
+→ FAIL aguas arriba
+→ no puede verificarse todavía remount A2/A1
+
+T-CSYS-HCONT-04
+→ FAIL
+→ la entrada PostV1 sigue presentada bajo la acción histórica
+  “Continuar con este trabajo”
+
+T-CSYS-HCONT-05
+→ FAIL aguas arriba
+→ no puede constituirse A2 ordinariamente antes de usarlo en PostV1
+
+T-CSYS-HCONT-06
+→ FAIL de presentación
+→ la opción Y → PostV1 existe materialmente,
+  pero no bajo una acción explícitamente diferenciada
+
+T-CSYS-HCONT-07
+→ FAIL de presentación
+→ la ruta KGV llega al punto de entrada PostV1,
+  pero el selector nuevo todavía no existe
+
+T-CSYS-HCONT-08
+→ PASS
+→ la recuperación de estado PostV1 incompatible permanece utilizable
+~~~
+
+La ejecución reduce siete fallos a dos causas comunes:
+
+~~~text
+CAUSA 1
+→ ausencia de una acción ordinaria inequívoca
+  para seguir trabajando sobre el mismo hilo
+
+CAUSA 2
+→ ausencia de una denominación explícita y separada
+  para iniciar/usar la integración PostV1
+~~~
+
+No se demuestra en esta fase:
+
+- pérdida de persistencia A1/A2;
+- pérdida de KnowledgeTrajectory;
+- rotura de PostV1;
+- rotura de KGV;
+- rotura de recuperación incompatible.
+
+Los fallos de T02/T03/T05 son dependientes de la ausencia de la transición
+ordinaria y no pueden reinterpretarse como defectos de estado antes de poder
+ejercer esa ruta.
+
+Resultado:
+
+~~~text
+R-CSYS-09-C
+→ RED VÁLIDO
+
+diferencia real
+→ separación ausente entre:
+   CONTINUAR HILO ORDINARIO
+   y
+   USAR INTEGRACIÓN POST-V1
+
+producción
+→ TODAVÍA SIN CAMBIOS
+~~~
+
+---
+
+# 51. R-CSYS-09-D — intervención mínima
+
+Se modifica únicamente App para materializar la separación ya reducida.
+
+Intervención productiva:
+
+~~~text
+1. nueva acción:
+   “Seguir trabajando”
+
+2. efecto:
+   → permanece en App ordinaria
+   → remonta ResumeExperience
+   → permite continuar desde el trabajo vigente
+
+3. entrada histórica Y → PostV1:
+   “Usar este trabajo en integración post-V1”
+
+4. si existe R:
+   “Usar este trabajo en integración post-V1
+    sustituyendo la trayectoria integrada anterior”
+
+5. se conserva:
+   “Retomar trayectoria integrada existente”
+~~~
+
+No se modifica:
+
+- KnowledgeTrajectory;
+- persistencia ordinaria;
+- PostV1IntegratedExperience;
+- S1/P1;
+- KGV;
+- recuperación incompatible;
+- modelo de datos.
+
+Commit productivo:
+
+~~~text
+38a7c25
+fix(app): separate ordinary continuation from post-v1 integration
+~~~
+
+## 51.1 Resultado del contrato nuevo
+
+Primera ejecución tras producción:
+
+~~~text
+7/8 PASS
+~~~
+
+El único fallo restante es T-CSYS-HCONT-07.
+
+La salida recibida por el test contiene materialmente:
+
+~~~json
+{
+  "sharedResult": "Primera aportación del mismo trabajo",
+  "firstContribution": {
+    "participant": "A",
+    "content": "Aportación A transferible"
+  }
+}
+~~~
+
+Por tanto, no existe fallo productivo en la entrega. El defecto está en el
+matcher del test:
+
+~~~text
+toHaveValue(expect.stringContaining(...))
+~~~
+
+Se corrige únicamente el harness:
+
+~~~text
+b961464
+test(app): fix transferable antecedent assertion
+~~~
+
+Resultado posterior:
+
+~~~text
+T-CSYS-HCONT-01…08
+→ 8/8 PASS
+~~~
+
+Conclusión material:
+
+~~~text
+T02
+→ A1 y A2 siguen reconocibles como mismo hilo
+
+T03
+→ remount recupera A2 como actual
+→ A1 sigue recuperable
+
+T05
+→ A2 entra en PostV1 como current
+→ S1 no se constituye automáticamente
+~~~
+
+No aparece un segundo defecto material de persistencia o continuidad.
+
+---
+
+# 52. Regresión histórica de R-CSYS-09-D
+
+Se ejecuta regresión focal sobre:
+
+~~~text
+src/App.test.tsx
+src/App.hpi.test.tsx
+src/App.kgv.test.tsx
+src/realizations/post-v1-integrated/PostV1IntegratedExperience.test.tsx
+~~~
+
+Primera ejecución:
+
+~~~text
+PostV1IntegratedExperience
+→ 14/14 PASS
+
+App.kgv
+→ 5 PASS / 2 FAIL
+
+App.hpi
+→ 7 PASS / 1 FAIL
+
+App
+→ 19 PASS / 9 FAIL
+~~~
+
+Los 12 fallos se detienen en selectores que todavía buscan:
+
+~~~text
+/continuar con este trabajo/i
+~~~
+
+mientras la App ya presenta:
+
+~~~text
+Seguir trabajando
+
+Usar este trabajo en integración post-V1
+
+y, cuando existe R:
+
+Usar este trabajo en integración post-V1
+sustituyendo la trayectoria integrada anterior
+
+Retomar trayectoria integrada existente
+~~~
+
+No se observa ninguna aserción material posterior fallida.
+
+Se actualizan deliberadamente únicamente los contratos de presentación:
+
+~~~text
+App.hpi
+→ continuidad ordinaria
+→ “Seguir trabajando”
+
+App.kgv
+→ entrada especializada
+→ “Usar este trabajo en integración post-V1”
+
+App / T67
+→ entrada Y → PostV1
+→ “Usar este trabajo en integración post-V1”
+~~~
+
+Commits:
+
+~~~text
+5e32906
+test(hpi): follow explicit ordinary continuation label
+
+d689f90
+test(kgv): follow explicit post-v1 integration label
+
+b1b8275
+test(app): update post-v1 entry contracts after continuity split
+~~~
+
+Regresión focal posterior:
+
+~~~text
+4/4 archivos PASS
+57/57 tests PASS
+~~~
+
+Por tanto:
+
+~~~text
+patrimonio PostV1
+→ CONSERVADO
+
+elección Y/R
+→ CONSERVADA
+
+KGV
+→ CONSERVADO
+
+HPI
+→ CONSERVADO
+
+recuperación incompatible
+→ CONSERVADA
+~~~
+
+---
+
+# 53. Suite global e incidencia de concurrencia
+
+Primera ejecución global:
+
+~~~text
+81 archivos
+
+79 PASS
+2 FAIL
+
+585 tests
+
+583 PASS
+2 FAIL
+~~~
+
+Los dos fallos son timeouts de 5000 ms en:
+
+~~~text
+App.ce-miapp-scale.test.tsx
+→ T-CE-MIAPP-02
+
+App.knowledge-trajectory.reason-convergence.test.tsx
+→ T-CSYS-DEC-01
+~~~
+
+Ambos archivos pasan aisladamente:
+
+~~~text
+ce-miapp-scale
+→ 1/1 PASS
+
+reason-convergence
+→ 3/3 PASS
+~~~
+
+También pasan ejecutados conjuntamente:
+
+~~~text
+2/2 archivos PASS
+4/4 tests PASS
+~~~
+
+Una segunda ejecución global reproduce sensibilidad bajo carga:
+
+~~~text
+T-CE-MIAPP-02
+→ timeout
+
+T-CSYS-DEC-01
+→ timeout
+
+T-CSYS-DEC-02
+→ timeout
+
+T-CSYS-DEC-03
+→ aserción con texto intercalado/corrompido durante la ejecución
+~~~
+
+No se modifica producción ni se aumenta el timeout.
+
+Se reduce reversiblemente la concurrencia de ejecución:
+
+~~~text
+npx vitest run --maxWorkers=2
+~~~
+
+Resultado:
+
+~~~text
+81/81 archivos PASS
+585/585 tests PASS
+~~~
+
+Conclusión:
+
+> Existe sensibilidad de la infraestructura de tests bajo el paralelismo global
+> por defecto. No existe evidencia de una regresión funcional de
+> R-CSYS-09-D. La contención a dos workers permite verificar toda la suite sin
+> modificar contratos ni ampliar timeouts.
+
+La incidencia de concurrencia queda separada del alcance funcional de
+R-CSYS-09.
+
+---
+
+# 54. Typecheck global — condición preexistente separada
+
+Se ejecuta:
+
+~~~text
+npm run typecheck
+~~~
+
+Resultado:
+
+~~~text
+29 errores
+6 archivos
+~~~
+
+Distribución:
+
+~~~text
+src/App.tsx
+→ 15
+
+src/realizations/comparison/ComparisonProgress.test.tsx
+→ 1
+
+src/realizations/comparison/InlineDetectionExperience.test.tsx
+→ 1
+
+src/realizations/comparison/InlineDetectionExperience.tsx
+→ 1
+
+src/realizations/comparison/LateralComparisonExperience.test.tsx
+→ 1
+
+src/realizations/comparison/detectLiteralDifferences.ts
+→ 10
+~~~
+
+Los errores de App se concentran en:
+
+- asociación de procedencia IA;
+- construcción de razón de decisión con indexación estricta.
+
+La comparación entre el estado anterior a R-CSYS-09-D
+(commit 209ca7c) y el estado actual demuestra que esos bloques ya existían con
+la misma forma antes del commit productivo 38a7c25.
+
+Los otros errores pertenecen a módulos de comparación no modificados por
+R-CSYS-09-D.
+
+Por tanto:
+
+~~~text
+typecheck global
+→ RED
+
+atribución a R-CSYS-09-D
+→ NO DEMOSTRADA
+→ evidencia directa de preexistencia
+
+build
+→ NO EJECUTADO
+→ se mantiene la disciplina de no avanzar
+  tras typecheck rojo
+~~~
+
+La deuda de TypeScript no se absorbe artificialmente en R-CSYS-09.
+
+---
+
+# 55. Evaluación técnica de CF-CSYS-09
+
+Se reaplican las ocho condiciones.
+
+~~~text
+CF-CSYS-09-01 — Identidad del hilo
+→ TÉCNICAMENTE SATISFECHA
+→ T-HCONT-02
+
+CF-CSYS-09-02 — Estado actual inequívoco
+→ TÉCNICAMENTE SATISFECHA
+→ A2 permanece como trabajo vigente
+→ PostV1 se separa nominalmente
+
+CF-CSYS-09-03 — Continuación explícita
+→ TÉCNICAMENTE SATISFECHA
+→ “Seguir trabajando”
+→ no monta PostV1
+
+CF-CSYS-09-04 — Conservación no destructiva
+→ TÉCNICAMENTE SATISFECHA EN EL ALCANCE CONTRATADO
+→ T-HCONT-02/05
+→ regresión histórica verde
+
+CF-CSYS-09-05 — Recuperación completa
+→ TÉCNICAMENTE SATISFECHA
+→ T-HCONT-03
+
+CF-CSYS-09-06 — Separación de acciones
+→ TÉCNICAMENTE SATISFECHA POR PRESENTACIÓN
+→ continuar hilo
+   ≠
+   usar integración PostV1
+   ≠
+   retomar R
+
+CF-CSYS-09-07 — Reanudación
+→ TÉCNICAMENTE SATISFECHA
+→ T-HCONT-03
+
+CF-CSYS-09-08 — Compatibilidad con trayectoria
+→ SATISFECHA EN REGRESIÓN
+→ HCONT 8/8
+→ focal histórica 57/57
+→ global 585/585 con maxWorkers=2
+~~~
+
+Resultado técnico:
+
+~~~text
+CF-CSYS-09
+→ 8/8 CONDICIONES TÉCNICAMENTE CUBIERTAS
+~~~
+
+Esto no basta para cerrar el criterio.
+
+CF-CSYS-09 nació de una falsación humana observada y contiene condiciones de
+reconocibilidad, orientación y distinción de acciones que no pueden darse por
+cerradas únicamente por tests DOM.
+
+---
+
+# 56. HUMAN GATE de CF-CSYS-09
+
+Se deriva una única validación humana de cierre.
+
+Objetivo:
+
+> comprobar si una persona, sin explicación sobre la implementación, reconoce
+> ahora un mismo hilo ordinario y distingue espontáneamente entre continuar ese
+> hilo y usar una integración especializada.
+
+## 56.1 Escenario
+
+Partir de una App limpia.
+
+Constituir:
+
+~~~text
+A1
+→ primera aportación
+
+después
+→ continuar el mismo trabajo
+
+A2
+→ segunda aportación
+~~~
+
+La persona debe poder responder desde la interfaz, sin explicación previa:
+
+~~~text
+1. ¿Qué trabajo está haciendo ahora?
+
+2. ¿Dónde ve lo que había hecho antes?
+
+3. ¿Qué acción elegiría para seguir trabajando sobre ese mismo hilo?
+
+4. ¿Qué entiende que ocurriría si elige:
+   “Usar este trabajo en integración post-V1”?
+
+5. Si existe una trayectoria integrada anterior R:
+   ¿distingue entre:
+   → seguir el hilo ordinario,
+   → usar el trabajo actual en PostV1,
+   → retomar la trayectoria R?
+~~~
+
+Después:
+
+~~~text
+interrumpir / recargar
+→ recuperar
+
+comprobar:
+→ reconoce A2 como estado actual
+→ puede localizar A1
+→ sabe cómo seguir sin reconstrucción manual
+~~~
+
+## 56.2 Condiciones humanas de cierre
+
+~~~text
+HG-CSYS-09-01
+→ reconoce A1/A2 como mismo trabajo
+
+HG-CSYS-09-02
+→ identifica A2 como estado actual
+
+HG-CSYS-09-03
+→ “Seguir trabajando” significa espontáneamente
+  continuar el mismo hilo
+
+HG-CSYS-09-04
+→ “Usar este trabajo en integración post-V1”
+  se reconoce como acción distinta,
+  no como continuación ordinaria obligatoria
+
+HG-CSYS-09-05
+→ con R previa distingue las tres rutas
+  sin ensayo y error
+
+HG-CSYS-09-06
+→ tras recarga reconoce dónde quedó
+  y cómo continuar
+~~~
+
+## 56.3 Regla de decisión
+
+~~~text
+A — CIERRE
+→ HG-01…06 satisfechos
+→ no reaparece falsador de CF-CSYS-09
+
+B — FRICCIÓN RESIDUAL
+→ hilo reconocible
+→ continuidad posible
+→ existe dificultad menor de texto/jerarquía
+→ reducir antes de decidir si bloquea cierre
+
+C — NO CIERRE
+→ reaparece cualquiera de:
+   pérdida aparente del hilo
+   confusión continuar/PostV1
+   incapacidad para recuperar
+   necesidad de ensayo y error para seguir
+~~~
+
+No se modificará producción durante la observación.
+
+---
+
+# 57. Estado previo al HUMAN GATE
+
+~~~text
+R-CSYS-09-C
+→ CERRADA
+→ RED observado y reducido
+
+R-CSYS-09-D
+→ IMPLEMENTADA
+→ T-CSYS-HCONT-01…08 = 8/8 PASS
+→ regresión focal histórica = 57/57 PASS
+→ suite global = 585/585 PASS con maxWorkers=2
+
+incidencia de concurrencia
+→ SEPARADA
+→ no atribuida funcionalmente a R-CSYS-09-D
+
+typecheck global
+→ RED PREEXISTENTE
+→ no absorbido en R-CSYS-09
+
+CF-CSYS-09
+→ TÉCNICAMENTE SATISFECHO
+→ NO CERRADO
+
+HUMAN GATE
+→ SIGUIENTE ACTUACIÓN
+
+producción
+→ CONGELADA DURANTE OBSERVACIÓN
+~~~
+
+# 58. Punto de reanudación
+
+> Ejecutar el HUMAN GATE de CF-CSYS-09 sobre la App real, sin explicación previa
+> de la semántica de las nuevas acciones y sin modificar producción durante la
+> observación.
