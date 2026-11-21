@@ -13941,3 +13941,75 @@ R-CSYS-04
 → apoyo IA ordinario debe incorporarse
   a la misma trayectoria existente
 ~~~
+
+
+---
+
+# 21/11/2026 — GAP-CONV-SYS-02 / cierre material
+
+Se ejecuta el contrato:
+
+~~~text
+src/App.knowledge-trajectory.ai-convergence.test.tsx
+~~~
+
+RED válido:
+
+~~~text
+T-CSYS-AI-01…03
+→ 3/3 FAIL
+
+causa común
+→ traceResultParticipantProvenance(R1)
+→ 0 contribuciones IA
+~~~
+
+Se modifica únicamente el éxito de `Solicitar apoyo IA` para añadir a la única trayectoria asociada de la obra:
+
+~~~text
+participant IA
++ action IA
++ transformation IA
++ aiProvenance(system/model/requestId)
+~~~
+
+sin crear nuevo resultado, razón, decisión ni relevo.
+
+GREEN:
+
+~~~text
+ai-convergence
+→ 3/3 PASS
+~~~
+
+Regresión:
+
+~~~text
+ai-support integration
+→ 13/13 PASS
+
+provenance
+→ 5/5 PASS
+
+final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 25/25 PASS
+~~~
+
+Resultado:
+
+~~~text
+GAP-CONV-SYS-02
+→ CERRADO
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-05
+→ contrato rojo
+→ decisión/fundamento ordinario
+  debe constituirse en la misma trayectoria
+~~~
