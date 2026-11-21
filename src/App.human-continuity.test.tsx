@@ -250,10 +250,12 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
     );
 
     expect(
-      screen.getByRole("textbox", {
-        name: /(?=.*antecedente)(?=.*(?:entregar|transfer))/i,
-      }),
-    ).toHaveValue(expect.stringContaining("Aportación A transferible"));
+      (
+        screen.getByRole("textbox", {
+          name: /(?=.*antecedente)(?=.*(?:entregar|transfer))/i,
+        }) as HTMLTextAreaElement
+      ).value,
+    ).toContain("Aportación A transferible");
 
   });
 
