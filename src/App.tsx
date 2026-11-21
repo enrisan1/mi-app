@@ -1775,7 +1775,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 );
                 setOrdinaryMaterials(nextMaterials);
                 setCurrentWorkId(nextMaterialId);
-              }
+              }}
             >
               Continuar trabajo compartido
             </button>
