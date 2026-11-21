@@ -9529,3 +9529,53 @@ R-CSYS-08
 No se abre nuevo Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — R-CSYS-08 / validación humana
+
+Se ejecuta la validación humana sobre la App real, sin modificar producción.
+
+La persona identifica inicialmente “Ahora” como punto probable de inicio, aunque
+la coexistencia con “Identidad autoral” introduce ambigüedad.
+
+Tras crear contenido:
+- reconoce conservación del texto;
+- reconoce una zona de apoyo IA;
+- no deduce el alcance del apoyo sin probarlo.
+
+Al intentar continuar:
+- interpreta razonablemente “Continuidad compartida” / “Antecedente compartido
+  recibido” / “Continuar con este trabajo” como continuidad;
+- el cambio a “Integración post-V1” se percibe como interrupción del trabajo.
+
+Después:
+- “Conservar trabajo actual como referencia estable” se interpreta como guardar
+  para recuperar;
+- no queda claro dónde se guarda ni cómo retomarlo;
+- “Evolucionar trabajo actual” y “Publicar P1 desde S1” resultan ambiguos;
+- se elige publicar por expectativa de recuperación, no por comprensión;
+- reaparece la primera parte del trabajo, pero no la segunda aportación.
+
+Decisión:
+
+~~~text
+R-CSYS-08
+→ EJECUTADA
+→ SALIDA B
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ NO CERRADO
+→ bloqueado por continuidad humana observada
+
+R-CSYS-09
+→ SIGUIENTE ACTUACIÓN DERIVADA
+→ reducir continuidad humana ordinaria
+  crear → continuar → conservar → recuperar → seguir
+~~~
+
+No se reabren GAP-CONV-SYS-01…04. No se abre nuevo Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
