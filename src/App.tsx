@@ -737,8 +737,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             const provenance = isOpen
               ? traceResult(association.trajectory, association.resultId)
               : null;
+            const hasStructuredReason =
+              association.trajectory.relations.some(
+                (relation) =>
+                  relation.type === "justifies" &&
+                  relation.to === association.resultId,
+              );
             const reason =
-              isOpen && association.continuation === undefined
+              isOpen && hasStructuredReason
                 ? traceResultReason(association.trajectory, association.resultId)
                 : null;
             const participantProvenance = isOpen
