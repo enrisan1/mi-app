@@ -368,3 +368,249 @@ R-CSYS-01
 # 13. Punto de reanudación
 
 > Formular y ejecutar el contrato rojo de R-CSYS-01 sin modificar producción.
+
+
+---
+
+# 14. Ejecución y cierre de GAP-CONV-SYS-01
+
+## 14.1 Primer RED válido
+
+Tras corregir un selector ambiguo del propio test, la ejecución material de:
+
+~~~text
+src/App.knowledge-trajectory.ordinary-convergence.test.tsx
+~~~
+
+produjo:
+
+~~~text
+T-CSYS-01
+→ FAIL
+→ no existe asociación de trayectoria para el nuevo material
+
+T-CSYS-02
+→ FAIL
+→ misma causa
+
+T-CSYS-03
+→ FAIL
+→ misma causa
+~~~
+
+La continuación ordinaria sí constituía el nuevo trabajo, por lo que el RED
+aisló el gap buscado:
+
+~~~text
+trabajo ordinario
+→ SÍ
+
+KnowledgeTrajectory asociada
+→ NO
+~~~
+
+## 14.2 Primera intervención mínima
+
+Se modificó únicamente el handler de:
+
+~~~text
+Continuar con este material
+~~~
+
+para que, al constituir el nuevo material, cree y persista también una
+`KnowledgeTrajectory` mínima con:
+
+~~~text
+antecedente
+→ source
+
+nuevo trabajo
+→ assertion
+
+continuación ordinaria
+→ transformation
+
+Usuario principal
+→ participant
+
+Continuar con este material
+→ action
+
+nuevo resultado
+→ result
+~~~
+
+No se introdujeron IA, decisión/razón ni relevo.
+
+Resultado intermedio:
+
+~~~text
+T-CSYS-01
+→ PASS
+
+T-CSYS-02
+→ FAIL
+
+T-CSYS-03
+→ FAIL
+~~~
+
+La causa de los dos fallos restantes fue un supuesto previo de App: toda
+trayectoria abierta sin `continuation` intentaba reconstruir obligatoriamente
+una razón estructurada y `traceResultReason()` lanzaba por ausencia de
+`justifies → R3`.
+
+## 14.3 Segunda intervención mínima
+
+No se inventó una razón para R3.
+
+Se cambió únicamente la condición de lectura para que
+`traceResultReason()` se ejecute cuando la trayectoria contiene realmente una
+relación:
+
+~~~text
+decision
+→ justifies
+→ result
+~~~
+
+Esto preserva la frontera con GAP-CONV-SYS-03.
+
+## 14.4 GREEN y regresión
+
+Resultado final del contrato:
+
+~~~text
+src/App.knowledge-trajectory.ordinary-convergence.test.tsx
+→ 3/3 PASS
+~~~
+
+Regresión dirigida observada:
+
+~~~text
+src/App.knowledge-trajectory.final-convergence.test.tsx
+→ 4/4 PASS
+
+src/App.knowledge-trajectory.integration.test.tsx
+→ 4/4 PASS
+
+src/realizations/knowledge-trajectory/knowledgeTrajectory.integration.test.tsx
+→ 5/5 PASS
+
+src/realizations/knowledge-trajectory/KnowledgeTrajectory.test.ts
+→ 6/6 PASS
+~~~
+
+Total observado en esta secuencia de cierre:
+
+~~~text
+22/22 PASS
+~~~
+
+## 14.5 Decisión sobre GAP-CONV-SYS-01
+
+Criterio mínimo:
+
+1. partir de material antecedente;
+2. producir nuevo trabajo sin siembra externa de trayectoria;
+3. crear/persistir asociación de trayectoria;
+4. abrirla desde App;
+5. reconstruir antecedente, aportación, transformación y actuación humana;
+6. sobrevivir al remontaje.
+
+Resultado:
+
+~~~text
+1 → SATISFECHO
+2 → SATISFECHO
+3 → SATISFECHO
+4 → SATISFECHO
+5 → SATISFECHO
+6 → SATISFECHO
+~~~
+
+Por tanto:
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+
+R-CSYS-01
+→ CERRADA
+
+R-CSYS-02
+→ REALIZADA
+
+R-CSYS-03
+→ CERRADA
+~~~
+
+La App ordinaria deja de ser sólo consumidora de trayectorias ya sembradas:
+una continuación ordinaria puede constituir directamente su propia
+`KnowledgeTrajectory`.
+
+---
+
+# 15. Siguiente prioridad derivada
+
+Al cerrarse el gap raíz desaparece la dependencia que bloqueaba los otros tres.
+
+Se mantiene como siguiente actuación del roadmap:
+
+~~~text
+GAP-CONV-SYS-02
+→ apoyo IA real → misma trayectoria
+
+R-CSYS-04
+→ contrato rojo de integración IA en trayectoria ordinaria
+~~~
+
+Razón de prioridad:
+
+- el apoyo IA ordinario ya existe y está desplegado;
+- ya conserva contenido y procedencia;
+- `KnowledgeTrajectory` ya admite participante IA y `aiProvenance`;
+- por tanto el siguiente trabajo es una conexión de convergencia, no una nueva capacidad.
+
+GAP-CONV-SYS-03 y GAP-CONV-SYS-04 permanecen abiertos y no se mezclan todavía
+con esta actuación.
+
+# 16. Estado resultante
+
+~~~text
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ ABIERTO
+→ SIGUIENTE PRIORIDAD
+
+GAP-CONV-SYS-03
+→ ABIERTO
+
+GAP-CONV-SYS-04
+→ ABIERTO
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+
+siguiente actuación
+→ R-CSYS-04
+→ contrato rojo IA → trayectoria
+~~~
+
+# 17. Punto de reanudación
+
+> Formular el contrato rojo mínimo de R-CSYS-04 de modo que un apoyo IA
+> solicitado sobre un trabajo ordinario con trayectoria existente quede
+> incorporado a esa misma trayectoria con procedencia IA explícita, sin
+> modificar todavía producción.
