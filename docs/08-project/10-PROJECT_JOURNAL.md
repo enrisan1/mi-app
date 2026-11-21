@@ -13671,3 +13671,65 @@ derivar sólo la actuación mínima justificada
 No se retoma automáticamente BS-02 ni ninguna limitación fuera de alcance de H-CONV-FINAL-01.
 
 Documento: [129](129-REAPLICACION_MANUAL17_POST_H_CONV_FINAL_01_ESTABILIDAD_ESTRATEGICA.md).
+
+
+---
+
+# 21/11/2026 — Nueva candidata post-convergencia: CI-POST-CONV-01
+
+Se confronta la visión de plataforma con el cierre de H-CONV-FINAL-01.
+
+La revisión distingue:
+
+~~~text
+ya demostrado
+→ representación
+→ persistencia
+→ navegación
+→ procedencia humana/IA
+→ razón reconstruible
+
+no demostrado directamente
+→ KnowledgeTrajectory(R1)
+  como contexto operativo
+  para producir R2
+~~~
+
+Se evita convertir en candidatas independientes:
+
+~~~text
+“modelo canónico”
+→ decisión de diseño posible
+
+“validación humana”
+→ evidencia necesaria
+~~~
+
+La necesidad general de continuidad ya pertenece a C-PV-POST-01.
+
+La candidata superviviente queda:
+
+~~~text
+CI-POST-CONV-01
+→ continuidad operativa desde trayectoria integrada
+
+pregunta discriminante
+→ ¿R1 puede participar como contexto
+  en una actuación posterior que produzca R2
+  conservando relación reconstruible R1 → R2?
+~~~
+
+Manual 17 permite una profundización mínima porque la respuesta puede cambiar la decisión entre absorción e insuficiencia realizativa.
+
+Se deriva:
+
+~~~text
+PROS-POST-CONV-01
+→ prueba prospectiva
+→ primera fase: contrato rojo
+→ producción: NO MODIFICAR
+~~~
+
+No se abre nuevo Product, horizonte, Architecture o Implementation.
+
+Documento: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
