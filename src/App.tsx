@@ -9,11 +9,16 @@ import { requestAiSupport } from "./ai-support/aiSupportGateway";
 import { requestTurnstileToken } from "./ai-support/turnstileClient";
 import { OrdinaryComparison } from "./OrdinaryComparison";
 import {
+  attachParticipantProvenance,
+  createKnowledgeTrajectory,
   traceResult,
   traceResultParticipantProvenance,
   traceResultReason,
 } from "./realizations/knowledge-trajectory/KnowledgeTrajectory";
-import { listAssociatedTrajectories } from "./realizations/knowledge-trajectory/knowledgeTrajectoryRepository";
+import {
+  listAssociatedTrajectories,
+  saveAssociatedTrajectory,
+} from "./realizations/knowledge-trajectory/knowledgeTrajectoryRepository";
 
 type OrdinaryMaterial = {
   id: string;
@@ -261,6 +266,10 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
     useState<string | null>(null);
   const [openedKnowledgeTrajectoryForwardStart, setOpenedKnowledgeTrajectoryForwardStart] =
     useState<string | null>(null);
+  const [continuedKnowledgeTrajectoryKey, setContinuedKnowledgeTrajectoryKey] =
+    useState<string | null>(null);
+  const [knowledgeContinuationDraft, setKnowledgeContinuationDraft] =
+    useState("");
   const knowledgeTrajectoryAssociations = listAssociatedTrajectories().filter(
     (association) =>
       ordinaryMaterials.some(
@@ -728,9 +737,10 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             const provenance = isOpen
               ? traceResult(association.trajectory, association.resultId)
               : null;
-            const reason = isOpen
-              ? traceResultReason(association.trajectory, association.resultId)
-              : null;
+            const reason =
+              isOpen && association.continuation === undefined
+                ? traceResultReason(association.trajectory, association.resultId)
+                : null;
             const participantProvenance = isOpen
               ? traceResultParticipantProvenance(
                   association.trajectory,
@@ -761,7 +771,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                   Ver trayectoria de {association.resultId}
                 </button>
 
-                {provenance !== null && reason !== null && (
+                {provenance !== null && (
                   <section aria-label={`Trayectoria de ${association.resultId}`}>
                     <h3>Trayectoria de {association.resultId}</h3>
 
@@ -861,20 +871,188 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                       </section>
                     )}
 
-                    <section aria-label="Razón">
-                      <h4>Razón</h4>
-                      <p>{reason.objectiveId}</p>
-                      <p>{reason.mandatoryConditionIds.join("/")}</p>
-                      {reason.discardedAlternatives.map((discarded) => (
-                        <p key={discarded.alternativeId}>
-                          {discarded.alternativeId} descartada por{" "}
-                          {discarded.failedConditionId}
-                        </p>
-                      ))}
-                      <p>{reason.selectedAlternativeId} seleccionada</p>
-                      <p>{reason.decisiveEvidenceId}</p>
-                      <p>{reason.decisionId}</p>
-                    </section>
+                    {reason !== null && (
+                      <section aria-label="Razón">
+                        <h4>Razón</h4>
+                        <p>{reason.objectiveId}</p>
+                        <p>{reason.mandatoryConditionIds.join("/")}</p>
+                        {reason.discardedAlternatives.map((discarded) => (
+                          <p key={discarded.alternativeId}>
+                            {discarded.alternativeId} descartada por{" "}
+                            {discarded.failedConditionId}
+                          </p>
+                        ))}
+                        <p>{reason.selectedAlternativeId} seleccionada</p>
+                        <p>{reason.decisiveEvidenceId}</p>
+                        <p>{reason.decisionId}</p>
+                      </section>
+                    )}
+
+                    {association.continuation !== undefined && (
+                      <>
+                        <section
+                          aria-label={`Continuidad desde ${association.continuation.antecedentResultId}`}
+                        >
+                          <h4>
+                            Continuidad desde{" "}
+                            {association.continuation.antecedentResultId}
+                          </h4>
+                          <p>{association.continuation.antecedentResultId}</p>
+                          <p>{association.continuation.contribution}</p>
+                          <p>
+                            {association.continuation.participantType === "human"
+                              ? "humano"
+                              : association.continuation.participantType === "ai"
+                                ? "IA"
+                                : "otro"}
+                          </p>
+                        </section>
+
+                        <section
+                          aria-label={`Fundamento de ${association.resultId}`}
+                        >
+                          <h4>Fundamento de {association.resultId}</h4>
+                          <p>{association.continuation.contribution}</p>
+                        </section>
+                      </>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setContinuedKnowledgeTrajectoryKey(trajectoryKey);
+                        setKnowledgeContinuationDraft("");
+                      }}
+                    >
+                      Continuar desde {association.resultId}
+                    </button>
+
+                    {continuedKnowledgeTrajectoryKey === trajectoryKey && (
+                      <section
+                        aria-label={`Continuación desde ${association.resultId}`}
+                      >
+                        <label>
+                          Nueva aportación
+                          <textarea
+                            value={knowledgeContinuationDraft}
+                            onChange={(event) =>
+                              setKnowledgeContinuationDraft(event.target.value)
+                            }
+                          />
+                        </label>
+
+                        <button
+                          type="button"
+                          disabled={knowledgeContinuationDraft.trim().length === 0}
+                          onClick={() => {
+                            const contribution = knowledgeContinuationDraft.trim();
+                            if (contribution.length === 0) {
+                              return;
+                            }
+
+                            const nextMaterialId = `m${ordinaryMaterials.length + 1}`;
+                            const nextResultId = `R${knowledgeTrajectoryAssociations.length + 1}`;
+                            const nextMaterial: OrdinaryMaterial = {
+                              id: nextMaterialId,
+                              content: contribution,
+                              antecedentMaterialId: association.materialId,
+                            };
+                            const nextMaterials = [
+                              ...ordinaryMaterials,
+                              nextMaterial,
+                            ];
+
+                            const baseTrajectory = createKnowledgeTrajectory({
+                              source: {
+                                id: `F-${nextResultId}`,
+                                kind: "source",
+                                content: contribution,
+                              },
+                              assertion: {
+                                id: `A-${nextResultId}`,
+                                kind: "assertion",
+                                content: contribution,
+                              },
+                              transformation: {
+                                id: `T-${nextResultId}`,
+                                kind: "transformation",
+                                content: `Continuación de ${association.resultId}`,
+                              },
+                              participant: {
+                                id: `PH-${nextResultId}`,
+                                kind: "participant",
+                                content: OPERATIONAL_IDENTITY,
+                              },
+                              action: {
+                                id: `AC-${nextResultId}`,
+                                kind: "action",
+                                content: "Nueva aportación",
+                              },
+                              result: {
+                                id: nextResultId,
+                                kind: "result",
+                                content: contribution,
+                              },
+                            });
+
+                            const nextTrajectory = attachParticipantProvenance(
+                              baseTrajectory,
+                              {
+                                resultId: nextResultId,
+                                contributions: [
+                                  {
+                                    participant: {
+                                      id: `PH-${nextResultId}`,
+                                      kind: "participant",
+                                      content: OPERATIONAL_IDENTITY,
+                                    },
+                                    participantType: "human",
+                                    action: {
+                                      id: `AC-${nextResultId}`,
+                                      kind: "action",
+                                      content: "Nueva aportación",
+                                    },
+                                    transformationId: `T-${nextResultId}`,
+                                    contributionState: "produced",
+                                  },
+                                ],
+                              },
+                            );
+
+                            localStorageResumeRepository.savePrevious(contribution);
+                            localStorage.setItem(
+                              CURRENT_WORK_ID_STORAGE_KEY,
+                              nextMaterialId,
+                            );
+                            localStorage.setItem(
+                              "ordinary.materials",
+                              JSON.stringify(nextMaterials),
+                            );
+                            setOrdinaryMaterials(nextMaterials);
+                            setCurrentWorkId(nextMaterialId);
+                            setAvailablePostV1Current(contribution);
+
+                            saveAssociatedTrajectory({
+                              materialId: nextMaterialId,
+                              resultId: nextResultId,
+                              trajectory: nextTrajectory,
+                              continuation: {
+                                antecedentResultId: association.resultId,
+                                contribution,
+                                participantType: "human",
+                              },
+                            });
+
+                            setKnowledgeContinuationDraft("");
+                            setContinuedKnowledgeTrajectoryKey(null);
+                            setOpenedKnowledgeTrajectoryKey(null);
+                            setOpenedKnowledgeTrajectoryForwardStart(null);
+                          }}
+                        >
+                          Constituir resultado posterior
+                        </button>
+                      </section>
+                    )}
                   </section>
                 )}
               </article>
