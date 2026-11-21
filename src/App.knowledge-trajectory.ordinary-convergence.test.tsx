@@ -45,7 +45,9 @@ async function continueOrdinaryWork(
     }),
   );
 
-  const previousMaterials = screen.getByLabelText(/^materiales anteriores$/i);
+  const previousMaterials = screen.getByRole("region", {
+    name: /^materiales anteriores$/i,
+  });
   await user.click(
     within(previousMaterials).getByRole("button", {
       name: /^usar este material 1$/i,
