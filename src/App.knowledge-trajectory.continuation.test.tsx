@@ -253,7 +253,7 @@ describe(
       ).toBeInTheDocument();
     });
 
-    it("[T-PPC-03] R2 permite reconstruir R1 como antecedente y distinguir la nueva aportación", async () => {
+    it("[T-PPC-03] R2 permite reconstruir R1 como antecedente, distinguir la nueva aportación y reconocer un fundamento propio", async () => {
       const user = userEvent.setup();
       render(<App />);
 
@@ -273,6 +273,14 @@ describe(
         "E5 — nueva evidencia incorporada después de R1",
       );
       expect(continuation).toHaveTextContent(/humano/i);
+
+      const basis = within(r2).getByRole("region", {
+        name: /^fundamento de R2$/i,
+      });
+
+      expect(basis).toHaveTextContent(
+        "E5 — nueva evidencia incorporada después de R1",
+      );
     });
 
     it("[T-PPC-04] tras remontar App, R2 conserva la continuidad reconstruible con R1", async () => {
