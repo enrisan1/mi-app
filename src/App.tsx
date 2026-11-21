@@ -1336,6 +1336,51 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     antecedentMaterialId: selectedMaterialId,
                   };
                   const nextMaterials = [...ordinaryMaterials, nextMaterial];
+                  const antecedentMaterial = ordinaryMaterials.find(
+                    (material) => material.id === selectedMaterialId,
+                  );
+
+                  if (antecedentMaterial !== undefined) {
+                    const resultId = `R${ordinaryMaterials.length + 1}`;
+                    const trajectory = createKnowledgeTrajectory({
+                      source: {
+                        id: `F-${nextMaterial.id}`,
+                        kind: "source",
+                        content: antecedentMaterial.content,
+                      },
+                      assertion: {
+                        id: `A-${nextMaterial.id}`,
+                        kind: "assertion",
+                        content: newWork,
+                      },
+                      transformation: {
+                        id: `T-${nextMaterial.id}`,
+                        kind: "transformation",
+                        content: `Continuación ordinaria desde ${antecedentMaterial.id}`,
+                      },
+                      participant: {
+                        id: `PH-${nextMaterial.id}`,
+                        kind: "participant",
+                        content: OPERATIONAL_IDENTITY,
+                      },
+                      action: {
+                        id: `AC-${nextMaterial.id}`,
+                        kind: "action",
+                        content: "Continuar con este material",
+                      },
+                      result: {
+                        id: resultId,
+                        kind: "result",
+                        content: newWork,
+                      },
+                    });
+
+                    saveAssociatedTrajectory({
+                      materialId: nextMaterial.id,
+                      resultId,
+                      trajectory,
+                    });
+                  }
 
                   localStorage.setItem(CURRENT_WORK_ID_STORAGE_KEY, nextMaterial.id);
                   setCurrentWorkId(nextMaterial.id);
