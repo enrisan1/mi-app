@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import App from "./App";
@@ -203,7 +203,6 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     await createInitialWork(user, "Antecedente inicial");
 
-    const firstExecution = render(<></>);
     cleanup();
     render(<App />);
 
@@ -256,7 +255,6 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
       }),
     ).toHaveValue(expect.stringContaining("Aportación A transferible"));
 
-    firstExecution.unmount();
   });
 
   it("[T-CSYS-HCONT-08] la recuperación de estado PostV1 incompatible sigue devolviendo una App ordinaria utilizable", async () => {
