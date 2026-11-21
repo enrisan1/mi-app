@@ -679,6 +679,63 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
               };
               const next = [...aiSupports, nextSupport];
 
+              const matchingTrajectoryAssociations =
+                listAssociatedTrajectories().filter(
+                  (association) => association.materialId === material.id,
+                );
+
+              if (matchingTrajectoryAssociations.length === 1) {
+                const association = matchingTrajectoryAssociations[0];
+                const contributionIndex =
+                  (association.trajectory.participantProvenance ?? []).length + 1;
+                const participantId =
+                  `PAI-${association.resultId}-${contributionIndex}`;
+                const actionId =
+                  `AC-AI-${association.resultId}-${contributionIndex}`;
+                const transformationId =
+                  `T-AI-${association.resultId}-${contributionIndex}`;
+                const trajectoryWithAiTransformation = {
+                  ...association.trajectory,
+                  entities: [
+                    ...association.trajectory.entities,
+                    {
+                      id: transformationId,
+                      kind: "transformation" as const,
+                      content: response.content,
+                    },
+                  ],
+                };
+                const trajectoryWithAiProvenance = attachParticipantProvenance(
+                  trajectoryWithAiTransformation,
+                  {
+                    resultId: association.resultId,
+                    contributions: [
+                      {
+                        participant: {
+                          id: participantId,
+                          kind: "participant",
+                          content: response.provenance.system,
+                        },
+                        participantType: "ai",
+                        action: {
+                          id: actionId,
+                          kind: "action",
+                          content: aiSupportRequest,
+                        },
+                        transformationId,
+                        contributionState: "produced",
+                        aiProvenance: response.provenance,
+                      },
+                    ],
+                  },
+                );
+
+                saveAssociatedTrajectory({
+                  ...association,
+                  trajectory: trajectoryWithAiProvenance,
+                });
+              }
+
               saveAiSupports(next);
               setAiSupports(next);
               setAiSupportRequest("");
