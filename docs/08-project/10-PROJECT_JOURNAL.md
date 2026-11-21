@@ -14379,3 +14379,88 @@ siguiente
 producción
 → SIN CAMBIOS
 ~~~
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-C/D / RED → GREEN y apertura de HUMAN GATE
+
+Se crea el contrato T-CSYS-HCONT-01…08 antes de producción.
+
+RED observado:
+
+~~~text
+1/8 PASS
+7/8 FAIL
+~~~
+
+Los fallos convergen en una diferencia:
+
+~~~text
+“continuar hilo ordinario”
+≠
+“entrar en integración PostV1”
+~~~
+
+Se implementa únicamente esa separación:
+
+~~~text
+Seguir trabajando
+→ ResumeExperience / hilo ordinario
+
+Usar este trabajo en integración post-V1
+→ ruta histórica Y → PostV1
+
+Retomar trayectoria integrada existente
+→ ruta R
+~~~
+
+No se modifica KnowledgeTrajectory, persistencia, S1/P1, KGV ni el modelo de
+datos.
+
+Resultado:
+
+~~~text
+HCONT
+→ 8/8 PASS
+
+regresión histórica focal
+→ 57/57 PASS
+
+suite global con --maxWorkers=2
+→ 585/585 PASS
+~~~
+
+La suite global con paralelismo por defecto muestra sensibilidad de tiempo y una
+ejecución con texto intercalado bajo carga. Los archivos afectados pasan
+aislados y juntos, por lo que la incidencia se separa de R-CSYS-09-D y no se
+resuelve aumentando timeouts de forma indiscriminada.
+
+El typecheck global permanece rojo con 29 errores en seis archivos. La
+comparación con el estado anterior a R-CSYS-09-D demuestra que los errores de
+App ya estaban presentes y los restantes pertenecen a módulos no modificados
+por esta actuación.
+
+Se concluye:
+
+~~~text
+CF-CSYS-09
+→ técnicamente cubierto
+→ no cerrable todavía sólo por tests
+
+causa
+→ nació de una falsación humana
+→ incluye reconocibilidad y distinción de acciones
+
+siguiente
+→ HUMAN GATE de CF-CSYS-09
+→ sin cambios productivos durante la observación
+~~~
+
+El gate deberá comprobar:
+- A1/A2 como mismo hilo;
+- A2 como estado actual;
+- “Seguir trabajando” como continuación ordinaria;
+- PostV1 como acción distinta;
+- distinción de tres rutas cuando existe R;
+- recuperación y continuación tras recarga.
