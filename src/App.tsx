@@ -188,6 +188,8 @@ type ReceivedCollaborativeAntecedent = {
     participant: string;
     content: string;
   };
+  antecedentResultId?: string;
+  antecedentMaterialId?: string;
 };
 
 type AppProps = {
@@ -314,6 +316,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const [participantBContribution, setParticipantBContribution] = useState("");
   const [constitutedParticipantBContribution, setConstitutedParticipantBContribution] =
     useState<string | null>(null);
+  const [handoffTrajectoryKey, setHandoffTrajectoryKey] =
+    useState<string | null>(null);
+  const [handoffTransferValue, setHandoffTransferValue] = useState("");
 
   const establishCurrentWork = (content: string) => {
     setAvailablePostV1Current(content);
@@ -1288,6 +1293,66 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     <button
                       type="button"
                       onClick={() => {
+                        const resultEntity =
+                          association.trajectory.entities.find(
+                            (entity) =>
+                              entity.id === association.resultId &&
+                              entity.kind === "result",
+                          );
+                        const firstHumanContribution =
+                          traceResultParticipantProvenance(
+                            association.trajectory,
+                            association.resultId,
+                          ).find(
+                            (contribution) =>
+                              contribution.participantType === "human",
+                          );
+                        const firstAction =
+                          firstHumanContribution === undefined
+                            ? undefined
+                            : association.trajectory.entities.find(
+                                (entity) =>
+                                  entity.id === firstHumanContribution.actionId &&
+                                  entity.kind === "action",
+                              );
+
+                        if (
+                          resultEntity === undefined ||
+                          firstAction === undefined
+                        ) {
+                          return;
+                        }
+
+                        setHandoffTrajectoryKey(trajectoryKey);
+                        setHandoffTransferValue(
+                          JSON.stringify({
+                            sharedResult: resultEntity.content,
+                            firstContribution: {
+                              participant: "A",
+                              content: firstAction.content,
+                            },
+                            antecedentResultId: association.resultId,
+                            antecedentMaterialId: association.materialId,
+                          }),
+                        );
+                      }}
+                    >
+                      Preparar relevo de {association.resultId}
+                    </button>
+
+                    {handoffTrajectoryKey === trajectoryKey && (
+                      <label>
+                        Relevo entregable de {association.resultId}
+                        <textarea
+                          readOnly
+                          value={handoffTransferValue}
+                        />
+                      </label>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() => {
                         setContinuedKnowledgeTrajectoryKey(trajectoryKey);
                         setKnowledgeContinuationDraft("");
                       }}
@@ -1535,6 +1600,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                   participant?: unknown;
                   content?: unknown;
                 };
+                antecedentResultId?: unknown;
+                antecedentMaterialId?: unknown;
               };
 
               if (
@@ -1553,6 +1620,14 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                   participant: "A",
                   content: parsed.firstContribution.content,
                 },
+                ...(typeof parsed.antecedentResultId === "string" &&
+                parsed.antecedentResultId.trim().length > 0
+                  ? { antecedentResultId: parsed.antecedentResultId }
+                  : {}),
+                ...(typeof parsed.antecedentMaterialId === "string" &&
+                parsed.antecedentMaterialId.trim().length > 0
+                  ? { antecedentMaterialId: parsed.antecedentMaterialId }
+                  : {}),
               });
             } catch {
               return;
@@ -1590,8 +1665,116 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             <button
               type="button"
               disabled={participantBContribution.trim().length === 0}
-              onClick={() =>
-                setConstitutedParticipantBContribution(participantBContribution)
+              onClick={() => {
+                const contribution = participantBContribution.trim();
+                if (contribution.length === 0) {
+                  return;
+                }
+
+                setConstitutedParticipantBContribution(contribution);
+
+                if (
+                  receivedCollaborativeAntecedent.antecedentResultId ===
+                    undefined ||
+                  receivedCollaborativeAntecedent.antecedentMaterialId ===
+                    undefined
+                ) {
+                  return;
+                }
+
+                const nextMaterialId = `m${ordinaryMaterials.length + 1}`;
+                const nextResultId = `R${knowledgeTrajectoryAssociations.length + 1}`;
+                const sourceContent =
+                  `${receivedCollaborativeAntecedent.sharedResult}\n` +
+                  receivedCollaborativeAntecedent.firstContribution.content;
+
+                const baseTrajectory = createKnowledgeTrajectory({
+                  source: {
+                    id: `F-${nextResultId}`,
+                    kind: "source",
+                    content: sourceContent,
+                  },
+                  assertion: {
+                    id: `A-${nextResultId}`,
+                    kind: "assertion",
+                    content: contribution,
+                  },
+                  transformation: {
+                    id: `T-${nextResultId}`,
+                    kind: "transformation",
+                    content: contribution,
+                  },
+                  participant: {
+                    id: `P2-${nextResultId}`,
+                    kind: "participant",
+                    content: "P2",
+                  },
+                  action: {
+                    id: `AC-P2-${nextResultId}`,
+                    kind: "action",
+                    content: "Continuar trabajo compartido",
+                  },
+                  result: {
+                    id: nextResultId,
+                    kind: "result",
+                    content: contribution,
+                  },
+                });
+
+                const nextTrajectory = attachParticipantProvenance(
+                  baseTrajectory,
+                  {
+                    resultId: nextResultId,
+                    contributions: [
+                      {
+                        participant: {
+                          id: `P2-${nextResultId}`,
+                          kind: "participant",
+                          content: "P2",
+                        },
+                        participantType: "human",
+                        action: {
+                          id: `AC-P2-${nextResultId}`,
+                          kind: "action",
+                          content: "Continuar trabajo compartido",
+                        },
+                        transformationId: `T-${nextResultId}`,
+                        contributionState: "produced",
+                      },
+                    ],
+                  },
+                );
+
+                const nextMaterial: OrdinaryMaterial = {
+                  id: nextMaterialId,
+                  content: contribution,
+                  antecedentMaterialId:
+                    receivedCollaborativeAntecedent.antecedentMaterialId,
+                };
+                const nextMaterials = [...ordinaryMaterials, nextMaterial];
+
+                saveAssociatedTrajectory({
+                  materialId: nextMaterialId,
+                  resultId: nextResultId,
+                  trajectory: nextTrajectory,
+                  continuation: {
+                    antecedentResultId:
+                      receivedCollaborativeAntecedent.antecedentResultId,
+                    contribution,
+                    participantType: "human",
+                  },
+                });
+
+                localStorage.setItem(
+                  "ordinary.materials",
+                  JSON.stringify(nextMaterials),
+                );
+                localStorage.setItem(
+                  CURRENT_WORK_ID_STORAGE_KEY,
+                  nextMaterialId,
+                );
+                setOrdinaryMaterials(nextMaterials);
+                setCurrentWorkId(nextMaterialId);
               }
             >
               Continuar trabajo compartido
