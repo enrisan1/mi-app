@@ -9306,3 +9306,59 @@ R-CSYS-04
 No se abre nuevo Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de GAP-CONV-SYS-02
+
+Se integra el apoyo IA ordinario en la misma `KnowledgeTrajectory` de la obra.
+
+Evidencia:
+
+~~~text
+RED
+→ 3/3 FAIL
+→ 0 contribuciones IA en R1
+
+GREEN
+→ 3/3 PASS
+~~~
+
+Regresión dirigida:
+
+~~~text
+App.ai-support.integration
+→ 13/13 PASS
+
+KnowledgeTrajectory.provenance
+→ 5/5 PASS
+
+App.knowledge-trajectory.final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 25/25 PASS
+~~~
+
+Decisión:
+
+~~~text
+GAP-CONV-SYS-02
+→ CERRADO
+
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+siguiente prioridad
+→ GAP-CONV-SYS-03
+→ decisión/fundamento real → misma trayectoria
+
+R-CSYS-05
+→ DERIVADA COMO SIGUIENTE ACTUACIÓN
+→ primero contrato rojo
+~~~
+
+GAP-CONV-SYS-04 permanece abierto. No se abre nuevo Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
