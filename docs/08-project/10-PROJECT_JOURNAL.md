@@ -14335,3 +14335,47 @@ siguiente
 → reducir transición mínima
 → proteger contratos históricos
 ~~~
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-B / inspección de patrimonio
+
+La inspección demuestra que la entrada a PostV1 está protegida por patrimonio
+real, especialmente T67 y KGV.
+
+No procede eliminar PostV1 ni su semántica.
+
+La diferencia mínima queda localizada en que la misma expresión de
+“continuar” se utiliza para una transición especializada que sustituye la
+superficie ordinaria.
+
+Reducción:
+
+~~~text
+acción principal
+→ continuar hilo ordinario
+
+acción auxiliar explícita
+→ usar trabajo en integración PostV1
+
+si R existe
+→ mantener retomar R
+→ preservar elección antes de modificar estado
+~~~
+
+Se formula T-CSYS-HCONT-01…08 como contrato rojo previo a producción.
+
+Resultado:
+
+~~~text
+R-CSYS-09-B
+→ CERRADA COMO REDUCCIÓN
+
+siguiente
+→ R-CSYS-09-C
+→ crear y ejecutar contrato rojo
+
+producción
+→ SIN CAMBIOS
+~~~
