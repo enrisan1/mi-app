@@ -14220,3 +14220,65 @@ R-CSYS-08
 → validación humana del recorrido integrado completo
 → sin modificar producción antes de observar
 ~~~
+
+
+---
+
+# 21/11/2026 — R-CSYS-08 / validación humana real
+
+La validación se realiza en la App real y sin cambios productivos durante la
+observación.
+
+Hallazgos:
+
+~~~text
+inicio
+→ “Ahora” resulta el punto más intuitivo
+→ existe ambigüedad con Identidad autoral
+
+crear
+→ conservación parcial comprensible
+
+continuar
+→ “Continuar con este trabajo” lleva a Integración post-V1
+→ la persona percibe interrupción
+
+conservar
+→ expectativa de recuperar después
+→ ruta de recuperación no evidente
+
+publicar
+→ reaparece la primera parte
+→ la segunda aportación no aparece recuperada
+
+seguir
+→ no existe una acción inequívoca
+~~~
+
+La elección de “Publicar P1 desde S1” se hace por ensayo razonado y expectativa
+de recuperación, no por comprensión del significado de P1/S1.
+
+Salida:
+
+~~~text
+B
+→ dificultad concreta de uso/interpretación
+~~~
+
+Consecuencia:
+
+~~~text
+R-CSYS-08
+→ EJECUTADA
+
+HITO-CONV-SYS-01
+→ NO CERRADO
+
+R-CSYS-09
+→ DERIVADA
+→ reducir continuidad humana reconocible
+→ sin producción todavía
+~~~
+
+La evidencia no refuta los gaps técnicos cerrados; identifica una diferencia de
+experiencia integrada entre capacidad material y continuidad humana reconocible.
