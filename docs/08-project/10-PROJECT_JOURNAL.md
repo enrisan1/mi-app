@@ -13815,3 +13815,61 @@ Implementation adicional
 La validación humana posterior y una eventual continuidad IA específica permanecen fuera del alcance ejercitado y no se abren automáticamente.
 
 Documento actualizado: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
+
+
+---
+
+# 21/11/2026 — CONV-SYS-01 / primera actuación derivada
+
+Se abandona como motor normal la búsqueda lateral de nuevas necesidades y se pasa a convergencia de capacidades ya justificadas.
+
+La reducción identifica como raíz:
+
+~~~text
+GAP-CONV-SYS-01
+→ el trabajo ordinario todavía no constituye automáticamente
+  la KnowledgeTrajectory que después puede inspeccionarse y continuarse
+~~~
+
+Se deriva:
+
+~~~text
+R-CSYS-01
+→ contrato rojo
+→ continuación ordinaria m1 → m3
+→ debe constituir trayectoria asociada sin siembra externa
+~~~
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.ordinary-convergence.test.tsx
+~~~
+
+con tres comprobaciones:
+
+~~~text
+T-CSYS-01
+→ asociación y trayectoria semántica automáticas
+
+T-CSYS-02
+→ apertura desde App
+
+T-CSYS-03
+→ persistencia y recuperación tras remount
+~~~
+
+Estado:
+
+~~~text
+producción
+→ SIN CAMBIOS
+
+contrato
+→ CREADO
+
+resultado RED/GREEN
+→ TODAVÍA NO OBSERVADO
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
