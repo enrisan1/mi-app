@@ -1752,3 +1752,383 @@ Architecture
 
 > Reducir R-CSYS-09 hasta un criterio mínimo de continuidad humana reconocible,
 > sin modificar todavía producción.
+
+
+---
+
+# 38. R-CSYS-09-A — reconstrucción del modelo mental humano
+
+## 38.1 Evidencia de partida
+
+La observación humana de R-CSYS-08 demostró que la persona construye
+espontáneamente este modelo:
+
+~~~text
+crear trabajo
+→ añadir una aportación
+→ conservar
+→ recuperar
+→ seguir desde lo ya hecho
+~~~
+
+La expectativa dominante no es cambiar de “tipo de experiencia”, sino mantener
+un mismo hilo de trabajo que acumula aportaciones y puede retomarse.
+
+La inspección de producción confirma que hoy existen dos modelos superpuestos:
+
+~~~text
+ResumeExperience / App ordinaria
+→ aportación anterior
+→ aportación actual
+→ materiales ordinarios
+→ trayectoria asociada
+→ continuar / retomar
+
+PostV1IntegratedExperience
+→ current
+→ S1
+→ P1
+→ evaluación
+→ colaboración
+→ intercambio
+→ destino
+~~~
+
+Además, App sustituye completamente la vista ordinaria al seleccionar:
+
+~~~text
+Continuar con este trabajo
+→ integrationChoice = "current"
+→ PostV1IntegratedExperience
+~~~
+
+Por tanto, el cambio de contexto observado no es sólo perceptivo: existe una
+sustitución real de la superficie principal de trabajo.
+
+## 38.2 Modelo mental humano reconstruido
+
+Se adopta como modelo humano mínimo:
+
+> **Un trabajo es un hilo continuo de aportaciones y resultados relacionados
+> que permanece reconocible aunque se conserve, se retome, se publique, se
+> comparta o reciba apoyo.**
+
+Representación mínima:
+
+~~~text
+HILO DE TRABAJO W
+
+W0
+→ aportación inicial
+
+W1
+→ aportación posterior
+
+W2
+→ nueva continuación
+
+...
+
+Wn
+→ estado/resultante actual
+~~~
+
+Cada paso puede conservar:
+
+~~~text
+antecedentes
++ aportaciones humanas
++ aportaciones IA
++ decisiones
++ resultados
++ relaciones de procedencia
+~~~
+
+pero ninguno de esos elementos debe sustituir perceptivamente al hilo.
+
+## 38.3 Hilo principal
+
+Se define como **hilo principal** aquello que responde a:
+
+~~~text
+¿qué estaba haciendo?
+¿qué añadí después?
+¿dónde lo dejé?
+¿qué tengo ahora?
+¿cómo sigo?
+~~~
+
+En el estado actual, pertenecen al hilo principal:
+
+~~~text
+ordinary.materials
+ordinary.current-work-id
+ResumeExperience.previous/current
+KnowledgeTrajectory asociada
+continuation.antecedentResultId
+~~~
+
+No se afirma que éstos sean el modelo definitivo de datos. Se afirma únicamente
+que hoy son los elementos que ya representan materialmente la continuidad
+ordinaria acumulada.
+
+## 38.4 Estados y acciones auxiliares
+
+Se clasifican como **estados o actuaciones auxiliares sobre el hilo**, no como
+hilos alternativos:
+
+~~~text
+Estado estable / S1
+→ referencia congelada de un punto del hilo
+
+Publicación / P1
+→ publicación derivada de una referencia estable
+
+Soporte evaluativo
+→ evidencia/criterio asociados
+
+Colaboración
+→ actuación sobre un resultado compartido
+
+Intercambio / X1
+→ artefacto de transferencia
+
+Destino / D1
+→ recepción derivada
+
+Apoyo IA
+→ contribución sobre el hilo
+
+Identidad autoral
+→ atributo/participante
+
+Comparación
+→ actuación sobre materiales
+
+Continuidad compartida
+→ mecanismo de relevo/recepción
+~~~
+
+Estas capacidades pueden seguir existiendo, pero no deben competir con
+“continuar el mismo trabajo” como si fueran rutas excluyentes.
+
+## 38.5 Diferencia raíz
+
+La diferencia humana observada se reduce a:
+
+~~~text
+modelo material
+→ puede conservar relaciones y estados
+
+modelo presentado
+→ cambia de superficie y vocabulario
+→ fragmenta la percepción del hilo
+
+consecuencia
+→ el usuario no puede distinguir con seguridad:
+   continuar
+   conservar
+   publicar
+   compartir
+   recuperar
+~~~
+
+La segunda aportación observada quedó fuera del hilo que la persona reconoció
+como recuperado porque la transición a PostV1 partió del contenido disponible
+como `initialCurrent`, mientras el usuario esperaba una representación
+acumulativa del trabajo.
+
+No se concluye todavía cuál debe ser la implementación concreta.
+
+## 38.6 Invariante humano derivado
+
+Se fija el siguiente invariante:
+
+> **Toda actuación auxiliar debe preservar la identificabilidad del hilo
+> principal y no debe hacer desaparecer de la experiencia las aportaciones que
+> el usuario ya reconoce como parte de ese mismo trabajo.**
+
+En forma operativa:
+
+~~~text
+si W contiene A1 + A2
+y el usuario:
+→ conserva
+→ publica
+→ comparte
+→ interrumpe
+→ recupera
+
+entonces:
+→ W sigue siendo reconocible como el mismo trabajo
+→ A1 y A2 siguen siendo recuperables dentro de ese hilo
+→ la siguiente acción de continuación parte de W, no de una reconstrucción manual
+~~~
+
+---
+
+# 39. CF-CSYS-09 — criterio de continuidad humana reconocible
+
+Se formula:
+
+> **CF-CSYS-09 — Una persona puede crear, ampliar, interrumpir, recuperar y
+> continuar un mismo trabajo sin perder aportaciones ya constituidas ni tener
+> que inferir qué mecanismo técnico debe usar para preservar el hilo.**
+
+Condiciones verificables:
+
+~~~text
+CF-CSYS-09-01 — Identidad del hilo
+Dado un trabajo con al menos dos aportaciones,
+la interfaz permite reconocer que ambas pertenecen al mismo trabajo.
+
+CF-CSYS-09-02 — Estado actual inequívoco
+La persona puede identificar qué contenido constituye el estado actual del
+trabajo sin confundirlo con una referencia estable o una publicación.
+
+CF-CSYS-09-03 — Continuación explícita
+Existe una acción inequívoca para continuar el trabajo actual y esa acción no
+sustituye el hilo por una experiencia diferente sin explicación.
+
+CF-CSYS-09-04 — Conservación no destructiva
+Conservar una referencia, publicar, compartir o solicitar apoyo no elimina ni
+oculta de forma permanente las aportaciones ya reconocidas como parte del hilo.
+
+CF-CSYS-09-05 — Recuperación completa
+Tras interrupción y recuperación, las aportaciones ya constituidas siguen
+visibles o accesibles como partes del mismo hilo.
+
+CF-CSYS-09-06 — Separación de acciones
+La persona puede distinguir, sin ensayo y error:
+→ continuar
+→ conservar una referencia
+→ publicar
+→ compartir/relevar
+
+CF-CSYS-09-07 — Reanudación
+Después de recuperar, la acción principal permite seguir desde el estado actual
+del hilo sin reintroducir manualmente contenido anterior.
+
+CF-CSYS-09-08 — Compatibilidad con trayectoria
+La mejora de continuidad humana no rompe:
+→ KnowledgeTrajectory
+→ procedencia humana/IA
+→ razón
+→ persistencia
+→ relevo P1 → P2
+~~~
+
+## 39.1 Criterio de falsación
+
+CF-CSYS-09 no se considera satisfecho si ocurre cualquiera de estos casos:
+
+~~~text
+una aportación constitutiva desaparece del hilo recuperado
+
+o
+
+“continuar” lleva a una superficie que ya no permite reconocer lo anterior
+
+o
+
+el usuario debe elegir entre códigos internos como S1/P1/X1 para descubrir cómo
+seguir
+
+o
+
+recuperar exige volver a introducir manualmente contenido ya creado
+~~~
+
+## 39.2 Alcance
+
+CF-CSYS-09 no exige:
+
+- rediseño visual general;
+- eliminación de PostV1IntegratedExperience;
+- renombrar todos los conceptos internos;
+- backend nuevo;
+- colaboración distribuida;
+- edición histórica completa;
+- grafo visual.
+
+Exige únicamente que esas realizaciones dejen de romper la continuidad humana
+del trabajo ordinario.
+
+---
+
+# 40. Decisión de R-CSYS-09-A
+
+Resultado:
+
+~~~text
+modelo mental humano
+→ RECONSTRUIDO
+
+hilo principal
+→ DEFINIDO
+
+estados/acciones auxiliares
+→ SEPARADOS
+
+CF-CSYS-09
+→ FORMULADO
+
+producción
+→ SIN CAMBIOS
+~~~
+
+La siguiente actuación derivada es:
+
+~~~text
+R-CSYS-09-B
+→ reducir la intervención mínima
+→ determinar qué transición concreta debe cambiar
+→ formular primero contrato rojo
+~~~
+
+La hipótesis principal para R-CSYS-09-B es:
+
+~~~text
+“Continuar con este trabajo”
+no debe reemplazar el hilo ordinario por PostV1 como superficie principal
+
+sino
+→ continuar el mismo hilo
+→ y exponer conservar/publicar/compartir como acciones sobre él
+~~~
+
+Esta hipótesis todavía debe contrastarse contra los contratos históricos antes
+de modificar producción.
+
+# 41. Estado resultante
+
+~~~text
+R-CSYS-09-A
+→ CERRADA
+
+CF-CSYS-09
+→ FORMULADO
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ NO CERRADO
+→ pendiente satisfacer CF-CSYS-09
+
+R-CSYS-09-B
+→ SIGUIENTE ACTUACIÓN DERIVADA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 42. Punto de reanudación
+
+> Ejecutar R-CSYS-09-B: inspeccionar los contratos históricos afectados por la
+> transición ordinario → PostV1 y reducir la intervención mínima antes de crear
+> cualquier cambio productivo.
