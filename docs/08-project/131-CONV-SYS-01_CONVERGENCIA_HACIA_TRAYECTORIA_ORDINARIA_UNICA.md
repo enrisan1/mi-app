@@ -1054,3 +1054,265 @@ Architecture
 > Formular el contrato rojo mínimo de R-CSYS-06 para integrar el relevo P1 → P2
 > en la misma trayectoria ordinaria, reutilizando el patrimonio ya demostrado y
 > sin modificar todavía producción.
+
+
+---
+
+# 26. Ejecución y cierre de GAP-CONV-SYS-04
+
+## 26.1 Contrato rojo
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.handoff-convergence.test.tsx
+~~~
+
+El contrato parte de una `KnowledgeTrajectory(R1)` persistida y exige:
+
+~~~text
+T-CSYS-HO-01
+→ R1 prepara un relevo entregable
+→ contiene resultado R1 + aportación de P1
+
+T-CSYS-HO-02
+→ P2 recibe el relevo
+→ añade su aportación
+→ constituye R2
+→ R2 conserva antecedente R1
+
+T-CSYS-HO-03
+→ R2 permite reconstruir:
+  qué recibió P2
+  qué añadió P2
+  qué actuación realizó
+  qué resultado produjo
+
+T-CSYS-HO-04
+→ tras remount
+→ persiste R1 → R2
+→ persiste la aportación de P2
+~~~
+
+Primer resultado funcional observado:
+
+~~~text
+4/4 FAIL
+~~~
+
+Causa común:
+
+~~~text
+ausencia de:
+Preparar relevo de R1
+~~~
+
+La trayectoria R1, su procedencia y la contribución humana de P1 sí estaban
+presentes.
+
+Una primera ejecución posterior a producción no constituyó evidencia funcional
+porque App contenía un error de parseo y se ejecutaron 0 tests. Se corrigió
+únicamente el cierre sintáctico del handler antes de repetir el contrato.
+
+## 26.2 Intervención mínima
+
+Se conecta la trayectoria abierta con la superficie histórica
+`Continuidad compartida`.
+
+Desde R1:
+
+~~~text
+Preparar relevo de R1
+→ JSON entregable compatible
+~~~
+
+El relevo conserva el contrato histórico:
+
+~~~text
+sharedResult
+firstContribution
+~~~
+
+y añade de forma opcional:
+
+~~~text
+antecedentResultId
+antecedentMaterialId
+~~~
+
+Los antecedentes históricos sin esos metadatos mantienen el comportamiento
+anterior.
+
+Cuando P2 recibe un relevo con metadatos y ejecuta:
+
+~~~text
+Continuar trabajo compartido
+~~~
+
+se constituye además una nueva obra/trayectoria con:
+
+~~~text
+source
+→ resultado R1 + aportación recibida de P1
+
+participant
+→ P2
+
+action
+→ Continuar trabajo compartido
+
+transformation
+→ aportación de P2
+
+result
+→ aportación de P2
+
+continuation.antecedentResultId
+→ R1
+~~~
+
+No se modifica `HandoffExperience` ni se reabre el aislamiento del estado
+privado de P1.
+
+## 26.3 GREEN y regresión
+
+Contrato:
+
+~~~text
+src/App.knowledge-trajectory.handoff-convergence.test.tsx
+→ 4/4 PASS
+~~~
+
+Regresión dirigida observada:
+
+~~~text
+src/App.kgv.test.tsx
+→ 7/7 PASS
+
+src/realizations/handoff/HandoffExperience.test.tsx
+→ 4/4 PASS
+
+src/App.knowledge-trajectory.continuation.test.tsx
+→ 4/4 PASS
+~~~
+
+Total observado en esta secuencia funcional de cierre:
+
+~~~text
+19/19 PASS
+~~~
+
+## 26.4 Decisión
+
+El criterio material queda satisfecho:
+
+~~~text
+KnowledgeTrajectory(R1)
+→ relevo entregable
+→ P2 recibe contexto
+→ P2 añade aportación
+→ actuación P2
+→ R2
+→ antecedente R1 reconstruible
+→ persistencia
+~~~
+
+Por tanto:
+
+~~~text
+GAP-CONV-SYS-04
+→ CERRADO
+
+R-CSYS-06
+→ CERRADA
+~~~
+
+Los cuatro gaps materiales de convergencia quedan cerrados.
+
+---
+
+# 27. Estado previo al escenario integrado completo
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ CERRADO
+
+GAP-CONV-SYS-04
+→ CERRADO
+~~~
+
+Esto no basta todavía para declarar satisfecho `HITO-CONV-SYS-01`.
+
+Falta demostrar en una sola secuencia ordinaria que las capacidades ya
+cerradas funcionan conjuntamente sin siembra manual intermedia ni
+reconstrucción externa.
+
+Se deriva:
+
+~~~text
+R-CSYS-07
+→ escenario E2E completo de HITO-CONV-SYS-01
+~~~
+
+El escenario deberá cubrir, en una misma investigación ordinaria:
+
+~~~text
+fuentes
+→ afirmaciones
+→ transformación
+→ apoyo IA real
+→ procedencia humana/IA
+→ decisión/fundamento
+→ interrupción/persistencia
+→ relevo P1 → P2
+→ continuación
+→ resultado posterior
+→ revisión posterior
+→ reconstrucción de procedencia y razón
+~~~
+
+No se exige todavía validación humana final de uso. Esa actuación permanece en
+`R-CSYS-08` y solo procede después de disponer del escenario material completo.
+
+# 28. Estado resultante
+
+~~~text
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ CERRADO
+
+GAP-CONV-SYS-04
+→ CERRADO
+
+R-CSYS-07
+→ SIGUIENTE ACTUACIÓN DERIVADA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 29. Punto de reanudación
+
+> Formular el contrato E2E de R-CSYS-07 que recorra en una sola investigación
+> ordinaria las capacidades convergidas y demuestre que el resultado final puede
+> reconstruirse desde estado persistido sin siembra manual ni memoria externa.
