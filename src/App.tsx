@@ -9,6 +9,7 @@ import { requestAiSupport } from "./ai-support/aiSupportGateway";
 import { requestTurnstileToken } from "./ai-support/turnstileClient";
 import { OrdinaryComparison } from "./OrdinaryComparison";
 import {
+  attachDecisionReason,
   attachParticipantProvenance,
   createKnowledgeTrajectory,
   traceResult,
@@ -270,6 +271,19 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
     useState<string | null>(null);
   const [knowledgeContinuationDraft, setKnowledgeContinuationDraft] =
     useState("");
+  const [decisionTrajectoryKey, setDecisionTrajectoryKey] =
+    useState<string | null>(null);
+  const [decisionDraft, setDecisionDraft] = useState({
+    objective: "",
+    condition1: "",
+    condition2: "",
+    decisiveCondition: "",
+    discardedAlternative: "",
+    discardedFailedCondition: "",
+    selectedAlternative: "",
+    decisiveEvidence: "",
+    decision: "",
+  });
   const knowledgeTrajectoryAssociations = listAssociatedTrajectories().filter(
     (association) =>
       ordinaryMaterials.some(
@@ -937,18 +951,309 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                     {reason !== null && (
                       <section aria-label="Razón">
                         <h4>Razón</h4>
-                        <p>{reason.objectiveId}</p>
-                        <p>{reason.mandatoryConditionIds.join("/")}</p>
-                        {reason.discardedAlternatives.map((discarded) => (
-                          <p key={discarded.alternativeId}>
-                            {discarded.alternativeId} descartada por{" "}
-                            {discarded.failedConditionId}
-                          </p>
-                        ))}
-                        <p>{reason.selectedAlternativeId} seleccionada</p>
-                        <p>{reason.decisiveEvidenceId}</p>
-                        <p>{reason.decisionId}</p>
+                        <p>
+                          {reason.objectiveId}:{" "}
+                          {association.trajectory.entities.find(
+                            (entity) => entity.id === reason.objectiveId,
+                          )?.content}
+                        </p>
+                        <p>
+                          {reason.mandatoryConditionIds
+                            .map((conditionId) => {
+                              const content = association.trajectory.entities.find(
+                                (entity) => entity.id === conditionId,
+                              )?.content;
+                              return `${conditionId}: ${content ?? ""}`;
+                            })
+                            .join(" / ")}
+                        </p>
+                        {reason.discardedAlternatives.map((discarded) => {
+                          const alternativeContent =
+                            association.trajectory.entities.find(
+                              (entity) =>
+                                entity.id === discarded.alternativeId,
+                            )?.content;
+                          const failedConditionContent =
+                            association.trajectory.entities.find(
+                              (entity) =>
+                                entity.id === discarded.failedConditionId,
+                            )?.content;
+
+                          return (
+                            <p key={discarded.alternativeId}>
+                              {discarded.alternativeId}: {alternativeContent}{" "}
+                              descartada por {discarded.failedConditionId}:{" "}
+                              {failedConditionContent}
+                            </p>
+                          );
+                        })}
+                        <p>
+                          {reason.selectedAlternativeId}:{" "}
+                          {association.trajectory.entities.find(
+                            (entity) =>
+                              entity.id === reason.selectedAlternativeId,
+                          )?.content}{" "}
+                          seleccionada
+                        </p>
+                        <p>
+                          {reason.decisiveEvidenceId}:{" "}
+                          {association.trajectory.entities.find(
+                            (entity) => entity.id === reason.decisiveEvidenceId,
+                          )?.content}
+                        </p>
+                        <p>
+                          {reason.decisionId}:{" "}
+                          {association.trajectory.entities.find(
+                            (entity) => entity.id === reason.decisionId,
+                          )?.content}
+                        </p>
                       </section>
+                    )}
+
+                    {reason === null && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setDecisionTrajectoryKey(trajectoryKey);
+                            setDecisionDraft({
+                              objective: "",
+                              condition1: "",
+                              condition2: "",
+                              decisiveCondition: "",
+                              discardedAlternative: "",
+                              discardedFailedCondition: "",
+                              selectedAlternative: "",
+                              decisiveEvidence: "",
+                              decision: "",
+                            });
+                          }}
+                        >
+                          Registrar decisión para {association.resultId}
+                        </button>
+
+                        {decisionTrajectoryKey === trajectoryKey && (
+                          <section
+                            aria-label={`Decisión para ${association.resultId}`}
+                          >
+                            <label>
+                              Objetivo de decisión
+                              <textarea
+                                value={decisionDraft.objective}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    objective: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Condición obligatoria 1
+                              <textarea
+                                value={decisionDraft.condition1}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    condition1: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Condición obligatoria 2
+                              <textarea
+                                value={decisionDraft.condition2}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    condition2: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Condición decisiva
+                              <textarea
+                                value={decisionDraft.decisiveCondition}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    decisiveCondition: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Alternativa descartada
+                              <textarea
+                                value={decisionDraft.discardedAlternative}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    discardedAlternative: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Condición incumplida por la alternativa descartada
+                              <textarea
+                                value={decisionDraft.discardedFailedCondition}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    discardedFailedCondition:
+                                      event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Alternativa seleccionada
+                              <textarea
+                                value={decisionDraft.selectedAlternative}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    selectedAlternative: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Evidencia decisiva
+                              <textarea
+                                value={decisionDraft.decisiveEvidence}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    decisiveEvidence: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+                            <label>
+                              Decisión
+                              <textarea
+                                value={decisionDraft.decision}
+                                onChange={(event) =>
+                                  setDecisionDraft((draft) => ({
+                                    ...draft,
+                                    decision: event.target.value,
+                                  }))
+                                }
+                              />
+                            </label>
+
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const values = Object.values(decisionDraft).map(
+                                  (value) => value.trim(),
+                                );
+                                if (values.some((value) => value.length === 0)) {
+                                  return;
+                                }
+
+                                const prefix = association.resultId;
+                                const conditionIds = [
+                                  `K1-${prefix}`,
+                                  `K2-${prefix}`,
+                                  `K3-${prefix}`,
+                                ];
+                                const failedConditionIndex = [
+                                  decisionDraft.condition1.trim(),
+                                  decisionDraft.condition2.trim(),
+                                  decisionDraft.decisiveCondition.trim(),
+                                ].findIndex(
+                                  (condition) =>
+                                    condition ===
+                                    decisionDraft.discardedFailedCondition.trim(),
+                                );
+
+                                if (failedConditionIndex === -1) {
+                                  return;
+                                }
+
+                                const trajectoryWithReason = attachDecisionReason(
+                                  association.trajectory,
+                                  {
+                                    objective: {
+                                      id: `O-${prefix}`,
+                                      kind: "objective",
+                                      content: decisionDraft.objective.trim(),
+                                    },
+                                    mandatoryConditions: [
+                                      {
+                                        id: conditionIds[0],
+                                        kind: "condition",
+                                        content:
+                                          decisionDraft.condition1.trim(),
+                                      },
+                                      {
+                                        id: conditionIds[1],
+                                        kind: "condition",
+                                        content:
+                                          decisionDraft.condition2.trim(),
+                                      },
+                                      {
+                                        id: conditionIds[2],
+                                        kind: "condition",
+                                        content:
+                                          decisionDraft.decisiveCondition.trim(),
+                                      },
+                                    ],
+                                    discardedAlternatives: [
+                                      {
+                                        alternative: {
+                                          id: `M1-${prefix}`,
+                                          kind: "alternative",
+                                          content:
+                                            decisionDraft.discardedAlternative.trim(),
+                                        },
+                                        failedConditionId:
+                                          conditionIds[failedConditionIndex],
+                                      },
+                                    ],
+                                    selectedAlternative: {
+                                      id: `M2-${prefix}`,
+                                      kind: "alternative",
+                                      content:
+                                        decisionDraft.selectedAlternative.trim(),
+                                    },
+                                    establishedConditionIds: [
+                                      conditionIds[0],
+                                      conditionIds[1],
+                                    ],
+                                    decisiveConditionId: conditionIds[2],
+                                    decisiveEvidence: {
+                                      id: `E-${prefix}`,
+                                      kind: "evidence",
+                                      content:
+                                        decisionDraft.decisiveEvidence.trim(),
+                                    },
+                                    decision: {
+                                      id: `D-${prefix}`,
+                                      kind: "decision",
+                                      content: decisionDraft.decision.trim(),
+                                    },
+                                    resultId: association.resultId,
+                                  },
+                                );
+
+                                saveAssociatedTrajectory({
+                                  ...association,
+                                  trajectory: trajectoryWithReason,
+                                });
+                                setDecisionTrajectoryKey(null);
+                              }}
+                            >
+                              Constituir fundamento de {association.resultId}
+                            </button>
+                          </section>
+                        )}
+                      </>
                     )}
 
                     {association.continuation !== undefined && (
