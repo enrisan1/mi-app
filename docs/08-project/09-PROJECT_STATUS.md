@@ -9067,3 +9067,116 @@ Implementation
 La estabilidad estratégica queda suspendida únicamente por esta comprobación localizada; no se reabre H-CONV-FINAL-01 ni ninguno de sus criterios.
 
 Documento: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de PROS-POST-CONV-01 / resultado B resuelto
+
+Se completa la comprobación prospectiva derivada de CI-POST-CONV-01.
+
+Evidencia discriminante:
+
+~~~text
+contrato rojo inicial
+→ 4/4 FAIL
+
+causa común
+→ ausencia de continuidad operativa desde R1
+~~~
+
+La salida A queda refutada: la capacidad no estaba absorbida por la App previa.
+
+Tras una modificación productiva mínima y acotada:
+
+~~~text
+R1
+→ continuar desde R1
+→ nueva aportación
+→ m2 / R2
+→ R1 como antecedente reconstruible
+→ procedencia humana
+→ fundamento propio de R2
+→ persistencia tras remontar App
+~~~
+
+el contrato queda:
+
+~~~text
+PROS-POST-CONV-01
+→ 4/4 PASS
+~~~
+
+Regresión directa observada:
+
+~~~text
+App.knowledge-trajectory.final-convergence
+→ 4/4 PASS
+
+App.knowledge-trajectory.integration
+→ 4/4 PASS
+
+knowledgeTrajectory.integration
+→ 5/5 PASS
+
+KnowledgeTrajectory
+→ 6/6 PASS
+
+KnowledgeTrajectory.provenance
+→ 5/5 PASS
+
+KnowledgeTrajectory.reason
+→ 6/6 PASS
+
+TOTAL
+→ 34/34 PASS
+~~~
+
+Decisión:
+
+~~~text
+A — absorbida previamente
+→ RECHAZADA
+
+B — insuficiencia realizativa concreta
+→ CONFIRMADA
+→ RESUELTA EN EL ALCANCE MÍNIMO
+
+C — evidencia insuficiente
+→ RECHAZADA
+~~~
+
+Estado resultante:
+
+~~~text
+CI-POST-CONV-01
+→ CERRADA
+
+PROS-POST-CONV-01
+→ SATISFECHA / CERRADA
+
+gap realizativo pendiente
+→ NO
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+
+Implementation adicional
+→ NO DERIVADA
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+~~~
+
+La conclusión no demuestra continuidad IA general ni practicabilidad humana completa sobre una investigación real compleja. Esos puntos permanecen fuera del alcance mínimo de esta prueba y no generan por sí solos obligación posterior.
+
+Documento: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
