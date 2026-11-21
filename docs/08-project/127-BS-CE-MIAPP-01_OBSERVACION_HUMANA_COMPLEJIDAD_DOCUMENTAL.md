@@ -1,7 +1,7 @@
 # BS-CE-MIAPP-01 — Observación humana de investigación documental compleja en la App ordinaria
 
 **Fecha de apertura:** 19/11/2026
-**Estado:** ABIERTA — protocolo fijado; observación humana todavía no ejecutada.
+**Estado:** CERRADA — observación parcial conservada como evidencia histórica; salida BS-D respecto del producto actual por cambio material de baseline posterior; no se deriva gap ni desarrollo.
 **Precedente:** [126](126-EVAL-CE-MIAPP-02_FRONTERA_SUFICIENCIA_COMPLEJIDAD_DOCUMENTAL.md).
 
 ---
@@ -632,4 +632,82 @@ M-CON
 
 siguiente fase
 → BS-02 — LOCALIZACIÓN REAL
+~~~
+
+
+---
+
+# 16. Clausura posterior por cambio material de baseline
+
+La observación de los apartados 14–15 se realizó el 19/11/2026 sobre el estado de App entonces vigente.
+
+Con posterioridad se materializó y cerró:
+
+~~~text
+H-CONV-FINAL-01
+→ Trayectoria integrada de conocimiento
+→ SATISFECHO
+→ CERRADO
+~~~
+
+La App actual incorpora desde ese horizonte nuevas capacidades visibles y operativas de:
+
+- trayectoria asociada a un resultado ordinario;
+- procedencia estructural;
+- razón reconstruible;
+- procedencia humana/IA;
+- navegación retrospectiva y prospectiva mínima.
+
+Estas modificaciones son materialmente capaces de alterar M-ORI, M-CON, M-LOC y M-REC. Por tanto, continuar ahora directamente con:
+
+~~~text
+BS-02 — localización real
+~~~
+
+no constituiría continuación limpia de la misma observación: mezclaría un BS-01 ejecutado sobre una baseline anterior con BS-02…BS-06 ejecutados sobre un producto materialmente distinto.
+
+La evidencia parcial ya obtenida se conserva:
+
+~~~text
+primera apertura anterior
+→ desorientación fuerte
+
+orientación conceptual mínima
+→ recupera la lógica global
+
+BS-I-01
+→ fricción de aprendibilidad
+→ no gap demostrado
+~~~
+
+Pero esa evidencia no basta para clasificar la experiencia humana del producto actual.
+
+Conforme a CF-BS-CE-MIAPP-01 se adopta la salida:
+
+~~~text
+BS-D — EVIDENCIA INSUFICIENTE
+→ respecto del producto actual
+~~~
+
+Esto no significa que la App actual sea suficiente o insuficiente para investigación documental compleja. Significa únicamente que la trayectoria observacional original ya no puede completarse sin rebaselinar el caso.
+
+Resultado:
+
+~~~text
+BS-CE-MIAPP-01
+→ CERRADA
+
+salida
+→ BS-D
+
+gap nuevo
+→ NO DEMOSTRADO
+
+desarrollo
+→ NO DERIVADO
+
+repetición/reapertura
+→ NO AUTOMÁTICA
+→ requerirá fundamento positivo nuevo
+  y nueva baseline explícita
 ~~~
