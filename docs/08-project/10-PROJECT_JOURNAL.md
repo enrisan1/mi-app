@@ -14145,3 +14145,78 @@ R-CSYS-07
 → sin siembra manual intermedia
 → reconstruible desde persistencia
 ~~~
+
+
+---
+
+# 21/11/2026 — R-CSYS-07 / escenario E2E completo
+
+Se crea un único contrato E2E sin siembra manual de trayectorias.
+
+El recorrido ejercita:
+
+~~~text
+material ordinario
+→ trayectoria
+→ apoyo IA
+→ decisión
+→ remount
+→ recuperación
+→ relevo
+→ P2
+→ resultado posterior
+→ revisión posterior
+~~~
+
+La primera ejecución agota 5 s sin aserción fallida; se eleva sólo el timeout local.
+
+La siguiente ejecución detecta un residuo real:
+
+~~~text
+trayectoria ordinaria
+→ estructura humana presente
+→ participantProvenance humana ausente
+~~~
+
+Esto impedía a `Preparar relevo` localizar la contribución humana inicial.
+
+Se corrige la creación ordinaria para registrar esa procedencia mediante el mecanismo existente.
+
+GREEN:
+
+~~~text
+system-e2e
+→ 1/1 PASS
+~~~
+
+Regresión:
+
+~~~text
+ordinary-convergence + provenance
+→ 8/8 PASS
+
+final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 13/13 PASS
+~~~
+
+Resultado:
+
+~~~text
+R-CSYS-07
+→ CERRADA
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ pendiente validación humana
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-08
+→ validación humana del recorrido integrado completo
+→ sin modificar producción antes de observar
+~~~
