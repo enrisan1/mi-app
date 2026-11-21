@@ -14077,3 +14077,71 @@ R-CSYS-06
 → relevo P1 → P2
   dentro de la misma trayectoria
 ~~~
+
+
+---
+
+# 21/11/2026 — GAP-CONV-SYS-04 / cierre material
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.handoff-convergence.test.tsx
+~~~
+
+RED válido:
+
+~~~text
+T-CSYS-HO-01…04
+→ 4/4 FAIL
+
+causa común
+→ ausencia de Preparar relevo de R1
+~~~
+
+Se conecta `KnowledgeTrajectory(R1)` con la superficie histórica de continuidad compartida mediante un relevo compatible que añade metadatos opcionales de antecedente.
+
+La primera ejecución posterior a la modificación no fue funcionalmente válida porque App contenía un error de parseo y se ejecutaron 0 tests. Se corrige únicamente el cierre sintáctico del handler.
+
+GREEN:
+
+~~~text
+handoff-convergence
+→ 4/4 PASS
+~~~
+
+Regresión:
+
+~~~text
+App.kgv
+→ 7/7 PASS
+
+HandoffExperience
+→ 4/4 PASS
+
+continuation
+→ 4/4 PASS
+
+TOTAL
+→ 19/19 PASS
+~~~
+
+Resultado:
+
+~~~text
+GAP-CONV-SYS-04
+→ CERRADO
+
+GAP-CONV-SYS-01…04
+→ TODOS CERRADOS
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-07
+→ escenario E2E completo de HITO-CONV-SYS-01
+→ una sola investigación ordinaria
+→ sin siembra manual intermedia
+→ reconstruible desde persistencia
+~~~
