@@ -1,7 +1,7 @@
 # 130 — CI-POST-CONV-01 / Candidata de continuidad operativa desde trayectoria integrada
 
 **Fecha:** 21/11/2026  
-**Estado:** ABIERTA — candidata reducida; incertidumbre decisional concreta identificada; pendiente de comprobación mínima.  
+**Estado:** CERRADA — resultado B confirmado en el alcance mínimo; insuficiencia realizativa localizada y resuelta por PROS-POST-CONV-01.  
 **Precedentes:** [128](128-R-CONV-FINAL-05_VALIDACION_FORMAL_Y_CIERRE_H_CONV_FINAL_01.md), [129](129-REAPLICACION_MANUAL17_POST_H_CONV_FINAL_01_ESTABILIDAD_ESTRATEGICA.md).  
 **Norma:** Manual 17 §13.1.2.
 
@@ -532,3 +532,231 @@ Implementation
 # 17. Punto de reanudación
 
 > Formular el contrato rojo mínimo de PROS-POST-CONV-01 sin tocar producción, de modo que la única pregunta sea si una trayectoria persistida de R1 puede convertirse en contexto operativo para producir y reconstruir R2.
+
+
+---
+
+# 18. Cierre de PROS-POST-CONV-01
+
+## 18.1 Evidencia discriminante
+
+Se formuló el contrato prospectivo mínimo:
+
+~~~text
+src/App.knowledge-trajectory.continuation.test.tsx
+~~~
+
+El primer ejercicio material produjo:
+
+~~~text
+T-PPC-01…04
+→ 4/4 RED
+
+causa común
+→ ausencia de "Continuar desde R1"
+~~~
+
+El fallo apareció después de que R1 pudiera abrirse y mostrar su trayectoria,
+procedencia de participantes, navegación y razón. Por tanto, el RED no fue un
+fallo de preparación ni una ausencia de R1, sino una diferencia localizada:
+
+~~~text
+R1 explicable/navegable
+→ SÍ
+
+R1 como punto operativo
+para constituir R2
+→ NO
+~~~
+
+La salida A —absorción por capacidad ya existente— quedó así refutada.
+
+## 18.2 Reducción e intervención mínima
+
+La causa se redujo sin abrir nuevo modelo de trayectoria ni arquitectura.
+
+Se amplió de forma retrocompatible la asociación persistida con metadatos
+opcionales de continuación y se reutilizaron:
+
+- `OrdinaryMaterial.antecedentMaterialId`;
+- `KnowledgeTrajectory`;
+- procedencia de participantes;
+- persistencia local existente.
+
+La actuación mínima permitió:
+
+~~~text
+R1
+→ Continuar desde R1
+→ nueva aportación
+→ m2 / R2
+→ antecedente R1 reconstruible
+→ procedencia humana explícita
+→ fundamento propio de R2
+→ persistencia tras remontar App
+~~~
+
+No se introdujo una razón estructurada ficticia para R2.
+
+## 18.3 Evidencia positiva posterior
+
+Tras la actuación, el contrato prospectivo quedó:
+
+~~~text
+PROS-POST-CONV-01
+→ 4/4 PASS
+~~~
+
+Regresión directa observada:
+
+~~~text
+App.knowledge-trajectory.final-convergence
+→ 4/4 PASS
+
+App.knowledge-trajectory.integration
+→ 4/4 PASS
+
+knowledgeTrajectory.integration
+→ 5/5 PASS
+
+KnowledgeTrajectory
+→ 6/6 PASS
+
+KnowledgeTrajectory.provenance
+→ 5/5 PASS
+
+KnowledgeTrajectory.reason
+→ 6/6 PASS
+~~~
+
+Total observado en la secuencia:
+
+~~~text
+34/34 PASS
+~~~
+
+## 18.4 Decisión A / B / C
+
+### A — absorbida por la capacidad previa
+
+~~~text
+RECHAZADA
+~~~
+
+La App anterior no ofrecía continuidad operativa desde R1. El RED lo
+discriminó directamente.
+
+### B — insuficiencia realizativa concreta
+
+~~~text
+CONFIRMADA
+→ y RESUELTA en el alcance mínimo
+~~~
+
+La insuficiencia era real pero localizada: faltaba convertir la trayectoria
+persistida de R1 en punto operativo para una actuación posterior y conservar
+la relación reconstruible con R2.
+
+La actuación mínima satisface ese caso sin requerir nuevo Product, horizonte,
+Architecture ni modelo general.
+
+### C — evidencia insuficiente
+
+~~~text
+RECHAZADA
+~~~
+
+La prueba fue discriminante y la secuencia RED → intervención mínima → GREEN
+permite decidir sin ambigüedad material dentro del alcance ejercitado.
+
+## 18.5 Límites de la conclusión
+
+La conclusión no demuestra:
+
+- continuidad universal entre resultados arbitrarios;
+- actuación IA posterior como caso independiente;
+- colaboración distribuida;
+- backend;
+- multiusuario/multiproceso;
+- ontología o grafo general;
+- verdad material del fundamento;
+- practicabilidad humana completa sobre una investigación real compleja.
+
+La procedencia IA anterior de R1 permanece conservada por los contratos
+previos, pero PROS-POST-CONV-01 ejercita como nueva actuación únicamente una
+aportación humana. Esto no impide cerrar la pregunta mínima de continuidad,
+pero no autoriza afirmar continuidad IA general.
+
+La validación humana prevista en §14 permanece una posible actuación de
+evidencia separada; no es condición necesaria para clasificar esta prueba
+prospectiva material.
+
+## 18.6 Cierre de CI-POST-CONV-01
+
+Resultado final:
+
+~~~text
+CI-POST-CONV-01
+→ RESULTADO B
+
+insuficiencia realizativa
+→ CONFIRMADA
+
+causa mínima
+→ REDUCIDA
+
+actuación mínima
+→ REALIZADA
+
+PROS-POST-CONV-01
+→ SATISFECHA / CERRADA
+
+insuficiencia en alcance mínimo
+→ RESUELTA
+
+gap realizativo pendiente
+→ NO
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+
+Implementation adicional
+→ NO DERIVADA
+~~~
+
+El cierre de H-CONV-FINAL-01 permanece históricamente correcto: esta actuación
+no lo reabre, sino que resuelve una diferencia posterior localizada.
+
+# 19. Estado resultante tras cierre
+
+~~~text
+comprobación localizada
+→ CERRADA
+
+CI-POST-CONV-01
+→ CERRADA CON RESULTADO B RESUELTO
+
+RAMA A
+→ SIN OBLIGACIÓN PENDIENTE DERIVADA DE ESTA CANDIDATA
+
+RAMA B
+→ SIN OBLIGACIÓN PENDIENTE DERIVADA DE ESTA CANDIDATA
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+~~~
+
+# 20. Punto de reanudación
+
+> Reaplicar Manual 17 únicamente ante nueva evidencia, decisión o fundamento
+> positivo que demuestre una obligación pendiente distinta. No continuar
+> automáticamente desde CI-POST-CONV-01.
