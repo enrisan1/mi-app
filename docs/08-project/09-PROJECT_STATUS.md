@@ -9180,3 +9180,61 @@ siguiente actuación estratégicamente derivada
 La conclusión no demuestra continuidad IA general ni practicabilidad humana completa sobre una investigación real compleja. Esos puntos permanecen fuera del alcance mínimo de esta prueba y no generan por sí solos obligación posterior.
 
 Documento: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
+
+
+---
+
+# 21/11/2026 — Apertura de CONV-SYS-01
+
+Se abre una fase de convergencia realizativa hacia una trayectoria ordinaria única.
+
+Se fija:
+
+~~~text
+HITO-CONV-SYS-01
+→ primera investigación ordinaria completa
+  gobernada por una única trayectoria de conocimiento
+~~~
+
+Se reducen cuatro gaps:
+
+~~~text
+GAP-CONV-SYS-01
+→ actuaciones ordinarias → trayectoria
+
+GAP-CONV-SYS-02
+→ apoyo IA real → misma trayectoria
+
+GAP-CONV-SYS-03
+→ decisión/fundamento real → misma trayectoria
+
+GAP-CONV-SYS-04
+→ relevo P1 → P2 → misma trayectoria
+~~~
+
+Dependencias:
+
+~~~text
+GAP-01 → GAP-02
+GAP-01 → GAP-03
+GAP-01 → GAP-04
+~~~
+
+Por tanto:
+
+~~~text
+PRIORIDAD 1
+→ GAP-CONV-SYS-01
+~~~
+
+Se crea exclusivamente el contrato:
+
+~~~text
+src/App.knowledge-trajectory.ordinary-convergence.test.tsx
+→ T-CSYS-01…03
+→ SIN EJECUCIÓN OBSERVADA TODAVÍA
+~~~
+
+Producción no se modifica.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
