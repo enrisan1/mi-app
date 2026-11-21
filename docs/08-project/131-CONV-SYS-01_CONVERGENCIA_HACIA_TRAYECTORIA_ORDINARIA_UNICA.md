@@ -1316,3 +1316,260 @@ Architecture
 > Formular el contrato E2E de R-CSYS-07 que recorra en una sola investigación
 > ordinaria las capacidades convergidas y demuestre que el resultado final puede
 > reconstruirse desde estado persistido sin siembra manual ni memoria externa.
+
+
+---
+
+# 30. Ejecución y cierre de R-CSYS-07
+
+## 30.1 Contrato E2E
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.system-e2e.test.tsx
+~~~
+
+El contrato no siembra ninguna `KnowledgeTrajectory`.
+
+Sólo parte de materiales ordinarios iniciales y exige que App constituya y
+conserve por sí misma una secuencia completa:
+
+~~~text
+material ordinario
+→ trayectoria
+
+trayectoria
+→ apoyo IA
+→ procedencia IA
+
+trayectoria
+→ decisión/fundamento
+
+interrupción
+→ recuperación desde persistencia
+
+trayectoria recuperada
+→ relevo P1 → P2
+→ continuación
+→ resultado posterior
+
+nuevo remount
+→ revisión posterior
+→ antecedente + procedencia + razón reconstruibles
+~~~
+
+## 30.2 Primer resultado
+
+La primera ejecución terminó por timeout global de 5 segundos sin aserción
+funcional fallida.
+
+Se amplió únicamente el timeout local del contrato a 15 segundos.
+
+La siguiente ejecución localizó una diferencia material:
+
+~~~text
+Preparar relevo de R3
+→ botón presente
+
+Relevo entregable de R3
+→ ausente
+~~~
+
+La inspección demostró:
+
+~~~text
+R3
+→ contiene estructura humana
+  PH-m3 → AC-m3 → T-m3
+
+pero
+→ no contiene participantProvenance humana
+
+apoyo IA posterior
+→ sí contiene participantProvenance IA
+
+Preparar relevo
+→ requiere una contribución humana explícita
+→ no la encuentra
+→ aborta
+~~~
+
+## 30.3 Intervención mínima
+
+Se corrige la creación ordinaria de trayectoria para registrar también la
+contribución humana mediante `attachParticipantProvenance()`.
+
+La trayectoria ordinaria pasa a conservar explícitamente:
+
+~~~text
+participant
+→ Usuario principal
+
+action
+→ Continuar con este material
+
+transformation
+→ transformación ordinaria
+
+participantType
+→ human
+
+contributionState
+→ produced
+~~~
+
+No se añade fallback específico al relevo.
+
+La corrección ataca la causa raíz: la procedencia humana explícita faltante en
+la trayectoria ordinaria.
+
+## 30.4 GREEN y regresión
+
+Contrato E2E:
+
+~~~text
+src/App.knowledge-trajectory.system-e2e.test.tsx
+→ 1/1 PASS
+~~~
+
+Regresión dirigida:
+
+~~~text
+src/App.knowledge-trajectory.ordinary-convergence.test.tsx
++
+src/realizations/knowledge-trajectory/KnowledgeTrajectory.provenance.test.ts
+→ 8/8 PASS
+
+src/App.knowledge-trajectory.final-convergence.test.tsx
+→ 4/4 PASS
+~~~
+
+Total observado en esta secuencia de cierre:
+
+~~~text
+13/13 PASS
+~~~
+
+## 30.5 Decisión
+
+Queda demostrado en una única investigación ordinaria:
+
+~~~text
+fuente
+→ afirmación
+→ transformación
+→ procedencia humana
+→ apoyo IA + procedencia IA
+→ decisión/fundamento
+→ persistencia
+→ interrupción
+→ recuperación
+→ relevo P1 → P2
+→ continuación
+→ resultado posterior
+→ revisión posterior
+→ reconstrucción de procedencia y razón
+~~~
+
+sin siembra manual intermedia de trayectorias.
+
+Por tanto:
+
+~~~text
+R-CSYS-07
+→ CERRADA
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ PENDIENTE VALIDACIÓN HUMANA
+~~~
+
+No se declara todavía cerrado el hito.
+
+---
+
+# 31. Siguiente actuación derivada
+
+La única actuación restante del roadmap es:
+
+~~~text
+R-CSYS-08
+→ validación humana del escenario integrado
+~~~
+
+Su propósito no es buscar nuevas capacidades por defecto ni reabrir los gaps
+cerrados.
+
+Debe comprobar si una persona puede reconocer y utilizar el recorrido integrado
+como una investigación coherente:
+
+~~~text
+trabajo anterior
+→ continuar
+→ apoyo IA
+→ decisión
+→ interrupción
+→ recuperar
+→ relevar
+→ continuar
+→ revisar
+→ entender por qué existe el resultado
+~~~
+
+y distinguir en la experiencia:
+
+- qué es fuente/antecedente;
+- qué aportó la persona;
+- qué aportó la IA;
+- qué decisión se tomó y por qué;
+- qué recibió P2;
+- qué añadió P2;
+- de qué resultado anterior procede el resultado posterior.
+
+La salida deberá ser discriminante:
+
+~~~text
+A
+→ recorrido reconocible y practicable
+→ HITO-CONV-SYS-01 puede someterse a cierre
+
+B
+→ dificultad concreta de uso/interpretación
+→ reducir exclusivamente esa diferencia
+
+C
+→ evidencia humana insuficiente
+→ mantener hito pendiente sin inventar gap
+~~~
+
+# 32. Estado resultante
+
+~~~text
+GAP-CONV-SYS-01…04
+→ CERRADOS
+
+R-CSYS-07
+→ CERRADA
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ PENDIENTE R-CSYS-08
+
+R-CSYS-08
+→ SIGUIENTE ACTUACIÓN DERIVADA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 33. Punto de reanudación
+
+> Ejecutar R-CSYS-08 como validación humana del recorrido integrado completo,
+> sin modificar producción antes de observar la experiencia humana.
