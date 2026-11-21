@@ -9696,3 +9696,95 @@ producción
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-C/D: continuidad humana técnicamente validada
+
+Se completa la reducción e implementación de la continuidad humana ordinaria.
+
+Contrato nuevo:
+
+~~~text
+src/App.human-continuity.test.tsx
+→ T-CSYS-HCONT-01…08
+→ RED inicial: 1 PASS / 7 FAIL
+→ GREEN final: 8/8 PASS
+~~~
+
+La diferencia material queda reducida a separar:
+
+~~~text
+Seguir trabajando
+→ continuidad ordinaria
+
+Usar este trabajo en integración post-V1
+→ actuación especializada
+
+Retomar trayectoria integrada existente
+→ recuperación de R previa
+~~~
+
+La regresión histórica posterior queda:
+
+~~~text
+App
++ App.hpi
++ App.kgv
++ PostV1IntegratedExperience
+
+→ 4/4 archivos PASS
+→ 57/57 tests PASS
+~~~
+
+Suite global:
+
+~~~text
+paralelismo por defecto
+→ sensibilidad bajo carga
+→ timeouts no reproducibles aisladamente
+
+npx vitest run --maxWorkers=2
+→ 81/81 archivos PASS
+→ 585/585 tests PASS
+~~~
+
+Typecheck:
+
+~~~text
+npm run typecheck
+→ 29 errores / 6 archivos
+
+atribución a R-CSYS-09-D
+→ NO
+→ errores ya presentes antes del commit productivo
+~~~
+
+Estado:
+
+~~~text
+R-CSYS-09-C
+→ CERRADA
+
+R-CSYS-09-D
+→ IMPLEMENTADA Y VALIDADA TÉCNICAMENTE
+
+CF-CSYS-09
+→ 8/8 condiciones técnicamente cubiertas
+→ NO CERRADO
+→ pendiente HUMAN GATE
+
+producción
+→ congelada durante observación humana
+~~~
+
+Siguiente actuación:
+
+~~~text
+HUMAN GATE de CF-CSYS-09
+→ comprobar reconocibilidad real del hilo
+→ sin explicación previa de las nuevas acciones
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
