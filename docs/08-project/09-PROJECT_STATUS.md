@@ -9579,3 +9579,64 @@ R-CSYS-09
 No se reabren GAP-CONV-SYS-01…04. No se abre nuevo Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-A / modelo mental y criterio humano
+
+Se reconstruye el modelo mental observado en R-CSYS-08 y se contrasta con la estructura actual de App.
+
+Hecho comprobado:
+- la continuidad ordinaria vive en ResumeExperience / ordinary.materials / current-work / KnowledgeTrajectory;
+- “Continuar con este trabajo” sustituye la vista ordinaria por PostV1IntegratedExperience;
+- PostV1 expone estados especializados current → S1 → P1 → evaluación → colaboración → intercambio → destino.
+
+Modelo humano derivado:
+
+~~~text
+un mismo trabajo
+→ acumula aportaciones
+→ puede conservarse
+→ recuperarse
+→ publicarse
+→ compartirse
+→ continuar
+sin dejar de ser reconocible como el mismo hilo
+~~~
+
+Separación:
+- hilo principal: trabajo ordinario acumulado + trayectoria/continuación;
+- auxiliares: S1, P1, evaluación, colaboración, X1, D1, apoyo IA, autoría, comparación y relevo.
+
+Se formula CF-CSYS-09 con ocho condiciones:
+1. identidad del hilo;
+2. estado actual inequívoco;
+3. continuación explícita;
+4. conservación no destructiva;
+5. recuperación completa;
+6. separación de acciones;
+7. reanudación sin reintroducción manual;
+8. compatibilidad con KnowledgeTrajectory y patrimonio cerrado.
+
+Estado:
+
+~~~text
+R-CSYS-09-A
+→ CERRADA
+
+CF-CSYS-09
+→ FORMULADO
+
+HITO-CONV-SYS-01
+→ NO CERRADO
+
+R-CSYS-09-B
+→ SIGUIENTE ACTUACIÓN
+→ reducir intervención mínima
+→ primero contrato rojo
+~~~
+
+Producción no se modifica.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
