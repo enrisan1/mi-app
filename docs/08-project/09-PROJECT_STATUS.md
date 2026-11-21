@@ -9362,3 +9362,59 @@ R-CSYS-05
 GAP-CONV-SYS-04 permanece abierto. No se abre nuevo Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de GAP-CONV-SYS-03
+
+Se integra una actuación ordinaria mínima de decisión en la misma `KnowledgeTrajectory`.
+
+Evidencia:
+
+~~~text
+RED
+→ 3/3 FAIL
+→ no existía Registrar decisión para R1
+
+GREEN
+→ 3/3 PASS
+~~~
+
+Regresión dirigida:
+
+~~~text
+KnowledgeTrajectory.reason
+→ 6/6 PASS
+
+App.knowledge-trajectory.integration
+→ 4/4 PASS
+
+App.knowledge-trajectory.final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 17/17 PASS
+~~~
+
+Decisión:
+
+~~~text
+GAP-CONV-SYS-03
+→ CERRADO
+
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+siguiente prioridad
+→ GAP-CONV-SYS-04
+→ relevo P1 → P2 → misma trayectoria
+
+R-CSYS-06
+→ DERIVADA COMO SIGUIENTE ACTUACIÓN
+→ primero contrato rojo
+~~~
+
+No se abre motor general de razonamiento, Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
