@@ -14013,3 +14013,67 @@ R-CSYS-05
 → decisión/fundamento ordinario
   debe constituirse en la misma trayectoria
 ~~~
+
+
+---
+
+# 21/11/2026 — GAP-CONV-SYS-03 / cierre material
+
+La inspección previa demuestra que App no disponía de una actuación ordinaria de decisión estructurada; `attachDecisionReason()` existía en el modelo y en tests, no como flujo productivo.
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.reason-convergence.test.tsx
+~~~
+
+RED válido:
+
+~~~text
+T-CSYS-DEC-01…03
+→ 3/3 FAIL
+
+causa común
+→ ausencia de Registrar decisión para R1
+~~~
+
+Se añade una actuación mínima de decisión dentro de la trayectoria abierta, con objetivo, condiciones, alternativas, evidencia y decisión, y se persiste mediante `attachDecisionReason()`.
+
+GREEN:
+
+~~~text
+reason-convergence
+→ 3/3 PASS
+~~~
+
+Regresión:
+
+~~~text
+reason
+→ 6/6 PASS
+
+App integration
+→ 4/4 PASS
+
+final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 17/17 PASS
+~~~
+
+Resultado:
+
+~~~text
+GAP-CONV-SYS-03
+→ CERRADO
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-06
+→ contrato rojo
+→ relevo P1 → P2
+  dentro de la misma trayectoria
+~~~
