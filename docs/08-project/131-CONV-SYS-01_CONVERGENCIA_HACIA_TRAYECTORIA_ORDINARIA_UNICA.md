@@ -823,3 +823,234 @@ Architecture
 > sobre un trabajo con trayectoria existente constituya en esa misma
 > KnowledgeTrajectory el fundamento reconstruible del resultado, sin modificar
 > todavía producción.
+
+
+---
+
+# 22. Ejecución y cierre de GAP-CONV-SYS-03
+
+## 22.1 Reducción previa del gap
+
+La inspección de App demostró que no existía todavía una actuación ordinaria
+de decisión estructurada equivalente a:
+
+~~~text
+objetivo
++ condiciones
++ alternativas
++ evidencia
++ decisión
+~~~
+
+Por tanto, el gap no era únicamente una desconexión entre una decisión ya
+existente y `KnowledgeTrajectory`.
+
+La dependencia realizativa mínima era:
+
+~~~text
+crear actuación ordinaria mínima de decisión
+↓
+constituir su fundamento
+↓
+persistirlo en la misma trayectoria del resultado
+~~~
+
+## 22.2 Contrato rojo
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.reason-convergence.test.tsx
+~~~
+
+El contrato exige:
+
+~~~text
+T-CSYS-DEC-01
+→ desde R1 puede ejercerse una decisión ordinaria
+→ sin sembrar razón desde el test
+
+T-CSYS-DEC-02
+→ la misma KnowledgeTrajectory contiene:
+  objetivo
+  condiciones
+  alternativa descartada
+  alternativa seleccionada
+  evidencia decisiva
+  decisión
+  decision → justifies → R1
+
+T-CSYS-DEC-03
+→ tras remount
+→ R1 conserva y muestra el fundamento
+~~~
+
+Primer resultado observado:
+
+~~~text
+3/3 FAIL
+~~~
+
+Causa común:
+
+~~~text
+ausencia de:
+Registrar decisión para R1
+~~~
+
+La trayectoria R1 sí existía y podía abrirse.
+
+## 22.3 Intervención mínima
+
+Se añade dentro de la trayectoria abierta una actuación mínima:
+
+~~~text
+Registrar decisión para R1
+↓
+formulario explícito
+↓
+Constituir fundamento de R1
+~~~
+
+El formulario recoge:
+
+- objetivo;
+- dos condiciones obligatorias;
+- condición decisiva;
+- alternativa descartada;
+- condición incumplida por la alternativa descartada;
+- alternativa seleccionada;
+- evidencia decisiva;
+- decisión.
+
+La constitución reutiliza `attachDecisionReason()` y persiste la asociación
+actualizada mediante `saveAssociatedTrajectory()`.
+
+No se crea nuevo resultado y no se modifica `KnowledgeTrajectory.ts`.
+
+La vista de Razón pasa a mostrar identificador + contenido, conservando los IDs
+históricos y haciendo recuperable el contenido realmente introducido.
+
+## 22.4 GREEN y regresión
+
+Contrato:
+
+~~~text
+src/App.knowledge-trajectory.reason-convergence.test.tsx
+→ 3/3 PASS
+~~~
+
+Regresión dirigida observada:
+
+~~~text
+src/realizations/knowledge-trajectory/KnowledgeTrajectory.reason.test.ts
+→ 6/6 PASS
+
+src/App.knowledge-trajectory.integration.test.tsx
+→ 4/4 PASS
+
+src/App.knowledge-trajectory.final-convergence.test.tsx
+→ 4/4 PASS
+~~~
+
+Total observado en esta secuencia:
+
+~~~text
+17/17 PASS
+~~~
+
+## 22.5 Decisión
+
+El criterio material queda satisfecho:
+
+~~~text
+decisión ordinaria
+→ misma KnowledgeTrajectory
+→ objetivo
+→ condiciones
+→ alternativas
+→ evidencia
+→ decisión
+→ justifies → resultado
+→ persistencia
+~~~
+
+Por tanto:
+
+~~~text
+GAP-CONV-SYS-03
+→ CERRADO
+
+R-CSYS-05
+→ CERRADA
+~~~
+
+No se abre motor general de razonamiento ni nuevo Product/horizonte/Architecture.
+
+---
+
+# 23. Siguiente prioridad derivada
+
+Queda un único gap material previo al escenario integrado completo:
+
+~~~text
+GAP-CONV-SYS-04
+→ relevo P1 → P2 dentro de la misma trayectoria
+~~~
+
+Se deriva:
+
+~~~text
+R-CSYS-06
+→ contrato rojo de relevo integrado
+~~~
+
+El contrato deberá partir de una trayectoria persistida `Rn`, ejercer un relevo
+a P2 y demostrar que una actuación posterior de P2 produce `Rn+1` conservando
+en una misma trayectoria reconstruible:
+
+~~~text
+qué recibió P2
++ qué añadió P2
++ qué actuación realizó
++ qué resultado produjo
++ antecedente Rn
+~~~
+
+No debe volver a demostrar la independencia de estado privado de P1 salvo
+regresión del patrimonio de `HandoffExperience`.
+
+# 24. Estado resultante
+
+~~~text
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ CERRADO
+
+GAP-CONV-SYS-04
+→ ABIERTO
+→ SIGUIENTE PRIORIDAD
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 25. Punto de reanudación
+
+> Formular el contrato rojo mínimo de R-CSYS-06 para integrar el relevo P1 → P2
+> en la misma trayectoria ordinaria, reutilizando el patrimonio ya demostrado y
+> sin modificar todavía producción.
