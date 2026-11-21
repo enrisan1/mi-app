@@ -1573,3 +1573,182 @@ Architecture
 
 > Ejecutar R-CSYS-08 como validación humana del recorrido integrado completo,
 > sin modificar producción antes de observar la experiencia humana.
+
+
+---
+
+# 34. Ejecución de R-CSYS-08 — validación humana
+
+La validación se realiza sobre la App real en una ventana privada, sin modificar
+producción durante la observación.
+
+## 34.1 Orientación inicial
+
+En estado limpio, la persona identifica dos posibles comienzos:
+
+~~~text
+crear identidad
+o
+empezar en “Ahora”
+~~~
+
+El encabezado “Ahora” resulta suficientemente prominente para elegirlo como
+punto de inicio, aunque la coexistencia con “Identidad autoral” introduce una
+ambigüedad inicial.
+
+## 34.2 Creación y primera interpretación
+
+Tras crear un texto, la persona reconoce:
+
+- una zona donde parece conservarse el texto;
+- otra zona relacionada con apoyo IA.
+
+El alcance de “Qué apoyo necesitas” no resulta deducible sin probarlo.
+
+## 34.3 Intento espontáneo de continuación
+
+Al querer continuar la investigación, la persona interpreta razonablemente
+“Continuidad compartida” + “Antecedente compartido recibido” + “Continuar con
+este trabajo” como una vía de continuación.
+
+Tras pulsar “Continuar con este trabajo” se abre “Integración post-V1”.
+
+La reacción observada es que la propia página ha interrumpido la continuidad
+esperada.
+
+## 34.4 Conservación y recuperación percibidas
+
+“Conservar trabajo actual como referencia estable” se interpreta como:
+
+~~~text
+guardar lo realizado
+→ poder recuperarlo después
+~~~
+
+Sin embargo, la pantalla siguiente no muestra de forma evidente dónde quedó
+guardado el trabajo ni una acción inequívoca de “retomar”.
+
+Aparecen:
+
+~~~text
+Evolucionar trabajo actual
+Publicar P1 desde S1
+~~~
+
+ambas con significado incierto.
+
+La persona elige “Publicar P1 desde S1” no porque comprenda su semántica, sino
+porque parece la opción con mayor probabilidad de recuperar lo anterior.
+
+## 34.5 Resultado discriminante
+
+Después de publicar:
+
+- “Trabajo actual”, “Estado estable” y “Publicación” muestran el texto inicial;
+- se reconoce recuperada la primera parte del trabajo;
+- la segunda aportación no aparece recuperada;
+- las acciones disponibles no dejan claro cómo continuar sin ignorar esa segunda
+  parte.
+
+Por tanto, la dificultad no es una mera preferencia estética ni una falta de
+familiaridad con un término aislado.
+
+La secuencia humana observada es:
+
+~~~text
+crear
+→ comprender parcialmente
+
+intentar continuar
+→ cambio de contexto inesperado
+
+conservar
+→ no queda claro dónde ni cómo recuperar
+
+publicar
+→ reaparece la primera parte
+→ no reaparece la segunda
+
+continuar desde ahí
+→ no resulta evidente
+~~~
+
+## 34.6 Decisión de R-CSYS-08
+
+La salida discriminante es:
+
+~~~text
+B
+→ dificultad concreta de uso/interpretación
+~~~
+
+R-CSYS-08 queda ejecutada con evidencia suficiente.
+
+No se cierra todavía HITO-CONV-SYS-01.
+
+La diferencia reducida es:
+
+> La experiencia material conserva capacidades y datos suficientes, pero no
+> presenta una continuidad humana reconocible entre crear, continuar, conservar,
+> recuperar y seguir investigando; además, una aportación posterior puede quedar
+> fuera del hilo que el usuario reconoce como recuperado.
+
+Esto no reabre los cuatro gaps técnicos cerrados.
+
+Tampoco justifica por sí solo nuevo Product, horizonte o Architecture.
+
+---
+
+# 35. Siguiente actuación derivada
+
+Se deriva únicamente una actuación de reducción sobre la diferencia humana
+observada:
+
+~~~text
+R-CSYS-09
+→ reducir la continuidad humana ordinaria
+  entre crear → continuar → conservar → recuperar → seguir
+~~~
+
+Antes de modificar producción deberá determinarse:
+
+1. cuál es el hilo ordinario que la interfaz debe presentar como “el mismo
+   trabajo”;
+2. qué contenido debe permanecer visible/recuperable en cada transición;
+3. qué acciones históricas son realizaciones internas y no deberían competir
+   como rutas principales de usuario;
+4. cuál es el criterio observable mínimo para que una persona pueda continuar
+   sin ensayo y error ni pérdida aparente de aportaciones.
+
+# 36. Estado resultante
+
+~~~text
+R-CSYS-08
+→ EJECUTADA
+→ SALIDA B
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ NO CERRADO
+→ BLOQUEADO POR CONTINUIDAD HUMANA OBSERVADA
+
+GAP-CONV-SYS-01…04
+→ CERRADOS
+
+R-CSYS-09
+→ SIGUIENTE ACTUACIÓN DERIVADA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 37. Punto de reanudación
+
+> Reducir R-CSYS-09 hasta un criterio mínimo de continuidad humana reconocible,
+> sin modificar todavía producción.
