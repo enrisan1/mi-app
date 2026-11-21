@@ -10,6 +10,7 @@ import { requestTurnstileToken } from "./ai-support/turnstileClient";
 import { OrdinaryComparison } from "./OrdinaryComparison";
 import {
   traceResult,
+  traceResultParticipantProvenance,
   traceResultReason,
 } from "./realizations/knowledge-trajectory/KnowledgeTrajectory";
 import { listAssociatedTrajectories } from "./realizations/knowledge-trajectory/knowledgeTrajectoryRepository";
@@ -257,6 +258,8 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
       ? undefined
       : ordinaryMaterials.find((material) => material.id === currentWorkId);
   const [openedKnowledgeTrajectoryKey, setOpenedKnowledgeTrajectoryKey] =
+    useState<string | null>(null);
+  const [openedKnowledgeTrajectoryForwardStart, setOpenedKnowledgeTrajectoryForwardStart] =
     useState<string | null>(null);
   const knowledgeTrajectoryAssociations = listAssociatedTrajectories().filter(
     (association) =>
@@ -728,6 +731,18 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             const reason = isOpen
               ? traceResultReason(association.trajectory, association.resultId)
               : null;
+            const participantProvenance = isOpen
+              ? traceResultParticipantProvenance(
+                  association.trajectory,
+                  association.resultId,
+                )
+              : [];
+            const contributionStateLabel = {
+              produced: "producida",
+              accepted: "aceptada",
+              rejected: "rechazada",
+              modified: "modificada",
+            } as const;
 
             return (
               <article
@@ -738,7 +753,10 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                 <p>{association.resultId}</p>
                 <button
                   type="button"
-                  onClick={() => setOpenedKnowledgeTrajectoryKey(trajectoryKey)}
+                  onClick={() => {
+                    setOpenedKnowledgeTrajectoryKey(trajectoryKey);
+                    setOpenedKnowledgeTrajectoryForwardStart(null);
+                  }}
                 >
                   Ver trayectoria de {association.resultId}
                 </button>
@@ -758,6 +776,90 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                         {provenance.transformationId}
                       </p>
                     </section>
+
+                    {participantProvenance.length > 0 && (
+                      <section aria-label="Procedencia de participantes">
+                        <h4>Procedencia de participantes</h4>
+                        {participantProvenance.map((contribution) => (
+                          <article
+                            key={`${contribution.participantId}:${contribution.actionId}`}
+                          >
+                            <p>
+                              {contribution.participantId} —{" "}
+                              {contribution.participantType === "human"
+                                ? "humano"
+                                : contribution.participantType === "ai"
+                                  ? "IA"
+                                  : "otro"}
+                            </p>
+                            <p>
+                              {contribution.actionId} →{" "}
+                              {contribution.transformationId}
+                            </p>
+                            <p>
+                              {contributionStateLabel[contribution.contributionState]}
+                            </p>
+                            {contribution.aiProvenance !== undefined && (
+                              <>
+                                <p>{contribution.aiProvenance.system}</p>
+                                {contribution.aiProvenance.model !== undefined && (
+                                  <p>{contribution.aiProvenance.model}</p>
+                                )}
+                                {contribution.aiProvenance.requestId !== undefined && (
+                                  <p>{contribution.aiProvenance.requestId}</p>
+                                )}
+                              </>
+                            )}
+                          </article>
+                        ))}
+                      </section>
+                    )}
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenedKnowledgeTrajectoryForwardStart(
+                          provenance.sourceId,
+                        )
+                      }
+                    >
+                      Seguir desde {provenance.sourceId}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenedKnowledgeTrajectoryForwardStart(
+                          provenance.participantId,
+                        )
+                      }
+                    >
+                      Seguir desde {provenance.participantId}
+                    </button>
+
+                    {openedKnowledgeTrajectoryForwardStart ===
+                      provenance.sourceId && (
+                      <section
+                        aria-label={`Recorrido desde ${provenance.sourceId}`}
+                      >
+                        <p>
+                          {provenance.sourceId} → {provenance.assertionId} →{" "}
+                          {provenance.transformationId} → {provenance.resultId}
+                        </p>
+                      </section>
+                    )}
+
+                    {openedKnowledgeTrajectoryForwardStart ===
+                      provenance.participantId && (
+                      <section
+                        aria-label={`Recorrido desde ${provenance.participantId}`}
+                      >
+                        <p>
+                          {provenance.participantId} → {provenance.actionId} →{" "}
+                          {provenance.transformationId} → {provenance.resultId}
+                        </p>
+                      </section>
+                    )}
 
                     <section aria-label="Razón">
                       <h4>Razón</h4>
