@@ -66,7 +66,7 @@ describe("R-HPI-01 — contrato observable de contexto operativo común", () => 
       W1.content,
     );
     expect(
-      screen.getByRole("button", { name: /continuar con este trabajo/i }),
+      screen.getByRole("button", { name: /seguir trabajando/i }),
     ).toBeInTheDocument();
   });
 
