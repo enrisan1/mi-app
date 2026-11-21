@@ -614,3 +614,212 @@ siguiente actuación
 > solicitado sobre un trabajo ordinario con trayectoria existente quede
 > incorporado a esa misma trayectoria con procedencia IA explícita, sin
 > modificar todavía producción.
+
+
+---
+
+# 18. Ejecución y cierre de GAP-CONV-SYS-02
+
+## 18.1 Contrato rojo
+
+Se crea:
+
+~~~text
+src/App.knowledge-trajectory.ai-convergence.test.tsx
+~~~
+
+partiendo de una obra ordinaria `m1` con `KnowledgeTrajectory(R1)` ya existente.
+
+El contrato exige:
+
+~~~text
+T-CSYS-AI-01
+→ conservar la trayectoria R1
+→ añadir contribución IA
+→ conservar system/model/requestId
+
+T-CSYS-AI-02
+→ participante IA
+→ actuación IA
+→ transformación IA
+→ todos pertenecen a la misma KnowledgeTrajectory
+
+T-CSYS-AI-03
+→ persistencia de la contribución IA tras remount
+~~~
+
+Primer resultado observado:
+
+~~~text
+3/3 FAIL
+~~~
+
+Causa común:
+
+~~~text
+traceResultParticipantProvenance(R1)
+→ 0 contribuciones IA
+~~~
+
+El flujo de apoyo IA llegaba correctamente hasta la conservación del apoyo,
+por lo que el RED aisló GAP-CONV-SYS-02 sin fallo del proveedor, Turnstile ni
+persistencia del apoyo separado.
+
+## 18.2 Intervención mínima
+
+Se modifica únicamente el éxito de:
+
+~~~text
+Solicitar apoyo IA
+~~~
+
+Cuando la obra tiene una única trayectoria asociada inequívoca, el apoyo IA
+añade a esa misma trayectoria:
+
+~~~text
+participant IA
+→ system del proveedor
+
+action IA
+→ petición humana
+
+transformation IA
+→ contenido del apoyo
+
+participantProvenance
+→ participantType = ai
+→ contributionState = produced
+→ system/model/requestId
+~~~
+
+La trayectoria base de R1 se conserva.
+
+No se crean:
+
+- nuevo resultado;
+- decisión;
+- razón;
+- relevo.
+
+Tampoco se modifica `KnowledgeTrajectory.ts`, el repositorio ni el transporte IA.
+
+## 18.3 GREEN y regresión
+
+Contrato:
+
+~~~text
+src/App.knowledge-trajectory.ai-convergence.test.tsx
+→ 3/3 PASS
+~~~
+
+Regresión dirigida observada:
+
+~~~text
+src/App.ai-support.integration.test.tsx
+→ 13/13 PASS
+
+src/realizations/knowledge-trajectory/KnowledgeTrajectory.provenance.test.ts
+→ 5/5 PASS
+
+src/App.knowledge-trajectory.final-convergence.test.tsx
+→ 4/4 PASS
+~~~
+
+Total observado en la secuencia de cierre:
+
+~~~text
+25/25 PASS
+~~~
+
+## 18.4 Decisión
+
+El criterio material de GAP-CONV-SYS-02 queda satisfecho:
+
+~~~text
+apoyo IA ordinario real
+→ misma trayectoria
+→ participante IA
+→ actuación IA
+→ transformación IA
+→ system/model/requestId
+→ persistencia
+~~~
+
+Por tanto:
+
+~~~text
+GAP-CONV-SYS-02
+→ CERRADO
+
+R-CSYS-04
+→ CERRADA
+~~~
+
+No se abre nuevo Product, horizonte ni Architecture.
+
+---
+
+# 19. Siguiente prioridad derivada
+
+El roadmap vigente fija:
+
+~~~text
+R-CSYS-05
+→ integrar decisión/fundamento
+
+R-CSYS-06
+→ integrar relevo P1 → P2
+~~~
+
+No ha aparecido evidencia que obligue a invertir ese orden.
+
+Por tanto:
+
+~~~text
+GAP-CONV-SYS-03
+→ SIGUIENTE PRIORIDAD
+
+R-CSYS-05
+→ siguiente actuación
+→ primero contrato rojo
+~~~
+
+El contrato deberá demostrar que una decisión ejercida durante el flujo
+ordinario constituye razón estructurada en la misma trayectoria real del
+resultado, sin siembra externa y sin exigir un motor general de razonamiento.
+
+# 20. Estado resultante
+
+~~~text
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ ABIERTO
+→ SIGUIENTE PRIORIDAD
+
+GAP-CONV-SYS-04
+→ ABIERTO
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+~~~
+
+# 21. Punto de reanudación
+
+> Formular el contrato rojo mínimo de R-CSYS-05 para que una decisión ordinaria
+> sobre un trabajo con trayectoria existente constituya en esa misma
+> KnowledgeTrajectory el fundamento reconstruible del resultado, sin modificar
+> todavía producción.
