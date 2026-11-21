@@ -297,6 +297,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   >(() => localStorageResumeRepository.loadPrevious());
   const [integrationChoice, setIntegrationChoice] =
     useState<IntegrationChoice>(null);
+  const [resumeExperienceKey, setResumeExperienceKey] = useState(0);
   const [hasPersistedPostV1] = useState(
     () => localStorage.getItem("post-v1-integrated.state") !== null,
   );
@@ -1571,6 +1572,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
       )}
 
       <ResumeExperience
+        key={resumeExperienceKey}
         {...(resolution !== undefined ? { resolution } : {})}
         {...(secondResolution !== undefined ? { secondResolution } : {})}
         {...(thirdResolution !== undefined ? { thirdResolution } : {})}
@@ -1981,19 +1983,28 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
       )}
 
       {availablePostV1Current !== null && (
-        <button
-          type="button"
-          onClick={() => {
-            if (hasPersistedPostV1) {
-              localStorage.removeItem("post-v1-integrated.state");
-            }
-            setIntegrationChoice("current");
-          }}
-        >
-          {hasPersistedPostV1
-            ? "Continuar con este trabajo sustituyendo la trayectoria integrada anterior"
-            : "Continuar con este trabajo"}
-        </button>
+        <>
+          <button
+            type="button"
+            onClick={() => setResumeExperienceKey((key) => key + 1)}
+          >
+            Seguir trabajando
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (hasPersistedPostV1) {
+                localStorage.removeItem("post-v1-integrated.state");
+              }
+              setIntegrationChoice("current");
+            }}
+          >
+            {hasPersistedPostV1
+              ? "Usar este trabajo en integración post-V1 sustituyendo la trayectoria integrada anterior"
+              : "Usar este trabajo en integración post-V1"}
+          </button>
+        </>
       )}
 
       {hasPersistedPostV1 && (
