@@ -14282,3 +14282,56 @@ R-CSYS-09
 
 La evidencia no refuta los gaps técnicos cerrados; identifica una diferencia de
 experiencia integrada entre capacidad material y continuidad humana reconocible.
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-A / reducción de continuidad humana
+
+La inspección confirma que el problema observado no es sólo terminológico.
+
+App contiene dos modelos superpuestos:
+
+~~~text
+continuidad ordinaria
+→ aportación anterior / actual
+→ materiales
+→ trayectoria
+→ continuación
+
+PostV1
+→ current
+→ S1
+→ P1
+→ evaluación
+→ colaboración
+→ X1
+→ D1
+~~~
+
+“Continuar con este trabajo” activa PostV1 como sustitución completa de la
+superficie ordinaria. Esto explica el cambio de contexto observado por la
+persona.
+
+Se define el hilo humano principal como un trabajo acumulativo que conserva sus
+aportaciones a través de conservar, recuperar, publicar, compartir y continuar.
+
+S1/P1/evaluación/colaboración/intercambio/destino se clasifican como estados o
+actuaciones auxiliares sobre ese hilo, no como hilos alternativos.
+
+Se formula CF-CSYS-09 y su criterio de falsación.
+
+Resultado:
+
+~~~text
+R-CSYS-09-A
+→ CERRADA
+
+producción
+→ SIN CAMBIOS
+
+siguiente
+→ R-CSYS-09-B
+→ reducir transición mínima
+→ proteger contratos históricos
+~~~
