@@ -13587,3 +13587,87 @@ continuidad futura
 ~~~
 
 Documento: [128](128-R-CONV-FINAL-05_VALIDACION_FORMAL_Y_CIERRE_H_CONV_FINAL_01.md).
+
+
+---
+
+# 21/11/2026 — Reaplicación post-H-CONV-FINAL-01 y estabilidad estratégica
+
+Se reaplica Manual 17 tras el cierre positivo de H-CONV-FINAL-01.
+
+La revisión detecta una actuación humana anterior todavía abierta documentalmente:
+
+~~~text
+BS-CE-MIAPP-01
+→ abierta el 19/11
+→ BS-01 ejecutada sobre baseline anterior
+→ BS-02 pendiente
+~~~
+
+Desde entonces App cambia materialmente mediante H-CONV-FINAL-01. Continuar BS-02 sobre la nueva App mezclaría dos baselines y no permitiría interpretar limpiamente el resultado.
+
+Se decide:
+
+~~~text
+BS-CE-MIAPP-01
+→ CERRADA
+
+salida
+→ BS-D respecto del producto actual
+
+evidencia parcial
+→ conservada como histórica
+
+gap
+→ NO DEMOSTRADO
+
+desarrollo
+→ NO DERIVADO
+~~~
+
+Reaplicado Manual 17:
+
+~~~text
+RAMA A
+→ SIN CONTINUIDAD
+
+RAMA B
+→ SIN CONTINUIDAD
+
+incertidumbre bloqueante
+→ NINGUNA
+
+formación estratégica post-clausura
+→ NO DERIVADA
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo horizonte
+→ NO DERIVADO
+
+Architecture / Realization / Implementation
+→ NO DERIVADAS
+
+ESTADO ESTRATÉGICO
+→ ESTABLE
+~~~
+
+Regla de reanudación:
+
+~~~text
+nuevo hecho / nueva decisión / nueva evidencia
+↓
+fundamento positivo suficiente
+↓
+reaplicar Manual 17
+↓
+derivar sólo la actuación mínima justificada
+~~~
+
+No se retoma automáticamente BS-02 ni ninguna limitación fuera de alcance de H-CONV-FINAL-01.
+
+Documento: [129](129-REAPLICACION_MANUAL17_POST_H_CONV_FINAL_01_ESTABILIDAD_ESTRATEGICA.md).
