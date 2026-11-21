@@ -9640,3 +9640,59 @@ R-CSYS-09-B
 Producción no se modifica.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — R-CSYS-09-B / reducción contra contratos históricos
+
+Se inspeccionan los contratos históricos afectados antes de tocar producción.
+
+Patrimonio protegido:
+- App.hpi: continuidad ordinaria W1/W2 y trabajo vigente;
+- PostV1IntegratedExperience: current → S1 → P1 → evaluación → colaboración → X1 → D1;
+- T67-01…06: elección humana Y/R y persistencia;
+- CR-KGV-02: constitución/entrega de antecedente colaborativo mediante PostV1;
+- CR-KGV-03: recuperación ante estado PostV1 incompatible.
+
+Conclusión:
+
+~~~text
+PostV1
+→ no puede eliminarse
+
+elección Y/R
+→ debe preservarse
+
+pero
+
+“Continuar con este trabajo”
+→ no está obligado históricamente a seguir siendo
+  la acción principal de continuidad ordinaria
+~~~
+
+Se reduce la intervención mínima a separar:
+
+~~~text
+CONTINUAR HILO ORDINARIO
+≠
+ABRIR/INICIAR INTEGRACIÓN POST-V1
+~~~
+
+Se deriva contrato rojo T-CSYS-HCONT-01…08 antes de modificar producción.
+
+Estado:
+
+~~~text
+R-CSYS-09-B
+→ CERRADA COMO REDUCCIÓN
+
+R-CSYS-09-C
+→ SIGUIENTE ACTUACIÓN
+→ contrato rojo
+
+producción
+→ SIN CAMBIOS
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
