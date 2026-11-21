@@ -35,9 +35,34 @@ export type KnowledgeRelation = {
   type: RelationType;
 };
 
+export type ParticipantType = "human" | "ai" | "other";
+
+export type ContributionState =
+  | "produced"
+  | "accepted"
+  | "rejected"
+  | "modified";
+
+export type AiProvenance = {
+  system: string;
+  model?: string;
+  requestId?: string;
+};
+
+export type ParticipantProvenanceContribution = {
+  resultId: string;
+  participantId: string;
+  participantType: ParticipantType;
+  actionId: string;
+  transformationId: string;
+  contributionState: ContributionState;
+  aiProvenance?: AiProvenance;
+};
+
 export type KnowledgeTrajectory = {
   entities: KnowledgeEntity[];
   relations: KnowledgeRelation[];
+  participantProvenance?: ParticipantProvenanceContribution[];
 };
 
 type CreateKnowledgeTrajectoryInput = {
@@ -48,6 +73,18 @@ type CreateKnowledgeTrajectoryInput = {
   action: KnowledgeEntity;
   result: KnowledgeEntity;
   additionalEntities?: KnowledgeEntity[];
+};
+
+type AttachParticipantProvenanceInput = {
+  resultId: string;
+  contributions: Array<{
+    participant: KnowledgeEntity;
+    participantType: ParticipantType;
+    action: KnowledgeEntity;
+    transformationId: string;
+    contributionState: ContributionState;
+    aiProvenance?: AiProvenance;
+  }>;
 };
 
 type DecisionReasonInput = {
@@ -176,9 +213,117 @@ export function attachDecisionReason(
   ];
 
   return {
+    ...trajectory,
     entities: [...trajectory.entities, ...reasonEntities],
     relations: [...trajectory.relations, ...reasonRelations],
   };
+}
+
+export function attachParticipantProvenance(
+  trajectory: KnowledgeTrajectory,
+  input: AttachParticipantProvenanceInput,
+): KnowledgeTrajectory {
+  const newEntities = input.contributions.flatMap((contribution) => {
+    const entities: KnowledgeEntity[] = [];
+
+    if (
+      !trajectory.entities.some(
+        (entity) => entity.id === contribution.participant.id,
+      )
+    ) {
+      entities.push(contribution.participant);
+    }
+
+    if (
+      !trajectory.entities.some(
+        (entity) => entity.id === contribution.action.id,
+      )
+    ) {
+      entities.push(contribution.action);
+    }
+
+    return entities;
+  });
+
+  const newRelations: KnowledgeRelation[] = input.contributions.flatMap(
+    (contribution) => {
+      const relations: KnowledgeRelation[] = [];
+
+      if (
+        !trajectory.relations.some(
+          (relation) =>
+            relation.type === "performs" &&
+            relation.from === contribution.participant.id &&
+            relation.to === contribution.action.id,
+        )
+      ) {
+        relations.push({
+          from: contribution.participant.id,
+          to: contribution.action.id,
+          type: "performs",
+        });
+      }
+
+      if (
+        !trajectory.relations.some(
+          (relation) =>
+            relation.type === "executes" &&
+            relation.from === contribution.action.id &&
+            relation.to === contribution.transformationId,
+        )
+      ) {
+        relations.push({
+          from: contribution.action.id,
+          to: contribution.transformationId,
+          type: "executes",
+        });
+      }
+
+      return relations;
+    },
+  );
+
+  const provenance = input.contributions.map((contribution) => {
+    const base: ParticipantProvenanceContribution = {
+      resultId: input.resultId,
+      participantId: contribution.participant.id,
+      participantType: contribution.participantType,
+      actionId: contribution.action.id,
+      transformationId: contribution.transformationId,
+      contributionState: contribution.contributionState,
+    };
+
+    if (
+      contribution.participantType === "ai" &&
+      contribution.aiProvenance !== undefined
+    ) {
+      return {
+        ...base,
+        aiProvenance: { ...contribution.aiProvenance },
+      };
+    }
+
+    return base;
+  });
+
+  return {
+    ...trajectory,
+    entities: [...trajectory.entities, ...newEntities],
+    relations: [...trajectory.relations, ...newRelations],
+    participantProvenance: [
+      ...(trajectory.participantProvenance ?? []),
+      ...provenance,
+    ],
+  };
+}
+
+export function traceResultParticipantProvenance(
+  trajectory: KnowledgeTrajectory,
+  resultId: string,
+) {
+  return (trajectory.participantProvenance ?? [])
+    .filter((contribution) => contribution.resultId === resultId)
+    .map(({ resultId: _resultId, ...contribution }) => contribution);
 }
 
 function requiredRelation(
