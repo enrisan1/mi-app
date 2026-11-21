@@ -9472,3 +9472,60 @@ Los cuatro gaps de convergencia quedan cerrados. Falta demostrar su ejercicio co
 No se abre nuevo Product, horizonte ni Architecture.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de R-CSYS-07 / escenario E2E integrado
+
+Se ejecuta el escenario completo:
+
+~~~text
+src/App.knowledge-trajectory.system-e2e.test.tsx
+~~~
+
+Primera ejecución:
+- timeout de 5 s sin fallo funcional discriminante.
+
+Segunda ejecución:
+- fallo localizado en `Preparar relevo de R3`;
+- la trayectoria ordinaria contenía estructura humana, pero no `participantProvenance` humana explícita.
+
+Se corrige únicamente esa causa raíz registrando la contribución humana ordinaria mediante `attachParticipantProvenance()`.
+
+Resultado:
+
+~~~text
+system-e2e
+→ 1/1 PASS
+
+ordinary-convergence + provenance
+→ 8/8 PASS
+
+final-convergence
+→ 4/4 PASS
+
+TOTAL
+→ 13/13 PASS
+~~~
+
+Decisión:
+
+~~~text
+R-CSYS-07
+→ CERRADA
+
+GAP-CONV-SYS-01…04
+→ CERRADOS
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+→ PENDIENTE VALIDACIÓN HUMANA
+
+R-CSYS-08
+→ SIGUIENTE ACTUACIÓN DERIVADA
+~~~
+
+No se abre nuevo Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
