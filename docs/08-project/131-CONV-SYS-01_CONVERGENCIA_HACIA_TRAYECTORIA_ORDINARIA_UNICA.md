@@ -2132,3 +2132,414 @@ Architecture
 > Ejecutar R-CSYS-09-B: inspeccionar los contratos históricos afectados por la
 > transición ordinario → PostV1 y reducir la intervención mínima antes de crear
 > cualquier cambio productivo.
+
+
+---
+
+# 43. R-CSYS-09-B — contratos históricos afectados y reducción de intervención
+
+## 43.1 Contratos que protegen la continuidad ordinaria
+
+### App.hpi.test.tsx
+
+R-HPI-01 protege que:
+
+~~~text
+W1
+→ persiste como trabajo disponible
+→ se recupera tras remount
+→ materiales, capturas, comparación y apoyo IA
+  operan bajo W1 sin sustituirlo
+→ un cambio explícito W1 → W2
+  separa asociaciones anteriores y posteriores
+~~~
+
+En particular:
+
+~~~text
+T-HPI-02
+→ tras remount
+→ W1 aparece como Aportación anterior
+→ existe una acción /continuar con este trabajo/
+
+T-HPI-07
+→ Continuar con este material
+→ constituye W2
+→ tras remount W2 es el trabajo vigente
+~~~
+
+Este patrimonio exige continuidad ordinaria y cambio explícito de trabajo, pero
+no exige que la acción denominada “Continuar con este trabajo” abra PostV1.
+
+## 43.2 Contratos que protegen la integración PostV1
+
+### PostV1IntegratedExperience.test.tsx
+
+La realización especializada protege de forma autónoma:
+
+~~~text
+current
+→ S1
+→ P1
+→ evaluación
+→ colaboración
+→ intercambio
+→ destino
+~~~
+
+y además:
+
+~~~text
+initialCurrent = Y
+→ inicia una nueva trayectoria integrada desde Y
+→ sin constituir S1 automáticamente
+~~~
+
+Por tanto, PostV1 es patrimonio vigente y no puede eliminarse como consecuencia
+de R-CSYS-09.
+
+## 43.3 Contratos de elección humana Y/R — actuación 67
+
+T67-01…T67-06 protegen:
+
+~~~text
+T67-01
+→ Y y R están disponibles antes de elegir
+
+T67-02
+→ elegir R recupera R íntegramente
+→ Y permanece preservado ordinariamente
+
+T67-03
+→ elegir Y puede sustituir R explícitamente
+→ current = Y
+→ S1 no se constituye automáticamente
+
+T67-04
+→ la trayectoria iniciada desde Y se recupera tras interrupción
+
+T67-05
+→ antes de elegir no se modifica Y ni R
+
+T67-06
+→ el trabajo ordinario recién constituido
+  es el que se ofrece para iniciar integración
+~~~
+
+La obligación histórica es **preservar la elección humana y sus consecuencias**.
+
+No existe obligación de conservar literalmente como acción principal el texto:
+
+~~~text
+Continuar con este trabajo
+~~~
+
+si el acceso a la ruta Y → PostV1 sigue siendo explícito, inteligible y
+funcionalmente equivalente.
+
+## 43.4 Contratos KGV afectados
+
+### CR-KGV-02
+
+T-KGV-04/05 construyen hoy el antecedente colaborativo mediante:
+
+~~~text
+trabajo ordinario
+→ Continuar con este trabajo
+→ PostV1
+→ conservar S1
+→ publicar P1
+→ soporte evaluativo
+→ colaboración A
+→ preparar antecedente
+~~~
+
+Por tanto:
+
+- la ruta hacia PostV1 debe seguir disponible;
+- S1/P1/evaluación/colaboración no pueden desaparecer;
+- el antecedente transferible debe seguir pudiendo constituirse sin conocer el
+  contrato interno.
+
+El hecho de que el test use actualmente el selector
+`/continuar con este trabajo/i` es una dependencia de presentación del
+contrato histórico, no la esencia material de CR-KGV-02.
+
+Si se cambia el nombre de esa entrada, el contrato deberá actualizarse
+deliberadamente conservando toda su semántica posterior.
+
+### CR-KGV-03
+
+T-KGV-06/07 protegen recuperación ante estado PostV1 incompatible mediante:
+
+~~~text
+Retomar trayectoria integrada existente
+→ detectar incompatibilidad
+→ descartar estado incompatible
+→ volver a App ordinaria utilizable
+~~~
+
+Esta ruta debe permanecer intacta.
+
+---
+
+# 44. Clasificación del patrimonio
+
+Se distinguen tres clases.
+
+## A — Patrimonio que no debe modificarse
+
+~~~text
+PostV1IntegratedExperience
+→ semántica current/S1/P1/evaluación/colaboración/X1/D1
+
+post-v1-integrated.state
+→ persistencia
+
+elección Y/R
+→ ambas alternativas visibles antes de decidir
+
+ruta R
+→ retoma R sin destruir Y
+
+ruta Y
+→ puede iniciar PostV1 desde Y
+→ puede sustituir R sólo por elección explícita
+
+KGV
+→ puede constituir y transferir antecedente colaborativo
+
+recuperación de estado incompatible
+→ permanece
+~~~
+
+## B — Patrimonio que puede cambiar de presentación
+
+~~~text
+texto exacto:
+“Continuar con este trabajo”
+
+posición visual de la entrada PostV1
+
+jerarquía principal/auxiliar de esa acción
+~~~
+
+siempre que se conserve la semántica de A.
+
+## C — Diferencia nueva que debe introducirse
+
+Hoy no existe una acción principal inequívoca que signifique:
+
+~~~text
+seguir trabajando sobre el hilo ordinario actual
+sin entrar en PostV1
+~~~
+
+Esa es la diferencia mínima superviviente.
+
+---
+
+# 45. Intervención mínima reducida
+
+Se descartan:
+
+- eliminar PostV1;
+- fusionar PostV1 y KnowledgeTrajectory;
+- reescribir S1/P1;
+- cambiar la persistencia histórica;
+- sustituir CR-KGV-02;
+- crear un nuevo modelo de datos;
+- rediseñar toda App.
+
+La intervención mínima candidata queda:
+
+~~~text
+1. introducir una acción primaria de continuidad ordinaria:
+   “Seguir trabajando” / equivalente
+
+2. esa acción:
+   → permanece en la App ordinaria
+   → permite aportar Wn+1 desde Wn
+   → conserva Wn como antecedente
+   → actualiza el trabajo vigente
+   → no monta PostV1
+
+3. reclasificar la acción histórica Y → PostV1 como auxiliar explícita:
+   “Usar este trabajo en integración post-V1” / equivalente
+
+4. si existe R previa:
+   → mantener también “Retomar trayectoria integrada existente”
+   → preservar elección Y/R antes de modificar nada
+
+5. no modificar PostV1IntegratedExperience
+   salvo que un contrato rojo posterior demuestre necesidad
+~~~
+
+La formulación exacta de etiquetas no se congela todavía; sí se congela la
+distinción semántica:
+
+~~~text
+CONTINUAR HILO
+≠
+ABRIR/INICIAR INTEGRACIÓN POST-V1
+~~~
+
+---
+
+# 46. Contrato rojo mínimo de R-CSYS-09-B
+
+Antes de producción debe añadirse un contrato nuevo que parta únicamente de App
+ordinaria.
+
+Caso mínimo:
+
+~~~text
+A1
+→ Crear
+
+sin recarga obligatoria
+→ acción principal de continuar hilo
+
+A2
+→ constituir como aportación posterior
+
+comprobaciones:
+→ A1 sigue reconocible como antecedente
+→ A2 es trabajo actual
+→ ambos pertenecen al mismo recorrido ordinario
+→ PostV1 no está montado
+~~~
+
+Después:
+
+~~~text
+acción auxiliar PostV1
+→ sigue disponible
+
+si se ejerce:
+→ PostV1 recibe exactamente A2 como current
+→ S1 sigue sin constitución automática
+~~~
+
+Con R previa persistida:
+
+~~~text
+A2 ordinario
++ R integrada
+
+→ ambas rutas auxiliares siguen disponibles:
+   usar A2 en integración
+   retomar R
+
+→ antes de elegir:
+   A2 intacto
+   R intacta
+~~~
+
+Tras remount:
+
+~~~text
+A2
+→ sigue siendo trabajo ordinario vigente
+→ A1 permanece recuperable como antecedente/material anterior
+→ la acción principal sigue siendo continuar el hilo
+~~~
+
+## 46.1 Condiciones propuestas
+
+~~~text
+T-CSYS-HCONT-01
+→ A1 → A2 puede ejercerse ordinariamente sin entrar en PostV1
+
+T-CSYS-HCONT-02
+→ tras A2, A1 y A2 siguen reconocibles como un mismo hilo
+
+T-CSYS-HCONT-03
+→ remount recupera A2 como actual y A1 como antecedente recuperable
+
+T-CSYS-HCONT-04
+→ entrada PostV1 sigue disponible como acción distinta y explícita
+
+T-CSYS-HCONT-05
+→ usar A2 en PostV1 conserva current=A2 y S1=null
+
+T-CSYS-HCONT-06
+→ con R previa, elección A2/R permanece preservada antes de decidir
+
+T-CSYS-HCONT-07
+→ CR-KGV-02 sigue pudiendo constituir antecedente colaborativo por la ruta
+   PostV1 explícita
+
+T-CSYS-HCONT-08
+→ CR-KGV-03 conserva recuperación de estado incompatible
+~~~
+
+---
+
+# 47. Decisión de R-CSYS-09-B
+
+La inspección histórica no refuta CF-CSYS-09.
+
+Sí obliga a una restricción:
+
+> La continuidad ordinaria debe convertirse en la acción principal sin eliminar
+> ni degradar la integración PostV1, que pasa a presentarse explícitamente como
+> una actuación auxiliar distinta sobre el trabajo.
+
+Por tanto:
+
+~~~text
+R-CSYS-09-B
+→ REDUCIDA
+
+intervención candidata
+→ separación semántica y funcional:
+  continuar hilo
+  vs
+  abrir integración PostV1
+
+producción
+→ SIN CAMBIOS
+
+contrato rojo
+→ DERIVADO
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-09-C
+→ crear únicamente el contrato rojo T-CSYS-HCONT-01…08
+→ ejecutar
+→ localizar la diferencia real antes de producción
+~~~
+
+# 48. Estado resultante
+
+~~~text
+R-CSYS-09-A
+→ CERRADA
+
+R-CSYS-09-B
+→ CERRADA COMO REDUCCIÓN
+
+CF-CSYS-09
+→ VIGENTE
+
+R-CSYS-09-C
+→ SIGUIENTE ACTUACIÓN
+
+PostV1
+→ PATRIMONIO CONSERVADO
+
+T67 / KGV
+→ CONTRATOS A PROTEGER
+
+producción
+→ SIN CAMBIOS
+~~~
+
+# 49. Punto de reanudación
+
+> Crear el contrato rojo de continuidad humana ordinaria sin modificar
+> producción y verificar qué condiciones fallan realmente.
