@@ -199,7 +199,7 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
     );
     await user.click(
       screen.getByRole("button", {
-        name: /continuar con este trabajo/i,
+        name: /usar este trabajo en integración post-v1/i,
       }),
     );
 
