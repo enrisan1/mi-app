@@ -8874,3 +8874,76 @@ R-HPI-01
 ~~~
 
 Debe preservar GAP-HPI-02 fuera del primer hito.
+
+
+---
+
+# 21/11/2026 — Cierre formal de H-CONV-FINAL-01
+
+Se completa R-CONV-FINAL-05 tras la validación conjunta de los criterios de finalización del horizonte:
+
+~~~text
+CF-CONV-FINAL-01…08
+→ 8/8 SATISFECHOS
+
+GAP-CONV-FINAL-01
+→ CERRADO
+
+GAP-CONV-FINAL-02
+→ CERRADO
+
+GAP-CONV-FINAL-03
+→ CERRADO
+
+HITO-CONV-FINAL-01…04
+→ SATISFECHOS
+
+CONV-FINAL-04
+→ 4/4 PASS
+
+falsadores materiales activos
+→ 0
+~~~
+
+Regresión específica posterior a la convergencia:
+
+~~~text
+App.knowledge-trajectory.integration
+→ 4/4 PASS
+
+KnowledgeTrajectory
+→ 6/6 PASS
+
+KnowledgeTrajectory.reason
+→ 6/6 PASS
+
+KnowledgeTrajectory.provenance
+→ 5/5 PASS
+
+knowledgeTrajectory.integration
+→ 5/5 PASS
+~~~
+
+Resultado formal:
+
+~~~text
+H-CONV-FINAL-01
+→ SATISFECHO
+→ CERRADO
+~~~
+
+El cierre queda delimitado al alcance aceptado de trayectoria integrada de conocimiento. No implica grafo visual, ontología universal, motor general de razonamiento, verdad material automática, colaboración distribuida, arquitectura final, backend obligatorio ni cadena de pensamiento privada.
+
+No se deriva automáticamente un nuevo horizonte, Architecture ni Implementation.
+
+Punto de reanudación:
+
+~~~text
+estado estable post-H-CONV-FINAL-01
+↓
+cualquier continuidad posterior
+→ requiere fundamento positivo nuevo
+→ aplicar Manual 17 / estado estratégico vigente
+~~~
+
+Documento de cierre: [128](128-R-CONV-FINAL-05_VALIDACION_FORMAL_Y_CIERRE_H_CONV_FINAL_01.md).
