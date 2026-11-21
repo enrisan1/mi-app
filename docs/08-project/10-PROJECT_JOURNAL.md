@@ -13873,3 +13873,71 @@ resultado RED/GREEN
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — GAP-CONV-SYS-01 / cierre material
+
+El contrato de continuación ordinaria se ejecuta tras corregir un selector ambiguo del test.
+
+RED válido:
+
+~~~text
+T-CSYS-01…03
+→ 3/3 FAIL
+
+causa
+→ getGeneratedAssociation()
+→ undefined
+~~~
+
+Se conecta únicamente `Continuar con este material` con la creación/persistencia de una trayectoria mínima.
+
+Primer resultado:
+
+~~~text
+T-CSYS-01
+→ PASS
+
+T-CSYS-02/03
+→ FAIL
+→ Missing justifies relation to R3
+~~~
+
+Se evita mezclar GAP-CONV-SYS-03: no se fabrica una razón para R3. App pasa a reconstruir razón sólo cuando existe `justifies → result`.
+
+GREEN final:
+
+~~~text
+ordinary-convergence
+→ 3/3 PASS
+~~~
+
+Regresión:
+
+~~~text
+4/4 + 4/4 + 5/5 + 6/6
+→ 19/19 PASS
+
+junto con el contrato nuevo
+→ 22/22 PASS
+~~~
+
+Resultado:
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+~~~
+
+La App ordinaria ya puede producir directamente una `KnowledgeTrajectory` sin siembra externa.
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-04
+→ contrato rojo
+→ apoyo IA ordinario debe incorporarse
+  a la misma trayectoria existente
+~~~
