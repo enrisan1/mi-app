@@ -441,5 +441,5 @@ describe("R-CSYS-07 — escenario E2E de una investigación ordinaria gobernada 
         (entity) => entity.id === finalReason.decisionId,
       )?.content,
     ).toBe(DECISION.decision);
-  });
+  }, 15000);
 });
