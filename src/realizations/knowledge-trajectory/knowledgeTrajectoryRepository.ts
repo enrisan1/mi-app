@@ -1,9 +1,16 @@
 import type { KnowledgeTrajectory } from "./KnowledgeTrajectory";
 
+export type TrajectoryContinuation = {
+  antecedentResultId: string;
+  contribution: string;
+  participantType: "human" | "ai" | "other";
+};
+
 export type AssociatedTrajectory = {
   materialId: string;
   resultId: string;
   trajectory: KnowledgeTrajectory;
+  continuation?: TrajectoryContinuation;
 };
 
 const STORAGE_KEY = "ordinary.knowledge-trajectories";
