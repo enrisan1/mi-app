@@ -13733,3 +13733,85 @@ PROS-POST-CONV-01
 No se abre nuevo Product, horizonte, Architecture o Implementation.
 
 Documento: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
+
+
+---
+
+# 21/11/2026 — PROS-POST-CONV-01 / cierre con resultado B resuelto
+
+Se ejecuta la prueba prospectiva derivada de CI-POST-CONV-01.
+
+Primera ejecución:
+
+~~~text
+src/App.knowledge-trajectory.continuation.test.tsx
+→ 4/4 FAIL
+~~~
+
+Los cuatro fallos convergen en la ausencia de una actuación observable equivalente a:
+
+~~~text
+Continuar desde R1
+~~~
+
+R1 sí es visible, navegable, explicable y conserva procedencia/razón. La insuficiencia queda por tanto localizada en la transición de trayectoria explicable a contexto operativo de continuación.
+
+Se implementa una modificación mínima:
+
+- metadatos opcionales de continuación en la asociación persistida;
+- reutilización de `antecedentMaterialId`;
+- creación de R2 como `KnowledgeTrajectory`;
+- procedencia humana explícita;
+- fundamento propio de R2;
+- persistencia de la relación R2 ← R1.
+
+No se modifica `KnowledgeTrajectory.ts` ni se introduce una razón estructurada ficticia para R2.
+
+Resultado posterior:
+
+~~~text
+PROS-POST-CONV-01
+→ 4/4 PASS
+~~~
+
+Regresión directa observada:
+
+~~~text
+4 + 4 + 5 + 6 + 5 + 6
+→ 34/34 PASS
+~~~
+
+Decisión:
+
+~~~text
+A
+→ NO
+
+B
+→ SÍ
+→ insuficiencia concreta confirmada
+→ resuelta en el alcance mínimo
+
+C
+→ NO
+~~~
+
+Consecuencia:
+
+~~~text
+CI-POST-CONV-01
+→ CERRADA
+
+nuevo gap pendiente
+→ NO
+
+nuevo Product / horizonte / Architecture
+→ NO
+
+Implementation adicional
+→ NO DERIVADA
+~~~
+
+La validación humana posterior y una eventual continuidad IA específica permanecen fuera del alcance ejercitado y no se abren automáticamente.
+
+Documento actualizado: [130](130-CI-POST-CONV-01_CONTINUIDAD_OPERATIVA_DESDE_TRAYECTORIA.md).
