@@ -9238,3 +9238,71 @@ src/App.knowledge-trajectory.ordinary-convergence.test.tsx
 Producción no se modifica.
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 21/11/2026 — Cierre de GAP-CONV-SYS-01
+
+La continuación ordinaria pasa a constituir automáticamente su propia `KnowledgeTrajectory`.
+
+Secuencia observada:
+
+~~~text
+RED válido
+→ 3/3 FAIL
+→ asociación de trayectoria ausente
+
+primera intervención
+→ T-CSYS-01 PASS
+→ T-CSYS-02/03 FAIL
+→ App exigía razón estructurada inexistente
+
+segunda intervención
+→ lectura de razón condicionada a justifies → result
+→ sin inventar razón para R3
+
+GREEN final
+→ 3/3 PASS
+~~~
+
+Regresión dirigida:
+
+~~~text
+final-convergence
+→ 4/4 PASS
+
+App knowledge-trajectory integration
+→ 4/4 PASS
+
+repository integration
+→ 5/5 PASS
+
+KnowledgeTrajectory
+→ 6/6 PASS
+
+TOTAL
+→ 22/22 PASS
+~~~
+
+Decisión:
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+
+HITO-CONV-SYS-01
+→ EN PROGRESO
+
+siguiente prioridad
+→ GAP-CONV-SYS-02
+→ apoyo IA real → misma trayectoria
+
+R-CSYS-04
+→ DERIVADA COMO SIGUIENTE ACTUACIÓN
+→ primero contrato rojo
+~~~
+
+No se abre nuevo Product, horizonte ni Architecture.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
