@@ -1571,20 +1571,43 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         </section>
       )}
 
-      <ResumeExperience
-        key={resumeExperienceKey}
-        {...(resolution !== undefined ? { resolution } : {})}
-        {...(secondResolution !== undefined ? { secondResolution } : {})}
-        {...(thirdResolution !== undefined ? { thirdResolution } : {})}
-        onInitialResult={establishCurrentWork}
-        onResult={(result) => establishCurrentWork(result.current)}
-      />
+      <section aria-label="Trabajo actual">
+        <h2>Trabajo actual</h2>
+        <p>Las aportaciones mostradas aquí forman parte del mismo trabajo.</p>
+
+        <ResumeExperience
+          key={resumeExperienceKey}
+          {...(resolution !== undefined ? { resolution } : {})}
+          {...(secondResolution !== undefined ? { secondResolution } : {})}
+          {...(thirdResolution !== undefined ? { thirdResolution } : {})}
+          onInitialResult={establishCurrentWork}
+          onResult={(result) => establishCurrentWork(result.current)}
+        />
+
+        {availablePostV1Current !== null && (
+          <>
+            <p>Aportación actual del mismo trabajo</p>
+            <button
+              type="button"
+              onClick={() => setResumeExperienceKey((key) => key + 1)}
+            >
+              Seguir trabajando
+            </button>
+          </>
+        )}
+      </section>
 
       <section aria-labelledby="shared-antecedent-heading">
-        <h2 id="shared-antecedent-heading">Continuidad compartida</h2>
+        <h2 id="shared-antecedent-heading">
+          Continuar un trabajo recibido de otra persona
+        </h2>
+        <p>
+          Usa esta opción sólo si otra persona te ha enviado un antecedente
+          para continuar.
+        </p>
 
         <label>
-          Antecedente compartido recibido
+          Antecedente recibido de otra persona
           <textarea
             value={receivedAntecedentInput}
             onChange={(event) => setReceivedAntecedentInput(event.target.value)}
@@ -1636,7 +1659,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             }
           }}
         >
-          Recibir antecedente compartido
+          Recibir antecedente para continuar
         </button>
 
         {receivedCollaborativeAntecedent !== null && (
@@ -1983,33 +2006,22 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
       )}
 
       {availablePostV1Current !== null && (
-        <>
-          <button
-            type="button"
-            onClick={() => setResumeExperienceKey((key) => key + 1)}
-          >
-            Seguir trabajando
-          </button>
-
-          <button
-            type="button"
-            onClick={() => {
-              if (hasPersistedPostV1) {
-                localStorage.removeItem("post-v1-integrated.state");
-              }
-              setIntegrationChoice("current");
-            }}
-          >
-            {hasPersistedPostV1
-              ? "Usar este trabajo en integración post-V1 sustituyendo la trayectoria integrada anterior"
-              : "Usar este trabajo en integración post-V1"}
-          </button>
-        </>
+        <button
+          type="button"
+          onClick={() => {
+            if (hasPersistedPostV1) {
+              localStorage.removeItem("post-v1-integrated.state");
+            }
+            setIntegrationChoice("current");
+          }}
+        >
+          Abrir opciones para conservar, publicar o compartir este trabajo
+        </button>
       )}
 
       {hasPersistedPostV1 && (
         <button type="button" onClick={() => setIntegrationChoice("existing")}>
-          Retomar trayectoria integrada existente
+          Retomar opciones anteriores de conservación, publicación y colaboración
         </button>
       )}
     </main>
