@@ -15484,3 +15484,24 @@ R-ENG-SEC-01 → CERRADA
 OB-ENG-SEC-01 → SATISFECHA
 DF-ENG-BASE-03 → RESUELTA
 ~~~
+
+
+---
+
+# 24/11/2026 — reevaluación post-remediación de baseline
+
+La baseline ya tiene typecheck, seguridad, suite serial, lint y build verdes.
+
+La revisión de la entrada técnica detecta dos residuos:
+
+~~~text
+DF-ENG-BASE-02
+→ el modo fiable de suite completa no está canonizado
+
+DF-ENG-BASE-04
+→ README conserva estado anterior al ejecutable vigente
+~~~
+
+Se deriva R-ENG-BASE-04 como consolidación mínima documental/operativa previa a declarar fundamento suficiente para construir.
+
+Documento: [137](137-REEVALUACION_FINAL_BASELINE_INGENIERIA.md).
