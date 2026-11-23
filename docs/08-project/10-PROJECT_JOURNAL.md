@@ -15354,3 +15354,62 @@ R-ENG-BASE-03-C queda cerrada.
 
 Siguiente lote:
 R-ENG-BASE-03-D — detectLiteralDifferences / LCS, 10 errores.
+
+
+---
+
+# 23/11/2026 — cierre del saneamiento TypeScript de baseline
+
+El último lote R-ENG-BASE-03-D hace explícita la invariante de la matriz LCS mediante helpers internos de lectura y escritura segura.
+
+Resultado focal:
+
+~~~text
+M4
+→ 8/8 PASS
+
+typecheck
+→ PASS
+→ 0 errores
+~~~
+
+Resultado global:
+
+~~~text
+suite serial
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+lint
+→ PASS
+
+build
+→ PASS
+~~~
+
+El warning de chunk superior a 500 kB permanece como límite no bloqueante.
+
+Trayectoria completa:
+
+~~~text
+29 errores
+→ 21
+→ 14
+→ 10
+→ 0
+~~~
+
+No se alteraron contratos, arquitectura ni comportamiento observable.
+
+Se declara:
+
+~~~text
+R-ENG-BASE-03-D
+→ CERRADA
+
+OB-ENG-BASE-01
+→ SATISFECHA
+
+señal técnica TypeScript inequívoca
+→ RESTAURADA
+~~~
