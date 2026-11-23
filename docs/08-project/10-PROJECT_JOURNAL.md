@@ -15451,3 +15451,36 @@ OB-ENG-SEC-01
 R-ENG-SEC-01
 → siguiente actuación
 ~~~
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-SEC-01
+
+La actualización coordinada de Vitest/coverage, Vite y ESLint, junto con la resolución transitiva mediante npm 11.21.1, elimina las vulnerabilidades conocidas del tooling sin modificar el runtime del producto.
+
+Validación final:
+
+~~~text
+npm audit → 0
+npm audit --omit=dev → 0
+typecheck → PASS
+83/83 test files → PASS
+598/598 tests → PASS
+lint → PASS
+build → PASS
+~~~
+
+Commit material publicado:
+
+~~~text
+dd5d90b chore(deps): remediate development tooling vulnerabilities
+~~~
+
+Conclusión:
+
+~~~text
+R-ENG-SEC-01 → CERRADA
+OB-ENG-SEC-01 → SATISFECHA
+DF-ENG-BASE-03 → RESUELTA
+~~~
