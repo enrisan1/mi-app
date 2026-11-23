@@ -1,7 +1,7 @@
 # 133 — CI-ENG-BASE-01 / Auditoría empírica de transferibilidad de la baseline
 
 **Fecha:** 23/11/2026  
-**Estado:** ABIERTA — reducción y auditoría documental completadas; evidencia empírica de checkout limpio pendiente de ejecución local.  
+**Estado:** CERRADA — auditoría empírica completada; salida B — fricción localizada de transferibilidad, sin dependencia estructural de historia extensa.  
 **Precedente:** [132](132-REAPLICACION_GLOBAL_POST_DLOC_ESTABILIDAD_ESTRATEGICA.md).  
 **Norma:** Manual 17 §13.1.2 + DEVELOPMENT_GUIDE + AGENTS.md.  
 **Producción:** SIN CAMBIOS.
@@ -174,7 +174,39 @@ Por tanto:
 
 ~~~text
 checkout limpio actual
-→ PENDIENTE DE EJECUCIÓN EMPÍRICA LOCAL
+→ EJECUTADO
+
+npm ci
+→ PASS
+→ 249 paquetes instalados
+→ 15 vulnerabilidades reportadas por npm audit
+  (7 moderate, 8 high)
+→ no se ejecuta npm audit fix por quedar fuera del alcance
+
+npm run typecheck
+→ FAIL conocido
+→ 29 errores / 6 archivos
+→ coincide con baseline ya documentada
+
+npx vitest run --maxWorkers=2
+→ 82/83 archivos PASS
+→ 596/598 tests PASS
+→ 2 timeouts en reason-convergence
+
+npx vitest run --maxWorkers=1
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+npm run lint
+→ PASS
+
+npm run build
+→ PASS
+→ warning no bloqueante por chunk >500 kB
+
+git status --short
+→ sin salida
+→ árbol limpio
 ~~~
 
 ---
@@ -183,14 +215,7 @@ checkout limpio actual
 
 Se identifica una fricción concreta.
 
-README afirma:
-
-~~~text
-“todas las validaciones disponibles
-se superan sin errores”
-~~~
-
-y prescribe:
+README afirma que las validaciones disponibles deben superarse sin errores y prescribe:
 
 ~~~bash
 npm run typecheck
@@ -209,10 +234,18 @@ npm run lint
 Pero el estado vigente conserva:
 
 ~~~text
+baseline TypeScript vigente conocida
+→ 29 errores / 6 archivos
+→ 15 en src/App.tsx
+→ 14 en patrimonio de comparación
+
 DEUDA-TSC-COMP-01
-→ 14 errores TypeScript históricos
-→ typecheck global no sano
-→ deuda conocida y no bloqueante
+→ explica los 14 errores históricos de comparación
+→ no explica por sí sola los 15 de App.tsx
+
+typecheck global
+→ no sano
+→ baseline conocida
 ~~~
 
 README, DEVELOPMENT_GUIDE y AGENTS.md no contienen en su entrada operativa una advertencia equivalente que permita a un operador nuevo distinguir inmediatamente:
@@ -354,28 +387,40 @@ dependencia estructural de historia extensa
 
 ---
 
-# 9. Criterio de cierre de R-ENG-BASE-01
+# 9. Cierre empírico de R-ENG-BASE-01
 
-Falta únicamente ejecutar sobre el checkout actual:
+La ejecución del checkout actual queda completada.
 
-~~~bash
-npm ci
-npm run typecheck
-npx vitest run --maxWorkers=2
-npm run lint
-npm run build
-git status --short
+La suite paralela con dos workers reproduce únicamente la sensibilidad ya conocida de reason-convergence:
+
+~~~text
+--maxWorkers=2
+→ 2 timeouts
+→ T-CSYS-DEC-01 / T-CSYS-DEC-02
 ~~~
 
-Registrar para cada comando:
+La ejecución serial del mismo checkout produce:
 
-- exit code;
-- resultado;
-- si coincide con la baseline conocida;
-- cualquier error nuevo;
-- si un operador puede interpretar el resultado usando sólo referencias vigentes.
+~~~text
+83/83 archivos PASS
+598/598 tests PASS
+~~~
 
-La auditoría cerrará con una de estas salidas:
+Por tanto:
+
+~~~text
+fallo funcional de reason-convergence
+→ NO DEMOSTRADO
+
+regresión de producto
+→ NO DEMOSTRADA
+
+sensibilidad de harness / carga
+→ REPRODUCIDA
+→ YA CONOCIDA
+~~~
+
+Las salidas consideradas eran:
 
 ~~~text
 A — BASELINE TRANSFERIBLE
@@ -394,33 +439,86 @@ C — DEPENDENCIA ESTRUCTURAL
 
 ---
 
-# 10. Estado provisional
+# 10. Resultado final
 
-La evidencia disponible favorece:
+La auditoría se cierra con:
 
 ~~~text
-SALIDA PROVISIONAL
+R-ENG-BASE-01
+→ CERRADA
+
+SALIDA
 → B — FRICCIÓN LOCALIZADA
 ~~~
 
-porque:
+Fundamento:
 
 ~~~text
 baseline técnica
-→ localizable y gobernada
+→ instalable
+
+build
+→ reproducible
+
+lint
+→ verde
+
+suite serial completa
+→ 83/83 archivos
+→ 598/598 tests
 
 código/tests pertinentes
 → localizables desde estado vigente
 
 historia extensa
-→ no demostrada como requisito operativo
+→ NO demostrada como requisito operativo
 
-pero
-
-contrato de validación TypeScript
-→ no es autosuficiente para un operador nuevo
+dependencia estructural
+→ NO demostrada
 ~~~
 
-No se autoriza todavía corregir README, DEVELOPMENT_GUIDE, typecheck ni DEUDA-TSC-COMP-01.
+Sobreviven tres fricciones o límites diferenciados:
 
-Primero debe cerrarse la ejecución empírica del checkout actual.
+~~~text
+DF-ENG-BASE-01
+→ contrato de typecheck no autosuficiente
+→ 29 errores conocidos sin explicación en la entrada técnica ordinaria
+→ FRICCIÓN REAL DE TRANSFERIBILIDAD
+
+DF-ENG-BASE-02
+→ sensibilidad de reason-convergence bajo --maxWorkers=2
+→ suite serial completamente verde
+→ LÍMITE DE HARNESS / CARGA
+→ no regresión funcional
+
+DF-ENG-BASE-03
+→ npm ci reporta 15 vulnerabilidades
+→ 7 moderate / 8 high
+→ hallazgo de dependencia
+→ NO evaluado todavía como obligación estratégica
+~~~
+
+También permanece el warning de bundle >500 kB como límite de build no bloqueante.
+
+Conclusión sobre CI-ENG-BASE-01:
+
+~~~text
+baseline de ingeniería
+→ MATERIALMENTE TRANSFERIBLE
+
+autosuficiencia perfecta
+→ NO
+
+dependencia material de reconstruir historia extensa
+→ NO DEMOSTRADA
+
+insuficiencia estructural
+→ NO
+
+fricción localizada
+→ SÍ
+~~~
+
+No se deriva todavía saneamiento de TypeScript, cambio de tests, npm audit fix, code splitting ni CI general automática.
+
+La siguiente decisión debe reducir si DF-ENG-BASE-01 constituye una obligación técnica real de consolidación mínima o si basta con alinear la documentación de entrada con la baseline conocida.
