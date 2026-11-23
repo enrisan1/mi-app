@@ -15190,3 +15190,43 @@ dependencia estructural de historia
 ~~~
 
 No se modifica producción ni se sanea deuda en esta actuación.
+
+
+---
+
+# 23/11/2026 — R-ENG-BASE-02 / reducción de deuda TypeScript
+
+Se inspeccionan los 29 errores de baseline sin tocar producción.
+
+Resultado:
+
+~~~text
+8
+→ App / asociación de trayectoria IA
+→ narrowing
+
+7
+→ App / conditionIds
+→ estructura fija expresada como array general
+
+4
+→ comparison / JSX.Element
+→ tipo React explícito
+
+10
+→ comparison / matriz LCS
+→ indexación bajo noUncheckedIndexedAccess
+~~~
+
+Todos admiten corrección local sin cambiar comportamiento, contratos ni arquitectura.
+
+Se rechaza:
+
+- silenciar con non-null assertions;
+- relajar tsconfig;
+- ampliar tipos para aceptar undefined;
+- refactor global.
+
+R-ENG-BASE-02 queda cerrada y OB-ENG-BASE-01 confirmada.
+
+Siguiente actuación: R-ENG-BASE-03-A, sólo 8 errores de App/association y validación antes de seguir.
