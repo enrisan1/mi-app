@@ -311,3 +311,41 @@ hipótesis de corrección local
 ~~~
 
 La siguiente actuación permanece R-ENG-BASE-03-C, limitada a los 4 errores JSX de comparación.
+
+
+---
+
+# 14. Validación de R-ENG-BASE-03-C
+
+Se implementa únicamente la sustitución de tipos JSX globales por ReactElement explícito.
+
+Resultado empírico:
+
+~~~text
+M5/M6/M7
+→ 23/23 PASS
+
+npm run typecheck
+→ 10 errores restantes
+→ exactamente 4 menos que la baseline posterior a 03-B
+
+errores JSX
+→ 0
+~~~
+
+No aparecen errores nuevos.
+
+Por tanto:
+
+~~~text
+R-ENG-BASE-03-C
+→ CERRADA
+
+subgrupo comparison / JSX
+→ 4 → 0
+
+hipótesis de corrección local
+→ CONFIRMADA
+~~~
+
+La siguiente actuación permanece R-ENG-BASE-03-D, limitada a los 10 errores de indexación de la matriz LCS.
