@@ -10115,3 +10115,192 @@ R-CSYS-09-I
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-I/J/K: cierre de D3 y CF-CSYS-09
+
+Se completa la secuencia final sobre el referente de la acción especializada.
+
+## R-CSYS-09-I
+
+Contrato:
+
+~~~text
+src/App.action-reference.test.tsx
+→ T-CSYS-ACTREF-01…06
+~~~
+
+RED observado:
+
+~~~text
+T-CSYS-ACTREF-01
+→ FAIL
+
+T-CSYS-ACTREF-02…06
+→ PASS
+
+total
+→ 1 FAIL / 5 PASS
+~~~
+
+Regresión histórica:
+
+~~~text
+HPRES + HCONT
+→ 15/15 PASS
+~~~
+
+Conclusión:
+
+~~~text
+RED
+→ aislado exclusivamente en el anclaje del referente
+~~~
+
+## R-CSYS-09-J
+
+Se mueve únicamente:
+
+~~~text
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+~~~
+
+al interior de:
+
+~~~text
+Trabajo actual
+~~~
+
+sin cambiar texto, handler, Y/R, PostV1, persistencia ni KnowledgeTrajectory.
+
+Commit:
+
+~~~text
+de269ef
+fix(app): anchor specialized action to current work
+~~~
+
+Validación:
+
+~~~text
+ACTREF
+→ 6/6 PASS
+
+HPRES + HCONT
+→ 15/15 PASS
+
+total focal
+→ 21/21 PASS
+~~~
+
+## R-CSYS-09-K
+
+Contraste humano mínimo:
+
+~~~text
+referente de “este trabajo”
+→ Trabajo actual
+
+Seguir trabajando
+vs
+conservar/publicar/compartir
+→ dos acciones distintas sobre el mismo trabajo
+
+trabajo recibido de otra persona
+→ recorrido distinto claramente reconocible
+~~~
+
+Resultado:
+
+~~~text
+D3
+→ CERRADA TÉCNICA Y HUMANAMENTE
+
+HG-CSYS-09-04
+→ SATISFECHO
+
+HG-CSYS-09-01…06
+→ SATISFECHOS EN CONJUNTO
+
+CF-CSYS-09
+→ CERRADO
+~~~
+
+D-LOC-01 permanece abierto y separado.
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — cierre de HITO-CONV-SYS-01
+
+Se reevalúa el hito completo tras el cierre de CF-CSYS-09.
+
+Estado material:
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ CERRADO
+
+GAP-CONV-SYS-04
+→ CERRADO
+
+R-CSYS-07
+→ CERRADA
+
+escenario E2E
+→ MATERIALMENTE DEMOSTRADO
+~~~
+
+Estado humano:
+
+~~~text
+R-CSYS-08
+→ ejecutada con salida B
+
+bloqueo derivado
+→ CF-CSYS-09
+
+R-CSYS-09-A…K
+→ reducción y cierre del bloqueo
+
+CF-CSYS-09
+→ CERRADO
+~~~
+
+No aparece otro criterio independiente abierto dentro del contrato del hito.
+
+Decisión:
+
+~~~text
+HITO-CONV-SYS-01
+→ CERRADO
+
+R-CSYS-09
+→ CERRADA EN SU ALCANCE
+
+D-LOC-01
+→ ABIERTA POR SEPARADO
+→ no bloquea HITO-CONV-SYS-01
+~~~
+
+No se deriva automáticamente nuevo Product, horizonte ni Architecture.
+
+Siguiente cuestión:
+
+~~~text
+reevaluar mapa global
+→ decidir si D-LOC-01 merece prioridad
+→ o si existe una obligación posterior más fuerte
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
