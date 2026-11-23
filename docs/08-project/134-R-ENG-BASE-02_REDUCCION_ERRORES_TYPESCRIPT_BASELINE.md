@@ -349,3 +349,75 @@ hipótesis de corrección local
 ~~~
 
 La siguiente actuación permanece R-ENG-BASE-03-D, limitada a los 10 errores de indexación de la matriz LCS.
+
+
+---
+
+# 15. Validación de R-ENG-BASE-03-D y cierre de OB-ENG-BASE-01
+
+El último lote sustituye accesos directos a la matriz LCS por helpers internos de lectura y escritura que verifican explícitamente la invariante rectangular.
+
+Resultado:
+
+~~~text
+detectLiteralDifferences.test.ts
+→ 8/8 PASS
+
+npm run typecheck
+→ PASS
+→ 0 errores
+
+suite global serial
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+lint
+→ PASS
+
+build
+→ PASS
+~~~
+
+El warning de chunk >500 kB permanece fuera de este alcance.
+
+Resultado acumulado:
+
+~~~text
+R-ENG-BASE-03-A
+→ 8 errores eliminados
+
+R-ENG-BASE-03-B
+→ 7 errores eliminados
+
+R-ENG-BASE-03-C
+→ 4 errores eliminados
+
+R-ENG-BASE-03-D
+→ 10 errores eliminados
+
+TOTAL
+→ 29 → 0
+~~~
+
+Gate final:
+
+~~~text
+¿se restauró una señal TypeScript inequívoca
+sin cambiar comportamiento, contratos ni arquitectura?
+
+→ SÍ
+~~~
+
+Por tanto:
+
+~~~text
+R-ENG-BASE-03-D
+→ CERRADA
+
+OB-ENG-BASE-01
+→ SATISFECHA
+
+criterio final
+→ npm run typecheck
+→ exit 0
+~~~
