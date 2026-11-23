@@ -10530,3 +10530,81 @@ pendiente
 ~~~
 
 Documento: [133](133-CI-ENG-BASE-01_AUDITORIA_TRANSFERIBILIDAD_BASELINE.md).
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-01
+
+Se completa la ejecución empírica del checkout actual.
+
+Resultados:
+
+~~~text
+npm ci
+→ PASS
+→ 15 vulnerabilidades reportadas
+  7 moderate / 8 high
+
+npm run typecheck
+→ FAIL conocido
+→ 29 errores / 6 archivos
+→ 15 en App.tsx
+→ 14 en comparación
+
+npx vitest run --maxWorkers=2
+→ 82/83 archivos PASS
+→ 596/598 tests PASS
+→ 2 timeouts en reason-convergence
+
+npx vitest run --maxWorkers=1
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+npm run lint
+→ PASS
+
+npm run build
+→ PASS
+→ warning de chunk >500 kB
+
+git status --short
+→ limpio
+~~~
+
+La ejecución serial completa descarta regresión funcional de reason-convergence y confirma sensibilidad ya conocida bajo paralelismo.
+
+Resultado:
+
+~~~text
+R-ENG-BASE-01
+→ CERRADA
+→ salida B — FRICCIÓN LOCALIZADA
+
+CI-ENG-BASE-01
+→ baseline materialmente transferible
+→ no dependencia estructural de historia extensa
+~~~
+
+Fricciones/límites:
+
+~~~text
+DF-ENG-BASE-01
+→ typecheck rojo conocido no explicado en entrada técnica
+→ fricción real de transferibilidad
+
+DF-ENG-BASE-02
+→ sensibilidad de harness con 2 workers
+→ no regresión funcional
+
+DF-ENG-BASE-03
+→ 15 vulnerabilidades npm
+→ hallazgo no evaluado aún como obligación
+
+bundle >500 kB
+→ warning no bloqueante
+~~~
+
+No se deriva todavía ninguna corrección productiva.
+
+Documento: [133](133-CI-ENG-BASE-01_AUDITORIA_TRANSFERIBILIDAD_BASELINE.md).
