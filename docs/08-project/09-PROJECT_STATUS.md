@@ -10672,3 +10672,74 @@ R-ENG-BASE-03-A
 ~~~
 
 Documento: [134](134-R-ENG-BASE-02_REDUCCION_ERRORES_TYPESCRIPT_BASELINE.md).
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-03-A
+
+Se valida el saneamiento del subgrupo App / association.
+
+Cambio:
+
+~~~text
+association
+→ narrowing explícito
+→ length === 1
+→ association !== undefined
+~~~
+
+Validación:
+
+~~~text
+src/App.knowledge-trajectory.ai-convergence.test.tsx
+→ 1/1 archivo PASS
+→ 3/3 tests PASS
+
+npm run typecheck
+→ 21 errores / 6 archivos
+
+errores de association
+→ 0
+
+errores nuevos
+→ 0
+~~~
+
+Resultado:
+
+~~~text
+R-ENG-BASE-03-A
+→ CERRADA
+
+8 errores
+→ 0
+
+comportamiento
+→ preservado
+
+contratos
+→ sin cambios
+
+arquitectura
+→ sin cambios
+~~~
+
+Quedan:
+
+~~~text
+App / conditionIds
+→ 7
+
+comparison / JSX
+→ 4
+
+comparison / LCS
+→ 10
+
+TOTAL
+→ 21
+~~~
+
+Siguiente actuación:
+R-ENG-BASE-03-B — reducir exclusivamente los 7 errores de App / conditionIds.
