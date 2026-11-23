@@ -14568,3 +14568,45 @@ R-CSYS-09-E
 → reducción de D1/D2
 → producción congelada
 ~~~
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-E / reducción de identidad y jerarquía
+
+La inspección de código confirma que D1/D2 no requieren modificar el modelo
+material.
+
+ResumeExperience ya conserva previous/current/retained y la transición X → Y.
+La insuficiencia está en cómo esos estados se presentan.
+
+Reducción:
+
+~~~text
+D1
+→ crear una unidad perceptible “Trabajo actual”
+→ presentar antecedente y aportación actual como partes del mismo trabajo
+
+D2
+→ asociar “Seguir trabajando” a esa unidad
+→ separar actuaciones opcionales
+→ no exigir conocer “post-V1”
+→ explicar continuidad compartida como recepción de trabajo ajeno
+~~~
+
+Se descartan por ahora:
+
+- nuevo identificador de obra;
+- nuevo almacenamiento;
+- modificación de KnowledgeTrajectory;
+- eliminación de PostV1;
+- reorganización completa de App;
+- cambio de semántica KGV/T67.
+
+Se deriva exclusivamente:
+
+~~~text
+R-CSYS-09-F
+→ contrato rojo T-CSYS-HPRES-01…07
+→ sin producción
+~~~
