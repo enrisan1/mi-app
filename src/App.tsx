@@ -1171,7 +1171,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                                   `K1-${prefix}`,
                                   `K2-${prefix}`,
                                   `K3-${prefix}`,
-                                ];
+                                ] as const;
                                 const failedConditionIndex = [
                                   decisionDraft.condition1.trim(),
                                   decisionDraft.condition2.trim(),
@@ -1183,6 +1183,13 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                                 );
 
                                 if (failedConditionIndex === -1) {
+                                  return;
+                                }
+
+                                const failedConditionId =
+                                  conditionIds[failedConditionIndex];
+
+                                if (failedConditionId === undefined) {
                                   return;
                                 }
 
@@ -1222,8 +1229,7 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                                           content:
                                             decisionDraft.discardedAlternative.trim(),
                                         },
-                                        failedConditionId:
-                                          conditionIds[failedConditionIndex],
+                                        failedConditionId,
                                       },
                                     ],
                                     selectedAlternative: {
