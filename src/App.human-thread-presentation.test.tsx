@@ -160,8 +160,14 @@ describe("R-CSYS-09-F — presentación humana del hilo ordinario", () => {
       }),
     ).toBeInTheDocument();
 
+    const receivedWork = screen.getByRole("region", {
+      name: /continuar.*trabajo.*recibido|trabajo recibido.*otra persona/i,
+    });
+
     expect(
-      screen.getByText(/otra persona.*(?:enviado|compartido)|recibido.*otra persona/i),
+      within(receivedWork).getByText(
+        /usa esta opción sólo si otra persona te ha enviado un antecedente para continuar/i,
+      ),
     ).toBeInTheDocument();
 
     expect(
