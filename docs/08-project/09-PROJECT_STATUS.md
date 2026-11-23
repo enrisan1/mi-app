@@ -10743,3 +10743,74 @@ TOTAL
 
 Siguiente actuación:
 R-ENG-BASE-03-B — reducir exclusivamente los 7 errores de App / conditionIds.
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-03-B
+
+Se valida el saneamiento del subgrupo App / conditionIds.
+
+Cambio:
+
+~~~text
+conditionIds
+→ tupla fija de tres identificadores
+
+failedConditionId
+→ extracción explícita
+→ guardia contra undefined
+→ reutilización del valor estrechado
+~~~
+
+Validación:
+
+~~~text
+src/App.knowledge-trajectory.reason-convergence.test.tsx
+→ 1/1 archivo PASS
+→ 3/3 tests PASS
+
+npm run typecheck
+→ 14 errores / 5 archivos
+
+errores de App.tsx
+→ 0
+
+errores nuevos
+→ 0
+~~~
+
+Resultado:
+
+~~~text
+R-ENG-BASE-03-B
+→ CERRADA
+
+7 errores
+→ 0
+
+comportamiento
+→ preservado
+
+contratos
+→ sin cambios
+
+arquitectura
+→ sin cambios
+~~~
+
+Quedan exclusivamente:
+
+~~~text
+comparison / JSX
+→ 4
+
+comparison / LCS
+→ 10
+
+TOTAL
+→ 14
+~~~
+
+Siguiente actuación:
+R-ENG-BASE-03-C — corregir exclusivamente los 4 errores JSX de comparación.
