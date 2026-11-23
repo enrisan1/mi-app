@@ -267,3 +267,47 @@ hipótesis de corrección local
 ~~~
 
 La siguiente actuación permanece R-ENG-BASE-03-B, limitada a los 7 errores de conditionIds.
+
+
+---
+
+# 13. Validación de R-ENG-BASE-03-B
+
+Se implementa únicamente la corrección prevista para conditionIds:
+
+~~~text
+tupla fija
++
+narrowing explícito de failedConditionId
+~~~
+
+Resultado empírico:
+
+~~~text
+App.knowledge-trajectory.reason-convergence.test.tsx
+→ 3/3 PASS
+
+npm run typecheck
+→ 14 errores restantes
+→ exactamente 7 menos que la baseline posterior a 03-A
+
+App.tsx
+→ 0 errores
+~~~
+
+No aparecen errores nuevos.
+
+Por tanto:
+
+~~~text
+R-ENG-BASE-03-B
+→ CERRADA
+
+subgrupo App / conditionIds
+→ 7 → 0
+
+hipótesis de corrección local
+→ CONFIRMADA
+~~~
+
+La siguiente actuación permanece R-ENG-BASE-03-C, limitada a los 4 errores JSX de comparación.
