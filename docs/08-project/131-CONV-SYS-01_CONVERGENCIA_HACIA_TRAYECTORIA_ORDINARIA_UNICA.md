@@ -3220,3 +3220,462 @@ producción
 > Ejecutar el HUMAN GATE de CF-CSYS-09 sobre la App real, sin explicación previa
 > de la semántica de las nuevas acciones y sin modificar producción durante la
 > observación.
+
+
+# 59. HUMAN GATE de CF-CSYS-09 — ejecución real
+
+Fecha: 23/11/2026.
+
+La observación se ejecuta sobre la App real, sin cambios productivos durante el
+recorrido y sin explicar previamente la semántica de las acciones nuevas.
+
+## 59.1 Orientación inicial
+
+Ante la página limpia, la persona reconoce:
+
+~~~text
+capacidad general
+→ introducir textos
+
+inicio de trabajo nuevo
+→ caja posterior a “Introduce un texto libre”
+→ acción “Crear”
+~~~
+
+Aparece desde el principio una ambigüedad:
+
+~~~text
+“Continuidad compartida”
+“Antecedente compartido recibido”
+~~~
+
+La persona no puede determinar si:
+
+- existe una caja para empezar y otra para continuar;
+- “compartida” significa añadir lo creado a trabajos de otras personas;
+- esas superficies forman parte de la continuidad ordinaria o de otra actuación.
+
+No se explica todavía el significado de esos términos.
+
+## 59.2 Primera aportación A1
+
+Se crea una primera aportación.
+
+La persona entiende que:
+
+~~~text
+A1
+→ se ha creado correctamente
+~~~
+
+Sin embargo, ante la pregunta:
+
+> ¿qué pulsarías espontáneamente para añadir una segunda aportación a ese mismo
+> trabajo?
+
+la elección espontánea no es “Seguir trabajando”.
+
+La persona selecciona primero la sección de identidad autoral y propone:
+
+~~~text
+obra creada
+→ seleccionar en Identidad autoral
+→ introducir autor
+→ Crear identidad autoral
+~~~
+
+Razones declaradas:
+
+~~~text
+Identidad autoral
+→ aparece antes en la página
+→ parece el siguiente paso lógico
+
+Seguir trabajando
+→ aparece con poca claridad
+→ puede parecer relacionado con “Continuidad compartida”
+~~~
+
+Resultado:
+
+~~~text
+HG-CSYS-09-03
+→ no satisfecho en descubribilidad espontánea
+~~~
+
+## 59.3 Ejercicio de “Seguir trabajando”
+
+Sin introducir contenido previo ni tocar identidad autoral, se pulsa únicamente:
+
+~~~text
+Seguir trabajando
+~~~
+
+La persona interpreta después:
+
+~~~text
+efecto
+→ se abre la posibilidad de introducir nuevos textos
+
+lugar para A2
+→ claro
+
+relación con A1
+→ sigue dentro del mismo trabajo
+~~~
+
+Por tanto:
+
+~~~text
+efecto funcional de “Seguir trabajando”
+→ correcto
+
+comprensión después de ejercerlo
+→ correcta
+
+descubribilidad antes de ejercerlo
+→ insuficiente
+~~~
+
+## 59.4 Segunda aportación A2
+
+Se crea A2 mediante la continuación ordinaria.
+
+La persona considera:
+
+~~~text
+trabajo actual
+→ la aportación recién creada
+
+A1
+→ visible como “Aportación anterior”
+~~~
+
+Sobre la relación A1/A2 declara:
+
+~~~text
+para quien ya sabe lo ocurrido
+→ ambas pertenecen al mismo trabajo
+
+para una persona que lo viera sin conocerlo
+→ no quedaría claro
+~~~
+
+La causa es que A1 y A2 aparecen tratadas en apartados distintos y como
+aportaciones diferenciadas.
+
+Resultado:
+
+~~~text
+HG-CSYS-09-01
+→ NO SATISFECHO
+
+causa
+→ identidad del hilo no expresada suficientemente por la interfaz
+~~~
+
+## 59.5 Recuperación tras recarga
+
+Tras recargar:
+
+~~~text
+A1
+→ localizable
+
+continuación
+→ posible
+
+persistencia
+→ conservada
+~~~
+
+Pero la persona describe el trabajo actual principalmente como:
+
+~~~text
+introducir más texto en “Qué puedes hacer ahora”
+~~~
+
+y vuelve a señalar que:
+
+~~~text
+A1 / A2
+→ continúan presentadas en apartados diferentes
+→ la pertenencia a una misma obra/hilo sigue poco clara
+~~~
+
+Además:
+
+~~~text
+“Seguir trabajando”
+→ puede inducir a pensar que hay que pulsarlo de nuevo
+  para poder continuar
+~~~
+
+Resultado:
+
+~~~text
+HG-CSYS-09-06
+→ PARCIAL
+
+persistencia material
+→ satisfecha
+
+reconocibilidad del hilo tras recarga
+→ insuficiente
+~~~
+
+## 59.6 Acción PostV1
+
+Se localiza:
+
+~~~text
+Usar este trabajo en integración post-V1
+~~~
+
+Sin pulsarla, la persona declara:
+
+~~~text
+qué ocurriría
+→ no lo sabe
+
+diferencia respecto a “Seguir trabajando”
+→ “Seguir trabajando” sí tiene significado ordinario
+→ “integración post-V1” no
+
+capacidad para decidir cuándo usarla
+→ NO
+~~~
+
+La causa es directa:
+
+~~~text
+“post-V1”
+→ vocabulario interno
+→ no ofrece significado operativo a la persona
+~~~
+
+Resultado:
+
+~~~text
+HG-CSYS-09-04
+→ NO SATISFECHO
+~~~
+
+No se ejerce HG-CSYS-09-05 porque el gate ya contiene falsadores suficientes
+para decidir el no cierre.
+
+---
+
+# 60. Resultado del HUMAN GATE
+
+Evaluación consolidada:
+
+~~~text
+HG-CSYS-09-01
+→ NO SATISFECHO
+→ A1/A2 no se presentan por sí mismas como partes de una misma obra/hilo
+
+HG-CSYS-09-02
+→ PARCIAL
+→ el estado operativo actual es utilizable
+→ pero no queda representado como unidad de trabajo suficientemente reconocible
+
+HG-CSYS-09-03
+→ PARCIAL
+→ “Seguir trabajando” funciona correctamente
+→ no se descubre espontáneamente como continuación principal
+
+HG-CSYS-09-04
+→ NO SATISFECHO
+→ “integración post-V1” no tiene significado humano suficiente
+
+HG-CSYS-09-05
+→ NO EJERCITADO
+→ no necesario para decidir el gate
+
+HG-CSYS-09-06
+→ PARCIAL
+→ recuperación material correcta
+→ identidad del hilo sigue poco clara tras recarga
+~~~
+
+Salida:
+
+~~~text
+HUMAN GATE de CF-CSYS-09
+→ C — NO CIERRE
+~~~
+
+No se reabren los contratos técnicos satisfechos.
+
+La falsación es humana y se concentra en representación/orientación.
+
+---
+
+# 61. Distinción de lo resuelto y lo pendiente
+
+R-CSYS-09-D sí resolvió una diferencia real:
+
+~~~text
+antes
+→ “Continuar con este trabajo”
+→ sustituía la experiencia ordinaria por PostV1
+
+ahora
+→ “Seguir trabajando”
+→ mantiene la continuidad ordinaria
+
+resultado material
+→ A1/A2 persisten
+→ recuperación funciona
+→ PostV1 no se monta al continuar ordinariamente
+~~~
+
+Por tanto, no debe revertirse la separación técnica conseguida.
+
+La diferencia residual queda:
+
+~~~text
+continuidad material
+→ SATISFECHA
+
+continuidad operativa después de aprender el mecanismo
+→ SATISFECHA
+
+identidad perceptible del trabajo
+→ NO SATISFECHA
+
+descubribilidad inicial de la continuación
+→ PARCIAL
+
+vocabulario de acciones especializadas
+→ NO SATISFECHO
+~~~
+
+---
+
+# 62. Reducción inicial de la diferencia residual
+
+Se identifican dos diferencias raíz.
+
+## D1 — identidad del hilo
+
+Hoy:
+
+~~~text
+A1
+→ “Aportación anterior”
+
+A2
+→ aportación actual / nuevo trabajo
+
+presentación
+→ apartados distintos
+
+consecuencia
+→ la relación “ambas forman una misma obra/trabajo”
+  depende del conocimiento previo de la persona
+~~~
+
+Diferencia humana:
+
+> La interfaz conserva el hilo materialmente, pero no lo representa como una
+> unidad perceptible suficientemente estable.
+
+## D2 — vocabulario y jerarquía de acciones
+
+Se observan tres interferencias:
+
+~~~text
+Identidad autoral
+→ aparece antes
+→ compite como supuesto siguiente paso
+
+Continuidad compartida
+→ proximidad/terminología
+→ contamina la interpretación de “Seguir trabajando”
+
+integración post-V1
+→ expone vocabulario interno
+→ no permite decidir cuándo usar la acción
+~~~
+
+Diferencia humana:
+
+> Las actuaciones auxiliares y técnicas aparecen con una jerarquía comparable a
+> la continuidad principal y con vocabulario que no expresa decisiones humanas
+> reconocibles.
+
+---
+
+# 63. Hipótesis de reducción para R-CSYS-09-E
+
+Se formula únicamente como hipótesis de trabajo, todavía sin producción:
+
+~~~text
+TRABAJO ACTUAL
+→ unidad principal reconocible
+→ contiene/relaciona lo ya aportado
+→ muestra dónde está ahora el hilo
+→ ofrece continuidad como acción principal
+
+ACCIONES SOBRE EL TRABAJO
+→ autoría
+→ comparación
+→ apoyo IA
+→ conservar/publicar
+→ compartir/relevar
+→ integración especializada, si debe seguir expuesta
+~~~
+
+La hipótesis no obliga todavía a:
+
+- rediseño visual general;
+- fusionar modelos de datos;
+- eliminar PostV1;
+- eliminar identidad autoral;
+- eliminar continuidad compartida;
+- ocultar capacidades históricas sin inspección previa.
+
+Sí obliga a reducir primero:
+
+1. cómo representar A1/A2 como partes del mismo trabajo;
+2. qué jerarquía debe tener la acción de continuidad;
+3. qué términos internos deben traducirse, reagruparse o dejar de competir como
+   decisiones primarias.
+
+---
+
+# 64. Decisión y siguiente actuación
+
+~~~text
+CF-CSYS-09
+→ TÉCNICAMENTE CUBIERTO
+→ HUMANAMENTE NO SATISFECHO
+→ NO CERRADO
+
+HUMAN GATE
+→ SALIDA C
+
+R-CSYS-09-D
+→ CONSERVADA
+→ no revertir separación ordinario/PostV1
+
+R-CSYS-09-E
+→ ABIERTA COMO REDUCCIÓN
+
+producción
+→ SIN CAMBIOS
+
+siguiente actuación
+→ reducir D1 y D2
+→ inspeccionar estructura actual de App
+→ derivar criterio humano mínimo
+→ después contrato rojo
+~~~
+
+# 65. Punto de reanudación
+
+> Ejecutar R-CSYS-09-E sin modificar producción: reducir la identidad perceptible
+> del hilo y la jerarquía/vocabulario de acciones hasta una intervención mínima
+> verificable.
