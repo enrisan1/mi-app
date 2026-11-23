@@ -4965,3 +4965,394 @@ D-LOC-01
 
 > Crear el contrato rojo T-CSYS-ACTREF-01…06 para D3. No modificar producción.
 > D-LOC-01 queda separado y no debe mezclarse con el cierre de CF-CSYS-09.
+
+
+---
+
+# 90. R-CSYS-09-I — contrato rojo ACTREF y RED aislado
+
+Se crea exclusivamente:
+
+~~~text
+src/App.action-reference.test.tsx
+→ T-CSYS-ACTREF-01…06
+~~~
+
+sin modificar producción.
+
+Resultado focal observado:
+
+~~~text
+T-CSYS-ACTREF-01
+→ FAIL
+
+T-CSYS-ACTREF-02…06
+→ PASS
+
+total
+→ 1 FAIL / 5 PASS
+~~~
+
+El fallo de T-CSYS-ACTREF-01 es exactamente:
+
+~~~text
+la acción:
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+
+→ no aparece dentro de la región accesible:
+“Trabajo actual”
+~~~
+
+La regresión histórica exigida por el contrato se ejecuta sobre:
+
+~~~text
+src/App.human-thread-presentation.test.tsx
+src/App.human-continuity.test.tsx
+~~~
+
+Resultado:
+
+~~~text
+2/2 archivos PASS
+15/15 tests PASS
+~~~
+
+Por tanto:
+
+~~~text
+R-CSYS-09-I
+→ CERRADA
+
+RED
+→ VÁLIDO Y AISLADO
+
+D3
+→ reproducida técnicamente
+→ único falsador: anclaje del referente
+
+producción
+→ SIN CAMBIOS
+~~~
+
+---
+
+# 91. R-CSYS-09-J — intervención mínima de anclaje
+
+Se modifica únicamente la posición estructural de la acción especializada:
+
+~~~text
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+~~~
+
+La acción pasa a quedar dentro de:
+
+~~~text
+Trabajo actual
+~~~
+
+Se conserva literalmente:
+
+~~~text
+texto
+handler
+hasPersistedPostV1
+removeItem("post-v1-integrated.state")
+setIntegrationChoice("current")
+~~~
+
+No se modifica:
+
+- Y/R;
+- PostV1IntegratedExperience;
+- persistencia;
+- KnowledgeTrajectory;
+- modelo de datos;
+- trabajo recibido;
+- D-LOC-01.
+
+Commit productivo:
+
+~~~text
+de269ef
+fix(app): anchor specialized action to current work
+~~~
+
+Validación focal:
+
+~~~text
+ACTREF
+→ 6/6 PASS
+~~~
+
+Regresión histórica:
+
+~~~text
+HPRES + HCONT
+→ 15/15 PASS
+~~~
+
+Total focal de la intervención:
+
+~~~text
+21/21 PASS
+~~~
+
+Conclusión:
+
+~~~text
+R-CSYS-09-J
+→ CERRADA TÉCNICAMENTE
+
+D3
+→ corregida técnicamente
+→ pendiente contraste humano mínimo
+~~~
+
+---
+
+# 92. R-CSYS-09-K — contraste humano mínimo post-corrección
+
+No se modifica producción.
+
+El contraste se limita a la fricción D3, sin reabrir D-LOC-01.
+
+Respuestas humanas observadas:
+
+~~~text
+referente de:
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+→ “al trabajo actual”
+
+“Seguir trabajando”
+vs
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+→ “dos acciones distintas sobre el mismo trabajo”
+
+“Continuar un trabajo recibido de otra persona”
+→ “se ve claro que esa sección pertenece a otro recorrido distinto”
+~~~
+
+Por tanto:
+
+~~~text
+D3
+→ CERRADA HUMANAMENTE
+
+HG-CSYS-09-04
+→ SATISFECHO
+
+CF-CSYS-09-06
+→ SATISFECHO HUMANAMENTE
+~~~
+
+La evidencia humana acumulada de R-CSYS-09 queda:
+
+~~~text
+HG-CSYS-09-01
+→ SATISFECHO
+
+HG-CSYS-09-02
+→ SATISFECHO
+
+HG-CSYS-09-03
+→ SATISFECHO
+
+HG-CSYS-09-04
+→ SATISFECHO
+
+HG-CSYS-09-05
+→ SATISFECHO
+
+HG-CSYS-09-06
+→ SATISFECHO
+~~~
+
+No reaparece ningún falsador del criterio de continuidad humana reconocible.
+
+---
+
+# 93. Cierre de CF-CSYS-09
+
+Se reevalúan sus ocho condiciones.
+
+~~~text
+CF-CSYS-09-01 — Identidad del hilo
+→ SATISFECHA
+
+CF-CSYS-09-02 — Estado actual inequívoco
+→ SATISFECHA
+
+CF-CSYS-09-03 — Continuación explícita
+→ SATISFECHA
+
+CF-CSYS-09-04 — Conservación no destructiva
+→ SATISFECHA en el alcance validado
+
+CF-CSYS-09-05 — Recuperación completa
+→ SATISFECHA en el alcance comprometido
+
+CF-CSYS-09-06 — Separación de acciones
+→ SATISFECHA técnica y humanamente
+
+CF-CSYS-09-07 — Reanudación
+→ SATISFECHA
+
+CF-CSYS-09-08 — Compatibilidad con trayectoria
+→ SATISFECHA en regresión
+~~~
+
+Resultado:
+
+~~~text
+CF-CSYS-09
+→ CERRADO
+→ sin falsador conocido dentro de su alcance
+~~~
+
+D-LOC-01 permanece abierto, pero no pertenece al núcleo de CF-CSYS-09 y no se utiliza para ampliar retrospectivamente su contrato.
+
+---
+
+# 94. Reevaluación final de HITO-CONV-SYS-01
+
+Se reconstruyen las obligaciones independientes del hito.
+
+## 94.1 Convergencia material
+
+~~~text
+GAP-CONV-SYS-01
+→ CERRADO
+
+GAP-CONV-SYS-02
+→ CERRADO
+
+GAP-CONV-SYS-03
+→ CERRADO
+
+GAP-CONV-SYS-04
+→ CERRADO
+~~~
+
+## 94.2 Escenario integrado
+
+~~~text
+R-CSYS-07
+→ CERRADA
+
+HITO-CONV-SYS-01
+→ MATERIALMENTE DEMOSTRADO
+~~~
+
+El escenario E2E ya demostró en una única investigación ordinaria:
+
+~~~text
+fuentes
+→ afirmaciones
+→ transformación
+→ apoyo IA
+→ procedencia humana/IA
+→ decisión/fundamento
+→ persistencia
+→ relevo P1 → P2
+→ continuación
+→ resultado posterior
+→ revisión
+→ reconstrucción de procedencia y razón
+~~~
+
+## 94.3 Validación humana
+
+R-CSYS-08 produjo salida B y bloqueó el cierre exclusivamente por continuidad humana reconocible.
+
+Esa diferencia se redujo a:
+
+~~~text
+CF-CSYS-09
+~~~
+
+y, tras R-CSYS-09-A…K:
+
+~~~text
+CF-CSYS-09
+→ CERRADO
+~~~
+
+No queda otro criterio humano independiente abierto derivado de R-CSYS-08.
+
+## 94.4 Diferencia separada
+
+~~~text
+D-LOC-01
+→ ABIERTA
+→ localización/orientación histórica
+→ fuera de CF-CSYS-09
+→ fuera del bloqueo de HITO-CONV-SYS-01
+~~~
+
+D-LOC-01 no demuestra:
+
+- pérdida del hilo vigente;
+- pérdida de las aportaciones constituidas;
+- imposibilidad de continuar;
+- ruptura de la trayectoria;
+- fallo del escenario E2E.
+
+Por tanto, no debe impedir el cierre del hito.
+
+## 94.5 Decisión
+
+~~~text
+HITO-CONV-SYS-01
+→ CERRADO
+
+fundamento:
+→ cuatro gaps materiales cerrados
+→ escenario E2E completo demostrado
+→ continuidad humana reconocible satisfecha
+→ no queda criterio independiente del hito abierto
+
+R-CSYS-09-K
+→ CERRADA
+
+CF-CSYS-09
+→ CERRADO
+
+D-LOC-01
+→ permanece abierto por separado
+~~~
+
+No se deriva por este cierre:
+
+- nuevo Product;
+- nuevo horizonte;
+- nueva Architecture.
+
+---
+
+# 95. Estado resultante y punto de reanudación
+
+~~~text
+HITO-CONV-SYS-01
+→ CERRADO
+
+R-CSYS-01…07
+→ CERRADAS
+
+R-CSYS-08
+→ EJECUTADA
+→ salida B ya reducida y resuelta por R-CSYS-09
+
+R-CSYS-09
+→ CERRADA EN SU ALCANCE
+
+CF-CSYS-09
+→ CERRADO
+
+D-LOC-01
+→ ABIERTO
+→ diferencia independiente de localización/orientación histórica
+~~~
+
+Punto de reanudación:
+
+> Con HITO-CONV-SYS-01 cerrado, no abrir automáticamente una nueva intervención productiva. Reevaluar el mapa global y decidir por separado si D-LOC-01 merece prioridad propia o si existe una obligación posterior más fuerte derivada del horizonte vigente.
