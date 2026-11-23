@@ -13,12 +13,41 @@ function longestCommonSubsequence(a: string[], b: string[]) {
   const cols = b.length + 1;
   const dp = Array.from({ length: rows }, () => Array<number>(cols).fill(0));
 
+  const readCell = (row: number, col: number) => {
+    const matrixRow = dp[row];
+
+    if (matrixRow === undefined) {
+      throw new Error(`Missing LCS row ${row}`);
+    }
+
+    const value = matrixRow[col];
+
+    if (value === undefined) {
+      throw new Error(`Missing LCS cell ${row},${col}`);
+    }
+
+    return value;
+  };
+
+  const writeCell = (row: number, col: number, value: number) => {
+    const matrixRow = dp[row];
+
+    if (matrixRow === undefined || matrixRow[col] === undefined) {
+      throw new Error(`Missing LCS cell ${row},${col}`);
+    }
+
+    matrixRow[col] = value;
+  };
+
   for (let i = a.length - 1; i >= 0; i -= 1) {
     for (let j = b.length - 1; j >= 0; j -= 1) {
-      dp[i][j] =
+      writeCell(
+        i,
+        j,
         a[i] === b[j]
-          ? dp[i + 1][j + 1] + 1
-          : Math.max(dp[i + 1][j], dp[i][j + 1]);
+          ? readCell(i + 1, j + 1) + 1
+          : Math.max(readCell(i + 1, j), readCell(i, j + 1)),
+      );
     }
   }
 
@@ -31,7 +60,7 @@ function longestCommonSubsequence(a: string[], b: string[]) {
       pairs.push([i, j]);
       i += 1;
       j += 1;
-    } else if (dp[i + 1][j] >= dp[i][j + 1]) {
+    } else if (readCell(i + 1, j) >= readCell(i, j + 1)) {
       i += 1;
     } else {
       j += 1;
