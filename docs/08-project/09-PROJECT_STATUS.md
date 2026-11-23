@@ -10882,3 +10882,103 @@ comparison / LCS
 
 Siguiente actuación:
 R-ENG-BASE-03-D — corregir exclusivamente la indexación segura de la matriz LCS.
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-03-D y OB-ENG-BASE-01
+
+Se valida el último subgrupo TypeScript, correspondiente a la matriz LCS de `detectLiteralDifferences.ts`.
+
+Cambio:
+
+~~~text
+accesos directos dp[i][j]
+→ lectura/escritura mediante helpers internos
+
+invariante
+→ matriz rectangular completamente inicializada
+
+si una fila/celda obligatoria no existe
+→ error explícito
+~~~
+
+Sin:
+
+~~~text
+non-null assertions
+casts
+relajación de noUncheckedIndexedAccess
+cambio de algoritmo
+cambio de contrato
+~~~
+
+Validación focal:
+
+~~~text
+detectLiteralDifferences.test.ts
+→ 1/1 archivo PASS
+→ 8/8 tests PASS
+
+npm run typecheck
+→ PASS
+→ 0 errores
+~~~
+
+Validación global:
+
+~~~text
+npx vitest run --maxWorkers=1
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+npm run lint
+→ PASS
+
+npm run build
+→ PASS
+
+warning chunk >500 kB
+→ permanece
+→ no bloqueante
+~~~
+
+Resultado acumulado:
+
+~~~text
+baseline inicial
+→ 29 errores TypeScript
+
+R-ENG-BASE-03-A
+→ 8 → 0
+
+R-ENG-BASE-03-B
+→ 7 → 0
+
+R-ENG-BASE-03-C
+→ 4 → 0
+
+R-ENG-BASE-03-D
+→ 10 → 0
+
+TOTAL
+→ 29 → 0
+~~~
+
+Cierre:
+
+~~~text
+R-ENG-BASE-03-D
+→ CERRADA
+
+OB-ENG-BASE-01
+→ SATISFECHA
+
+npm run typecheck
+→ exit 0
+
+baseline de ingeniería
+→ señal TypeScript inequívoca restaurada
+~~~
+
+No se deriva del cierre ninguna necesidad de modificar el warning de bundle, timeouts paralelos, CI automática ni dependencias npm.
