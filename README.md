@@ -39,29 +39,29 @@ El objetivo es desarrollar un producto sostenible, una arquitectura mantenible y
 
 # 2. Estado del proyecto
 
-El proyecto se encuentra en una fase de transición entre la investigación conceptual y el diseño de ingeniería.
+El proyecto dispone actualmente de una aplicación software ejecutable y de una baseline de ingeniería validada para continuar su evolución de forma incremental.
 
-En la actualidad se consideran consolidados provisionalmente:
+Se consideran consolidados en su alcance vigente:
 
 - la teoría conceptual del dominio;
 - la arquitectura documental;
 - el proceso metodológico de investigación;
-- la organización general del proyecto.
-
-La siguiente fase consistirá en diseñar la arquitectura del núcleo software que implementará la teoría desarrollada durante la investigación.
+- la organización general del proyecto;
+- una arquitectura técnica implementada;
+- una baseline de ingeniería reproducible y verificable.
 
 ## Estado de madurez
 
-| Área                         | Estado                        |
-| ---------------------------- | ----------------------------- |
-| Teoría conceptual            | ✔ Primera edición consolidada |
-| Arquitectura documental      | ✔ Consolidada                 |
-| Metodología de investigación | ✔ Consolidada                 |
-| Diseño de ingeniería         | En preparación                |
-| Implementación del núcleo    | Pendiente                     |
-| Plataforma software          | En desarrollo                 |
+| Área                         | Estado                         |
+| ---------------------------- | ------------------------------ |
+| Teoría conceptual            | ✔ Primera edición consolidada  |
+| Arquitectura documental      | ✔ Consolidada                  |
+| Metodología de investigación | ✔ Consolidada                  |
+| Arquitectura técnica         | ✔ Implementada y documentada   |
+| Baseline de ingeniería       | ✔ Validada                     |
+| Plataforma software          | En desarrollo                  |
 
-La información detallada sobre el estado del desarrollo, las funcionalidades implementadas y los próximos objetivos puede consultarse en `PROJECT_STATUS.md`.
+La información detallada sobre el estado vigente del desarrollo, las funcionalidades implementadas y las actuaciones justificadas puede consultarse en `PROJECT_STATUS.md`.
 
 ---
 
