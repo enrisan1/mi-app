@@ -14972,3 +14972,112 @@ reevaluar mapa global
 → comparar D-LOC-01 con cualquier obligación posterior pendiente
 → derivar prioridad sólo después de esa reevaluación
 ~~~
+
+
+---
+
+# 23/11/2026 — R-DLOC-01-A/B / reducción y cierre de D-LOC-01
+
+Se reconstruye el contrato histórico de “Materiales anteriores”.
+
+Queda confirmado que la obligación histórica era:
+
+~~~text
+pluralidad conservada
+→ inspección
+→ reconocimiento
+→ selección humana
+→ reactivación
+~~~
+
+y que no incluía historial universal, profundidad ilimitada, búsqueda general ni escala arbitraria.
+
+Se ejecuta después un contraste humano mínimo ante una necesidad concreta:
+
+~~~text
+material buscado
+→ “La continuidad debería permitir recuperar lo anterior
+   y añadir nuevas aportaciones sin perder el hilo.”
+
+Materiales anteriores
+→ elegido espontáneamente como lugar más claro de búsqueda
+
+material
+→ encontrado
+
+ayuda externa
+→ no necesaria
+
+duda sobre hasta dónde llega la sección
+→ sin consecuencia práctica
+~~~
+
+Conclusión:
+
+~~~text
+D-LOC-01
+→ fricción real de orientación
+→ sin pérdida funcional demostrada
+→ CERRADA COMO NO CONSTITUTIVA
+~~~
+
+No se crean tests ni se modifica producción.
+
+
+---
+
+# 23/11/2026 — reaplicación final del mapa global post-DLOC
+
+Tras cerrar D-LOC-01 se reconstruye el estado global.
+
+No queda horizonte aceptado abierto ni hito obligatorio pendiente.
+
+Rama A:
+
+~~~text
+compromiso insatisfecho
+→ ninguno identificado
+
+dependencia constitutiva pendiente
+→ ninguna demostrada
+~~~
+
+Rama B:
+
+~~~text
+última evidencia independiente
+→ D-LOC-01
+→ ya cerrada como fricción no constitutiva
+
+otra pérdida humana nueva
+→ no identificada
+~~~
+
+Se conserva DEUDA-TSC-COMP-01 como deuda técnica abierta y no bloqueante; no se transforma en obligación estratégica sin evidencia material nueva.
+
+Resultado:
+
+~~~text
+obligación positiva independiente
+→ NINGUNA DEMOSTRADA
+
+incertidumbre bloqueante
+→ NINGUNA
+
+ESTADO ESTRATÉGICO
+→ ESTABLE
+~~~
+
+No se deriva nueva construcción.
+
+Punto de reanudación:
+
+~~~text
+NUEVO HECHO / NUEVA DECISIÓN / NUEVA EVIDENCIA
+↓
+reaplicar Manual 17
+↓
+derivar sólo la actuación mínima justificada
+~~~
+
+Referencia: [132](132-REAPLICACION_GLOBAL_POST_DLOC_ESTABILIDAD_ESTRATEGICA.md).
