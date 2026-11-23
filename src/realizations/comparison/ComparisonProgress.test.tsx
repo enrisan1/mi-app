@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
@@ -14,7 +15,7 @@ type ComparisonProgressProps = {
 
 type ComparisonProgressComponent = (
   props: ComparisonProgressProps,
-) => JSX.Element | null;
+) => ReactElement | null;
 
 async function loadProgress(): Promise<ComparisonProgressComponent> {
   const modules = import.meta.glob<{
