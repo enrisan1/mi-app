@@ -4526,3 +4526,442 @@ Producción queda congelada hasta ese resultado.
 > Ejecutar el HUMAN GATE posterior a R-CSYS-09-G. No introducir nuevas
 > modificaciones productivas antes de observar si la persona reconoce ahora el
 > hilo ordinario y distingue las acciones auxiliares.
+
+
+---
+
+# 81. R-CSYS-09-H — reducción de D3 y D4
+
+Se analiza el HUMAN GATE posterior a R-CSYS-09-G sin modificar producción.
+
+La continuidad principal queda humanamente reconocida:
+
+~~~text
+Trabajo actual
+→ reconocido como un único hilo
+
+Aportación anterior + Aportación actual
+→ reconocidas como partes del mismo trabajo
+
+Seguir trabajando
+→ reconocido como continuidad ordinaria
+
+recarga
+→ permite reconocer dónde quedó el trabajo
+→ permite continuar desde Aportación actual
+~~~
+
+La salida del gate es B por dos fricciones residuales:
+
+~~~text
+D3
+→ referente de “este trabajo”
+
+D4
+→ alcance de “Materiales anteriores”
+~~~
+
+---
+
+# 82. D3 — referente de la acción especializada
+
+## 82.1 Evidencia humana
+
+La acción:
+
+~~~text
+Abrir opciones para conservar, publicar o compartir este trabajo
+~~~
+
+se interpreta como posiblemente referida a:
+
+~~~text
+un trabajo recibido de otra persona
+~~~
+
+y no inequívocamente al:
+
+~~~text
+Trabajo actual
+~~~
+
+La causa no es ya vocabulario técnico.
+
+La expresión es comprensible, pero su referente visual/semántico es ambiguo.
+
+## 82.2 Evidencia de implementación
+
+La acción productiva sigue operando sobre:
+
+~~~text
+availablePostV1Current
+→ trabajo ordinario actual
+~~~
+
+y conserva el handler histórico:
+
+~~~text
+integrationChoice = "current"
+~~~
+
+No opera sobre el antecedente recibido.
+
+Por tanto:
+
+~~~text
+semántica material
+→ correcta
+
+presentación del referente
+→ ambigua
+~~~
+
+## 82.3 Relación con CF-CSYS-09
+
+D3 pertenece directamente a:
+
+~~~text
+CF-CSYS-09-06 — Separación de acciones
+~~~
+
+porque la persona debe distinguir sin ensayo/error:
+
+~~~text
+continuar trabajo propio
+conservar/publicar/compartir trabajo propio
+continuar trabajo recibido de otra persona
+~~~
+
+También roza CF-CSYS-09-02, porque la acción sobre el trabajo actual debe mantener
+inequívoco qué trabajo es el referente.
+
+Decisión:
+
+~~~text
+D3
+→ DENTRO DE CF-CSYS-09
+→ BLOQUEO RESIDUAL DE CIERRE
+~~~
+
+---
+
+# 83. Reducción mínima de D3
+
+La diferencia no exige cambiar comportamiento.
+
+La intervención mínima futura debe satisfacer:
+
+~~~text
+la acción de conservar/publicar/compartir
+→ queda visual o semánticamente anclada a “Trabajo actual”
+
+la ruta recibida
+→ sigue separada
+
+handlers
+→ sin cambios
+
+Y/R
+→ sin cambios
+
+PostV1 interno
+→ sin cambios
+~~~
+
+La hipótesis mínima preferida es presentar la acción especializada:
+
+~~~text
+dentro de Trabajo actual
+o
+bajo un bloque inequívoco:
+“Otras acciones sobre este trabajo actual”
+~~~
+
+No se deriva todavía cuál de las dos formas debe implementarse.
+
+Lo que sí queda fijado es el contrato semántico:
+
+> La persona no debe poder atribuir razonablemente la acción de
+> conservar/publicar/compartir al trabajo recibido inmediatamente anterior.
+
+---
+
+# 84. Contrato rojo mínimo derivado para D3
+
+Antes de cualquier nueva modificación productiva debe existir un contrato
+separado.
+
+Nombre propuesto:
+
+~~~text
+src/App.current-work-action-reference.test.tsx
+~~~
+
+Condiciones:
+
+~~~text
+T-CSYS-ACTREF-01
+→ la acción de abrir conservar/publicar/compartir
+  pertenece semánticamente a la región “Trabajo actual”
+
+T-CSYS-ACTREF-02
+→ la región de trabajo recibido de otra persona
+  no contiene esa acción
+
+T-CSYS-ACTREF-03
+→ “Seguir trabajando”
+  y conservar/publicar/compartir
+  permanecen distinguibles como dos actuaciones sobre el trabajo actual
+
+T-CSYS-ACTREF-04
+→ la recepción/continuación de trabajo ajeno
+  sigue siendo una ruta separada
+
+T-CSYS-ACTREF-05
+→ con R previa se preservan las dos decisiones Y/R
+  sin modificar estado antes de elegir
+
+T-CSYS-ACTREF-06
+→ HPRES + HCONT siguen verdes
+~~~
+
+Criterio de RED válido:
+
+~~~text
+debe fallar únicamente el anclaje del referente
+
+si aparece pérdida de continuidad,
+cambio de handler,
+rotura Y/R,
+KGV,
+persistencia
+o KnowledgeTrajectory
+→ detener la intervención
+~~~
+
+---
+
+# 85. D4 — alcance de “Materiales anteriores”
+
+## 85.1 Evidencia humana
+
+La persona pregunta espontáneamente:
+
+~~~text
+qué materiales incluye
+si son anteriores a los dos visibles
+hasta qué profundidad retrocede
+desde qué momento deja de poder recuperar
+~~~
+
+La duda persiste después de recargar.
+
+## 85.2 Comportamiento real de App
+
+La sección aparece cuando:
+
+~~~text
+ordinaryMaterials.length >= 2
+~~~
+
+y, al abrirse:
+
+~~~text
+ordinaryMaterials.map(...)
+→ hace inspeccionables todos los materiales ordinarios conservados
+  en ese almacenamiento local
+~~~
+
+La selección permite:
+
+~~~text
+Usar este material
+→ Nuevo trabajo
+→ Continuar con este material
+~~~
+
+La interfaz no declara:
+
+- cardinalidad total antes de abrir;
+- límite temporal;
+- profundidad histórica;
+- si la pluralidad corresponde sólo al hilo actual;
+- alcance de almacenamiento local.
+
+## 85.3 Contrato histórico de localización
+
+La capacidad “Materiales anteriores” procede de la Realization de localización
+selectiva posterior.
+
+Su obligación histórica era:
+
+~~~text
+pluralidad pequeña no trivial
+→ previamente conservada
+→ no inmediatamente visible
+→ volverla inspeccionable
+→ selección humana
+→ reactivación
+~~~
+
+Expresamente quedaron fuera:
+
+~~~text
+escala arbitraria
+historial universal
+búsqueda general
+organización general
+~~~
+
+Por tanto, el contrato histórico no prometía una profundidad indefinida ni una
+teoría general de historial.
+
+## 85.4 Relación con CF-CSYS-09
+
+CF-CSYS-09-05 exige:
+
+~~~text
+tras interrupción y recuperación,
+las aportaciones ya constituidas del mismo hilo
+siguen visibles o accesibles como partes del mismo hilo
+~~~
+
+El HUMAN GATE actual confirmó:
+
+~~~text
+trabajo en curso
+→ reconocido tras recarga
+
+lugar de continuación
+→ reconocido
+
+aportaciones del mismo trabajo
+→ reconocidas
+~~~
+
+La duda sobre “Materiales anteriores” no demuestra:
+
+- pérdida de A1/A2;
+- imposibilidad de recuperar el hilo actual;
+- pérdida de identidad del trabajo;
+- necesidad de reintroducir contenido.
+
+Por tanto:
+
+~~~text
+D4
+→ NO pertenece al núcleo de CF-CSYS-09
+→ NO debe bloquear su cierre por sí sola
+~~~
+
+---
+
+# 86. Reclasificación de D4
+
+D4 se separa como diferencia propia de:
+
+~~~text
+localización / orientación histórica
+~~~
+
+Formulación:
+
+> La interfaz ofrece una pluralidad denominada “Materiales anteriores”, pero no
+> permite conocer de antemano qué universo cubre, qué relación mantiene con el
+> trabajo actual ni cuál es el alcance efectivo de la recuperación disponible.
+
+Identificador provisional:
+
+~~~text
+D-LOC-01
+— alcance perceptible de materiales anteriores
+~~~
+
+D-LOC-01 debe tratarse contra los contratos de localización selectiva/HPI, no
+mediante ampliación retrospectiva de CF-CSYS-09.
+
+No se deriva todavía:
+
+- historial universal;
+- profundidad ilimitada;
+- búsqueda general;
+- nuevo backend;
+- nueva persistencia;
+- navegación temporal completa.
+
+Primero deberá decidirse qué información mínima necesita una persona para
+comprender el alcance real de la pluralidad ya disponible.
+
+---
+
+# 87. Resultado de R-CSYS-09-H
+
+~~~text
+D1
+→ CERRADA HUMANAMENTE
+
+D2
+→ CERRADA EN SU NÚCLEO PRINCIPAL
+
+D3
+→ DENTRO DE CF-CSYS-09
+→ REDUCIDA A ANCLAJE DEL REFERENTE
+→ pendiente contrato rojo
+
+D4
+→ SEPARADA DE CF-CSYS-09
+→ reclasificada como D-LOC-01
+→ diferencia de localización/orientación histórica
+→ no bloquea por sí sola CF-CSYS-09
+
+producción
+→ SIN CAMBIOS
+~~~
+
+La consecuencia metodológica es importante:
+
+~~~text
+CF-CSYS-09
+→ queda bloqueado únicamente por D3
+
+D-LOC-01
+→ permanece abierto
+→ pero debe evaluarse en su propio marco
+~~~
+
+---
+
+# 88. Siguiente actuación
+
+~~~text
+R-CSYS-09-I
+→ crear únicamente T-CSYS-ACTREF-01…06
+→ observar RED real
+→ no modificar producción todavía
+~~~
+
+Después:
+
+~~~text
+si RED confirma sólo anclaje
+→ intervención mínima de presentación
+→ regresión focal
+→ HUMAN GATE breve de referente
+
+si aparece fallo material
+→ detener y reabrir reducción
+~~~
+
+En paralelo:
+
+~~~text
+D-LOC-01
+→ NO intervenir todavía
+→ conservar como diferencia separada
+→ evaluar después contra localización selectiva/HPI
+~~~
+
+# 89. Punto de reanudación
+
+> Crear el contrato rojo T-CSYS-ACTREF-01…06 para D3. No modificar producción.
+> D-LOC-01 queda separado y no debe mezclarse con el cierre de CF-CSYS-09.
