@@ -704,8 +704,12 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
                   (association) => association.materialId === material.id,
                 );
 
-              if (matchingTrajectoryAssociations.length === 1) {
-                const association = matchingTrajectoryAssociations[0];
+              const association = matchingTrajectoryAssociations[0];
+
+              if (
+                matchingTrajectoryAssociations.length === 1 &&
+                association !== undefined
+              ) {
                 const contributionIndex =
                   (association.trajectory.participantProvenance ?? []).length + 1;
                 const participantId =
