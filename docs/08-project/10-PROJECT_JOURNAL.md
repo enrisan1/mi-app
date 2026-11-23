@@ -15081,3 +15081,58 @@ derivar sólo la actuación mínima justificada
 ~~~
 
 Referencia: [132](132-REAPLICACION_GLOBAL_POST_DLOC_ESTABILIDAD_ESTRATEGICA.md).
+
+
+---
+
+# 23/11/2026 — apertura de R-ENG-BASE-01
+
+La candidata CI-ENG-BASE-01 se reduce antes de construir.
+
+No se reabre reproducibilidad, verificabilidad ni evolutividad, ya demostradas en cierres previos.
+
+El residuo independiente queda:
+
+~~~text
+¿puede un operador competente
+trabajar desde el repositorio vigente
+sin reconstruir historia extensa?
+~~~
+
+La auditoría documental confirma:
+
+- README, ARCHITECTURE, DEVELOPMENT_GUIDE, TESTING y AGENTS proporcionan entrada técnica;
+- una tarea pequeña permite localizar producción y tests sin arqueología;
+- AGENTS contiene reglas suficientes para no modificar patrimonio histórico por coincidencia textual.
+
+Se detecta:
+
+~~~text
+DF-ENG-BASE-01
+→ contradicción operativa entre
+  “validaciones sin errores”
+  y
+  DEUDA-TSC-COMP-01
+  con 14 errores TypeScript históricos
+~~~
+
+También se registra que no existe CI general automática; sólo workflow manual de deployment. No se clasifica todavía como insuficiencia.
+
+No se modifica producción.
+
+Pendiente para cerrar:
+
+~~~bash
+npm ci
+npm run typecheck
+npx vitest run --maxWorkers=2
+npm run lint
+npm run build
+git status --short
+~~~
+
+Resultado provisional:
+
+~~~text
+B — FRICCIÓN LOCALIZADA
+~~~
