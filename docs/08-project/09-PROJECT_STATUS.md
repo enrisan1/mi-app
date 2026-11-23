@@ -11154,3 +11154,81 @@ R-ENG-BASE-04
 No se deriva CI automática, code splitting, refactorización arquitectónica ni funcionalidad nueva.
 
 Documento: [137](137-REEVALUACION_FINAL_BASELINE_INGENIERIA.md).
+
+
+---
+
+# 24/11/2026 — cierre de R-ENG-BASE-04 y baseline de ingeniería
+
+Se completa la consolidación final de la entrada técnica.
+
+Cambios materiales:
+
+~~~text
+cee6567
+→ chore(test): canonize reproducible regression suite
+
+5901b76
+→ docs(readme): align project state with current baseline
+~~~
+
+Validación:
+
+~~~text
+npm run typecheck
+→ PASS
+
+npm run test:regression
+→ 83/83 archivos PASS
+→ 598/598 tests PASS
+
+npm run lint
+→ PASS
+
+npm run build
+→ PASS
+→ warning conocido de chunk >500 kB
+~~~
+
+Mapa final:
+
+~~~text
+DF-ENG-BASE-01
+→ RESUELTA
+
+DF-ENG-BASE-02
+→ RESUELTA EN SU ALCANCE
+
+DF-ENG-BASE-03
+→ RESUELTA
+
+DF-ENG-BASE-04
+→ RESUELTA
+
+CI-ENG-BASE-01
+→ SATISFECHA
+
+CI-ENG-BASE-02
+→ SATISFECHA EN SU ALCANCE
+
+R-ENG-BASE-04
+→ CERRADA
+~~~
+
+Estado resultante:
+
+~~~text
+baseline de ingeniería
+→ reproducible
+→ comprensible
+→ verificable
+→ evolutiva
+→ transferible
+
+fundamento suficiente para construir
+→ SÍ, EN EL ALCANCE DE BASELINE
+~~~
+
+No se deriva automáticamente nueva funcionalidad, Product, Architecture ni Implementation. La siguiente actuación de construcción deberá seguir estando justificada por una necesidad o decisión independiente.
+
+Documento: [138](138-CIERRE_R-ENG-BASE-04_BASELINE_INGENIERIA.md).
