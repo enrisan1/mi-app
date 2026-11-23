@@ -11115,3 +11115,42 @@ baseline de ingeniería
 ~~~
 
 Permanece como límite conocido no bloqueante el warning de chunk >500 kB y la sensibilidad histórica de la suite con paralelismo mayor; ninguno se reabre por esta actuación.
+
+
+---
+
+# 24/11/2026 — apertura de R-ENG-BASE-04
+
+Tras cerrar R-ENG-SEC-01 se reevalúa la baseline de ingeniería.
+
+Resultado:
+
+~~~text
+DF-ENG-BASE-01
+→ RESUELTA
+
+DF-ENG-BASE-03
+→ RESUELTA
+
+DF-ENG-BASE-02
+→ sobrevive como fricción operativa
+→ la suite fiable serial no está canonizada
+
+DF-ENG-BASE-04
+→ README conserva un estado de proyecto obsoleto
+→ fricción de orientación
+~~~
+
+Se abre:
+
+~~~text
+R-ENG-BASE-04
+→ consolidar entrada técnica
+→ canonizar regresión completa reproducible
+→ alinear README / DEVELOPMENT_GUIDE
+→ validar baseline completa
+~~~
+
+No se deriva CI automática, code splitting, refactorización arquitectónica ni funcionalidad nueva.
+
+Documento: [137](137-REEVALUACION_FINAL_BASELINE_INGENIERIA.md).
