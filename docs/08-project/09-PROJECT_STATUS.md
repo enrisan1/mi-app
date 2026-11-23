@@ -10608,3 +10608,67 @@ bundle >500 kB
 No se deriva todavía ninguna corrección productiva.
 
 Documento: [133](133-CI-ENG-BASE-01_AUDITORIA_TRANSFERIBILIDAD_BASELINE.md).
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-02
+
+Se reducen los 29 errores TypeScript actuales sin modificar producción.
+
+Mapa:
+
+~~~text
+App / association
+→ 8 errores
+→ narrowing local
+
+App / conditionIds
+→ 7 errores
+→ tupla + narrowing local
+
+comparison / JSX
+→ 4 errores
+→ tipos React explícitos
+
+comparison / LCS
+→ 10 errores
+→ comprobación explícita de invariantes
+~~~
+
+Conclusión:
+
+~~~text
+R-ENG-BASE-02
+→ CERRADA
+
+cambio funcional requerido
+→ NO
+
+cambio contractual requerido
+→ NO
+
+cambio arquitectónico requerido
+→ NO
+
+corrección local segura
+→ SÍ
+
+OB-ENG-BASE-01
+→ CONFIRMADA
+
+criterio final
+→ npm run typecheck
+→ exit 0
+~~~
+
+Orden derivado:
+
+~~~text
+R-ENG-BASE-03-A
+→ App association
+→ 8 errores
+→ validar antes de continuar
+~~~
+
+Documento: [134](134-R-ENG-BASE-02_REDUCCION_ERRORES_TYPESCRIPT_BASELINE.md).
