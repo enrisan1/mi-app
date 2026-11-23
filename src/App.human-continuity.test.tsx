@@ -138,7 +138,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /^usar este trabajo en integración post-v1$/i,
+        name: /^abrir opciones para conservar, publicar o compartir este trabajo$/i,
       }),
     ).toBeInTheDocument();
 
@@ -156,7 +156,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /^usar este trabajo en integración post-v1$/i,
+        name: /^abrir opciones para conservar, publicar o compartir este trabajo$/i,
       }),
     );
 
@@ -179,7 +179,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /^usar este trabajo en integración post-v1 sustituyendo la trayectoria integrada anterior$/i,
+        name: /^abrir opciones para conservar, publicar o compartir este trabajo$/i,
       }),
     ).toBeInTheDocument();
     expect(
@@ -214,7 +214,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /^usar este trabajo en integración post-v1$/i,
+        name: /^abrir opciones para conservar, publicar o compartir este trabajo$/i,
       }),
     );
 
@@ -291,7 +291,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /retomar trayectoria integrada existente/i,
+        name: /retomar opciones anteriores de conservación, publicación y colaboración/i,
       }),
     );
 
