@@ -5356,3 +5356,187 @@ D-LOC-01
 Punto de reanudación:
 
 > Con HITO-CONV-SYS-01 cerrado, no abrir automáticamente una nueva intervención productiva. Reevaluar el mapa global y decidir por separado si D-LOC-01 merece prioridad propia o si existe una obligación posterior más fuerte derivada del horizonte vigente.
+
+
+---
+
+# 96. R-DLOC-01-A — reconstrucción contractual de D-LOC-01
+
+Se reconstruye el contrato histórico de localización selectiva y su absorción posterior por HPI, sin modificar producción ni crear tests.
+
+La obligación histórica mínima era:
+
+~~~text
+pluralidad conservada
++
+necesidad posterior
+↓
+hacer candidatos inspeccionables
+↓
+reconocimiento
+↓
+selección humana
+↓
+reactivación
+~~~
+
+El cierre histórico no exigía:
+
+~~~text
+Search
+Library / Workspace
+carpetas / tags / categorías
+ranking
+indexación general
+historial universal
+pluralidad indefinida
+escala arbitraria
+búsqueda avanzada
+profundidad temporal ilimitada
+~~~
+
+La cardinalidad exacta de tres materiales pertenecía a una Realization local y no constituía norma general. La condición normativa era únicamente una pluralidad no trivial suficiente para que existiera selección discriminable.
+
+HPI amplió la continuidad de esa capacidad:
+
+~~~text
+trabajo actual
++
+materiales anteriores
+↓
+localizar antecedente pertinente
+↓
+seleccionarlo
+↓
+producir resultado posterior
+↓
+mantener reconocible antecedente → resultado
+↓
+persistir la relación
+~~~
+
+Tampoco HPI exigió declarar antes de inspeccionar:
+
+- número total de materiales;
+- límite temporal;
+- profundidad histórica;
+- historial completo disponible.
+
+Conclusión:
+
+~~~text
+R-DLOC-01-A
+→ CERRADA
+
+D-LOC-01
+→ diferencia real de orientación sobre el alcance
+→ NO demuestra por sí sola pérdida funcional
+→ NO puede ampliarse a historial universal o búsqueda general
+~~~
+
+---
+
+# 97. R-DLOC-01-B — comprobación humana discriminante
+
+Se realiza una comprobación humana mínima ante una necesidad concreta de recuperación, sin explicar previamente el alcance de “Materiales anteriores”.
+
+Material buscado:
+
+~~~text
+“La continuidad debería permitir recuperar lo anterior
+y añadir nuevas aportaciones sin perder el hilo.”
+~~~
+
+Evidencia humana:
+
+~~~text
+lugar elegido espontáneamente
+→ Materiales anteriores
+→ “es el lugar más claro donde hacer la búsqueda”
+
+material buscado
+→ ENCONTRADO
+
+ayuda externa
+→ NO
+
+memoria/notas/otra aplicación
+→ NO
+
+efecto práctico de la duda sobre alcance
+→ NINGUNO
+~~~
+
+La duda general sobre hasta dónde alcanza la colección permanece comprensible, pero no produjo en el caso:
+
+- abandono de la búsqueda;
+- selección errónea;
+- necesidad de herramienta externa;
+- imposibilidad de localizar;
+- imposibilidad de reutilizar;
+- pérdida de continuidad.
+
+Salida:
+
+~~~text
+R-DLOC-01-B
+→ CERRADA
+→ SALIDA B — FRICCIÓN NO CONSTITUTIVA
+~~~
+
+---
+
+# 98. Cierre de D-LOC-01
+
+La hipótesis fuerte queda falsada en el alcance contrastado:
+
+~~~text
+falta de alcance perceptible
+→ NO produjo pérdida material de localización
+~~~
+
+Por tanto:
+
+~~~text
+D-LOC-01
+→ CERRADA
+
+clasificación final
+→ FRICCIÓN DE ORIENTACIÓN NO CONSTITUTIVA
+
+gap material
+→ NO DEMOSTRADO
+
+cambio productivo
+→ NO DERIVADO
+
+tests nuevos
+→ NO DERIVADOS
+
+nuevo Product
+→ NO DERIVADO
+
+nuevo horizonte
+→ NO DERIVADO
+~~~
+
+Este cierre no afirma suficiencia universal ante cualquier escala futura. Afirma únicamente que, con el contrato histórico y el caso humano ejercido, no existe fundamento positivo para mantener D-LOC-01 como obligación abierta.
+
+---
+
+# 99. Punto de relevo post-DLOC
+
+Con D-LOC-01 cerrada, desaparece la única diferencia humana nueva que había quedado separada tras HITO-CONV-SYS-01.
+
+La siguiente decisión deja de pertenecer a localización selectiva y debe volver al nivel global:
+
+~~~text
+reaplicar mapa global
+↓
+contrastar obligaciones positivas independientes
+↓
+decidir entre:
+  continuidad estratégica justificada
+  o
+  retorno a estado estratégico estable
+~~~
