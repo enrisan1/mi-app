@@ -257,19 +257,19 @@ async function receiveAndContinueAsP2(
   transfer: string,
 ) {
   const shared = screen.getByRole("region", {
-    name: /^continuidad compartida$/i,
+    name: /^continuar un trabajo recibido de otra persona$/i,
   });
 
   fireEvent.change(
     within(shared).getByRole("textbox", {
-      name: /^antecedente compartido recibido$/i,
+      name: /^antecedente recibido de otra persona$/i,
     }),
     { target: { value: transfer } },
   );
 
   await user.click(
     within(shared).getByRole("button", {
-      name: /^recibir antecedente compartido$/i,
+      name: /^recibir antecedente para continuar$/i,
     }),
   );
 
