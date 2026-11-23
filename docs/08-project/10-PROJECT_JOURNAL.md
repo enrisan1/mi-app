@@ -14818,3 +14818,157 @@ R-CSYS-09-I
 → observar RED real
 → sólo después decidir intervención mínima
 ~~~
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-I/J/K / cierre técnico y humano de D3
+
+Se crea primero el contrato ACTREF sin tocar producción.
+
+Resultado inicial:
+
+~~~text
+ACTREF
+→ 1 FAIL / 5 PASS
+
+único fallo
+→ T-CSYS-ACTREF-01
+→ la acción especializada no está dentro de Trabajo actual
+~~~
+
+Se ejecuta además la regresión histórica:
+
+~~~text
+HPRES + HCONT
+→ 15/15 PASS
+~~~
+
+La diferencia queda aislada al referente de la acción.
+
+Después se aplica la intervención mínima:
+
+~~~text
+“Abrir opciones para conservar, publicar o compartir este trabajo”
+→ se mueve dentro de Trabajo actual
+~~~
+
+Se conserva íntegramente el handler y no se modifica Y/R, PostV1, persistencia ni KnowledgeTrajectory.
+
+Commit:
+
+~~~text
+de269ef
+fix(app): anchor specialized action to current work
+~~~
+
+GREEN:
+
+~~~text
+ACTREF
+→ 6/6 PASS
+
+HPRES + HCONT
+→ 15/15 PASS
+~~~
+
+Contraste humano final:
+
+~~~text
+“este trabajo”
+→ interpretado como Trabajo actual
+
+“Seguir trabajando”
+y
+“conservar/publicar/compartir”
+→ dos acciones distintas sobre el mismo trabajo
+
+“Continuar un trabajo recibido de otra persona”
+→ recorrido distinto claramente reconocible
+~~~
+
+Conclusión:
+
+~~~text
+D3
+→ cerrada técnica y humanamente
+
+CF-CSYS-09
+→ cerrado
+
+R-CSYS-09-K
+→ cerrada
+~~~
+
+D-LOC-01 permanece separado y no se reintroduce en CF-CSYS-09.
+
+
+---
+
+# 23/11/2026 — reevaluación y cierre de HITO-CONV-SYS-01
+
+Se reconstruyen las obligaciones del hito antes de decidir.
+
+Convergencia material:
+
+~~~text
+GAP-CONV-SYS-01…04
+→ CERRADOS
+~~~
+
+Escenario integrado:
+
+~~~text
+R-CSYS-07
+→ CERRADA
+→ E2E completo materialmente demostrado
+~~~
+
+Validación humana:
+
+~~~text
+R-CSYS-08
+→ salida B
+
+único bloqueo derivado
+→ continuidad humana reconocible
+→ formalizada como CF-CSYS-09
+~~~
+
+Tras R-CSYS-09-A…K:
+
+~~~text
+CF-CSYS-09
+→ CERRADO
+~~~
+
+No queda otro criterio independiente abierto derivado del hito.
+
+Se examina D-LOC-01:
+
+~~~text
+D-LOC-01
+→ duda sobre alcance perceptible de Materiales anteriores
+→ no demuestra pérdida del hilo vigente
+→ no demuestra pérdida de aportaciones
+→ no impide continuar
+→ no rompe KnowledgeTrajectory ni E2E
+→ queda fuera del bloqueo del hito
+~~~
+
+Decisión:
+
+~~~text
+HITO-CONV-SYS-01
+→ CERRADO
+~~~
+
+No se abre automáticamente nueva realización.
+
+Punto posterior:
+
+~~~text
+reevaluar mapa global
+→ comparar D-LOC-01 con cualquier obligación posterior pendiente
+→ derivar prioridad sólo después de esa reevaluación
+~~~
