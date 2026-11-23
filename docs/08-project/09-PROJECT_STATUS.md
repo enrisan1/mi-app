@@ -10454,3 +10454,79 @@ nuevo hecho / nueva decisión / nueva evidencia
 ~~~
 
 Documento: [132](132-REAPLICACION_GLOBAL_POST_DLOC_ESTABILIDAD_ESTRATEGICA.md).
+
+
+---
+
+# 23/11/2026 — CI-ENG-BASE-01 / apertura de auditoría de transferibilidad
+
+Se reduce la candidata de baseline de ingeniería.
+
+Resultado:
+
+~~~text
+reproducibilidad
+→ ya demostrada
+
+verificabilidad
+→ ya demostrada
+
+evolutividad
+→ ya demostrada
+
+núcleo independiente superviviente
+→ comprensibilidad / transferibilidad operativa
+  desde el estado vigente
+~~~
+
+Se abre:
+
+~~~text
+R-ENG-BASE-01
+→ auditoría empírica de transferibilidad
+→ producción congelada
+~~~
+
+Hallazgo provisional:
+
+~~~text
+DF-ENG-BASE-01
+→ README / DEVELOPMENT_GUIDE
+  prescriben typecheck como validación limpia
+
+pero
+
+DEUDA-TSC-COMP-01
+→ 14 errores TypeScript históricos conocidos
+→ baseline global de typecheck no sana
+~~~
+
+Esto crea una fricción real para un operador nuevo, que no puede distinguir inmediatamente regresión nueva de deuda histórica usando sólo la entrada técnica ordinaria.
+
+Simulación de cambio pequeño:
+
+~~~text
+producción y tests
+→ localizables directamente
+
+reglas para preservar historia
+→ presentes en AGENTS.md
+
+dependencia estructural de arqueología histórica
+→ NO demostrada
+~~~
+
+Estado:
+
+~~~text
+R-ENG-BASE-01
+→ ABIERTA
+
+salida provisional
+→ B — FRICCIÓN LOCALIZADA
+
+pendiente
+→ ejecución empírica del checkout actual
+~~~
+
+Documento: [133](133-CI-ENG-BASE-01_AUDITORIA_TRANSFERIBILIDAD_BASELINE.md).
