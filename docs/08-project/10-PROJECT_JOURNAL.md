@@ -15230,3 +15230,40 @@ Se rechaza:
 R-ENG-BASE-02 queda cerrada y OB-ENG-BASE-01 confirmada.
 
 Siguiente actuación: R-ENG-BASE-03-A, sólo 8 errores de App/association y validación antes de seguir.
+
+
+---
+
+# 23/11/2026 — R-ENG-BASE-03-A validada
+
+Se aplica narrowing explícito a la asociación única de trayectoria IA.
+
+La validación focal queda:
+
+~~~text
+AI convergence
+→ 3/3 PASS
+~~~
+
+Typecheck:
+
+~~~text
+antes
+→ 29 errores
+
+después
+→ 21 errores
+
+reducción exacta
+→ 8 errores
+
+errores nuevos
+→ ninguno
+~~~
+
+Se confirma que el lote era puramente de tipado y no alteró comportamiento.
+
+R-ENG-BASE-03-A queda cerrada.
+
+Siguiente lote autorizado por la reducción previa:
+R-ENG-BASE-03-B — App / conditionIds, 7 errores.
