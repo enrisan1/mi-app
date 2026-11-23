@@ -233,3 +233,37 @@ criterio final → npm run typecheck → exit 0
 No se modifica producción en esta actuación.
 
 La siguiente actuación justificable es R-ENG-BASE-03-A: corregir exclusivamente el subgrupo App/association, 8 errores, sin cambiar comportamiento, y validar antes de continuar.
+
+---
+
+# 12. Validación de R-ENG-BASE-03-A
+
+Se implementa únicamente el narrowing de association previsto para el primer lote.
+
+Resultado empírico:
+
+~~~text
+App.knowledge-trajectory.ai-convergence.test.tsx
+→ 3/3 PASS
+
+npm run typecheck
+→ 21 errores restantes
+→ exactamente 8 menos que la baseline de 29
+~~~
+
+No aparecen errores nuevos.
+
+Por tanto:
+
+~~~text
+R-ENG-BASE-03-A
+→ CERRADA
+
+subgrupo App / association
+→ 8 → 0
+
+hipótesis de corrección local
+→ CONFIRMADA
+~~~
+
+La siguiente actuación permanece R-ENG-BASE-03-B, limitada a los 7 errores de conditionIds.
