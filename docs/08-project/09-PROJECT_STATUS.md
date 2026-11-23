@@ -10814,3 +10814,71 @@ TOTAL
 
 Siguiente actuación:
 R-ENG-BASE-03-C — corregir exclusivamente los 4 errores JSX de comparación.
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-BASE-03-C
+
+Se valida el saneamiento del subgrupo comparison / JSX.
+
+Cambio:
+
+~~~text
+JSX.Element
+→ ReactElement explícito
+
+archivos
+→ ComparisonProgress.test.tsx
+→ InlineDetectionExperience.test.tsx
+→ InlineDetectionExperience.tsx
+→ LateralComparisonExperience.test.tsx
+~~~
+
+Validación:
+
+~~~text
+M5 + M6 + M7
+→ 3/3 archivos PASS
+→ 23/23 tests PASS
+
+npm run typecheck
+→ 10 errores
+→ todos en detectLiteralDifferences.ts
+
+errores JSX
+→ 0
+
+errores nuevos
+→ 0
+~~~
+
+Resultado:
+
+~~~text
+R-ENG-BASE-03-C
+→ CERRADA
+
+4 errores
+→ 0
+
+props
+→ sin cambios
+
+renderizado
+→ sin cambios
+
+comportamiento
+→ preservado
+~~~
+
+Queda únicamente:
+
+~~~text
+comparison / LCS
+→ 10 errores
+→ detectLiteralDifferences.ts
+~~~
+
+Siguiente actuación:
+R-ENG-BASE-03-D — corregir exclusivamente la indexación segura de la matriz LCS.
