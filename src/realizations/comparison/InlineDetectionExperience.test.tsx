@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { describe, expect, it } from "vitest";
 import { render, screen, within } from "@testing-library/react";
 
@@ -15,7 +16,7 @@ type InlineDetectionExperienceProps = {
 
 type InlineDetectionExperienceComponent = (
   props: InlineDetectionExperienceProps,
-) => JSX.Element;
+) => ReactElement;
 
 async function loadExperience(): Promise<InlineDetectionExperienceComponent> {
   const modules = import.meta.glob<{
