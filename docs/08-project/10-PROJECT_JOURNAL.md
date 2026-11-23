@@ -15505,3 +15505,33 @@ DF-ENG-BASE-04
 Se deriva R-ENG-BASE-04 como consolidación mínima documental/operativa previa a declarar fundamento suficiente para construir.
 
 Documento: [137](137-REEVALUACION_FINAL_BASELINE_INGENIERIA.md).
+
+
+---
+
+# 24/11/2026 — cierre de R-ENG-BASE-04
+
+Se canoniza la regresión completa mediante `npm run test:regression`, preservando `npm test` para uso interactivo, y se alinea el README con el estado material vigente del repositorio.
+
+Evidencia:
+
+~~~text
+typecheck → PASS
+test:regression → 83/83 archivos, 598/598 tests PASS
+lint → PASS
+build → PASS
+~~~
+
+Conclusión:
+
+~~~text
+DF-ENG-BASE-02 → RESUELTA EN SU ALCANCE
+DF-ENG-BASE-04 → RESUELTA
+CI-ENG-BASE-01 → SATISFECHA
+CI-ENG-BASE-02 → SATISFECHA EN SU ALCANCE
+R-ENG-BASE-04 → CERRADA
+~~~
+
+La baseline queda técnicamente competente para soportar construcción posterior justificada, sin que este cierre derive por sí mismo una nueva funcionalidad.
+
+Documento: [138](138-CIERRE_R-ENG-BASE-04_BASELINE_INGENIERIA.md).
