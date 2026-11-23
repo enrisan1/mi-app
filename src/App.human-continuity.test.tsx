@@ -184,7 +184,7 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", {
-        name: /^retomar trayectoria integrada existente$/i,
+        name: /^retomar opciones anteriores de conservación, publicación y colaboración$/i,
       }),
     ).toBeInTheDocument();
 
