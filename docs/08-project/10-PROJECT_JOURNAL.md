@@ -15267,3 +15267,43 @@ R-ENG-BASE-03-A queda cerrada.
 
 Siguiente lote autorizado por la reducción previa:
 R-ENG-BASE-03-B — App / conditionIds, 7 errores.
+
+
+---
+
+# 23/11/2026 — R-ENG-BASE-03-B validada
+
+Se expresa conditionIds como estructura fija de tres elementos y se estrecha failedConditionId antes de construir DecisionReasonInput.
+
+Validación focal:
+
+~~~text
+reason-convergence
+→ 3/3 PASS
+~~~
+
+Typecheck:
+
+~~~text
+antes
+→ 21 errores
+
+después
+→ 14 errores
+
+reducción exacta
+→ 7 errores
+
+App.tsx
+→ 0 errores
+
+errores nuevos
+→ ninguno
+~~~
+
+Se confirma que el lote era puramente de tipado y no alteró lógica de decisión.
+
+R-ENG-BASE-03-B queda cerrada.
+
+Siguiente lote:
+R-ENG-BASE-03-C — comparación / JSX, 4 errores.
