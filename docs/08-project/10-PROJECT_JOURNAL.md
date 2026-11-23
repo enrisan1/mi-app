@@ -15413,3 +15413,41 @@ OB-ENG-BASE-01
 señal técnica TypeScript inequívoca
 → RESTAURADA
 ~~~
+
+
+---
+
+# 23/11/2026 — DF-ENG-BASE-03 caracterizada
+
+La deuda de seguridad detectada por npm queda reducida a tooling de desarrollo.
+
+Hechos:
+
+~~~text
+npm audit --omit=dev
+→ 0 vulnerabilities
+
+npm audit
+→ 15 vulnerabilities
+~~~
+
+`npm explain` reduce las vulnerabilidades a cinco raíces de tooling.
+
+El dry-run de npm 10 falla internamente con `edgesOut`; npm 11.21.1 sí calcula un plan de remediación.
+
+`npm outdated` confirma que Vitest/coverage, Vite y ESLint disponen de versiones Wanted corregidas dentro de sus majors actuales.
+
+Conclusión:
+
+~~~text
+DF-ENG-BASE-03
+→ deuda real, no runtime
+→ no bloqueante de producto
+→ corregible de forma compatible
+
+OB-ENG-SEC-01
+→ ABIERTA
+
+R-ENG-SEC-01
+→ siguiente actuación
+~~~
