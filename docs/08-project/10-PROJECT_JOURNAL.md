@@ -14743,3 +14743,78 @@ HUMAN GATE
 → comprobar si las acciones especializadas se distinguen
 → comprobar reanudación tras recarga
 ~~~
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-H / separación de referente y localización
+
+El HUMAN GATE posterior a R-CSYS-09-G deja dos fricciones:
+
+~~~text
+D3
+→ “este trabajo” se interpreta como posible trabajo recibido
+
+D4
+→ “Materiales anteriores” no informa qué universo cubre ni hasta dónde retrocede
+~~~
+
+La inspección demuestra que son diferencias distintas.
+
+D3:
+- la acción material usa el trabajo ordinario actual;
+- el handler histórico Y → PostV1 no cambia;
+- la ambigüedad es sólo de referente;
+- pertenece a CF-CSYS-09-06 porque impide distinguir sin ensayo/error qué trabajo recibe la actuación especializada.
+
+Reducción:
+
+~~~text
+conservar/publicar/compartir
+→ debe quedar inequívocamente anclado a Trabajo actual
+→ sin cambiar handler ni semántica Y/R
+~~~
+
+Se deriva contrato rojo:
+
+~~~text
+T-CSYS-ACTREF-01…06
+~~~
+
+D4:
+- App muestra, al activar inspección, todos los ordinaryMaterials conservados;
+- el contrato histórico de localización exigía pluralidad pequeña, inspeccionable, selección humana y reactivación;
+- excluía historial universal, escala arbitraria y búsqueda general;
+- el HUMAN GATE sí reconoce tras recarga el trabajo vigente y dónde continuar.
+
+Conclusión:
+
+~~~text
+D4
+→ no falsifica CF-CSYS-09-05
+→ se separa como D-LOC-01
+→ alcance perceptible de materiales anteriores
+→ debe evaluarse después contra localización selectiva/HPI
+~~~
+
+Estado:
+
+~~~text
+CF-CSYS-09
+→ bloqueo residual único: D3
+
+D-LOC-01
+→ abierto por separado
+
+producción
+→ congelada
+~~~
+
+Siguiente:
+
+~~~text
+R-CSYS-09-I
+→ crear contrato rojo ACTREF
+→ observar RED real
+→ sólo después decidir intervención mínima
+~~~
