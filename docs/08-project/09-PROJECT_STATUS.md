@@ -10982,3 +10982,79 @@ baseline de ingeniería
 ~~~
 
 No se deriva del cierre ninguna necesidad de modificar el warning de bundle, timeouts paralelos, CI automática ni dependencias npm.
+
+
+---
+
+# 23/11/2026 — caracterización de DF-ENG-BASE-03
+
+Se completa la caracterización del hallazgo de seguridad de dependencias.
+
+~~~text
+npm audit
+→ 15 vulnerabilidades
+→ 7 moderate / 8 high
+
+npm audit --omit=dev
+→ 0 vulnerabilidades
+~~~
+
+Reducción:
+
+~~~text
+runtime del producto
+→ no afectado por vulnerabilidades conocidas de npm audit
+
+cadena de desarrollo
+→ afectada
+
+raíces materiales
+→ Vitest/coverage
+→ Vite
+→ ESLint
+→ eslint-plugin-react-hooks
+→ jsdom
+~~~
+
+La simulación con npm 10.8.2 falla por error interno `edgesOut`; la misma simulación con npm 11.21.1 produce plan sin `--force`.
+
+`npm outdated` demuestra que las raíces directas pueden actualizarse dentro de las majors actuales:
+
+~~~text
+vitest              4.1.9 → 4.1.12
+@vitest/coverage-v8 4.1.9 → 4.1.12
+vite                8.0.16 → 8.3.8
+eslint              10.5.0 → 10.15.0
+~~~
+
+Resultado:
+
+~~~text
+DF-ENG-BASE-03
+→ CARACTERIZADA
+
+riesgo runtime
+→ no demostrado
+
+deuda de seguridad de tooling
+→ real
+
+remediación compatible
+→ demostrada
+
+salto major
+→ no necesario
+~~~
+
+Se deriva:
+
+~~~text
+OB-ENG-SEC-01
+→ eliminar vulnerabilidades conocidas del tooling
+→ preservar baseline limpia
+→ sin --force
+→ sin saltos major innecesarios
+~~~
+
+Siguiente actuación:
+R-ENG-SEC-01 — actualización coordinada de Vitest/coverage, Vite y ESLint a versiones Wanted y validación integral.
