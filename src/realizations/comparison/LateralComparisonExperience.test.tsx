@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { describe, expect, it } from "vitest";
 import { fireEvent, render, screen, within } from "@testing-library/react";
 
@@ -15,7 +16,7 @@ type LateralComparisonExperienceProps = {
 
 type LateralComparisonExperienceComponent = (
   props: LateralComparisonExperienceProps,
-) => JSX.Element;
+) => ReactElement;
 
 async function loadExperience(): Promise<LateralComparisonExperienceComponent> {
   const modules = import.meta.glob<{
