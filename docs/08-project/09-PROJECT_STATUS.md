@@ -9876,3 +9876,65 @@ R-CSYS-09-E
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-E: reducción de D1/D2
+
+Se inspecciona App y ResumeExperience sin modificar producción.
+
+D1 queda reducido a presentación:
+
+~~~text
+Trabajo actual
+→ unidad perceptible
+→ antecedente + aportación actual + continuación
+~~~
+
+No requiere nuevo modelo de datos ni concatenación de contenidos.
+
+D2 queda reducido a jerarquía y vocabulario:
+
+~~~text
+Seguir trabajando
+→ junto al trabajo actual
+→ antes de actuaciones auxiliares
+
+PostV1
+→ semántica histórica preservada
+→ término interno no necesario en la decisión humana
+
+Continuidad compartida
+→ debe expresar recepción/continuación
+  desde antecedente enviado por otra persona
+~~~
+
+Se deriva contrato previo a producción:
+
+~~~text
+T-CSYS-HPRES-01…07
+→ agrupación del hilo
+→ recuperación
+→ jerarquía de continuar
+→ traducción PostV1
+→ preservación Y/R
+→ diferenciación de antecedente recibido
+→ regresión HCONT
+~~~
+
+Estado:
+
+~~~text
+R-CSYS-09-E
+→ CERRADA COMO REDUCCIÓN
+
+R-CSYS-09-F
+→ SIGUIENTE ACTUACIÓN
+→ contrato rojo
+
+producción
+→ SIN CAMBIOS
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
