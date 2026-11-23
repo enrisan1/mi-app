@@ -4111,3 +4111,418 @@ R-CSYS-09-F
 
 > Crear el contrato rojo de presentación humana T-CSYS-HPRES-01…07 sin
 > modificar producción.
+
+
+---
+
+# 73. R-CSYS-09-F — contrato rojo de presentación humana
+
+Se crea antes de producción:
+
+~~~text
+src/App.human-thread-presentation.test.tsx
+~~~
+
+Contrato:
+
+~~~text
+T-CSYS-HPRES-01…07
+~~~
+
+RED observado:
+
+~~~text
+7 tests
+→ 1 PASS
+→ 6 FAIL
+
+FAIL
+→ HPRES-01
+→ HPRES-02
+→ HPRES-03
+→ HPRES-04
+→ HPRES-05
+→ HPRES-06
+
+PASS
+→ HPRES-07
+~~~
+
+Interpretación:
+
+~~~text
+HPRES-01/02
+→ D1
+→ falta una unidad perceptible “Trabajo actual”
+
+HPRES-03/04/05/06
+→ D2
+→ jerarquía y vocabulario todavía técnicos o ambiguos
+
+HPRES-07
+→ continuidad material A1 → A2 intacta
+→ no se fuerza entrada en superficie especializada
+~~~
+
+El RED es válido porque no aparece pérdida de datos, rotura de persistencia,
+KnowledgeTrajectory, KGV, PostV1 ni elección Y/R.
+
+Commit del contrato:
+
+~~~text
+ab4d069
+→ test(app): add red human thread presentation contract
+~~~
+
+Conclusión:
+
+~~~text
+R-CSYS-09-F
+→ CERRADA
+
+D1/D2
+→ confirmadas como diferencias de presentación
+→ sin tercera causa raíz material
+~~~
+
+---
+
+# 74. R-CSYS-09-G — intervención mínima de presentación
+
+Se modifica únicamente la presentación de App.
+
+Cambio productivo:
+
+~~~text
+Trabajo actual
+→ nueva región accesible
+→ agrupa ResumeExperience
+→ declara que las aportaciones mostradas pertenecen al mismo trabajo
+
+Seguir trabajando
+→ queda dentro de Trabajo actual
+
+Continuidad compartida
+→ “Continuar un trabajo recibido de otra persona”
+
+Antecedente compartido recibido
+→ “Antecedente recibido de otra persona”
+
+Recibir antecedente compartido
+→ “Recibir antecedente para continuar”
+
+entrada PostV1
+→ “Abrir opciones para conservar, publicar o compartir este trabajo”
+
+retomar R
+→ “Retomar opciones anteriores de conservación, publicación y colaboración”
+~~~
+
+No se modifica:
+
+- handlers;
+- persistencia;
+- `ordinary.materials`;
+- `KnowledgeTrajectory`;
+- KGV;
+- semántica Y/R;
+- `PostV1IntegratedExperience`.
+
+Commit productivo:
+
+~~~text
+a11981e
+→ fix(app): present ordinary work as one human-readable thread
+~~~
+
+---
+
+# 75. GREEN focal de HPRES
+
+Primera ejecución tras producción:
+
+~~~text
+7 tests
+→ 6 PASS
+→ 1 FAIL
+~~~
+
+El único fallo era del harness en HPRES-06:
+
+~~~text
+getByText(...)
+→ encontraba tres coincidencias válidas
+→ h2 + explicación + label
+~~~
+
+La producción ya expresaba correctamente la recepción desde otra persona.
+
+Se corrige únicamente el test para exigir la explicación inequívoca dentro de
+la región recibida.
+
+Commit:
+
+~~~text
+fbe005e
+→ test(app): fix received-work presentation assertion
+~~~
+
+Resultado:
+
+~~~text
+App.human-thread-presentation.test.tsx
+→ 1/1 archivo PASS
+→ 7/7 tests PASS
+~~~
+
+Por tanto:
+
+~~~text
+D1
+→ técnicamente satisfecha
+
+D2
+→ técnicamente satisfecha
+
+continuidad material
+→ preservada
+~~~
+
+---
+
+# 76. Regresión histórica focal
+
+Se ejecuta inicialmente:
+
+~~~text
+App.human-continuity
+App.hpi
+App.kgv
+App
+PostV1IntegratedExperience
+~~~
+
+Primer resultado:
+
+~~~text
+5 archivos
+→ 2 PASS
+→ 3 FAIL
+
+65 tests
+→ 44 PASS
+→ 21 FAIL
+~~~
+
+Los fallos se detienen en selectores históricos de etiquetas modificadas, no en
+aserciones materiales posteriores.
+
+Se actualizan únicamente selectores en:
+
+~~~text
+App.human-continuity.test.tsx
+→ d7b2fd9
+
+App.kgv.test.tsx
+→ eaa64b8
+
+App.test.tsx
+→ 4286326
+~~~
+
+Queda un selector histórico adicional en HCONT-06:
+
+~~~text
+“Retomar trayectoria integrada existente”
+~~~
+
+Se actualiza sin tocar producción:
+
+~~~text
+8414e70
+→ test(app): update final continuity selector after presentation change
+~~~
+
+Resultado final:
+
+~~~text
+5/5 archivos PASS
+65/65 tests PASS
+~~~
+
+Conclusión:
+
+~~~text
+patrimonio focal HCONT/HPI/KGV/T67/PostV1
+→ CONSERVADO
+~~~
+
+---
+
+# 77. Regresión global y selectores de convergencia
+
+Primera suite global posterior:
+
+~~~text
+npx vitest run --maxWorkers=2
+
+82 archivos
+→ 79 PASS
+→ 3 FAIL
+
+592 tests
+→ 587 PASS
+→ 5 FAIL
+~~~
+
+Se identifican dos categorías distintas.
+
+## 77.1 Selectores históricos de continuidad recibida
+
+`handoff-convergence` y `system-e2e` siguen buscando:
+
+~~~text
+Continuidad compartida
+Antecedente compartido recibido
+Recibir antecedente compartido
+~~~
+
+Se actualizan sólo esos selectores:
+
+~~~text
+7de9d11
+→ App.knowledge-trajectory.handoff-convergence.test.tsx
+
+642f9b0
+→ App.knowledge-trajectory.system-e2e.test.tsx
+~~~
+
+Validación aislada:
+
+~~~text
+2/2 archivos PASS
+5/5 tests PASS
+~~~
+
+No aparece regresión funcional en relevo ni E2E.
+
+## 77.2 Incidencia de concurrencia en reason-convergence
+
+En la suite global con `--maxWorkers=2` reaparece:
+
+~~~text
+T-CSYS-DEC-01
+→ timeout 5000 ms
+
+T-CSYS-DEC-02
+→ texto intercalado/corrompido
+→ esperado:
+  “Elegir una alternativa que conserve procedencia y permita continuar”
+→ recibido:
+  cadena con caracteres intercalados/desordenados
+~~~
+
+El archivo aislado:
+
+~~~text
+npx vitest run src/App.knowledge-trajectory.reason-convergence.test.tsx
+→ 1/1 archivo PASS
+→ 3/3 tests PASS
+~~~
+
+No se modifica timeout ni producción.
+
+Se serializa completamente la suite:
+
+~~~text
+npx vitest run --maxWorkers=1
+→ 82/82 archivos PASS
+→ 592/592 tests PASS
+~~~
+
+Conclusión fundada:
+
+~~~text
+incidencia
+→ sensibilidad del harness global a carga/concurrencia
+
+regresión funcional atribuible a R-CSYS-09-G
+→ NO DEMOSTRADA
+
+aumentar testTimeout
+→ NO JUSTIFICADO
+
+modificar producción por esta incidencia
+→ NO JUSTIFICADO
+~~~
+
+La contención reproducible para validación global queda:
+
+~~~text
+--maxWorkers=1
+~~~
+
+hasta que exista una actuación específica destinada a investigar la
+infraestructura de tests.
+
+---
+
+# 78. Estado técnico resultante de R-CSYS-09-G
+
+~~~text
+R-CSYS-09-F
+→ CERRADA
+→ RED válido observado
+
+R-CSYS-09-G
+→ IMPLEMENTADA
+→ GREEN focal 7/7
+→ regresión focal 65/65
+→ handoff + E2E 5/5
+→ reason-convergence aislado 3/3
+→ suite global serializada 592/592
+
+D1
+→ SATISFECHA TÉCNICAMENTE
+
+D2
+→ SATISFECHA TÉCNICAMENTE
+
+CF-CSYS-09
+→ NO CERRADO TODAVÍA
+→ nació de falsación humana
+→ requiere nueva observación humana
+~~~
+
+No queda fundamento para nueva modificación productiva antes del gate.
+
+---
+
+# 79. Siguiente actuación
+
+~~~text
+HUMAN GATE de CF-CSYS-09
+→ repetir observación humana sobre la App modificada
+→ sin explicar previamente el significado de las nuevas etiquetas
+→ comprobar si D1/D2 quedan realmente resueltas
+~~~
+
+Condiciones mínimas a observar:
+
+1. reconocimiento espontáneo de `Trabajo actual` como una sola obra/hilo;
+2. identificación de aportación anterior y actual como partes de ese mismo
+   trabajo;
+3. reconocimiento espontáneo de `Seguir trabajando` como continuación
+   principal;
+4. comprensión suficiente de la acción para conservar/publicar/compartir sin
+   conocer `post-V1`;
+5. comprensión de “trabajo recibido de otra persona” como ruta distinta;
+6. reanudación tras recarga sin ensayo/error ni pérdida de identidad.
+
+Producción queda congelada hasta ese resultado.
+
+# 80. Punto de reanudación
+
+> Ejecutar el HUMAN GATE posterior a R-CSYS-09-G. No introducir nuevas
+> modificaciones productivas antes de observar si la persona reconoce ahora el
+> hilo ordinario y distingue las acciones auxiliares.
