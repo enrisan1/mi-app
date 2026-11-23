@@ -3679,3 +3679,435 @@ siguiente actuación
 > Ejecutar R-CSYS-09-E sin modificar producción: reducir la identidad perceptible
 > del hilo y la jerarquía/vocabulario de acciones hasta una intervención mínima
 > verificable.
+
+
+# 66. R-CSYS-09-E — reducción de D1 y D2 contra la estructura real
+
+Se inspecciona la estructura productiva antes de modificarla.
+
+Hechos observados en `App.tsx`:
+
+~~~text
+Identidad autoral
+→ aparece antes que ResumeExperience
+
+ResumeExperience
+→ contiene la continuidad ordinaria real
+
+Continuidad compartida
+→ aparece inmediatamente después de ResumeExperience
+
+Seguir trabajando
+→ aparece mucho más tarde en App
+
+Usar este trabajo en integración post-V1
+→ aparece junto a Seguir trabajando
+→ al final del recorrido ordinario
+~~~
+
+La separación física actual explica conjuntamente la observación humana:
+
+~~~text
+Identidad autoral
+→ puede parecer el siguiente paso lógico
+
+Continuidad compartida
+→ puede parecer vinculada a “Seguir trabajando”
+
+Seguir trabajando
+→ queda lejos de la propia superficie que continúa
+
+post-V1
+→ expone una denominación histórica/técnica
+  sin significado operativo suficiente
+~~~
+
+También se inspecciona `ResumeExperience.tsx`.
+
+La realización ya conserva materialmente:
+
+~~~text
+restoredPrevious
+currentInput
+result.previous
+result.current
+retainedPrevious
+~~~
+
+y persiste correctamente la transición:
+
+~~~text
+X
+→ Y
+→ Y pasa a ser previous en la siguiente ejecución
+→ X permanece retenido
+~~~
+
+Por tanto, D1 no exige nuevo modelo de datos.
+
+---
+
+# 67. Reducción de D1 — identidad perceptible del hilo
+
+## 67.1 Diferencia exacta
+
+Hoy la interfaz expresa:
+
+~~~text
+Aportación anterior
+[ A1 ]
+
+Qué has hecho ahora
+[ A2 ]
+~~~
+
+o, tras recarga:
+
+~~~text
+Aportación anterior
+[ A2 ]
+
+Otra aportación disponible
+[ A1 ]
+
+Qué puedes hacer ahora
+[ input ]
+~~~
+
+La relación material existe, pero la presentación no afirma suficientemente:
+
+~~~text
+A1
++
+A2
+→ partes de un mismo trabajo
+~~~
+
+## 67.2 Intervención mínima candidata
+
+No se añade persistencia, relación ni entidad nueva.
+
+Se introduce únicamente una unidad semántica de presentación:
+
+~~~text
+TRABAJO ACTUAL
+→ agrupa la continuidad ordinaria ya existente
+
+dentro:
+→ aportación anterior de este trabajo
+→ aportación más reciente / actual de este trabajo
+→ nueva aportación a este trabajo
+~~~
+
+La formulación exacta puede variar, pero debe quedar congelada esta semántica:
+
+> Las aportaciones no son piezas sueltas que casualmente aparecen juntas; la
+> interfaz debe presentarlas explícitamente como partes del mismo trabajo.
+
+No se exige:
+
+- concatenar físicamente los textos;
+- convertir A1+A2 en un documento único;
+- crear un nuevo identificador de obra;
+- modificar `ordinary.materials`;
+- modificar `KnowledgeTrajectory`;
+- mostrar toda la historia completa del trabajo.
+
+Para el alcance de CF-CSYS-09 basta con que el antecedente, el estado actual y
+la acción de continuar queden bajo una misma unidad reconocible.
+
+---
+
+# 68. Reducción de D2 — jerarquía y vocabulario de acciones
+
+## 68.1 Diferencia exacta
+
+La observación humana no cuestiona que existan:
+
+- identidad autoral;
+- continuidad compartida;
+- PostV1;
+- trayectoria integrada previa.
+
+Cuestiona que esas capacidades compitan perceptivamente con la continuación
+principal.
+
+La diferencia se reduce a:
+
+~~~text
+acción principal
+→ debe estar junto al trabajo que continúa
+
+acciones auxiliares
+→ deben presentarse como opcionales sobre ese trabajo
+
+lenguaje interno
+→ no debe ser requisito para decidir qué acción humana ejercer
+~~~
+
+## 68.2 “Seguir trabajando”
+
+La intervención mínima candidata es mover/presentar:
+
+~~~text
+Seguir trabajando
+~~~
+
+inmediatamente junto a la unidad:
+
+~~~text
+Trabajo actual
+~~~
+
+y antes de las actuaciones auxiliares.
+
+No cambia su handler:
+
+~~~text
+setResumeExperienceKey(key => key + 1)
+~~~
+
+No cambia persistencia ni transición.
+
+## 68.3 Integración PostV1
+
+La semántica histórica se conserva, pero la etiqueta ordinaria no debe exigir
+conocer el término `post-V1`.
+
+La acción puede expresarse humanamente como una actuación opcional del tipo:
+
+~~~text
+Abrir opciones para conservar, publicar o compartir este trabajo
+~~~
+
+Esta formulación no afirma que esas operaciones ocurran al pulsar; afirma que se
+abre la superficie donde esas opciones existen.
+
+Semántica interna preservada:
+
+~~~text
+handler
+→ integrationChoice = "current"
+
+si existe R previa y se elige Y
+→ conserva comportamiento histórico T67
+
+PostV1IntegratedExperience
+→ sin cambios
+~~~
+
+El identificador interno `post-v1` puede seguir existiendo en código, tests de
+modelo y persistencia. Lo que se elimina de la decisión ordinaria es la
+obligación de entenderlo.
+
+## 68.4 Trayectoria integrada previa
+
+Si existe R previa, la segunda alternativa debe seguir disponible.
+
+La presentación humana mínima candidata es equivalente a:
+
+~~~text
+Retomar opciones anteriores de conservación, publicación y colaboración
+~~~
+
+No se modifica la semántica histórica de “retomar R”.
+
+La formulación final deberá probarse contra T67 antes de producción.
+
+## 68.5 Continuidad compartida
+
+La observación demuestra que:
+
+~~~text
+Continuidad compartida
+Antecedente compartido recibido
+~~~
+
+no permiten inferir con seguridad si:
+
+- se continúa el propio trabajo;
+- se recibe trabajo de otra persona;
+- se mezcla automáticamente lo creado por varios usuarios.
+
+La funcionalidad real es más estrecha:
+
+~~~text
+recibir un antecedente transferido
+→ continuar desde ese antecedente
+~~~
+
+Por tanto, la presentación mínima debe expresar esa función humana, por ejemplo:
+
+~~~text
+Continuar un trabajo recibido de otra persona
+~~~
+
+y acompañarla de una indicación equivalente a:
+
+~~~text
+Usa esta opción sólo si otra persona te ha enviado un antecedente para continuar.
+~~~
+
+No se modifica:
+
+- JSON recibido;
+- validación;
+- contribución de B;
+- KGV;
+- relevo;
+- persistencia.
+
+---
+
+# 69. Estructura mínima resultante
+
+La reducción no deriva una reorganización completa de App.
+
+Sólo exige esta jerarquía local:
+
+~~~text
+TRABAJO ACTUAL
+├─ aportación/antecedente del mismo trabajo
+├─ estado o aportación actual
+├─ nueva aportación a este trabajo
+└─ Seguir trabajando
+
+OTRAS ACCIONES SOBRE ESTE TRABAJO
+├─ autoría
+├─ comparación
+├─ apoyo IA
+├─ conservar / publicar / compartir
+└─ continuar un trabajo recibido de otra persona
+~~~
+
+No se exige que todas las capacidades auxiliares se muevan físicamente en una
+sola actuación.
+
+Para cerrar D1/D2 basta con:
+
+1. que la continuidad ordinaria forme una unidad perceptible;
+2. que `Seguir trabajando` quede inequívocamente asociado a esa unidad;
+3. que la entrada PostV1 deje de exponer vocabulario interno;
+4. que la continuidad compartida explique que se trata de recibir un trabajo
+   ajeno/transferido, no de continuar el propio hilo ordinario.
+
+La reubicación completa de identidad autoral u otras herramientas sólo se
+derivará si el HUMAN GATE posterior demuestra que siguen compitiendo tras esta
+reducción.
+
+---
+
+# 70. Contrato rojo mínimo derivado
+
+Antes de producción debe crearse un contrato nuevo, separado del contrato
+material HCONT ya verde.
+
+Nombre propuesto:
+
+~~~text
+src/App.human-thread-presentation.test.tsx
+~~~
+
+Condiciones:
+
+~~~text
+T-CSYS-HPRES-01
+→ con A1 → A2,
+  existe una región reconocible como “Trabajo actual”
+  que contiene ambas aportaciones como partes del mismo trabajo
+
+T-CSYS-HPRES-02
+→ tras remount,
+  el trabajo actual sigue agrupando
+  la aportación vigente,
+  el antecedente conservado
+  y la posibilidad de nueva aportación
+
+T-CSYS-HPRES-03
+→ “Seguir trabajando”
+  está asociado a la unidad “Trabajo actual”
+  y aparece antes de las acciones auxiliares de continuidad compartida
+
+T-CSYS-HPRES-04
+→ la vista ordinaria no exige comprender el término “post-V1”
+  para abrir la superficie de conservar/publicar/compartir
+
+T-CSYS-HPRES-05
+→ con R previa,
+  siguen existiendo dos decisiones distintas:
+  usar el trabajo actual en la superficie especializada
+  y retomar la trayectoria previa,
+  sin modificar Y ni R antes de elegir
+
+T-CSYS-HPRES-06
+→ la recepción colaborativa se presenta como
+  continuación desde un trabajo/antecedente recibido de otra persona,
+  diferenciada de continuar el propio trabajo
+
+T-CSYS-HPRES-07
+→ los contratos materiales T-CSYS-HCONT-01…08
+  siguen íntegros
+~~~
+
+Criterio de RED válido:
+
+> Deben fallar únicamente condiciones de agrupación, jerarquía o vocabulario.
+> Si aparece pérdida material de A1/A2, PostV1, KGV, T67 o persistencia, la
+> reducción sería incorrecta y habría que detener la intervención.
+
+---
+
+# 71. Decisión de R-CSYS-09-E
+
+La evidencia permite reducir D1 y D2 sin nuevo modelo ni rediseño general.
+
+~~~text
+D1
+→ se reduce a PRESENTACIÓN DE UNIDAD
+→ “Trabajo actual” como contenedor semántico
+→ A1/A2 explícitamente pertenecen al mismo hilo
+
+D2
+→ se reduce a JERARQUÍA + TRADUCCIÓN
+→ continuidad principal junto al trabajo
+→ acciones auxiliares separadas
+→ vocabulario interno PostV1 no expuesto como decisión humana
+→ continuidad compartida explicada como recepción de antecedente ajeno
+~~~
+
+Intervención mínima candidata:
+
+~~~text
+producción
+→ TODAVÍA SIN CAMBIOS
+
+datos
+→ SIN CAMBIOS
+
+persistencia
+→ SIN CAMBIOS
+
+KnowledgeTrajectory
+→ SIN CAMBIOS
+
+PostV1IntegratedExperience
+→ SIN CAMBIOS
+
+KGV / T67
+→ PATRIMONIO A PROTEGER
+~~~
+
+Siguiente actuación derivada:
+
+~~~text
+R-CSYS-09-F
+→ crear únicamente T-CSYS-HPRES-01…07
+→ ejecutar RED real
+→ confirmar qué parte de D1/D2 falta materialmente
+→ sólo después modificar producción
+~~~
+
+# 72. Punto de reanudación
+
+> Crear el contrato rojo de presentación humana T-CSYS-HPRES-01…07 sin
+> modificar producción.
