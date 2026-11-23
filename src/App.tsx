@@ -1593,6 +1593,18 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
             >
               Seguir trabajando
             </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                if (hasPersistedPostV1) {
+                  localStorage.removeItem("post-v1-integrated.state");
+                }
+                setIntegrationChoice("current");
+              }}
+            >
+              Abrir opciones para conservar, publicar o compartir este trabajo
+            </button>
           </>
         )}
       </section>
@@ -2005,19 +2017,6 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
         </section>
       )}
 
-      {availablePostV1Current !== null && (
-        <button
-          type="button"
-          onClick={() => {
-            if (hasPersistedPostV1) {
-              localStorage.removeItem("post-v1-integrated.state");
-            }
-            setIntegrationChoice("current");
-          }}
-        >
-          Abrir opciones para conservar, publicar o compartir este trabajo
-        </button>
-      )}
 
       {hasPersistedPostV1 && (
         <button type="button" onClick={() => setIntegrationChoice("existing")}>
