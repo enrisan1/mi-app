@@ -11058,3 +11058,60 @@ OB-ENG-SEC-01
 
 Siguiente actuación:
 R-ENG-SEC-01 — actualización coordinada de Vitest/coverage, Vite y ESLint a versiones Wanted y validación integral.
+
+
+---
+
+# 23/11/2026 — cierre de R-ENG-SEC-01
+
+Se completa la remediación de seguridad del tooling derivada de DF-ENG-BASE-03.
+
+Resultado material:
+
+~~~text
+commit
+→ dd5d90b chore(deps): remediate development tooling vulnerabilities
+
+npm audit
+→ 0 vulnerabilities
+
+npm audit --omit=dev
+→ 0 vulnerabilities
+
+typecheck
+→ PASS
+
+tests
+→ 83/83 files PASS
+→ 598/598 tests PASS
+
+lint
+→ PASS
+
+build
+→ PASS
+~~~
+
+El cambio quedó limitado a `package.json` y `package-lock.json`, sin saltos major, sin `--force` y sin relajación de peers.
+
+Estado:
+
+~~~text
+R-ENG-SEC-01
+→ CERRADA
+
+OB-ENG-SEC-01
+→ SATISFECHA
+
+DF-ENG-BASE-03
+→ RESUELTA EN SU ALCANCE
+
+baseline de ingeniería
+→ señal de seguridad inequívoca
+→ typecheck GREEN
+→ regresión GREEN
+→ lint GREEN
+→ build GREEN
+~~~
+
+Permanece como límite conocido no bloqueante el warning de chunk >500 kB y la sensibilidad histórica de la suite con paralelismo mayor; ninguno se reabre por esta actuación.
