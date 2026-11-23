@@ -15307,3 +15307,50 @@ R-ENG-BASE-03-B queda cerrada.
 
 Siguiente lote:
 R-ENG-BASE-03-C — comparación / JSX, 4 errores.
+
+
+---
+
+# 23/11/2026 — R-ENG-BASE-03-C validada
+
+Se sustituyen cuatro referencias globales JSX.Element por ReactElement importado como tipo.
+
+Validación focal:
+
+~~~text
+ComparisonProgress
+→ 8/8 PASS
+
+InlineDetectionExperience
+→ 8/8 PASS
+
+LateralComparisonExperience
+→ 7/7 PASS
+
+TOTAL
+→ 23/23 PASS
+~~~
+
+Typecheck:
+
+~~~text
+antes
+→ 14 errores
+
+después
+→ 10 errores
+
+reducción exacta
+→ 4 errores
+
+errores JSX
+→ 0
+
+errores nuevos
+→ ninguno
+~~~
+
+R-ENG-BASE-03-C queda cerrada.
+
+Siguiente lote:
+R-ENG-BASE-03-D — detectLiteralDifferences / LCS, 10 errores.
