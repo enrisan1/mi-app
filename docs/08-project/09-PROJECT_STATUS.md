@@ -10047,3 +10047,71 @@ HUMAN GATE posterior a R-CSYS-09-G
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-H: reducción de D3/D4
+
+Se ejecuta la reducción posterior al HUMAN GATE de R-CSYS-09-G sin modificar producción.
+
+Resultado:
+
+~~~text
+D3 — referente de “este trabajo”
+→ pertenece a CF-CSYS-09
+→ afecta a CF-CSYS-09-06
+→ la acción conservar/publicar/compartir debe quedar anclada inequívocamente a Trabajo actual
+→ bloqueo residual de cierre
+
+D4 — alcance de “Materiales anteriores”
+→ no demuestra pérdida de continuidad del hilo actual
+→ se separa de CF-CSYS-09
+→ reclasificada como D-LOC-01
+  “alcance perceptible de materiales anteriores”
+~~~
+
+La inspección de App confirma:
+
+~~~text
+Materiales anteriores
+→ ordinaryMaterials completos del almacenamiento local
+→ selección humana
+→ reutilización
+
+pero la interfaz no declara:
+→ universo cubierto
+→ profundidad temporal
+→ relación exacta con Trabajo actual
+~~~
+
+El patrimonio histórico de localización selectiva no exigía:
+- historial universal;
+- escala arbitraria;
+- búsqueda general;
+- profundidad indefinida.
+
+Por tanto:
+
+~~~text
+CF-CSYS-09
+→ bloqueado únicamente por D3
+
+D-LOC-01
+→ diferencia separada de localización/orientación
+→ NO bloquea por sí sola CF-CSYS-09
+
+producción
+→ SIN CAMBIOS
+~~~
+
+Se deriva:
+
+~~~text
+R-CSYS-09-I
+→ contrato rojo T-CSYS-ACTREF-01…06
+→ sólo anclaje del referente
+→ antes de cualquier cambio productivo
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
