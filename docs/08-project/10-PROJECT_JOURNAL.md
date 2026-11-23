@@ -15136,3 +15136,57 @@ Resultado provisional:
 ~~~text
 B — FRICCIÓN LOCALIZADA
 ~~~
+
+
+---
+
+# 23/11/2026 — cierre empírico de R-ENG-BASE-01
+
+La auditoría de transferibilidad se completa con ejecución real del checkout.
+
+La suite con dos workers reproduce únicamente dos timeouts en reason-convergence. La misma baseline en ejecución serial termina:
+
+~~~text
+83/83 archivos PASS
+598/598 tests PASS
+~~~
+
+Por tanto:
+
+~~~text
+regresión funcional
+→ no demostrada
+
+sensibilidad bajo carga
+→ reproducida
+→ ya conocida
+~~~
+
+El typecheck produce 29 errores / 6 archivos. La auditoría corrige su reconstrucción provisional: no son sólo los 14 de comparación; existen además 15 errores conocidos en App.tsx.
+
+Esto refuerza DF-ENG-BASE-01 porque la documentación técnica de entrada prescribe typecheck como validación limpia sin explicar la baseline roja conocida.
+
+También se registran:
+
+- 15 vulnerabilidades npm (7 moderate, 8 high), sin ejecutar npm audit fix;
+- build correcto con warning de chunk >500 kB;
+- lint verde;
+- árbol limpio.
+
+Resultado final:
+
+~~~text
+R-ENG-BASE-01
+→ CERRADA
+
+salida
+→ B — FRICCIÓN LOCALIZADA
+
+baseline transferible
+→ SÍ, materialmente
+
+dependencia estructural de historia
+→ NO demostrada
+~~~
+
+No se modifica producción ni se sanea deuda en esta actuación.
