@@ -9938,3 +9938,112 @@ producción
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-F/G: presentación humana técnicamente validada
+
+Se completa el ciclo RED → GREEN derivado del HUMAN GATE anterior.
+
+Contrato nuevo:
+
+~~~text
+src/App.human-thread-presentation.test.tsx
+→ T-CSYS-HPRES-01…07
+
+RED inicial
+→ 1 PASS / 6 FAIL
+
+GREEN final
+→ 7/7 PASS
+~~~
+
+La intervención productiva queda limitada a presentación:
+
+~~~text
+Trabajo actual
+→ unidad perceptible del hilo
+
+Seguir trabajando
+→ asociado a Trabajo actual
+
+PostV1
+→ vocabulario interno retirado de la decisión humana
+
+continuidad recibida
+→ presentada como trabajo recibido de otra persona
+~~~
+
+No se modifican datos, persistencia, KnowledgeTrajectory, KGV, Y/R ni PostV1 interno.
+
+Validaciones:
+
+~~~text
+regresión focal
+→ 5/5 archivos PASS
+→ 65/65 tests PASS
+
+handoff + E2E tras actualizar selectores históricos
+→ 2/2 archivos PASS
+→ 5/5 tests PASS
+
+reason-convergence aislado
+→ 1/1 archivo PASS
+→ 3/3 tests PASS
+
+suite global serializada
+→ npx vitest run --maxWorkers=1
+→ 82/82 archivos PASS
+→ 592/592 tests PASS
+~~~
+
+Incidencia de infraestructura:
+
+~~~text
+--maxWorkers=2
+→ puede reproducir timeout + escritura intercalada en reason-convergence
+
+--maxWorkers=1
+→ GREEN total
+
+atribución a R-CSYS-09-G
+→ NO DEMOSTRADA
+
+subir testTimeout
+→ NO JUSTIFICADO
+~~~
+
+Estado:
+
+~~~text
+R-CSYS-09-F
+→ CERRADA
+
+R-CSYS-09-G
+→ IMPLEMENTADA Y VALIDADA TÉCNICAMENTE
+
+D1
+→ SATISFECHA TÉCNICAMENTE
+
+D2
+→ SATISFECHA TÉCNICAMENTE
+
+CF-CSYS-09
+→ NO CERRADO
+→ pendiente nuevo HUMAN GATE
+
+producción
+→ CONGELADA hasta observación humana
+~~~
+
+Siguiente actuación:
+
+~~~text
+HUMAN GATE posterior a R-CSYS-09-G
+→ comprobar reconocibilidad espontánea de Trabajo actual
+→ distinguir continuar propio trabajo / acciones auxiliares / trabajo recibido
+→ comprobar reanudación tras recarga
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
