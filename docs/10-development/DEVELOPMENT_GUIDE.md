@@ -126,7 +126,7 @@ Verifican que los cambios realizados mantienen la integridad del proyecto y cump
 
 ```bash
 npm run typecheck
-npm test
+npm run test:regression
 npm run lint
 ```
 

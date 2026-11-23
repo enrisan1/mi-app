@@ -115,7 +115,8 @@ Antes de realizar cualquier modificación, es recomendable comprobar que el proy
 
 ```bash
 npm run typecheck
-npm test
+npm run test:regression
+npm run lint
 npm run build
 ```
 

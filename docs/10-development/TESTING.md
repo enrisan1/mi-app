@@ -775,6 +775,16 @@ La suite deberá ejecutarse siempre que una modificación pueda afectar al compo
 
 Cuando resulte posible, se recomienda ejecutar primero las pruebas directamente relacionadas con la modificación realizada y, posteriormente, la suite completa antes de integrar el cambio.
 
+Durante el desarrollo puede utilizarse `npm test` para la ejecución interactiva de Vitest.
+
+La ejecución completa y no interactiva de la suite se realizará mediante:
+
+```bash
+npm run test:regression
+```
+
+Este comando constituye la referencia canónica para la regresión completa del proyecto.
+
 ## 7.2 Interpretación de los resultados
 
 El resultado de la ejecución deberá analizarse antes de modificar el código o las propias pruebas.
