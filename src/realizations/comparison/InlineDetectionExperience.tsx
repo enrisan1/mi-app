@@ -1,3 +1,5 @@
+import type { ReactElement } from "react";
+
 type DetectionItem = {
   id: string;
   sourceA: string;
@@ -35,7 +37,7 @@ export function renderMarkedSource(
     .filter(({ index }) => index >= 0)
     .sort((left, right) => left.index - right.index);
 
-  const nodes: JSX.Element[] = [];
+  const nodes: ReactElement[] = [];
   let cursor = 0;
 
   for (const { detection, fragment, index } of occurrences) {
