@@ -14610,3 +14610,136 @@ R-CSYS-09-F
 → contrato rojo T-CSYS-HPRES-01…07
 → sin producción
 ~~~
+
+
+---
+
+# 23/11/2026 — R-CSYS-09-F/G / RED → GREEN de presentación humana
+
+Se crea primero el contrato rojo de presentación:
+
+~~~text
+T-CSYS-HPRES-01…07
+~~~
+
+RED real:
+
+~~~text
+1/7 PASS
+6/7 FAIL
+~~~
+
+Los seis fallos corresponden exactamente a D1/D2:
+
+- ausencia de unidad perceptible “Trabajo actual”;
+- “Seguir trabajando” fuera de esa unidad;
+- vocabulario PostV1 visible;
+- continuidad recibida expresada como “Continuidad compartida”.
+
+El control HPRES-07 pasa desde el inicio y confirma que A1 → A2 continúa materialmente intacto.
+
+Se implementa únicamente presentación:
+
+~~~text
+Trabajo actual
+→ región accesible que agrupa ResumeExperience
+
+Seguir trabajando
+→ dentro de Trabajo actual
+
+Usar este trabajo en integración post-V1
+→ Abrir opciones para conservar, publicar o compartir este trabajo
+
+Retomar trayectoria integrada existente
+→ Retomar opciones anteriores de conservación, publicación y colaboración
+
+Continuidad compartida
+→ Continuar un trabajo recibido de otra persona
+~~~
+
+No se tocan handlers ni modelo material.
+
+Primera ejecución:
+
+~~~text
+6/7 PASS
+1/7 FAIL
+~~~
+
+El fallo restante de HPRES-06 es del harness: una consulta singular encuentra tres textos válidos que expresan correctamente la relación con otra persona. Se corrige sólo la aserción.
+
+GREEN:
+
+~~~text
+HPRES
+→ 7/7 PASS
+~~~
+
+La regresión focal muestra inicialmente fallos de selectores históricos tras el cambio de etiquetas. Se actualizan sólo los selectores en HCONT, KGV y App.
+
+Resultado:
+
+~~~text
+5/5 archivos PASS
+65/65 tests PASS
+~~~
+
+La suite global con `--maxWorkers=2` descubre dos asuntos separados:
+
+1. selectores todavía antiguos en handoff-convergence y system-e2e;
+2. timeout de reason-convergence bajo carga.
+
+Los selectores se actualizan y ambos contratos quedan:
+
+~~~text
+2/2 archivos PASS
+5/5 tests PASS
+~~~
+
+Reason-convergence aislado:
+
+~~~text
+3/3 PASS
+~~~
+
+Con dos workers reaparece un timeout y una cadena de texto intercalada en el test siguiente, compatible con operaciones async solapadas después del timeout.
+
+Se evita modificar timeout o producción y se serializa la suite:
+
+~~~text
+npx vitest run --maxWorkers=1
+→ 82/82 archivos PASS
+→ 592/592 tests PASS
+~~~
+
+Conclusión:
+
+~~~text
+R-CSYS-09-G
+→ GREEN técnico global
+
+D1/D2
+→ cubiertas técnicamente
+
+regresión funcional
+→ no demostrada
+
+sensibilidad del harness a concurrencia
+→ documentada por separado
+
+CF-CSYS-09
+→ requiere aún validación humana
+~~~
+
+La producción queda congelada.
+
+Siguiente:
+
+~~~text
+HUMAN GATE
+→ observar la App sin explicación previa
+→ comprobar si la persona reconoce el mismo hilo
+→ comprobar si “Seguir trabajando” es espontáneamente principal
+→ comprobar si las acciones especializadas se distinguen
+→ comprobar reanudación tras recarga
+~~~
