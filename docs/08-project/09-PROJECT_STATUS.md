@@ -10304,3 +10304,153 @@ reevaluar mapa global
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — cierre de R-DLOC-01-A/B y D-LOC-01
+
+Se reconstruye el contrato histórico de localización selectiva y se contrasta con una necesidad humana concreta de recuperación.
+
+Resultado de R-DLOC-01-A:
+
+~~~text
+contrato histórico
+→ pluralidad conservada
+→ inspección
+→ reconocimiento
+→ selección humana
+→ reactivación
+
+no exigía
+→ historial universal
+→ profundidad ilimitada
+→ búsqueda general
+→ escala arbitraria
+~~~
+
+Resultado de R-DLOC-01-B:
+
+~~~text
+material buscado
+→ localizado
+
+punto elegido espontáneamente
+→ Materiales anteriores
+
+ayuda externa
+→ NO
+
+efecto práctico de la duda sobre alcance
+→ NINGUNO
+~~~
+
+Decisión:
+
+~~~text
+R-DLOC-01-A
+→ CERRADA
+
+R-DLOC-01-B
+→ CERRADA
+→ salida B — fricción no constitutiva
+
+D-LOC-01
+→ CERRADA
+→ no gap material
+→ no producción
+→ no tests nuevos
+~~~
+
+Documento principal: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — reaplicación global post-DLOC
+
+Se reaplica Manual 17 tras cerrar la última diferencia humana separada.
+
+Mapa:
+
+~~~text
+H-POST-01
+→ CERRADO
+
+H-PROJ-INT-01
+→ CERRADO
+
+H-CONV-FINAL-01
+→ CERRADO
+
+HITO-CONV-SYS-01
+→ CERRADO
+
+CF-CSYS-09
+→ CERRADO
+
+D-LOC-01
+→ CERRADA
+
+CI-POST-CONV-01
+→ CERRADA
+
+GAP-CE-MIAPP-01
+→ no vigente
+~~~
+
+Rama A:
+
+~~~text
+obligación positiva pendiente
+→ NINGUNA DEMOSTRADA
+~~~
+
+Rama B:
+
+~~~text
+evidencia emergente independiente pendiente
+→ NINGUNA DEMOSTRADA
+~~~
+
+Permanece:
+
+~~~text
+DEUDA-TSC-COMP-01
+→ ABIERTA
+→ deuda técnica conocida
+→ no bloqueante
+→ sin prioridad estratégica derivada
+~~~
+
+Decisión:
+
+~~~text
+ESTADO ESTRATÉGICO
+→ ESTABLE
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture / Realization / Implementation
+→ NO DERIVADAS
+~~~
+
+Punto de reanudación:
+
+~~~text
+nuevo hecho / nueva decisión / nueva evidencia
+→ reaplicar Manual 17
+→ derivar sólo actuación mínima justificada
+~~~
+
+Documento: [132](132-REAPLICACION_GLOBAL_POST_DLOC_ESTABILIDAD_ESTRATEGICA.md).
