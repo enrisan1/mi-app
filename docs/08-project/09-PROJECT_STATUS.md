@@ -9788,3 +9788,91 @@ HUMAN GATE de CF-CSYS-09
 ~~~
 
 Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
+
+
+---
+
+# 23/11/2026 — HUMAN GATE de CF-CSYS-09: salida C
+
+Se ejecuta la validación humana de cierre sin modificar producción.
+
+Hallazgos:
+
+~~~text
+inicio de trabajo nuevo
+→ reconocible
+
+“Seguir trabajando”
+→ funcionalmente correcto una vez ejercido
+→ no descubierto espontáneamente como continuación principal
+
+A1/A2
+→ persisten
+→ la persona que conoce el recorrido los relaciona
+→ la interfaz no expresa por sí sola que forman una misma obra/hilo
+
+recarga
+→ recuperación material correcta
+→ identidad del hilo sigue poco clara
+
+“Usar este trabajo en integración post-V1”
+→ significado no reconocido
+→ no permite decidir cuándo usarlo
+~~~
+
+Evaluación:
+
+~~~text
+HG-01
+→ NO SATISFECHO
+
+HG-02
+→ PARCIAL
+
+HG-03
+→ PARCIAL
+
+HG-04
+→ NO SATISFECHO
+
+HG-05
+→ NO EJERCITADO
+
+HG-06
+→ PARCIAL
+~~~
+
+Decisión:
+
+~~~text
+HUMAN GATE
+→ C — NO CIERRE
+
+CF-CSYS-09
+→ técnicamente cubierto
+→ humanamente no satisfecho
+→ NO CERRADO
+~~~
+
+La continuidad material introducida por R-CSYS-09-D se conserva.
+
+Diferencias raíz:
+
+~~~text
+D1
+→ identidad perceptible del hilo
+
+D2
+→ jerarquía y vocabulario de acciones
+~~~
+
+Siguiente actuación:
+
+~~~text
+R-CSYS-09-E
+→ reducir D1/D2
+→ sin modificar producción
+→ después derivar contrato rojo mínimo
+~~~
+
+Documento: [131](131-CONV-SYS-01_CONVERGENCIA_HACIA_TRAYECTORIA_ORDINARIA_UNICA.md).
