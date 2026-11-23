@@ -14464,3 +14464,107 @@ El gate deberá comprobar:
 - PostV1 como acción distinta;
 - distinción de tres rutas cuando existe R;
 - recuperación y continuación tras recarga.
+
+
+---
+
+# 23/11/2026 — CF-CSYS-09 / HUMAN GATE real
+
+Se ejecuta el gate humano derivado de R-CSYS-09-C/D sobre la App real.
+
+La persona reconoce correctamente dónde iniciar un texto nuevo, pero antes de
+continuar aparecen dudas sobre:
+
+~~~text
+Continuidad compartida
+Antecedente compartido recibido
+Identidad autoral
+~~~
+
+Tras crear A1, ante la pregunta de cómo añadir A2 al mismo trabajo, la elección
+espontánea es primero identidad autoral. “Seguir trabajando” no se reconoce
+inmediatamente como la acción principal porque:
+
+- aparece después de identidad autoral;
+- su relación visual con continuidad compartida resulta ambigua;
+- no queda claro si requiere contenido previo en otra caja.
+
+Al ejercer “Seguir trabajando”:
+
+~~~text
+efecto
+→ comprendido
+
+A2
+→ puede introducirse claramente
+
+relación
+→ la persona entiende que sigue en el mismo trabajo
+~~~
+
+Tras constituir A2:
+
+~~~text
+A1
+→ visible como “Aportación anterior”
+
+A2
+→ visible como actual
+
+misma obra/hilo
+→ reconocible por quien conoce el recorrido
+→ no suficientemente expresado por la interfaz para un tercero
+~~~
+
+Tras recarga:
+
+~~~text
+persistencia
+→ correcta
+
+continuación
+→ posible
+
+identidad del hilo
+→ sigue poco clara
+~~~
+
+La acción:
+
+~~~text
+Usar este trabajo en integración post-V1
+~~~
+
+no tiene significado operativo para la persona porque “post-V1” es vocabulario
+interno no interpretable sin conocimiento previo.
+
+Resultado:
+
+~~~text
+HUMAN GATE
+→ C — NO CIERRE
+
+CF-CSYS-09
+→ NO SATISFECHO HUMANAMENTE
+~~~
+
+La corrección de R-CSYS-09-D no se considera fallida: resolvió la sustitución
+indebida de continuidad ordinaria por PostV1 y conserva continuidad material.
+
+La diferencia residual se reduce a:
+
+~~~text
+D1
+→ identidad perceptible del trabajo/hilo
+
+D2
+→ jerarquía y vocabulario de actuaciones auxiliares
+~~~
+
+Se abre:
+
+~~~text
+R-CSYS-09-E
+→ reducción de D1/D2
+→ producción congelada
+~~~
