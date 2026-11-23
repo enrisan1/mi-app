@@ -24,7 +24,7 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
     render(<App />);
 
     const receivedAntecedent = screen.getByRole("textbox", {
-      name: /antecedente compartido recibido/i,
+      name: /antecedente recibido de otra persona/i,
     });
 
     fireEvent.change(receivedAntecedent, {
@@ -32,7 +32,7 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
     });
     await user.click(
       screen.getByRole("button", {
-        name: /recibir antecedente compartido/i,
+        name: /recibir antecedente para continuar/i,
       }),
     );
 
@@ -59,13 +59,13 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
 
     fireEvent.change(
       screen.getByRole("textbox", {
-        name: /antecedente compartido recibido/i,
+        name: /antecedente recibido de otra persona/i,
       }),
       { target: { value: VALID_ANTECEDENT } },
     );
     await user.click(
       screen.getByRole("button", {
-        name: /recibir antecedente compartido/i,
+        name: /recibir antecedente para continuar/i,
       }),
     );
 
@@ -98,10 +98,10 @@ describe("CR-KGV-01 — continuidad colaborativa ordinaria", () => {
     render(<App />);
 
     const receivedAntecedent = screen.getByRole("textbox", {
-      name: /antecedente compartido recibido/i,
+      name: /antecedente recibido de otra persona/i,
     });
     const receiveButton = screen.getByRole("button", {
-      name: /recibir antecedente compartido/i,
+      name: /recibir antecedente para continuar/i,
     });
 
     const invalidAntecedents = [
@@ -199,7 +199,7 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
     );
     await user.click(
       screen.getByRole("button", {
-        name: /usar este trabajo en integración post-v1/i,
+        name: /abrir opciones para conservar, publicar o compartir este trabajo/i,
       }),
     );
 
@@ -294,14 +294,14 @@ describe("CR-KGV-02 — constitución y entrega ordinaria del antecedente colabo
 
     fireEvent.change(
       screen.getByRole("textbox", {
-        name: /antecedente compartido recibido/i,
+        name: /antecedente recibido de otra persona/i,
       }),
       { target: { value: transferredValue } },
     );
 
     await user.click(
       screen.getByRole("button", {
-        name: /recibir antecedente compartido/i,
+        name: /recibir antecedente para continuar/i,
       }),
     );
 
@@ -393,7 +393,7 @@ describe("CR-KGV-03 — recuperabilidad operativa mínima ante persistencia no u
 
     await user.click(
       screen.getByRole("button", {
-        name: /retomar trayectoria integrada existente/i,
+        name: /retomar opciones anteriores de conservación, publicación y colaboración/i,
       }),
     );
 
@@ -408,7 +408,7 @@ describe("CR-KGV-03 — recuperabilidad operativa mínima ante persistencia no u
 
     await user.click(
       screen.getByRole("button", {
-        name: /retomar trayectoria integrada existente/i,
+        name: /retomar opciones anteriores de conservación, publicación y colaboración/i,
       }),
     );
 
