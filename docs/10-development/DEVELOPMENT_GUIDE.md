@@ -96,6 +96,8 @@ Las herramientas necesarias para el desarrollo, junto con las versiones de refer
 
 Siempre que sea posible, las tareas de desarrollo deberán realizarse sobre un entorno limpio y actualizado, verificando que todas las validaciones del proyecto puedan ejecutarse correctamente antes de iniciar cualquier modificación.
 
+El runtime de referencia para reproducir la baseline desde cero es **Node.js 22.12.0**, fijado también en `.nvmrc`. La baseline actual ha sido validada asimismo con Node.js 20.20.2; `package.json` declara ambas ramas compatibles.
+
 # 5. Comandos de desarrollo
 
 El proyecto dispone de un conjunto de comandos que permiten instalar las dependencias, ejecutar la aplicación, validar los cambios y generar la versión de producción.
@@ -109,7 +111,7 @@ Los comandos se presentan siguiendo el orden habitual en el que se utilizan dura
 Preparan el entorno de trabajo e instalan las dependencias necesarias para desarrollar el proyecto.
 
 ```bash
-npm install
+npm ci
 ```
 
 ## 5.2 Desarrollo
@@ -169,6 +171,45 @@ Repositorio
 | `package.json` | Dependencias del proyecto, scripts de desarrollo y configuración básica.                  |
 
 La organización del repositorio podrá evolucionar a medida que lo haga el proyecto. Cualquier cambio deberá preservar una estructura clara y facilitar la localización de los distintos elementos, manteniendo la coherencia con la arquitectura y con el resto de la documentación técnica.
+
+
+## 6.1 Mapa técnico mínimo para orientación y handoff
+
+Para comprender los contratos esenciales del producto ejecutable no es necesario
+reconstruir la historia documental del proyecto.
+
+Como punto de entrada técnico, los principales contratos y recorridos integrados
+pueden localizarse mediante los siguientes tests:
+
+| Área | Contrato principal | Evidencia de entrada |
+| --- | --- | --- |
+| Continuidad ordinaria | Crear, continuar, recuperar y reanudar trabajo conservando el hilo | `src/App.human-continuity.test.tsx` |
+| Captura contextual | Conservar una aportación breve sin sustituir ni alterar el trabajo ordinario | `src/App.capture.integration.test.tsx` |
+| Comparación | Comparar dos materiales sin alterar las fuentes ni decidir automáticamente su relevancia | `src/App.comparison.integration.test.tsx` |
+| Identidad autoral | Mantener separadas identidad operativa y autoría de las obras | `src/App.author-identity.integration.test.tsx` |
+| Apoyo auxiliar de IA | Mantener el apoyo IA separado de la obra y conservar su procedencia | `src/App.ai-support.integration.test.tsx` |
+| Trayectoria integrada | Recorrer una investigación desde sus fuentes hasta un resultado posterior reconstruible | `src/App.knowledge-trajectory.system-e2e.test.tsx` |
+| Trazabilidad de trayectoria | Preservar estructura, razones, participantes y procedencia durante la continuación | `src/App.knowledge-trajectory.final-convergence.test.tsx` |
+| Frontera del servicio IA | Validar entrada, protección, llamada al proveedor y tratamiento de fallos del endpoint | `workers/ai-support/src/index.test.ts` |
+
+Como regla de orientación:
+
+- `src/App.human-continuity.test.tsx` es la entrada principal para comprender el
+  trabajo ordinario y su continuidad.
+- Los cuatro tests `*.integration.test.tsx` de captura, comparación, identidad
+  autoral y apoyo IA describen capacidades auxiliares integradas que no deben
+  corromper ni sustituir el trabajo ordinario.
+- `src/App.knowledge-trajectory.system-e2e.test.tsx` es la referencia principal
+  para comprender el producto como recorrido integrado.
+- `src/App.knowledge-trajectory.final-convergence.test.tsx` debe consultarse
+  cuando un cambio afecte a estructura, razones, participantes, procedencia o
+  navegación de la trayectoria.
+- `workers/ai-support/src/index.test.ts` define el contrato técnico del extremo
+  servidor del apoyo IA.
+
+Los testigos y realizaciones históricas pueden seguir siendo útiles para
+investigaciones específicas, pero no constituyen la ruta ordinaria de entrada
+para comprender el producto ejecutable vigente.
 
 # 7. Convenciones de desarrollo
 

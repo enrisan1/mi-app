@@ -77,18 +77,18 @@ Antes de comenzar, asegúrate de disponer de las herramientas necesarias para ej
 
 Requisitos mínimos:
 
-- Node.js
-- npm
-- Git
+- Node.js 22.12.0 como runtime de referencia;
+- npm;
+- Git.
 
-Las versiones recomendadas y la configuración detallada del entorno de desarrollo se describen en `DEVELOPMENT_GUIDE.md`.
+La baseline también ha sido validada con Node.js 20.20.2. Para una instalación reproducible desde cero se recomienda utilizar la versión indicada en `.nvmrc`.
 
 ---
 
 ## 3.2 Instalación
 
 ```bash
-npm install
+npm ci
 ```
 
 ---
