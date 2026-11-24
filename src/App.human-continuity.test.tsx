@@ -311,4 +311,18 @@ describe("R-CSYS-09-C — continuidad humana ordinaria reconocible", () => {
       "Trabajo posterior a la recuperación",
     );
   });
+  it("[T-SYS-04-01] ordinary.materials inválido no impide iniciar la App ordinaria", () => {
+    localStorage.setItem("ordinary.materials", "{json inválido");
+
+    render(<App />);
+
+    expect(
+      screen.getByRole("textbox", { name: /^introduce un texto libre$/i }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole("button", { name: /^crear$/i }),
+    ).toBeInTheDocument();
+  });
+
 });

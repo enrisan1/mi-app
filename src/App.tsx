@@ -180,6 +180,22 @@ function saveAiSupports(supports: AiSupport[]) {
   localStorage.setItem(AI_SUPPORT_STORAGE_KEY, JSON.stringify(supports));
 }
 
+function loadOrdinaryMaterials(): OrdinaryMaterial[] {
+  const stored = localStorage.getItem("ordinary.materials");
+
+  if (stored === null) {
+    return [];
+  }
+
+  try {
+    const parsed: unknown = JSON.parse(stored);
+
+    return Array.isArray(parsed) ? (parsed as OrdinaryMaterial[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 type IntegrationChoice = null | "existing" | "current";
 
 type ReceivedCollaborativeAntecedent = {
@@ -226,17 +242,9 @@ function App({ resolution, secondResolution, thirdResolution }: AppProps) {
   const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
   const [ordinaryMaterials, setOrdinaryMaterials] = useState<
     OrdinaryMaterial[]
-  >(() => {
-    const stored = localStorage.getItem("ordinary.materials");
-
-    return stored === null ? [] : (JSON.parse(stored) as OrdinaryMaterial[]);
-  });
+  >(() => loadOrdinaryMaterials());
   const [currentWorkId, setCurrentWorkId] = useState<string | null>(() => {
-    const materialsStored = localStorage.getItem("ordinary.materials");
-    const materials =
-      materialsStored === null
-        ? []
-        : (JSON.parse(materialsStored) as OrdinaryMaterial[]);
+    const materials = loadOrdinaryMaterials();
     const persistedId = localStorage.getItem(CURRENT_WORK_ID_STORAGE_KEY);
 
     if (
