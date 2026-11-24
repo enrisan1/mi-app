@@ -11376,3 +11376,151 @@ Commit material:
 ~~~
 
 Documento: [140](140-R-ENG-HANDOFF-01_CIERRE_TRANSFERENCIA_TECNICA.md).
+
+
+---
+
+# 24/11/2026 — cierre de R-ENG-SYS-01 y consolidación sistemática de baseline
+
+Se completa la prueba sistemática de la baseline ejecutable sobre cuatro dimensiones:
+
+~~~text
+SYS-01
+→ construcción reproducible
+
+SYS-02
+→ ejecución ordinaria real
+
+SYS-03
+→ recorridos críticos integrados
+
+SYS-04
+→ modificación técnica pequeña,
+  real y reversible
+~~~
+
+Evidencia final:
+
+~~~text
+npm ci
+→ PASS
+→ 0 vulnerabilities
+
+npm run typecheck
+→ PASS
+
+npm run test:regression
+→ 83/83 archivos PASS
+→ 599/599 tests PASS
+
+npm run lint
+→ PASS
+
+npm run build
+→ PASS
+→ warning conocido de chunk >500 kB
+~~~
+
+Recorridos críticos explícitos:
+
+~~~text
+I1 continuidad ordinaria
+→ 8/8 PASS
+
+I2 auxiliares integrados
+→ 37/37 PASS
+
+I3 trayectoria integrada
+→ 5/5 PASS
+
+I4 frontera IA
+→ 14/14 PASS
+~~~
+
+La modificación de SYS-04 se reduce a tolerar JSON inválido en
+`ordinary.materials` mediante un loader defensivo reutilizado por los dos
+puntos de inicialización afectados.
+
+Trayectoria:
+
+~~~text
+T-SYS-04-01
+→ RED válido
+→ SyntaxError en JSON.parse
+
+corrección mínima
+→ loadOrdinaryMaterials()
+
+validación focal
+→ 9/9 PASS
+
+commit material
+→ 08fe8a0
+→ fix(app): tolerate invalid ordinary materials storage
+~~~
+
+No se activa ninguno de los STOP-01…05.
+
+Decisión:
+
+~~~text
+C-SYS-01…06
+→ SATISFECHOS
+
+R-ENG-SYS-01
+→ SUPERADA
+→ CERRADA
+
+cuestión de consolidación
+de baseline técnica
+→ CERRADA AFIRMATIVAMENTE
+
+obligación posterior independiente
+→ NINGUNA DEMOSTRADA
+
+siguiente actuación automática
+→ NINGUNA
+
+siguiente actuación estratégicamente derivada
+→ NINGUNA
+
+nuevo Product
+→ NO
+
+nuevo horizonte
+→ NO
+
+Architecture
+→ NO DERIVADA
+
+ESTADO ESTRATÉGICO
+→ PERMANECE ESTABLE
+~~~
+
+El resultado no demuestra arquitectura óptima, ausencia universal de deuda o
+bugs, ni que cualquier cambio futuro vaya a ser incremental. Sí demuestra que
+la baseline vigente puede tratarse, en el alcance probado, como un sistema
+técnico coherente instalable, ejecutable, verificable y modificable de forma
+acotada.
+
+Punto de reanudación:
+
+~~~text
+NUEVA EVIDENCIA
+o
+NUEVA DECISIÓN
+o
+OBLIGACIÓN PENDIENTE DEMOSTRADA
+o
+PÉRDIDA HUMANA INDEPENDIENTE
+o
+FALSACIÓN DE CIERRE
+o
+BLOQUEO TÉCNICO DE ACTUACIÓN NECESARIA
+↓
+reaplicar Manual 17
+↓
+derivar sólo la actuación mínima justificada
+~~~
+
+Documento: [141](141-R-ENG-SYS-01_PRUEBA_SISTEMATICA_BASELINE_EJECUTABLE.md).
