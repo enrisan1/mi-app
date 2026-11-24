@@ -11232,3 +11232,64 @@ fundamento suficiente para construir
 No se deriva automáticamente nueva funcionalidad, Product, Architecture ni Implementation. La siguiente actuación de construcción deberá seguir estando justificada por una necesidad o decisión independiente.
 
 Documento: [138](138-CIERRE_R-ENG-BASE-04_BASELINE_INGENIERIA.md).
+
+
+---
+
+# 24/11/2026 — cierre de CI-ENG-BUILD-01
+
+Se comprueba si la baseline de ingeniería ya consolidada deriva alguna actuación de construcción pendiente.
+
+Fuentes revisadas:
+
+~~~text
+cierres estratégicos vigentes
+→ sin compromiso/horizonte/hito/gap abierto
+
+ROADMAP.md
+→ ninguna línea estratégica concreta vigente
+
+DESIGN_JOURNAL.md
+→ NP-001 sigue siendo propuesta exploratoria no normativa
+→ sin prioridad de desarrollo
+
+nueva evidencia de ingeniería
+→ typecheck 0 errores
+→ npm audit 0 vulnerabilidades
+→ regresión canónica 598/598
+→ lint/build PASS
+→ reduce fricción, no crea objeto de construcción
+~~~
+
+Decisión:
+
+~~~text
+CI-ENG-BUILD-01
+→ CERRADA
+
+obligación de construcción independiente demostrada
+→ NINGUNA
+
+ESTADO ESTRATÉGICO
+→ ESTABLE
+
+BASELINE DE INGENIERÍA
+→ COMPETENTE
+
+construcción nueva
+→ NO DERIVADA
+~~~
+
+Distinción consolidada:
+
+~~~text
+fundamento suficiente para construir
+→ SÍ
+
+construcción actualmente justificada
+→ NO
+~~~
+
+La siguiente construcción requerirá fundamento positivo propio: compromiso/decisión nueva, gap material, pérdida humana independiente, falsación de cierre o bloqueo técnico de una actuación necesaria.
+
+Documento: [139](139-CI-ENG-BUILD-01_GATE_SELECCION_CONSTRUCCION.md).
