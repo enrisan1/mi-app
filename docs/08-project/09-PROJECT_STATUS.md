@@ -11293,3 +11293,86 @@ construcción actualmente justificada
 La siguiente construcción requerirá fundamento positivo propio: compromiso/decisión nueva, gap material, pérdida humana independiente, falsación de cierre o bloqueo técnico de una actuación necesaria.
 
 Documento: [139](139-CI-ENG-BUILD-01_GATE_SELECCION_CONSTRUCCION.md).
+
+
+---
+
+# 24/11/2026 — cierre de R-ENG-HANDOFF-01
+
+Se completa la validación de transferencia técnica de la baseline.
+
+Resultado de A — runtime reproducible:
+
+~~~text
+Node 22.12.0
+→ runtime de referencia
+
+Node 20.20.2
+→ también validado empíricamente
+
+package.json
+→ engines.node = ^20.19.0 || ^22.12.0
+
+.nvmrc
+→ 22.12.0
+
+instalación reproducible
+→ npm ci
+
+validación Node 22.12.0
+→ typecheck PASS
+→ 83/83 archivos, 598/598 tests PASS
+→ lint PASS
+→ build PASS
+~~~
+
+Durante una ejecución apareció un timeout puntual en T-CE-MIAPP-02 (5034 ms frente a 5000 ms). El test pasó aislado y la suite completa pasó al repetir; no se demuestra regresión funcional. Se conserva como sensibilidad temporal no bloqueante.
+
+Resultado de B — orientación contractual:
+
+~~~text
+contratos esenciales
+→ ya materializados
+
+mapa mínimo
+→ explicitado en DEVELOPMENT_GUIDE.md §6.1
+
+familias
+→ continuidad ordinaria
+→ capacidades auxiliares integradas
+→ trayectoria de conocimiento
+→ frontera IA
+
+nuevos tests
+→ NO
+
+producción
+→ SIN CAMBIOS
+~~~
+
+Cierre:
+
+~~~text
+R-ENG-HANDOFF-01-A
+→ CERRADA
+
+R-ENG-HANDOFF-01-B
+→ CERRADA
+
+R-ENG-HANDOFF-01
+→ CERRADA EN SU ALCANCE
+
+handoff técnico ordinario
+→ reproducible
+→ orientable
+→ no dependiente materialmente
+  de reconstrucción histórica extensa
+~~~
+
+Commit material:
+
+~~~text
+7410546 docs(dev): make technical handoff reproducible
+~~~
+
+Documento: [140](140-R-ENG-HANDOFF-01_CIERRE_TRANSFERENCIA_TECNICA.md).
