@@ -15567,3 +15567,36 @@ estado estratégico → ESTABLE
 La baseline sana habilita construcción futura justificada, pero no genera por sí misma una razón para construir.
 
 Documento: [139](139-CI-ENG-BUILD-01_GATE_SELECCION_CONSTRUCCION.md).
+
+
+---
+
+# 24/11/2026 — cierre de transferencia técnica R-ENG-HANDOFF-01
+
+Se valida el handoff técnico de la baseline vigente sin tocar producción.
+
+Se fija Node 22.12.0 como runtime de referencia, se declara compatibilidad con las ramas validadas 20/22, se canoniza npm ci para instalación reproducible y se añade al DEVELOPMENT_GUIDE un mapa mínimo de contratos y recorridos críticos.
+
+La validación bajo Node 22.12.0 produce:
+
+~~~text
+typecheck → PASS
+test:regression → 83/83 archivos, 598/598 tests PASS
+lint → PASS
+build → PASS
+~~~
+
+Se observa además un timeout puntual de T-CE-MIAPP-02 en otra ejecución completa; pasa aislado y vuelve a pasar al repetir la suite completa, por lo que no se demuestra regresión funcional.
+
+Conclusión:
+
+~~~text
+R-ENG-HANDOFF-01 → CERRADA EN SU ALCANCE
+
+transferencia técnica ordinaria
+→ reproducible
+→ orientable
+→ apta para ingeniería incremental
+~~~
+
+Documento: [140](140-R-ENG-HANDOFF-01_CIERRE_TRANSFERENCIA_TECNICA.md).
