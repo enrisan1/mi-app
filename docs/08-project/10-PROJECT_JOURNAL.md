@@ -15535,3 +15535,35 @@ R-ENG-BASE-04 → CERRADA
 La baseline queda técnicamente competente para soportar construcción posterior justificada, sin que este cierre derive por sí mismo una nueva funcionalidad.
 
 Documento: [138](138-CIERRE_R-ENG-BASE-04_BASELINE_INGENIERIA.md).
+
+
+---
+
+# 24/11/2026 — gate de selección de construcción
+
+Tras cerrar la consolidación de baseline se comprueba expresamente si la capacidad técnica obtenida implica continuidad de implementación.
+
+Resultado:
+
+~~~text
+compromiso pendiente → ninguno demostrado
+horizonte/hito abierto → ninguno
+gap material vigente → ninguno
+línea estratégica vigente → ninguna
+propuesta exploratoria priorizada → ninguna
+nueva pérdida humana → ninguna
+falsación de cierre → ninguna
+obligación técnica bloqueante → ninguna
+~~~
+
+Conclusión:
+
+~~~text
+CI-ENG-BUILD-01 → CERRADA
+construcción nueva → NO DERIVADA
+estado estratégico → ESTABLE
+~~~
+
+La baseline sana habilita construcción futura justificada, pero no genera por sí misma una razón para construir.
+
+Documento: [139](139-CI-ENG-BUILD-01_GATE_SELECCION_CONSTRUCCION.md).
