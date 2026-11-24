@@ -15600,3 +15600,118 @@ transferencia técnica ordinaria
 ~~~
 
 Documento: [140](140-R-ENG-HANDOFF-01_CIERRE_TRANSFERENCIA_TECNICA.md).
+
+
+---
+
+# 24/11/2026 — R-ENG-SYS-01 / prueba sistemática de la baseline ejecutable
+
+Se ejecuta y cierra la comprobación abierta para determinar si la baseline
+técnica ya consolidada puede comportarse como un sistema coherente bajo
+construcción, ejecución real, integración y una modificación pequeña.
+
+SYS-01 queda verde con instalación reproducible, typecheck, regresión canónica,
+lint y build. La baseline inicial de la actuación queda fijada en `225e9af`.
+
+SYS-02 se ejerce manualmente en la App real: se crea
+`Prueba SYS-02 de ejecución ordinaria`, queda reconocida como trabajo actual y
+permanece recuperable tras recarga sin colapso de la experiencia ordinaria.
+
+SYS-03 verifica explícitamente las cuatro familias del mapa de handoff:
+
+~~~text
+continuidad ordinaria
+→ 8/8 PASS
+
+auxiliares integrados
+→ 37/37 PASS
+
+trayectoria integrada
+→ 5/5 PASS
+
+frontera IA
+→ 14/14 PASS
+~~~
+
+Para SYS-04 se selecciona previamente una única modificación pequeña:
+tolerancia a JSON inválido en `ordinary.materials`.
+
+Se crea primero `T-SYS-04-01` y se observa RED válido por `SyntaxError` durante
+el montaje de App. La causa queda localizada en los dos parseos directos de la
+misma persistencia.
+
+La corrección introduce únicamente `loadOrdinaryMaterials()` y lo reutiliza en
+ambos puntos. Durante una primera edición apareció reformateo accidental amplio;
+se rechazó como parte de la actuación, se restauraron los archivos desde HEAD y
+se reaplicó el cambio mediante sustitución exacta.
+
+Diff final material:
+
+~~~text
+src/App.human-continuity.test.tsx
+→ +14 líneas
+
+src/App.tsx
+→ +18 / -10 líneas
+
+git diff --check
+→ limpio
+~~~
+
+Validación final:
+
+~~~text
+human-continuity
+→ 9/9 PASS
+
+typecheck
+→ PASS
+
+test:regression
+→ 83/83 archivos PASS
+→ 599/599 tests PASS
+
+lint
+→ PASS
+
+build
+→ PASS
+→ warning conocido de chunk >500 kB
+~~~
+
+Commit material:
+
+~~~text
+08fe8a0
+fix(app): tolerate invalid ordinary materials storage
+~~~
+
+Conclusión:
+
+~~~text
+R-ENG-SYS-01
+→ SUPERADA / CERRADA
+
+C-SYS-01…06
+→ SATISFECHOS
+
+STOP-01…05
+→ ninguno activado
+
+baseline como sistema técnico coherente
+→ demostrada en el alcance probado
+
+obligación posterior independiente
+→ NINGUNA DEMOSTRADA
+~~~
+
+La cuestión de consolidación técnica queda cerrada afirmativamente. No se deriva
+por inercia nueva funcionalidad, refactor arquitectónico, code splitting, CI,
+Product ni horizonte.
+
+El estado estratégico permanece estable y el punto de reanudación vuelve a ser
+la aparición de nueva evidencia, decisión, obligación, pérdida humana
+independiente, falsación de un cierre o bloqueo técnico de una actuación
+necesaria.
+
+Documento: [141](141-R-ENG-SYS-01_PRUEBA_SISTEMATICA_BASELINE_EJECUTABLE.md).
