@@ -15715,3 +15715,117 @@ independiente, falsación de un cierre o bloqueo técnico de una actuación
 necesaria.
 
 Documento: [141](141-R-ENG-SYS-01_PRUEBA_SISTEMATICA_BASELINE_EJECUTABLE.md).
+
+
+---
+
+# 26/11/2026 — Revisión estratégica integral y aceptación de G-CONS-EC-01
+
+## Fundamento de la revisión
+
+Tras la consolidación de la baseline técnica mediante `R-ENG-SYS-01`,
+la observación humana de la aplicación publicada puso de manifiesto
+una distancia significativa entre la experiencia disponible y la
+finalidad integral del producto.
+
+Se identificaron dificultades de orientación, acumulación de superficies
+en una misma página, insuficiente diferenciación de trabajos
+independientes, ausencia de un escritorio personal multiusuario y
+falta de una experiencia pública de consulta suficientemente constituida.
+
+Se suspendieron las comprobaciones locales en curso y se inició una
+revisión estratégica integral.
+
+La evidencia obtenida no invalida retrospectivamente los resultados
+técnicos y realizativos anteriores dentro de sus respectivos alcances.
+Sí justifica examinar la suficiencia del conjunto respecto de la
+finalidad perseguida.
+
+## Desarrollo de la revisión estratégica
+
+Se realizaron los primeros estudios de las etapas:
+
+- Etapa 1 — Recuperación de la concepción original del proyecto.
+- Etapa 2 — Auditoría crítica de la estrategia seguida.
+- Etapa 3 — Estudio comparativo de plataformas existentes.
+
+La primera exploración de etapa 3 comprendió los doce bloques
+`EC-01`…`EC-12`, desde los espacios personales y la creación documental
+hasta la procedencia, colaboración, inteligencia artificial,
+sostenibilidad, experiencia y diferenciación estratégica.
+
+Se conservaron expresamente tres propuestas humanas:
+
+- Ciencia colaborativa inspirada en el desarrollo de software abierto.
+- Participación de granularidad variable, desde una aportación puntual
+  hasta una investigación completa.
+- Superficie de entrada libre con activación y posicionamiento
+  elegidos por el usuario (`UX-CAND-01`).
+
+La investigación identificó antecedentes relevantes, entre ellos
+Octopus, RSpace y JOGL, que refuerzan la necesidad de comparar
+el desarrollo propio con la integración o extensión de soluciones
+existentes.
+
+No quedó demostrada una diferenciación exclusiva de mi-app ni la
+superioridad de una alternativa de realización.
+
+## Consolidación y revisión documental
+
+Los resultados se consolidaron mediante `CONS-EC-01`…`CONS-EC-08`.
+
+La revisión documental aplicó `AC-EC-01`…`AC-EC-08` e identificó
+dos correcciones:
+
+- `REV-EC-01`: distinguir las asociaciones exploratorias entre
+  necesidades de las dependencias efectivamente demostradas.
+- `REV-EC-02`: mantener abiertos diferentes grados de desarrollo
+  propio y reutilización, sin imponer una arquitectura modular.
+
+Ambas correcciones se incorporaron a la versión REV-01, conservando
+los resultados de investigación y las cuestiones abiertas.
+
+## Aceptación humana
+
+El 26/11/2026 se acepta expresamente:
+
+`G-CONS-EC-01` — Consolidación integral del estudio comparativo
+EC-01…EC-12, versión REV-01, como patrimonio de investigación no
+normativo y fundamento suficiente para continuar la revisión
+estratégica del proyecto.
+
+SHA-256 de la versión sometida a aceptación:
+
+`843b3e31df74a111fb7a5f62e21042f6d4bb85a00676497b1c7abe04f66ee725`
+
+La incorporación material del documento 142 se comprueba mediante
+identidad SHA-256 con la versión aceptada.
+
+Posteriormente se actualiza su estatuto documental para registrar
+la aceptación, sin modificar los resultados de investigación.
+
+## Consecuencias y delimitación
+
+- Primera exploración documental de etapa 3: concluida.
+- Consolidación comparativa: aceptada.
+- Investigación externa: no declarada agotada.
+- Hipótesis diferenciales: pendientes de contraste.
+- Alternativas de realización: abiertas.
+- Investigaciones técnicas y candidatos REA: conservados para
+  evaluación selectiva.
+- Charter, Platform Vision, Product y Manual 17: sin modificación.
+- Baseline técnica: conservada.
+- Nueva construcción: no autorizada ni derivada.
+
+## Punto de reanudación
+
+Tras completar la validación y conservación del registro documental,
+la siguiente etapa candidata es:
+
+Etapa 4 — Identificación integral de usuarios y necesidades.
+
+Su finalidad será fundamentar la definición integral del producto
+a partir de las situaciones humanas, sin seleccionar prematuramente
+funcionalidades, tecnologías o soluciones arquitectónicas.
+
+Documento: [142](142-CONSOLIDACION_ESTUDIO_COMPARATIVO_EC-01_EC-12.md).

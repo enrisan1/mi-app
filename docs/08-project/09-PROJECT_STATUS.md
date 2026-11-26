@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 19/11/2026
+**Fecha de actualización:** 26/11/2026
 
 ## Índice
 
@@ -17,7 +17,68 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 19/11/2026:** **ESTABILIDAD GLOBAL CONSERVADA**, con `BS-CE-MIAPP-01` en ejecución humana. La primera desorientación registrada en BS-01 ha sido reducida mediante un contraste de familiaridad: con una orientación conceptual mínima sobre las seis superficies principales, la persona declara que la página cobra sentido, reconoce la relación entre funciones e identifica espontáneamente `Materiales anteriores` como punto de entrada para recuperar el estado y decidir después entre continuar, comparar o solicitar apoyo IA. `EA-BS-01` queda confirmada como explicación material de la dificultad inicial; `BS-I-01` se reclasifica como **fricción de aprendibilidad/orientación**, no como gap demostrado. M-ORI queda recuperada y M-CON conceptualmente suficiente, pendiente de ejercicio material. Siguiente fase: `BS-02 — localización real`. No se deriva desarrollo.
+**Estado vigente al 26/11/2026: REVISIÓN ESTRATÉGICA INTEGRAL EN CURSO.**
+
+La baseline técnica permanece consolidada y validada dentro del alcance de
+`R-ENG-SYS-01`. La revisión estratégica posterior no invalida
+retrospectivamente los compromisos, realizaciones y cierres anteriores.
+
+La observación humana de la aplicación publicada ha puesto de manifiesto
+una distancia significativa entre la experiencia ordinaria disponible y
+la finalidad integral del producto. Esta evidencia ha motivado la
+suspensión de las comprobaciones locales en curso y el inicio de una
+revisión estratégica general, sin derivar automáticamente nueva
+implementación.
+
+## Estado vigente de la revisión estratégica
+
+| Etapa | Objeto | Estado |
+|---|---|---|
+| 1 | Recuperación de la concepción original | Primer estudio realizado |
+| 2 | Auditoría crítica de la estrategia anterior | Primer estudio realizado |
+| 3 | Estudio comparativo de plataformas existentes | Primera exploración documental concluida; consolidación aceptada |
+| 4 | Identificación integral de usuarios y necesidades | Siguiente etapa candidata |
+| 5 | Definición integral del producto | Pendiente |
+| 6 | Diseño conceptual de la experiencia | Pendiente |
+| 7 | Inventario del patrimonio existente | Pendiente |
+| 8 | Análisis de distancia material | Pendiente |
+| 9 | Evaluación de alternativas | Pendiente |
+| 10 | Nueva estrategia de desarrollo | Pendiente |
+
+El HUMAN GATE `G-CONS-EC-01` ha aceptado el 26/11/2026 la consolidación
+integral de EC-01…EC-12, versión REV-01, como patrimonio de investigación
+no normativo y fundamento suficiente para continuar la revisión
+estratégica.
+
+Documento de referencia:
+[142 — Consolidación integral del estudio comparativo EC-01…EC-12](142-CONSOLIDACION_ESTUDIO_COMPARATIVO_EC-01_EC-12.md).
+
+La aceptación conserva abiertas las hipótesis diferenciales, las
+alternativas de realización, las propuestas de diseño y las
+investigaciones técnicas selectivas. No demuestra demanda efectiva,
+diferenciación exclusiva ni superioridad frente a las alternativas
+existentes.
+
+No se modifica Charter, Platform Vision, Product ni Manual 17.
+No se selecciona arquitectura ni se autoriza nueva construcción.
+
+## Punto de reanudación vigente
+
+Completar el registro documental de `G-CONS-EC-01` y, una vez validado y
+conservado, proceder a la etapa 4 — Identificación integral de usuarios
+y necesidades.
+
+La siguiente investigación deberá partir de las situaciones humanas y
+de sus necesidades, sin convertir las soluciones tecnológicas
+identificadas en compromisos previamente establecidos.
+
+Las declaraciones de estado y reanudación anteriores conservadas en
+este documento tienen carácter histórico. Para determinar el estado
+actual deberá prevalecer este resumen ejecutivo.
+
+## Antecedentes del estado vigente
+
+**Estado histórico al 19/11/2026:** **ESTABILIDAD GLOBAL CONSERVADA**, con `BS-CE-MIAPP-01` en ejecución humana. La primera desorientación registrada en BS-01 ha sido reducida mediante un contraste de familiaridad: con una orientación conceptual mínima sobre las seis superficies principales, la persona declara que la página cobra sentido, reconoce la relación entre funciones e identifica espontáneamente `Materiales anteriores` como punto de entrada para recuperar el estado y decidir después entre continuar, comparar o solicitar apoyo IA. `EA-BS-01` queda confirmada como explicación material de la dificultad inicial; `BS-I-01` se reclasifica como **fricción de aprendibilidad/orientación**, no como gap demostrado. M-ORI queda recuperada y M-CON conceptualmente suficiente, pendiente de ejercicio material. Siguiente fase: `BS-02 — localización real`. No se deriva desarrollo.
 
 El HUMAN GATE ha aceptado `PV-004`, la formulación reducida de `R-PV004-M1`
 y su primer testigo físico suficiente en `src/App.tsx` y `src/App.test.tsx`.
@@ -1268,6 +1329,8 @@ El registro cronológico general corresponde a `PROJECT_JOURNAL.md` y a las bit�
 
 # 6. Estado de reanudación
 
+> Este apartado conserva la evolución histórica de los estados de reanudación. El punto de reanudación actualmente aplicable se encuentra en el resumen ejecutivo del documento.
+
 La investigación posterior a la consolidación de `PV-001` condujo a la
 construcción, validación y consolidación inicial de `R-U2-M1`.
 
@@ -2086,7 +2149,7 @@ actuar.
 
 ---
 
-## Estado de reanudación vigente
+## Estado de reanudación histórico
 
 Tras las investigaciones y consolidaciones posteriores, el estado desde el que
 debe retomarse actualmente el proyecto es:
