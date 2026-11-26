@@ -37,8 +37,8 @@ implementación.
 | 1 | Recuperación de la concepción original | Primer estudio realizado |
 | 2 | Auditoría crítica de la estrategia anterior | Primer estudio realizado |
 | 3 | Estudio comparativo de plataformas existentes | Primera exploración documental concluida; consolidación aceptada |
-| 4 | Identificación integral de usuarios y necesidades | Siguiente etapa candidata |
-| 5 | Definición integral del producto | Pendiente |
+| 4 | Identificación integral de usuarios y necesidades | Investigación concluida; consolidación aceptada |
+| 5 | Definición integral del producto | Siguiente etapa, tras cierre documental de la etapa 4 |
 | 6 | Diseño conceptual de la experiencia | Pendiente |
 | 7 | Inventario del patrimonio existente | Pendiente |
 | 8 | Análisis de distancia material | Pendiente |
@@ -59,18 +59,45 @@ investigaciones técnicas selectivas. No demuestra demanda efectiva,
 diferenciación exclusiva ni superioridad frente a las alternativas
 existentes.
 
+El HUMAN GATE `G-CONS-IU-01` ha aceptado el 26/11/2026 la consolidación
+integral de IU-01…IU-11, versión REV-01, como patrimonio de investigación
+no normativo y fundamento suficiente para comenzar la definición integral
+de Product.
+
+Documento de referencia:
+[143 — Consolidación integral de IU-01…IU-11](143-CONSOLIDACION_IU-01_IU-11.md).
+
+La consolidación de la etapa 4 conserva:
+
+- ocho finalidades humanas y el inventario de personas y situaciones;
+- 170 formulaciones específicas de necesidades y 41 formulaciones integradoras;
+- 29 núcleos raíz, siete garantías transversales y tres modalidades condicionadas;
+- relaciones, dependencias, complementariedades, tensiones y estatutos;
+- 34 recorridos candidatos y 52 criterios humanos de suficiencia;
+- evidencias, hipótesis, contraargumentos, incertidumbres y alternativas abiertas.
+
+La aceptación acredita suficiencia documental e investigativa para avanzar
+hacia la definición integral de Product. No demuestra demanda representativa,
+superioridad comparativa, sostenibilidad del alcance ampliado ni necesidad
+de una plataforma completamente propia.
+
 No se modifica Charter, Platform Vision, Product ni Manual 17.
 No se selecciona arquitectura ni se autoriza nueva construcción.
 
 ## Punto de reanudación vigente
 
-Completar el registro documental de `G-CONS-EC-01` y, una vez validado y
-conservado, proceder a la etapa 4 — Identificación integral de usuarios
-y necesidades.
+Completar el registro documental de `G-CONS-IU-01` y, una vez validado y
+conservado en el repositorio, proceder a la etapa 5 — Definición integral
+del producto.
 
-La siguiente investigación deberá partir de las situaciones humanas y
-de sus necesidades, sin convertir las soluciones tecnológicas
-identificadas en compromisos previamente establecidos.
+La siguiente investigación deberá partir del patrimonio consolidado en
+los documentos 142 y 143, comparar las concepciones candidatas, delimitar
+las responsabilidades de Product y determinar qué incertidumbres requieren
+contraste antes de seleccionar compromisos.
+
+No se presupone una modalidad de realización, una arquitectura, una nueva
+implementación ni la incorporación obligatoria de todo el patrimonio técnico
+existente.
 
 Las declaraciones de estado y reanudación anteriores conservadas en
 este documento tienen carácter histórico. Para determinar el estado

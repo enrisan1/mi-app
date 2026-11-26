@@ -15829,3 +15829,168 @@ a partir de las situaciones humanas, sin seleccionar prematuramente
 funcionalidades, tecnologías o soluciones arquitectónicas.
 
 Documento: [142](142-CONSOLIDACION_ESTUDIO_COMPARATIVO_EC-01_EC-12.md).
+
+
+---
+
+# 26/11/2026 — Identificación integral de usuarios y necesidades y aceptación de G-CONS-IU-01
+
+## Fundamento de la etapa 4
+
+Tras la aceptación y conservación de la consolidación del estudio
+comparativo EC-01…EC-12, se inicia la etapa 4 de la revisión estratégica
+integral del proyecto.
+
+La investigación cambia deliberadamente su perspectiva: parte de las
+finalidades, situaciones y necesidades humanas, en lugar de partir de
+las funcionalidades disponibles, las realizaciones existentes o las
+soluciones tecnológicas identificadas.
+
+Su responsabilidad consiste en proporcionar fundamento suficiente
+para la posterior definición integral de Product, sin anticipar
+la selección de compromisos ni de soluciones de realización.
+
+## Desarrollo de la investigación
+
+Se realizan los siguientes bloques:
+
+- IU-01 — Recuperación de la finalidad humana original del proyecto.
+- IU-02 — Identificación de personas, colectivos y situaciones humanas.
+- IU-03 — Actividades intelectuales individuales.
+- IU-04 — Investigación y producción de conocimiento.
+- IU-05 — Consulta, descubrimiento y reutilización del conocimiento.
+- IU-06 — Colaboración y participación de granularidad variable.
+- IU-07 — Necesidades transversales.
+- IU-08 — Revisión del inventario N-01…N-30.
+- IU-09 — Relaciones, solapamientos y dependencias.
+- IU-10 — Necesidades constitutivas, complementarias y contingentes.
+- IU-11 — Contraste de suficiencia y evidencia humana.
+- IU-12 — Consolidación integral de la investigación.
+
+El patrimonio resultante comprende:
+
+- 8 finalidades humanas.
+- 16 colectivos candidatos.
+- 15 papeles humanos.
+- 32 situaciones humanas.
+- 12 circunstancias transversales.
+- 170 formulaciones específicas de necesidades.
+- 49 agrupaciones de actividad.
+- 41 formulaciones integradoras.
+- 29 núcleos raíz.
+- 7 garantías transversales.
+- 3 modalidades condicionadas.
+- 37 dependencias, 15 complementariedades y 15 tensiones.
+- 234 asignaciones de estatuto relativas a los ámbitos humanos.
+- 34 recorridos humanos candidatos.
+- 52 criterios humanos de suficiencia.
+- 367 resultados identificados de IU-01…IU-11.
+
+Se conservan asimismo seis hipótesis diferenciales, diez
+contraargumentos, seis precisiones derivadas de IU-11,
+21 incertidumbres y siete casos candidatos de contraste.
+
+La investigación distingue necesidades humanas, soluciones posibles,
+responsabilidades de producto y estatutos relativos al alcance elegido.
+
+La identificación de una necesidad no constituye por sí misma
+fundamento suficiente para establecer una obligación de construcción.
+
+## Consolidación y revisión documental
+
+IU-12 produce inicialmente BORRADOR-01.
+
+La revisión identifica insuficiencias en la recuperación literal de
+IU-01…IU-05 y del comienzo de IU-06, con consecuencias sobre la
+fidelidad de las formulaciones, agrupaciones, criterios y resultados
+conservados.
+
+Se establecen las actuaciones P-CONS-IU-01…P-CONS-IU-06 para resolver
+las insuficiencias documentales.
+
+La persona facilita los textos originales completos de IU-01…IU-06.
+Se recuperan las formulaciones de origen y se contrastan con las
+síntesis posteriores, conservando ambas cuando cumplen responsabilidades
+documentales diferentes.
+
+Las diferencias semánticas relevantes quedan registradas expresamente.
+No se sustituyen silenciosamente las matrices históricas.
+
+Los textos recuperados de IU-01…IU-06 se incorporan como anexo
+documental, con normalización del formato Markdown.
+
+IU-07…IU-11 se conservan mediante sus resultados, fundamentos,
+formulaciones y matrices consolidadas, sin reproducir necesariamente
+la totalidad de su exposición narrativa.
+
+La validación formal de REV-01 candidata comprueba cobertura,
+unicidad, correspondencias y conservación de las estructuras
+documentales previstas.
+
+Esta validación no equivale a una demostración exhaustiva de
+equivalencia semántica ni a una nueva validación empírica.
+
+## Aceptación humana
+
+El 26/11/2026 se acepta expresamente:
+
+`G-CONS-IU-01` — Consolidación integral de IU-01…IU-11, versión
+REV-01, como patrimonio de investigación no normativo y fundamento
+suficiente para comenzar la definición integral de Product,
+conservando las evidencias, incertidumbres, hipótesis,
+contraargumentos y alternativas todavía abiertas.
+
+SHA-256 de la versión candidata sometida a aceptación:
+
+`3c5239801f0e9c382b4ce38b0f410ad27f52e2c89e6ef5344d2cb27fac5d8031`
+
+Tras la aceptación se prepara una versión independiente que
+actualiza su estatuto documental y punto de reanudación,
+sin modificar el patrimonio de investigación consolidado.
+
+SHA-256 de REV-01 con la aceptación registrada:
+
+`2c1339e18f6da93b18909c768cdf346ea5b92221ec15c9d5de36fe1f054db2ed`
+
+La incorporación material del documento 143 al árbol de trabajo
+se verifica mediante identidad SHA-256, 11.216 líneas y 593.035 bytes.
+
+Se actualiza PROJECT_STATUS.md para registrar la aceptación y
+establecer el nuevo punto de reanudación.
+
+## Consecuencias y delimitación
+
+- Investigación de etapa 4: concluida en su alcance documentado.
+- IU-12: consolidación aceptada.
+- G-CONS-IU-01: aceptado.
+- Demanda representativa: no demostrada.
+- Superioridad comparativa: no demostrada.
+- Necesidad de una plataforma completamente propia: no demostrada.
+- Sostenibilidad del alcance ampliado: pendiente de contraste.
+- Concepciones candidatas de producto: conservadas, no seleccionadas.
+- Alternativas de realización: abiertas.
+- Charter, Platform Vision, Product y Manual 17: sin modificación.
+- Baseline técnica: conservada.
+- Nueva arquitectura: no seleccionada.
+- Nueva construcción: no autorizada ni derivada.
+
+La aceptación no convierte las necesidades investigadas en un
+backlog ni establece que todas deban satisfacerse simultáneamente.
+
+## Punto de reanudación
+
+Tras completar la validación conjunta y la conservación del
+registro documental de G-CONS-IU-01, proceder a:
+
+Etapa 5 — Definición integral del producto.
+
+La siguiente etapa deberá partir de los documentos 142 y 143,
+comparar las concepciones candidatas, delimitar las responsabilidades
+de Product y determinar las incertidumbres que requieren contraste
+antes de seleccionar compromisos.
+
+No se presupone una modalidad de realización, una arquitectura,
+una nueva implementación ni la incorporación obligatoria de todo
+el patrimonio técnico existente.
+
+Documento: [143](143-CONSOLIDACION_IU-01_IU-11.md).
