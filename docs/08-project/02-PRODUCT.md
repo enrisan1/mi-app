@@ -1015,3 +1015,88 @@ El producto deberá poder hacer disponible, de forma opcional, apoyo auxiliar de
 - No obliga a conservar indefinidamente todo apoyo auxiliar.
 
 La selección de este compromiso fue aceptada mediante HUMAN GATE el 14/11/2026.
+
+
+---
+
+# 15. Compromiso de definición integral — CC-DP13-01-R01
+
+## 15.1 Situación y valor justificado
+
+**CC-DP13-01-R01 — Constitución y desarrollo de trabajos intelectuales independientes**
+
+La situación seleccionada aparece cuando una persona desea desarrollar un trabajo intelectual propio dentro del ámbito asumido por el producto y necesita mantenerlo diferenciado de otros trabajos.
+
+La diferencia humana seleccionada consiste en poder constituir, identificar y desarrollar el trabajo elegido sin confundirlo ni mezclar inadvertidamente sus contenidos con los de otros trabajos.
+
+El valor reside en hacer practicable una actividad intelectual ordinaria y preservar la independencia de los trabajos, permitiendo que la persona concentre su atención en la elaboración intelectual y no en reconstruir continuamente su contexto de trabajo.
+
+Las observaciones humanas de la aplicación publicada y la investigación desarrollada durante DP-00…DP-15 proporcionan el fundamento de la selección delimitada.
+
+La justificación de este resultado humano no implica que las herramientas externas sean insuficientes en general ni que resulte necesario desarrollar un editor propio.
+
+## 15.2 Compromiso
+
+Cuando una persona desee desarrollar un trabajo intelectual dentro del ámbito asumido por el producto, deberá poder constituirlo, identificarlo y desarrollarlo manteniendo su independencia respecto de otros trabajos.
+
+## 15.3 Delimitación
+
+- El alcance mínimo comprende la posibilidad de constituir y desarrollar dos trabajos textuales diferenciados.
+- La persona debe poder reconocer inequívocamente sobre cuál se está actuando.
+- La persona debe poder alternar entre ambos sin mezclar inadvertidamente sus contenidos.
+- No compromete un editor universal.
+- No compromete gestión avanzada de documentos.
+- No prescribe una interfaz determinada.
+- No prescribe una arquitectura propia.
+- No sustituye ni amplía tácitamente los compromisos anteriores.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE `G-DP-01` el 27/11/2026.
+
+Fundamentos documentales:
+
+- [144 — Consolidación DP-00…DP-16](144-CONSOLIDACION_DP-00_DP-16_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [145 — Acta de aceptación G-DP-01](145-G-DP-01_ACTA_ACEPTACION_DEFINICION_INTEGRAL_PRODUCTO.md).
+
+---
+
+# 16. Compromiso de definición integral — CC-DP13-02-R01
+
+## 16.1 Situación y valor justificado
+
+**CC-DP13-02-R01 — Recuperación y continuación del trabajo intelectual elegido**
+
+La situación seleccionada aparece cuando una persona interrumpe un trabajo intelectual comprendido en el ámbito de responsabilidad del producto y desea recuperarlo y continuar posteriormente su desarrollo.
+
+La diferencia humana seleccionada consiste en mantener practicable la recuperación y continuación efectiva del trabajo que la persona decide retomar, sin obligarla a reconstruir innecesariamente lo realizado.
+
+El valor reside en preservar la utilidad posterior del esfuerzo intelectual y permitir que la persona determine qué trabajo desea continuar.
+
+Este resultado se distingue de la disponibilidad conjunta de aportaciones protegida por `PV-002` y de la continuidad del contexto intelectual provisional protegida por `C-PV-POST-01`, sin sustituir ni ampliar tácitamente ninguno de esos compromisos.
+
+La investigación desarrollada durante DP-00…DP-15 proporciona fundamento para esta selección delimitada, sin demostrar la necesidad de desarrollar mecanismos propios de conservación y recuperación.
+
+## 16.2 Compromiso
+
+Cuando una persona interrumpa un trabajo intelectual comprendido en el ámbito de responsabilidad del producto, deberá poder localizarlo, recuperar suficientemente lo realizado y continuar su desarrollo posterior sin reconstruir innecesariamente el trabajo anterior.
+
+## 16.3 Delimitación
+
+- El alcance mínimo comprende los trabajos textuales delimitados en `CC-DP13-01-R01`.
+- Comprende la conservación de dichos trabajos.
+- Comprende la identificación y localización del trabajo elegido.
+- Comprende la recuperación de su contenido y contexto pertinente.
+- Comprende la continuación sin pérdida injustificada de lo realizado.
+- Incluye la posibilidad proporcionada de recuperar los contenidos propios fuera del entorno cuando corresponda.
+- No compromete un sistema universal de gestión del conocimiento.
+- No compromete búsqueda semántica.
+- No compromete descubrimiento contextual automático.
+- No compromete conservación ilimitada.
+- No compromete reutilización avanzada.
+- No prescribe mecanismos técnicos de persistencia, localización o recuperación.
+
+La selección de este compromiso fue aceptada mediante HUMAN GATE `G-DP-01` el 27/11/2026.
+
+Fundamentos documentales:
+
+- [144 — Consolidación DP-00…DP-16](144-CONSOLIDACION_DP-00_DP-16_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [145 — Acta de aceptación G-DP-01](145-G-DP-01_ACTA_ACEPTACION_DEFINICION_INTEGRAL_PRODUCTO.md).

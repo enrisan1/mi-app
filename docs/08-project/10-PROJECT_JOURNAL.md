@@ -15994,3 +15994,102 @@ una nueva implementación ni la incorporación obligatoria de todo
 el patrimonio técnico existente.
 
 Documento: [143](143-CONSOLIDACION_IU-01_IU-11.md).
+
+
+---
+
+# 27/11/2026 — Definición integral del producto y aceptación G-DP-01
+
+## Contexto
+
+La revisión estratégica integral, iniciada tras la observación humana de
+la aplicación publicada, alcanza su quinta etapa.
+
+La investigación parte del patrimonio consolidado en los documentos
+142 y 143 y conserva la baseline técnica validada mediante R-ENG-SYS-01.
+
+## Investigación y resultado
+
+DP-00…DP-16 desarrollan la reconstrucción del contrato vigente,
+la evaluación del valor humano, la comparación de concepciones,
+la reducción de responsabilidades, la sostenibilidad y la delimitación
+de una primera experiencia humana autónomamente útil.
+
+Se obtiene CONC-E-R03 como concepción integral selectiva del trabajo
+intelectual.
+
+Las 48 responsabilidades de origen se agrupan en 24 familias de
+evaluación y posteriormente en siete candidaturas de compromiso.
+
+DP-15 determina que dos candidaturas resultan seleccionables en
+alcance reducido y que las cinco restantes deben permanecer condicionadas.
+
+## Aceptación humana
+
+El 27/11/2026 se acepta expresamente la propuesta completa presentada
+mediante G-DP-01, cuya salida es ACEPTAR CON DELIMITACIÓN.
+
+La aceptación comprende:
+
+- CONC-E-R03 como dirección estratégica integral.
+- Conservación íntegra de los once compromisos anteriores.
+- Selección de CC-DP13-01-R01 y CC-DP13-02-R01.
+- Conservación de CC-DP13-03…07 como candidaturas condicionadas.
+- PEHU-DP14-01 como primera experiencia humana de referencia.
+- Conservación de PEHU-DP14-02/03 como alternativas.
+
+Product incorpora los dos compromisos aceptados en sus apartados
+15 y 16, alcanzando trece compromisos.
+
+## Consolidación documental
+
+La consolidación REV-01 se conserva sin modificaciones en el documento
+144. La aceptación humana se registra separadamente en el documento 145.
+
+SHA-256 del documento 144:
+
+b5d5898e83c547b703525d1899a9682d6c20b45332a1f2468942f95d867f31cd
+
+SHA-256 del documento 145:
+
+ddf65e4d500890bc80f3e2a690ed799f2a27e64a3d176ae987b9e92aa35dd181
+
+Los 16 documentos originales disponibles se conservan en
+144-ANEXO_FUENTES_DP, junto con su manifiesto.
+
+La comprobación individual de hashes y tamaños obtiene 16/16
+documentos correctos y cero errores.
+
+El anexo no constituye una reproducción exhaustiva de todas las
+conversaciones y antecedentes de investigación.
+
+## Consecuencias y delimitación
+
+- Investigación de la etapa 5: concluida.
+- G-DP-01: aceptado con delimitación.
+- Product: trece compromisos aceptados.
+- Satisfacción material de los nuevos compromisos: pendiente de contraste.
+- Charter, Platform Vision y Manual 17: sin modificación.
+- Baseline técnica anterior: conservada.
+- Superioridad comparativa: no demostrada.
+- Demanda representativa: no demostrada.
+- Sostenibilidad efectiva: no demostrada.
+- Arquitectura y estrategia de realización: no seleccionadas.
+- Nueva construcción: no autorizada.
+
+## Punto de reanudación
+
+Tras completar la validación conjunta y la conservación del registro
+documental de G-DP-01, proceder a:
+
+Etapa 6 — Diseño conceptual de la experiencia.
+
+La investigación partirá de CONC-E-R03, los trece compromisos de
+Product y PEHU-DP14-01, conservando las alternativas y las
+responsabilidades condicionadas.
+
+Documentos de referencia:
+
+- [144](144-CONSOLIDACION_DP-00_DP-16_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [145](145-G-DP-01_ACTA_ACEPTACION_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [Anexo de fuentes](144-ANEXO_FUENTES_DP/MANIFIESTO.txt).

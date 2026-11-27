@@ -1,0 +1,19 @@
+Fuentes Markdown disponibles de la etapa 5. Originales sin modificar. No constituye una exportación completa de conversaciones; incluye duplicados y variantes para preservar procedencia.
+
+SHA256 | Bytes | Nombre original
+9e17033872153a189d77b13159b31f09a0403d4720bab9360161bf39d4f4baca | 95113 | Markdown pegado (10).md
+3b632da522c4f95bd534dbbb0b60bcdd0c5baa82b0a37c27b025a6c1cf32c1e7 | 96972 | Markdown pegado (11).md
+0693704934bda86aeacd9da1426761d7e7a47774d59d2016489b47f00f863e14 | 68002 | Markdown pegado (12).md
+7dad5f5ccf7701b4b4bc29fcbc87f5d9e4f08b539c5c9f62362bd913ac6b6683 | 71020 | Markdown pegado (2)(1).md
+4cc084903440d63507ce0f2bc5f5a36e1c8ead1978988f13364d7d08205866f4 | 64148 | Markdown pegado (3)(1).md
+c0acb2fa2c261fcffbab08c24f5455510b7b6333d282f2c3f7bd12499c861adc | 70584 | Markdown pegado (4)(1).md
+a3c6eb961a92ef1240e823e8cd4a9ca25662f993514882e6d4ba9db52a282942 | 92571 | Markdown pegado (5)(1).md
+dd72ac0cb1398bf3ba067b11da645f3927a1eeffd5ac29665b3ee3d10161ceb9 | 94305 | Markdown pegado (6).md
+6b0bb09f0d1cf9d3e4f92b243f79cf2215634c52f736afb15e7f17e254867652 | 113812 | Markdown pegado (7).md
+c4571cf5f64ff667435e615a6e03ff0c606d948b5b0c6421df0ef8a4207dc611 | 94239 | Markdown pegado (8).md
+f79bc8a9086db87be01c998644b9e728d772636b16f42492b58acb5957b6b7dd | 100638 | Markdown pegado (9).md
+d7c3630371d3cca8f67f691f1099c3a88e94fcf269fd1c78ed0c023ac1e2b60a | 66567 | Markdown pegado(10).md
+4882ebdb1577cf25ffe447c2d257ecf58508927b371c52a70bc44c1272766a0c | 94236 | Markdown pegado(20261126-211847).md
+4cc084903440d63507ce0f2bc5f5a36e1c8ead1978988f13364d7d08205866f4 | 64148 | Markdown pegado(20261126-214054).md
+579feacb8c0f712a9a7c499a0670689fb976457f69c82af7596d5f2da54cf8ab | 41706 | Markdown pegado(20261126-214702).md
+699986924575c68364347680f34ce2a652ba85a4af52b81a75faefa61cd44865 | 10988 | Markdown pegado(20261127-081704).md

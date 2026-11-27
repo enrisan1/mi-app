@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-**Fecha de actualización:** 26/11/2026
+**Fecha de actualización:** 27/11/2026
 
 ## Índice
 
@@ -17,7 +17,7 @@
 
 # 1. Resumen ejecutivo
 
-**Estado vigente al 26/11/2026: REVISIÓN ESTRATÉGICA INTEGRAL EN CURSO.**
+**Estado vigente al 27/11/2026: REVISIÓN ESTRATÉGICA INTEGRAL EN CURSO.**
 
 La baseline técnica permanece consolidada y validada dentro del alcance de
 `R-ENG-SYS-01`. La revisión estratégica posterior no invalida
@@ -38,8 +38,8 @@ implementación.
 | 2 | Auditoría crítica de la estrategia anterior | Primer estudio realizado |
 | 3 | Estudio comparativo de plataformas existentes | Primera exploración documental concluida; consolidación aceptada |
 | 4 | Identificación integral de usuarios y necesidades | Investigación concluida; consolidación aceptada |
-| 5 | Definición integral del producto | Siguiente etapa, tras cierre documental de la etapa 4 |
-| 6 | Diseño conceptual de la experiencia | Pendiente |
+| 5 | Definición integral del producto | Investigación concluida; aceptación con delimitación (G-DP-01) |
+| 6 | Diseño conceptual de la experiencia | Siguiente etapa, tras cierre documental de la etapa 5 |
 | 7 | Inventario del patrimonio existente | Pendiente |
 | 8 | Análisis de distancia material | Pendiente |
 | 9 | Evaluación de alternativas | Pendiente |
@@ -81,19 +81,56 @@ hacia la definición integral de Product. No demuestra demanda representativa,
 superioridad comparativa, sostenibilidad del alcance ampliado ni necesidad
 de una plataforma completamente propia.
 
-No se modifica Charter, Platform Vision, Product ni Manual 17.
+La aceptación de la etapa 4 no modificó Charter, Platform Vision,
+Product ni Manual 17.
+
+## Aceptación de la definición integral del producto
+
+El HUMAN GATE `G-DP-01` ha aceptado el 27/11/2026, con delimitación,
+el resultado de DP-00…DP-16.
+
+La aceptación comprende:
+
+- `CONC-E-R03` como dirección estratégica integral.
+- La conservación íntegra de los once compromisos anteriores.
+- La selección de `CC-DP13-01-R01` y `CC-DP13-02-R01`.
+- La conservación de `CC-DP13-03…07` como candidaturas condicionadas.
+- `PEHU-DP14-01` como primera experiencia humana de referencia.
+- La conservación de `PEHU-DP14-02/03` como alternativas.
+
+Product incorpora los dos nuevos compromisos en sus apartados 15 y 16,
+alcanzando trece compromisos aceptados.
+
+Documentos de referencia:
+
+- [144 — Consolidación de la etapa 5](144-CONSOLIDACION_DP-00_DP-16_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [145 — Acta de aceptación de G-DP-01](145-G-DP-01_ACTA_ACEPTACION_DEFINICION_INTEGRAL_PRODUCTO.md).
+- [Anexo de fuentes originales](144-ANEXO_FUENTES_DP/MANIFIESTO.txt).
+
+La consolidación REV-01 se conserva intacta. Su aceptación queda
+registrada mediante el acta independiente.
+
+No se acredita superioridad comparativa, demanda representativa,
+sostenibilidad efectiva ni necesidad de una plataforma completamente propia.
+
+Charter, Platform Vision y Manual 17 permanecen sin modificación.
+La baseline técnica anterior se conserva en su alcance validado.
 No se selecciona arquitectura ni se autoriza nueva construcción.
 
 ## Punto de reanudación vigente
 
-Completar el registro documental de `G-CONS-IU-01` y, una vez validado y
-conservado en el repositorio, proceder a la etapa 5 — Definición integral
-del producto.
+Completar la validación conjunta y conservación del registro documental
+de `G-DP-01` y proceder después a:
 
-La siguiente investigación deberá partir del patrimonio consolidado en
-los documentos 142 y 143, comparar las concepciones candidatas, delimitar
-las responsabilidades de Product y determinar qué incertidumbres requieren
-contraste antes de seleccionar compromisos.
+**Etapa 6 — Diseño conceptual de la experiencia.**
+
+La siguiente etapa deberá partir de `CONC-E-R03`, los trece compromisos
+vigentes de Product y `PEHU-DP14-01`, conservando las experiencias
+alternativas y las responsabilidades todavía condicionadas.
+
+Su finalidad será determinar cómo debe experimentar la persona el
+producto, sin anticipar la selección de arquitectura ni la estrategia
+de realización.
 
 No se presupone una modalidad de realización, una arquitectura, una nueva
 implementación ni la incorporación obligatoria de todo el patrimonio técnico
